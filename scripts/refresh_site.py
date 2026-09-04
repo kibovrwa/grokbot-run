@@ -63,8 +63,7 @@ def rewrite_chrome(html, path):
     html = re.sub(r'\s*<link rel="alternate" hreflang="zh-CN"[^>]*>', "", html)
     html = re.sub(r'\s*<meta property="og:locale:alternate"[^>]*>', "", html)
     html = re.sub(r'<a class="lang-switch"[^>]*>.*?</a>', "", html)
-    html = html.replace("/learn/zh-guides/", "/sources/")
-    html = html.replace("Chinese long-form guides", "Sources")
+    html = html.replace("Chinese long-form guides", "Chinese guides")
     html = html.replace("Orange Book and Blue Book", "Sources")
     html = html.replace("Grok Bot 攻略", "Grok Bot")
     html = html.replace("193 tools, 40 Field Cases", "199 tools, plus Field Cases")
@@ -102,6 +101,8 @@ def write_redirects():
     ]
     src = ROOT / "public" / "_redirects"
     base = src.read_text(encoding="utf-8").rstrip() + "\n"
+    seen = set(base.splitlines())
+    extra = [e for e in extra if e not in seen]
     aliases = ["# generated trailing-slash / index.html aliases", "/index.html / 301"]
     for u in SITEMAP_URLS:
         if u == "/":
@@ -111,9 +112,6 @@ def write_redirects():
         aliases.append("%s/index.html %s 301" % (bare, u))
     text = base + "\n".join(extra + aliases) + "\n"
     (DIST / "_redirects").write_text(text, encoding="utf-8")
-    public_extra = src.read_text(encoding="utf-8")
-    if "/learn/zh-guides/" not in public_extra:
-        src.write_text(public_extra.rstrip() + "\n" + "\n".join(extra) + "\n", encoding="utf-8")
 
 
 def patch_sources(html):

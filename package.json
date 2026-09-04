@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "python3 scripts/build.py && python3 scripts/check_site.py",
+    "build": "python3 scripts/refresh_site.py && python3 scripts/check_site.py",
     "check": "python3 scripts/check_site.py",
     "preview": "python3 -m http.server 4173 --directory dist",
-    "dev": "python3 scripts/build.py && python3 -m http.server 4173 --directory dist"
+    "dev": "python3 scripts/refresh_site.py && python3 -m http.server 4173 --directory dist"
   }
 }

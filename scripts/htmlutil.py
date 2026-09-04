@@ -170,10 +170,7 @@ def footer_html():
         '<a href="https://docs.x.ai/grok-bot/overview">xAI docs</a>'
         '<a href="https://cursor.com/help/grok-bot/getting-started">Cursor Help</a>'
         '<a href="https://github.com/RongleCat/awesome-grok-bot">awesome-grok-bot</a></div>'
-        "</div>"
-        "<p>Community guide for starting, running, and recovering Grok Bot. "
-        "Product names belong to their owners. Official packages stay on x.ai/bot. "
-        "Updated 2026-09-04. Sources are dated by fetch day.</p></div></footer>"
+        "</div></div></footer>"
     )
 
 

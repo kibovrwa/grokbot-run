@@ -31,7 +31,21 @@
     "differs": "This is not an official xAI/Cursor API. It wires coding agents to Grok Bot teammates; it is not a TUI, not a usage meter, and not Grok Build. Prefer official connectors and in-app approvals for anything that sends mail, spends money, or changes production.",
     "risk": "Third-party skill. Sharing agent configs can leak secrets embedded in skill text. Strip credentials before publishing. Session/local access patterns depend on how you wire it — assume it can trigger real Bot actions that consume weekly usage.",
     "license": "As declared in the upstream repository README",
-    "source": "https://github.com/adamanz/grok-bot-skill"
+    "source": "https://github.com/adamanz/grok-bot-skill",
+    "sections": [
+      {
+        "h": "What the skill can and cannot do",
+        "p": "Treat grok-bot-skill as a bridge so a coding agent can list teammates, send a message, or create a Bot the way you would type it. Typical jobs: hand a research or browser task to a named Bot, then read the reply back in Cursor. It does not open Agent Computer, does not Take Over for passwords or 2FA, does not show the secrets card, and does not replace Require Approval. Teach a task, routines, plugin OAuth, Recover, and Reset stay in the official app. If the agent would send mail, spend money, or change production, stop and do that click where you can watch the computer."
+      },
+      {
+        "h": "Coding agent, official app, and CLI",
+        "p": "This is not an official xAI or Cursor API and not a Grok Build skill. grok-bot-cli is for a human at a terminal on a signed-in Mac. grok-bot-skill is for a coding agent that can load skills. Official connectors (Gmail, GitHub, X) still belong on the Cursor account: install them in the Bot app or Cursor marketplace, not by pasting a skill.md that embeds tokens. If both a skill and a connector can do the job, prefer the connector. Do not clone this repo onto the Bot computer."
+      },
+      {
+        "h": "Approvals and weekly usage still apply",
+        "p": "Messages and computer-use the skill triggers still count as Grok Bot work on the same Cursor weekly pool. A chatty agent that pings the Chief of Staff every turn will burn the week the same way a chatty CoS thread does. The skill will not warn you that the pool is empty or that On-Demand is about to start. Keep Require Approval in the official client. Strip secrets from any skill file before you commit or share it. Read the upstream README for the current tool list before you let an agent create Bots unattended."
+      }
+    ]
   },
   "tui": {
     "title": "grokbot-tui",
@@ -41,7 +55,21 @@
     "differs": "A TUI is a presentation layer. It is not the official Grok Bot client, not the Grok Build coding CLI, and not grok-app (the Tauri GUI for Grok Build). Feature parity with desktop (Agent Computer preview, routines UI, secrets cards) will lag or be missing.",
     "risk": "Any TUI that stores tokens or session cookies locally expands your attack surface. Prefer official paths for payments, OAuth plugins, and Reset/Recover. Verify upstream license and whether the project is actively maintained.",
     "license": "As declared in the upstream repository README",
-    "source": "https://github.com/smarzban/grokbot-tui"
+    "source": "https://github.com/smarzban/grokbot-tui",
+    "sections": [
+      {
+        "h": "What the TUI is for",
+        "p": "Use grokbot-tui when you already live in a terminal multiplexer and want roster or chat keystrokes without opening the Electron window. Typical jobs: switch Bots, read a thread, send a message you would have typed in the app. It is a presentation layer on the same account. It is not the official client, not grok-bot-cli (scripted commands), not grok-app (a Grok Build GUI), and not a second computer."
+      },
+      {
+        "h": "What will be missing",
+        "p": "Expect Agent Computer preview, Teach a task, secrets cards, plugin OAuth, Recover / Update / Reset, and routine webhook controls to lag or be absent. Those stay on the official desktop or phone. If a keystroke would send mail, spend money, or change production, switch to the official app and watch the computer. Feature lists in the README change — read the current one before you treat the TUI as your only door."
+      },
+      {
+        "h": "Tokens, Recover, and usage",
+        "p": "A TUI that stores session cookies or tokens locally expands the same surface as grok-bot-cli. Do not copy that state into a gist, a VM, or another user. Messages still burn the weekly pool. If the official desktop is black but iOS still works, Recover before Reset — a TUI reconnect is not a rebuild. Prefer official paths for payments, OAuth plugins, and computer surgery. Verify the repo is maintained before you leave a token on disk."
+      }
+    ]
   },
   "usage": {
     "title": "Grok Bot usage menu bar",
@@ -51,7 +79,21 @@
     "differs": "This is a meter, not a Bot client. It does not send messages, run routines, or recover computers. Pair it with the cost lesson on this site: On-Demand $0 blocks paid spillover but does not stop promo credits from draining, and there is no in-app warning from Grok Bot itself.",
     "risk": "Third-party. Reading usage may require access to account/session data depending on implementation — review the repo before installing. Do not treat its number as a guarantee against charges; official plans screens and invoices win.",
     "license": "As declared in the upstream repository README",
-    "source": "https://github.com/diegocp01/grok_bot_usage_menu_bar"
+    "source": "https://github.com/diegocp01/grok_bot_usage_menu_bar",
+    "sections": [
+      {
+        "h": "Cross-check the Cursor plans screen",
+        "p": "Install the menu bar, then open Cursor → Grok Bot weekly usage (or the plans screen the cost lesson names) and confirm the two numbers move together for a day. Community meters can lag, cache a stale session, or map the wrong pool — Pro Other Models is not the Bot weekly bucket. After a password change or account switch, sign out of the official Mac app, quit it, sign in again, then relaunch the meter. The invoice and the official screen win every argument."
+      },
+      {
+        "h": "What the number is not",
+        "p": "This is a meter, not a client. It does not send messages, run routines, Recover a computer, or block On-Demand. Grok Bot itself may give no in-product warning when the weekly pool empties. Setting On-Demand spend to $0 can block paid overflow; it does not stop promo or trial credits from draining. macOS and iOS share one bucket — a phone-heavy day still moves this number."
+      },
+      {
+        "h": "When to stop trusting it",
+        "p": "If the menu bar says you have room and the official screen says 100%, believe the official screen. If two Cursor accounts are signed in across devices, check you are reading the account that actually runs Grok Bot. Review the upstream permissions before install: some meters read session or usage endpoints. Do not paste a usage token into chat. Pair the meter with the cost lesson; do not invent a dollar forecast from the remaining percent."
+      }
+    ]
   },
   "linux": {
     "title": "Grok Bot on Linux: official packages vs community port",

@@ -42,7 +42,7 @@ Official packages stay on [x.ai/bot](https://x.ai/bot). Sign in with the Cursor 
 From the project root:
 
 - `npm run build` generates static HTML in `dist/` and runs the checker.
-- `npm run check` validates internal links, unique titles, one H1/canonical/description, the visible disclaimer, and rendered counts 193/40/89/42.
+- `npm run check` validates internal links, unique titles, one H1/canonical/description, and rendered counts 199/54/89/42.
 - `npm run preview` or `npm run dev` serves `dist/` at `http://localhost:4173`.
 
 Requires Python 3 and Node/npm. There are no npm package dependencies.

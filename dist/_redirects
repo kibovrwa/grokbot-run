@@ -10,11 +10,6 @@ http://grokbot.run/* https://grokbot.run/:splat 301
 /learn/zh-guides/index.html /sources/ 301
 /learn/guides /sources/ 301
 /learn/guides/ /sources/ 301
-/learn/zh-guides /sources/ 301
-/learn/zh-guides/ /sources/ 301
-/learn/zh-guides/index.html /sources/ 301
-/learn/guides /sources/ 301
-/learn/guides/ /sources/ 301
 # generated trailing-slash / index.html aliases
 /index.html / 301
 /learn /learn/ 301

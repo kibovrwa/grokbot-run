@@ -18,6 +18,9 @@ This site: https://grokbot.run/
 - [After week one](https://grokbot.run/learn/operator/): manage a roster from named field posts
 - [X, Cursor, MCP](https://grokbot.run/learn/ops/): official X plugin as research, Cloud Agent for the repo, remote MCP
 - [Skills and routines](https://grokbot.run/learn/skills-routines/)
+- [Shared computer](https://grokbot.run/learn/computer/)
+- [Plugins and MCP](https://grokbot.run/learn/plugins/)
+- [Usage and On-Demand](https://grokbot.run/learn/cost-and-pitfalls/)
 - [Pricing](https://grokbot.run/pricing/): no invented list prices
 - [Glossary](https://grokbot.run/learn/glossary/)
 
@@ -26,6 +29,11 @@ This site: https://grokbot.run/
 - [Use cases](https://grokbot.run/use-cases/): starter jobs, X posts, skills
 - [Alternatives](https://grokbot.run/compare/): official vs OpenMausBot, rakazo, gawkbot, OpenClaw
 - [Tools catalog](https://grokbot.run/tools/)
+- [grok-bot-cli](https://grokbot.run/tools/grok-bot-cli/)
+- [grok-bot-skill](https://grokbot.run/tools/grok-bot-skill/)
+- [grokbot-tui](https://grokbot.run/tools/grokbot-tui/)
+- [Usage menu bar](https://grokbot.run/tools/usage-menu-bar/)
+- [Linux packages](https://grokbot.run/tools/linux-port/)
 - [Help](https://grokbot.run/troubleshooting/)
 - [Sources](https://grokbot.run/sources/)
 

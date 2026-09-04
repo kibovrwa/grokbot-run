@@ -70,6 +70,8 @@ INSTALL_FAQS = [
      "Only x.ai/bot for desktop, the App Store for iPhone, and Google Play for Android. Linux packages are under More downloads. Skip community ports unless official packages fail."),
     ("Why does the app sit on Setting up?",
      "Free Cursor plans never get a computer. Team admin without a paid seat is the same. That is a copy bug, not your network."),
+    ("Can I run Grok Bot only from my phone?",
+     "Yes for chat, watching the computer, and most plugins. iPhone needs iOS 18+; Android 9+. iPad was not supported at launch. Routine webhook URL and sender key appear on desktop only. macOS and iOS share one weekly bucket. If the desktop is black but iOS still works, Recover — do not Reset."),
 ]
 
 COMPUTER_FAQS = [
@@ -148,6 +150,10 @@ def install():
 ''' + INSTALL_DIAGRAM + '''
 <p>The official product page shows the same three beats: install, Cursor login, then a roster of named faces on one computer. This handbook keeps that order. Do not create twelve Bots on the first screen.</p>
 <p>Cursor Help also reminds you: sign in with the <strong>Cursor account that will bear the usage</strong>; macOS and iOS share one weekly usage bucket.</p>
+<h2>Phone: iOS, Android, and what stays on desktop</h2>
+<p>The same roster and the same computer sync after Cursor login. Official @bot (2026-09-02) pointed Android at Google Play; iPhone is the App Store build, iOS 18+. iPad was not supported at initial launch — do not expect the iPhone app to be a tablet layout. Close the phone app and cloud turns plus routines keep running, the same as closing the laptop.</p>
+<p>On phone you can chat, watch the computer, take over for a stuck login, and open Plugins from the top-left avatar. Some connectors fail the iOS redirect (Canva is the documented case) — connect once on desktop and the connector syncs to iPhone. Staff note: the routine webhook URL and sender key appear on desktop only. Teach a task is a desktop screen recording. Do not treat the phone as a second computer or a private login.</p>
+<p>If the desktop preview is black or stuck Reconnecting but the same account still works on iOS, that is a clue the Bots are not gone. Prefer Recover / Update. Reset from panic can delete Bots. Details: <a href="/learn/computer/">shared computer</a> and <a href="/troubleshooting/#reach">can’t reach</a>.</p>
 <h2>Before you create the first Bot</h2>
 <p>Official advice: short name, one primary job, how it should work. Focused Bots accumulate useful context faster than an “everything assistant.” Later, use New → Create new agent to split by role. Docs put the account-wide Bot + group-chat cap at 50.</p>
 <h2>Common misconceptions</h2>
@@ -404,36 +410,4 @@ def cost():
 %s
 </div></section>
 ''' % pager("/learn/cost-and-pitfalls/")
-    return body
-
-def zh_guides():
-    body = '''
-<section class="band"><div class="wrap prose">
-<p class="kicker">Lesson 8 · Chinese resources</p>
-<h1>Grok Bot Orange Book and Awesome — pointers only</h1>
-<p class="meta" lang="zh-CN">本页是中文资源索引：橙皮书、蓝皮书与两份上手材料。本站不转载正文。</p>
-<p>This playbook is a roadmap and fact index, not a copy of someone else’s book onto one domain. Within two weeks of launch, Chinese-language writers published long pieces: some on multi-Bot scheduling, some on artifact contracts and delivery routes. awesome-grok-bot labels two of them the Orange Book and Blue Book. Their value is operational density, not replacing xAI / Cursor docs. Read the full text on GitHub. We do not republish or rewrite their chapter bodies, and we do not paste repository prompts here wholesale.</p>
-<p>When you read those long pieces, use the earlier lessons on this site as a calibration stick. Eligibility and pricing changed twice in mid-to-late August; any “only Ultra / Heavy can use it” written around August 12 may be stale — cross-check the three official originals on the <a href="/pricing/">pricing snapshot</a>. If a long piece treats “one computer per Bot” as isolation, prefer the <a href="/learn/computer/">shared computer lesson</a> and xAI docs: screens are not a security boundary. If a long piece calls a local grok CLI or desktop shell Grok Bot, return to the split on <a href="/learn/what-is-grok-bot/">What it is</a>.</p>
-<p>Suggested reading order: finish this site’s Install → Chief of Staff → Shared computer path, then open the Orange Book for early-week roster and cost control; open the Blue Book when you need to run the team as a delivery company (artifact contracts, route templates, INSTALL onboarding). Treat the repos as checklists, not paste-ready secret vaults. Still strip internal URLs and keys before sharing Bot links.</p>
-<div class="card nested">
-<h3>Orange Book · KinGao294/grok-bot-orange-book</h3>
-<p class="muted">awesome summary: Chinese Orange Book covering multi-Bot teams, routines, and cost control for the first two weeks. Repo: <a href="https://github.com/KinGao294/grok-bot-orange-book">github.com/KinGao294/grok-bot-orange-book</a></p>
-<p class="muted" lang="zh-CN">中文橙皮书：前两周的多 Bot 团队、例程和费用控制。</p>
-</div>
-<div class="card nested">
-<h3>Blue Book · rockyzhuo/grok-bot-blue-book</h3>
-<p class="muted">awesome summary: ops manual (companion to the Orange Book) that runs a Grok Bot team like a delivery company — artifact contracts, INSTALL.md onboarding, and several route templates. Repo: <a href="https://github.com/rockyzhuo/grok-bot-blue-book">github.com/rockyzhuo/grok-bot-blue-book</a></p>
-<p class="muted" lang="zh-CN">蓝皮书：把 Grok Bot 团队当成交付公司来跑——产物契约、INSTALL.md 引导，以及若干路线模板。</p>
-</div>
-<p>Two more Chinese getting-started materials are links only: <a href="https://github.com/dadamingmax/Grok-Bot-Setup-and-Usage-Guide">Grok Bot setup &amp; 5 pitfalls</a> (quota and approvals) and <a href="https://github.com/jobinben/Grok-Bot-Tutorial">China Grok Bot install tutorial</a>. Cross-check eligibility and pricing against this site’s <a href="/pricing/">pricing snapshot</a> — do not rely on plan names frozen in a long article’s screenshot.</p>
-<h2>Hard boundaries to keep while reading long guides</h2>
-<ul>
-<li>Shared computer; Bots are not a security boundary — prefer xAI docs over any “one computer per Bot” slip.</li>
-<li>Do not treat grok-app or a Grok Build desktop shell as Grok Bot.</li>
-<li>Learn long prompts and rosters from the originals; do not put secrets into shareable Bot configs.</li>
-</ul>
-<p>After this path: see work others actually shipped in the <a href="/use-cases/">field cases table</a>, and <a href="/troubleshooting/">symptom-based fixes</a> when things break.</p>
-%s
-</div></section>
-''' % pager("/learn/zh-guides/")
     return body
