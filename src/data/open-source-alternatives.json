@@ -1,0 +1,337 @@
+[
+  {
+    "name": "rakazo",
+    "url": "https://github.com/elie222/rakazo",
+    "blurb": "Open-source Grok Bot alternative — self-host the always-on teammate idea (1.9k★, Apache-2.0)."
+  },
+  {
+    "name": "gawkbot",
+    "url": "https://github.com/najmuzzaman-mohammad/gawkbot",
+    "blurb": "Local-first open alternative: npx gawkbot, local VM or cloud option, approval gate on every send (1.3k★). Not xAI’s product."
+  },
+  {
+    "name": "guaca",
+    "url": "https://github.com/madebywelch/guaca",
+    "blurb": "Another self-hosted take on persistent computer-use agents."
+  },
+  {
+    "name": "OpenGrokBot",
+    "url": "https://github.com/wolfqing/OpenGrokBot",
+    "blurb": "OpenClaw plus bring-your-own-model, assembled as a Bot stand-in."
+  },
+  {
+    "name": "XinyunOpenBot",
+    "url": "https://github.com/dongpen-max/XinyunOpenBot",
+    "blurb": "Chinese-language open alternative aimed at the same job-to-be-done."
+  },
+  {
+    "name": "OpenMausBot",
+    "url": "https://github.com/milind-soni/OpenMausBot",
+    "blurb": "Highest-star self-hosted alternative with a VM the bots can use (2.1k★, Apache-2.0). Not the official Grok Bot client."
+  },
+  {
+    "name": "open-grokbot",
+    "url": "https://github.com/ishandutta2007/open-grokbot",
+    "blurb": "Early equivalent / experiment — read before you grant credentials."
+  },
+  {
+    "name": "grok-bot-flake",
+    "url": "https://github.com/jordangarrison/grok-bot-flake",
+    "blurb": "Nix flake that repackages the official Linux .deb (no source build)."
+  },
+  {
+    "name": "grok-bot-bin",
+    "url": "https://github.com/Jabbslad/grok-bot-bin",
+    "blurb": "Unofficial Arch package that repackages the official Linux .deb; the built-in updater does not support Linux."
+  },
+  {
+    "name": "grokbot-linux-port",
+    "url": "https://github.com/Nichokas/grokbot-linux-port",
+    "blurb": "Wine-less community Linux port (Arch AUR + Fedora COPR + Ubuntu PPA); tracks 0.30.0. Note: Cursor CDN now also hosts official Linux 0.30.0 packages (36★)."
+  },
+  {
+    "name": "grok-bot-0.18-reconstructed",
+    "url": "https://github.com/b-nnett/grok-bot-0.18-reconstructed",
+    "blurb": "Unofficial TypeScript reconstruction of Grok Bot 0.18.0 for macOS, plus a local inference router experiment."
+  },
+  {
+    "name": "grok-bot-linux (CDN index)",
+    "url": "https://github.com/falser101/grok-bot-linux",
+    "blurb": "Community index of official Cursor-CDN Linux .deb/.rpm/AppImage URLs; does not host installers."
+  },
+  {
+    "name": "glorics/grok-bot-linux",
+    "url": "https://github.com/glorics/grok-bot-linux",
+    "blurb": "Retired unofficial Windows→Linux port; README now points to official Grok Bot 0.30.0 Linux packages on the Cursor CDN (AppImage/deb/rpm; 26★)."
+  },
+  {
+    "name": "mandarwagh9/botroster",
+    "url": "https://github.com/mandarwagh9/botroster",
+    "blurb": "Open-source Grok Bot-shaped roster: named teammates, one durable computer, approvals, and routines (Rust/Tauri)."
+  },
+  {
+    "name": "OnlyTerp/opengrok",
+    "url": "https://github.com/OnlyTerp/opengrok",
+    "blurb": "Unofficial model picker for the official Grok Bot client: one model per agent, verified wire maps for Grok/Claude/GLM/Gemini/DeepSeek/local, keys stay on your machine (385★)."
+  },
+  {
+    "name": "jakob-bu/grok-bot-linux-unofficial",
+    "url": "https://github.com/jakob-bu/grok-bot-linux-unofficial",
+    "blurb": "Unofficial Ubuntu/Linux desktop port (deb / AppImage / tarball) merging official app.asar onto Electron 42; resolves latest stable via Cursor update service (23★)."
+  },
+  {
+    "name": "glorics/omarchy-grok-bot",
+    "url": "https://github.com/glorics/omarchy-grok-bot",
+    "blurb": "Omarchy bar plugin for the unofficial Linux Grok Bot client: running/idle state, Cursor CDN update checks, and launch-or-focus (themed x.ai/bot face)."
+  },
+  {
+    "name": "discord-grok-bot-kit",
+    "url": "https://github.com/larry-fuqua/discord-grok-bot-kit",
+    "blurb": "Drop-in Discord listener that wakes a Grok Bot webhook on the owner’s mention, with keep-alive routines and a stdlib reply CLI."
+  },
+  {
+    "name": "parasite6/grok-bot-linux",
+    "url": "https://github.com/parasite6/grok-bot-linux",
+    "blurb": "Unofficial Fedora RPM of Grok Bot 0.30.0 converted from the public .deb (MIT packaging notes; not affiliated with xAI)."
+  },
+  {
+    "name": "grok-bot-0.18-original",
+    "url": "https://github.com/ChHsiching/grok-bot-0.18-original",
+    "blurb": "Untouched Grok Bot 0.18.0 runtime archive: unminified bundles mechanically split into a reproducible per-module tree (study-only; pairs with b-nnett reconstruction, 12★)."
+  },
+  {
+    "name": "stealth-bots/grok-bot-proxies",
+    "url": "https://github.com/stealth-bots/grok-bot-proxies",
+    "blurb": "Public HTTPS hops that forward Slack Events and Linear Agent webhooks into Grok Bot/Cursor routines (Bearer auth, challenge echo, Linear GraphQL reply path); MIT, Vercel."
+  },
+  {
+    "name": "aaravarr/openbot",
+    "url": "https://github.com/aaravarr/openbot",
+    "blurb": "Bring-your-own-model hop for Grok Bot Computer: one-line install, local control UI, and an Official switch that restores stock host behavior (MIT)."
+  },
+  {
+    "name": "Allan-Aa/QuotaRail",
+    "url": "https://github.com/Allan-Aa/QuotaRail",
+    "blurb": "Native macOS Dock-style usage rail; Cursor integration treats Grok Bot weekly usage as the primary ring (also Claude/Codex/Grok; MIT, v0.9.1)."
+  },
+  {
+    "name": "diegocp01/grok_bot_usage_menu_bar",
+    "url": "https://github.com/diegocp01/grok_bot_usage_menu_bar",
+    "blurb": "Native macOS menu-bar app that shows weekly Cursor Grok Bot usage remaining and the reset countdown (battery or percent; MIT)."
+  },
+  {
+    "name": "HxHippy/grok-bot-arch",
+    "url": "https://github.com/HxHippy/grok-bot-arch",
+    "blurb": "Arch Linux installer/updater that pulls the official Grok Bot .deb from Cursor’s signed apt index (Anysphere GPG + SHA256 checks; MIT)."
+  },
+  {
+    "name": "limehawk/omarchy-grok-bot",
+    "url": "https://github.com/limehawk/omarchy-grok-bot",
+    "blurb": "Omarchy bar plugin (limehawk.grok-bot) for official `/usr/bin/grok-bot`: keep-alive, show/hide, and a Hyprland special-workspace park rule (MIT)."
+  },
+  {
+    "name": "enderzcx/grok-bot-switch",
+    "url": "https://github.com/enderzcx/grok-bot-switch",
+    "blurb": "Preview channel switcher for Grok Bot Computer: install via Bot prompt, then flip between native inference and external OpenAI-compatible providers (independent-mode panel)."
+  },
+  {
+    "name": "IgorWarzocha/grok-codex-router",
+    "url": "https://github.com/IgorWarzocha/grok-codex-router",
+    "blurb": "Experimental Sand-VM router that keeps Grok Bot’s UI/tools while sending inference to ChatGPT Codex (per-agent GPT-5.6 routes + local control UI; MIT)."
+  },
+  {
+    "name": "n0nag0n/patb",
+    "url": "https://github.com/n0nag0n/patb",
+    "blurb": "Filing-cabinet CLI for Grok Bot computers: store one decision per record and have routines `patb get/search` instead of stuffing rules into the profile (3★)."
+  },
+  {
+    "name": "Archive228/foreman",
+    "url": "https://github.com/Archive228/foreman",
+    "blurb": "Crew harness/CLI (`foreman`) for hosted Grok Bot teams: declared packs, inspect/sync against gbot JSON, effect ledger, shift reports, and a `.grok-plugin` (MIT, 2★)."
+  },
+  {
+    "name": "falser101/grok-bot-bin",
+    "url": "https://github.com/falser101/grok-bot-bin",
+    "blurb": "AUR package grok-bot-bin that installs official Grok Bot 0.30.0 from Cursor’s Linux .deb (pinned sha256; packaging 0BSD)."
+  },
+  {
+    "name": "ATLTuck/unofficial-grok-bot-arch-installer",
+    "url": "https://github.com/ATLTuck/unofficial-grok-bot-arch-installer",
+    "blurb": "Unofficial Arch/Manjaro installer that turns the official Grok Bot .deb into a native pacman package (install.sh + PKGBUILD)."
+  },
+  {
+    "name": "d-513/grok-bot-nix",
+    "url": "https://github.com/d-513/grok-bot-nix",
+    "blurb": "Nix flake that wraps the official Grok Bot 0.30.0 .deb with Electron 42 (`nix run github:d-513/grok-bot-nix`); NixOS, Home Manager, overlay, and a six-hour pin updater."
+  },
+  {
+    "name": "trac3r00/groken",
+    "url": "https://github.com/trac3r00/groken",
+    "blurb": "macOS CLI/MCP/SKILL.md client that drives official Grok Bot cloud computers over the app’s OAuth and gateway (chat, VNC, exec, routines; MIT, 1★)."
+  },
+  {
+    "name": "codeaashu/grokbot-shim",
+    "url": "https://github.com/codeaashu/grokbot-shim",
+    "blurb": "Run the installed Grok Bot desktop locally on Linux with a local Chrome/XFCE computer and Codex or OpenAI-compatible models (ISC, 19★)."
+  },
+  {
+    "name": "pmcclelland/bot-board",
+    "url": "https://github.com/pmcclelland/bot-board",
+    "blurb": "Shared kanban for humans and Grok Bots (Backlog / To Do / Doing / Done) with REST plus one MCP URL; live at botboard.pmcclel.land."
+  },
+  {
+    "name": "GrokRouter",
+    "url": "https://github.com/promptadvisers/grokrouter",
+    "blurb": "Unofficial reversible router that keeps official Grok Bot 0.30.0 chat, files, and cloud computer while sending a Bot through Codex SDK or OpenRouter."
+  },
+  {
+    "name": "Filicon",
+    "url": "https://github.com/irons163/filicon-bot",
+    "blurb": "Native macOS SwiftUI port of Grok Bot 0.18 product behavior, with Keychain keys, MCP, remote-computer viewing, and no Electron runtime."
+  },
+  {
+    "name": "Grokbot Permissions Helper",
+    "url": "https://github.com/vinxp97/grokbot-permissions-helper",
+    "blurb": "Tiny signed macOS .app so a desktop Grok Bot can get Calendar, Contacts, and Reminders TCC prompts and dump a parseable snapshot without storing secrets in git."
+  },
+  {
+    "name": "grok-bridge",
+    "url": "https://github.com/shihao918/grok-bridge",
+    "blurb": "Unofficial Windows daemon that registers on Grok Bot's UserComputer channel and hands cloud-agent tasks to a local LangGraph or AutoGen pipeline."
+  },
+  {
+    "name": "download-grok-bot",
+    "url": "https://github.com/gprot42/grok-bot-tool",
+    "blurb": "Zero-dependency Python CLI that saves a public x.ai/bot share (profile, packed recipe, skills, routines) to a local folder, reading the macOS Grok Bot session when present."
+  },
+  {
+    "name": "grokbot-openai",
+    "url": "https://github.com/owenisas/grokbot-openai",
+    "blurb": "Unofficial zero-dependency Python login plus local server that turns a Grok Bot PKCE session into OpenAI /v1/chat/completions for Hermes, OpenCode, or curl."
+  },
+  {
+    "name": "omarchy-grokbot (rlimberger)",
+    "url": "https://github.com/rlimberger/omarchy-grokbot",
+    "blurb": "Unofficial Omarchy bar widget (QML) that shows a grokbot-tui inbox and opens bots in the native Rust TUI, not the Electron /usr/bin/grokbot client."
+  },
+  {
+    "name": "huginn",
+    "url": "https://github.com/pyrex41/huginn",
+    "blurb": "Host sidecar so a Grok Bot can attach to live Claude Code, Codex, and Grok Build sessions via a native control-plane MCP (list/watch/prompt/interrupt)."
+  },
+  {
+    "name": "floks-pc",
+    "url": "https://github.com/Adaptive-Liquidity/floks-pc",
+    "blurb": "Standalone Agent Computer Cloud addon so each Grok Bot gets its own isolated provider-backed machine (Runloop Devbox v1) via pair-code MCP."
+  },
+  {
+    "name": "Lots of Agents",
+    "url": "https://github.com/carllippert/lots_of_agents",
+    "blurb": "Native macOS Swift tool that launches multiple signed-in clones of Grok Bot, Cursor, Claude, and ChatGPT from one installed app with private data folders."
+  },
+  {
+    "name": "BotRouter",
+    "url": "https://github.com/lazerusrm/botrouter",
+    "blurb": "Tools that let Grok Bot keep Computer/browser/shell while routing inference through other subscriptions (Cursor, Codex, xAI) from inside the Bot computer."
+  },
+  {
+    "name": "Orbital",
+    "url": "https://github.com/beamnxw/Orbital",
+    "blurb": "Second-brain OS for Grok Bot: one CHIEF plus six decks with human approval; local engine and deck prompts are live, Grok Bot host still in build."
+  },
+  {
+    "name": "Aluvia geo proxy for agents",
+    "url": "https://github.com/aluvia-connect/aluvia",
+    "blurb": "CLI plus SKILL.md that routes a cloud agent's Chrome through residential/mobile IPs by country—docs and install paths explicitly cover Grok Bot (~/.grok) and Cursor."
+  },
+  {
+    "name": "botmigrate",
+    "url": "https://github.com/colesmcintosh/botmigrate",
+    "blurb": "Local Python CLI that converts and syncs bot definitions between Grok Bot share JSON and Hermes Agent profiles (skills, cron, mcp stubs)—no hosted calls."
+  },
+  {
+    "name": "constellation-MaxQ",
+    "url": "https://github.com/0sm0s1z/constellation-MaxQ",
+    "blurb": "One-command MaxQ bootstrap for a Grok Bot computer: idempotent apply/revert installs theme, Ghostty/Chrome Mocha bits, operator CLIs into $HOME/bin, and optional local GOST proxy—without wiping SSH keys or Chrome logins."
+  },
+  {
+    "name": "gbu Grok Bot usage checker",
+    "url": "https://github.com/Kargatharaakash/grok-bot-usage",
+    "blurb": "Zero-dependency CLI (gbu) that checks weekly Grok Bot / Cursor usage and on-demand spend across multiple accounts in one terminal—distinct from the macOS menu-bar usage app already catalogued."
+  },
+  {
+    "name": "grok-bot-mcp control server",
+    "url": "https://github.com/Kargatharaakash/grok-bot-mcp",
+    "blurb": "Local MCP server that lets any MCP client create/message/search Grok Bots, read transcripts, and check usage against the desktop app—companion to gbu, distinct from the catalogued grok-bot-mcp-connector."
+  },
+  {
+    "name": "multiBot CLI teammate factory",
+    "url": "https://github.com/simo255/multiBot",
+    "blurb": "Grok Bot factory template that spawns CLI-delegated teammates (Cursor agent, grok-build, Antigravity, Codex) via CreateAgent with install scripts and workflow examples."
+  },
+  {
+    "name": "grokbot2api Cursor inference proxy",
+    "url": "https://github.com/taowen/grokbot2api",
+    "blurb": "Local OpenAI-compatible proxy that bridges Grok Build to Cursor native inference protobuf with multi-turn tool calls for Responses and Chat Completions."
+  },
+  {
+    "name": "grok-to-hermes profile converter",
+    "url": "https://github.com/jmporchet/grok-to-hermes",
+    "blurb": "TypeScript CLI that converts sharable Grok Bot export data into Hermes Agent profile distributions and installable tar.gz packages."
+  },
+  {
+    "name": "Codex↔Grok MCP second-opinion bridge",
+    "url": "https://github.com/Fato07/codex-grok-mcp",
+    "blurb": "Unofficial local-first MCP bridge that lets Codex ask authenticated Grok CLI for bounded second opinions and optionally message a persistent Grok Bot without exporting secrets."
+  },
+  {
+    "name": "Grok Bot Cloudflare Workers inbox",
+    "url": "https://github.com/ethanolivertroy/grokbot-cloudflare-inbox",
+    "blurb": "Public Cloudflare Workers email-inbox template based on Agentic Inbox so a Grok Bot can connect over MCP to a self-hosted mailbox you deploy yourself."
+  },
+  {
+    "name": "grokbot-fleet MCP manager",
+    "url": "https://github.com/Dahhrk/grokbot-fleet",
+    "blurb": "Open-source MCP server that lists and updates Grok Bots from Cursor—prompts, routines, and skills—via a Fleet bot job inbox because there is no official management API."
+  },
+  {
+    "name": "Omarchy Grok/Cursor usage tabs",
+    "url": "https://github.com/jexmarc/omarchy-spacexai-usage",
+    "blurb": "Omarchy Agents panel service plugin that writes remaining-quota JSON for Grok, Grok Bot (grokbot), and Cursor into the stock usage contract."
+  },
+  {
+    "name": "Cursor Grokbot Helper VSIX",
+    "url": "https://github.com/banana2556/cursor-grokbot-helper",
+    "blurb": "Cursor extension (VSIX) that installs a local Sand client-mode patch so Grok Bot advanced mode works, without uploading session contents."
+  },
+  {
+    "name": "Discord↔Grok Bot gateway",
+    "url": "https://github.com/RudeDude/grokbot-discord",
+    "blurb": "Python Discord gateway that maps mentions or bot names to many private Grok Bots, acks immediately, then wakes them over webhooks for phone-friendly chat."
+  },
+  {
+    "name": "pigeon-mcp Gmail connector",
+    "url": "https://github.com/iXanadu/pigeon-mcp",
+    "blurb": "Self-hosted Gmail MCP for Grok Bot and other clients: multi-account OAuth, real MIME sends with attachments, and reads that avoid dumping base64 into the model."
+  },
+  {
+    "name": "plaude NotePin→GrokBot pipeline",
+    "url": "https://github.com/quolu/plaude",
+    "blurb": "Plaud NotePin S inbox pipeline (Whisper, templates, email) with a SKILL.md meant to run on a Linux Grok Bot computer as the classifier and summarizer."
+  },
+  {
+    "name": "Arena Grok Bot connector MVP",
+    "url": "https://github.com/openlawteam/arena-test",
+    "blurb": "Next.js Arena MVP that pairs user-hosted Grok Bots with short-lived codes, installs a native plugin/MCP, and relays free bot-to-bot room chats."
+  },
+  {
+    "name": "grokbot-BYOK inference adapter",
+    "url": "https://github.com/jroth1111/grokbot-BYOK",
+    "blurb": "Bring-your-own-key inference adapter that routes Grok Bot AI calls through your providers, with a large TypeScript test suite and multi-provider failover."
+  },
+  {
+    "name": "Cursor Account Manager + Grok Bot Sand",
+    "url": "https://github.com/kuk-888/cursor-account-manager",
+    "blurb": "Cursor multi-account VSIX that switches logins, shows Auto/Other/Bot quotas, and can inject Grok Bot Sand Stream routing on Cursor 3.18.9."
+  }
+]

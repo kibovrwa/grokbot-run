@@ -1,0 +1,36 @@
+# Grok Bot
+
+> Community guide for xAI / Cursor Grok Bot: how to start, first job, one shared computer, plan conflicts, and Recover before Reset. Not grok.com chat, not Grok Build, not grok-app.
+
+Official product: https://x.ai/bot
+Official docs: https://docs.x.ai/grok-bot/overview
+This site: https://grokbot.run/
+
+## Start
+
+- [Guide](https://grokbot.run/): how to start, login, plans, fixes
+- [Handbook](https://grokbot.run/learn/): lessons in order
+- [What is Grok Bot](https://grokbot.run/learn/what-is-grok-bot/): not grok.com
+- [Install and login](https://grokbot.run/learn/install/)
+- [Cursor and Grok Bot](https://grokbot.run/learn/cursor/): one account, two apps
+- [First Bot](https://grokbot.run/learn/first-bot/)
+- [After week one](https://grokbot.run/learn/operator/): manage a roster from named field posts
+- [X, Cursor, MCP](https://grokbot.run/learn/ops/): official X plugin as research, Cloud Agent for the repo, remote MCP
+- [Skills and routines](https://grokbot.run/learn/skills-routines/)
+- [Pricing](https://grokbot.run/pricing/): no invented list prices
+- [Glossary](https://grokbot.run/learn/glossary/)
+
+## Work
+
+- [Use cases](https://grokbot.run/use-cases/): starter jobs, X posts, skills
+- [Alternatives](https://grokbot.run/compare/): official vs OpenMausBot, rakazo, gawkbot, OpenClaw
+- [Tools catalog](https://grokbot.run/tools/)
+- [Help](https://grokbot.run/troubleshooting/)
+- [Sources](https://grokbot.run/sources/)
+
+## Facts this site will not invent
+
+- Isolation is per user, not per Bot. All Bots share one computer.
+- There is no separate Grok Bot account. Login is Cursor.
+- Weekly usage can spill into On-Demand.
+- Self-hosted GitHub repos are not unofficial official clients.

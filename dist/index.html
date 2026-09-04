@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grok Bot guide: how to start, login, plans, and fixes</title>
+<meta name="description" content="How to start Grok Bot: Cursor login, a first job you can paste, one shared computer, dated plan conflicts, and Recover before Reset.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://grokbot.run/">
+<link rel="alternate" hreflang="en" href="https://grokbot.run/">
+<link rel="alternate" hreflang="x-default" href="https://grokbot.run/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Grok Bot Guide">
+<meta property="og:title" content="Grok Bot guide: how to start, login, plans, and fixes">
+<meta property="og:description" content="How to start Grok Bot: Cursor login, a first job you can paste, one shared computer, dated plan conflicts, and Recover before Reset.">
+<meta property="og:url" content="https://grokbot.run/">
+<meta property="og:image" content="https://grokbot.run/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Grok Bot guide: how to start, login, plans, and fixes">
+<meta name="twitter:description" content="How to start Grok Bot: Cursor login, a first job you can paste, one shared computer, dated plan conflicts, and Recover before Reset.">
+<meta name="twitter:image" content="https://grokbot.run/og.png">
+<link rel="icon" href="/brand/grok-bot-face.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/brand/grok-bot-face.svg">
+<style>/* Grok Bot Playbook — warm paper, black mark, quiet chrome */
+:root {
+  --bg: #F6F4EF;
+  --bg-elev: #FFFFFF;
+  --surface: #EFEDE6;
+  --overlay: rgba(16, 16, 0, 0.045);
+  --btn-sec: #E7E4DC;
+  --text: #111111;
+  --muted: #5E636B;
+  --nav-muted: rgba(17, 17, 17, 0.52);
+  --hairline: rgba(17, 17, 17, 0.08);
+  --hairline-strong: rgba(17, 17, 17, 0.14);
+  --radius: 22px;
+  --radius-n: 16px;
+  --radius-s: 12px;
+  --shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset, 0 10px 28px rgba(16, 16, 0, 0.045);
+  --shadow-hover: 0 1px 0 rgba(255, 255, 255, 0.8) inset, 0 16px 40px rgba(16, 16, 0, 0.08);
+  --max: 1120px;
+  --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Inter, Geist, "Helvetica Neue", Arial, sans-serif;
+  --ink: #0A0A0A;
+  --accent: #F26B2A;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; color-scheme: light; scroll-padding-top: 88px; }
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: #111; color: #fff; }
+img { max-width: 100%; height: auto; }
+a { color: var(--text); text-underline-offset: 3px; }
+a:hover { opacity: .7; }
+:focus-visible { outline: 2px solid #111; outline-offset: 3px; }
+.wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+
+header.site {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(246, 244, 239, 0.82);
+  backdrop-filter: saturate(1.3) blur(16px);
+  -webkit-backdrop-filter: saturate(1.3) blur(16px);
+  border-bottom: 1px solid var(--hairline);
+}
+.nav { display: flex; align-items: center; gap: 18px; min-height: 72px; position: relative; }
+.brand { display: flex; align-items: center; gap: 11px; text-decoration: none; flex: none; }
+.brand:hover { opacity: 1; }
+.brand img.logo,
+.brand img.mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 11px;
+  display: block;
+  flex: none;
+  box-shadow: 0 0 0 1px rgba(17, 17, 17, 0.08), 0 2px 8px rgba(10, 10, 10, 0.08);
+}
+.brand img.word { display: none; }
+.brand .name,
+.brand .tag {
+  font-size: 16px;
+  font-weight: 640;
+  letter-spacing: -0.028em;
+  color: var(--text);
+  white-space: nowrap;
+}
+.brand .tag {
+  font-weight: 530;
+  color: var(--muted);
+}
+.nav-rule {
+  width: 1px;
+  height: 18px;
+  background: var(--hairline-strong);
+  flex: none;
+}
+nav.links { display: flex; gap: 2px; margin-left: auto; flex-wrap: nowrap; align-items: center; }
+nav.links a {
+  color: var(--nav-muted);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 530;
+  padding: 8px 12px;
+  border-radius: 9999px;
+}
+nav.links a:hover { color: var(--text); opacity: 1; background: rgba(17, 17, 17, 0.04); }
+nav.links a[aria-current="page"] { color: var(--text); background: var(--bg-elev); box-shadow: 0 0 0 1px var(--hairline); }
+.menu-btn {
+  display: none;
+  border: 0;
+  background: var(--btn-sec);
+  border-radius: 9999px;
+  padding: 8px 14px;
+  font: inherit;
+  font-size: 14px;
+}
+
+.hero {
+  padding: 84px 0 36px;
+  position: relative;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -40px;
+  width: min(920px, 100%);
+  height: 380px;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse at 50% 0%, rgba(17, 17, 17, 0.055), transparent 68%);
+  pointer-events: none;
+}
+.hero .wrap { position: relative; }
+.hero-logo {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: block;
+  margin: 0 0 22px;
+  box-shadow: 0 8px 22px rgba(10, 10, 10, 0.12);
+}
+.hero-product {
+  background: var(--ink);
+  color: #F6F4EF;
+  padding: 72px 0 0;
+  margin: 0 0 8px;
+}
+.hero-product::before { display: none; }
+.hero-product .wrap { text-align: center; }
+.hero-product .kicker { color: rgba(246, 244, 239, 0.5); }
+.hero-product h1 {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.22em;
+}
+.hero-product .lede {
+  color: rgba(246, 244, 239, 0.58);
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero-next { margin: 14px 0 0; font-size: 14px; }
+.hero-next a { color: rgba(246, 244, 239, 0.72); }
+.hero-product .cta-row { justify-content: center; }
+.hero-product .btn-primary { background: #F6F4EF; color: #0A0A0A; }
+.hero-product .btn-primary:hover { box-shadow: 0 10px 24px rgba(246, 244, 239, 0.16); }
+.hero-product .btn-secondary { background: rgba(246, 244, 239, 0.08); color: #F6F4EF; }
+.hero-product .btn-ghost { color: #F6F4EF; border-color: rgba(246, 244, 239, 0.22); }
+.wordmark-face {
+  display: inline-flex;
+  width: 0.86em;
+  height: 0.86em;
+  vertical-align: -0.08em;
+}
+.wordmark-face svg { width: 100%; height: 100%; display: block; }
+.product-stage {
+  margin: 16px auto 0;
+  max-width: 880px;
+  background: #141414;
+  border: 1px solid rgba(246, 244, 239, 0.08);
+  border-bottom: 0;
+  border-radius: 18px 18px 0 0;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 248px 1fr;
+  text-align: left;
+  min-height: 340px;
+}
+.roster { padding: 14px 10px; border-right: 1px solid rgba(246, 244, 239, 0.06); }
+.roster-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 10px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: rgba(246, 244, 239, 0.78);
+  font-size: 14px;
+}
+.roster-row:hover { opacity: 1; background: rgba(246, 244, 239, 0.05); color: #fff; }
+.roster-row strong { display: block; font-weight: 580; color: #fff; }
+.roster-row span { display: block; font-size: 12px; color: rgba(246, 244, 239, 0.42); }
+.face {
+  width: 28px;
+  height: 28px;
+  border-radius: 9px;
+  flex: none;
+  display: block;
+}
+.stage-main { padding: 22px 22px 18px; }
+.stage-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(246, 244, 239, 0.5);
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+.stage-bar b { color: #F6F4EF; font-weight: 560; }
+.bubble {
+  max-width: 92%;
+  border-radius: 16px;
+  padding: 12px 14px;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0 0 10px;
+}
+.bubble.me { background: #F6F4EF; color: #111; margin-left: auto; }
+.bubble.bot { background: #1E1E1E; color: #EDEBE4; }
+.thinking {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent);
+  font-size: 13px;
+  margin-top: 8px;
+}
+.proof {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 22px;
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.proof li { color: rgba(246, 244, 239, 0.55); font-size: 13px; }
+.proof b { color: #F6F4EF; font-weight: 620; }
+.stage-caption {
+  margin: 28px 0 0;
+  color: rgba(246, 244, 239, 0.48);
+  font-size: 13px;
+}
+.steal {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 16px;
+  align-items: stretch;
+}
+.steal .job-card { margin: 0; }
+.mistakes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.mistake {
+  background: var(--bg-elev);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  padding: 22px 22px 18px;
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+a.mistake:hover { opacity: 1; border-color: var(--hairline-strong); }
+.mistake .tag {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: #9A4A12;
+  font-weight: 650;
+  margin: 0 0 8px;
+}
+.mistake h3 { margin: 0 0 8px; }
+.mistake p { margin: 0; color: var(--muted); font-size: 15px; }
+.quotes { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+.quote {
+  background: var(--bg-elev);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  padding: 22px 22px 18px;
+  box-shadow: var(--shadow);
+}
+.quote p { margin: 0 0 12px; font-size: 16px; }
+.quote .who { margin: 0; color: var(--muted); font-size: 13px; }
+.featured {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin: 0 0 28px;
+}
+.diagram {
+  background: #141414;
+  color: #EDEBE4;
+  border-radius: var(--radius-n);
+  padding: 18px 18px 14px;
+  margin: 22px 0;
+}
+.diagram svg { display: block; width: 100%; height: auto; max-width: 520px; }
+.diagram figcaption { margin: 12px 0 0; font-size: 13px; color: rgba(237, 235, 228, 0.62); }
+.compare-cards { display: none; gap: 14px; }
+@media (max-width: 860px) {
+  .compare-desktop { display: none; }
+  .compare-cards { display: grid; grid-template-columns: 1fr; }
+}
+.beta {
+  display: none;
+}
+h1 {
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 520;
+  letter-spacing: -0.042em;
+  line-height: 1.08;
+  margin: 0 0 16px;
+}
+.lede {
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--muted);
+  max-width: 40rem;
+  margin: 0 0 28px;
+}
+h1 + .en-sub, p.en-sub { display: none; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 28px 0 4px; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 9999px;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 560;
+  border: 0;
+  transition: transform .16s ease, box-shadow .16s ease, background .16s ease, opacity .16s ease;
+}
+.btn:hover { opacity: 1; transform: translateY(-1px); }
+.btn-primary { background: #111; color: #fff; }
+.btn-primary:hover { box-shadow: 0 10px 24px rgba(17, 17, 17, 0.2); }
+.btn-secondary { background: var(--btn-sec); color: #111; }
+.btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--hairline-strong); }
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.card {
+  background: var(--bg-elev);
+  border-radius: var(--radius);
+  padding: 26px 26px 22px;
+  border: 1px solid var(--hairline);
+  box-shadow: var(--shadow);
+}
+.card.nested {
+  border-radius: var(--radius-n);
+  background: var(--bg-elev);
+  border: 1px solid var(--hairline);
+  box-shadow: none;
+  padding: 18px 18px 16px;
+}
+.card h2, .card h3 { margin-top: 0; }
+.card p:last-child { margin-bottom: 0; }
+a.card { text-decoration: none; color: inherit; display: block; }
+a.card:hover { opacity: 1; border-color: var(--hairline-strong); }
+h2 {
+  font-size: clamp(26px, 3.2vw, 36px);
+  font-weight: 520;
+  letter-spacing: -0.032em;
+  line-height: 1.18;
+  margin: 0 0 12px;
+}
+h3 { font-size: 18px; font-weight: 600; letter-spacing: -0.02em; margin: 28px 0 8px; }
+p { margin: 0 0 1em; color: var(--text); }
+.muted, .note { color: var(--muted); }
+section.band { padding: 64px 0; }
+section.band + section.band { padding-top: 8px; }
+
+.roadmap { display: flex; flex-direction: column; gap: 10px; }
+.step {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 16px;
+  align-items: start;
+  background: var(--bg-elev);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid var(--hairline);
+  box-shadow: var(--shadow);
+  transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+}
+.step:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+  border-color: var(--hairline-strong);
+  box-shadow: var(--shadow-hover);
+}
+.num {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  background: #111;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 620;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+.step h3 { margin: 4px 0 4px; font-size: 17px; }
+.step p { margin: 0; color: var(--muted); font-size: 15px; }
+
+.faq { padding: 8px 26px 12px; }
+.faq details { border-top: 1px solid var(--hairline); padding: 16px 0; }
+.faq details:first-child { border-top: 0; }
+.faq summary {
+  cursor: pointer;
+  font-weight: 560;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; color: var(--muted); font-weight: 400; font-size: 20px; line-height: 1; }
+.faq details[open] summary::after { content: "–"; }
+.faq details p { margin: 10px 0 0; color: var(--muted); font-size: 16px; }
+
+.prose { max-width: 44rem; }
+.prose p { margin-bottom: 1.05em; }
+.prose ul, .prose ol { padding-left: 1.2em; margin: 0 0 1.1em; }
+.prose li { margin: 0 0 .5em; }
+.prose a { text-underline-offset: 3px; }
+.prose h2 { margin-top: 2.1em; }
+.prose > .kicker + h1 { margin-top: 6px; }
+.callout {
+  background: var(--bg-elev);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-n);
+  padding: 16px 18px;
+  margin: 22px 0;
+  box-shadow: var(--shadow);
+}
+.callout.warn {
+  background: #FFF8EC;
+  border-color: rgba(176, 112, 20, 0.16);
+  box-shadow: none;
+}
+.meta { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
+.pager { display: flex; justify-content: space-between; gap: 12px; margin: 48px 0 8px; flex-wrap: wrap; }
+.pager a {
+  background: var(--bg-elev);
+  border: 1px solid var(--hairline);
+  border-radius: 9999px;
+  padding: 10px 16px;
+  text-decoration: none;
+  font-size: 14px;
+  box-shadow: var(--shadow);
+}
+.pager a:hover { opacity: 1; }
+
+footer.site {
+  border-top: 1px solid var(--hairline);
+  padding: 48px 0 64px;
+  margin-top: 40px;
+  color: var(--muted);
+  font-size: 14px;
+  background: transparent;
+}
+footer.site a { color: var(--muted); }
+footer.site a:hover { color: var(--text); opacity: 1; }
+.foot-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 32px; margin-bottom: 28px; }
+.foot-grid h4 {
+  margin: 0 0 12px;
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.foot-grid a { display: block; text-decoration: none; margin: 0 0 8px; }
+.foot-grid p { color: var(--muted); font-size: 14px; line-height: 1.55; }
+
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 16px; }
+.filters button {
+  border: 1px solid var(--hairline);
+  background: var(--bg-elev);
+  border-radius: 9999px;
+  padding: 7px 12px;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  color: var(--text);
+}
+.filters button[aria-pressed="true"] { background: #111; color: #fff; border-color: #111; }
+.tool-row, .case-card {
+  background: var(--bg-elev);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-n);
+  padding: 16px 18px;
+  margin: 0 0 10px;
+  box-shadow: var(--shadow);
+}
+.tool-row h3, .case-card h3 { margin: 0 0 4px; font-size: 16px; }
+.tool-row p, .case-card p { margin: 0; font-size: 15px; color: var(--muted); }
+.job-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.job-card {
+  background: var(--bg-elev);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  padding: 22px 22px 18px;
+  box-shadow: var(--shadow);
+}
+.job-card h3 { margin: 0 0 8px; }
+.job-card p { margin: 0 0 12px; color: var(--muted); font-size: 15px; }
+.job-card pre {
+  margin: 0 0 12px;
+  padding: 14px 16px;
+  background: var(--surface);
+  border-radius: var(--radius-s);
+  font-size: 13.5px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.job-card code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+.copy-btn {
+  border: 0;
+  background: #111;
+  color: #fff;
+  border-radius: 9999px;
+  padding: 8px 14px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 560;
+  cursor: pointer;
+}
+.copy-btn:hover { opacity: .86; }
+.prose .job-card { margin: 18px 0 22px; max-width: none; }
+.kicker {
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 650;
+  margin: 0 0 10px;
+}
+.crumbs { font-size: 13px; color: var(--muted); }
+.crumbs .wrap { padding-top: 18px; padding-bottom: 0; }
+.crumbs a { color: var(--muted); text-decoration: none; }
+.crumbs a:hover { color: var(--text); }
+.crumbs .sep { margin: 0 8px; opacity: .45; }
+.crumbs span:last-child { color: var(--text); }
+.terms { margin: 0 0 1.4em; }
+.terms dt { font-weight: 650; margin: 1.1em 0 4px; }
+.terms dd { margin: 0; color: var(--muted); }
+.table-wrap { overflow-x: auto; margin: 0 0 1.4em; }
+table { width: 100%; border-collapse: collapse; font-size: 15px; background: var(--bg-elev); border-radius: var(--radius-n); overflow: hidden; }
+th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--hairline); vertical-align: top; }
+th { color: var(--muted); font-weight: 560; font-size: 12px; letter-spacing: .04em; text-transform: uppercase; background: var(--surface); }
+tr:last-child td { border-bottom: 0; }
+.search {
+  width: 100%;
+  border: 1px solid var(--hairline);
+  border-radius: 9999px;
+  padding: 13px 18px;
+  font: inherit;
+  font-size: 15px;
+  background: var(--bg-elev);
+  margin: 0 0 16px;
+  box-shadow: var(--shadow);
+}
+.search:focus { outline: 2px solid #111; outline-offset: 2px; }
+.hidden { display: none !important; }
+
+.source-section { padding: 48px 0 0; }
+.source-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.source-list li, .source-item {
+  background: var(--bg-elev);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-n);
+  padding: 14px 16px;
+  font-size: 15px;
+  box-shadow: var(--shadow);
+}
+.source-list a { font-weight: 560; text-underline-offset: 3px; }
+.source-note { display: block; margin-top: 4px; color: var(--muted); font-size: 13px; line-height: 1.45; }
+
+@media (max-width: 860px) {
+  .grid-2, .grid-3, .foot-grid, .job-grid, .steal, .mistakes, .quotes { grid-template-columns: 1fr; }
+  .nav-rule { display: none; }
+  nav.links { display: none; }
+  nav.links.open {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: absolute;
+    top: 68px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    background: var(--bg);
+    padding: 12px 20px 20px;
+    border-bottom: 1px solid var(--hairline);
+    gap: 4px;
+  }
+  .menu-btn { display: inline-flex; margin-left: auto; }
+  .hero { padding-top: 48px; }
+  .hero-product { padding-top: 40px; }
+  .hero-product h1 { font-size: clamp(32px, 10vw, 44px); }
+  .product-stage { grid-template-columns: 1fr; min-height: 0; }
+  .roster { display: grid; grid-template-columns: 1fr 1fr; border-right: 0; border-bottom: 1px solid rgba(246, 244, 239, 0.06); }
+  .step { grid-template-columns: 40px 1fr; padding: 16px; }
+  h1 { font-size: clamp(32px, 10vw, 44px); }
+}
+@media (max-width: 720px) { .source-list { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto; transition: none !important; }
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Grok Bot Guide", "url": "https://grokbot.run/", "inLanguage": "en", "description": "Grok Bot guide: how to start, Cursor login, first job, shared computer, plan conflicts, and Recover before Reset.", "publisher": {"@type": "Organization", "name": "Grok Bot Guide", "logo": {"@type": "ImageObject", "url": "https://grokbot.run/brand/grok-bot-face.svg"}}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is Grok Bot the same as grok.com or Grok?", "acceptedAnswer": {"@type": "Answer", "text": "No. grok.com is chat plus Imagine and Voice. Grok Bot is a separate app: named teammates plus one shared cloud computer. Google often shows grok.com for a grok bot search — that is the wrong product."}}, {"@type": "Question", "name": "Is this the official Grok Bot site?", "acceptedAnswer": {"@type": "Answer", "text": "No. This is a community how-to: first job, login, shared computer, plan conflicts, Recover before Reset, and an operator path after week one. Official packages stay on x.ai/bot."}}, {"@type": "Question", "name": "Where do I download the Grok Bot app?", "acceptedAnswer": {"@type": "Answer", "text": "Desktop packages are on x.ai/bot (macOS, Windows, Linux). iOS is on the App Store; Android is on Google Play. Step-by-step is on the install page."}}, {"@type": "Question", "name": "How do I log in to Grok Bot?", "acceptedAnswer": {"@type": "Answer", "text": "There is no separate Grok Bot account. Open the app and sign in with the Cursor account that holds the plan and usage."}}, {"@type": "Question", "name": "Is Grok Bot free? Which plan do I need?", "acceptedAnswer": {"@type": "Answer", "text": "There is no consumer free tier and no standalone SKU. Access is bundled with paid Cursor or a linkable SuperGrok / X plan, plus a limited usage trial on some accounts. Enterprise had a separate two-week org trial — see Pricing."}}, {"@type": "Question", "name": "Is there a Grok Bot app for iOS and Android?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. iPhone needs iOS 18+; Android 9+. iPad was not supported at launch. The same roster syncs with desktop after Cursor login."}}, {"@type": "Question", "name": "If the computer won't connect, should I Reset?", "acceptedAnswer": {"@type": "Answer", "text": "No. The official order is Retry, restart, Recover, Update Agent Computer. Reset can lose unsynced work. See Help."}}, {"@type": "Question", "name": "Is there an open-source Grok Bot?", "acceptedAnswer": {"@type": "Answer", "text": "Not an official one. OpenMausBot, rakazo, and gawkbot copy the teammate-plus-computer idea on machines you run. They are not unofficial clients for your Cursor roster. See Alternatives."}}, {"@type": "Question", "name": "What is a Grok Bot skill versus a routine?", "acceptedAnswer": {"@type": "Answer", "text": "A skill is how. A routine is when. Save the method after a good run, then schedule it. Tests do real things. Glossary has the short split."}}, {"@type": "Question", "name": "Does Grok Bot run on Linux?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Official deb, rpm, and AppImage are on x.ai/bot under More downloads. Prefer those over community ports. Notes live on the Linux tools page."}}, {"@type": "Question", "name": "Is Grok Bot a feature inside Cursor?", "acceptedAnswer": {"@type": "Answer", "text": "No. Cursor grokbot searches mean the Bot app that signs in with your Cursor account. Not a sidebar in the IDE. See Cursor and Grok Bot."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Grok Bot guide: how to start, login, plans, and fixes", "description": "How to start Grok Bot: Cursor login, a first job you can paste, one shared computer, dated plan conflicts, and Recover before Reset.", "url": "https://grokbot.run/", "inLanguage": "en", "datePublished": "2026-09-04", "dateModified": "2026-09-04", "isPartOf": {"@type": "WebSite", "name": "Grok Bot Guide", "url": "https://grokbot.run/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Guide", "item": "https://grokbot.run/"}]}</script>
+</head><body>
+<header class="site"><div class="wrap nav"><a class="brand" href="/"><img class="logo" src="/brand/grok-bot-face.svg" alt="Grok Bot Guide"><span class="name">Grok Bot</span><span class="tag">Guide</span></a><span class="nav-rule" aria-hidden="true"></span><button class="menu-btn" type="button" data-menu>Menu</button><nav class="links" data-links><a href="/" aria-current="page">Guide</a><a href="/learn/install/">Install</a><a href="/pricing/">Pricing</a><a href="/tools/">Tools</a><a href="/use-cases/">Cases</a><a href="/troubleshooting/">Help</a></nav></div></header>
+<main>
+<section class="hero hero-product">
+  <div class="wrap">
+    <p class="kicker">Community guide · start, run, recover</p>
+    <h1>How to start Grok Bot without burning a week</h1>
+    <p class="lede">Paste a first job. Keep one shared computer from wiping the week. Read plan pages side by side. Fix “can’t reach the computer” without Reset.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#first-job">Copy a first job</a>
+      <a class="btn btn-secondary" href="/learn/install/">How to start</a>
+      <a class="btn btn-ghost" href="/troubleshooting/">When it breaks</a>
+    </div>
+    <p class="hero-next"><a href="#already-running">Already running? Six steps from named field posts.</a></p>
+    <ul class="proof">
+      <li><b>54</b> field cases</li>
+      <li><b>199</b> tools catalogued</li>
+      <li><b>89</b> failure threads</li>
+      <li><b>42</b> official sources</li>
+      <li>No invented prices</li>
+    </ul>
+    <p class="stage-caption">Same faces as the app — so you know you are in the right product. The briefs you paste live on this site.</p>
+    <div class="product-stage">
+      <aside class="roster"><a class="roster-row" href="/use-cases/#digest"><svg class="face" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="10.2" fill="#EDE8DC"/><rect x="9.2" y="9.55" width="3.05" height="8.7" rx="1.525" fill="#111111"/><rect x="19.75" y="9.55" width="3.05" height="8.7" rx="1.525" fill="#111111"/></svg><div><strong>Chief of Staff</strong><span>One door</span></div></a><a class="roster-row" href="/use-cases/#sales"><svg class="face" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="10.2" fill="#F26B2A"/><rect x="9.2" y="9.55" width="3.05" height="8.7" rx="1.525" fill="#111111"/><rect x="19.75" y="9.55" width="3.05" height="8.7" rx="1.525" fill="#111111"/></svg><div><strong>Sales Outbound</strong><span>Drafts only</span></div></a><a class="roster-row" href="/use-cases/#inbox"><svg class="face" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="10.2" fill="#2EC4B6"/><rect x="9.2" y="9.55" width="3.05" height="8.7" rx="1.525" fill="#111111"/><rect x="19.75" y="9.55" width="3.05" height="8.7" rx="1.525" fill="#111111"/></svg><div><strong>Inbox Manager</strong><span>You hit send</span></div></a><a class="roster-row" href="/use-cases/#starter-jobs"><svg class="face" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="10.2" fill="#7C6CFF"/><rect x="9.2" y="9.55" width="3.05" height="8.7" rx="1.525" fill="#111111"/><rect x="19.75" y="9.55" width="3.05" height="8.7" rx="1.525" fill="#111111"/></svg><div><strong>Talent Scout</strong><span>Review list</span></div></a><a class="roster-row" href="/use-cases/#starter-jobs"><svg class="face" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="10.2" fill="#4C9BFF"/><rect x="9.2" y="9.55" width="3.05" height="8.7" rx="1.525" fill="#111111"/><rect x="19.75" y="9.55" width="3.05" height="8.7" rx="1.525" fill="#111111"/></svg><div><strong>Expense Manager</strong><span>Receipts first</span></div></a><a class="roster-row" href="/use-cases/#starter-jobs"><svg class="face" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="10.2" fill="#F071A5"/><rect x="9.2" y="9.55" width="3.05" height="8.7" rx="1.525" fill="#111111"/><rect x="19.75" y="9.55" width="3.05" height="8.7" rx="1.525" fill="#111111"/></svg><div><strong>Account Health</strong><span>Warm notes</span></div></a></aside>
+      <div class="stage-main">
+        <div class="stage-bar"><svg class="face" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="10.2" fill="#F26B2A"/><rect x="9.2" y="9.55" width="3.05" height="8.7" rx="1.525" fill="#111111"/><rect x="19.75" y="9.55" width="3.05" height="8.7" rx="1.525" fill="#111111"/></svg> <b>Sales Outbound</b> · shared computer</div>
+        <div class="bubble me">Research these accounts. Draft outreach in my voice. Do not send.</div>
+        <div class="bubble bot">Three accounts scored. Drafts parked. Two need a login you should take over.</div>
+        <div class="thinking"><svg class="face" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="10.2" fill="#F26B2A"/><rect x="9.2" y="9.55" width="3.05" height="8.7" rx="1.525" fill="#111111"/><rect x="19.75" y="9.55" width="3.05" height="8.7" rx="1.525" fill="#111111"/></svg> Thinking — browser is on the shared computer</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="first-job"><div class="wrap">
+  <h2>Steal this first job</h2>
+  <p class="lede">Five minutes. No connector. If this works, you have a Bot. If it does not, fix login before you invent a twelve-Bot company.</p>
+  <div class="steal">
+    <div class="job-card">
+      <p class="kicker">Warm-up · attach one file</p>
+      <h3>Cited brief, file unchanged</h3>
+      <p>This is the same pattern as official Get started: outcome, source, constraint, deliverable, stop for review.</p>
+      <pre><code>I attached one document. Give me (1) five bullets on what it says, and (2) every date, decision, and open question with a page or section cite. Leave the file unchanged.</code></pre>
+      <button type="button" class="copy-btn" data-copy>Copy</button>
+    </div>
+    <div class="card">
+      <h3>Then one real door</h3>
+      <p>Pin a Chief of Staff. Do not create more Bots until it can report blockers. Inbox, outbound, and travel jobs are already written on <a href="/use-cases/#starter-jobs">use cases</a>.</p>
+      <p><a class="btn btn-primary" href="/learn/first-bot/">First Bot lesson</a></p>
+      <p class="muted">Tests do real things. Do not send, delete, or pay from a copied brief.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <h2>Three mistakes that cost a week</h2>
+  <div class="mistakes">
+    <a class="mistake" href="/learn/computer/"><p class="tag">Isolation</p><h3>A second Bot is not a fence</h3><p>Every Bot on the account sees the same computer, cookies, and logins. Life Bot and work Bot share a browser.</p></a>
+    <a class="mistake" href="/learn/first-bot/"><p class="tag">Roster</p><h3>Twelve Bots on day one</h3><p>Chatty Chief-of-Staff threads burn weekly usage. One door until the output is checkable.</p></a>
+    <a class="mistake" href="/troubleshooting/"><p class="tag">Breakage</p><h3>Reset first</h3><p>Official order is Retry, restart, Recover, Update. Reset can drop unsynced work. iOS still working is a clue to wait.</p></a>
+  </div>
+</div></section>
+
+<section class="band" id="already-running"><div class="wrap">
+  <h2>Already running</h2>
+  <p class="lede">Hiring Bots is easy. Managing them is the job. This track is built from Debbie, Nate, Peter Yang, Johnny Nel, s1rozha, Gergely Orosz, and the official @bot recap — patterns, not billed outcomes.</p>
+  <div class="mistakes">
+    <a class="mistake" href="/learn/operator/"><p class="tag">Path</p><h3>After week one</h3><p>One door, a what’s-left page, Teach a task, then a routine. Six steps with source links.</p></a>
+    <a class="mistake" href="/learn/ops/"><p class="tag">Stack</p><h3>X, Cursor, MCP</h3><p>Scout X, brief a Cloud Agent, add remote MCP. Publish and merge stay with you.</p></a>
+    <a class="mistake" href="/learn/cost-and-pitfalls/"><p class="tag">Usage</p><h3>Keep the week</h3><p>Weekly pool can spill into On-Demand with no in-app warning. Chatty CoS threads burn it.</p></a>
+  </div>
+  <p class="lede"><a href="/learn/ops/">X, Cursor, MCP</a> · <a href="/learn/plugins/">Connectors before the browser</a> · <a href="/compare/">When to self-host</a> · <a href="/use-cases/">54 field cases</a></p>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <h2>What people actually ran</h2>
+  <p class="lede">Named sources. This site does not invent billed outcomes.</p>
+  <div class="quotes">
+    <article class="quote"><p>“Bots are not a security boundary.”</p><p class="who">Cursor forum pin · shared computer lesson</p></article>
+    <article class="quote"><p>Start with one Chief of Staff and let it propose the team — not a specialist for every sub-task.</p><p class="who">Debbie · getting started notes</p></article>
+    <article class="quote"><p>Official pages still disagree on Cursor Pro and base SuperGrok. Open all three originals.</p><p class="who">Pricing snapshot · fetch 2026-09-04</p></article>
+  </div>
+  <p class="lede"><a href="/use-cases/">54 field cases</a> · <a href="/pricing/">Plan conflicts</a> · <a href="/compare/">GitHub alternatives</a></p>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <h2>Start here</h2>
+  <div class="grid-3">
+    <a class="card" href="/learn/install/"><h3>How to start</h3><p>Mac, Windows, Linux, iOS, Android. Sign in with Cursor — no extra account.</p></a>
+    <a class="card" href="/use-cases/#starter-jobs"><h3>More copyable jobs</h3><p>Inbox, outbound, travel. Stop at review until the output is checkable.</p></a>
+    <a class="card" href="/pricing/"><h3>Free, plans, trial</h3><p>No standalone SKU. Cursor or SuperGrok, plus the dated enterprise trial.</p></a>
+  </div>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <h2>Read in this order</h2>
+  <p class="lede">Each card is one page. Finish one job before the next.</p>
+  <div class="roadmap"><a class="step" href="/learn/what-is-grok-bot/"><div class="num">01</div><div><h3>What Grok Bot is</h3><p>Separate it from grok.com, Grok Build, and grok-app.</p></div></a><a class="step" href="/learn/install/"><div class="num">02</div><div><h3>Install and sign in</h3><p>Official desktop, iOS, and Android. Login is Cursor.</p></div></a><a class="step" href="/learn/first-bot/"><div class="num">03</div><div><h3>First Bot</h3><p>Short name, one job, Chief of Staff. Stop at drafts.</p></div></a><a class="step" href="/learn/computer/"><div class="num">04</div><div><h3>Shared computer</h3><p>One machine for every Bot. Screens are not isolation.</p></div></a><a class="step" href="/learn/plugins/"><div class="num">05</div><div><h3>Skills, plugins, cost</h3><p>Connectors first. Weekly usage can spill into On-Demand.</p></div></a><a class="step" href="/troubleshooting/"><div class="num">06</div><div><h3>When it breaks</h3><p>Can&#x27;t reach the computer? Recover before Reset.</p></div></a></div>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <h2>FAQ</h2>
+  <div class="faq card"><details><summary>Is Grok Bot the same as grok.com or Grok?</summary><p>No. grok.com is chat plus Imagine and Voice. Grok Bot is a separate app: named teammates plus one shared cloud computer. Google often shows grok.com for a grok bot search — that is the wrong product.</p></details><details><summary>Is this the official Grok Bot site?</summary><p>No. This is a community how-to: first job, login, shared computer, plan conflicts, Recover before Reset, and an operator path after week one. Official packages stay on x.ai/bot.</p></details><details><summary>Where do I download the Grok Bot app?</summary><p>Desktop packages are on x.ai/bot (macOS, Windows, Linux). iOS is on the App Store; Android is on Google Play. Step-by-step is on the install page.</p></details><details><summary>How do I log in to Grok Bot?</summary><p>There is no separate Grok Bot account. Open the app and sign in with the Cursor account that holds the plan and usage.</p></details><details><summary>Is Grok Bot free? Which plan do I need?</summary><p>There is no consumer free tier and no standalone SKU. Access is bundled with paid Cursor or a linkable SuperGrok / X plan, plus a limited usage trial on some accounts. Enterprise had a separate two-week org trial — see Pricing.</p></details><details><summary>Is there a Grok Bot app for iOS and Android?</summary><p>Yes. iPhone needs iOS 18+; Android 9+. iPad was not supported at launch. The same roster syncs with desktop after Cursor login.</p></details><details><summary>If the computer won&#x27;t connect, should I Reset?</summary><p>No. The official order is Retry, restart, Recover, Update Agent Computer. Reset can lose unsynced work. See Help.</p></details><details><summary>Is there an open-source Grok Bot?</summary><p>Not an official one. OpenMausBot, rakazo, and gawkbot copy the teammate-plus-computer idea on machines you run. They are not unofficial clients for your Cursor roster. See Alternatives.</p></details><details><summary>What is a Grok Bot skill versus a routine?</summary><p>A skill is how. A routine is when. Save the method after a good run, then schedule it. Tests do real things. Glossary has the short split.</p></details><details><summary>Does Grok Bot run on Linux?</summary><p>Yes. Official deb, rpm, and AppImage are on x.ai/bot under More downloads. Prefer those over community ports. Notes live on the Linux tools page.</p></details><details><summary>Is Grok Bot a feature inside Cursor?</summary><p>No. Cursor grokbot searches mean the Bot app that signs in with your Cursor account. Not a sidebar in the IDE. See Cursor and Grok Bot.</p></details></div>
+</div></section>
+<script>
+document.querySelectorAll('[data-copy]').forEach(btn=>{
+  btn.addEventListener('click', async ()=>{
+    const pre=btn.parentElement.querySelector('pre');
+    try {
+      await navigator.clipboard.writeText(pre.innerText.trim());
+      btn.textContent='Copied';
+      setTimeout(()=>btn.textContent='Copy', 1600);
+    } catch (e) { btn.textContent='Copy failed'; }
+  });
+});
+</script>
+</main>
+<footer class="site"><div class="wrap"><div class="foot-grid"><div><h4>Learn</h4><a href="/learn/">Handbook</a><a href="/learn/what-is-grok-bot/">What Grok Bot is</a><a href="/learn/install/">Install and sign in</a><a href="/learn/first-bot/">First Bot</a><a href="/learn/computer/">Shared computer</a><a href="/learn/skills-routines/">Skills and routines</a><a href="/learn/plugins/">Plugins and MCP</a><a href="/learn/cost-and-pitfalls/">Cost and pitfalls</a><a href="/learn/operator/">After week one</a><a href="/learn/ops/">X, Cursor, MCP</a><a href="/learn/glossary/">Glossary</a><a href="/learn/cursor/">Cursor and Grok Bot</a></div><div><h4>Look up</h4><a href="/pricing/">Pricing</a><a href="/compare/">Alternatives</a><a href="/tools/">Tools catalog</a><a href="/use-cases/">Field cases</a><a href="/troubleshooting/">Help</a><a href="/sources/">Sources</a></div><div><h4>Official</h4><a href="https://x.ai/bot">x.ai/bot</a><a href="https://docs.x.ai/grok-bot/overview">xAI docs</a><a href="https://cursor.com/help/grok-bot/getting-started">Cursor Help</a><a href="https://github.com/RongleCat/awesome-grok-bot">awesome-grok-bot</a></div></div><p>Community guide for starting, running, and recovering Grok Bot. Product names belong to their owners. Official packages stay on x.ai/bot. Updated 2026-09-04. Sources are dated by fetch day.</p></div></footer>
+<script>const btn=document.querySelector('[data-menu]');const links=document.querySelector('[data-links]');if(btn) btn.addEventListener('click',()=>links.classList.toggle('open'));</script>
+</body></html>

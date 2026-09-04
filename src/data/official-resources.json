@@ -1,0 +1,212 @@
+[
+  {
+    "name": "Introducing Grok Bot",
+    "url": "https://x.ai/news/introducing-grok-bot",
+    "blurb": "Launch note: always-on agents with their own computer, working inside your tools 24/7."
+  },
+  {
+    "name": "Grok Bot is now included with more plans",
+    "url": "https://x.ai/news/grok-bot-more-plans",
+    "blurb": "Official access expansion post (updated): Grok Bot is available for SuperGrok, Cursor Pro, and all Cursor Teams plans."
+  },
+  {
+    "name": "@bot: free trial and wider plan access",
+    "url": "https://x.com/bot/status/2090852881373311369",
+    "blurb": "Official 2026-08-21: SuperGrok Plus, Cursor Pro+, and all Cursor Teams get Grok Bot, plus a limited free trial for everyone else."
+  },
+  {
+    "name": "@bot: mobile notifications grouped by Bot",
+    "url": "https://x.com/bot/status/2089802845239587150",
+    "blurb": "Official 2026-08-18 QoL: mobile notifications group by Bot and use that Bot's icon."
+  },
+  {
+    "name": "@bot: Some ways people used Grok Bot this week",
+    "url": "https://x.com/bot/status/2090168861912170972",
+    "blurb": "Official 2026-08-19 thread quoting 14 field jobs, from a Matic vacuum to Stripe refunds and a meeting stand-in."
+  },
+  {
+    "name": "Grok Bot overview",
+    "url": "https://docs.x.ai/grok-bot/overview",
+    "blurb": "Canonical product page: one named Bot, one shared cloud computer, isolation is per user not per Bot."
+  },
+  {
+    "name": "Get started",
+    "url": "https://docs.x.ai/grok-bot/get-started",
+    "blurb": "Install desktop, sign in with Cursor, create the first Bot. No official Linux desktop."
+  },
+  {
+    "name": "Use cases",
+    "url": "https://docs.x.ai/grok-bot/use-cases",
+    "blurb": "Official roster ideas: sales CRM nights, ops invoices, engineering bug squash."
+  },
+  {
+    "name": "Grok Bot for mobile (iOS + Android)",
+    "url": "https://docs.x.ai/grok-bot/mobile",
+    "blurb": "Official docs for Grok Bot on iPhone and Android (Android 9+ / iOS 18+), with App Store and Google Play install links."
+  },
+  {
+    "name": "Create and manage Bots",
+    "url": "https://docs.x.ai/grok-bot/bots",
+    "blurb": "How a Bot is named and scoped, plus the public share link that copies identity, skills, and routines (not your computer or logins)."
+  },
+  {
+    "name": "Message and collaborate",
+    "url": "https://docs.x.ai/grok-bot/chat-and-collaboration",
+    "blurb": "Bots message each other, join group chats, and assign ownership of work."
+  },
+  {
+    "name": "Files and results",
+    "url": "https://docs.x.ai/grok-bot/files-and-results",
+    "blurb": "Where artifacts live on the shared computer and how you pull results back."
+  },
+  {
+    "name": "Use the computer and apps",
+    "url": "https://docs.x.ai/grok-bot/computer-and-apps",
+    "blurb": "Browser, filesystem, terminal. No clean API? Click the site like a person."
+  },
+  {
+    "name": "Skills and routines",
+    "url": "https://docs.x.ai/grok-bot/skills-routines-and-automations",
+    "blurb": "Teach a task (up to 10 minutes of screen, no mic), save as a reusable routine."
+  },
+  {
+    "name": "Settings and notifications",
+    "url": "https://docs.x.ai/grok-bot/settings-and-notifications",
+    "blurb": "Notification grouping, mobile alerts, and how Bots follow up stalled work."
+  },
+  {
+    "name": "Approvals, security, and privacy",
+    "url": "https://docs.x.ai/grok-bot/approvals-security-and-privacy",
+    "blurb": "Bots do not see passwords; draw the approval line on irreversible actions and 2FA takeover."
+  },
+  {
+    "name": "Teams and enterprises",
+    "url": "https://docs.x.ai/grok-bot/teams-and-enterprises",
+    "blurb": "Team marketplace, SSO, shared analytics. Plugins follow existing Cursor policy."
+  },
+  {
+    "name": "Troubleshooting",
+    "url": "https://docs.x.ai/grok-bot/troubleshooting",
+    "blurb": "Official fix list for reconnect, runners, and common beta failures."
+  },
+  {
+    "name": "FAQ",
+    "url": "https://docs.x.ai/grok-bot/faq",
+    "blurb": "Short official answers on access, computer sharing, and what Bots can remember."
+  },
+  {
+    "name": "Link SuperGrok for Grok Bot",
+    "url": "https://cursor.com/help/grok-bot/supergrok",
+    "blurb": "Cursor help: Grok Bot is now on SuperGrok Plus and Heavy; already on Ultra, linking Plus does not stack usage."
+  },
+  {
+    "name": "Grok Bot on mobile (Cursor help)",
+    "url": "https://cursor.com/help/grok-bot/mobile",
+    "blurb": "How the iOS companion talks to Bots that stay on the cloud computer."
+  },
+  {
+    "name": "Connect plugins",
+    "url": "https://cursor.com/help/grok-bot/connect-plugins",
+    "blurb": "Prefer a plugin and fall back to the cloud browser when it is missing; Zoom desktop auth currently fails with error 4700 (invalid redirect) and has no workaround."
+  },
+  {
+    "name": "Store secrets securely",
+    "url": "https://cursor.com/help/grok-bot/secrets",
+    "blurb": "Use the secret card. Never paste API keys into the Bot chat."
+  },
+  {
+    "name": "Recover Grok Bot computer data",
+    "url": "https://cursor.com/help/grok-bot/computer-recovery",
+    "blurb": "Official recovery guide: chat history lives outside the box; reopen restores synced files, Reset is last resort."
+  },
+  {
+    "name": "Grok Bot plans and billing",
+    "url": "https://cursor.com/help/grok-bot/plans",
+    "blurb": "Official billing FAQ: paid Cursor plans and Teams include Grok Bot (Pro below Pro+ below Ultra); SuperGrok / Plus / Heavy can link, Lite and SuperGrok Team/Enterprise cannot; weekly usage resets; legacy request-based pricing is excluded unless you opt into usage-based."
+  },
+  {
+    "name": "Grok Bot on the App Store",
+    "url": "https://apps.apple.com/us/app/grok-bot/id6794501026",
+    "blurb": "Official iOS listing for the companion app."
+  },
+  {
+    "name": "xAI plugin marketplace",
+    "url": "https://github.com/xai-org/plugin-marketplace",
+    "blurb": "Official .grok-plugin marketplace Grok Bot inherits under Cursor plugin policy."
+  },
+  {
+    "name": "@bot: SuperGrok and Cursor Pro get Grok Bot; weekly usage reset",
+    "url": "https://x.com/bot/status/2092664183334846840",
+    "blurb": "Official 2026-08-26: all SuperGrok and Cursor Pro subscribers get Grok Bot, and weekly usage limits were reset for everyone."
+  },
+  {
+    "name": "@bot: share Bot templates",
+    "url": "https://x.com/bot/status/2093376523919323618",
+    "blurb": "Official 2026-08-28: you can now share templates of your Bots with others."
+  },
+  {
+    "name": "@bot: Grok Bot can buy things",
+    "url": "https://x.com/bot/status/2093419921007108385",
+    "blurb": "Official 2026-08-28: connect Stripe Link and Grok Bot can complete purchases on your behalf."
+  },
+  {
+    "name": "Grok Bot on Google Play",
+    "url": "https://play.google.com/store/apps/details?id=ai.x.grok.bot",
+    "blurb": "Official Google Play listing: Grok Bot for Android is available — same Bots and threads as desktop/iOS; work continues on the cloud computer after you lock the phone (eligible Cursor/SuperGrok plan)."
+  },
+  {
+    "name": "Sign in to Grok Bot",
+    "url": "https://cursor.com/help/grok-bot/sign-in",
+    "blurb": "Official help: Grok Bot uses your Cursor account (no separate login); persistent auth loops or phone-verification blocks often need support after the listed retries."
+  },
+  {
+    "name": "Grok Bot now works with X",
+    "url": "https://x.ai/news/grok-bot-and-x",
+    "blurb": "Official 2026-08-29: connect X in Grok Bot (a developer account is created if needed); paid users get free X API credits to search posts, timelines, and mentions."
+  },
+  {
+    "name": "Getting started with Grok Bot",
+    "url": "https://cursor.com/help/grok-bot/getting-started",
+    "blurb": "Cursor help: first-agent setup, Sidebar Sections on iOS v1.2.0+ to group Bots, the beta label is not Cursor Beta Services terms, and a restart-first troubleshooting table."
+  },
+  {
+    "name": "Subscribe from the mobile app",
+    "url": "https://cursor.com/help/grok-bot/mobile-purchase",
+    "blurb": "iOS in-app purchase is monthly individual only; existing Cursor or SuperGrok access carries over, and SuperGrok linking still has to be done on desktop."
+  },
+  {
+    "name": "Delete your Grok Bot account",
+    "url": "https://cursor.com/help/grok-bot/delete-account",
+    "blurb": "Grok Bot has no separate account: iOS has Delete Account, desktop only signs out, and wiping it deletes the Cursor account plus agents, chats, and the computer."
+  },
+  {
+    "name": "@bot: improved X support",
+    "url": "https://x.com/bot/status/2093822274067706170",
+    "blurb": "Official 2026-08-29: Grok Bot now has improved X support; connecting your X profile auto-creates a developer account with included credits."
+  },
+  {
+    "name": "Get help (Cursor Help)",
+    "url": "https://cursor.com/help/grok-bot/get-help",
+    "blurb": "Official Cursor help: contact Grok Bot support at hi@cursor.com and include account email, app version/platform (Mac/Windows/iOS), what you tried, and a screenshot (billing issues same inbox)."
+  },
+  {
+    "name": "@bot: Microsoft Outlook, Calendar, and OneDrive plugins",
+    "url": "https://x.com/bot/status/2094543253811183943",
+    "blurb": "Official @bot (2026-08-31) says Grok Bot can now read, write, and act across Microsoft accounts via new Outlook, Calendar, and OneDrive plugins."
+  },
+  {
+    "name": "Identity and access",
+    "url": "https://docs.x.ai/grok-bot/identity-and-access",
+    "blurb": "Official admin guide: widen Cursor SSO assignment (Okta/Entra) so non-engineering teammates get Grok Bot, and add an IdP auth rule so the Linux Bot computer can sign into device-trust apps (passkeys/Team Setup); do not create a separate Grok Bot SSO app."
+  },
+  {
+    "name": "Private networks",
+    "url": "https://docs.x.ai/grok-bot/private-networks",
+    "blurb": "Official Enterprise guide: use Team Setup to install Tailscale, Cloudflare Tunnel, or other Linux VPN/mesh clients on every team Bot computer so Bots reach private APIs without exposing them; private reach does not replace the Grok Bot destination allowlist."
+  },
+  {
+    "name": "@bot: Grok Bot is now available on Android",
+    "url": "https://x.com/bot/status/2095168633559462197",
+    "blurb": "Official @bot (2026-09-02): Grok Bot is now available on Android — same Bots and threads as desktop/iOS, work continues on the cloud computer after you lock the phone; download from Google Play with an eligible Cursor/SuperGrok plan."
+  }
+]

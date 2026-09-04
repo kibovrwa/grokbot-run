@@ -1,0 +1,272 @@
+[
+  {
+    "name": "n2parko: CoS + EM + five eng ICs + Databricks + PM",
+    "url": "https://x.com/n2parko/status/2087251704744235298",
+    "blurb": "SpaceXAI product roster with real agent-to-agent PR handoff screenshots."
+  },
+  {
+    "name": "Lee Robinson: four technical bets",
+    "url": "https://x.com/leerob/status/2089169319099777364",
+    "blurb": "No UI, thin client / thick server, always-on computer, browser as a first-class tool."
+  },
+  {
+    "name": "Debbie: book my flights",
+    "url": "https://debbie.codes/blog/i-tested-if-grok-bot-could-book-my-flights",
+    "blurb": "Honest near-miss: the Bot can drive the airline site, the last click still needs you."
+  },
+  {
+    "name": "Debbie: buy gluten-free beer on a Sunday night",
+    "url": "https://debbie.codes/blog/i-sent-grok-bot-to-buy-my-gluten-free-beer",
+    "blurb": "CoS shopping run — the fun case that shows computer-use, not chat."
+  },
+  {
+    "name": "Yun-Ta: calendar + reservations while walking",
+    "url": "https://x.com/yunta_tsai/status/2087415205756391461",
+    "blurb": "Mixed Chinese/English voice, Bot scans calendars and books a table."
+  },
+  {
+    "name": "Gota: twelve jobs on one roster",
+    "url": "https://x.com/gota_bara/status/2087666940450152841",
+    "blurb": "Image factory, research briefs, 3D, travel debate, cancel subscriptions, local LLM on the VM."
+  },
+  {
+    "name": "Box: credit-committee pack",
+    "url": "https://x.com/Box/status/2087275866950938662",
+    "blurb": "Reconcile materials, write the pack back into Box via MCP."
+  },
+  {
+    "name": "WordPress updates taught once",
+    "url": "https://x.com/mrfundman/status/2089760255890571404",
+    "blurb": "Teach-a-task on a real CMS instead of writing a deploy script."
+  },
+  {
+    "name": "Arduino updates from a Bot",
+    "url": "https://x.com/KettlebellDan/status/2089920364419874937",
+    "blurb": "Bot pushes hardware updates so the human can stay off X."
+  },
+  {
+    "name": "Nate: twelve Bots in eight hours",
+    "url": "https://natesnewsletter.substack.com/p/grok-bot-review",
+    "blurb": "Is the $200 agent team worth it — with a real first-day roster."
+  },
+  {
+    "name": "24/7 support agent in 19 minutes",
+    "url": "https://www.youtube.com/watch?v=bUALqTpUze0",
+    "blurb": "Customer-support Bot built on a routine, not a helpdesk rewrite."
+  },
+  {
+    "name": "Farzad roster: Webby / Shotry / Writey",
+    "url": "https://x.com/farzyness/status/2087340859138224540",
+    "blurb": "Named specialists plus an orchestrator — the pattern that keeps showing up."
+  },
+  {
+    "name": "Sid: Polymarket daily settlement brief",
+    "url": "https://x.com/sidshekhar24/status/2089735218861326727",
+    "blurb": "Bot scans the day's settled markets and writes the report."
+  },
+  {
+    "name": "Logan: the unlock is the computer, not 4.6",
+    "url": "https://x.com/LoganJastremski/status/2089903051557491092",
+    "blurb": "No API, no MCP, no hosted browser — the Bot just uses software like a person."
+  },
+  {
+    "name": "Japanese note group: cloud-computer field notes",
+    "url": "https://note.com/azumimusuhi/n/n0485219790bb",
+    "blurb": "Hands-on JP writeup of living on the shared VM for a week."
+  },
+  {
+    "name": "Peter Yang: Marie Kondo declutter Bot",
+    "url": "https://x.com/petergyang/status/2089724101070086482",
+    "blurb": "Prompt-and-demo: audit email, Drive, and paid subs, then wait for approval before anything is deleted."
+  },
+  {
+    "name": "Gergely Orosz: Stripe support refunds",
+    "url": "https://x.com/GergelyOrosz/status/2090085668768694562",
+    "blurb": "Hooks Grok Bot to support mail and Stripe agentic refunds, with a human confirm before money moves."
+  },
+  {
+    "name": "Mike P: 90,000-email purge",
+    "url": "https://x.com/mikepat711/status/2089879632929554498",
+    "blurb": "Lets a Bot walk two Gmail accounts and throw out junk the owner never wanted to touch."
+  },
+  {
+    "name": "Yun-Ta: text a Matic vacuum from Grok Bot",
+    "url": "https://x.com/yunta_tsai/status/2089223114416898288",
+    "blurb": "Chief Engineer Bot talks to @maticrobots so he can text the vacuum from anywhere."
+  },
+  {
+    "name": "Wayne Sutton: site, domain, and Cloudflare in two phone prompts",
+    "url": "https://x.com/waynesutton/status/2088416215203295346",
+    "blurb": "Convex + Cloudflare plugins, a live demo at tryground.dev, domain and redirects bought from the phone."
+  },
+  {
+    "name": "Danny Limanseta: 74 game art assets in two hours",
+    "url": "https://x.com/DannyLimanseta/status/2087228218797617404",
+    "blurb": "Bot reads the codebase, hits his art-gen page, crops transparent PNGs, and wires 74 card assets back into the game."
+  },
+  {
+    "name": "Jon ONeill: plumbing-shop office manager",
+    "url": "https://x.com/HouseHackerJon/status/2087635639701573962",
+    "blurb": "Drain-and-sewer shop owner handing office-manager work to a Bot in the first 24 hours."
+  },
+  {
+    "name": "Ben Lang: internal Grok Bot job list",
+    "url": "https://x.com/benln/status/2087929147406299313",
+    "blurb": "Starlink-biased flights, recipe-to-Whole Foods, film-scan EXIF, contractor quotes, and more internal jobs."
+  },
+  {
+    "name": "Gavin Baker: podcast summarizer in 15 seconds",
+    "url": "https://x.com/GavinSBaker/status/2089379355692527813",
+    "blurb": "Calls Grok Bot another Claude Code moment and stands up a podcast summarizer in about 15 seconds."
+  },
+  {
+    "name": "Krista Letz: Grok Bot for enterprise GTM",
+    "url": "https://x.com/kristaletz/status/2089103618121314689",
+    "blurb": "SpaceXAI enterprise seller's roster: CoS, prospecting overnight, per-account experts, live slide updates."
+  },
+  {
+    "name": "Peter Yang: Commander Keen on the cloud computer",
+    "url": "https://x.com/petergyang/status/2089502606079197347",
+    "blurb": "Installs and plays Commander Keen on Grok Bot's cloud desktop, lag and all."
+  },
+  {
+    "name": "Kiara: Bot sits in on a missed meeting",
+    "url": "https://x.com/kiaraplds/status/2088321112073547835",
+    "blurb": "SpaceXAI field engineer has a Bot join a meeting she misses, announce itself, and take notes."
+  },
+  {
+    "name": "KettlebellDan: Arduino LED stock ticker",
+    "url": "https://x.com/KettlebellDan/status/2089387837204693202",
+    "blurb": "Bot talks to his Arduino so the LED marquee scrolls SPCX price, a sparkline, and SpaceX news."
+  },
+  {
+    "name": "Darian Shirazi: chase five merchant refunds",
+    "url": "https://x.com/darian314/status/2089381004524093752",
+    "blurb": "Bot hunts unrefunded returns in email, writes five merchants, and earns back more than the monthly fee."
+  },
+  {
+    "name": "Grokularity: a company run by Grok Bots",
+    "url": "https://grokularity.xyz",
+    "blurb": "A non-coder stood up grokularity.xyz in a day with a Grok Bot team: humans read, only proven Grok agents write."
+  },
+  {
+    "name": "Signal outbound Grok Bot",
+    "url": "https://github.com/thoughtpilot99/signal-outbound-grok-bot",
+    "blurb": "Recipe for a Grok Bot that hunts live buyer signals, returns a ranked list, and drafts two outreach scripts while a human sends."
+  },
+  {
+    "name": "Grok-Bot-Fund",
+    "url": "https://github.com/jjregier/Grok-Bot-Fund",
+    "blurb": "Personal paper-to-live \"hedge fund\" desk run by three Grok Bot teammates on the cloud computer, with versioned playbooks merged only via human PRs."
+  },
+  {
+    "name": "ExploreGrokBot market desk",
+    "url": "https://github.com/WebDevJasonCameron/ExploreGrokBot",
+    "blurb": "File-based Grok Bot market-research desk: company mission, analyst agent instructions, scored opportunities, and a decision log under one repo layout."
+  },
+  {
+    "name": "build-brief Grok Build desk",
+    "url": "https://github.com/mtrxdev/build-brief",
+    "blurb": "Reusable Grok Bot desk that grills a raw idea into a grounded Grok Build brief on Git (PROFILE + BOT-SKILL + inspect gate)—Print-first delivery you paste into local grok."
+  },
+  {
+    "name": "Bull Desk Webull trading",
+    "url": "https://github.com/HammeredSmithy/bull-trade",
+    "blurb": "HyperGrok-style seven-agent trading desk ported to Webull OpenAPI for US users—research, size, approve-by-id execution and review Bots with paper sandbox before live keys."
+  },
+  {
+    "name": "Growth Grok Bots self-serve team",
+    "url": "https://github.com/jay-sahnan/growth-grok-bots",
+    "blurb": "Shareable multi-bot growth team (Head of Growth plus specialists) with narrow jobs, handoffs, and human approval before anything ships or sends."
+  },
+  {
+    "name": "Grok Bot Market Memory pack",
+    "url": "https://github.com/palehonk0-o/grokbot-market-memory",
+    "blurb": "Evidence-first market-memory implementation pack for turning public pages into decision briefs with Grok Bot, matching a public X article walkthrough."
+  },
+  {
+    "name": "Grok Bot fleet public packets",
+    "url": "https://github.com/Logos52/grok-bot-packets",
+    "blurb": "Public weekday dump of files a Grok Bot fleet writes under /workspace on the shared cloud computer, mirrored for Mac /fold skill intake."
+  },
+  {
+    "name": "Per-bot durable knowledge log",
+    "url": "https://github.com/jblack4vols/grok-bot",
+    "blurb": "Durable per-bot knowledge log for a real Grok Bot roster, with dated America/New_York files for decisions, shipped work, and standing preferences."
+  },
+  {
+    "name": "UiTM calendar Grok Bot + MCP",
+    "url": "https://github.com/bilauitmcuti/bot",
+    "blurb": "UiTM academic calendar assistant running on Grok Bot with a remote MCP server for live lecture, cuti, exam, and holiday dates."
+  },
+  {
+    "name": "Greenlit: one reversible job, not a reorg",
+    "url": "https://greenlitbooks.com/field-notes/grok-bot-honest-assessment",
+    "blurb": "Honest early verdict: start with one checkable workflow. Weekly usage and the shared computer are the real limits."
+  },
+  {
+    "name": "Refound: five-day company OS",
+    "url": "https://refoundai.com/blog/how-to-run-your-business-with-grok-bot/",
+    "blurb": "First-week writeup: standing rules in the description, source-of-truth files, then a daily plan that cites sources."
+  },
+  {
+    "name": "xAI: Grok Bot for PMs",
+    "url": "https://x.ai/bot/guides/grok-bot-for-pms",
+    "blurb": "Official-adjacent PM roster: Chief of Staff plus narrow specialists. Sends, purchases, and deletes stay behind review."
+  },
+  {
+    "name": "Official use-cases: eight starter roles",
+    "url": "https://docs.x.ai/grok-bot/use-cases",
+    "blurb": "Official jobs: sales, talent, paid media, expenses, product performance, bug repro, account health, Chief of Staff."
+  },
+  {
+    "name": "Composio: parallel research swarm",
+    "url": "https://composio.dev/content/guide-to-frok-bot",
+    "blurb": "Practitioner guide plus bonus jobs: competitive-intel swarm, open-source audit, fact-check engine."
+  },
+  {
+    "name": "techAU: shopping with Stripe Link",
+    "url": "https://techau.com.au/grok-bot-can-now-go-shopping/",
+    "blurb": "Bot raises a spend request; you approve in Stripe Link; a one-time card appears only after that."
+  },
+  {
+    "name": "@bot: official weekly field recap",
+    "url": "https://x.com/bot/status/2090168861912170972",
+    "blurb": "Official 2026-08-19 thread quoting 11 field jobs people ran that week."
+  },
+  {
+    "name": "@bot: buy things with Stripe Link",
+    "url": "https://x.com/bot/status/2093419921007108385",
+    "blurb": "Official shopping flow: connect Link, approve every spend, then a single-use card."
+  },
+  {
+    "name": "GrokBotDev: five starter workflows",
+    "url": "https://x.com/GrokBotDev/status/2092676148220117421",
+    "blurb": "Inbox detox, weekly happier pass, grocery team, morning YouTube brief, Chief of Staff."
+  },
+  {
+    "name": "klöss: 21 jobs mapped from @bot",
+    "url": "https://x.com/kloss_xyz/status/2090579024313799107",
+    "blurb": "Community map of the official weekly recap into a 21-item job list."
+  },
+  {
+    "name": "Dan McAteer: Chief of Staff in 15 minutes",
+    "url": "https://x.com/daniel_mac8/status/2091978532477940014",
+    "blurb": "CoS connected to Gmail, Slack, Jira, and Granola. Duration follows the post."
+  },
+  {
+    "name": "s1rozha: one job per Bot, on a timer",
+    "url": "https://x.com/s1rozha_/status/2091585690957996515",
+    "blurb": "Email Bot at 7:30, sponsor labels on a timer, calendar Bot separate."
+  },
+  {
+    "name": "Greg Isenberg: newsletter as a one-person company",
+    "url": "https://x.com/gregisenberg/status/2090901264309875088",
+    "blurb": "Friend’s newsletter desk on Grok Bot agents — pattern thread, not a P&L."
+  },
+  {
+    "name": "RoundtableSpace: daily job list",
+    "url": "https://x.com/RoundtableSpace/status/2089030676678938899",
+    "blurb": "Inbox, briefing, expenses, calendar, research — a first-roster menu."
+  }
+]

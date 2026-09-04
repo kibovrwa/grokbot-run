@@ -1,0 +1,497 @@
+[
+  {
+    "name": "grokbot-imessage-skill",
+    "url": "https://github.com/jeffhuber/grokbot-imessage-skill",
+    "blurb": "Read, triage, and send iMessage from the Bot via a local macOS helper."
+  },
+  {
+    "name": "Grok Bot Discord gateway",
+    "url": "https://github.com/davefmurray/grok-bot-discord",
+    "blurb": "Bridge so a Bot can live in Discord without pretending to be a Slack App."
+  },
+  {
+    "name": "Werewolf gamemaster skill",
+    "url": "https://github.com/Heyvhuang/werewolf-gamemaster",
+    "blurb": "A real skill pack: the Bot runs a Werewolf table, not a hello-world SKILL.md."
+  },
+  {
+    "name": "Hyperliquid 7-agent trading desk",
+    "url": "https://github.com/galleonlabs/hypergrok-trading-desk",
+    "blurb": "Seven specialized Bots on one desk — treat as experimental, read the code first."
+  },
+  {
+    "name": "awesome-grok-bot-plugins",
+    "url": "https://github.com/rdmgator12/awesome-grok-bot-plugins",
+    "blurb": "219 in-app marketplace listings captured 2026-08-12, grouped by category."
+  },
+  {
+    "name": "superpowers (marketplace)",
+    "url": "https://github.com/obra/superpowers",
+    "blurb": "Largest general skill collection in the official marketplace: plan, debug, write."
+  },
+  {
+    "name": "Compound Engineering",
+    "url": "https://github.com/EveryInc/compound-engineering-plugin",
+    "blurb": "Official Compound Engineering plugin (24.8k★). Install once in the Cursor marketplace; Grok Bot inherits the same library. Do not clone the repo onto the Bot computer."
+  },
+  {
+    "name": "chrome-devtools MCP",
+    "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+    "blurb": "Drive a live Chrome: traces, network, source-mapped console errors."
+  },
+  {
+    "name": "Vercel plugin",
+    "url": "https://github.com/vercel/vercel-plugin",
+    "blurb": "Deployments, logs, domains. Pair with the forum thread on OAuth redirect failures."
+  },
+  {
+    "name": "Grok Ship",
+    "url": "https://github.com/kunchenguid/grok-ship",
+    "blurb": "Agent distro that turns Grok Bot into a software factory: scout vs ship, per-project crewmates driving Cursor cloud agents, review before any PR."
+  },
+  {
+    "name": "Coolify Cursor plugin",
+    "url": "https://github.com/coollabsio/coolify-cursor-plugin",
+    "blurb": "Official Coolify plugin for Cursor and Grok Bot: remote HTTP MCP to inspect servers, apps, deploys, and logs."
+  },
+  {
+    "name": "Grok Bot Telegram bridge",
+    "url": "https://github.com/SSBrouhard/grokbot-telegram-bridge",
+    "blurb": "Unofficial Telegram gateway that runs on the Grok Bot computer and talks to the local Sand gateway on loopback only."
+  },
+  {
+    "name": "grok-wechat-plugin",
+    "url": "https://github.com/little-thing/grok-wechat-plugin",
+    "blurb": "Unofficial WeChat iLink channel: inbound messages wake a Grok Bot routine over webhook."
+  },
+  {
+    "name": "grok-bot-cli",
+    "url": "https://github.com/ScriptedAlchemy/grok-bot-cli",
+    "blurb": "Terminal CLI that reuses the signed-in macOS Grok Bot app to list, create, and message teammates."
+  },
+  {
+    "name": "grokbot-tui",
+    "url": "https://github.com/smarzban/grokbot-tui",
+    "blurb": "Unofficial terminal TUI that talks to the Grok Bot host gateway so you can chat with bots and channels from the terminal."
+  },
+  {
+    "name": "grok-bot-skill",
+    "url": "https://github.com/adamanz/grok-bot-skill",
+    "blurb": "Cursor/Claude skill so a coding agent can list, chat with, and create Grok Bot teammates."
+  },
+  {
+    "name": "budezllc/dictate-capture",
+    "url": "https://github.com/budezllc/dictate-capture",
+    "blurb": "Windows helper: hold Ctrl+D to dictate into Grok Bot, optionally drag a gold box to paste a screenshot."
+  },
+  {
+    "name": "HAEGONG/grok-bot-profiles",
+    "url": "https://github.com/HAEGONG/grok-bot-profiles",
+    "blurb": "Paste-in Grok Bot profiles that split spec, bug repro, implementation, and verification so a bot never approves its own work."
+  },
+  {
+    "name": "adam91holt/grokbot-sdk",
+    "url": "https://github.com/adam91holt/grokbot-sdk",
+    "blurb": "TypeScript SDK for a running Grok Bot host: typed local HTTP gateway client plus sand-data disk readers (6★, MIT)."
+  },
+  {
+    "name": "steve228uk/grok-bot-shopping",
+    "url": "https://github.com/steve228uk/grok-bot-shopping",
+    "blurb": "Shopping skills pack: merchant UCP/MCP, Shopify Shop CLI via npx, and Stripe Onelink; paste INSTALL.md into Grok Bot (2★)."
+  },
+  {
+    "name": "Thin Grok Bot, deep work on CLI",
+    "url": "https://github.com/Luca-Blight/thin-grok-bot-deep-work-on-cli",
+    "blurb": "Skill that keeps the Grok Bot mesh thin and hands deep builds or investigations to Cursor CLI, Cursor cloud agents, or grok CLI."
+  },
+  {
+    "name": "mykemueller1-ctrl/grok-bot-restaurant-scout",
+    "url": "https://github.com/mykemueller1-ctrl/grok-bot-restaurant-scout",
+    "blurb": "Grok Bot pack for a restaurant social-commerce scout: agent profile, morning-scan/script/catalog skills, daily routine, and MCP connectors with a copy-paste SETUP.md."
+  },
+  {
+    "name": "ShuhangGe/grokbot-queue",
+    "url": "https://github.com/ShuhangGe/grokbot-queue",
+    "blurb": "CLI (gbq) that queues work onto your running Grok Bots over Tailscale/SSH so many cloud tasks share a ~400MB local footprint."
+  },
+  {
+    "name": "3Fold-Labs/grok-bot-org-chart",
+    "url": "https://github.com/3Fold-Labs/grok-bot-org-chart",
+    "blurb": "Permissions playbook and role-bot templates (Chief of Staff, Eng, Ops, and more) for running a small company as named Grok Bots on one shared computer."
+  },
+  {
+    "name": "crew-contract",
+    "url": "https://github.com/lsj210001/crew-contract",
+    "blurb": "Operating protocol for Grok Bot crews: seven-field missions, artifact handoffs, stop-on-budget, plus a paste-in Signal Crew and Notion schema."
+  },
+  {
+    "name": "cobusgreyling/grok-bot-templates",
+    "url": "https://github.com/cobusgreyling/grok-bot-templates",
+    "blurb": "Scored Grok Bot operating contracts (job, never-list, L1 default, CI) with a START.md installer: paste into Setup, tap a team, get 49 paste-ready profiles."
+  },
+  {
+    "name": "jaredtrichard/grok-factory",
+    "url": "https://github.com/jaredtrichard/grok-factory",
+    "blurb": "Followable Grok Bot pack (software + research + general) installed via `follow …/GROK_FACTORY.md`; Firstmate routes work on the shared computer."
+  },
+  {
+    "name": "Chakhdz/grok-bot-token-saver",
+    "url": "https://github.com/Chakhdz/grok-bot-token-saver",
+    "blurb": "Token-thrifty chief/worker mold: remaster long chats on a timer and revive bots from a short role card; ships installable Botsi Archivist via x.ai/bot."
+  },
+  {
+    "name": "supervised-nl/tesla-fleet-mcp",
+    "url": "https://github.com/supervised-nl/tesla-fleet-mcp",
+    "blurb": "Tesla Fleet API MCP with `.grok-plugin` for Grok Bot (Streamable HTTP on public HTTPS; climate/charge/lock need tesla-http-proxy + virtual key)."
+  },
+  {
+    "name": "DomenicFotino/grok-bot-template-market",
+    "url": "https://github.com/DomenicFotino/grok-bot-template-market",
+    "blurb": "Hosted MCP plugin for Bot Template Market (catalog / licenses / apply_pack); add `https://grok-raqet.vercel.app/api/mcp` in Grok Bot Plugins."
+  },
+  {
+    "name": "novusordos666/grokbot-outreach-agent-team",
+    "url": "https://github.com/novusordos666/grokbot-outreach-agent-team",
+    "blurb": "Five coordinated Grok Bot agent prompts (chief, research, qualify, outreach, inbox/Calendly) for evidence-based outbound with human approvals."
+  },
+  {
+    "name": "NexFade/nexfade-grok-plugin",
+    "url": "https://github.com/NexFade/nexfade-grok-plugin",
+    "blurb": "NexFade `.grok-plugin` + MCP for Grok Bot: encrypt files/notes on the Bot computer (AES-256-GCM) and share ciphertext links without sending plaintext to NexFade (MIT)."
+  },
+  {
+    "name": "elderibeiro/proton-mail-mcp-grokbot",
+    "url": "https://github.com/elderibeiro/proton-mail-mcp-grokbot",
+    "blurb": "Public Proton Mail MCP recovery base for Grok Bot: official Bridge on loopback plus a stdio proxy (pass/env secrets; no credentials in-repo; 1★)."
+  },
+  {
+    "name": "elderibeiro/subaru-starlink-mcp-grokbot",
+    "url": "https://github.com/elderibeiro/subaru-starlink-mcp-grokbot",
+    "blurb": "Public Subaru STARLINK / MySubaru MCP for Grok Bot via subarulink (no VIN/PIN/secrets in-repo; MIT; 1★)."
+  },
+  {
+    "name": "koreysmith123/recallsmith",
+    "url": "https://github.com/koreysmith123/recallsmith",
+    "blurb": "RecallSmith experiential memory for GrokBot: one-message install, `.grok-plugin`/MCP skills, docker-compose and pgvector profiles (MIT)."
+  },
+  {
+    "name": "canvascloudai/cwm-cursor-plugin",
+    "url": "https://github.com/canvascloudai/cwm-cursor-plugin",
+    "blurb": "Cloud World Model official Cursor/Grok Bot plugin pack: hosted Streamable HTTP MCP plus simulate-architecture skill (MIT)."
+  },
+  {
+    "name": "sigmashakeinc/sigmashake-guardrails",
+    "url": "https://github.com/sigmashakeinc/sigmashake-guardrails",
+    "blurb": "SigmaShake Guardrails hosted control plane for Grok Bot/Cursor: `.grok-plugin` + Streamable HTTP MCP evaluating tool calls (ALLOW/DENY/ASK/…)."
+  },
+  {
+    "name": "Deploy-Forward/convoy",
+    "url": "https://github.com/Deploy-Forward/convoy",
+    "blurb": "Convoy hosted MCP (convoy.bot/mcp) with Grok Bot as conductor: onboard/roster/send/feed hops to BYO harness CLIs (tests + docs)."
+  },
+  {
+    "name": "nessielabs/nessie-grokbot",
+    "url": "https://github.com/nessielabs/nessie-grokbot",
+    "blurb": "Cursor/Grok Bot plugin that attaches Nessie’s hosted MCP (`mcp.nessielabs.com`) so a Bot can search, read, and safely write your Nessie context library (MIT)."
+  },
+  {
+    "name": "GlobalTC/steer",
+    "url": "https://github.com/GlobalTC/steer",
+    "blurb": "Grok Bot share recipe for STEER: mark a draft, Save, get a rewrite; ships profile, memory, two skills, and a webhook routine (Apache-2.0)."
+  },
+  {
+    "name": "AgentMindCloud/grok-bot-super",
+    "url": "https://github.com/AgentMindCloud/grok-bot-super",
+    "blurb": "Community playbook library a Grok Bot can read and save as skills (email triage, research brief, X-thread builder, and more) via official save-as-skill (MIT, 1★)."
+  },
+  {
+    "name": "grok-bot-mcp-connector",
+    "url": "https://github.com/chipherndon/grok-bot-mcp-connector",
+    "blurb": "Cloudflare Worker MCP with send and inbox tools so two dedicated Grok Bots can message each other and wake via webhook routines."
+  },
+  {
+    "name": "grok-skills",
+    "url": "https://github.com/jaskirat1616/grok-skills",
+    "blurb": "Catalog of 195 SKILL.md playbooks for Grok Bot, browsable at grokbotskills.vercel.app and installable via grok plugin marketplace add."
+  },
+  {
+    "name": "Firstmate",
+    "url": "https://github.com/matteoantoci/firstmate",
+    "blurb": "Paste-ready Grok Bot prompt that runs a crew and writes decisions into a git repo so memory is not trapped in one chat thread."
+  },
+  {
+    "name": "GTM agent automations",
+    "url": "https://github.com/OpulentiaAI/gtm-agent-automations",
+    "blurb": "Copy-paste Grok Bot automation prompts for GTM work (outbound, CRM, Stripe, Slack triggers), modeled on dabit3/cloud-agent-automations."
+  },
+  {
+    "name": "remem-grokbot",
+    "url": "https://github.com/asimgilani/remem-grokbot",
+    "blurb": "Cursor/Grok Bot plugin that exposes ten remem.io memory tools over stdio MCP, with tests and a grokbot namespace policy."
+  },
+  {
+    "name": "Podcast Summary Bot",
+    "url": "https://github.com/noam99moyal-sudo/podcast-summary-bot",
+    "blurb": "Grok Bot template (x.ai/bot share) plus a skill that turns a YouTube, X, or Spotify episode into five reusable insights."
+  },
+  {
+    "name": "Buses & Trains MCP",
+    "url": "https://github.com/BusesAndTrains/busesandtrains-mcp",
+    "blurb": "Grok Bot plugin for live UK bus and train times, journey planning, and rail fares via the Buses & Trains API."
+  },
+  {
+    "name": "Balise for Grok Bot",
+    "url": "https://github.com/baliseai/balise-grok-plugin",
+    "blurb": "Cursor/Grok Bot plugin plus SKILL.md that OAuth-connects to Balise hosted MCP so a Bot can search private Apple Photos visual memory."
+  },
+  {
+    "name": "GbNet for Cursor",
+    "url": "https://github.com/medomatic-ai/gbnet-cursor-plugin",
+    "blurb": "Cursor/Grok Bot plugin with a collaboration SKILL.md and hosted MCP so two permissioned partners can share plans, tasks, and evidence."
+  },
+  {
+    "name": "BaseMouse Cursor plugin",
+    "url": "https://github.com/basemouse/cursor-plugin",
+    "blurb": "Cursor/Grok Bot plugin wrapping BaseMouse MCP (search, context packs, upsert) with a SKILL.md for grounded project memory."
+  },
+  {
+    "name": "deskforge",
+    "url": "https://github.com/mturac/deskforge",
+    "blurb": "Go CLI that inits a git ledger and six paste-ready Grok Bot agent descriptions (Mainer, Pulse, Scout, Judge, Builder, Critic) for a group desk loop."
+  },
+  {
+    "name": "Unlist",
+    "url": "https://github.com/shawnyeager/unlist",
+    "blurb": "Grok Bot playbook (BOT.md) plus a local CLI and broker list so a Bot can file people-search opt-outs and log follow-ups without committing profile.json."
+  },
+  {
+    "name": "Brew for Grok Bot",
+    "url": "https://github.com/GetBrew/cursor-plugin",
+    "blurb": "Cursor/Grok Bot plugin plus SKILL.md that OAuth-connects to Brew hosted MCP so a Bot can generate, send, schedule, and analyze on-brand email."
+  },
+  {
+    "name": "GojiberryAI Sales OS",
+    "url": "https://github.com/romangojiberryAI/gojiberryai-sales-os",
+    "blurb": "Grok Bot plugin with a 13-agent SKILL.md and hosted GojiberryAI MCP so a Bot can run outbound sales (intent, enrich, LinkedIn, replies) without inventing contacts."
+  },
+  {
+    "name": "Steltic Grok Bot",
+    "url": "https://github.com/Steltic/steltic_grokbot",
+    "blurb": "Packaged SKILL.md files plus a Python convert/index/search pipeline so three Grok Bots can retrieve licensed structural-steel specs on the Bot computer without an external RAG."
+  },
+  {
+    "name": "GrokBot Body",
+    "url": "https://github.com/rowline/grokbot-body",
+    "blurb": "iPhone plus DockKit app and a self-hosted Cloudflare Worker MCP so one Grok Bot can listen, speak, and change face on a phone as its body."
+  },
+  {
+    "name": "Grok Bot Telegram private bridge",
+    "url": "https://github.com/liush2yuxjtu/grok-bot-telegram-private-bridge",
+    "blurb": "Unofficial owner-paired Telegram front end that runs on the Grok Bot cloud computer and talks to the local gateway on loopback only."
+  },
+  {
+    "name": "Paygent plugin",
+    "url": "https://github.com/usepaygent/paygent-plugin",
+    "blurb": "Cursor/Grok Bot plugin plus SKILL.md that connects a hosted Paygent MCP so a Bot can request a crypto-funded card, check balance, and complete checkouts."
+  },
+  {
+    "name": "Kijiji Marketplace skills",
+    "url": "https://github.com/alifarooq0/grok-bot-kijiji-marketplace",
+    "blurb": "Grok Bot Agent Plugin with four SKILL.md files for Kijiji search, draft listings, price research, and buyer outreach (skills-only, no MCP)."
+  },
+  {
+    "name": "Stashiro agent plugin",
+    "url": "https://github.com/c4davide/stashiro-agent-plugin",
+    "blurb": "Client-only Stashiro plugin for Cursor, Grok Bot, and Claude Code with hosted MCP and five board/workspace SKILL.md files."
+  },
+  {
+    "name": "create-custom-mcp skill",
+    "url": "https://github.com/larry-fuqua/create-custom-mcp",
+    "blurb": "Drop-in create-custom-mcp skill packs for Grok Build and Grok Bot that stand up a custom MCP behind an OAuth/API-key gateway with a final as-built security review."
+  },
+  {
+    "name": "GSC Wizard Grok plugin",
+    "url": "https://github.com/gscwizard/grok-plugin",
+    "blurb": "Grok / Grok Bot / Grok Build plugin that wires the hosted GSC Wizard MCP for Search Console rankings, decay, cannibalization, CTR, and weekly SEO reports."
+  },
+  {
+    "name": "Grok Bot Vision",
+    "url": "https://github.com/kenarakelian1/grok-bot-vision",
+    "blurb": "Grok Bot vision plugin with local Node MCP so a Bot can see a live camera stream plus pictures, screenshots, PDFs, and documents."
+  },
+  {
+    "name": "Glome plugin",
+    "url": "https://github.com/ObsidianCodes/glome-plugin",
+    "blurb": "Cursor Marketplace / Grok Bot plugin that binds Bots to Glome Cloud hosted MCP for 1:1 Bot-to-Bot messaging."
+  },
+  {
+    "name": "Aaron Marketing Skills",
+    "url": "https://github.com/aaron-he-zhu/aaron-marketing-skills",
+    "blurb": "120 marketing skills installable as a plugin, portable skills, or an 8-bot AI staff on named-bot hosts including Grok Bot."
+  },
+  {
+    "name": "AICA Life OS plugin",
+    "url": "https://github.com/Comdei/aica-cursor-plugin",
+    "blurb": "Cursor/Grok Bot plugin that wires the hosted AICA Life OS MCP with OAuth so a Bot can read the day, tasks, and moments, then propose writes you confirm in AICA."
+  },
+  {
+    "name": "GbNet for Grok Bot",
+    "url": "https://github.com/medomatic-ai/gbnet-grok-bot-plugin",
+    "blurb": "Grok Bot–specific GbNet plugin (distinct from the Cursor IDE package) with hosted MCP and a collaboration SKILL.md so invited Bots can work together under your permissions."
+  },
+  {
+    "name": "ADD Framework agent plugin",
+    "url": "https://github.com/dragosroua/grok-bot-add-plugin",
+    "blurb": "Grok Bot / Agent Plugin skills pack for the Assess-Decide-Do framework—six SKILL.md files that detect explore vs decide vs execute and answer in-alignment."
+  },
+  {
+    "name": "unslopifymy agent plugin",
+    "url": "https://github.com/dragosroua/grok-bot-unslopifymy-plugin",
+    "blurb": "Grok Bot–named Agent Plugin with local Node MCP and an unslopify SKILL.md that rewrites AI-slop text via unslopifymy.ai (API key or x402)."
+  },
+  {
+    "name": "Google Sheets agent plugin",
+    "url": "https://github.com/euca-net/grok-bot-plugins",
+    "blurb": "grok-bot-plugins Agent Plugin wrapping Google Sheets API v4 as MCP tools (get/update/append/list tabs) plus a google-sheets SKILL.md—now past the morning empty-stub state."
+  },
+  {
+    "name": "CampfireSMS Grok Bot plugin",
+    "url": "https://github.com/campfiresms/campfiresms-grok-bot",
+    "blurb": "Cursor/Grok Bot plugin that attaches CampfireSMS hosted MCP (open/send/check/ack/close) plus a campfiresms-bridge skill and wake-routine notes for 24/7 SMS without keeping SMS credentials on the Bot computer."
+  },
+  {
+    "name": "VidNotes Grok Bot plugin",
+    "url": "https://github.com/Karniej/vidnotes-grok-bot-plugin",
+    "blurb": "Template-based Cursor/Grok Bot plugin that connects the hosted VidNotes HTTPS MCP so a Bot can work with video notes while keeping the API key in host secure plugin variables."
+  },
+  {
+    "name": "Buzz messaging plugin",
+    "url": "https://github.com/davidorban/buzz-grokbot",
+    "blurb": "Cursor/Grok Bot plugin with a TypeScript MCP (stdio or Streamable HTTP) for Buzz/NIP-29 messaging—send, list, thread, and inbox tools plus split skills so keys can stay off the shared Bot box."
+  },
+  {
+    "name": "MyApi Cursor/Grok Bot plugin",
+    "url": "https://github.com/omribenami/myapi-cursor-plugin",
+    "blurb": "Official MyApi plugin for Cursor and Grok Bot: npx myapi-asc-mcp plus enroll/request/services skills so agents reach Gmail/GitHub/Slack/Notion and other connected services without scattering raw credentials."
+  },
+  {
+    "name": "Knowz + KnowzCode plugins",
+    "url": "https://github.com/knowz-io/cursor-knowz-plugin",
+    "blurb": "Two separately installable Knowz / KnowzCode plugins for Grok Bot, Grok Build, and Cursor—vault knowledge MCP with marketplace and authorize flows documented per host."
+  },
+  {
+    "name": "Bool Cursor/Grok Bot plugin",
+    "url": "https://github.com/codehs/bool-cursor-plugin",
+    "blurb": "Official Bool thin connector for Cursor and Grok Bot: hosted Streamable HTTP MCP at bool.com plus a skill so agents can create, build, and publish Bool apps after OAuth."
+  },
+  {
+    "name": "Open Quantum Cursor plugin",
+    "url": "https://github.com/Quantum-Rings/openquantum-cursor-plugin",
+    "blurb": "Cursor/Grok Bot plugin that wires the official openquantum-mcp stdio server so a Bot can list QPU backends, quote, submit OpenQASM, and fetch results under spend policy—enable on the Cursor account, do not clone onto the Bot computer."
+  },
+  {
+    "name": "grok-job-kit standing seats",
+    "url": "https://github.com/Octo-o-o-o/grok-job-kit",
+    "blurb": "Grok Bot standing-seat job kit (Mouth/Desk/Hands/Check and optional Scout/Watch/List/Judge) with hire-roster and bind-local skills plus templates—hires empty chairs instead of cloning a staffed office."
+  },
+  {
+    "name": "Hermes↔Grok Bot wake bridge plugin",
+    "url": "https://github.com/barkleesanders/hermes-grok-bridge",
+    "blurb": "Agent Plugin with MCP plus one skill that bridges Hermes outbound session hooks and inbound webhooks to Grok Bot wakes, using env placeholders so secrets stay off the shared Bot computer."
+  },
+  {
+    "name": "Primo IT fleet MCP plugin",
+    "url": "https://github.com/getprimo/primo-mcp-plugin",
+    "blurb": "Cursor/Grok Bot Agent Plugin that points at Primo hosted MCP so a Bot can answer IT fleet questions on devices, tickets, SaaS identities, CVEs, and onboarding without a local server."
+  },
+  {
+    "name": "Agnic Gifts shopping plugin",
+    "url": "https://github.com/agnicpay/agnic-gifts-grok-bot-plugin",
+    "blurb": "Cursor/Grok Bot plugin that wires the hosted Agnic Gifts MCP for in-stock gift shopping, with nothing purchased until the user passkey-approves a spend cap."
+  },
+  {
+    "name": "OverSkill app-builder plugin",
+    "url": "https://github.com/OverskillDev/overskill-cursor",
+    "blurb": "Cursor/Grok Bot plugin that connects OverSkill hosted MCP plus an app-builder skill so the agent can create, iterate, and publish full-stack OverSkill apps after OAuth."
+  },
+  {
+    "name": "SourceMedium commerce MCP plugin",
+    "url": "https://github.com/source-medium/cursor-plugin",
+    "blurb": "Cursor/Grok Bot plugin that installs SourceMedium secure MCP so the agent can analyze warehouse, Shopify, and Meta Ads commerce data while keeping metric definitions intact."
+  },
+  {
+    "name": "GrokBot↔Hermes self-hosted MCP bridge",
+    "url": "https://github.com/iamsupersocks/grokbot-hermes-bridge",
+    "blurb": "Self-hosted OAuth MCP gateway and Agent Plugin template that lets Grok Bot stay the chat UI while a local Hermes Agent produces answers on your own machine."
+  },
+  {
+    "name": "Multi-agent Grok Bot skill templates",
+    "url": "https://github.com/EndeavorYen/grok-bot-skills",
+    "blurb": "Reusable Grok Bot skills for chief-plus-specialist multi-agent teams covering disk handoffs, approval gates, and a create/audit checklist for bot designers."
+  },
+  {
+    "name": "punk-records Grok Bot round-table setup",
+    "url": "https://github.com/VeigaPunk/punk-records-brain",
+    "blurb": "Grok Bot auto-setup plugin: say set grok bot for me in your preferred CLI to mint named round-table cards via CDP instead of clicking New by hand."
+  },
+  {
+    "name": "PumpGrok Solana trading-desk pack",
+    "url": "https://github.com/swcstudiospace/PumpGrok",
+    "blurb": "Eight-role Solana memecoin trading desk for Grok Bot with 23 skills, a hard security constitution, and read-only helpers—no keys in the system and only human-approved actions."
+  },
+  {
+    "name": "ShopMonkey REST v3 Cursor plugin",
+    "url": "https://github.com/skyburxd/grokbot-shopmonkey-plugin",
+    "blurb": "Cursor/Grok Bot Agent Plugin with mcp.json and a ShopMonkey skill that wraps ShopMonkey REST v3 for orders, customers, and vehicles via Marketplace install."
+  },
+  {
+    "name": "Tender Years household MCP plugin",
+    "url": "https://github.com/voeliz/tender-years-grok-plugin",
+    "blurb": "Read-only Cursor/Grok Bot Agent Plugin that wires the Tender Years hosted MCP for household members, routines, tasks, and week snapshots after you paste an API key."
+  },
+  {
+    "name": "74-skill Grok Bot library",
+    "url": "https://github.com/shrdgn/grokbot-skills",
+    "blurb": "Curated library of 74 ready-to-run Grok Bot skills across 12 categories, each as a consistent SKILL.md recipe for on-demand or scheduled runs."
+  },
+  {
+    "name": "technocore-safe Flop skill",
+    "url": "https://github.com/mahathir69/technocore-safe",
+    "blurb": "Grok Bot skill for helping Flop/Technocore without leaking keys or lobby spam, requiring typed APPROVE SEND before any publish."
+  },
+  {
+    "name": "Sales Outbound workforce teaser",
+    "url": "https://github.com/PROJECT-073-X/grok-bot-workforce",
+    "blurb": "Free Sales Outbound Grok Bot profile and skill teaser with job contract and auto-review gates that wait for human approval before sending."
+  },
+  {
+    "name": "Peekaboo Mac UI skill",
+    "url": "https://github.com/bcharleson/grokbot-peekaboo",
+    "blurb": "Grok Bot skill that drives registered Macs through Peekaboo for screen recording, screenshots, window lists, and UI input beyond plain bash."
+  },
+  {
+    "name": "awesome-claude-skills port for Grok Bot",
+    "url": "https://github.com/jeremybrasher/grokbot-skills",
+    "blurb": "Large Grok Bot skill collection reshaped from awesome-claude-skills, keeping original licenses and SOURCE.md links in one-folder-per-skill layout."
+  },
+  {
+    "name": "grok-bot-rooms registry plugin",
+    "url": "https://github.com/mrlynn/grok-bot-plugin-example",
+    "blurb": "Agent Plugin (repo slug grok-bot-plugin-example) that registers assistants into hosted rooms, check-ins, slash commands, and host-and-invite lobbies for Grok Bot."
+  },
+  {
+    "name": "AskGrokWallet",
+    "url": "https://github.com/richard7463/askgrokwallet",
+    "blurb": "Governed-wallet plugin for Grok Bot: plain-English policies compile to allow/ask/deny, \"ask\" lands in a human approval inbox, and every outcome leaves a signed receipt; the onchain engine implements ERC-8196 on Base mainnet (MIT)."
+  },
+  {
+    "name": "xAI Bug Reporter Grok Bot plugin",
+    "url": "https://github.com/FineComputer14451/xai-bug-reporter",
+    "blurb": "Grok Bot/Cursor plugin plus Grok Chat skill that walks triage and evidence into a paste-ready xAI bug report without inventing support channels."
+  },
+  {
+    "name": "MERIT agent skills (Grok Bot target)",
+    "url": "https://github.com/AgentDraven/merit-agent-skills",
+    "blurb": "Free MERIT agent skills and merit CLI with an explicit Grok Bot install target alongside Cursor, Claude Code, Codex, Hermes, and OpenClaw."
+  }
+]

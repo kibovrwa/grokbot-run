@@ -1,0 +1,182 @@
+[
+  {
+    "name": "ZeroPointRepo/awesome-grok-bot",
+    "url": "https://github.com/ZeroPointRepo/awesome-grok-bot",
+    "blurb": "Day-one 19-entry directory, strong on marketplace format and self-hosted runtimes."
+  },
+  {
+    "name": "awesome-mcp-servers",
+    "url": "https://github.com/punkpeye/awesome-mcp-servers",
+    "blurb": "MCP server catalog. Grok Bot follows Cursor plugin/MCP policy."
+  },
+  {
+    "name": "awesome-claude-code",
+    "url": "https://github.com/hesreallyhim/awesome-claude-code",
+    "blurb": "Skill-format sibling ecosystem; many SKILL.md packs are conceptually portable."
+  },
+  {
+    "name": "botdirectory.ai (announced)",
+    "url": "https://x.com/aiedge_/status/2089895147068924385",
+    "blurb": "Community directory of live Bots — treat the site as beta."
+  },
+  {
+    "name": "mergisi/awesome-grokbot",
+    "url": "https://github.com/mergisi/awesome-grokbot",
+    "blurb": "56 copy-paste Bot profiles and starter teams you drop into a Setup Bot."
+  },
+  {
+    "name": "elie222/botdirectory.ai",
+    "url": "https://github.com/elie222/botdirectory.ai",
+    "blurb": "Community prompt directory (153 stars): paste a listing into Grok Bot and it sets itself up as a scheduled bot."
+  },
+  {
+    "name": "rosterroom",
+    "url": "https://github.com/codejunkie99/rosterroom",
+    "blurb": "82 copy-paste agent-team rosters for Grok Bot, with ownership lanes and human approval gates."
+  },
+  {
+    "name": "usegrokbot.com",
+    "url": "https://github.com/a70win-wq/usegrokbot",
+    "blurb": "Searchable library of real Grok Bot workflows with a live discover site at usegrokbot.com."
+  },
+  {
+    "name": "GrokBotDev / grokbot.dev",
+    "url": "https://github.com/ZeroPointRepo/GrokBotDev",
+    "blurb": "Agent-run directory of prompts, plugins, and use cases; PRs are the write API, with JSON/RSS/MCP reads."
+  },
+  {
+    "name": "Anil-matcha/awesome-grok-bot",
+    "url": "https://github.com/Anil-matcha/awesome-grok-bot",
+    "blurb": "Large template library of ready-to-paste Grok Bot prompts across productivity, sales, marketing, and ops."
+  },
+  {
+    "name": "ellelion/botteams",
+    "url": "https://github.com/ellelion/botteams",
+    "blurb": "Public Grok Bot team directory: copy one installer prompt and it creates the named Bots, group chat, and routines."
+  },
+  {
+    "name": "travisrr/really.bot",
+    "url": "https://github.com/travisrr/really.bot",
+    "blurb": "Public Grok Bot job board at really.bot: verified runs get a serial, and tagging @tryreallybot on X imports a thread."
+  },
+  {
+    "name": "thomasbek3/hermes-bot-kit",
+    "url": "https://github.com/thomasbek3/hermes-bot-kit",
+    "blurb": "Hermes Desktop plugins that copy the Grok Bot feel: iMessage-style bubbles plus a live window into each bot’s computer (52★, not affiliated with xAI)."
+  },
+  {
+    "name": "Ritesh-Root/grok-template",
+    "url": "https://github.com/Ritesh-Root/grok-template",
+    "blurb": "Community marketplace at groktemplate.vercel.app for working Grok Bot share links and GitHub packs — browse and copy with no account."
+  },
+  {
+    "name": "mostdesign01-sudo/grokbot-use-cases",
+    "url": "https://github.com/mostdesign01-sudo/grokbot-use-cases",
+    "blurb": "Unofficial bilingual gallery (AI UP LAB) of reusable Grok Bot cases, HTML collects, and Agent UI, updated from data JSON."
+  },
+  {
+    "name": "majiayu000/awesome-grok-bot",
+    "url": "https://github.com/majiayu000/awesome-grok-bot",
+    "blurb": "Curated official x.ai/bot share links (not prompt dumps) with vetting notes, team packs, and SECURITY.md; points to RongleCat for resource lists."
+  },
+  {
+    "name": "PramodDutta/botskills",
+    "url": "https://github.com/PramodDutta/botskills",
+    "blurb": "Paste-ready BOT.md directory for Grok Bot and Rakazo; every listing requires a hard human-approval boundary and ships a Next.js leaderboard."
+  },
+  {
+    "name": "AmitMirgal/orgbot-hub",
+    "url": "https://github.com/AmitMirgal/orgbot-hub",
+    "blurb": "Directory app for installable Grok Bot team packs (official x.ai/bot share URLs only); local catalog via Supabase/Docker seed."
+  },
+  {
+    "name": "computindev/busca.bot",
+    "url": "https://github.com/computindev/busca.bot",
+    "blurb": "Spanish-language Grok Bot prompt directory (Astro content collections) with live site at busca.bot."
+  },
+  {
+    "name": "ddhjy/grok-bot-hub",
+    "url": "https://github.com/ddhjy/grok-bot-hub",
+    "blurb": "Unofficial Chinese Grok Bot navigation site (Astro + data/catalog.json, 328 entries) at ddhjy.github.io/grok-bot-hub (MIT)."
+  },
+  {
+    "name": "0xNyk/awesome-grok-bot",
+    "url": "https://github.com/0xNyk/awesome-grok-bot",
+    "blurb": "Independent 0xNyk awesome directory of Grok Bot skills/plugins/MCP with production|beta|experimental maturity tags and a trust-boundary note (CC BY 4.0, 4★)."
+  },
+  {
+    "name": "Krishnamurthy-sfdx/grokbot-wall",
+    "url": "https://github.com/Krishnamurthy-sfdx/grokbot-wall",
+    "blurb": "Live wall of recent X posts about Grok Bot (grokbot-wall.vercel.app) rebuilt daily from public syndication feeds."
+  },
+  {
+    "name": "cs68614-hash/awesome-grokbot-templates",
+    "url": "https://github.com/cs68614-hash/awesome-grokbot-templates",
+    "blurb": "Multi-language awesome list of community Grok Bot templates with official x.ai/bot share links (CC0; directory at grokbot-templates.com)."
+  },
+  {
+    "name": "LinXiaoTao/awesome-grokbot",
+    "url": "https://github.com/LinXiaoTao/awesome-grokbot",
+    "blurb": "Curated EN/ZH list of community Grok Bots with official x.ai/bot share links (site: awsomebot.com)."
+  },
+  {
+    "name": "sefuzhou770801-hub/groki-bot",
+    "url": "https://github.com/sefuzhou770801-hub/groki-bot",
+    "blurb": "M5Stack CoreS3 firmware for a desktop robot that talks to a signed-in Grok Bot via a loopback HTTP proxy over grok-bot-cli (BSL-1.0)."
+  },
+  {
+    "name": "Anomalia",
+    "url": "https://github.com/anomaliaso/anomalia",
+    "blurb": "Open-source Grok Bot alternative that plans, writes, and publishes marketing work with a human approve step, hosted or self-run."
+  },
+  {
+    "name": "getgrokbot",
+    "url": "https://github.com/kwakseongjae/awesome-grok-bot",
+    "blurb": "Multilingual directory of Grok Bot setups, teams, and templates at getgrokbot.com, with Add-to-Grok share links and paste-ready copy."
+  },
+  {
+    "name": "Awesome Grok Bots (Composio)",
+    "url": "https://github.com/composio-community/awesome-grok-bots",
+    "blurb": "Curated knowledge-work Grok Bot blueprints: copy-paste Markdown briefs plus public x.ai/bot shares for product, research, and governance jobs."
+  },
+  {
+    "name": "Grok Bot 中文目录",
+    "url": "https://github.com/245678000000/grokbot-zh",
+    "blurb": "Independent Simplified-Chinese localization of grokbot.dev (marketplace, plugins, use cases) built with Astro and a Python localize pipeline."
+  },
+  {
+    "name": "Grokdex",
+    "url": "https://github.com/andrewkittridge/grokory",
+    "blurb": "Public ranked board of Grok Bot share links (Hot/Top/New) at grokdex.net; paste an x.ai/bot URL to list, then Add to Grok Bot."
+  },
+  {
+    "name": "grokbotit",
+    "url": "https://github.com/raxmichter/Grok-Bot-It",
+    "blurb": "Product Hunt-style community for Grok Bots (grokbotit.com) with X login, upvotes, and an MCP to search and install listed bots."
+  },
+  {
+    "name": "AI社員 Control Plane",
+    "url": "https://github.com/pacifico-1106/grokbot-control-plane",
+    "blurb": "Next.js control plane for Japanese SMEs to treat Grok Bots as named AI employees with ID cards, approval queues, and an audit timeline."
+  },
+  {
+    "name": "awesome-grokbot",
+    "url": "https://github.com/kydlikebtc/awesome-grokbot",
+    "blurb": "Bilingual catalog of 361 live x.ai/bot share links (status-checked 2026-09-01) with JSON schema, CI, and a searchable site at kydlikebtc.github.io/awesome-grokbot."
+  },
+  {
+    "name": "Awesome Grok Bot Templates",
+    "url": "https://github.com/divo12/awesome-grok-bot-templates",
+    "blurb": "Curated list of public Grok Bot templates as live x.ai/bot share pages you can Add to Grok Bot, with data/ and tests — not a prompt dump."
+  },
+  {
+    "name": "Bot Jobs",
+    "url": "https://github.com/lureilly1/botjobs",
+    "blurb": "Independent Astro directory of jobs you can get a Grok Bot to do (intent-first), with open jobs when no bot exists yet."
+  },
+  {
+    "name": "Omabot Omarchy bar for Grok Bot",
+    "url": "https://github.com/njpatel/omabot",
+    "blurb": "Omarchy bar widget that draws every Grok Bot as its own avatar with state expressions and one keypress to open the app."
+  }
+]

@@ -1,0 +1,80 @@
+{
+  "cli": {
+    "title": "grok-bot-cli",
+    "job": "List your Grok Bot roster and send messages from a terminal by reusing an already signed-in macOS desktop session — a side door for power users who live in the shell.",
+    "platforms": "macOS only in practice: it depends on a logged-in official Grok Bot desktop session on the same machine. Not a cloud API client.",
+    "install": "Follow the README at ScriptedAlchemy/grok-bot-cli. Typical flow: clone or install the published package, keep the official Grok Bot app signed in, then use the CLI to list Bots and post messages. The CLI does not replace in-app approvals, Take Over Computer, or Teach a task.",
+    "differs": "Unlike the official desktop, this is a third-party terminal bridge. Unlike Grok Build / grok-app, it talks to Grok Bot teammates (roster + messaging), not a local coding CLI. Unlike grok-bot-skill, it is meant for humans at a prompt, not for Cursor/Claude coding agents.",
+    "risk": "It may reuse local login state from the official app. Treat it like any tool that can act as you: review outbound messages, do not paste secrets into chat, and do not use it to bypass Require Approval. License and maintenance status belong to the upstream repo — verify before production use.",
+    "license": "As declared in the upstream repository README",
+    "source": "https://github.com/ScriptedAlchemy/grok-bot-cli",
+    "sections": [
+      {
+        "h": "What the CLI can and cannot do",
+        "p": "Treat grok-bot-cli as a side door into an already-running official desktop session. Typical jobs: list the roster, post a message you would have typed in the app, and script a check you already trust. It does not open Agent Computer, does not Take Over for passwords or 2FA, does not show the secrets card, and does not replace Require Approval. Teach a task, routines, and plugin OAuth still live in the official app. If a command would send mail, spend money, or change production, stop and do that click in the desktop or phone client where you can watch the computer."
+      },
+      {
+        "h": "Session reuse on macOS",
+        "p": "The useful trick is also the risk. The CLI reuses login state from the signed-in Grok Bot desktop app on the same Mac. That is why it is not a cloud API client and why it does not help a Linux box or a CI runner. Quit the official app, lock the session, or sign out, and the CLI should go quiet. Do not copy session files into another user account, a VM, or a gist. Anyone with that state can act as you and burn the weekly usage pool. Prefer a dedicated Mac user if you must leave a session open for scripts."
+      },
+      {
+        "h": "Approvals and weekly usage still apply",
+        "p": "Messages sent from a terminal still count as Grok Bot work on the Cursor account. Chief-of-Staff chatter and long inbox walks burn the weekly pool the same way they do in the app. On-Demand spillover still follows the cost lesson on this site. The CLI will not warn you that the pool is empty. Pair it with the official plans screen or a usage meter, and keep Auto-review / Require Approval rules in the official client — a shell wrapper is not a second policy engine. Read the upstream README for the current command list before you alias anything to send. If a script fails with a stale session after a password change, sign out of the official Mac app completely, quit it, sign in again, then retry the CLI — do not treat that as a missing plan."
+      }
+    ]
+  },
+  "skill": {
+    "title": "grok-bot-skill",
+    "job": "Let Cursor or Claude coding agents call your Grok Bot teammates as collaborators — hand off research, browser work, or ops tasks while you stay in the coding agent loop.",
+    "platforms": "Environments where a coding agent (Cursor / Claude-style) can load skills and where a signed-in Grok Bot session is available per the repo’s instructions.",
+    "install": "Install as a skill from adamanz/grok-bot-skill following the README. Confirm the permission scope the skill requests before enabling it in an agent that can write code or run tools. Keep the official Grok Bot desktop/phone for approvals that still need a human.",
+    "differs": "This is not an official xAI/Cursor API. It wires coding agents to Grok Bot teammates; it is not a TUI, not a usage meter, and not Grok Build. Prefer official connectors and in-app approvals for anything that sends mail, spends money, or changes production.",
+    "risk": "Third-party skill. Sharing agent configs can leak secrets embedded in skill text. Strip credentials before publishing. Session/local access patterns depend on how you wire it — assume it can trigger real Bot actions that consume weekly usage.",
+    "license": "As declared in the upstream repository README",
+    "source": "https://github.com/adamanz/grok-bot-skill"
+  },
+  "tui": {
+    "title": "grokbot-tui",
+    "job": "A third-party terminal user interface for interacting with Grok Bot from the keyboard — useful when you want roster/chat workflows without leaving a terminal multiplexer.",
+    "platforms": "Follow the smarzban/grokbot-tui README for supported OS versions and runtime requirements. Expect it to sit beside — not replace — the official desktop/mobile clients.",
+    "install": "Install per the repository README (language runtime, binary, or package manager as documented there). Sign in / authenticate the way the project documents. Keep official apps for computer takeover, Teach a task, and plugin OAuth.",
+    "differs": "A TUI is a presentation layer. It is not the official Grok Bot client, not the Grok Build coding CLI, and not grok-app (the Tauri GUI for Grok Build). Feature parity with desktop (Agent Computer preview, routines UI, secrets cards) will lag or be missing.",
+    "risk": "Any TUI that stores tokens or session cookies locally expands your attack surface. Prefer official paths for payments, OAuth plugins, and Reset/Recover. Verify upstream license and whether the project is actively maintained.",
+    "license": "As declared in the upstream repository README",
+    "source": "https://github.com/smarzban/grokbot-tui"
+  },
+  "usage": {
+    "title": "Grok Bot usage menu bar",
+    "job": "Show Grok Bot weekly usage in the macOS menu bar so you notice the pool before it silently spills into On-Demand.",
+    "platforms": "macOS menu bar. Numbers are informational; the Cursor plans screen remains the source of truth for billing.",
+    "install": "Install from diegocp01/grok_bot_usage_menu_bar per its README. Grant only the permissions the app documents. Cross-check readings against Cursor → Grok Bot weekly usage — community meters can lag or mis-map pools (Pro Other Models vs Bot weekly pool).",
+    "differs": "This is a meter, not a Bot client. It does not send messages, run routines, or recover computers. Pair it with the cost lesson on this site: On-Demand $0 blocks paid spillover but does not stop promo credits from draining, and there is no in-app warning from Grok Bot itself.",
+    "risk": "Third-party. Reading usage may require access to account/session data depending on implementation — review the repo before installing. Do not treat its number as a guarantee against charges; official plans screens and invoices win.",
+    "license": "As declared in the upstream repository README",
+    "source": "https://github.com/diegocp01/grok_bot_usage_menu_bar"
+  },
+  "linux": {
+    "title": "Grok Bot on Linux: official packages vs community port",
+    "job": "Community Linux packaging / port for people who want a desktop build outside or ahead of official channels — reference only once official packages exist.",
+    "platforms": "Linux (community). Prefer official deb / rpm / AppImage from x.ai/bot when available. FAQ fetch day 2026-09-04 lists Linux x64 and Arm64 as official platforms.",
+    "install": "First choice: download from https://x.ai/bot More downloads. Use Nichokas/grokbot-linux-port only as a community alternative after reading its README, version, and known rejection cases (very old unofficial builds such as 0.18 were refused during setup).",
+    "differs": "Official packages come from x.ai/bot and update through the app. Community ports/AUR/COPR/Wine wrappers are not staff-supported. Empty ListMachines / local-exec issues on Linux are documented in this site’s troubleshooting playbooks — fix those before blaming packaging.",
+    "risk": "Non-official builds can be outdated, unsigned, or rejected by backend version checks. Do not mix community and official installs blindly. Local stdio MCP still cannot attach from the cloud computer regardless of packaging.",
+    "license": "As declared in the upstream repository README",
+    "source": "https://github.com/Nichokas/grokbot-linux-port",
+    "sections": [
+      {
+        "h": "Use official packages first",
+        "p": "On fetch day 2026-09-04 the xAI FAQ listed Linux x64 and Arm64 as official platforms, with deb, rpm, and AppImage under More downloads on x.ai/bot. That is the supported path. Pick the file that matches both your distro and uname -m: x86_64 is x64, aarch64 is Arm64. Install, open the app, and sign in with Cursor the same way as on Mac or Windows. The app checks for updates; you can also use Settings → Beta → Check for Updates. If the official package launches and the computer provisions, stop here — you do not need a community port. The step-by-step desktop order is on the install lesson."
+      },
+      {
+        "h": "When a community port is actually useful",
+        "p": "Use Nichokas/grokbot-linux-port only after the official package fails on your distro, or when you are reading history about older unofficial builds. Very old community builds such as 0.18 were refused during setup. Do not mix an official install and a port in the same prefix and then wonder which binary is talking to the backend. Wine wrappers, random AUR/COPR copies, and reconstructed 0.18 trees are not staff-supported. Read the port README for the version it targets, then confirm that version is still accepted. If ListMachines is empty or local-exec fails, fix those with this site’s troubleshooting playbooks before you blame packaging."
+      },
+      {
+        "h": "Linux-specific limits that packaging cannot fix",
+        "p": "The cloud computer still cannot attach local stdio MCP, whether you installed from x.ai/bot or a port. Remote HTTP MCP and the cloud browser remain the integration surface. Execution on Local Computer is a different permission: it runs on the Linux box in front of you after you approve it, and it is not a substitute for putting the Bot on a company VPN — staff have warned that installing a VPN client on the Bot computer can take the box offline. Device limits still apply: a Grok Bot login can count as a Cursor device, and the cloud workspace may count as another. Prefer official Recover / Update over Reset when the computer is briefly unreachable. After an Update Computer, apt packages and daemons are gone even if /workspace files survived — keep a short install list in a file and have the Bot rebuild it."
+      }
+    ]
+  }
+}

@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grok Bot ops: X, Cursor Cloud Agents, MCP, and the computer</title>
+<meta name="description" content="How operators run X, Cursor Cloud Agents, remote MCP, and the shared Grok Bot computer. Named field posts. Drafts stay behind approval.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://grokbot.run/learn/ops/">
+<link rel="alternate" hreflang="en" href="https://grokbot.run/learn/ops/">
+<link rel="alternate" hreflang="x-default" href="https://grokbot.run/learn/ops/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Grok Bot Guide">
+<meta property="og:title" content="Grok Bot ops: X, Cursor Cloud Agents, MCP, and the computer">
+<meta property="og:description" content="How operators run X, Cursor Cloud Agents, remote MCP, and the shared Grok Bot computer. Named field posts. Drafts stay behind approval.">
+<meta property="og:url" content="https://grokbot.run/learn/ops/">
+<meta property="og:image" content="https://grokbot.run/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Grok Bot ops: X, Cursor Cloud Agents, MCP, and the computer">
+<meta name="twitter:description" content="How operators run X, Cursor Cloud Agents, remote MCP, and the shared Grok Bot computer. Named field posts. Drafts stay behind approval.">
+<meta name="twitter:image" content="https://grokbot.run/og.png">
+<link rel="icon" href="/brand/grok-bot-face.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/brand/grok-bot-face.svg">
+<style>/* Grok Bot Playbook — warm paper, black mark, quiet chrome */
+:root {
+  --bg: #F6F4EF;
+  --bg-elev: #FFFFFF;
+  --surface: #EFEDE6;
+  --overlay: rgba(16, 16, 0, 0.045);
+  --btn-sec: #E7E4DC;
+  --text: #111111;
+  --muted: #5E636B;
+  --nav-muted: rgba(17, 17, 17, 0.52);
+  --hairline: rgba(17, 17, 17, 0.08);
+  --hairline-strong: rgba(17, 17, 17, 0.14);
+  --radius: 22px;
+  --radius-n: 16px;
+  --radius-s: 12px;
+  --shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset, 0 10px 28px rgba(16, 16, 0, 0.045);
+  --shadow-hover: 0 1px 0 rgba(255, 255, 255, 0.8) inset, 0 16px 40px rgba(16, 16, 0, 0.08);
+  --max: 1120px;
+  --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Inter, Geist, "Helvetica Neue", Arial, sans-serif;
+  --ink: #0A0A0A;
+  --accent: #F26B2A;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; color-scheme: light; scroll-padding-top: 88px; }
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: #111; color: #fff; }
+img { max-width: 100%; height: auto; }
+a { color: var(--text); text-underline-offset: 3px; }
+a:hover { opacity: .7; }
+:focus-visible { outline: 2px solid #111; outline-offset: 3px; }
+.wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+
+header.site {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(246, 244, 239, 0.82);
+  backdrop-filter: saturate(1.3) blur(16px);
+  -webkit-backdrop-filter: saturate(1.3) blur(16px);
+  border-bottom: 1px solid var(--hairline);
+}
+.nav { display: flex; align-items: center; gap: 18px; min-height: 72px; position: relative; }
+.brand { display: flex; align-items: center; gap: 11px; text-decoration: none; flex: none; }
+.brand:hover { opacity: 1; }
+.brand img.logo,
+.brand img.mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 11px;
+  display: block;
+  flex: none;
+  box-shadow: 0 0 0 1px rgba(17, 17, 17, 0.08), 0 2px 8px rgba(10, 10, 10, 0.08);
+}
+.brand img.word { display: none; }
+.brand .name,
+.brand .tag {
+  font-size: 16px;
+  font-weight: 640;
+  letter-spacing: -0.028em;
+  color: var(--text);
+  white-space: nowrap;
+}
+.brand .tag {
+  font-weight: 530;
+  color: var(--muted);
+}
+.nav-rule {
+  width: 1px;
+  height: 18px;
+  background: var(--hairline-strong);
+  flex: none;
+}
+nav.links { display: flex; gap: 2px; margin-left: auto; flex-wrap: nowrap; align-items: center; }
+nav.links a {
+  color: var(--nav-muted);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 530;
+  padding: 8px 12px;
+  border-radius: 9999px;
+}
+nav.links a:hover { color: var(--text); opacity: 1; background: rgba(17, 17, 17, 0.04); }
+nav.links a[aria-current="page"] { color: var(--text); background: var(--bg-elev); box-shadow: 0 0 0 1px var(--hairline); }
+.menu-btn {
+  display: none;
+  border: 0;
+  background: var(--btn-sec);
+  border-radius: 9999px;
+  padding: 8px 14px;
+  font: inherit;
+  font-size: 14px;
+}
+
+.hero {
+  padding: 84px 0 36px;
+  position: relative;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -40px;
+  width: min(920px, 100%);
+  height: 380px;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse at 50% 0%, rgba(17, 17, 17, 0.055), transparent 68%);
+  pointer-events: none;
+}
+.hero .wrap { position: relative; }
+.hero-logo {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: block;
+  margin: 0 0 22px;
+  box-shadow: 0 8px 22px rgba(10, 10, 10, 0.12);
+}
+.hero-product {
+  background: var(--ink);
+  color: #F6F4EF;
+  padding: 72px 0 0;
+  margin: 0 0 8px;
+}
+.hero-product::before { display: none; }
+.hero-product .wrap { text-align: center; }
+.hero-product .kicker { color: rgba(246, 244, 239, 0.5); }
+.hero-product h1 {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.22em;
+}
+.hero-product .lede {
+  color: rgba(246, 244, 239, 0.58);
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero-next { margin: 14px 0 0; font-size: 14px; }
+.hero-next a { color: rgba(246, 244, 239, 0.72); }
+.hero-product .cta-row { justify-content: center; }
+.hero-product .btn-primary { background: #F6F4EF; color: #0A0A0A; }
+.hero-product .btn-primary:hover { box-shadow: 0 10px 24px rgba(246, 244, 239, 0.16); }
+.hero-product .btn-secondary { background: rgba(246, 244, 239, 0.08); color: #F6F4EF; }
+.hero-product .btn-ghost { color: #F6F4EF; border-color: rgba(246, 244, 239, 0.22); }
+.wordmark-face {
+  display: inline-flex;
+  width: 0.86em;
+  height: 0.86em;
+  vertical-align: -0.08em;
+}
+.wordmark-face svg { width: 100%; height: 100%; display: block; }
+.product-stage {
+  margin: 16px auto 0;
+  max-width: 880px;
+  background: #141414;
+  border: 1px solid rgba(246, 244, 239, 0.08);
+  border-bottom: 0;
+  border-radius: 18px 18px 0 0;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 248px 1fr;
+  text-align: left;
+  min-height: 340px;
+}
+.roster { padding: 14px 10px; border-right: 1px solid rgba(246, 244, 239, 0.06); }
+.roster-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 10px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: rgba(246, 244, 239, 0.78);
+  font-size: 14px;
+}
+.roster-row:hover { opacity: 1; background: rgba(246, 244, 239, 0.05); color: #fff; }
+.roster-row strong { display: block; font-weight: 580; color: #fff; }
+.roster-row span { display: block; font-size: 12px; color: rgba(246, 244, 239, 0.42); }
+.face {
+  width: 28px;
+  height: 28px;
+  border-radius: 9px;
+  flex: none;
+  display: block;
+}
+.stage-main { padding: 22px 22px 18px; }
+.stage-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(246, 244, 239, 0.5);
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+.stage-bar b { color: #F6F4EF; font-weight: 560; }
+.bubble {
+  max-width: 92%;
+  border-radius: 16px;
+  padding: 12px 14px;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0 0 10px;
+}
+.bubble.me { background: #F6F4EF; color: #111; margin-left: auto; }
+.bubble.bot { background: #1E1E1E; color: #EDEBE4; }
+.thinking {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent);
+  font-size: 13px;
+  margin-top: 8px;
+}
+.proof {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 22px;
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.proof li { color: rgba(246, 244, 239, 0.55); font-size: 13px; }
+.proof b { color: #F6F4EF; font-weight: 620; }
+.stage-caption {
+  margin: 28px 0 0;
+  color: rgba(246, 244, 239, 0.48);
+  font-size: 13px;
+}
+.steal {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 16px;
+  align-items: stretch;
+}
+.steal .job-card { margin: 0; }
+.mistakes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.mistake {
+  background: var(--bg-elev);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  padding: 22px 22px 18px;
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+a.mistake:hover { opacity: 1; border-color: var(--hairline-strong); }
+.mistake .tag {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: #9A4A12;
+  font-weight: 650;
+  margin: 0 0 8px;
+}
+.mistake h3 { margin: 0 0 8px; }
+.mistake p { margin: 0; color: var(--muted); font-size: 15px; }
+.quotes { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+.quote {
+  background: var(--bg-elev);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  padding: 22px 22px 18px;
+  box-shadow: var(--shadow);
+}
+.quote p { margin: 0 0 12px; font-size: 16px; }
+.quote .who { margin: 0; color: var(--muted); font-size: 13px; }
+.featured {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin: 0 0 28px;
+}
+.diagram {
+  background: #141414;
+  color: #EDEBE4;
+  border-radius: var(--radius-n);
+  padding: 18px 18px 14px;
+  margin: 22px 0;
+}
+.diagram svg { display: block; width: 100%; height: auto; max-width: 520px; }
+.diagram figcaption { margin: 12px 0 0; font-size: 13px; color: rgba(237, 235, 228, 0.62); }
+.compare-cards { display: none; gap: 14px; }
+@media (max-width: 860px) {
+  .compare-desktop { display: none; }
+  .compare-cards { display: grid; grid-template-columns: 1fr; }
+}
+.beta {
+  display: none;
+}
+h1 {
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 520;
+  letter-spacing: -0.042em;
+  line-height: 1.08;
+  margin: 0 0 16px;
+}
+.lede {
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--muted);
+  max-width: 40rem;
+  margin: 0 0 28px;
+}
+h1 + .en-sub, p.en-sub { display: none; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 28px 0 4px; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 9999px;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 560;
+  border: 0;
+  transition: transform .16s ease, box-shadow .16s ease, background .16s ease, opacity .16s ease;
+}
+.btn:hover { opacity: 1; transform: translateY(-1px); }
+.btn-primary { background: #111; color: #fff; }
+.btn-primary:hover { box-shadow: 0 10px 24px rgba(17, 17, 17, 0.2); }
+.btn-secondary { background: var(--btn-sec); color: #111; }
+.btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--hairline-strong); }
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.card {
+  background: var(--bg-elev);
+  border-radius: var(--radius);
+  padding: 26px 26px 22px;
+  border: 1px solid var(--hairline);
+  box-shadow: var(--shadow);
+}
+.card.nested {
+  border-radius: var(--radius-n);
+  background: var(--bg-elev);
+  border: 1px solid var(--hairline);
+  box-shadow: none;
+  padding: 18px 18px 16px;
+}
+.card h2, .card h3 { margin-top: 0; }
+.card p:last-child { margin-bottom: 0; }
+a.card { text-decoration: none; color: inherit; display: block; }
+a.card:hover { opacity: 1; border-color: var(--hairline-strong); }
+h2 {
+  font-size: clamp(26px, 3.2vw, 36px);
+  font-weight: 520;
+  letter-spacing: -0.032em;
+  line-height: 1.18;
+  margin: 0 0 12px;
+}
+h3 { font-size: 18px; font-weight: 600; letter-spacing: -0.02em; margin: 28px 0 8px; }
+p { margin: 0 0 1em; color: var(--text); }
+.muted, .note { color: var(--muted); }
+section.band { padding: 64px 0; }
+section.band + section.band { padding-top: 8px; }
+
+.roadmap { display: flex; flex-direction: column; gap: 10px; }
+.step {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 16px;
+  align-items: start;
+  background: var(--bg-elev);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid var(--hairline);
+  box-shadow: var(--shadow);
+  transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+}
+.step:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+  border-color: var(--hairline-strong);
+  box-shadow: var(--shadow-hover);
+}
+.num {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  background: #111;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 620;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+.step h3 { margin: 4px 0 4px; font-size: 17px; }
+.step p { margin: 0; color: var(--muted); font-size: 15px; }
+
+.faq { padding: 8px 26px 12px; }
+.faq details { border-top: 1px solid var(--hairline); padding: 16px 0; }
+.faq details:first-child { border-top: 0; }
+.faq summary {
+  cursor: pointer;
+  font-weight: 560;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; color: var(--muted); font-weight: 400; font-size: 20px; line-height: 1; }
+.faq details[open] summary::after { content: "–"; }
+.faq details p { margin: 10px 0 0; color: var(--muted); font-size: 16px; }
+
+.prose { max-width: 44rem; }
+.prose p { margin-bottom: 1.05em; }
+.prose ul, .prose ol { padding-left: 1.2em; margin: 0 0 1.1em; }
+.prose li { margin: 0 0 .5em; }
+.prose a { text-underline-offset: 3px; }
+.prose h2 { margin-top: 2.1em; }
+.prose > .kicker + h1 { margin-top: 6px; }
+.callout {
+  background: var(--bg-elev);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-n);
+  padding: 16px 18px;
+  margin: 22px 0;
+  box-shadow: var(--shadow);
+}
+.callout.warn {
+  background: #FFF8EC;
+  border-color: rgba(176, 112, 20, 0.16);
+  box-shadow: none;
+}
+.meta { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
+.pager { display: flex; justify-content: space-between; gap: 12px; margin: 48px 0 8px; flex-wrap: wrap; }
+.pager a {
+  background: var(--bg-elev);
+  border: 1px solid var(--hairline);
+  border-radius: 9999px;
+  padding: 10px 16px;
+  text-decoration: none;
+  font-size: 14px;
+  box-shadow: var(--shadow);
+}
+.pager a:hover { opacity: 1; }
+
+footer.site {
+  border-top: 1px solid var(--hairline);
+  padding: 48px 0 64px;
+  margin-top: 40px;
+  color: var(--muted);
+  font-size: 14px;
+  background: transparent;
+}
+footer.site a { color: var(--muted); }
+footer.site a:hover { color: var(--text); opacity: 1; }
+.foot-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 32px; margin-bottom: 28px; }
+.foot-grid h4 {
+  margin: 0 0 12px;
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.foot-grid a { display: block; text-decoration: none; margin: 0 0 8px; }
+.foot-grid p { color: var(--muted); font-size: 14px; line-height: 1.55; }
+
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 16px; }
+.filters button {
+  border: 1px solid var(--hairline);
+  background: var(--bg-elev);
+  border-radius: 9999px;
+  padding: 7px 12px;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  color: var(--text);
+}
+.filters button[aria-pressed="true"] { background: #111; color: #fff; border-color: #111; }
+.tool-row, .case-card {
+  background: var(--bg-elev);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-n);
+  padding: 16px 18px;
+  margin: 0 0 10px;
+  box-shadow: var(--shadow);
+}
+.tool-row h3, .case-card h3 { margin: 0 0 4px; font-size: 16px; }
+.tool-row p, .case-card p { margin: 0; font-size: 15px; color: var(--muted); }
+.job-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.job-card {
+  background: var(--bg-elev);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  padding: 22px 22px 18px;
+  box-shadow: var(--shadow);
+}
+.job-card h3 { margin: 0 0 8px; }
+.job-card p { margin: 0 0 12px; color: var(--muted); font-size: 15px; }
+.job-card pre {
+  margin: 0 0 12px;
+  padding: 14px 16px;
+  background: var(--surface);
+  border-radius: var(--radius-s);
+  font-size: 13.5px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.job-card code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+.copy-btn {
+  border: 0;
+  background: #111;
+  color: #fff;
+  border-radius: 9999px;
+  padding: 8px 14px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 560;
+  cursor: pointer;
+}
+.copy-btn:hover { opacity: .86; }
+.prose .job-card { margin: 18px 0 22px; max-width: none; }
+.kicker {
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 650;
+  margin: 0 0 10px;
+}
+.crumbs { font-size: 13px; color: var(--muted); }
+.crumbs .wrap { padding-top: 18px; padding-bottom: 0; }
+.crumbs a { color: var(--muted); text-decoration: none; }
+.crumbs a:hover { color: var(--text); }
+.crumbs .sep { margin: 0 8px; opacity: .45; }
+.crumbs span:last-child { color: var(--text); }
+.terms { margin: 0 0 1.4em; }
+.terms dt { font-weight: 650; margin: 1.1em 0 4px; }
+.terms dd { margin: 0; color: var(--muted); }
+.table-wrap { overflow-x: auto; margin: 0 0 1.4em; }
+table { width: 100%; border-collapse: collapse; font-size: 15px; background: var(--bg-elev); border-radius: var(--radius-n); overflow: hidden; }
+th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--hairline); vertical-align: top; }
+th { color: var(--muted); font-weight: 560; font-size: 12px; letter-spacing: .04em; text-transform: uppercase; background: var(--surface); }
+tr:last-child td { border-bottom: 0; }
+.search {
+  width: 100%;
+  border: 1px solid var(--hairline);
+  border-radius: 9999px;
+  padding: 13px 18px;
+  font: inherit;
+  font-size: 15px;
+  background: var(--bg-elev);
+  margin: 0 0 16px;
+  box-shadow: var(--shadow);
+}
+.search:focus { outline: 2px solid #111; outline-offset: 2px; }
+.hidden { display: none !important; }
+
+.source-section { padding: 48px 0 0; }
+.source-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.source-list li, .source-item {
+  background: var(--bg-elev);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-n);
+  padding: 14px 16px;
+  font-size: 15px;
+  box-shadow: var(--shadow);
+}
+.source-list a { font-weight: 560; text-underline-offset: 3px; }
+.source-note { display: block; margin-top: 4px; color: var(--muted); font-size: 13px; line-height: 1.45; }
+
+@media (max-width: 860px) {
+  .grid-2, .grid-3, .foot-grid, .job-grid, .steal, .mistakes, .quotes { grid-template-columns: 1fr; }
+  .nav-rule { display: none; }
+  nav.links { display: none; }
+  nav.links.open {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: absolute;
+    top: 68px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    background: var(--bg);
+    padding: 12px 20px 20px;
+    border-bottom: 1px solid var(--hairline);
+    gap: 4px;
+  }
+  .menu-btn { display: inline-flex; margin-left: auto; }
+  .hero { padding-top: 48px; }
+  .hero-product { padding-top: 40px; }
+  .hero-product h1 { font-size: clamp(32px, 10vw, 44px); }
+  .product-stage { grid-template-columns: 1fr; min-height: 0; }
+  .roster { display: grid; grid-template-columns: 1fr 1fr; border-right: 0; border-bottom: 1px solid rgba(246, 244, 239, 0.06); }
+  .step { grid-template-columns: 40px 1fr; padding: 16px; }
+  h1 { font-size: clamp(32px, 10vw, 44px); }
+}
+@media (max-width: 720px) { .source-list { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto; transition: none !important; }
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Grok Bot Guide", "url": "https://grokbot.run/", "inLanguage": "en", "description": "Grok Bot guide: how to start, Cursor login, first job, shared computer, plan conflicts, and Recover before Reset.", "publisher": {"@type": "Organization", "name": "Grok Bot Guide", "logo": {"@type": "ImageObject", "url": "https://grokbot.run/brand/grok-bot-face.svg"}}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can the Bot post to my X account by itself?", "acceptedAnswer": {"@type": "Answer", "text": "Treat publish as a human gate. Official @bot (2026-08-29) announced connect-your-profile plus included API credits. Min Choi’s follow-up lists read, search, archive, and public-account pulls. This site does not treat “schedule and post everywhere” threads as a shipped write API. Draft in /workspace. You hit post."}}, {"@type": "Question", "name": "Why didn’t a Cursor Cloud Agent start from Grok Bot?", "acceptedAnswer": {"@type": "Answer", "text": "Two different GitHub grants. Cursor’s GitHub app is what Cloud Agents use. The Bot-side GitHub / remote MCP plugin is a second path. A dated forum report also shows launch failing with a GitHub rate-limit line that was not the user’s own quota — paste the full error, do not retry in a loop."}}, {"@type": "Question", "name": "Can I attach localhost MCP or a Bearer token for X?", "acceptedAnswer": {"@type": "Answer", "text": "No. Grok Bot only reaches public HTTPS MCP from the cloud computer. Do not paste an X Bearer token or API key into chat. Connect the official X plugin, or stop if tools stay at zero."}}, {"@type": "Question", "name": "Is a second Bot a fence between my X login and work mail?", "acceptedAnswer": {"@type": "Answer", "text": "No. Isolation is per user. Every Bot sees the same computer, cookies, and connectors. Keep the X session on this box only if the whole roster may see it."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "Run X, Cursor, MCP, and the Grok Bot computer", "description": "Map the four surfaces, scout X without posting, brief a Cloud Agent, then add only remote MCP.", "step": [{"@type": "HowToStep", "position": 1, "name": "Draw the stack", "text": "Bot app, shared computer, plugins, Cloud Agent, official X plugin. One account."}, {"@type": "HowToStep", "position": 2, "name": "Scout X, do not post", "text": "Use the official X connector for research. Drafts go in /workspace. You publish."}, {"@type": "HowToStep", "position": 3, "name": "Brief a Cloud Agent", "text": "Write a /workspace brief. Cursor opens the PR. You merge."}, {"@type": "HowToStep", "position": 4, "name": "Add remote MCP only", "text": "Public HTTPS. No localhost. No Bearer token in chat."}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Grok Bot ops: X, Cursor Cloud Agents, MCP, and the computer", "description": "How operators run X, Cursor Cloud Agents, remote MCP, and the shared Grok Bot computer. Named field posts. Drafts stay behind approval.", "url": "https://grokbot.run/learn/ops/", "inLanguage": "en", "datePublished": "2026-09-04", "dateModified": "2026-09-04", "isPartOf": {"@type": "WebSite", "name": "Grok Bot Guide", "url": "https://grokbot.run/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Guide", "item": "https://grokbot.run/"}, {"@type": "ListItem", "position": 2, "name": "Handbook", "item": "https://grokbot.run/learn/"}, {"@type": "ListItem", "position": 3, "name": "X, Cursor, MCP", "item": "https://grokbot.run/learn/ops/"}]}</script>
+</head><body>
+<header class="site"><div class="wrap nav"><a class="brand" href="/"><img class="logo" src="/brand/grok-bot-face.svg" alt="Grok Bot Guide"><span class="name">Grok Bot</span><span class="tag">Guide</span></a><span class="nav-rule" aria-hidden="true"></span><button class="menu-btn" type="button" data-menu>Menu</button><nav class="links" data-links><a href="/">Guide</a><a href="/learn/install/">Install</a><a href="/pricing/">Pricing</a><a href="/tools/">Tools</a><a href="/use-cases/">Cases</a><a href="/troubleshooting/">Help</a></nav></div></header>
+<main><nav class="crumbs" aria-label="Breadcrumb"><div class="wrap"><a href="/">Guide</a><span class="sep" aria-hidden="true">/</span><a href="/learn/">Handbook</a><span class="sep" aria-hidden="true">/</span><span>X, Cursor, MCP</span></div></nav>
+<section class="hero"><div class="wrap">
+<p class="kicker">Already running · stack</p>
+<h1>How operators run X, Cursor, MCP, and the cloud computer</h1>
+<p class="lede">Four surfaces, one account. Grok Bot is the signed-in computer. Cursor Cloud Agent is the repo VM that opens a PR. MCP is remote tools. The official X plugin is a research pipe first. You still approve publishes.</p>
+<div class="cta-row">
+  <a class="btn btn-primary" href="#stack">The stack map</a>
+  <a class="btn btn-secondary" href="/learn/operator/">After week one</a>
+  <a class="btn btn-ghost" href="/learn/plugins/">Plugins and MCP</a>
+</div>
+</div></section>
+
+<section class="band" id="stack"><div class="wrap prose">
+<p class="meta">Fetched and re-checked against public posts through 2026-09-04, plus a fresh X pass on 2026-09-04. Isolation is still per user. Screens are not a fence. Official packages stay on <a href="https://x.ai/bot">x.ai/bot</a>.</p>
+
+<h2>1. Draw the map before you hire another Bot</h2>
+<p>Operators who last past week two stop treating “Grok Bot” as one blob. Simon Loewen’s field note is the clean split: <em>Cloud Agent = the repo VM that opens a PR; Grok Bot = the signed-in computer that keeps going when the laptop closes</em>. Staff on the Cursor forum: there is no codebase plugin. Coding work goes to a Cloud Agent already connected to GitHub.</p>
+<ol>
+<li><strong>Grok Bot app</strong> — roster, chat, approvals. Not a Cursor IDE panel. Relationship: <a href="/learn/cursor/">Cursor and Grok Bot</a>.</li>
+<li><strong>Shared cloud computer</strong> — browser, <code>/workspace</code>, terminal. One machine per user. Lesson: <a href="/learn/computer/">shared computer</a>.</li>
+<li><strong>Plugins / remote MCP</strong> — account-level tools. Prefer a connector. No localhost. Lesson: <a href="/learn/plugins/">plugins</a>.</li>
+<li><strong>Cursor Cloud Agent</strong> — a different VM on a GitHub repo. The Bot can brief it. You merge.</li>
+<li><strong>Official X plugin</strong> — connect the profile; @bot says a developer account and included credits appear. Read and search first.</li>
+</ol>
+<p>Puneet Singh’s debugging order matches official computer docs: memory in <code>/workspace</code> → MCP / connector → public web → signed-in browser on the box → desktop GUI. Do not open Chrome because the page is there.</p>
+<p class="muted">Sources: <a href="https://x.com/SimonLoeweztl8/status/2094837259744784635">Simon Loewen</a> · <a href="https://x.com/iPuneetSingh/status/2095078470783283453">Puneet Singh</a> · Cursor forum: no codebase plugin · <a href="https://x.com/bot/status/2093822274067706170">@bot X support</a>.</p>
+
+<h2>2. Run X as research. Publish stays with you</h2>
+<p>Official <a href="https://x.com/bot/status/2093822274067706170">@bot (2026-08-29)</a>: connect your X profile; a developer account is created automatically with included credits. Min Choi’s same-day post is the capability list operators actually use: timeline, posts, mentions, likes, Spaces, advanced search, full-archive, any public account’s recent posts, and who liked. That is a <strong>research database</strong>, not a license to fire the social team.</p>
+<p>Peter Yang’s public “five to try” already had an X scout: watch a niche, return angles, you write. Field replies converge on the same gate ygns178 wrote out loud: read mentions, draft in your tone, post only after you approve. Greg Isenberg’s newsletter-desk thread is the same shape for long-form — agents prepare, the operator ships.</p>
+<p>If the official X plugin shows connected with tools=0, or refresh fails, that is still documented on the <a href="/learn/plugins/">plugins</a> page. Stop. Do not open x.com login in the cloud browser to type a password. Do not paste a Bearer token. Do not treat a 29-platform scheduler post as the official write path.</p>
+<div class="job-card">
+<p class="kicker">X · scout</p>
+<h3>Angles only. I write.</h3>
+<pre><code>You scout X. I write.
+
+Use the official X connector if it is connected and tools appear. If connect failed or tools stay at zero, stop and tell me. Do not open x.com login. Do not ask for a Bearer token or API key.
+
+Watch this niche and these accounts: [list]. Last 24 hours unless I say otherwise.
+
+Return at most 8 posts. For each: url, first line, why it moved, whether I have a receipt they do not. If nothing is moving, say “quiet window.”
+
+Never like, follow, reply, quote, bookmark, or post. Never draft a copycat.</code></pre>
+<button type="button" class="copy-btn" data-copy>Copy</button>
+</div>
+<div class="job-card">
+<p class="kicker">X · mentions</p>
+<h3>Drafts in a file. I hit reply.</h3>
+<pre><code>Read my mentions from the official X connector, not the cloud browser. Draft replies in the voice samples in /workspace/voice.md. Write drafts to /workspace/x-drafts.md with the original url and a one-line risk flag.
+
+Do not post, reply, like, or follow. Flag legal, payment, or account-security asks. If the connector has no tools, stop.</code></pre>
+<button type="button" class="copy-btn" data-copy>Copy</button>
+</div>
+<p class="muted">Sources: <a href="https://x.com/bot/status/2093822274067706170">@bot</a> · <a href="https://x.com/minchoi/status/2093907058290512047">Min Choi</a> · <a href="https://www.youtube.com/watch?v=MkVcHbviYOw">Peter Yang five to try</a> · <a href="https://x.com/gregisenberg/status/2090901264309875088">Greg Isenberg</a>.</p>
+
+<h2>3. Cursor does the repo. The Bot writes the brief</h2>
+<p>n2parko’s SpaceXAI product shots showed a roster handing off PRs. _duyet runs one Bot per repo and talks to a leader that delegates. M3NT8L’s field note: when you connect GitHub in Grok Bot and ask for coding work, the Bot delegates to a Cursor Cloud Agent (whatever model Cursor offers). iam4x wires Sentry → Cloud Agent → PR for review. Michael Fenech’s CoS brief is the operator sentence: investigate, spin a Cloud Agent, open a PR. Timed “three minutes later” claims stay in the original.</p>
+<p>The handoff is still a file. CitiZenSleuthX asked for shared threads between Grok Bot and Cloud Agent runs started in the Cursor app — there isn’t one. People copy a <code>/workspace</code> brief. Compound Engineering and similar packs install once in the Cursor marketplace; Grok Bot inherits that library. Do not clone those repos onto the Bot computer. Community CLI <a href="/tools/grok-bot-skill/">grok-bot-skill</a> is the other direction: a coding agent calling a Bot, not the official app.</p>
+<p>Launch can fail. A dated Cursor forum thread: Grok Bot returns “GitHub is rate limiting requests” while the user’s own GitHub quota is fine. Two grants also confuse people — Cursor’s GitHub app (Cloud Agent) is not the Bot-side GitHub / remote MCP plugin. If launch fails, paste the full error. Do not retry in a loop. You merge.</p>
+<div class="job-card">
+<p class="kicker">Cursor · Cloud Agent</p>
+<h3>Brief the repo VM. I merge.</h3>
+<pre><code>Write /workspace/cloud-agent-brief.md for a Cursor Cloud Agent.
+
+Include: repo, branch, failing test or issue url, what “done” looks like, files you must not touch, and that I merge the PR.
+
+Do not start the Cloud Agent until I say go. If launch returns a GitHub rate-limit line or “reconnect GitHub,” stop and paste the full error. Do not retry in a loop.
+
+The Bot computer is not the repo VM. Do not clone the repo onto this box. Do not paste a GitHub PAT into chat.</code></pre>
+<button type="button" class="copy-btn" data-copy>Copy</button>
+</div>
+<p class="muted">Sources: <a href="https://x.com/n2parko/status/2087251704744235298">n2parko</a> · <a href="https://x.com/_duyet/status/2090492642924847165">_duyet</a> · <a href="https://x.com/M3NT8L/status/2091662235039158290">M3NT8L</a> · <a href="https://x.com/iam4x/status/2090403658374545418">iam4x</a> · <a href="https://x.com/CitiZenSleuthX/status/2093736538186072301">CitiZenSleuthX</a> · <a href="https://forum.cursor.com/t/grokbot-cant-start-cloud-agent-from-cursor/168697">forum: launch rate-limit</a>.</p>
+
+<h2>4. MCP is remote. Money and sends still need you</h2>
+<p>Official computer docs: prefer a connector when one exists. Staff: Grok Bot cannot attach local or stdio MCP. Ask the Bot in chat to add a public HTTPS streamable HTTP/SSE server. An MCP that only listens on localhost on your laptop is unreachable from the cloud box.</p>
+<p>Wayne Sutton shipped a site from the phone on Convex and Cloudflare plugins, not a cloud-browser shopping spree. Gergely Orosz connected support mail and Stripe and still required a human before money moved. Box wrote back through MCP after a reconcile. Gojiberry’s sales pack is a hosted MCP — do not invent contacts. The GitHub remote MCP plugin is a different grant from Cursor’s GitHub app; treat them as two doors.</p>
+<div class="job-card">
+<p class="kicker">MCP · add</p>
+<h3>Public HTTPS only</h3>
+<pre><code>Add this remote MCP: [https URL]. Confirm it is public HTTPS (streamable HTTP or SSE), not localhost and not stdio on my laptop.
+
+After it appears, list the new tools in /workspace/tools.md. Do not send, pay, delete, or write until I approve.
+
+If add fails, stop. Do not install a VPN client on this computer. Do not paste API keys into chat — use the secrets card.</code></pre>
+<button type="button" class="copy-btn" data-copy>Copy</button>
+</div>
+<p class="muted">Sources: <a href="https://docs.x.ai/grok-bot/skills-routines-and-automations">official skills / computer docs</a> · <a href="https://x.com/waynesutton/status/2088416215203295346">Wayne Sutton</a> · <a href="https://x.com/GergelyOrosz/status/2090085668768694562">Gergely Orosz</a> · <a href="https://cursor.com/help/grok-bot/connect-plugins">Connect plugins</a>.</p>
+
+<h2>5. The computer is the factory floor</h2>
+<p>Lee Robinson’s public notes: thin client, always-on box, browser as a tool. That is design, not a second fence. Every connector you install is account-level — the X session, GitHub, Stripe, and mail are visible to the whole roster. Keep standing rules and source-of-truth files in <code>/workspace</code>. Logos52 dumps what a fleet writes there; jblack4vols keeps dated logs. That is how the next run reads a file instead of last Tuesday’s chat — same rule as <a href="/learn/operator/">after week one</a>.</p>
+<p>Execution on Local Computer is a different surface: only when you turn it on and approve. Default is ask every time. The cloud box cannot join an enterprise VPN; a bad VPN client can take the machine offline. Internal sites: local execution on a machine already on VPN, or Tailscale / Cloudflare Tunnel per Team Setup docs.</p>
+<p class="muted">Sources: <a href="https://x.com/leerob/status/2089169319099777364">Lee Robinson</a> · <a href="https://forum.cursor.com/t/grok-bot-ship-real-session-fences-bots-are-not-a-security-boundary/168476">Bots are not a security boundary</a> · <a href="/learn/computer/">shared computer</a>.</p>
+</div></section>
+
+<section class="band"><div class="wrap">
+<h2>What this page will not take from X</h2>
+<div class="grid-2">
+  <article class="card"><h3>Agency-killer posts</h3><p>“Your bot can now post to every network and replace the agency” stays in the original. This site does not restate that as a shipped write API.</p></article>
+  <article class="card"><h3>Bundle and headcount math</h3><p>Plan-vs-plan dollar stacks and “one seat replaces a department” stay in the original. Open <a href="/pricing/">the dated snapshot</a>.</p></article>
+</div>
+<p>Reconstructed 2,000-word “Head of Content” templates and 0–1★ SKILL dumps stay off this page. Copy the short briefs above, then edit the brackets.</p>
+</div></section>
+
+<section class="band"><div class="wrap">
+<h2>FAQ</h2>
+<div class="faq card"><details><summary>Can the Bot post to my X account by itself?</summary><p>Treat publish as a human gate. Official @bot (2026-08-29) announced connect-your-profile plus included API credits. Min Choi’s follow-up lists read, search, archive, and public-account pulls. This site does not treat “schedule and post everywhere” threads as a shipped write API. Draft in /workspace. You hit post.</p></details><details><summary>Why didn’t a Cursor Cloud Agent start from Grok Bot?</summary><p>Two different GitHub grants. Cursor’s GitHub app is what Cloud Agents use. The Bot-side GitHub / remote MCP plugin is a second path. A dated forum report also shows launch failing with a GitHub rate-limit line that was not the user’s own quota — paste the full error, do not retry in a loop.</p></details><details><summary>Can I attach localhost MCP or a Bearer token for X?</summary><p>No. Grok Bot only reaches public HTTPS MCP from the cloud computer. Do not paste an X Bearer token or API key into chat. Connect the official X plugin, or stop if tools stay at zero.</p></details><details><summary>Is a second Bot a fence between my X login and work mail?</summary><p>No. Isolation is per user. Every Bot sees the same computer, cookies, and connectors. Keep the X session on this box only if the whole roster may see it.</p></details></div>
+</div></section>
+<script>
+document.querySelectorAll('[data-copy]').forEach(btn=>{
+  btn.addEventListener('click', async ()=>{
+    const pre=btn.parentElement.querySelector('pre');
+    try {
+      await navigator.clipboard.writeText(pre.innerText.trim());
+      btn.textContent='Copied';
+      setTimeout(()=>btn.textContent='Copy', 1600);
+    } catch (e) { btn.textContent='Copy failed'; }
+  });
+});
+</script>
+</main>
+<footer class="site"><div class="wrap"><div class="foot-grid"><div><h4>Learn</h4><a href="/learn/">Handbook</a><a href="/learn/what-is-grok-bot/">What Grok Bot is</a><a href="/learn/install/">Install and sign in</a><a href="/learn/first-bot/">First Bot</a><a href="/learn/computer/">Shared computer</a><a href="/learn/skills-routines/">Skills and routines</a><a href="/learn/plugins/">Plugins and MCP</a><a href="/learn/cost-and-pitfalls/">Cost and pitfalls</a><a href="/learn/operator/">After week one</a><a href="/learn/ops/">X, Cursor, MCP</a><a href="/learn/glossary/">Glossary</a><a href="/learn/cursor/">Cursor and Grok Bot</a></div><div><h4>Look up</h4><a href="/pricing/">Pricing</a><a href="/compare/">Alternatives</a><a href="/tools/">Tools catalog</a><a href="/use-cases/">Field cases</a><a href="/troubleshooting/">Help</a><a href="/sources/">Sources</a></div><div><h4>Official</h4><a href="https://x.ai/bot">x.ai/bot</a><a href="https://docs.x.ai/grok-bot/overview">xAI docs</a><a href="https://cursor.com/help/grok-bot/getting-started">Cursor Help</a><a href="https://github.com/RongleCat/awesome-grok-bot">awesome-grok-bot</a></div></div><p>Community guide for starting, running, and recovering Grok Bot. Product names belong to their owners. Official packages stay on x.ai/bot. Updated 2026-09-04. Sources are dated by fetch day.</p></div></footer>
+<script>const btn=document.querySelector('[data-menu]');const links=document.querySelector('[data-links]');if(btn) btn.addEventListener('click',()=>links.classList.toggle('open'));</script>
+</body></html>

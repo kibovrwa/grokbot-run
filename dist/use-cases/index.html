@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grok Bot use cases: starter jobs and field examples</title>
+<meta name="description" content="Grok Bot use cases: copyable first jobs, X field posts, skills worth installing, and high-star GitHub alternatives. Each card links out.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://grokbot.run/use-cases/">
+<link rel="alternate" hreflang="en" href="https://grokbot.run/use-cases/">
+<link rel="alternate" hreflang="x-default" href="https://grokbot.run/use-cases/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Grok Bot Guide">
+<meta property="og:title" content="Grok Bot use cases: starter jobs and field examples">
+<meta property="og:description" content="Grok Bot use cases: copyable first jobs, X field posts, skills worth installing, and high-star GitHub alternatives. Each card links out.">
+<meta property="og:url" content="https://grokbot.run/use-cases/">
+<meta property="og:image" content="https://grokbot.run/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Grok Bot use cases: starter jobs and field examples">
+<meta name="twitter:description" content="Grok Bot use cases: copyable first jobs, X field posts, skills worth installing, and high-star GitHub alternatives. Each card links out.">
+<meta name="twitter:image" content="https://grokbot.run/og.png">
+<link rel="icon" href="/brand/grok-bot-face.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/brand/grok-bot-face.svg">
+<style>/* Grok Bot Playbook — warm paper, black mark, quiet chrome */
+:root {
+  --bg: #F6F4EF;
+  --bg-elev: #FFFFFF;
+  --surface: #EFEDE6;
+  --overlay: rgba(16, 16, 0, 0.045);
+  --btn-sec: #E7E4DC;
+  --text: #111111;
+  --muted: #5E636B;
+  --nav-muted: rgba(17, 17, 17, 0.52);
+  --hairline: rgba(17, 17, 17, 0.08);
+  --hairline-strong: rgba(17, 17, 17, 0.14);
+  --radius: 22px;
+  --radius-n: 16px;
+  --radius-s: 12px;
+  --shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset, 0 10px 28px rgba(16, 16, 0, 0.045);
+  --shadow-hover: 0 1px 0 rgba(255, 255, 255, 0.8) inset, 0 16px 40px rgba(16, 16, 0, 0.08);
+  --max: 1120px;
+  --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Inter, Geist, "Helvetica Neue", Arial, sans-serif;
+  --ink: #0A0A0A;
+  --accent: #F26B2A;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; color-scheme: light; scroll-padding-top: 88px; }
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: #111; color: #fff; }
+img { max-width: 100%; height: auto; }
+a { color: var(--text); text-underline-offset: 3px; }
+a:hover { opacity: .7; }
+:focus-visible { outline: 2px solid #111; outline-offset: 3px; }
+.wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+
+header.site {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(246, 244, 239, 0.82);
+  backdrop-filter: saturate(1.3) blur(16px);
+  -webkit-backdrop-filter: saturate(1.3) blur(16px);
+  border-bottom: 1px solid var(--hairline);
+}
+.nav { display: flex; align-items: center; gap: 18px; min-height: 72px; position: relative; }
+.brand { display: flex; align-items: center; gap: 11px; text-decoration: none; flex: none; }
+.brand:hover { opacity: 1; }
+.brand img.logo,
+.brand img.mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 11px;
+  display: block;
+  flex: none;
+  box-shadow: 0 0 0 1px rgba(17, 17, 17, 0.08), 0 2px 8px rgba(10, 10, 10, 0.08);
+}
+.brand img.word { display: none; }
+.brand .name,
+.brand .tag {
+  font-size: 16px;
+  font-weight: 640;
+  letter-spacing: -0.028em;
+  color: var(--text);
+  white-space: nowrap;
+}
+.brand .tag {
+  font-weight: 530;
+  color: var(--muted);
+}
+.nav-rule {
+  width: 1px;
+  height: 18px;
+  background: var(--hairline-strong);
+  flex: none;
+}
+nav.links { display: flex; gap: 2px; margin-left: auto; flex-wrap: nowrap; align-items: center; }
+nav.links a {
+  color: var(--nav-muted);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 530;
+  padding: 8px 12px;
+  border-radius: 9999px;
+}
+nav.links a:hover { color: var(--text); opacity: 1; background: rgba(17, 17, 17, 0.04); }
+nav.links a[aria-current="page"] { color: var(--text); background: var(--bg-elev); box-shadow: 0 0 0 1px var(--hairline); }
+.menu-btn {
+  display: none;
+  border: 0;
+  background: var(--btn-sec);
+  border-radius: 9999px;
+  padding: 8px 14px;
+  font: inherit;
+  font-size: 14px;
+}
+
+.hero {
+  padding: 84px 0 36px;
+  position: relative;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -40px;
+  width: min(920px, 100%);
+  height: 380px;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse at 50% 0%, rgba(17, 17, 17, 0.055), transparent 68%);
+  pointer-events: none;
+}
+.hero .wrap { position: relative; }
+.hero-logo {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: block;
+  margin: 0 0 22px;
+  box-shadow: 0 8px 22px rgba(10, 10, 10, 0.12);
+}
+.hero-product {
+  background: var(--ink);
+  color: #F6F4EF;
+  padding: 72px 0 0;
+  margin: 0 0 8px;
+}
+.hero-product::before { display: none; }
+.hero-product .wrap { text-align: center; }
+.hero-product .kicker { color: rgba(246, 244, 239, 0.5); }
+.hero-product h1 {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.22em;
+}
+.hero-product .lede {
+  color: rgba(246, 244, 239, 0.58);
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero-next { margin: 14px 0 0; font-size: 14px; }
+.hero-next a { color: rgba(246, 244, 239, 0.72); }
+.hero-product .cta-row { justify-content: center; }
+.hero-product .btn-primary { background: #F6F4EF; color: #0A0A0A; }
+.hero-product .btn-primary:hover { box-shadow: 0 10px 24px rgba(246, 244, 239, 0.16); }
+.hero-product .btn-secondary { background: rgba(246, 244, 239, 0.08); color: #F6F4EF; }
+.hero-product .btn-ghost { color: #F6F4EF; border-color: rgba(246, 244, 239, 0.22); }
+.wordmark-face {
+  display: inline-flex;
+  width: 0.86em;
+  height: 0.86em;
+  vertical-align: -0.08em;
+}
+.wordmark-face svg { width: 100%; height: 100%; display: block; }
+.product-stage {
+  margin: 16px auto 0;
+  max-width: 880px;
+  background: #141414;
+  border: 1px solid rgba(246, 244, 239, 0.08);
+  border-bottom: 0;
+  border-radius: 18px 18px 0 0;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 248px 1fr;
+  text-align: left;
+  min-height: 340px;
+}
+.roster { padding: 14px 10px; border-right: 1px solid rgba(246, 244, 239, 0.06); }
+.roster-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 10px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: rgba(246, 244, 239, 0.78);
+  font-size: 14px;
+}
+.roster-row:hover { opacity: 1; background: rgba(246, 244, 239, 0.05); color: #fff; }
+.roster-row strong { display: block; font-weight: 580; color: #fff; }
+.roster-row span { display: block; font-size: 12px; color: rgba(246, 244, 239, 0.42); }
+.face {
+  width: 28px;
+  height: 28px;
+  border-radius: 9px;
+  flex: none;
+  display: block;
+}
+.stage-main { padding: 22px 22px 18px; }
+.stage-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(246, 244, 239, 0.5);
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+.stage-bar b { color: #F6F4EF; font-weight: 560; }
+.bubble {
+  max-width: 92%;
+  border-radius: 16px;
+  padding: 12px 14px;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0 0 10px;
+}
+.bubble.me { background: #F6F4EF; color: #111; margin-left: auto; }
+.bubble.bot { background: #1E1E1E; color: #EDEBE4; }
+.thinking {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent);
+  font-size: 13px;
+  margin-top: 8px;
+}
+.proof {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 22px;
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.proof li { color: rgba(246, 244, 239, 0.55); font-size: 13px; }
+.proof b { color: #F6F4EF; font-weight: 620; }
+.stage-caption {
+  margin: 28px 0 0;
+  color: rgba(246, 244, 239, 0.48);
+  font-size: 13px;
+}
+.steal {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 16px;
+  align-items: stretch;
+}
+.steal .job-card { margin: 0; }
+.mistakes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.mistake {
+  background: var(--bg-elev);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  padding: 22px 22px 18px;
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+a.mistake:hover { opacity: 1; border-color: var(--hairline-strong); }
+.mistake .tag {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: #9A4A12;
+  font-weight: 650;
+  margin: 0 0 8px;
+}
+.mistake h3 { margin: 0 0 8px; }
+.mistake p { margin: 0; color: var(--muted); font-size: 15px; }
+.quotes { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+.quote {
+  background: var(--bg-elev);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  padding: 22px 22px 18px;
+  box-shadow: var(--shadow);
+}
+.quote p { margin: 0 0 12px; font-size: 16px; }
+.quote .who { margin: 0; color: var(--muted); font-size: 13px; }
+.featured {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin: 0 0 28px;
+}
+.diagram {
+  background: #141414;
+  color: #EDEBE4;
+  border-radius: var(--radius-n);
+  padding: 18px 18px 14px;
+  margin: 22px 0;
+}
+.diagram svg { display: block; width: 100%; height: auto; max-width: 520px; }
+.diagram figcaption { margin: 12px 0 0; font-size: 13px; color: rgba(237, 235, 228, 0.62); }
+.compare-cards { display: none; gap: 14px; }
+@media (max-width: 860px) {
+  .compare-desktop { display: none; }
+  .compare-cards { display: grid; grid-template-columns: 1fr; }
+}
+.beta {
+  display: none;
+}
+h1 {
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 520;
+  letter-spacing: -0.042em;
+  line-height: 1.08;
+  margin: 0 0 16px;
+}
+.lede {
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--muted);
+  max-width: 40rem;
+  margin: 0 0 28px;
+}
+h1 + .en-sub, p.en-sub { display: none; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 28px 0 4px; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 9999px;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 560;
+  border: 0;
+  transition: transform .16s ease, box-shadow .16s ease, background .16s ease, opacity .16s ease;
+}
+.btn:hover { opacity: 1; transform: translateY(-1px); }
+.btn-primary { background: #111; color: #fff; }
+.btn-primary:hover { box-shadow: 0 10px 24px rgba(17, 17, 17, 0.2); }
+.btn-secondary { background: var(--btn-sec); color: #111; }
+.btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--hairline-strong); }
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.card {
+  background: var(--bg-elev);
+  border-radius: var(--radius);
+  padding: 26px 26px 22px;
+  border: 1px solid var(--hairline);
+  box-shadow: var(--shadow);
+}
+.card.nested {
+  border-radius: var(--radius-n);
+  background: var(--bg-elev);
+  border: 1px solid var(--hairline);
+  box-shadow: none;
+  padding: 18px 18px 16px;
+}
+.card h2, .card h3 { margin-top: 0; }
+.card p:last-child { margin-bottom: 0; }
+a.card { text-decoration: none; color: inherit; display: block; }
+a.card:hover { opacity: 1; border-color: var(--hairline-strong); }
+h2 {
+  font-size: clamp(26px, 3.2vw, 36px);
+  font-weight: 520;
+  letter-spacing: -0.032em;
+  line-height: 1.18;
+  margin: 0 0 12px;
+}
+h3 { font-size: 18px; font-weight: 600; letter-spacing: -0.02em; margin: 28px 0 8px; }
+p { margin: 0 0 1em; color: var(--text); }
+.muted, .note { color: var(--muted); }
+section.band { padding: 64px 0; }
+section.band + section.band { padding-top: 8px; }
+
+.roadmap { display: flex; flex-direction: column; gap: 10px; }
+.step {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 16px;
+  align-items: start;
+  background: var(--bg-elev);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid var(--hairline);
+  box-shadow: var(--shadow);
+  transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+}
+.step:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+  border-color: var(--hairline-strong);
+  box-shadow: var(--shadow-hover);
+}
+.num {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  background: #111;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 620;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+.step h3 { margin: 4px 0 4px; font-size: 17px; }
+.step p { margin: 0; color: var(--muted); font-size: 15px; }
+
+.faq { padding: 8px 26px 12px; }
+.faq details { border-top: 1px solid var(--hairline); padding: 16px 0; }
+.faq details:first-child { border-top: 0; }
+.faq summary {
+  cursor: pointer;
+  font-weight: 560;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; color: var(--muted); font-weight: 400; font-size: 20px; line-height: 1; }
+.faq details[open] summary::after { content: "–"; }
+.faq details p { margin: 10px 0 0; color: var(--muted); font-size: 16px; }
+
+.prose { max-width: 44rem; }
+.prose p { margin-bottom: 1.05em; }
+.prose ul, .prose ol { padding-left: 1.2em; margin: 0 0 1.1em; }
+.prose li { margin: 0 0 .5em; }
+.prose a { text-underline-offset: 3px; }
+.prose h2 { margin-top: 2.1em; }
+.prose > .kicker + h1 { margin-top: 6px; }
+.callout {
+  background: var(--bg-elev);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-n);
+  padding: 16px 18px;
+  margin: 22px 0;
+  box-shadow: var(--shadow);
+}
+.callout.warn {
+  background: #FFF8EC;
+  border-color: rgba(176, 112, 20, 0.16);
+  box-shadow: none;
+}
+.meta { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
+.pager { display: flex; justify-content: space-between; gap: 12px; margin: 48px 0 8px; flex-wrap: wrap; }
+.pager a {
+  background: var(--bg-elev);
+  border: 1px solid var(--hairline);
+  border-radius: 9999px;
+  padding: 10px 16px;
+  text-decoration: none;
+  font-size: 14px;
+  box-shadow: var(--shadow);
+}
+.pager a:hover { opacity: 1; }
+
+footer.site {
+  border-top: 1px solid var(--hairline);
+  padding: 48px 0 64px;
+  margin-top: 40px;
+  color: var(--muted);
+  font-size: 14px;
+  background: transparent;
+}
+footer.site a { color: var(--muted); }
+footer.site a:hover { color: var(--text); opacity: 1; }
+.foot-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 32px; margin-bottom: 28px; }
+.foot-grid h4 {
+  margin: 0 0 12px;
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.foot-grid a { display: block; text-decoration: none; margin: 0 0 8px; }
+.foot-grid p { color: var(--muted); font-size: 14px; line-height: 1.55; }
+
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 16px; }
+.filters button {
+  border: 1px solid var(--hairline);
+  background: var(--bg-elev);
+  border-radius: 9999px;
+  padding: 7px 12px;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  color: var(--text);
+}
+.filters button[aria-pressed="true"] { background: #111; color: #fff; border-color: #111; }
+.tool-row, .case-card {
+  background: var(--bg-elev);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-n);
+  padding: 16px 18px;
+  margin: 0 0 10px;
+  box-shadow: var(--shadow);
+}
+.tool-row h3, .case-card h3 { margin: 0 0 4px; font-size: 16px; }
+.tool-row p, .case-card p { margin: 0; font-size: 15px; color: var(--muted); }
+.job-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.job-card {
+  background: var(--bg-elev);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  padding: 22px 22px 18px;
+  box-shadow: var(--shadow);
+}
+.job-card h3 { margin: 0 0 8px; }
+.job-card p { margin: 0 0 12px; color: var(--muted); font-size: 15px; }
+.job-card pre {
+  margin: 0 0 12px;
+  padding: 14px 16px;
+  background: var(--surface);
+  border-radius: var(--radius-s);
+  font-size: 13.5px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.job-card code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+.copy-btn {
+  border: 0;
+  background: #111;
+  color: #fff;
+  border-radius: 9999px;
+  padding: 8px 14px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 560;
+  cursor: pointer;
+}
+.copy-btn:hover { opacity: .86; }
+.prose .job-card { margin: 18px 0 22px; max-width: none; }
+.kicker {
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 650;
+  margin: 0 0 10px;
+}
+.crumbs { font-size: 13px; color: var(--muted); }
+.crumbs .wrap { padding-top: 18px; padding-bottom: 0; }
+.crumbs a { color: var(--muted); text-decoration: none; }
+.crumbs a:hover { color: var(--text); }
+.crumbs .sep { margin: 0 8px; opacity: .45; }
+.crumbs span:last-child { color: var(--text); }
+.terms { margin: 0 0 1.4em; }
+.terms dt { font-weight: 650; margin: 1.1em 0 4px; }
+.terms dd { margin: 0; color: var(--muted); }
+.table-wrap { overflow-x: auto; margin: 0 0 1.4em; }
+table { width: 100%; border-collapse: collapse; font-size: 15px; background: var(--bg-elev); border-radius: var(--radius-n); overflow: hidden; }
+th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--hairline); vertical-align: top; }
+th { color: var(--muted); font-weight: 560; font-size: 12px; letter-spacing: .04em; text-transform: uppercase; background: var(--surface); }
+tr:last-child td { border-bottom: 0; }
+.search {
+  width: 100%;
+  border: 1px solid var(--hairline);
+  border-radius: 9999px;
+  padding: 13px 18px;
+  font: inherit;
+  font-size: 15px;
+  background: var(--bg-elev);
+  margin: 0 0 16px;
+  box-shadow: var(--shadow);
+}
+.search:focus { outline: 2px solid #111; outline-offset: 2px; }
+.hidden { display: none !important; }
+
+.source-section { padding: 48px 0 0; }
+.source-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.source-list li, .source-item {
+  background: var(--bg-elev);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-n);
+  padding: 14px 16px;
+  font-size: 15px;
+  box-shadow: var(--shadow);
+}
+.source-list a { font-weight: 560; text-underline-offset: 3px; }
+.source-note { display: block; margin-top: 4px; color: var(--muted); font-size: 13px; line-height: 1.45; }
+
+@media (max-width: 860px) {
+  .grid-2, .grid-3, .foot-grid, .job-grid, .steal, .mistakes, .quotes { grid-template-columns: 1fr; }
+  .nav-rule { display: none; }
+  nav.links { display: none; }
+  nav.links.open {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: absolute;
+    top: 68px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    background: var(--bg);
+    padding: 12px 20px 20px;
+    border-bottom: 1px solid var(--hairline);
+    gap: 4px;
+  }
+  .menu-btn { display: inline-flex; margin-left: auto; }
+  .hero { padding-top: 48px; }
+  .hero-product { padding-top: 40px; }
+  .hero-product h1 { font-size: clamp(32px, 10vw, 44px); }
+  .product-stage { grid-template-columns: 1fr; min-height: 0; }
+  .roster { display: grid; grid-template-columns: 1fr 1fr; border-right: 0; border-bottom: 1px solid rgba(246, 244, 239, 0.06); }
+  .step { grid-template-columns: 40px 1fr; padding: 16px; }
+  h1 { font-size: clamp(32px, 10vw, 44px); }
+}
+@media (max-width: 720px) { .source-list { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto; transition: none !important; }
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Grok Bot Guide", "url": "https://grokbot.run/", "inLanguage": "en", "description": "Grok Bot guide: how to start, Cursor login, first job, shared computer, plan conflicts, and Recover before Reset.", "publisher": {"@type": "Organization", "name": "Grok Bot Guide", "logo": {"@type": "ImageObject", "url": "https://grokbot.run/brand/grok-bot-face.svg"}}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "Grok Bot starter jobs", "numberOfItems": 6, "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Warm-up: one document", "url": "https://grokbot.run/use-cases/#starter-jobs"}, {"@type": "ListItem", "position": 2, "name": "Morning attention list", "url": "https://grokbot.run/use-cases/#starter-jobs"}, {"@type": "ListItem", "position": 3, "name": "Inbox to drafts", "url": "https://grokbot.run/use-cases/#starter-jobs"}, {"@type": "ListItem", "position": 4, "name": "Outbound research pack", "url": "https://grokbot.run/use-cases/#starter-jobs"}, {"@type": "ListItem", "position": 5, "name": "Declutter audit", "url": "https://grokbot.run/use-cases/#starter-jobs"}, {"@type": "ListItem", "position": 6, "name": "Travel hunt", "url": "https://grokbot.run/use-cases/#starter-jobs"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Grok Bot use cases: starter jobs and field examples", "description": "Grok Bot use cases: copyable first jobs, X field posts, skills worth installing, and high-star GitHub alternatives. Each card links out.", "url": "https://grokbot.run/use-cases/", "inLanguage": "en", "datePublished": "2026-09-04", "dateModified": "2026-09-04", "isPartOf": {"@type": "WebSite", "name": "Grok Bot Guide", "url": "https://grokbot.run/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Guide", "item": "https://grokbot.run/"}, {"@type": "ListItem", "position": 2, "name": "Cases", "item": "https://grokbot.run/use-cases/"}]}</script>
+</head><body>
+<header class="site"><div class="wrap nav"><a class="brand" href="/"><img class="logo" src="/brand/grok-bot-face.svg" alt="Grok Bot Guide"><span class="name">Grok Bot</span><span class="tag">Guide</span></a><span class="nav-rule" aria-hidden="true"></span><button class="menu-btn" type="button" data-menu>Menu</button><nav class="links" data-links><a href="/">Guide</a><a href="/learn/install/">Install</a><a href="/pricing/">Pricing</a><a href="/tools/">Tools</a><a href="/use-cases/" aria-current="page">Cases</a><a href="/troubleshooting/">Help</a></nav></div></header>
+<main><nav class="crumbs" aria-label="Breadcrumb"><div class="wrap"><a href="/">Guide</a><span class="sep" aria-hidden="true">/</span><span>Cases</span></div></nav>
+<section class="hero"><div class="wrap">
+<p class="kicker">Use cases</p>
+<h1>Grok Bot use cases — start with one job</h1>
+<p class="lede">Pick one reversible job. Name the Bot after that job. Paste a brief that says what to return and when to stop. Do not stand up twelve Bots on day one.</p>
+<div class="cta-row">
+  <a class="btn btn-primary" href="#starter-jobs">Copy a starter job</a>
+  <a class="btn btn-secondary" href="#from-x">From X</a>
+  <a class="btn btn-ghost" href="#skills">Skills</a>
+  <a class="btn btn-ghost" href="#open-source">GitHub</a>
+</div>
+</div></section>
+
+<section class="band"><div class="wrap">
+<h2>How a first job should look</h2>
+<p class="lede">Official Get started asks for five parts. Community writeups that actually shipped work use the same shape.</p>
+<div class="grid-3">
+<article class="card"><h3>One outcome</h3><p>A review list, a cited brief, or a keep-or-switch card — not “be my assistant.”</p></article>
+<article class="card"><h3>Named sources</h3><p>Inbox, CRM view, attached file, or the site you will take over to sign in.</p></article>
+<article class="card"><h3>A hard stop</h3><p>Do not send, enroll, delete, book, or pay until you say so. Description beats a later “stop.”</p></article>
+</div>
+</div></section>
+
+<section class="band" id="starter-jobs"><div class="wrap">
+<h2>Copy a starter job</h2>
+<p class="lede">Original briefs on this site, written to the official pattern: own one outcome, start as read-and-prepare, keep money and sends behind approval. Open the <a href="https://docs.x.ai/grok-bot/use-cases">official use-cases</a> for the longer role list.</p>
+<div class="job-grid"><article class="job-card" id="job-warmup"><p class="kicker">Five minutes</p><h3>Warm-up: one document</h3><p>A cited brief from a file you attach. No connector. No login.</p><pre><code>I attached one document. Give me (1) five bullets on what it says, and (2) every date, decision, and open question with a page or section cite. Leave the file unchanged.</code></pre><button type="button" class="copy-btn" data-copy>Copy</button></article><article class="job-card" id="job-digest"><p class="kicker">Chief of Staff</p><h3>Morning attention list</h3><p>What changed, what needs you, and what can wait. One door, not twelve Bots.</p><pre><code>You are my only door today. Review yesterday across my inbox, calendar, and meeting notes against the priorities I pasted. Return only items that map to those priorities. For each: source, why it matters, the next step, and whether I owe a decision. Do not send messages, create more Bots, or change meetings.</code></pre><button type="button" class="copy-btn" data-copy>Copy</button></article><article class="job-card" id="job-inbox"><p class="kicker">Ops</p><h3>Inbox to drafts</h3><p>A sorted pile plus replies in your voice. You still hit send.</p><pre><code>Walk this inbox. Group messages into needs me, can wait, and junk. Draft replies in my voice for the first group only. Do not send, archive, unsubscribe, or delete.</code></pre><button type="button" class="copy-btn" data-copy>Copy</button></article><article class="job-card" id="job-sales"><p class="kicker">Sales</p><h3>Outbound research pack</h3><p>Scored accounts and review-ready drafts. No enroll, no send.</p><pre><code>Research the accounts in this list (or this CRM view). Score each against the ICP I attached and any recent intent you can show. Name up to three contacts per account and draft email plus LinkedIn in the style samples. Skip anyone already in a sequence. Return a review list. Do not send or enroll anyone.</code></pre><button type="button" class="copy-btn" data-copy>Copy</button></article><article class="job-card" id="job-declutter"><p class="kicker">Life</p><h3>Declutter audit</h3><p>A numbered list of unused mail, Drive clutter, and paid subs. Approval before any cut.</p><pre><code>Audit email, Drive, and paid subscriptions. Return a numbered list of what looks unused and the evidence. Wait for my yes before you delete, unsubscribe, or spend.</code></pre><button type="button" class="copy-btn" data-copy>Copy</button></article><article class="job-card" id="job-travel"><p class="kicker">Life</p><h3>Travel hunt</h3><p>Keep-or-switch options with fees. The last click stays yours.</p><pre><code>Find the upcoming trip in my calendar or the confirmation I pasted. Compare the booked fare and stay with three cheaper options, including change fees. Recommend keep or switch, with the total after fees. Do not book, cancel, or enter payment.</code></pre><button type="button" class="copy-btn" data-copy>Copy</button></article></div>
+</div></section>
+
+<section class="band" id="from-x"><div class="wrap">
+<h2>From X — jobs people actually posted</h2>
+<p class="lede">Official <a href="https://x.com/bot/status/2090168861912170972">@bot recap</a> on 2026-08-19 quoted eleven field posts (fetched 2026-09-04). Each card is the original. This site does not invent outcomes.</p>
+<div class="grid-3"><a class="card" href="https://x.com/yunta_tsai/status/2089223114416898288"><h3>Text a robot vacuum</h3><p>Yun-Ta · original post</p></a><a class="card" href="https://x.com/waynesutton/status/2088416215203295346"><h3>Build a site, buy the domain, deploy</h3><p>Wayne Sutton · original post</p></a><a class="card" href="https://x.com/petergyang/status/2089724101070086482"><h3>24/7 digital declutter</h3><p>Peter Yang · original post</p></a><a class="card" href="https://x.com/GergelyOrosz/status/2090085668768694562"><h3>Support mail and refunds</h3><p>Gergely Orosz · original post</p></a><a class="card" href="https://x.com/DannyLimanseta/status/2087228218797617404"><h3>Custom game art assets</h3><p>Danny Limanseta · original post</p></a><a class="card" href="https://x.com/HouseHackerJon/status/2087635639701573962"><h3>Office manager for a shop</h3><p>Jon ONeill · original post</p></a><a class="card" href="https://x.com/petergyang/status/2089502606079197347"><h3>Play a retro game on the cloud PC</h3><p>Peter Yang · original post</p></a><a class="card" href="https://x.com/kiaraplds/status/2088321112073547835"><h3>Sit in on a missed meeting</h3><p>Kiara · original post</p></a><a class="card" href="https://x.com/KettlebellDan/status/2089387837204693202"><h3>Drive an Arduino LED ticker</h3><p>KettlebellDan · original post</p></a><a class="card" href="https://x.com/darian314/status/2089381004524093752"><h3>Chase merchant refunds</h3><p>Darian Shirazi · original post</p></a><a class="card" href="https://x.com/kristaletz/status/2089103618121314689"><h3>Overnight sales prospecting</h3><p>Krista Letz · original post</p></a></div>
+<h2>Threads worth opening</h2>
+<p class="lede">High-signal X writeups that teach a first roster. Open the post; do not treat a list as a shipped result.</p>
+<div class="grid-2"><a class="card" href="https://x.com/GrokBotDev/status/2092676148220117421"><p class="kicker">X · GrokBotDev</p><h3>Five starter workflows</h3><p>Inbox detox, a weekly “be happier” pass, a grocery team, a morning YouTube brief, then one Chief of Staff.</p></a><a class="card" href="https://x.com/kloss_xyz/status/2090579024313799107"><p class="kicker">X · klöss</p><h3>21 jobs from the official recap</h3><p>Chief of Staff, office manager, inbox purge, outbound in your voice, CRM hygiene, refund recovery — a map of the @bot thread.</p></a><a class="card" href="https://x.com/daniel_mac8/status/2091978532477940014"><p class="kicker">X · Dan McAteer</p><h3>Chief of Staff in 15 minutes</h3><p>Pasted a CoS guide, connected Gmail, Slack, Jira, and Granola. Field note, not a billed outcome.</p></a><a class="card" href="https://x.com/s1rozha_/status/2091585690957996515"><p class="kicker">X · s1rozha</p><h3>One job per Bot</h3><p>Email Bot at 7:30, sponsor-lead labels on a timer, calendar Bot separate. The trick is stopping using it as chat.</p></a><a class="card" href="https://x.com/gregisenberg/status/2090901264309875088"><p class="kicker">X · Greg Isenberg</p><h3>One-person company stack</h3><p>Friend’s newsletter desk on Grok Bot agents. Best-practices thread — treat as a pattern, not a revenue claim.</p></a><a class="card" href="https://x.com/bot/status/2093419921007108385"><p class="kicker">X · @bot</p><h3>Connect Stripe Link, then shop</h3><p>Official: Bot raises a spend request; you approve; a one-use card appears. US first. Approval stays with you.</p></a></div>
+</div></section>
+
+<section class="band" id="skills"><div class="wrap">
+<h2>Skills worth installing first</h2>
+<p class="lede">Most “Grok Bot skill” repos on GitHub are 0–1★ dumps. These have a documented Grok Bot or Cursor-marketplace install path and recent maintenance (checked 2026-09-04). A skill you save after two good runs still beats a random pack. Full catalog: <a href="/tools/">Tools</a>.</p>
+<div class="grid-2"><a class="card" href="https://github.com/EveryInc/compound-engineering-plugin"><h3>Compound Engineering · 24.8k★</h3><p>Install once in the Cursor marketplace. Grok Bot inherits that plugin library. Do not clone the repo onto the Bot computer.</p></a><a class="card" href="https://github.com/obra/superpowers"><h3>superpowers · marketplace</h3><p>Largest general skill pack Grok Bot can load through Cursor: plan, debug, write.</p></a><a class="card" href="https://github.com/aaron-he-zhu/aaron-marketing-skills"><h3>Aaron Marketing Skills · 2.7k★</h3><p>120 marketing skills as an 8-bot staff on Grok Bot. Named teammates, not a SKILL.md dump.</p></a><a class="card" href="https://github.com/kunchenguid/grok-ship"><h3>Grok Ship · 156★</h3><p>Grok-Bot-native software factory. Tell a Bot to follow GROK_SHIP.md. Scout vs ship; you merge.</p></a><a class="card" href="https://github.com/romangojiberryAI/gojiberryai-sales-os"><h3>Gojiberry Sales OS · 93★</h3><p>Outbound pack with a hosted MCP. Intent, enrich, LinkedIn, replies — do not invent contacts.</p></a><a class="card" href="https://github.com/vercel/vercel-plugin"><h3>Vercel plugin · 275★</h3><p>Official Vercel connector: deployments, logs, domains. Watch the OAuth redirect thread.</p></a><a class="card" href="https://github.com/xai-org/plugin-marketplace"><h3>xAI plugin marketplace · 211★</h3><p>Official .grok-plugin catalog. Browse here, then install through Cursor / Grok Bot plugins.</p></a></div>
+<div class="callout">
+<p><strong>Skip the 195-skill catalogs.</strong> Repos that only ship a pile of SKILL.md files with no stars, no license review, and no Grok Bot install steps stay off this list.</p>
+</div>
+</div></section>
+
+<section class="band" id="open-source"><div class="wrap">
+<h2>High-star GitHub — not the official app</h2>
+<p class="lede">Self-hosted alternatives and companion repos. They are not xAI’s Grok Bot. Side-by-side: <a href="/compare/">official vs OpenMausBot, rakazo, gawkbot, OpenClaw</a>. Reconstructed clients and grok.com prompt dumps are omitted on purpose.</p>
+<div class="grid-2"><a class="card" href="https://github.com/milind-soni/OpenMausBot"><h3>OpenMausBot · 2.1k★</h3><p>Self-hosted alternative with a VM the bots can use. Apache-2.0. Not the official client.</p></a><a class="card" href="https://github.com/elie222/rakazo"><h3>rakazo · 1.9k★</h3><p>Bring your own model and sandbox. Web, Electron, Expo. Apache-2.0.</p></a><a class="card" href="https://github.com/najmuzzaman-mohammad/gawkbot"><h3>gawkbot · 1.3k★</h3><p>Local-first: npx gawkbot. Approval gate on every send. Not xAI’s cloud computer.</p></a><a class="card" href="https://github.com/OnlyTerp/opengrok"><h3>opengrok · 417★</h3><p>Model picker inside the official Grok Bot app. Keys stay on your machine. Third-party.</p></a><a class="card" href="https://github.com/xai-org/plugin-marketplace"><h3>plugin-marketplace · 211★</h3><p>Official xAI .grok-plugin catalog that Grok Bot inherits under Cursor plugin policy.</p></a><a class="card" href="https://github.com/elie222/botdirectory.ai"><h3>botdirectory.ai · 160★</h3><p>Paste-ready agent prompts for Grok Bot and Rakazo. Community directory.</p></a><a class="card" href="https://github.com/RongleCat/awesome-grok-bot"><h3>awesome-grok-bot · 220★</h3><p>Upstream CC0 list this catalog is built from.</p></a></div>
+</div></section>
+
+<section class="band"><div class="wrap">
+<h2>First week</h2>
+<div class="roadmap">
+<a class="step" href="/learn/install/"><div class="num">1</div><div><h3>Install and sign in</h3><p>Desktop or phone. Cursor account. Have one real login ready — empty demos burn the week.</p></div></a>
+<a class="step" href="/learn/first-bot/"><div class="num">2</div><div><h3>One Bot, one job</h3><p>Short name. Paste a starter brief. Watch the computer. Take over for password and 2FA — never paste those into chat.</p></div></a>
+<a class="step" href="/learn/computer/"><div class="num">3</div><div><h3>Correct, then save a skill</h3><p>Fix the output once. Ask it to keep that format. Save the method. All Bots share one computer.</p></div></a>
+<a class="step" href="/learn/skills-routines/"><div class="num">4</div><div><h3>Routine only after two good runs</h3><p>Schedule the digest or the research pack. Tests do real things. Keep writes behind approval.</p></div></a>
+</div>
+<div class="callout warn">
+<p><strong>Do not start with money, customer sends, or twelve Bots.</strong> Nate’s “eight hours, twelve Bots” is a review, not an ops plan. Debbie’s flights case stopped at the last click. Gergely’s refunds case still needed a human before money moved.</p>
+</div>
+</div></section>
+
+<section class="band"><div class="wrap">
+<h2>Read these first</h2>
+<p class="lede">Guides that teach a first roster. This site does not reprint them.</p>
+<div class="grid-2"><a class="card" href="https://docs.x.ai/grok-bot/get-started"><h3>Official Get started</h3><p>Install, name the Bot, then a five-part first task.</p></a><a class="card" href="https://docs.x.ai/grok-bot/use-cases"><h3>Official use cases</h3><p>Eight roles with a first prompt each. Read-and-prepare, then a routine.</p></a><a class="card" href="https://x.com/bot/status/2090168861912170972"><h3>@bot: jobs people ran this week</h3><p>Official X recap of 11 field jobs, each quoting the original post.</p></a><a class="card" href="https://debbie.codes/blog/how-to-get-started-with-grok-bot"><h3>Debbie: how to start</h3><p>Name the job, sign in on the computer, start with one Chief of Staff.</p></a><a class="card" href="https://www.youtube.com/watch?v=MkVcHbviYOw"><h3>Peter Yang: five to try</h3><p>Advisor, YouTube researcher, X scout, inbox declutter, travel concierge.</p></a><a class="card" href="https://natesnewsletter.substack.com/p/grok-bot-review"><h3>Nate: two Bots, not twelve</h3><p>Review of a first day. Start with work that finishes, not a briefing.</p></a><a class="card" href="https://greenlitbooks.com/field-notes/grok-bot-honest-assessment"><h3>Honest early verdict</h3><p>One reversible job first. Shared computer and weekly usage are the real limits.</p></a><a class="card" href="https://refoundai.com/blog/how-to-run-your-business-with-grok-bot/"><h3>Run a first week</h3><p>Company OS files, a Chief of Staff, then a daily plan that cites sources.</p></a><a class="card" href="https://x.ai/bot/guides/grok-bot-for-pms"><h3>Grok Bot for PMs</h3><p>Official-adjacent roster: Chief of Staff plus narrow specialists. Sends stay behind review.</p></a></div>
+</div></section>
+
+<section class="band" id="field-cases"><div class="wrap">
+<p class="kicker">Field cases</p>
+<h2>What people actually handed off</h2>
+<p class="lede">54 sourced examples. English summaries here are original: who, what job, what the source claimed. Not independently reproduced. Numbers or returns not written in the source are never invented. Upstream list: <a href="https://github.com/RongleCat/awesome-grok-bot">awesome-grok-bot</a> (CC0).</p>
+<div class="filters" data-filters><button type="button" data-filter="all" aria-pressed="true">All 54</button><button type="button" data-filter="Engineering / product teams">Engineering / product teams 13</button><button type="button" data-filter="Architecture observations">Architecture observations 7</button><button type="button" data-filter="Life / shopping">Life / shopping 7</button><button type="button" data-filter="Ops / admin">Ops / admin 13</button><button type="button" data-filter="Research / briefs">Research / briefs 5</button><button type="button" data-filter="Creative production">Creative production 2</button><button type="button" data-filter="Sales / GTM">Sales / GTM 4</button><button type="button" data-filter="Meeting notes">Meeting notes 1</button><button type="button" data-filter="Trading experiments">Trading experiments 2</button></div>
+<input class="search" data-search placeholder="Filter by name, job, or keyword">
+<div data-list><article class="case-card" data-cat="Engineering / product teams"><p class="kicker">Engineering / product teams · n2parko</p><h3>Product roster and PR handoffs</h3><p>SpaceXAI product publicly showed a roster of Chief of Staff + eng manager + five eng ICs + Databricks + PM, with screenshots of agents handing off PRs. This site did not independently verify outcomes beyond those screenshots.</p><p><a href="https://x.com/n2parko/status/2087251704744235298">Source</a></p></article><article class="case-card" data-cat="Architecture observations"><p class="kicker">Architecture observations · Lee Robinson</p><h3>Four technical bets</h3><p>Public discussion of product shape: thin UI, thin client / thick server, always-on computer, browser as a first-class tool. Design observation, not a completed business case.</p><p><a href="https://x.com/leerob/status/2089169319099777364">Source</a></p></article><article class="case-card" data-cat="Life / shopping"><p class="kicker">Life / shopping · Debbie</p><h3>Booking flights</h3><p>Author had a Bot act as travel assistant on airline sites. Her conclusion: nearly usable, but missing the last click; the video shows the attempt and failure points. She did not claim a completed ticket.</p><p><a href="https://debbie.codes/blog/i-tested-if-grok-bot-could-book-my-flights">Source</a></p></article><article class="case-card" data-cat="Life / shopping"><p class="kicker">Life / shopping · Debbie</p><h3>Sunday-night gluten-free beer</h3><p>Chief of Staff + home Bot: added paper towels from the phone and completed an order; built a gluten-free beer cart on a grocery site and picked a delivery window. Login was hard on phone; desktop takeover got in. Author stresses this is computer use, not chat.</p><p><a href="https://debbie.codes/blog/i-sent-grok-bot-to-buy-my-gluten-free-beer">Source</a></p></article><article class="case-card" data-cat="Life / shopping"><p class="kicker">Life / shopping · Yun-Ta</p><h3>Booking a table while walking</h3><p>Mixed Chinese/English voice; Bot scanned the calendar and booked a restaurant. Outcome as claimed by the author; this site did not reproduce it.</p><p><a href="https://x.com/yunta_tsai/status/2087415205756391461">Source</a></p></article><article class="case-card" data-cat="Engineering / product teams"><p class="kicker">Engineering / product teams · Gota</p><h3>One roster, twelve jobs</h3><p>Public roster covering image factory, research briefs, 3D, travel debates, unsubscribe, running a local LLM in a VM, and more. Job list, not a per-item acceptance report.</p><p><a href="https://x.com/gota_bara/status/2087666940450152841">Source</a></p></article><article class="case-card" data-cat="Ops / admin"><p class="kicker">Ops / admin · Box</p><h3>Credit committee pack</h3><p>Reconciled materials, then wrote back to Box via MCP. Details in the original post.</p><p><a href="https://x.com/Box/status/2087275866950938662">Source</a></p></article><article class="case-card" data-cat="Engineering / product teams"><p class="kicker">Engineering / product teams · mrfundman</p><h3>Teaching a WordPress update once</h3><p>Used Teach a task on a real CMS instead of writing a deploy script first.</p><p><a href="https://x.com/mrfundman/status/2089760255890571404">Source</a></p></article><article class="case-card" data-cat="Engineering / product teams"><p class="kicker">Engineering / product teams · KettlebellDan</p><h3>Arduino updates</h3><p>Bot pushed hardware updates so the author did not have to watch X. Same author also has an LED ticker case.</p><p><a href="https://x.com/KettlebellDan/status/2089920364419874937">Source</a></p></article><article class="case-card" data-cat="Engineering / product teams"><p class="kicker">Engineering / product teams · Nate</p><h3>Eight hours, twelve Bots</h3><p>Review article asks whether a high-tier seat is worth it and shows a real day-one roster. Dollar amounts follow the original; this site does not restate unverified bills.</p><p><a href="https://natesnewsletter.substack.com/p/grok-bot-review">Source</a></p></article><article class="case-card" data-cat="Ops / admin"><p class="kicker">Ops / admin · YouTube demo</p><h3>~19 minutes to 24/7 support</h3><p>Uses routines to stand up a support Bot instead of rewriting a ticketing system. Duration from title/summary; this site did not time it.</p><p><a href="https://www.youtube.com/watch?v=bUALqTpUze0">Source</a></p></article><article class="case-card" data-cat="Engineering / product teams"><p class="kicker">Engineering / product teams · Farzad</p><h3>Webby / Shotry / Writey</h3><p>Named specialists plus an orchestrator — a shape that keeps recurring in the community. Original post includes team screenshots.</p><p><a href="https://x.com/farzyness/status/2087340859138224540">Source</a></p></article><article class="case-card" data-cat="Research / briefs"><p class="kicker">Research / briefs · Sid</p><h3>Polymarket daily settlement brief</h3><p>Bot scanned markets that settled that day and wrote a report.</p><p><a href="https://x.com/sidshekhar24/status/2089735218861326727">Source</a></p></article><article class="case-card" data-cat="Architecture observations"><p class="kicker">Architecture observations · Logan</p><h3>The unlock is the computer, not 4.6</h3><p>Argument: without API, MCP, or a hosted browser, a Bot uses software like a human. Commentary, not a work ticket.</p><p><a href="https://x.com/LoganJastremski/status/2089903051557491092">Source</a></p></article><article class="case-card" data-cat="Architecture observations"><p class="kicker">Architecture observations · Japanese note</p><h3>A week on the shared VM</h3><p>Japanese hands-on notes on living on the shared VM. Read the original; this site does not excerpt long passages.</p><p><a href="https://note.com/azumimusuhi/n/n0485219790bb">Source</a></p></article><article class="case-card" data-cat="Ops / admin"><p class="kicker">Ops / admin · Peter Yang</p><h3>Declutter Bot</h3><p>Demo: audit email, Drive, and paid subscriptions; wait for approval before delete.</p><p><a href="https://x.com/petergyang/status/2089724101070086482">Source</a></p></article><article class="case-card" data-cat="Ops / admin"><p class="kicker">Ops / admin · Gergely Orosz</p><h3>Stripe support refunds</h3><p>Connected a Bot to support email and Stripe to proxy refunds, with human confirmation before money moves.</p><p><a href="https://x.com/GergelyOrosz/status/2090085668768694562">Source</a></p></article><article class="case-card" data-cat="Ops / admin"><p class="kicker">Ops / admin · Mike P</p><h3>Cleaning a huge inbox</h3><p>Had a Bot walk two Gmail accounts and toss junk the owner would not touch by hand. Original post states scale; this site does not rewrite the numbers.</p><p><a href="https://x.com/mikepat711/status/2089879632929554498">Source</a></p></article><article class="case-card" data-cat="Life / shopping"><p class="kicker">Life / shopping · Yun-Ta</p><h3>Texting a robot vacuum</h3><p>Chief Engineer Bot talked with @maticrobots so the human could text the vacuum from anywhere.</p><p><a href="https://x.com/yunta_tsai/status/2089223114416898288">Source</a></p></article><article class="case-card" data-cat="Engineering / product teams"><p class="kicker">Engineering / product teams · Wayne Sutton</p><h3>Ship a site from two phone prompts</h3><p>Convex + Cloudflare plugins; tryground.dev live demo; bought domain and redirects from the phone. Details follow the original post.</p><p><a href="https://x.com/waynesutton/status/2088416215203295346">Source</a></p></article><article class="case-card" data-cat="Creative production"><p class="kicker">Creative production · Danny Limanseta</p><h3>Card assets in two hours</h3><p>Bot read the codebase, opened the author’s image-gen page, cropped transparent PNGs, and wired card assets back into the game. Counts follow the original post.</p><p><a href="https://x.com/DannyLimanseta/status/2087228218797617404">Source</a></p></article><article class="case-card" data-cat="Ops / admin"><p class="kicker">Ops / admin · Jon ONeill</p><h3>Plumbing-shop office manager</h3><p>Drain-and-sewer shop owner handed office-manager work to a Bot in the first 24 hours.</p><p><a href="https://x.com/HouseHackerJon/status/2087635639701573962">Source</a></p></article><article class="case-card" data-cat="Life / shopping"><p class="kicker">Life / shopping · Ben Lang</p><h3>Internal job list</h3><p>Public internal work examples: Starlink-leaning flights, recipes to Whole Foods, film-scan EXIF, contractor quotes, and more.</p><p><a href="https://x.com/benln/status/2087929147406299313">Source</a></p></article><article class="case-card" data-cat="Research / briefs"><p class="kicker">Research / briefs · Gavin Baker</p><h3>Podcast summaries</h3><p>Author compared Grok Bot to another Claude Code moment and said a podcast-summary setup came together quickly. Duration wording follows the original post.</p><p><a href="https://x.com/GavinSBaker/status/2089379355692527813">Source</a></p></article><article class="case-card" data-cat="Sales / GTM"><p class="kicker">Sales / GTM · Krista Letz</p><h3>Enterprise GTM roster</h3><p>SpaceXAI enterprise sales roster: Chief of Staff, overnight prospecting, per-account specialists, live slide updates.</p><p><a href="https://x.com/kristaletz/status/2089103618121314689">Source</a></p></article><article class="case-card" data-cat="Creative production"><p class="kicker">Creative production · Peter Yang</p><h3>Playing Commander Keen on the cloud desktop</h3><p>Installed and played Commander Keen on the Grok Bot cloud desktop; author mentioned latency. Point: this is a real computer.</p><p><a href="https://x.com/petergyang/status/2089502606079197347">Source</a></p></article><article class="case-card" data-cat="Meeting notes"><p class="kicker">Meeting notes · Kiara</p><h3>Bot sits in on a missed meeting</h3><p>SpaceXAI field engineer had a Bot join a meeting she missed, introduce itself, and take notes.</p><p><a href="https://x.com/kiaraplds/status/2088321112073547835">Source</a></p></article><article class="case-card" data-cat="Engineering / product teams"><p class="kicker">Engineering / product teams · KettlebellDan</p><h3>Arduino LED ticker</h3><p>Bot talked to Arduino; the light board scrolled prices, spark lines, and SpaceX news. Code and hardware follow the original post.</p><p><a href="https://x.com/KettlebellDan/status/2089387837204693202">Source</a></p></article><article class="case-card" data-cat="Ops / admin"><p class="kicker">Ops / admin · Darian Shirazi</p><h3>Chasing five merchant refunds</h3><p>Bot found unrefunded returns in email and wrote five merchants. Author claimed recovery exceeded the monthly fee; that comparison is from the post — this site did not see the bill.</p><p><a href="https://x.com/darian314/status/2089381004524093752">Source</a></p></article><article class="case-card" data-cat="Engineering / product teams"><p class="kicker">Engineering / product teams · Grokularity</p><h3>Site built by a Bot team</h3><p>Non-coder said a Grok Bot team stood up grokularity.xyz in a day: humans read; only verified Grok agents write.</p><p><a href="https://grokularity.xyz">Source</a></p></article><article class="case-card" data-cat="Sales / GTM"><p class="kicker">Sales / GTM · thoughtpilot99</p><h3>Signal outbound recipe</h3><p>GitHub recipe: hunt buyer signals, return a ranked list, draft two outreach scripts for a human to send.</p><p><a href="https://github.com/thoughtpilot99/signal-outbound-grok-bot">Source</a></p></article><article class="case-card" data-cat="Trading experiments"><p class="kicker">Trading experiments · jjregier</p><h3>Grok-Bot-Fund</h3><p>Personal paper-to-live “hedge fund” desk with three Grok Bot teammates on the cloud computer; versioned playbook merges only via human PRs. Experimental — read the repo; not a return promise.</p><p><a href="https://github.com/jjregier/Grok-Bot-Fund">Source</a></p></article><article class="case-card" data-cat="Research / briefs"><p class="kicker">Research / briefs · WebDevJasonCameron</p><h3>Market research desk</h3><p>File-based market research desk: company mission, analyst instructions, scored opportunities, decision log, same repo layout.</p><p><a href="https://github.com/WebDevJasonCameron/ExploreGrokBot">Source</a></p></article><article class="case-card" data-cat="Engineering / product teams"><p class="kicker">Engineering / product teams · mtrxdev</p><h3>build-brief into local grok</h3><p>Reusable desk that interrogates a raw idea into a grounded Grok Build brief (PROFILE + BOT-SKILL + check gates), print-first, then paste into local grok. Target output is Grok Build, not Grok Bot itself.</p><p><a href="https://github.com/mtrxdev/build-brief">Source</a></p></article><article class="case-card" data-cat="Trading experiments"><p class="kicker">Trading experiments · HammeredSmithy</p><h3>Bull Desk / Webull</h3><p>Seven-agent trading desk ported to Webull OpenAPI (US users): research, positions, id-gated execution approval and review; paper sandbox before live keys. Experimental.</p><p><a href="https://github.com/HammeredSmithy/bull-trade">Source</a></p></article><article class="case-card" data-cat="Sales / GTM"><p class="kicker">Sales / GTM · jay-sahnan</p><h3>Self-serve growth team</h3><p>Shareable multi-Bot growth team (growth lead + specialists), narrow roles with handoffs; human approval before shipping or outreach.</p><p><a href="https://github.com/jay-sahnan/growth-grok-bots">Source</a></p></article><article class="case-card" data-cat="Research / briefs"><p class="kicker">Research / briefs · palehonk0-o</p><h3>Market memory pack</h3><p>Evidence-first implementation pack: use Grok Bot to turn public pages into decision briefs, paired with a public X article walkthrough.</p><p><a href="https://github.com/palehonk0-o/grokbot-market-memory">Source</a></p></article><article class="case-card" data-cat="Engineering / product teams"><p class="kicker">Engineering / product teams · Logos52</p><h3>Fleet public packet dump</h3><p>Weekday public dump of files a Grok Bot fleet writes under /workspace on the shared cloud computer, mirrored for Mac /fold skill intake.</p><p><a href="https://github.com/Logos52/grok-bot-packets">Source</a></p></article><article class="case-card" data-cat="Engineering / product teams"><p class="kicker">Engineering / product teams · jblack4vols</p><h3>Per-Bot durable knowledge log</h3><p>Durable logs for a real roster: decisions, delivered work, and long-term preferences dated in America/New_York.</p><p><a href="https://github.com/jblack4vols/grok-bot">Source</a></p></article><article class="case-card" data-cat="Ops / admin"><p class="kicker">Ops / admin · bilauitmcuti</p><h3>UiTM calendar + MCP</h3><p>Malaysia UiTM academic calendar assistant on Grok Bot; remote MCP supplies class, holiday, and exam dates.</p><p><a href="https://github.com/bilauitmcuti/bot">Source</a></p></article><article class="case-card" data-cat="Architecture observations"><p class="kicker">Architecture observations · Greenlit Books</p><h3>One reversible job, not a reorg</h3><p>Field note: the product is approachable, still early. Start with a checkable, reversible workflow. Weekly usage, the shared computer, and money folklore are the real limits. Dollar claims in social posts are mostly unverifiable.</p><p><a href="https://greenlitbooks.com/field-notes/grok-bot-honest-assessment">Source</a></p></article><article class="case-card" data-cat="Ops / admin"><p class="kicker">Ops / admin · Refound</p><h3>Five-day company OS</h3><p>Written first-week: put standing rules in the Bot description, cite source-of-truth files, plan the day with sources shown, then hang a routine only after the brief is reviewable. External actions stay behind approval.</p><p><a href="https://refoundai.com/blog/how-to-run-your-business-with-grok-bot/">Source</a></p></article><article class="case-card" data-cat="Engineering / product teams"><p class="kicker">Engineering / product teams · xAI guides</p><h3>PM roster that stays quiet</h3><p>Official-adjacent PM writeup: Chief of Staff owns calendar, Slack, and inbox; specialists stay narrow. Author still reviews external sends, purchases, and deletes.</p><p><a href="https://x.ai/bot/guides/grok-bot-for-pms">Source</a></p></article><article class="case-card" data-cat="Architecture observations"><p class="kicker">Architecture observations · xAI docs</p><h3>Eight official starter roles</h3><p>Official use-cases page: sales outbound, talent scout, paid media, expense manager, product performance, bug reproduction, account health, Chief of Staff. Each role owns one outcome and starts as read-and-prepare work.</p><p><a href="https://docs.x.ai/grok-bot/use-cases">Source</a></p></article><article class="case-card" data-cat="Research / briefs"><p class="kicker">Research / briefs · Composio</p><h3>Parallel research swarm</h3><p>Practitioner guide: persistent teammates on a cloud computer, then bonus jobs such as a competitive-intel swarm, an open-source audit, and a fact-check engine. Treat as a pattern list, not a shipped outcome report.</p><p><a href="https://composio.dev/content/guide-to-frok-bot">Source</a></p></article><article class="case-card" data-cat="Life / shopping"><p class="kicker">Life / shopping · techAU</p><h3>Shopping with Stripe Link</h3><p>Field writeup of Bot shopping via Stripe Link: the Bot can raise a spend request; you approve in Link; only then does a one-time card appear at checkout. Vague briefs produce vague carts. Approval still sits with you.</p><p><a href="https://techau.com.au/grok-bot-can-now-go-shopping/">Source</a></p></article><article class="case-card" data-cat="Architecture observations"><p class="kicker">Architecture observations · @bot</p><h3>Official weekly field recap</h3><p>Official 2026-08-19 thread: eleven jobs people actually ran that week, each quoting the original post. Vacuum, site deploy, declutter, refunds, game art, office manager, meetings, LED ticker, prospecting.</p><p><a href="https://x.com/bot/status/2090168861912170972">Source</a></p></article><article class="case-card" data-cat="Life / shopping"><p class="kicker">Life / shopping · @bot</p><h3>Buy things with Stripe Link</h3><p>Official 2026-08-28: connect Link, send the Bot shopping, approve every spend request, then a single-use card is minted. US first; mobile later. This is delegated checkout, not unattended spending.</p><p><a href="https://x.com/bot/status/2093419921007108385">Source</a></p></article><article class="case-card" data-cat="Ops / admin"><p class="kicker">Ops / admin · GrokBotDev</p><h3>Five starter workflows</h3><p>X thread with five first jobs: six-month newsletter detox (keep vs unsubscribe), a weekly “be happier” pass from mail and calendar, a three-Bot grocery team, a 7am YouTube summary, then one Chief of Staff.</p><p><a href="https://x.com/GrokBotDev/status/2092676148220117421">Source</a></p></article><article class="case-card" data-cat="Architecture observations"><p class="kicker">Architecture observations · klöss</p><h3>21 jobs mapped from @bot</h3><p>Community map of the official weekly recap: Chief of Staff, office manager, inbox purge, outbound in voice, CRM hygiene, refund recovery, and more. A list, not a per-item acceptance report.</p><p><a href="https://x.com/kloss_xyz/status/2090579024313799107">Source</a></p></article><article class="case-card" data-cat="Ops / admin"><p class="kicker">Ops / admin · Dan McAteer</p><h3>Chief of Staff in 15 minutes</h3><p>Author said a CoS was working in about 15 minutes after connecting Gmail, Slack, Jira, and Granola. Duration and connectors follow the post; this site did not time it.</p><p><a href="https://x.com/daniel_mac8/status/2091978532477940014">Source</a></p></article><article class="case-card" data-cat="Ops / admin"><p class="kicker">Ops / admin · s1rozha</p><h3>One job per Bot, on a timer</h3><p>Public setup: an email Bot at 7:30, sponsor-lead labels on a work-hours timer, a separate calendar Bot. Author’s point: stop using Grok Bot as chat.</p><p><a href="https://x.com/s1rozha_/status/2091585690957996515">Source</a></p></article><article class="case-card" data-cat="Sales / GTM"><p class="kicker">Sales / GTM · Greg Isenberg</p><h3>Newsletter desk as a one-person company</h3><p>Thread: a friend runs a newsletter business on Grok Bot agents, with a best-practices list for non-technical operators. Pattern post — not a verified P&amp;L.</p><p><a href="https://x.com/gregisenberg/status/2090901264309875088">Source</a></p></article><article class="case-card" data-cat="Ops / admin"><p class="kicker">Ops / admin · RoundtableSpace</p><h3>Daily job list for a first roster</h3><p>Public job menu: inbox, daily briefing, expenses, calendar, research, account management, notes prep. A menu of roles, not a shipped-outcome report.</p><p><a href="https://x.com/RoundtableSpace/status/2089030676678938899">Source</a></p></article></div>
+<p class="muted">Tutorials and failure modes: <a href="/sources/">Sources</a> and <a href="/troubleshooting/">Help</a>.</p>
+</div></section>
+<script>
+document.querySelectorAll('[data-copy]').forEach(btn=>{
+  btn.addEventListener('click', async ()=>{
+    const pre=btn.parentElement.querySelector('pre');
+    try {
+      await navigator.clipboard.writeText(pre.innerText.trim());
+      btn.textContent='Copied';
+      setTimeout(()=>btn.textContent='Copy', 1600);
+    } catch (e) { btn.textContent='Copy failed'; }
+  });
+});
+const filters=document.querySelector('[data-filters]');
+const list=document.querySelector('[data-list]');
+const search=document.querySelector('[data-search]');
+let cat='all';
+function apply(){
+  const q=(search.value||'').toLowerCase();
+  filters.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed', b.getAttribute('data-filter')===cat ? 'true':'false'));
+  list.querySelectorAll('.case-card').forEach(card=>{
+    const okCat = cat==='all' || card.getAttribute('data-cat')===cat;
+    const okQ = !q || card.textContent.toLowerCase().includes(q);
+    card.classList.toggle('hidden', !(okCat && okQ));
+  });
+}
+filters.addEventListener('click', e=>{
+  const b=e.target.closest('button'); if(!b) return;
+  cat=b.getAttribute('data-filter'); apply();
+});
+search.addEventListener('input', apply);
+</script>
+</main>
+<footer class="site"><div class="wrap"><div class="foot-grid"><div><h4>Learn</h4><a href="/learn/">Handbook</a><a href="/learn/what-is-grok-bot/">What Grok Bot is</a><a href="/learn/install/">Install and sign in</a><a href="/learn/first-bot/">First Bot</a><a href="/learn/computer/">Shared computer</a><a href="/learn/skills-routines/">Skills and routines</a><a href="/learn/plugins/">Plugins and MCP</a><a href="/learn/cost-and-pitfalls/">Cost and pitfalls</a><a href="/learn/operator/">After week one</a><a href="/learn/ops/">X, Cursor, MCP</a><a href="/learn/glossary/">Glossary</a><a href="/learn/cursor/">Cursor and Grok Bot</a></div><div><h4>Look up</h4><a href="/pricing/">Pricing</a><a href="/compare/">Alternatives</a><a href="/tools/">Tools catalog</a><a href="/use-cases/">Field cases</a><a href="/troubleshooting/">Help</a><a href="/sources/">Sources</a></div><div><h4>Official</h4><a href="https://x.ai/bot">x.ai/bot</a><a href="https://docs.x.ai/grok-bot/overview">xAI docs</a><a href="https://cursor.com/help/grok-bot/getting-started">Cursor Help</a><a href="https://github.com/RongleCat/awesome-grok-bot">awesome-grok-bot</a></div></div><p>Community guide for starting, running, and recovering Grok Bot. Product names belong to their owners. Official packages stay on x.ai/bot. Updated 2026-09-04. Sources are dated by fetch day.</p></div></footer>
+<script>const btn=document.querySelector('[data-menu]');const links=document.querySelector('[data-links]');if(btn) btn.addEventListener('click',()=>links.classList.toggle('open'));</script>
+</body></html>

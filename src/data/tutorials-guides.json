@@ -1,0 +1,167 @@
+[
+  {
+    "name": "How to Get Started with Grok Bot",
+    "url": "https://debbie.codes/blog/how-to-get-started-with-grok-bot",
+    "blurb": "Debbie's field guide: first Bot, CoS prompt, and how she reorganizes the roster."
+  },
+  {
+    "name": "Grok Bot Masterclass",
+    "url": "https://www.dailydoseofds.com/p/grok-bot-masterclass/",
+    "blurb": "Avi / Daily Dose: record once, turn it into a skill, hang it on a routine."
+  },
+  {
+    "name": "How to Set Up Grok Bot and Build Your First AI Agents",
+    "url": "https://www.mindstudio.ai/blog/grok-bot-setup-guide",
+    "blurb": "Install-to-first-agent walkthrough with the Heavy / Ultra / Teams gates called out."
+  },
+  {
+    "name": "Grok Bot Explained",
+    "url": "https://www.ayautomate.com/blog/grok-bot-xai-ai-agents-explained",
+    "blurb": "Clear explainer with a real iPhone screenshot of a Bot roster."
+  },
+  {
+    "name": "Hand Off Real Work Across Your Apps",
+    "url": "https://app.therundown.ai/guides/hand-off-real-work-across-your-apps-with-grok-bot",
+    "blurb": "The Rundown's how-to for handing multi-app jobs to a Bot."
+  },
+  {
+    "name": "Connect Multiple Slack Workspaces",
+    "url": "https://www.usecarly.com/blog/how-to-connect-multiple-slack-workspaces-to-grok-bot/",
+    "blurb": "Slack event wake-up is not the same as installing Grok Bot as a Slack App."
+  },
+  {
+    "name": "Peter Yang: 5 Must-Try Use Cases",
+    "url": "https://www.youtube.com/watch?v=MkVcHbviYOw",
+    "blurb": "Advisor, YouTube researcher, X scout, Gmail declutter, travel concierge."
+  },
+  {
+    "name": "Alex Finn: setup that actually sticks",
+    "url": "https://www.youtube.com/watch?v=vrgO4D_mUlA",
+    "blurb": "Long-form setup from someone already living on Cursor Cloud Agents."
+  },
+  {
+    "name": "Nate Herk: Grok Bot is For Real",
+    "url": "https://www.youtube.com/watch?v=PQBYZQqan2g",
+    "blurb": "Install-first agent pitch plus what the $200 seat actually buys."
+  },
+  {
+    "name": "Teach a task by screen recording",
+    "url": "https://x.com/_avichawla/status/2089817006065496530",
+    "blurb": "Official-adjacent tip: show the workflow once, Bot writes the skill."
+  },
+  {
+    "name": "Use the remote computer from your phone",
+    "url": "https://x.com/bot/status/2089802847223468116",
+    "blurb": "@bot QoL: drive the cloud machine from iOS without opening the laptop."
+  },
+  {
+    "name": "Uncle-Gizmo notes",
+    "url": "https://github.com/Uncle-Gizmo/grok-bot-info",
+    "blurb": "Public notes on safe example workflows and how Bot sits next to Grok Build."
+  },
+  {
+    "name": "Grok Bot for GTM",
+    "url": "https://github.com/bcharleson/grokbot-for-gtm",
+    "blurb": "Playbook plus skills so a Grok Bot can run outbound GTM on its own computer: Instantly, HeyReach, list CLIs, human-approved sends."
+  },
+  {
+    "name": "Paul J Lipsky: Cursor Just Released Grok Bot",
+    "url": "https://www.youtube.com/watch?v=QTcZPI-g7is",
+    "blurb": "Walkthrough of role-based bots, group chats, plugins, Teach a task, and the iOS app as the daily driver."
+  },
+  {
+    "name": "Grok Bot 橙皮书",
+    "url": "https://github.com/KinGao294/grok-bot-orange-book",
+    "blurb": "Chinese orange book (~16k chars) on multi-bot teams, routines, and cost control in the first two weeks."
+  },
+  {
+    "name": "John Bai — The Grok Bot design journey (Dive Club)",
+    "url": "https://www.youtube.com/watch?v=E-VxnQO73s4",
+    "blurb": "Grok Bot designer John Bai walks through the early prototypes and the choices that became the shipped product."
+  },
+  {
+    "name": "yuanyijie/learn-grok-bot",
+    "url": "https://github.com/yuanyijie/learn-grok-bot",
+    "blurb": "Unofficial 16-lesson course on Grok Bot’s desktop-agent harness: Electron planes, turn loop, inference router, sandbox, MCP, automations."
+  },
+  {
+    "name": "A deep dive into Grok Bot",
+    "url": "https://flaviocopes.com/grok-bot/",
+    "blurb": "Flavio Copes’ 2026-08-28 deep dive: shared computer, skills to routines, share-as-template, Stripe Link spend requests, and when a script beats a Bot."
+  },
+  {
+    "name": "LAVX: a deep dive into Grok Bot",
+    "url": "https://news.lavx.hu/article/a-deep-dive-into-grok-bot",
+    "blurb": "2026-08-29 practitioner guide: shared-computer isolation, plugin-then-browser tool order, Stripe Link approvals, and when Zapier/n8n or a coding agent is a better fit."
+  },
+  {
+    "name": "Grok Bot Plays",
+    "url": "https://github.com/ZooHero500/plays",
+    "blurb": "Unofficial how-to catalog of Grok Bot plays rewritten from public posts and docs with source links; the site hosts 138 English plays (grokbotplays.com)."
+  },
+  {
+    "name": "s-hiraoku/grok-bot-playbook",
+    "url": "https://github.com/s-hiraoku/grok-bot-playbook",
+    "blurb": "Japanese field handbook (Next.js) for running Grok Bot as named roles: contracts, request templates, Skill/Routine flows, team boundaries, and handoff .md files."
+  },
+  {
+    "name": "mKay00/grok-bot-second-brain",
+    "url": "https://github.com/mKay00/grok-bot-second-brain",
+    "blurb": "Cloneable five-bot second-brain plan for one shared Grok Bot computer (Conductor/Capture/Memory/Ops/Research + vault-template and PLAN.md questionnaire)."
+  },
+  {
+    "name": "maplefukku/grok-bot-ops",
+    "url": "https://github.com/maplefukku/grok-bot-ops",
+    "blurb": "Japanese command-center repo for running product work through Grok Bot: routine drafts, verification bootstrap, knowhow log, and a Cursor plugin wrapper."
+  },
+  {
+    "name": "Technocore Grok Bot 日本語ガイド",
+    "url": "https://github.com/hariou/technocore-grokbot-ja",
+    "blurb": "Japanese operating guide plus GROKBOT_PROMPT.md for running a Technocore DID safely on Grok Bot without leaking seeds or spamming the lobby."
+  },
+  {
+    "name": "Grok Bot Getting Started hubs",
+    "url": "https://github.com/mrlynn/grok-bot-getting-started",
+    "blurb": "Thin branded Docusaurus hubs for What is Grok Bot, install/sign-in, and first task, deep-linking to docs.x.ai and x.ai/bot."
+  },
+  {
+    "name": "Grok Bot 蓝皮书",
+    "url": "https://github.com/rockyzhuo/grok-bot-blue-book",
+    "blurb": "Operator playbook (companion to the orange book) for running a Grok Bot team as a delivery company—artifact contracts, INSTALL.md bootstrap, and five route templates."
+  },
+  {
+    "name": "Grokbot Field Guide (8 use cases)",
+    "url": "https://github.com/tal-giladi/grokbot-field-guide",
+    "blurb": "Build-it-yourself tutorial covering the eight Getting started with Grok Bot video use cases, with prompts plus an HTML field guide in-repo."
+  },
+  {
+    "name": "Grok Bot setup & 5 pitfalls guide",
+    "url": "https://github.com/dadamingmax/Grok-Bot-Setup-and-Usage-Guide",
+    "blurb": "Chinese longform guide covering what Grok Bot is, SuperGrok/Cursor access, first-bot setup steps, and five measured pitfalls around quotas and approvals."
+  },
+  {
+    "name": "China Grok Bot install tutorial",
+    "url": "https://github.com/jobinben/Grok-Bot-Tutorial",
+    "blurb": "2026 China-focused Grok Bot tutorial on what the cloud teammate is, how to use it, and how to upgrade SuperGrok for access."
+  },
+  {
+    "name": "Official Grok Bot use cases",
+    "url": "https://docs.x.ai/grok-bot/use-cases",
+    "blurb": "Eight official roles with a first prompt each. Start as read-and-prepare work, then add a routine."
+  },
+  {
+    "name": "Refound: How to Run Your Business With Grok Bots",
+    "url": "https://refoundai.com/blog/how-to-run-your-business-with-grok-bot/",
+    "blurb": "Company OS files, a first Chief of Staff, and a five-day plan that keeps external actions behind approval."
+  },
+  {
+    "name": "Greenlit: Grok Bot honestly assessed",
+    "url": "https://greenlitbooks.com/field-notes/grok-bot-honest-assessment",
+    "blurb": "What works, what breaks, who should wait. One reversible workflow — not a company reorg."
+  },
+  {
+    "name": "Grok Bot for PMs",
+    "url": "https://x.ai/bot/guides/grok-bot-for-pms",
+    "blurb": "Named roster with a quiet Chief of Staff. External sends and purchases stay on human review."
+  }
+]

@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grok Bot tools: CLI, TUI, Linux ports, usage meters</title>
+<meta name="description" content="Grok Bot tools catalog: 199 CLI, TUI, plugin, MCP, Linux, and usage-meter entries. grok-app is a Grok Build GUI, not a Grok Bot client. Source links included.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://grokbot.run/tools/">
+<link rel="alternate" hreflang="en" href="https://grokbot.run/tools/">
+<link rel="alternate" hreflang="x-default" href="https://grokbot.run/tools/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Grok Bot Guide">
+<meta property="og:title" content="Grok Bot tools: CLI, TUI, Linux ports, usage meters">
+<meta property="og:description" content="Grok Bot tools catalog: 199 CLI, TUI, plugin, MCP, Linux, and usage-meter entries. grok-app is a Grok Build GUI, not a Grok Bot client. Source links included.">
+<meta property="og:url" content="https://grokbot.run/tools/">
+<meta property="og:image" content="https://grokbot.run/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Grok Bot tools: CLI, TUI, Linux ports, usage meters">
+<meta name="twitter:description" content="Grok Bot tools catalog: 199 CLI, TUI, plugin, MCP, Linux, and usage-meter entries. grok-app is a Grok Build GUI, not a Grok Bot client. Source links included.">
+<meta name="twitter:image" content="https://grokbot.run/og.png">
+<link rel="icon" href="/brand/grok-bot-face.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/brand/grok-bot-face.svg">
+<style>/* Grok Bot Playbook — warm paper, black mark, quiet chrome */
+:root {
+  --bg: #F6F4EF;
+  --bg-elev: #FFFFFF;
+  --surface: #EFEDE6;
+  --overlay: rgba(16, 16, 0, 0.045);
+  --btn-sec: #E7E4DC;
+  --text: #111111;
+  --muted: #5E636B;
+  --nav-muted: rgba(17, 17, 17, 0.52);
+  --hairline: rgba(17, 17, 17, 0.08);
+  --hairline-strong: rgba(17, 17, 17, 0.14);
+  --radius: 22px;
+  --radius-n: 16px;
+  --radius-s: 12px;
+  --shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset, 0 10px 28px rgba(16, 16, 0, 0.045);
+  --shadow-hover: 0 1px 0 rgba(255, 255, 255, 0.8) inset, 0 16px 40px rgba(16, 16, 0, 0.08);
+  --max: 1120px;
+  --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Inter, Geist, "Helvetica Neue", Arial, sans-serif;
+  --ink: #0A0A0A;
+  --accent: #F26B2A;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; color-scheme: light; scroll-padding-top: 88px; }
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: #111; color: #fff; }
+img { max-width: 100%; height: auto; }
+a { color: var(--text); text-underline-offset: 3px; }
+a:hover { opacity: .7; }
+:focus-visible { outline: 2px solid #111; outline-offset: 3px; }
+.wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+
+header.site {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(246, 244, 239, 0.82);
+  backdrop-filter: saturate(1.3) blur(16px);
+  -webkit-backdrop-filter: saturate(1.3) blur(16px);
+  border-bottom: 1px solid var(--hairline);
+}
+.nav { display: flex; align-items: center; gap: 18px; min-height: 72px; position: relative; }
+.brand { display: flex; align-items: center; gap: 11px; text-decoration: none; flex: none; }
+.brand:hover { opacity: 1; }
+.brand img.logo,
+.brand img.mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 11px;
+  display: block;
+  flex: none;
+  box-shadow: 0 0 0 1px rgba(17, 17, 17, 0.08), 0 2px 8px rgba(10, 10, 10, 0.08);
+}
+.brand img.word { display: none; }
+.brand .name,
+.brand .tag {
+  font-size: 16px;
+  font-weight: 640;
+  letter-spacing: -0.028em;
+  color: var(--text);
+  white-space: nowrap;
+}
+.brand .tag {
+  font-weight: 530;
+  color: var(--muted);
+}
+.nav-rule {
+  width: 1px;
+  height: 18px;
+  background: var(--hairline-strong);
+  flex: none;
+}
+nav.links { display: flex; gap: 2px; margin-left: auto; flex-wrap: nowrap; align-items: center; }
+nav.links a {
+  color: var(--nav-muted);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 530;
+  padding: 8px 12px;
+  border-radius: 9999px;
+}
+nav.links a:hover { color: var(--text); opacity: 1; background: rgba(17, 17, 17, 0.04); }
+nav.links a[aria-current="page"] { color: var(--text); background: var(--bg-elev); box-shadow: 0 0 0 1px var(--hairline); }
+.menu-btn {
+  display: none;
+  border: 0;
+  background: var(--btn-sec);
+  border-radius: 9999px;
+  padding: 8px 14px;
+  font: inherit;
+  font-size: 14px;
+}
+
+.hero {
+  padding: 84px 0 36px;
+  position: relative;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -40px;
+  width: min(920px, 100%);
+  height: 380px;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse at 50% 0%, rgba(17, 17, 17, 0.055), transparent 68%);
+  pointer-events: none;
+}
+.hero .wrap { position: relative; }
+.hero-logo {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: block;
+  margin: 0 0 22px;
+  box-shadow: 0 8px 22px rgba(10, 10, 10, 0.12);
+}
+.hero-product {
+  background: var(--ink);
+  color: #F6F4EF;
+  padding: 72px 0 0;
+  margin: 0 0 8px;
+}
+.hero-product::before { display: none; }
+.hero-product .wrap { text-align: center; }
+.hero-product .kicker { color: rgba(246, 244, 239, 0.5); }
+.hero-product h1 {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.22em;
+}
+.hero-product .lede {
+  color: rgba(246, 244, 239, 0.58);
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero-next { margin: 14px 0 0; font-size: 14px; }
+.hero-next a { color: rgba(246, 244, 239, 0.72); }
+.hero-product .cta-row { justify-content: center; }
+.hero-product .btn-primary { background: #F6F4EF; color: #0A0A0A; }
+.hero-product .btn-primary:hover { box-shadow: 0 10px 24px rgba(246, 244, 239, 0.16); }
+.hero-product .btn-secondary { background: rgba(246, 244, 239, 0.08); color: #F6F4EF; }
+.hero-product .btn-ghost { color: #F6F4EF; border-color: rgba(246, 244, 239, 0.22); }
+.wordmark-face {
+  display: inline-flex;
+  width: 0.86em;
+  height: 0.86em;
+  vertical-align: -0.08em;
+}
+.wordmark-face svg { width: 100%; height: 100%; display: block; }
+.product-stage {
+  margin: 16px auto 0;
+  max-width: 880px;
+  background: #141414;
+  border: 1px solid rgba(246, 244, 239, 0.08);
+  border-bottom: 0;
+  border-radius: 18px 18px 0 0;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 248px 1fr;
+  text-align: left;
+  min-height: 340px;
+}
+.roster { padding: 14px 10px; border-right: 1px solid rgba(246, 244, 239, 0.06); }
+.roster-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 10px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: rgba(246, 244, 239, 0.78);
+  font-size: 14px;
+}
+.roster-row:hover { opacity: 1; background: rgba(246, 244, 239, 0.05); color: #fff; }
+.roster-row strong { display: block; font-weight: 580; color: #fff; }
+.roster-row span { display: block; font-size: 12px; color: rgba(246, 244, 239, 0.42); }
+.face {
+  width: 28px;
+  height: 28px;
+  border-radius: 9px;
+  flex: none;
+  display: block;
+}
+.stage-main { padding: 22px 22px 18px; }
+.stage-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(246, 244, 239, 0.5);
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+.stage-bar b { color: #F6F4EF; font-weight: 560; }
+.bubble {
+  max-width: 92%;
+  border-radius: 16px;
+  padding: 12px 14px;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0 0 10px;
+}
+.bubble.me { background: #F6F4EF; color: #111; margin-left: auto; }
+.bubble.bot { background: #1E1E1E; color: #EDEBE4; }
+.thinking {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent);
+  font-size: 13px;
+  margin-top: 8px;
+}
+.proof {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 22px;
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.proof li { color: rgba(246, 244, 239, 0.55); font-size: 13px; }
+.proof b { color: #F6F4EF; font-weight: 620; }
+.stage-caption {
+  margin: 28px 0 0;
+  color: rgba(246, 244, 239, 0.48);
+  font-size: 13px;
+}
+.steal {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 16px;
+  align-items: stretch;
+}
+.steal .job-card { margin: 0; }
+.mistakes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.mistake {
+  background: var(--bg-elev);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  padding: 22px 22px 18px;
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+a.mistake:hover { opacity: 1; border-color: var(--hairline-strong); }
+.mistake .tag {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: #9A4A12;
+  font-weight: 650;
+  margin: 0 0 8px;
+}
+.mistake h3 { margin: 0 0 8px; }
+.mistake p { margin: 0; color: var(--muted); font-size: 15px; }
+.quotes { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+.quote {
+  background: var(--bg-elev);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  padding: 22px 22px 18px;
+  box-shadow: var(--shadow);
+}
+.quote p { margin: 0 0 12px; font-size: 16px; }
+.quote .who { margin: 0; color: var(--muted); font-size: 13px; }
+.featured {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin: 0 0 28px;
+}
+.diagram {
+  background: #141414;
+  color: #EDEBE4;
+  border-radius: var(--radius-n);
+  padding: 18px 18px 14px;
+  margin: 22px 0;
+}
+.diagram svg { display: block; width: 100%; height: auto; max-width: 520px; }
+.diagram figcaption { margin: 12px 0 0; font-size: 13px; color: rgba(237, 235, 228, 0.62); }
+.compare-cards { display: none; gap: 14px; }
+@media (max-width: 860px) {
+  .compare-desktop { display: none; }
+  .compare-cards { display: grid; grid-template-columns: 1fr; }
+}
+.beta {
+  display: none;
+}
+h1 {
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 520;
+  letter-spacing: -0.042em;
+  line-height: 1.08;
+  margin: 0 0 16px;
+}
+.lede {
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--muted);
+  max-width: 40rem;
+  margin: 0 0 28px;
+}
+h1 + .en-sub, p.en-sub { display: none; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 28px 0 4px; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 9999px;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 560;
+  border: 0;
+  transition: transform .16s ease, box-shadow .16s ease, background .16s ease, opacity .16s ease;
+}
+.btn:hover { opacity: 1; transform: translateY(-1px); }
+.btn-primary { background: #111; color: #fff; }
+.btn-primary:hover { box-shadow: 0 10px 24px rgba(17, 17, 17, 0.2); }
+.btn-secondary { background: var(--btn-sec); color: #111; }
+.btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--hairline-strong); }
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.card {
+  background: var(--bg-elev);
+  border-radius: var(--radius);
+  padding: 26px 26px 22px;
+  border: 1px solid var(--hairline);
+  box-shadow: var(--shadow);
+}
+.card.nested {
+  border-radius: var(--radius-n);
+  background: var(--bg-elev);
+  border: 1px solid var(--hairline);
+  box-shadow: none;
+  padding: 18px 18px 16px;
+}
+.card h2, .card h3 { margin-top: 0; }
+.card p:last-child { margin-bottom: 0; }
+a.card { text-decoration: none; color: inherit; display: block; }
+a.card:hover { opacity: 1; border-color: var(--hairline-strong); }
+h2 {
+  font-size: clamp(26px, 3.2vw, 36px);
+  font-weight: 520;
+  letter-spacing: -0.032em;
+  line-height: 1.18;
+  margin: 0 0 12px;
+}
+h3 { font-size: 18px; font-weight: 600; letter-spacing: -0.02em; margin: 28px 0 8px; }
+p { margin: 0 0 1em; color: var(--text); }
+.muted, .note { color: var(--muted); }
+section.band { padding: 64px 0; }
+section.band + section.band { padding-top: 8px; }
+
+.roadmap { display: flex; flex-direction: column; gap: 10px; }
+.step {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 16px;
+  align-items: start;
+  background: var(--bg-elev);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid var(--hairline);
+  box-shadow: var(--shadow);
+  transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+}
+.step:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+  border-color: var(--hairline-strong);
+  box-shadow: var(--shadow-hover);
+}
+.num {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  background: #111;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 620;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+.step h3 { margin: 4px 0 4px; font-size: 17px; }
+.step p { margin: 0; color: var(--muted); font-size: 15px; }
+
+.faq { padding: 8px 26px 12px; }
+.faq details { border-top: 1px solid var(--hairline); padding: 16px 0; }
+.faq details:first-child { border-top: 0; }
+.faq summary {
+  cursor: pointer;
+  font-weight: 560;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; color: var(--muted); font-weight: 400; font-size: 20px; line-height: 1; }
+.faq details[open] summary::after { content: "–"; }
+.faq details p { margin: 10px 0 0; color: var(--muted); font-size: 16px; }
+
+.prose { max-width: 44rem; }
+.prose p { margin-bottom: 1.05em; }
+.prose ul, .prose ol { padding-left: 1.2em; margin: 0 0 1.1em; }
+.prose li { margin: 0 0 .5em; }
+.prose a { text-underline-offset: 3px; }
+.prose h2 { margin-top: 2.1em; }
+.prose > .kicker + h1 { margin-top: 6px; }
+.callout {
+  background: var(--bg-elev);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-n);
+  padding: 16px 18px;
+  margin: 22px 0;
+  box-shadow: var(--shadow);
+}
+.callout.warn {
+  background: #FFF8EC;
+  border-color: rgba(176, 112, 20, 0.16);
+  box-shadow: none;
+}
+.meta { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
+.pager { display: flex; justify-content: space-between; gap: 12px; margin: 48px 0 8px; flex-wrap: wrap; }
+.pager a {
+  background: var(--bg-elev);
+  border: 1px solid var(--hairline);
+  border-radius: 9999px;
+  padding: 10px 16px;
+  text-decoration: none;
+  font-size: 14px;
+  box-shadow: var(--shadow);
+}
+.pager a:hover { opacity: 1; }
+
+footer.site {
+  border-top: 1px solid var(--hairline);
+  padding: 48px 0 64px;
+  margin-top: 40px;
+  color: var(--muted);
+  font-size: 14px;
+  background: transparent;
+}
+footer.site a { color: var(--muted); }
+footer.site a:hover { color: var(--text); opacity: 1; }
+.foot-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 32px; margin-bottom: 28px; }
+.foot-grid h4 {
+  margin: 0 0 12px;
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.foot-grid a { display: block; text-decoration: none; margin: 0 0 8px; }
+.foot-grid p { color: var(--muted); font-size: 14px; line-height: 1.55; }
+
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 16px; }
+.filters button {
+  border: 1px solid var(--hairline);
+  background: var(--bg-elev);
+  border-radius: 9999px;
+  padding: 7px 12px;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  color: var(--text);
+}
+.filters button[aria-pressed="true"] { background: #111; color: #fff; border-color: #111; }
+.tool-row, .case-card {
+  background: var(--bg-elev);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-n);
+  padding: 16px 18px;
+  margin: 0 0 10px;
+  box-shadow: var(--shadow);
+}
+.tool-row h3, .case-card h3 { margin: 0 0 4px; font-size: 16px; }
+.tool-row p, .case-card p { margin: 0; font-size: 15px; color: var(--muted); }
+.job-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.job-card {
+  background: var(--bg-elev);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  padding: 22px 22px 18px;
+  box-shadow: var(--shadow);
+}
+.job-card h3 { margin: 0 0 8px; }
+.job-card p { margin: 0 0 12px; color: var(--muted); font-size: 15px; }
+.job-card pre {
+  margin: 0 0 12px;
+  padding: 14px 16px;
+  background: var(--surface);
+  border-radius: var(--radius-s);
+  font-size: 13.5px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.job-card code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+.copy-btn {
+  border: 0;
+  background: #111;
+  color: #fff;
+  border-radius: 9999px;
+  padding: 8px 14px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 560;
+  cursor: pointer;
+}
+.copy-btn:hover { opacity: .86; }
+.prose .job-card { margin: 18px 0 22px; max-width: none; }
+.kicker {
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 650;
+  margin: 0 0 10px;
+}
+.crumbs { font-size: 13px; color: var(--muted); }
+.crumbs .wrap { padding-top: 18px; padding-bottom: 0; }
+.crumbs a { color: var(--muted); text-decoration: none; }
+.crumbs a:hover { color: var(--text); }
+.crumbs .sep { margin: 0 8px; opacity: .45; }
+.crumbs span:last-child { color: var(--text); }
+.terms { margin: 0 0 1.4em; }
+.terms dt { font-weight: 650; margin: 1.1em 0 4px; }
+.terms dd { margin: 0; color: var(--muted); }
+.table-wrap { overflow-x: auto; margin: 0 0 1.4em; }
+table { width: 100%; border-collapse: collapse; font-size: 15px; background: var(--bg-elev); border-radius: var(--radius-n); overflow: hidden; }
+th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--hairline); vertical-align: top; }
+th { color: var(--muted); font-weight: 560; font-size: 12px; letter-spacing: .04em; text-transform: uppercase; background: var(--surface); }
+tr:last-child td { border-bottom: 0; }
+.search {
+  width: 100%;
+  border: 1px solid var(--hairline);
+  border-radius: 9999px;
+  padding: 13px 18px;
+  font: inherit;
+  font-size: 15px;
+  background: var(--bg-elev);
+  margin: 0 0 16px;
+  box-shadow: var(--shadow);
+}
+.search:focus { outline: 2px solid #111; outline-offset: 2px; }
+.hidden { display: none !important; }
+
+.source-section { padding: 48px 0 0; }
+.source-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.source-list li, .source-item {
+  background: var(--bg-elev);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-n);
+  padding: 14px 16px;
+  font-size: 15px;
+  box-shadow: var(--shadow);
+}
+.source-list a { font-weight: 560; text-underline-offset: 3px; }
+.source-note { display: block; margin-top: 4px; color: var(--muted); font-size: 13px; line-height: 1.45; }
+
+@media (max-width: 860px) {
+  .grid-2, .grid-3, .foot-grid, .job-grid, .steal, .mistakes, .quotes { grid-template-columns: 1fr; }
+  .nav-rule { display: none; }
+  nav.links { display: none; }
+  nav.links.open {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: absolute;
+    top: 68px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    background: var(--bg);
+    padding: 12px 20px 20px;
+    border-bottom: 1px solid var(--hairline);
+    gap: 4px;
+  }
+  .menu-btn { display: inline-flex; margin-left: auto; }
+  .hero { padding-top: 48px; }
+  .hero-product { padding-top: 40px; }
+  .hero-product h1 { font-size: clamp(32px, 10vw, 44px); }
+  .product-stage { grid-template-columns: 1fr; min-height: 0; }
+  .roster { display: grid; grid-template-columns: 1fr 1fr; border-right: 0; border-bottom: 1px solid rgba(246, 244, 239, 0.06); }
+  .step { grid-template-columns: 40px 1fr; padding: 16px; }
+  h1 { font-size: clamp(32px, 10vw, 44px); }
+}
+@media (max-width: 720px) { .source-list { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto; transition: none !important; }
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Grok Bot Guide", "url": "https://grokbot.run/", "inLanguage": "en", "description": "Grok Bot guide: how to start, Cursor login, first job, shared computer, plan conflicts, and Recover before Reset.", "publisher": {"@type": "Organization", "name": "Grok Bot Guide", "logo": {"@type": "ImageObject", "url": "https://grokbot.run/brand/grok-bot-face.svg"}}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Grok Bot tools: CLI, TUI, Linux ports, usage meters", "description": "Grok Bot tools catalog: 199 CLI, TUI, plugin, MCP, Linux, and usage-meter entries. grok-app is a Grok Build GUI, not a Grok Bot client. Source links included.", "url": "https://grokbot.run/tools/", "inLanguage": "en", "datePublished": "2026-09-04", "dateModified": "2026-09-04", "isPartOf": {"@type": "WebSite", "name": "Grok Bot Guide", "url": "https://grokbot.run/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Guide", "item": "https://grokbot.run/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://grokbot.run/tools/"}]}</script>
+</head><body>
+<header class="site"><div class="wrap nav"><a class="brand" href="/"><img class="logo" src="/brand/grok-bot-face.svg" alt="Grok Bot Guide"><span class="name">Grok Bot</span><span class="tag">Guide</span></a><span class="nav-rule" aria-hidden="true"></span><button class="menu-btn" type="button" data-menu>Menu</button><nav class="links" data-links><a href="/">Guide</a><a href="/learn/install/">Install</a><a href="/pricing/">Pricing</a><a href="/tools/" aria-current="page">Tools</a><a href="/use-cases/">Cases</a><a href="/troubleshooting/">Help</a></nav></div></header>
+<main><nav class="crumbs" aria-label="Breadcrumb"><div class="wrap"><a href="/">Guide</a><span class="sep" aria-hidden="true">/</span><span>Tools</span></div></nav>
+<section class="band"><div class="wrap">
+<p class="kicker">Catalog</p>
+<h1>Grok Bot tools catalog</h1>
+<p class="lede">Catalog from awesome-grok-bot plus later additions: 199 entries — Skills/Plugins/MCP 99, Open-Source Alternatives 67, Tutorials &amp; Guides 33 (CC0, fetched 2026-09-04). High-star self-hosted stacks are compared on <a href="/compare/">alternatives</a>. Each row keeps one-line job + source; check the original repo for license, maintenance, and permissions.</p>
+<h2>Start with these seven</h2>
+<div class="featured"><a class="card nested" href="https://github.com/EveryInc/compound-engineering-plugin"><h3>Compound Engineering</h3><p>Install in the Cursor marketplace. Grok Bot inherits it. Do not clone onto the Bot computer.</p></a><a class="card nested" href="https://github.com/kunchenguid/grok-ship"><h3>Grok Ship</h3><p>Scout vs ship. Crewmates drive Cursor cloud agents. Review before any PR.</p></a><a class="card nested" href="https://github.com/vercel/vercel-plugin"><h3>Vercel plugin</h3><p>Deployments, logs, domains. Official marketplace plugin Grok Bot can inherit.</p></a><a class="card nested" href="https://github.com/najmuzzaman-mohammad/gawkbot"><h3>gawkbot</h3><p>Local-first alternative. npx install. Not the official app.</p></a><a class="card nested" href="https://github.com/milind-soni/OpenMausBot"><h3>OpenMausBot</h3><p>Highest-star self-hosted roster plus a VM you run.</p></a><a class="card nested" href="/tools/linux-port/"><h3>Official Linux packages</h3><p>deb / rpm / AppImage from x.ai/bot first. Community port is fallback only.</p></a><a class="card nested" href="/tools/grok-bot-cli/"><h3>grok-bot-cli</h3><p>Terminal roster and messages. Reuses a signed-in macOS desktop session.</p></a></div>
+<div class="callout warn"><p><strong>grok-app is not a Grok Bot client.</strong> <a href="https://github.com/RongleCat/grok-app">RongleCat/grok-app</a> is a desktop workbench (Tauri) for the local Grok Build CLI.</p></div>
+<div class="filters" data-filters><button type="button" data-filter="all" aria-pressed="true">All 199</button><button type="button" data-filter="Plugins / skills">Plugins / skills</button><button type="button" data-filter="Other">Other</button><button type="button" data-filter="MCP">MCP</button><button type="button" data-filter="CLI">CLI</button><button type="button" data-filter="TUI">TUI</button><button type="button" data-filter="Linux">Linux</button><button type="button" data-filter="Alternatives">Alternatives</button><button type="button" data-filter="Usage">Usage</button></div>
+<input class="search" data-search placeholder="Search tool name or job">
+<div data-list><article class="tool-row" data-tags="Plugins / skills"><h3>grokbot-imessage-skill</h3><p>Read, triage, and send iMessage from the Bot via a local macOS helper.</p><p class="muted">Plugins / skills · <a href="https://github.com/jeffhuber/grokbot-imessage-skill">Source</a></p></article><article class="tool-row" data-tags="Other"><h3>Grok Bot Discord gateway</h3><p>Bridge so a Bot can live in Discord without pretending to be a Slack App.</p><p class="muted">Other · <a href="https://github.com/davefmurray/grok-bot-discord">Source</a></p></article><article class="tool-row" data-tags="Plugins / skills"><h3>Werewolf gamemaster skill</h3><p>A real skill pack: the Bot runs a Werewolf table, not a hello-world SKILL.md.</p><p class="muted">Plugins / skills · <a href="https://github.com/Heyvhuang/werewolf-gamemaster">Source</a></p></article><article class="tool-row" data-tags="Other"><h3>Hyperliquid 7-agent trading desk</h3><p>Seven specialized Bots on one desk — treat as experimental, read the code first.</p><p class="muted">Other · <a href="https://github.com/galleonlabs/hypergrok-trading-desk">Source</a></p></article><article class="tool-row" data-tags="Plugins / skills"><h3>awesome-grok-bot-plugins</h3><p>219 in-app marketplace listings captured 2026-08-12, grouped by category.</p><p class="muted">Plugins / skills · <a href="https://github.com/rdmgator12/awesome-grok-bot-plugins">Source</a></p></article><article class="tool-row" data-tags="Plugins / skills"><h3>superpowers (marketplace)</h3><p>Largest general skill collection in the official marketplace: plan, debug, write.</p><p class="muted">Plugins / skills · <a href="https://github.com/obra/superpowers">Source</a></p></article><article class="tool-row" data-tags="Plugins / skills"><h3>Compound Engineering</h3><p>Official Compound Engineering plugin (24.8k★). Install once in the Cursor marketplace; Grok Bot inherits the same library. Do not clone the repo onto the Bot computer.</p><p class="muted">Plugins / skills · <a href="https://github.com/EveryInc/compound-engineering-plugin">Source</a></p></article><article class="tool-row" data-tags="MCP"><h3>chrome-devtools MCP</h3><p>Drive a live Chrome: traces, network, source-mapped console errors.</p><p class="muted">MCP · <a href="https://github.com/ChromeDevTools/chrome-devtools-mcp">Source</a></p></article><article class="tool-row" data-tags="Plugins / skills"><h3>Vercel plugin</h3><p>Deployments, logs, domains. Pair with the forum thread on OAuth redirect failures.</p><p class="muted">Plugins / skills · <a href="https://github.com/vercel/vercel-plugin">Source</a></p></article><article class="tool-row" data-tags="Other"><h3>Grok Ship</h3><p>Agent distro that turns Grok Bot into a software factory: scout vs ship, per-project crewmates driving Cursor cloud agents, review before any PR.</p><p class="muted">Other · <a href="https://github.com/kunchenguid/grok-ship">Source</a></p></article><article class="tool-row" data-tags="MCP Plugins / skills"><h3>Coolify Cursor plugin</h3><p>Official Coolify plugin for Cursor and Grok Bot: remote HTTP MCP to inspect servers, apps, deploys, and logs.</p><p class="muted">MCP, Plugins / skills · <a href="https://github.com/coollabsio/coolify-cursor-plugin">Source</a></p></article><article class="tool-row" data-tags="Other"><h3>Grok Bot Telegram bridge</h3><p>Unofficial Telegram gateway that runs on the Grok Bot computer and talks to the local Sand gateway on loopback only.</p><p class="muted">Other · <a href="https://github.com/SSBrouhard/grokbot-telegram-bridge">Source</a></p></article><article class="tool-row" data-tags="Plugins / skills"><h3>grok-wechat-plugin</h3><p>Unofficial WeChat iLink channel: inbound messages wake a Grok Bot routine over webhook.</p><p class="muted">Plugins / skills · <a href="https://github.com/little-thing/grok-wechat-plugin">Source</a></p></article><article class="tool-row" data-tags="CLI"><h3>grok-bot-cli</h3><p>Terminal CLI that reuses the signed-in macOS Grok Bot app to list, create, and message teammates.</p><p class="muted">CLI · <a href="https://github.com/ScriptedAlchemy/grok-bot-cli">Source</a> · <a href="/tools/grok-bot-cli/">Site detail page</a></p></article><article class="tool-row" data-tags="TUI"><h3>grokbot-tui</h3><p>Unofficial terminal TUI that talks to the Grok Bot host gateway so you can chat with bots and channels from the terminal.</p><p class="muted">TUI · <a href="https://github.com/smarzban/grokbot-tui">Source</a> · <a href="/tools/grokbot-tui/">Site detail page</a></p></article><article class="tool-row" data-tags="Plugins / skills"><h3>grok-bot-skill</h3><p>Cursor/Claude skill so a coding agent can list, chat with, and create Grok Bot teammates.</p><p class="muted">Plugins / skills · <a href="https://github.com/adamanz/grok-bot-skill">Source</a> · <a href="/tools/grok-bot-skill/">Site detail page</a></p></article><article class="tool-row" data-tags="Other"><h3>budezllc/dictate-capture</h3><p>Windows helper: hold Ctrl+D to dictate into Grok Bot, optionally drag a gold box to paste a screenshot.</p><p class="muted">Other · <a href="https://github.com/budezllc/dictate-capture">Source</a></p></article><article class="tool-row" data-tags="Other"><h3>HAEGONG/grok-bot-profiles</h3><p>Paste-in Grok Bot profiles that split spec, bug repro, implementation, and verification so a bot never approves its own work.</p><p class="muted">Other · <a href="https://github.com/HAEGONG/grok-bot-profiles">Source</a></p></article><article class="tool-row" data-tags="Other"><h3>adam91holt/grokbot-sdk</h3><p>TypeScript SDK for a running Grok Bot host: typed local HTTP gateway client plus sand-data disk readers (6★, MIT).</p><p class="muted">Other · <a href="https://github.com/adam91holt/grokbot-sdk">Source</a></p></article><article class="tool-row" data-tags="CLI MCP Plugins / skills"><h3>steve228uk/grok-bot-shopping</h3><p>Shopping skills pack: merchant UCP/MCP, Shopify Shop CLI via npx, and Stripe Onelink; paste INSTALL.md into Grok Bot (2★).</p><p class="muted">CLI, MCP, Plugins / skills · <a href="https://github.com/steve228uk/grok-bot-shopping">Source</a></p></article><article class="tool-row" data-tags="CLI Plugins / skills"><h3>Thin Grok Bot, deep work on CLI</h3><p>Skill that keeps the Grok Bot mesh thin and hands deep builds or investigations to Cursor CLI, Cursor cloud agents, or grok CLI.</p><p class="muted">CLI, Plugins / skills · <a href="https://github.com/Luca-Blight/thin-grok-bot-deep-work-on-cli">Source</a></p></article><article class="tool-row" data-tags="Linux MCP Plugins / skills"><h3>mykemueller1-ctrl/grok-bot-restaurant-scout</h3><p>Grok Bot pack for a restaurant social-commerce scout: agent profile, morning-scan/script/catalog skills, daily routine, and MCP connectors with a copy-paste SETUP.md.</p><p class="muted">Linux, MCP, Plugins / skills · <a href="https://github.com/mykemueller1-ctrl/grok-bot-restaurant-scout">Source</a></p></article><article class="tool-row" data-tags="CLI"><h3>ShuhangGe/grokbot-queue</h3><p>CLI (gbq) that queues work onto your running Grok Bots over Tailscale/SSH so many cloud tasks share a ~400MB local footprint.</p><p class="muted">CLI · <a href="https://github.com/ShuhangGe/grokbot-queue">Source</a></p></article><article class="tool-row" data-tags="Other"><h3>3Fold-Labs/grok-bot-org-chart</h3><p>Permissions playbook and role-bot templates (Chief of Staff, Eng, Ops, and more) for running a small company as named Grok Bots on one shared computer.</p><p class="muted">Other · <a href="https://github.com/3Fold-Labs/grok-bot-org-chart">Source</a></p></article><article class="tool-row" data-tags="Other"><h3>crew-contract</h3><p>Operating protocol for Grok Bot crews: seven-field missions, artifact handoffs, stop-on-budget, plus a paste-in Signal Crew and Notion schema.</p><p class="muted">Other · <a href="https://github.com/lsj210001/crew-contract">Source</a></p></article><article class="tool-row" data-tags="Other"><h3>cobusgreyling/grok-bot-templates</h3><p>Scored Grok Bot operating contracts (job, never-list, L1 default, CI) with a START.md installer: paste into Setup, tap a team, get 49 paste-ready profiles.</p><p class="muted">Other · <a href="https://github.com/cobusgreyling/grok-bot-templates">Source</a></p></article><article class="tool-row" data-tags="Other"><h3>jaredtrichard/grok-factory</h3><p>Followable Grok Bot pack (software + research + general) installed via `follow …/GROK_FACTORY.md`; Firstmate routes work on the shared computer.</p><p class="muted">Other · <a href="https://github.com/jaredtrichard/grok-factory">Source</a></p></article><article class="tool-row" data-tags="Other"><h3>Chakhdz/grok-bot-token-saver</h3><p>Token-thrifty chief/worker mold: remaster long chats on a timer and revive bots from a short role card; ships installable Botsi Archivist via x.ai/bot.</p><p class="muted">Other · <a href="https://github.com/Chakhdz/grok-bot-token-saver">Source</a></p></article><article class="tool-row" data-tags="MCP Plugins / skills"><h3>supervised-nl/tesla-fleet-mcp</h3><p>Tesla Fleet API MCP with `.grok-plugin` for Grok Bot (Streamable HTTP on public HTTPS; climate/charge/lock need tesla-http-proxy + virtual key).</p><p class="muted">MCP, Plugins / skills · <a href="https://github.com/supervised-nl/tesla-fleet-mcp">Source</a></p></article><article class="tool-row" data-tags="MCP Plugins / skills"><h3>DomenicFotino/grok-bot-template-market</h3><p>Hosted MCP plugin for Bot Template Market (catalog / licenses / apply_pack); add `https://grok-raqet.vercel.app/api/mcp` in Grok Bot Plugins.</p><p class="muted">MCP, Plugins / skills · <a href="https://github.com/DomenicFotino/grok-bot-template-market">Source</a></p></article><article class="tool-row" data-tags="Other"><h3>novusordos666/grokbot-outreach-agent-team</h3><p>Five coordinated Grok Bot agent prompts (chief, research, qualify, outreach, inbox/Calendly) for evidence-based outbound with human approvals.</p><p class="muted">Other · <a href="https://github.com/novusordos666/grokbot-outreach-agent-team">Source</a></p></article><article class="tool-row" data-tags="MCP Plugins / skills"><h3>NexFade/nexfade-grok-plugin</h3><p>NexFade `.grok-plugin` + MCP for Grok Bot: encrypt files/notes on the Bot computer (AES-256-GCM) and share ciphertext links without sending plaintext to NexFade (MIT).</p><p class="muted">MCP, Plugins / skills · <a href="https://github.com/NexFade/nexfade-grok-plugin">Source</a></p></article><article class="tool-row" data-tags="MCP"><h3>elderibeiro/proton-mail-mcp-grokbot</h3><p>Public Proton Mail MCP recovery base for Grok Bot: official Bridge on loopback plus a stdio proxy (pass/env secrets; no credentials in-repo; 1★).</p><p class="muted">MCP · <a href="https://github.com/elderibeiro/proton-mail-mcp-grokbot">Source</a></p></article><article class="tool-row" data-tags="MCP"><h3>elderibeiro/subaru-starlink-mcp-grokbot</h3><p>Public Subaru STARLINK / MySubaru MCP for Grok Bot via subarulink (no VIN/PIN/secrets in-repo; MIT; 1★).</p><p class="muted">MCP · <a href="https://github.com/elderibeiro/subaru-starlink-mcp-grokbot">Source</a></p></article><article class="tool-row" data-tags="MCP Plugins / skills"><h3>koreysmith123/recallsmith</h3><p>RecallSmith experiential memory for GrokBot: one-message install, `.grok-plugin`/MCP skills, docker-compose and pgvector profiles (MIT).</p><p class="muted">MCP, Plugins / skills · <a href="https://github.com/koreysmith123/recallsmith">Source</a></p></article><article class="tool-row" data-tags="MCP Plugins / skills"><h3>canvascloudai/cwm-cursor-plugin</h3><p>Cloud World Model official Cursor/Grok Bot plugin pack: hosted Streamable HTTP MCP plus simulate-architecture skill (MIT).</p><p class="muted">MCP, Plugins / skills · <a href="https://github.com/canvascloudai/cwm-cursor-plugin">Source</a></p></article><article class="tool-row" data-tags="MCP Plugins / skills"><h3>sigmashakeinc/sigmashake-guardrails</h3><p>SigmaShake Guardrails hosted control plane for Grok Bot/Cursor: `.grok-plugin` + Streamable HTTP MCP evaluating tool calls (ALLOW/DENY/ASK/…).</p><p class="muted">MCP, Plugins / skills · <a href="https://github.com/sigmashakeinc/sigmashake-guardrails">Source</a></p></article><article class="tool-row" data-tags="MCP"><h3>Deploy-Forward/convoy</h3><p>Convoy hosted MCP (convoy.bot/mcp) with Grok Bot as conductor: onboard/roster/send/feed hops to BYO harness CLIs (tests + docs).</p><p class="muted">MCP · <a href="https://github.com/Deploy-Forward/convoy">Source</a></p></article><article class="tool-row" data-tags="MCP Plugins / skills"><h3>nessielabs/nessie-grokbot</h3><p>Cursor/Grok Bot plugin that attaches Nessie’s hosted MCP (`mcp.nessielabs.com`) so a Bot can search, read, and safely write your Nessie context library (MIT).</p><p class="muted">MCP, Plugins / skills · <a href="https://github.com/nessielabs/nessie-grokbot">Source</a></p></article><article class="tool-row" data-tags="Plugins / skills"><h3>GlobalTC/steer</h3><p>Grok Bot share recipe for STEER: mark a draft, Save, get a rewrite; ships profile, memory, two skills, and a webhook routine (Apache-2.0).</p><p class="muted">Plugins / skills · <a href="https://github.com/GlobalTC/steer">Source</a></p></article><article class="tool-row" data-tags="Plugins / skills"><h3>AgentMindCloud/grok-bot-super</h3><p>Community playbook library a Grok Bot can read and save as skills (email triage, research brief, X-thread builder, and more) via official save-as-skill (MIT, 1★).</p><p class="muted">Plugins / skills · <a href="https://github.com/AgentMindCloud/grok-bot-super">Source</a></p></article><article class="tool-row" data-tags="MCP"><h3>grok-bot-mcp-connector</h3><p>Cloudflare Worker MCP with send and inbox tools so two dedicated Grok Bots can message each other and wake via webhook routines.</p><p class="muted">MCP · <a href="https://github.com/chipherndon/grok-bot-mcp-connector">Source</a></p></article><article class="tool-row" data-tags="Plugins / skills"><h3>grok-skills</h3><p>Catalog of 195 SKILL.md playbooks for Grok Bot, browsable at grokbotskills.vercel.app and installable via grok plugin marketplace add.</p><p class="muted">Plugins / skills · <a href="https://github.com/jaskirat1616/grok-skills">Source</a></p></article><article class="tool-row" data-tags="Other"><h3>Firstmate</h3><p>Paste-ready Grok Bot prompt that runs a crew and writes decisions into a git repo so memory is not trapped in one chat thread.</p><p class="muted">Other · <a href="https://github.com/matteoantoci/firstmate">Source</a></p></article><article class="tool-row" data-tags="Other"><h3>GTM agent automations</h3><p>Copy-paste Grok Bot automation prompts for GTM work (outbound, CRM, Stripe, Slack triggers), modeled on dabit3/cloud-agent-automations.</p><p class="muted">Other · <a href="https://github.com/OpulentiaAI/gtm-agent-automations">Source</a></p></article><article class="tool-row" data-tags="MCP Plugins / skills"><h3>remem-grokbot</h3><p>Cursor/Grok Bot plugin that exposes ten remem.io memory tools over stdio MCP, with tests and a grokbot namespace policy.</p><p class="muted">MCP, Plugins / skills · <a href="https://github.com/asimgilani/remem-grokbot">Source</a></p></article><article class="tool-row" data-tags="Plugins / skills"><h3>Podcast Summary Bot</h3><p>Grok Bot template (x.ai/bot share) plus a skill that turns a YouTube, X, or Spotify episode into five reusable insights.</p><p class="muted">Plugins / skills · <a href="https://github.com/noam99moyal-sudo/podcast-summary-bot">Source</a></p></article><article class="tool-row" data-tags="MCP Plugins / skills"><h3>Buses &amp; Trains MCP</h3><p>Grok Bot plugin for live UK bus and train times, journey planning, and rail fares via the Buses &amp; Trains API.</p><p class="muted">MCP, Plugins / skills · <a href="https://github.com/BusesAndTrains/busesandtrains-mcp">Source</a></p></article><article class="tool-row" data-tags="MCP Plugins / skills"><h3>Balise for Grok Bot</h3><p>Cursor/Grok Bot plugin plus SKILL.md that OAuth-connects to Balise hosted MCP so a Bot can search private Apple Photos visual memory.</p><p class="muted">MCP, Plugins / skills · <a href="https://github.com/baliseai/balise-grok-plugin">Source</a></p></article><article class="tool-row" data-tags="MCP Plugins / skills"><h3>GbNet for Cursor</h3><p>Cursor/Grok Bot plugin with a collaboration SKILL.md and hosted MCP so two permissioned partners can share plans, tasks, and evidence.</p><p class="muted">MCP, Plugins / skills · <a href="https://github.com/medomatic-ai/gbnet-cursor-plugin">Source</a></p></article><article class="tool-row" data-tags="MCP Plugins / skills"><h3>BaseMouse Cursor plugin</h3><p>Cursor/Grok Bot plugin wrapping BaseMouse MCP (search, context packs, upsert) with a SKILL.md for grounded project memory.</p><p class="muted">MCP, Plugins / skills · <a href="https://github.com/basemouse/cursor-plugin">Source</a></p></article><article class="tool-row" data-tags="CLI"><h3>deskforge</h3><p>Go CLI that inits a git ledger and six paste-ready Grok Bot agent descriptions (Mainer, Pulse, Scout, Judge, Builder, Critic) for a group desk loop.</p><p class="muted">CLI · <a href="https://github.com/mturac/deskforge">Source</a></p></article><article class="tool-row" data-tags="CLI"><h3>Unlist</h3><p>Grok Bot playbook (BOT.md) plus a local CLI and broker list so a Bot can file people-search opt-outs and log follow-ups without committing profile.json.</p><p class="muted">CLI · <a href="https://github.com/shawnyeager/unlist">Source</a></p></article><article class="tool-row" data-tags="MCP Plugins / skills"><h3>Brew for Grok Bot</h3><p>Cursor/Grok Bot plugin plus SKILL.md that OAuth-connects to Brew hosted MCP so a Bot can generate, send, schedule, and analyze on-brand email.</p><p class="muted">MCP, Plugins / skills · <a href="https://github.com/GetBrew/cursor-plugin">Source</a></p></article><article class="tool-row" data-tags="MCP Plugins / skills"><h3>GojiberryAI Sales OS</h3><p>Grok Bot plugin with a 13-agent SKILL.md and hosted GojiberryAI MCP so a Bot can run outbound sales (intent, enrich, LinkedIn, replies) without inventing contacts.</p><p class="muted">MCP, Plugins / skills · <a href="https://github.com/romangojiberryAI/gojiberryai-sales-os">Source</a></p></article><article class="tool-row" data-tags="Plugins / skills"><h3>Steltic Grok Bot</h3><p>Packaged SKILL.md files plus a Python convert/index/search pipeline so three Grok Bots can retrieve licensed structural-steel specs on the Bot computer without an external RAG.</p><p class="muted">Plugins / skills · <a href="https://github.com/Steltic/steltic_grokbot">Source</a></p></article><article class="tool-row" data-tags="MCP"><h3>GrokBot Body</h3><p>iPhone plus DockKit app and a self-hosted Cloudflare Worker MCP so one Grok Bot can listen, speak, and change face on a phone as its body.</p><p class="muted">MCP · <a href="https://github.com/rowline/grokbot-body">Source</a></p></article><article class="tool-row" data-tags="Other"><h3>Grok Bot Telegram private bridge</h3><p>Unofficial owner-paired Telegram front end that runs on the Grok Bot cloud computer and talks to the local gateway on loopback only.</p><p class="muted">Other · <a href="https://github.com/liush2yuxjtu/grok-bot-telegram-private-bridge">Source</a></p></article><article class="tool-row" data-tags="MCP Plugins / skills"><h3>Paygent plugin</h3><p>Cursor/Grok Bot plugin plus SKILL.md that connects a hosted Paygent MCP so a Bot can request a crypto-funded card, check balance, and complete checkouts.</p><p class="muted">MCP, Plugins / skills · <a href="https://github.com/usepaygent/paygent-plugin">Source</a></p></article><article class="tool-row" data-tags="MCP Plugins / skills"><h3>Kijiji Marketplace skills</h3><p>Grok Bot Agent Plugin with four SKILL.md files for Kijiji search, draft listings, price research, and buyer outreach (skills-only, no MCP).</p><p class="muted">MCP, Plugins / skills · <a href="https://github.com/alifarooq0/grok-bot-kijiji-marketplace">Source</a></p></article><article class="tool-row" data-tags="MCP Plugins / skills"><h3>Stashiro agent plugin</h3><p>Client-only Stashiro plugin for Cursor, Grok Bot, and Claude Code with hosted MCP and five board/workspace SKILL.md files.</p><p class="muted">MCP, Plugins / skills · <a href="https://github.com/c4davide/stashiro-agent-plugin">Source</a></p></article><article class="tool-row" data-tags="MCP Plugins / skills"><h3>create-custom-mcp skill</h3><p>Drop-in create-custom-mcp skill packs for Grok Build and Grok Bot that stand up a custom MCP behind an OAuth/API-key gateway with a final as-built security review.</p><p class="muted">MCP, Plugins / skills · <a href="https://github.com/larry-fuqua/create-custom-mcp">Source</a></p></article><article class="tool-row" data-tags="MCP Plugins / skills"><h3>GSC Wizard Grok plugin</h3><p>Grok / Grok Bot / Grok Build plugin that wires the hosted GSC Wizard MCP for Search Console rankings, decay, cannibalization, CTR, and weekly SEO reports.</p><p class="muted">MCP, Plugins / skills · <a href="https://github.com/gscwizard/grok-plugin">Source</a></p></article><article class="tool-row" data-tags="MCP Plugins / skills"><h3>Grok Bot Vision</h3><p>Grok Bot vision plugin with local Node MCP so a Bot can see a live camera stream plus pictures, screenshots, PDFs, and documents.</p><p class="muted">MCP, Plugins / skills · <a href="https://github.com/kenarakelian1/grok-bot-vision">Source</a></p></article><article class="tool-row" data-tags="MCP Plugins / skills"><h3>Glome plugin</h3><p>Cursor Marketplace / Grok Bot plugin that binds Bots to Glome Cloud hosted MCP for 1:1 Bot-to-Bot messaging.</p><p class="muted">MCP, Plugins / skills · <a href="https://github.com/ObsidianCodes/glome-plugin">Source</a></p></article><article class="tool-row" data-tags="Plugins / skills"><h3>Aaron Marketing Skills</h3><p>120 marketing skills installable as a plugin, portable skills, or an 8-bot AI staff on named-bot hosts including Grok Bot.</p><p class="muted">Plugins / skills · <a href="https://github.com/aaron-he-zhu/aaron-marketing-skills">Source</a></p></article><article class="tool-row" data-tags="MCP Plugins / skills"><h3>AICA Life OS plugin</h3><p>Cursor/Grok Bot plugin that wires the hosted AICA Life OS MCP with OAuth so a Bot can read the day, tasks, and moments, then propose writes you confirm in AICA.</p><p class="muted">MCP, Plugins / skills · <a href="https://github.com/Comdei/aica-cursor-plugin">Source</a></p></article><article class="tool-row" data-tags="MCP Plugins / skills"><h3>GbNet for Grok Bot</h3><p>Grok Bot–specific GbNet plugin (distinct from the Cursor IDE package) with hosted MCP and a collaboration SKILL.md so invited Bots can work together under your permissions.</p><p class="muted">MCP, Plugins / skills · <a href="https://github.com/medomatic-ai/gbnet-grok-bot-plugin">Source</a></p></article><article class="tool-row" data-tags="Plugins / skills"><h3>ADD Framework agent plugin</h3><p>Grok Bot / Agent Plugin skills pack for the Assess-Decide-Do framework—six SKILL.md files that detect explore vs decide vs execute and answer in-alignment.</p><p class="muted">Plugins / skills · <a href="https://github.com/dragosroua/grok-bot-add-plugin">Source</a></p></article><article class="tool-row" data-tags="MCP Plugins / skills"><h3>unslopifymy agent plugin</h3><p>Grok Bot–named Agent Plugin with local Node MCP and an unslopify SKILL.md that rewrites AI-slop text via unslopifymy.ai (API key or x402).</p><p class="muted">MCP, Plugins / skills · <a href="https://github.com/dragosroua/grok-bot-unslopifymy-plugin">Source</a></p></article><article class="tool-row" data-tags="MCP Plugins / skills"><h3>Google Sheets agent plugin</h3><p>grok-bot-plugins Agent Plugin wrapping Google Sheets API v4 as MCP tools (get/update/append/list tabs) plus a google-sheets SKILL.md—now past the morning empty-stub state.</p><p class="muted">MCP, Plugins / skills · <a href="https://github.com/euca-net/grok-bot-plugins">Source</a></p></article><article class="tool-row" data-tags="MCP Plugins / skills"><h3>CampfireSMS Grok Bot plugin</h3><p>Cursor/Grok Bot plugin that attaches CampfireSMS hosted MCP (open/send/check/ack/close) plus a campfiresms-bridge skill and wake-routine notes for 24/7 SMS without keeping SMS credentials on the Bot computer.</p><p class="muted">MCP, Plugins / skills · <a href="https://github.com/campfiresms/campfiresms-grok-bot">Source</a></p></article><article class="tool-row" data-tags="MCP Plugins / skills"><h3>VidNotes Grok Bot plugin</h3><p>Template-based Cursor/Grok Bot plugin that connects the hosted VidNotes HTTPS MCP so a Bot can work with video notes while keeping the API key in host secure plugin variables.</p><p class="muted">MCP, Plugins / skills · <a href="https://github.com/Karniej/vidnotes-grok-bot-plugin">Source</a></p></article><article class="tool-row" data-tags="MCP Plugins / skills"><h3>Buzz messaging plugin</h3><p>Cursor/Grok Bot plugin with a TypeScript MCP (stdio or Streamable HTTP) for Buzz/NIP-29 messaging—send, list, thread, and inbox tools plus split skills so keys can stay off the shared Bot box.</p><p class="muted">MCP, Plugins / skills · <a href="https://github.com/davidorban/buzz-grokbot">Source</a></p></article><article class="tool-row" data-tags="MCP Plugins / skills"><h3>MyApi Cursor/Grok Bot plugin</h3><p>Official MyApi plugin for Cursor and Grok Bot: npx myapi-asc-mcp plus enroll/request/services skills so agents reach Gmail/GitHub/Slack/Notion and other connected services without scattering raw credentials.</p><p class="muted">MCP, Plugins / skills · <a href="https://github.com/omribenami/myapi-cursor-plugin">Source</a></p></article><article class="tool-row" data-tags="MCP Plugins / skills"><h3>Knowz + KnowzCode plugins</h3><p>Two separately installable Knowz / KnowzCode plugins for Grok Bot, Grok Build, and Cursor—vault knowledge MCP with marketplace and authorize flows documented per host.</p><p class="muted">MCP, Plugins / skills · <a href="https://github.com/knowz-io/cursor-knowz-plugin">Source</a></p></article><article class="tool-row" data-tags="MCP Plugins / skills"><h3>Bool Cursor/Grok Bot plugin</h3><p>Official Bool thin connector for Cursor and Grok Bot: hosted Streamable HTTP MCP at bool.com plus a skill so agents can create, build, and publish Bool apps after OAuth.</p><p class="muted">MCP, Plugins / skills · <a href="https://github.com/codehs/bool-cursor-plugin">Source</a></p></article><article class="tool-row" data-tags="MCP Plugins / skills"><h3>Open Quantum Cursor plugin</h3><p>Cursor/Grok Bot plugin that wires the official openquantum-mcp stdio server so a Bot can list QPU backends, quote, submit OpenQASM, and fetch results under spend policy—enable on the Cursor account, do not clone onto the Bot computer.</p><p class="muted">MCP, Plugins / skills · <a href="https://github.com/Quantum-Rings/openquantum-cursor-plugin">Source</a></p></article><article class="tool-row" data-tags="Plugins / skills"><h3>grok-job-kit standing seats</h3><p>Grok Bot standing-seat job kit (Mouth/Desk/Hands/Check and optional Scout/Watch/List/Judge) with hire-roster and bind-local skills plus templates—hires empty chairs instead of cloning a staffed office.</p><p class="muted">Plugins / skills · <a href="https://github.com/Octo-o-o-o/grok-job-kit">Source</a></p></article><article class="tool-row" data-tags="MCP Plugins / skills"><h3>Hermes↔Grok Bot wake bridge plugin</h3><p>Agent Plugin with MCP plus one skill that bridges Hermes outbound session hooks and inbound webhooks to Grok Bot wakes, using env placeholders so secrets stay off the shared Bot computer.</p><p class="muted">MCP, Plugins / skills · <a href="https://github.com/barkleesanders/hermes-grok-bridge">Source</a></p></article><article class="tool-row" data-tags="MCP Plugins / skills"><h3>Primo IT fleet MCP plugin</h3><p>Cursor/Grok Bot Agent Plugin that points at Primo hosted MCP so a Bot can answer IT fleet questions on devices, tickets, SaaS identities, CVEs, and onboarding without a local server.</p><p class="muted">MCP, Plugins / skills · <a href="https://github.com/getprimo/primo-mcp-plugin">Source</a></p></article><article class="tool-row" data-tags="MCP Plugins / skills"><h3>Agnic Gifts shopping plugin</h3><p>Cursor/Grok Bot plugin that wires the hosted Agnic Gifts MCP for in-stock gift shopping, with nothing purchased until the user passkey-approves a spend cap.</p><p class="muted">MCP, Plugins / skills · <a href="https://github.com/agnicpay/agnic-gifts-grok-bot-plugin">Source</a></p></article><article class="tool-row" data-tags="MCP Plugins / skills"><h3>OverSkill app-builder plugin</h3><p>Cursor/Grok Bot plugin that connects OverSkill hosted MCP plus an app-builder skill so the agent can create, iterate, and publish full-stack OverSkill apps after OAuth.</p><p class="muted">MCP, Plugins / skills · <a href="https://github.com/OverskillDev/overskill-cursor">Source</a></p></article><article class="tool-row" data-tags="MCP Plugins / skills"><h3>SourceMedium commerce MCP plugin</h3><p>Cursor/Grok Bot plugin that installs SourceMedium secure MCP so the agent can analyze warehouse, Shopify, and Meta Ads commerce data while keeping metric definitions intact.</p><p class="muted">MCP, Plugins / skills · <a href="https://github.com/source-medium/cursor-plugin">Source</a></p></article><article class="tool-row" data-tags="MCP Plugins / skills"><h3>GrokBot↔Hermes self-hosted MCP bridge</h3><p>Self-hosted OAuth MCP gateway and Agent Plugin template that lets Grok Bot stay the chat UI while a local Hermes Agent produces answers on your own machine.</p><p class="muted">MCP, Plugins / skills · <a href="https://github.com/iamsupersocks/grokbot-hermes-bridge">Source</a></p></article><article class="tool-row" data-tags="Plugins / skills"><h3>Multi-agent Grok Bot skill templates</h3><p>Reusable Grok Bot skills for chief-plus-specialist multi-agent teams covering disk handoffs, approval gates, and a create/audit checklist for bot designers.</p><p class="muted">Plugins / skills · <a href="https://github.com/EndeavorYen/grok-bot-skills">Source</a></p></article><article class="tool-row" data-tags="CLI Plugins / skills"><h3>punk-records Grok Bot round-table setup</h3><p>Grok Bot auto-setup plugin: say set grok bot for me in your preferred CLI to mint named round-table cards via CDP instead of clicking New by hand.</p><p class="muted">CLI, Plugins / skills · <a href="https://github.com/VeigaPunk/punk-records-brain">Source</a></p></article><article class="tool-row" data-tags="Plugins / skills"><h3>PumpGrok Solana trading-desk pack</h3><p>Eight-role Solana memecoin trading desk for Grok Bot with 23 skills, a hard security constitution, and read-only helpers—no keys in the system and only human-approved actions.</p><p class="muted">Plugins / skills · <a href="https://github.com/swcstudiospace/PumpGrok">Source</a></p></article><article class="tool-row" data-tags="MCP Plugins / skills"><h3>ShopMonkey REST v3 Cursor plugin</h3><p>Cursor/Grok Bot Agent Plugin with mcp.json and a ShopMonkey skill that wraps ShopMonkey REST v3 for orders, customers, and vehicles via Marketplace install.</p><p class="muted">MCP, Plugins / skills · <a href="https://github.com/skyburxd/grokbot-shopmonkey-plugin">Source</a></p></article><article class="tool-row" data-tags="MCP Plugins / skills"><h3>Tender Years household MCP plugin</h3><p>Read-only Cursor/Grok Bot Agent Plugin that wires the Tender Years hosted MCP for household members, routines, tasks, and week snapshots after you paste an API key.</p><p class="muted">MCP, Plugins / skills · <a href="https://github.com/voeliz/tender-years-grok-plugin">Source</a></p></article><article class="tool-row" data-tags="Plugins / skills"><h3>74-skill Grok Bot library</h3><p>Curated library of 74 ready-to-run Grok Bot skills across 12 categories, each as a consistent SKILL.md recipe for on-demand or scheduled runs.</p><p class="muted">Plugins / skills · <a href="https://github.com/shrdgn/grokbot-skills">Source</a></p></article><article class="tool-row" data-tags="Plugins / skills"><h3>technocore-safe Flop skill</h3><p>Grok Bot skill for helping Flop/Technocore without leaking keys or lobby spam, requiring typed APPROVE SEND before any publish.</p><p class="muted">Plugins / skills · <a href="https://github.com/mahathir69/technocore-safe">Source</a></p></article><article class="tool-row" data-tags="Plugins / skills"><h3>Sales Outbound workforce teaser</h3><p>Free Sales Outbound Grok Bot profile and skill teaser with job contract and auto-review gates that wait for human approval before sending.</p><p class="muted">Plugins / skills · <a href="https://github.com/PROJECT-073-X/grok-bot-workforce">Source</a></p></article><article class="tool-row" data-tags="Plugins / skills"><h3>Peekaboo Mac UI skill</h3><p>Grok Bot skill that drives registered Macs through Peekaboo for screen recording, screenshots, window lists, and UI input beyond plain bash.</p><p class="muted">Plugins / skills · <a href="https://github.com/bcharleson/grokbot-peekaboo">Source</a></p></article><article class="tool-row" data-tags="Plugins / skills"><h3>awesome-claude-skills port for Grok Bot</h3><p>Large Grok Bot skill collection reshaped from awesome-claude-skills, keeping original licenses and SOURCE.md links in one-folder-per-skill layout.</p><p class="muted">Plugins / skills · <a href="https://github.com/jeremybrasher/grokbot-skills">Source</a></p></article><article class="tool-row" data-tags="Plugins / skills"><h3>grok-bot-rooms registry plugin</h3><p>Agent Plugin (repo slug grok-bot-plugin-example) that registers assistants into hosted rooms, check-ins, slash commands, and host-and-invite lobbies for Grok Bot.</p><p class="muted">Plugins / skills · <a href="https://github.com/mrlynn/grok-bot-plugin-example">Source</a></p></article><article class="tool-row" data-tags="Plugins / skills"><h3>AskGrokWallet</h3><p>Governed-wallet plugin for Grok Bot: plain-English policies compile to allow/ask/deny, &quot;ask&quot; lands in a human approval inbox, and every outcome leaves a signed receipt; the onchain engine implements ERC-8196 on Base mainnet (MIT).</p><p class="muted">Plugins / skills · <a href="https://github.com/richard7463/askgrokwallet">Source</a></p></article><article class="tool-row" data-tags="Plugins / skills"><h3>xAI Bug Reporter Grok Bot plugin</h3><p>Grok Bot/Cursor plugin plus Grok Chat skill that walks triage and evidence into a paste-ready xAI bug report without inventing support channels.</p><p class="muted">Plugins / skills · <a href="https://github.com/FineComputer14451/xai-bug-reporter">Source</a></p></article><article class="tool-row" data-tags="CLI Plugins / skills"><h3>MERIT agent skills (Grok Bot target)</h3><p>Free MERIT agent skills and merit CLI with an explicit Grok Bot install target alongside Cursor, Claude Code, Codex, Hermes, and OpenClaw.</p><p class="muted">CLI, Plugins / skills · <a href="https://github.com/AgentDraven/merit-agent-skills">Source</a></p></article><article class="tool-row" data-tags="Other Alternatives"><h3>rakazo</h3><p>Open-source Grok Bot alternative — self-host the always-on teammate idea (1.9k★, Apache-2.0).</p><p class="muted">Other, Alternatives · <a href="https://github.com/elie222/rakazo">Source</a></p></article><article class="tool-row" data-tags="Other Alternatives"><h3>gawkbot</h3><p>Local-first open alternative: npx gawkbot, local VM or cloud option, approval gate on every send (1.3k★). Not xAI’s product.</p><p class="muted">Other, Alternatives · <a href="https://github.com/najmuzzaman-mohammad/gawkbot">Source</a></p></article><article class="tool-row" data-tags="Other Alternatives"><h3>guaca</h3><p>Another self-hosted take on persistent computer-use agents.</p><p class="muted">Other, Alternatives · <a href="https://github.com/madebywelch/guaca">Source</a></p></article><article class="tool-row" data-tags="Other Alternatives"><h3>OpenGrokBot</h3><p>OpenClaw plus bring-your-own-model, assembled as a Bot stand-in.</p><p class="muted">Other, Alternatives · <a href="https://github.com/wolfqing/OpenGrokBot">Source</a></p></article><article class="tool-row" data-tags="Other Alternatives"><h3>XinyunOpenBot</h3><p>Chinese-language open alternative aimed at the same job-to-be-done.</p><p class="muted">Other, Alternatives · <a href="https://github.com/dongpen-max/XinyunOpenBot">Source</a></p></article><article class="tool-row" data-tags="Other Alternatives"><h3>OpenMausBot</h3><p>Highest-star self-hosted alternative with a VM the bots can use (2.1k★, Apache-2.0). Not the official Grok Bot client.</p><p class="muted">Other, Alternatives · <a href="https://github.com/milind-soni/OpenMausBot">Source</a></p></article><article class="tool-row" data-tags="Other Alternatives"><h3>open-grokbot</h3><p>Early equivalent / experiment — read before you grant credentials.</p><p class="muted">Other, Alternatives · <a href="https://github.com/ishandutta2007/open-grokbot">Source</a></p></article><article class="tool-row" data-tags="Linux Alternatives"><h3>grok-bot-flake</h3><p>Nix flake that repackages the official Linux .deb (no source build).</p><p class="muted">Linux, Alternatives · <a href="https://github.com/jordangarrison/grok-bot-flake">Source</a></p></article><article class="tool-row" data-tags="Linux Alternatives"><h3>grok-bot-bin</h3><p>Unofficial Arch package that repackages the official Linux .deb; the built-in updater does not support Linux.</p><p class="muted">Linux, Alternatives · <a href="https://github.com/Jabbslad/grok-bot-bin">Source</a></p></article><article class="tool-row" data-tags="Linux Alternatives"><h3>grokbot-linux-port</h3><p>Wine-less community Linux port (Arch AUR + Fedora COPR + Ubuntu PPA); tracks 0.30.0. Note: Cursor CDN now also hosts official Linux 0.30.0 packages (36★).</p><p class="muted">Linux, Alternatives · <a href="https://github.com/Nichokas/grokbot-linux-port">Source</a> · <a href="/tools/linux-port/">Site detail page</a></p></article><article class="tool-row" data-tags="Other Alternatives"><h3>grok-bot-0.18-reconstructed</h3><p>Unofficial TypeScript reconstruction of Grok Bot 0.18.0 for macOS, plus a local inference router experiment.</p><p class="muted">Other, Alternatives · <a href="https://github.com/b-nnett/grok-bot-0.18-reconstructed">Source</a></p></article><article class="tool-row" data-tags="Linux Alternatives"><h3>grok-bot-linux (CDN index)</h3><p>Community index of official Cursor-CDN Linux .deb/.rpm/AppImage URLs; does not host installers.</p><p class="muted">Linux, Alternatives · <a href="https://github.com/falser101/grok-bot-linux">Source</a></p></article><article class="tool-row" data-tags="Linux Alternatives"><h3>glorics/grok-bot-linux</h3><p>Retired unofficial Windows→Linux port; README now points to official Grok Bot 0.30.0 Linux packages on the Cursor CDN (AppImage/deb/rpm; 26★).</p><p class="muted">Linux, Alternatives · <a href="https://github.com/glorics/grok-bot-linux">Source</a></p></article><article class="tool-row" data-tags="Linux Alternatives"><h3>mandarwagh9/botroster</h3><p>Open-source Grok Bot-shaped roster: named teammates, one durable computer, approvals, and routines (Rust/Tauri).</p><p class="muted">Linux, Alternatives · <a href="https://github.com/mandarwagh9/botroster">Source</a></p></article><article class="tool-row" data-tags="Other Alternatives"><h3>OnlyTerp/opengrok</h3><p>Unofficial model picker for the official Grok Bot client: one model per agent, verified wire maps for Grok/Claude/GLM/Gemini/DeepSeek/local, keys stay on your machine (385★).</p><p class="muted">Other, Alternatives · <a href="https://github.com/OnlyTerp/opengrok">Source</a></p></article><article class="tool-row" data-tags="Linux Alternatives"><h3>jakob-bu/grok-bot-linux-unofficial</h3><p>Unofficial Ubuntu/Linux desktop port (deb / AppImage / tarball) merging official app.asar onto Electron 42; resolves latest stable via Cursor update service (23★).</p><p class="muted">Linux, Alternatives · <a href="https://github.com/jakob-bu/grok-bot-linux-unofficial">Source</a></p></article><article class="tool-row" data-tags="Linux Plugins / skills Alternatives"><h3>glorics/omarchy-grok-bot</h3><p>Omarchy bar plugin for the unofficial Linux Grok Bot client: running/idle state, Cursor CDN update checks, and launch-or-focus (themed x.ai/bot face).</p><p class="muted">Linux, Plugins / skills, Alternatives · <a href="https://github.com/glorics/omarchy-grok-bot">Source</a></p></article><article class="tool-row" data-tags="CLI Alternatives"><h3>discord-grok-bot-kit</h3><p>Drop-in Discord listener that wakes a Grok Bot webhook on the owner’s mention, with keep-alive routines and a stdlib reply CLI.</p><p class="muted">CLI, Alternatives · <a href="https://github.com/larry-fuqua/discord-grok-bot-kit">Source</a></p></article><article class="tool-row" data-tags="Linux Alternatives"><h3>parasite6/grok-bot-linux</h3><p>Unofficial Fedora RPM of Grok Bot 0.30.0 converted from the public .deb (MIT packaging notes; not affiliated with xAI).</p><p class="muted">Linux, Alternatives · <a href="https://github.com/parasite6/grok-bot-linux">Source</a></p></article><article class="tool-row" data-tags="Other Alternatives"><h3>grok-bot-0.18-original</h3><p>Untouched Grok Bot 0.18.0 runtime archive: unminified bundles mechanically split into a reproducible per-module tree (study-only; pairs with b-nnett reconstruction, 12★).</p><p class="muted">Other, Alternatives · <a href="https://github.com/ChHsiching/grok-bot-0.18-original">Source</a></p></article><article class="tool-row" data-tags="Other Alternatives"><h3>stealth-bots/grok-bot-proxies</h3><p>Public HTTPS hops that forward Slack Events and Linear Agent webhooks into Grok Bot/Cursor routines (Bearer auth, challenge echo, Linear GraphQL reply path); MIT, Vercel.</p><p class="muted">Other, Alternatives · <a href="https://github.com/stealth-bots/grok-bot-proxies">Source</a></p></article><article class="tool-row" data-tags="Other Alternatives"><h3>aaravarr/openbot</h3><p>Bring-your-own-model hop for Grok Bot Computer: one-line install, local control UI, and an Official switch that restores stock host behavior (MIT).</p><p class="muted">Other, Alternatives · <a href="https://github.com/aaravarr/openbot">Source</a></p></article><article class="tool-row" data-tags="Usage Alternatives"><h3>Allan-Aa/QuotaRail</h3><p>Native macOS Dock-style usage rail; Cursor integration treats Grok Bot weekly usage as the primary ring (also Claude/Codex/Grok; MIT, v0.9.1).</p><p class="muted">Usage, Alternatives · <a href="https://github.com/Allan-Aa/QuotaRail">Source</a></p></article><article class="tool-row" data-tags="Usage Alternatives"><h3>diegocp01/grok_bot_usage_menu_bar</h3><p>Native macOS menu-bar app that shows weekly Cursor Grok Bot usage remaining and the reset countdown (battery or percent; MIT).</p><p class="muted">Usage, Alternatives · <a href="https://github.com/diegocp01/grok_bot_usage_menu_bar">Source</a> · <a href="/tools/usage-menu-bar/">Site detail page</a></p></article><article class="tool-row" data-tags="Linux Alternatives"><h3>HxHippy/grok-bot-arch</h3><p>Arch Linux installer/updater that pulls the official Grok Bot .deb from Cursor’s signed apt index (Anysphere GPG + SHA256 checks; MIT).</p><p class="muted">Linux, Alternatives · <a href="https://github.com/HxHippy/grok-bot-arch">Source</a></p></article><article class="tool-row" data-tags="Plugins / skills Alternatives"><h3>limehawk/omarchy-grok-bot</h3><p>Omarchy bar plugin (limehawk.grok-bot) for official `/usr/bin/grok-bot`: keep-alive, show/hide, and a Hyprland special-workspace park rule (MIT).</p><p class="muted">Plugins / skills, Alternatives · <a href="https://github.com/limehawk/omarchy-grok-bot">Source</a></p></article><article class="tool-row" data-tags="Other Alternatives"><h3>enderzcx/grok-bot-switch</h3><p>Preview channel switcher for Grok Bot Computer: install via Bot prompt, then flip between native inference and external OpenAI-compatible providers (independent-mode panel).</p><p class="muted">Other, Alternatives · <a href="https://github.com/enderzcx/grok-bot-switch">Source</a></p></article><article class="tool-row" data-tags="Other Alternatives"><h3>IgorWarzocha/grok-codex-router</h3><p>Experimental Sand-VM router that keeps Grok Bot’s UI/tools while sending inference to ChatGPT Codex (per-agent GPT-5.6 routes + local control UI; MIT).</p><p class="muted">Other, Alternatives · <a href="https://github.com/IgorWarzocha/grok-codex-router">Source</a></p></article><article class="tool-row" data-tags="CLI Alternatives"><h3>n0nag0n/patb</h3><p>Filing-cabinet CLI for Grok Bot computers: store one decision per record and have routines `patb get/search` instead of stuffing rules into the profile (3★).</p><p class="muted">CLI, Alternatives · <a href="https://github.com/n0nag0n/patb">Source</a></p></article><article class="tool-row" data-tags="CLI Plugins / skills Alternatives"><h3>Archive228/foreman</h3><p>Crew harness/CLI (`foreman`) for hosted Grok Bot teams: declared packs, inspect/sync against gbot JSON, effect ledger, shift reports, and a `.grok-plugin` (MIT, 2★).</p><p class="muted">CLI, Plugins / skills, Alternatives · <a href="https://github.com/Archive228/foreman">Source</a></p></article><article class="tool-row" data-tags="Linux Alternatives"><h3>falser101/grok-bot-bin</h3><p>AUR package grok-bot-bin that installs official Grok Bot 0.30.0 from Cursor’s Linux .deb (pinned sha256; packaging 0BSD).</p><p class="muted">Linux, Alternatives · <a href="https://github.com/falser101/grok-bot-bin">Source</a></p></article><article class="tool-row" data-tags="Linux Alternatives"><h3>ATLTuck/unofficial-grok-bot-arch-installer</h3><p>Unofficial Arch/Manjaro installer that turns the official Grok Bot .deb into a native pacman package (install.sh + PKGBUILD).</p><p class="muted">Linux, Alternatives · <a href="https://github.com/ATLTuck/unofficial-grok-bot-arch-installer">Source</a></p></article><article class="tool-row" data-tags="Linux Alternatives"><h3>d-513/grok-bot-nix</h3><p>Nix flake that wraps the official Grok Bot 0.30.0 .deb with Electron 42 (`nix run github:d-513/grok-bot-nix`); NixOS, Home Manager, overlay, and a six-hour pin updater.</p><p class="muted">Linux, Alternatives · <a href="https://github.com/d-513/grok-bot-nix">Source</a></p></article><article class="tool-row" data-tags="CLI MCP Plugins / skills Alternatives"><h3>trac3r00/groken</h3><p>macOS CLI/MCP/SKILL.md client that drives official Grok Bot cloud computers over the app’s OAuth and gateway (chat, VNC, exec, routines; MIT, 1★).</p><p class="muted">CLI, MCP, Plugins / skills, Alternatives · <a href="https://github.com/trac3r00/groken">Source</a></p></article><article class="tool-row" data-tags="Linux Alternatives"><h3>codeaashu/grokbot-shim</h3><p>Run the installed Grok Bot desktop locally on Linux with a local Chrome/XFCE computer and Codex or OpenAI-compatible models (ISC, 19★).</p><p class="muted">Linux, Alternatives · <a href="https://github.com/codeaashu/grokbot-shim">Source</a></p></article><article class="tool-row" data-tags="MCP Alternatives"><h3>pmcclelland/bot-board</h3><p>Shared kanban for humans and Grok Bots (Backlog / To Do / Doing / Done) with REST plus one MCP URL; live at botboard.pmcclel.land.</p><p class="muted">MCP, Alternatives · <a href="https://github.com/pmcclelland/bot-board">Source</a></p></article><article class="tool-row" data-tags="Other Alternatives"><h3>GrokRouter</h3><p>Unofficial reversible router that keeps official Grok Bot 0.30.0 chat, files, and cloud computer while sending a Bot through Codex SDK or OpenRouter.</p><p class="muted">Other, Alternatives · <a href="https://github.com/promptadvisers/grokrouter">Source</a></p></article><article class="tool-row" data-tags="TUI MCP Alternatives"><h3>Filicon</h3><p>Native macOS SwiftUI port of Grok Bot 0.18 product behavior, with Keychain keys, MCP, remote-computer viewing, and no Electron runtime.</p><p class="muted">TUI, MCP, Alternatives · <a href="https://github.com/irons163/filicon-bot">Source</a></p></article><article class="tool-row" data-tags="Other Alternatives"><h3>Grokbot Permissions Helper</h3><p>Tiny signed macOS .app so a desktop Grok Bot can get Calendar, Contacts, and Reminders TCC prompts and dump a parseable snapshot without storing secrets in git.</p><p class="muted">Other, Alternatives · <a href="https://github.com/vinxp97/grokbot-permissions-helper">Source</a></p></article><article class="tool-row" data-tags="Other Alternatives"><h3>grok-bridge</h3><p>Unofficial Windows daemon that registers on Grok Bot&#x27;s UserComputer channel and hands cloud-agent tasks to a local LangGraph or AutoGen pipeline.</p><p class="muted">Other, Alternatives · <a href="https://github.com/shihao918/grok-bridge">Source</a></p></article><article class="tool-row" data-tags="CLI Plugins / skills Alternatives"><h3>download-grok-bot</h3><p>Zero-dependency Python CLI that saves a public x.ai/bot share (profile, packed recipe, skills, routines) to a local folder, reading the macOS Grok Bot session when present.</p><p class="muted">CLI, Plugins / skills, Alternatives · <a href="https://github.com/gprot42/grok-bot-tool">Source</a></p></article><article class="tool-row" data-tags="Other Alternatives"><h3>grokbot-openai</h3><p>Unofficial zero-dependency Python login plus local server that turns a Grok Bot PKCE session into OpenAI /v1/chat/completions for Hermes, OpenCode, or curl.</p><p class="muted">Other, Alternatives · <a href="https://github.com/owenisas/grokbot-openai">Source</a></p></article><article class="tool-row" data-tags="TUI Alternatives"><h3>omarchy-grokbot (rlimberger)</h3><p>Unofficial Omarchy bar widget (QML) that shows a grokbot-tui inbox and opens bots in the native Rust TUI, not the Electron /usr/bin/grokbot client.</p><p class="muted">TUI, Alternatives · <a href="https://github.com/rlimberger/omarchy-grokbot">Source</a></p></article><article class="tool-row" data-tags="MCP Alternatives"><h3>huginn</h3><p>Host sidecar so a Grok Bot can attach to live Claude Code, Codex, and Grok Build sessions via a native control-plane MCP (list/watch/prompt/interrupt).</p><p class="muted">MCP, Alternatives · <a href="https://github.com/pyrex41/huginn">Source</a></p></article><article class="tool-row" data-tags="MCP Alternatives"><h3>floks-pc</h3><p>Standalone Agent Computer Cloud addon so each Grok Bot gets its own isolated provider-backed machine (Runloop Devbox v1) via pair-code MCP.</p><p class="muted">MCP, Alternatives · <a href="https://github.com/Adaptive-Liquidity/floks-pc">Source</a></p></article><article class="tool-row" data-tags="Other Alternatives"><h3>Lots of Agents</h3><p>Native macOS Swift tool that launches multiple signed-in clones of Grok Bot, Cursor, Claude, and ChatGPT from one installed app with private data folders.</p><p class="muted">Other, Alternatives · <a href="https://github.com/carllippert/lots_of_agents">Source</a></p></article><article class="tool-row" data-tags="Other Alternatives"><h3>BotRouter</h3><p>Tools that let Grok Bot keep Computer/browser/shell while routing inference through other subscriptions (Cursor, Codex, xAI) from inside the Bot computer.</p><p class="muted">Other, Alternatives · <a href="https://github.com/lazerusrm/botrouter">Source</a></p></article><article class="tool-row" data-tags="Other Alternatives"><h3>Orbital</h3><p>Second-brain OS for Grok Bot: one CHIEF plus six decks with human approval; local engine and deck prompts are live, Grok Bot host still in build.</p><p class="muted">Other, Alternatives · <a href="https://github.com/beamnxw/Orbital">Source</a></p></article><article class="tool-row" data-tags="CLI Plugins / skills Alternatives"><h3>Aluvia geo proxy for agents</h3><p>CLI plus SKILL.md that routes a cloud agent&#x27;s Chrome through residential/mobile IPs by country—docs and install paths explicitly cover Grok Bot (~/.grok) and Cursor.</p><p class="muted">CLI, Plugins / skills, Alternatives · <a href="https://github.com/aluvia-connect/aluvia">Source</a></p></article><article class="tool-row" data-tags="CLI MCP Plugins / skills Alternatives"><h3>botmigrate</h3><p>Local Python CLI that converts and syncs bot definitions between Grok Bot share JSON and Hermes Agent profiles (skills, cron, mcp stubs)—no hosted calls.</p><p class="muted">CLI, MCP, Plugins / skills, Alternatives · <a href="https://github.com/colesmcintosh/botmigrate">Source</a></p></article><article class="tool-row" data-tags="Other Alternatives"><h3>constellation-MaxQ</h3><p>One-command MaxQ bootstrap for a Grok Bot computer: idempotent apply/revert installs theme, Ghostty/Chrome Mocha bits, operator CLIs into $HOME/bin, and optional local GOST proxy—without wiping SSH keys or Chrome logins.</p><p class="muted">Other, Alternatives · <a href="https://github.com/0sm0s1z/constellation-MaxQ">Source</a></p></article><article class="tool-row" data-tags="CLI Usage Alternatives"><h3>gbu Grok Bot usage checker</h3><p>Zero-dependency CLI (gbu) that checks weekly Grok Bot / Cursor usage and on-demand spend across multiple accounts in one terminal—distinct from the macOS menu-bar usage app already catalogued.</p><p class="muted">CLI, Usage, Alternatives · <a href="https://github.com/Kargatharaakash/grok-bot-usage">Source</a></p></article><article class="tool-row" data-tags="CLI Usage MCP Alternatives"><h3>grok-bot-mcp control server</h3><p>Local MCP server that lets any MCP client create/message/search Grok Bots, read transcripts, and check usage against the desktop app—companion to gbu, distinct from the catalogued grok-bot-mcp-connector.</p><p class="muted">CLI, Usage, MCP, Alternatives · <a href="https://github.com/Kargatharaakash/grok-bot-mcp">Source</a></p></article><article class="tool-row" data-tags="CLI Alternatives"><h3>multiBot CLI teammate factory</h3><p>Grok Bot factory template that spawns CLI-delegated teammates (Cursor agent, grok-build, Antigravity, Codex) via CreateAgent with install scripts and workflow examples.</p><p class="muted">CLI, Alternatives · <a href="https://github.com/simo255/multiBot">Source</a></p></article><article class="tool-row" data-tags="Other Alternatives"><h3>grokbot2api Cursor inference proxy</h3><p>Local OpenAI-compatible proxy that bridges Grok Build to Cursor native inference protobuf with multi-turn tool calls for Responses and Chat Completions.</p><p class="muted">Other, Alternatives · <a href="https://github.com/taowen/grokbot2api">Source</a></p></article><article class="tool-row" data-tags="CLI Alternatives"><h3>grok-to-hermes profile converter</h3><p>TypeScript CLI that converts sharable Grok Bot export data into Hermes Agent profile distributions and installable tar.gz packages.</p><p class="muted">CLI, Alternatives · <a href="https://github.com/jmporchet/grok-to-hermes">Source</a></p></article><article class="tool-row" data-tags="CLI MCP Alternatives"><h3>Codex↔Grok MCP second-opinion bridge</h3><p>Unofficial local-first MCP bridge that lets Codex ask authenticated Grok CLI for bounded second opinions and optionally message a persistent Grok Bot without exporting secrets.</p><p class="muted">CLI, MCP, Alternatives · <a href="https://github.com/Fato07/codex-grok-mcp">Source</a></p></article><article class="tool-row" data-tags="MCP Alternatives"><h3>Grok Bot Cloudflare Workers inbox</h3><p>Public Cloudflare Workers email-inbox template based on Agentic Inbox so a Grok Bot can connect over MCP to a self-hosted mailbox you deploy yourself.</p><p class="muted">MCP, Alternatives · <a href="https://github.com/ethanolivertroy/grokbot-cloudflare-inbox">Source</a></p></article><article class="tool-row" data-tags="MCP Plugins / skills Alternatives"><h3>grokbot-fleet MCP manager</h3><p>Open-source MCP server that lists and updates Grok Bots from Cursor—prompts, routines, and skills—via a Fleet bot job inbox because there is no official management API.</p><p class="muted">MCP, Plugins / skills, Alternatives · <a href="https://github.com/Dahhrk/grokbot-fleet">Source</a></p></article><article class="tool-row" data-tags="Usage Plugins / skills Alternatives"><h3>Omarchy Grok/Cursor usage tabs</h3><p>Omarchy Agents panel service plugin that writes remaining-quota JSON for Grok, Grok Bot (grokbot), and Cursor into the stock usage contract.</p><p class="muted">Usage, Plugins / skills, Alternatives · <a href="https://github.com/jexmarc/omarchy-spacexai-usage">Source</a></p></article><article class="tool-row" data-tags="Other Alternatives"><h3>Cursor Grokbot Helper VSIX</h3><p>Cursor extension (VSIX) that installs a local Sand client-mode patch so Grok Bot advanced mode works, without uploading session contents.</p><p class="muted">Other, Alternatives · <a href="https://github.com/banana2556/cursor-grokbot-helper">Source</a></p></article><article class="tool-row" data-tags="Other Alternatives"><h3>Discord↔Grok Bot gateway</h3><p>Python Discord gateway that maps mentions or bot names to many private Grok Bots, acks immediately, then wakes them over webhooks for phone-friendly chat.</p><p class="muted">Other, Alternatives · <a href="https://github.com/RudeDude/grokbot-discord">Source</a></p></article><article class="tool-row" data-tags="MCP Alternatives"><h3>pigeon-mcp Gmail connector</h3><p>Self-hosted Gmail MCP for Grok Bot and other clients: multi-account OAuth, real MIME sends with attachments, and reads that avoid dumping base64 into the model.</p><p class="muted">MCP, Alternatives · <a href="https://github.com/iXanadu/pigeon-mcp">Source</a></p></article><article class="tool-row" data-tags="Linux Plugins / skills Alternatives"><h3>plaude NotePin→GrokBot pipeline</h3><p>Plaud NotePin S inbox pipeline (Whisper, templates, email) with a SKILL.md meant to run on a Linux Grok Bot computer as the classifier and summarizer.</p><p class="muted">Linux, Plugins / skills, Alternatives · <a href="https://github.com/quolu/plaude">Source</a></p></article><article class="tool-row" data-tags="MCP Plugins / skills Alternatives"><h3>Arena Grok Bot connector MVP</h3><p>Next.js Arena MVP that pairs user-hosted Grok Bots with short-lived codes, installs a native plugin/MCP, and relays free bot-to-bot room chats.</p><p class="muted">MCP, Plugins / skills, Alternatives · <a href="https://github.com/openlawteam/arena-test">Source</a></p></article><article class="tool-row" data-tags="Other Alternatives"><h3>grokbot-BYOK inference adapter</h3><p>Bring-your-own-key inference adapter that routes Grok Bot AI calls through your providers, with a large TypeScript test suite and multi-provider failover.</p><p class="muted">Other, Alternatives · <a href="https://github.com/jroth1111/grokbot-BYOK">Source</a></p></article><article class="tool-row" data-tags="Usage Alternatives"><h3>Cursor Account Manager + Grok Bot Sand</h3><p>Cursor multi-account VSIX that switches logins, shows Auto/Other/Bot quotas, and can inject Grok Bot Sand Stream routing on Cursor 3.18.9.</p><p class="muted">Usage, Alternatives · <a href="https://github.com/kuk-888/cursor-account-manager">Source</a></p></article><article class="tool-row" data-tags="Other"><h3>How to Get Started with Grok Bot</h3><p>Debbie&#x27;s field guide: first Bot, CoS prompt, and how she reorganizes the roster.</p><p class="muted">Other · <a href="https://debbie.codes/blog/how-to-get-started-with-grok-bot">Source</a></p></article><article class="tool-row" data-tags="Plugins / skills"><h3>Grok Bot Masterclass</h3><p>Avi / Daily Dose: record once, turn it into a skill, hang it on a routine.</p><p class="muted">Plugins / skills · <a href="https://www.dailydoseofds.com/p/grok-bot-masterclass/">Source</a></p></article><article class="tool-row" data-tags="Other"><h3>How to Set Up Grok Bot and Build Your First AI Agents</h3><p>Install-to-first-agent walkthrough with the Heavy / Ultra / Teams gates called out.</p><p class="muted">Other · <a href="https://www.mindstudio.ai/blog/grok-bot-setup-guide">Source</a></p></article><article class="tool-row" data-tags="Other"><h3>Grok Bot Explained</h3><p>Clear explainer with a real iPhone screenshot of a Bot roster.</p><p class="muted">Other · <a href="https://www.ayautomate.com/blog/grok-bot-xai-ai-agents-explained">Source</a></p></article><article class="tool-row" data-tags="Other"><h3>Hand Off Real Work Across Your Apps</h3><p>The Rundown&#x27;s how-to for handing multi-app jobs to a Bot.</p><p class="muted">Other · <a href="https://app.therundown.ai/guides/hand-off-real-work-across-your-apps-with-grok-bot">Source</a></p></article><article class="tool-row" data-tags="Other"><h3>Connect Multiple Slack Workspaces</h3><p>Slack event wake-up is not the same as installing Grok Bot as a Slack App.</p><p class="muted">Other · <a href="https://www.usecarly.com/blog/how-to-connect-multiple-slack-workspaces-to-grok-bot/">Source</a></p></article><article class="tool-row" data-tags="Other"><h3>Peter Yang: 5 Must-Try Use Cases</h3><p>Advisor, YouTube researcher, X scout, Gmail declutter, travel concierge.</p><p class="muted">Other · <a href="https://www.youtube.com/watch?v=MkVcHbviYOw">Source</a></p></article><article class="tool-row" data-tags="Other"><h3>Alex Finn: setup that actually sticks</h3><p>Long-form setup from someone already living on Cursor Cloud Agents.</p><p class="muted">Other · <a href="https://www.youtube.com/watch?v=vrgO4D_mUlA">Source</a></p></article><article class="tool-row" data-tags="Other"><h3>Nate Herk: Grok Bot is For Real</h3><p>Install-first agent pitch plus what the $200 seat actually buys.</p><p class="muted">Other · <a href="https://www.youtube.com/watch?v=PQBYZQqan2g">Source</a></p></article><article class="tool-row" data-tags="Plugins / skills"><h3>Teach a task by screen recording</h3><p>Official-adjacent tip: show the workflow once, Bot writes the skill.</p><p class="muted">Plugins / skills · <a href="https://x.com/_avichawla/status/2089817006065496530">Source</a></p></article><article class="tool-row" data-tags="Other"><h3>Use the remote computer from your phone</h3><p>@bot QoL: drive the cloud machine from iOS without opening the laptop.</p><p class="muted">Other · <a href="https://x.com/bot/status/2089802847223468116">Source</a></p></article><article class="tool-row" data-tags="Other"><h3>Uncle-Gizmo notes</h3><p>Public notes on safe example workflows and how Bot sits next to Grok Build.</p><p class="muted">Other · <a href="https://github.com/Uncle-Gizmo/grok-bot-info">Source</a></p></article><article class="tool-row" data-tags="Plugins / skills"><h3>Grok Bot for GTM</h3><p>Playbook plus skills so a Grok Bot can run outbound GTM on its own computer: Instantly, HeyReach, list CLIs, human-approved sends.</p><p class="muted">Plugins / skills · <a href="https://github.com/bcharleson/grokbot-for-gtm">Source</a></p></article><article class="tool-row" data-tags="Plugins / skills"><h3>Paul J Lipsky: Cursor Just Released Grok Bot</h3><p>Walkthrough of role-based bots, group chats, plugins, Teach a task, and the iOS app as the daily driver.</p><p class="muted">Plugins / skills · <a href="https://www.youtube.com/watch?v=QTcZPI-g7is">Source</a></p></article><article class="tool-row" data-tags="Other"><h3>Grok Bot 橙皮书</h3><p>Chinese orange book (~16k chars) on multi-bot teams, routines, and cost control in the first two weeks.</p><p class="muted">Other · <a href="https://github.com/KinGao294/grok-bot-orange-book">Source</a></p></article><article class="tool-row" data-tags="Other"><h3>John Bai — The Grok Bot design journey (Dive Club)</h3><p>Grok Bot designer John Bai walks through the early prototypes and the choices that became the shipped product.</p><p class="muted">Other · <a href="https://www.youtube.com/watch?v=E-VxnQO73s4">Source</a></p></article><article class="tool-row" data-tags="MCP"><h3>yuanyijie/learn-grok-bot</h3><p>Unofficial 16-lesson course on Grok Bot’s desktop-agent harness: Electron planes, turn loop, inference router, sandbox, MCP, automations.</p><p class="muted">MCP · <a href="https://github.com/yuanyijie/learn-grok-bot">Source</a></p></article><article class="tool-row" data-tags="Plugins / skills"><h3>A deep dive into Grok Bot</h3><p>Flavio Copes’ 2026-08-28 deep dive: shared computer, skills to routines, share-as-template, Stripe Link spend requests, and when a script beats a Bot.</p><p class="muted">Plugins / skills · <a href="https://flaviocopes.com/grok-bot/">Source</a></p></article><article class="tool-row" data-tags="Plugins / skills"><h3>LAVX: a deep dive into Grok Bot</h3><p>2026-08-29 practitioner guide: shared-computer isolation, plugin-then-browser tool order, Stripe Link approvals, and when Zapier/n8n or a coding agent is a better fit.</p><p class="muted">Plugins / skills · <a href="https://news.lavx.hu/article/a-deep-dive-into-grok-bot">Source</a></p></article><article class="tool-row" data-tags="Other"><h3>Grok Bot Plays</h3><p>Unofficial how-to catalog of Grok Bot plays rewritten from public posts and docs with source links; the site hosts 138 English plays (grokbotplays.com).</p><p class="muted">Other · <a href="https://github.com/ZooHero500/plays">Source</a></p></article><article class="tool-row" data-tags="Plugins / skills"><h3>s-hiraoku/grok-bot-playbook</h3><p>Japanese field handbook (Next.js) for running Grok Bot as named roles: contracts, request templates, Skill/Routine flows, team boundaries, and handoff .md files.</p><p class="muted">Plugins / skills · <a href="https://github.com/s-hiraoku/grok-bot-playbook">Source</a></p></article><article class="tool-row" data-tags="Other"><h3>mKay00/grok-bot-second-brain</h3><p>Cloneable five-bot second-brain plan for one shared Grok Bot computer (Conductor/Capture/Memory/Ops/Research + vault-template and PLAN.md questionnaire).</p><p class="muted">Other · <a href="https://github.com/mKay00/grok-bot-second-brain">Source</a></p></article><article class="tool-row" data-tags="Plugins / skills"><h3>maplefukku/grok-bot-ops</h3><p>Japanese command-center repo for running product work through Grok Bot: routine drafts, verification bootstrap, knowhow log, and a Cursor plugin wrapper.</p><p class="muted">Plugins / skills · <a href="https://github.com/maplefukku/grok-bot-ops">Source</a></p></article><article class="tool-row" data-tags="Other"><h3>Technocore Grok Bot 日本語ガイド</h3><p>Japanese operating guide plus GROKBOT_PROMPT.md for running a Technocore DID safely on Grok Bot without leaking seeds or spamming the lobby.</p><p class="muted">Other · <a href="https://github.com/hariou/technocore-grokbot-ja">Source</a></p></article><article class="tool-row" data-tags="Linux"><h3>Grok Bot Getting Started hubs</h3><p>Thin branded Docusaurus hubs for What is Grok Bot, install/sign-in, and first task, deep-linking to docs.x.ai and x.ai/bot.</p><p class="muted">Linux · <a href="https://github.com/mrlynn/grok-bot-getting-started">Source</a></p></article><article class="tool-row" data-tags="Other"><h3>Grok Bot 蓝皮书</h3><p>Operator playbook (companion to the orange book) for running a Grok Bot team as a delivery company—artifact contracts, INSTALL.md bootstrap, and five route templates.</p><p class="muted">Other · <a href="https://github.com/rockyzhuo/grok-bot-blue-book">Source</a></p></article><article class="tool-row" data-tags="Other"><h3>Grokbot Field Guide (8 use cases)</h3><p>Build-it-yourself tutorial covering the eight Getting started with Grok Bot video use cases, with prompts plus an HTML field guide in-repo.</p><p class="muted">Other · <a href="https://github.com/tal-giladi/grokbot-field-guide">Source</a></p></article><article class="tool-row" data-tags="Usage"><h3>Grok Bot setup &amp; 5 pitfalls guide</h3><p>Chinese longform guide covering what Grok Bot is, SuperGrok/Cursor access, first-bot setup steps, and five measured pitfalls around quotas and approvals.</p><p class="muted">Usage · <a href="https://github.com/dadamingmax/Grok-Bot-Setup-and-Usage-Guide">Source</a></p></article><article class="tool-row" data-tags="Other"><h3>China Grok Bot install tutorial</h3><p>2026 China-focused Grok Bot tutorial on what the cloud teammate is, how to use it, and how to upgrade SuperGrok for access.</p><p class="muted">Other · <a href="https://github.com/jobinben/Grok-Bot-Tutorial">Source</a></p></article><article class="tool-row" data-tags="Other"><h3>Official Grok Bot use cases</h3><p>Eight official roles with a first prompt each. Start as read-and-prepare work, then add a routine.</p><p class="muted">Other · <a href="https://docs.x.ai/grok-bot/use-cases">Source</a></p></article><article class="tool-row" data-tags="Other"><h3>Refound: How to Run Your Business With Grok Bots</h3><p>Company OS files, a first Chief of Staff, and a five-day plan that keeps external actions behind approval.</p><p class="muted">Other · <a href="https://refoundai.com/blog/how-to-run-your-business-with-grok-bot/">Source</a></p></article><article class="tool-row" data-tags="Other"><h3>Greenlit: Grok Bot honestly assessed</h3><p>What works, what breaks, who should wait. One reversible workflow — not a company reorg.</p><p class="muted">Other · <a href="https://greenlitbooks.com/field-notes/grok-bot-honest-assessment">Source</a></p></article><article class="tool-row" data-tags="Other"><h3>Grok Bot for PMs</h3><p>Named roster with a quiet Chief of Staff. External sends and purchases stay on human review.</p><p class="muted">Other · <a href="https://x.ai/bot/guides/grok-bot-for-pms">Source</a></p></article></div>
+</div></section>
+<script>
+const filters=document.querySelector('[data-filters]');
+const list=document.querySelector('[data-list]');
+const search=document.querySelector('[data-search]');
+let tag='all';
+function apply(){
+  const q=(search.value||'').toLowerCase();
+  filters.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed', b.getAttribute('data-filter')===tag?'true':'false'));
+  list.querySelectorAll('.tool-row').forEach(row=>{
+    const tags=row.getAttribute('data-tags')||'';
+    const okT = tag==='all' || tags.indexOf(tag)>=0;
+    const okQ = !q || row.textContent.toLowerCase().includes(q);
+    row.classList.toggle('hidden', !(okT && okQ));
+  });
+}
+filters.addEventListener('click', e=>{ const b=e.target.closest('button'); if(!b) return; tag=b.getAttribute('data-filter'); apply(); });
+search.addEventListener('input', apply);
+</script>
+</main>
+<footer class="site"><div class="wrap"><div class="foot-grid"><div><h4>Learn</h4><a href="/learn/">Handbook</a><a href="/learn/what-is-grok-bot/">What Grok Bot is</a><a href="/learn/install/">Install and sign in</a><a href="/learn/first-bot/">First Bot</a><a href="/learn/computer/">Shared computer</a><a href="/learn/skills-routines/">Skills and routines</a><a href="/learn/plugins/">Plugins and MCP</a><a href="/learn/cost-and-pitfalls/">Cost and pitfalls</a><a href="/learn/operator/">After week one</a><a href="/learn/ops/">X, Cursor, MCP</a><a href="/learn/glossary/">Glossary</a><a href="/learn/cursor/">Cursor and Grok Bot</a></div><div><h4>Look up</h4><a href="/pricing/">Pricing</a><a href="/compare/">Alternatives</a><a href="/tools/">Tools catalog</a><a href="/use-cases/">Field cases</a><a href="/troubleshooting/">Help</a><a href="/sources/">Sources</a></div><div><h4>Official</h4><a href="https://x.ai/bot">x.ai/bot</a><a href="https://docs.x.ai/grok-bot/overview">xAI docs</a><a href="https://cursor.com/help/grok-bot/getting-started">Cursor Help</a><a href="https://github.com/RongleCat/awesome-grok-bot">awesome-grok-bot</a></div></div><p>Community guide for starting, running, and recovering Grok Bot. Product names belong to their owners. Official packages stay on x.ai/bot. Updated 2026-09-04. Sources are dated by fetch day.</p></div></footer>
+<script>const btn=document.querySelector('[data-menu]');const links=document.querySelector('[data-links]');if(btn) btn.addEventListener('click',()=>links.classList.toggle('open'));</script>
+</body></html>

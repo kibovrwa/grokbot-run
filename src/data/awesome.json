@@ -1,0 +1,2115 @@
+{
+  "source": "https://raw.githubusercontent.com/RongleCat/awesome-grok-bot/main/README.md",
+  "license": "CC0",
+  "fetched": "2026-09-04",
+  "sections": [
+    {
+      "id": "official-resources",
+      "title": "Official Resources",
+      "items": [
+        {
+          "name": "Introducing Grok Bot",
+          "url": "https://x.ai/news/introducing-grok-bot",
+          "blurb": "Launch note: always-on agents with their own computer, working inside your tools 24/7."
+        },
+        {
+          "name": "Grok Bot is now included with more plans",
+          "url": "https://x.ai/news/grok-bot-more-plans",
+          "blurb": "Official access expansion post (updated): Grok Bot is available for SuperGrok, Cursor Pro, and all Cursor Teams plans."
+        },
+        {
+          "name": "@bot: free trial and wider plan access",
+          "url": "https://x.com/bot/status/2090852881373311369",
+          "blurb": "Official 2026-08-21: SuperGrok Plus, Cursor Pro+, and all Cursor Teams get Grok Bot, plus a limited free trial for everyone else."
+        },
+        {
+          "name": "@bot: mobile notifications grouped by Bot",
+          "url": "https://x.com/bot/status/2089802845239587150",
+          "blurb": "Official 2026-08-18 QoL: mobile notifications group by Bot and use that Bot's icon."
+        },
+        {
+          "name": "@bot: Some ways people used Grok Bot this week",
+          "url": "https://x.com/bot/status/2090168861912170972",
+          "blurb": "Official 2026-08-19 thread quoting 14 field jobs, from a Matic vacuum to Stripe refunds and a meeting stand-in."
+        },
+        {
+          "name": "Grok Bot overview",
+          "url": "https://docs.x.ai/grok-bot/overview",
+          "blurb": "Canonical product page: one named Bot, one shared cloud computer, isolation is per user not per Bot."
+        },
+        {
+          "name": "Get started",
+          "url": "https://docs.x.ai/grok-bot/get-started",
+          "blurb": "Install desktop, sign in with Cursor, create the first Bot. No official Linux desktop."
+        },
+        {
+          "name": "Use cases",
+          "url": "https://docs.x.ai/grok-bot/use-cases",
+          "blurb": "Official roster ideas: sales CRM nights, ops invoices, engineering bug squash."
+        },
+        {
+          "name": "Grok Bot for mobile (iOS + Android)",
+          "url": "https://docs.x.ai/grok-bot/mobile",
+          "blurb": "Official docs for Grok Bot on iPhone and Android (Android 9+ / iOS 18+), with App Store and Google Play install links."
+        },
+        {
+          "name": "Create and manage Bots",
+          "url": "https://docs.x.ai/grok-bot/bots",
+          "blurb": "How a Bot is named and scoped, plus the public share link that copies identity, skills, and routines (not your computer or logins)."
+        },
+        {
+          "name": "Message and collaborate",
+          "url": "https://docs.x.ai/grok-bot/chat-and-collaboration",
+          "blurb": "Bots message each other, join group chats, and assign ownership of work."
+        },
+        {
+          "name": "Files and results",
+          "url": "https://docs.x.ai/grok-bot/files-and-results",
+          "blurb": "Where artifacts live on the shared computer and how you pull results back."
+        },
+        {
+          "name": "Use the computer and apps",
+          "url": "https://docs.x.ai/grok-bot/computer-and-apps",
+          "blurb": "Browser, filesystem, terminal. No clean API? Click the site like a person."
+        },
+        {
+          "name": "Skills and routines",
+          "url": "https://docs.x.ai/grok-bot/skills-routines-and-automations",
+          "blurb": "Teach a task (up to 10 minutes of screen, no mic), save as a reusable routine."
+        },
+        {
+          "name": "Settings and notifications",
+          "url": "https://docs.x.ai/grok-bot/settings-and-notifications",
+          "blurb": "Notification grouping, mobile alerts, and how Bots follow up stalled work."
+        },
+        {
+          "name": "Approvals, security, and privacy",
+          "url": "https://docs.x.ai/grok-bot/approvals-security-and-privacy",
+          "blurb": "Bots do not see passwords; draw the approval line on irreversible actions and 2FA takeover."
+        },
+        {
+          "name": "Teams and enterprises",
+          "url": "https://docs.x.ai/grok-bot/teams-and-enterprises",
+          "blurb": "Team marketplace, SSO, shared analytics. Plugins follow existing Cursor policy."
+        },
+        {
+          "name": "Troubleshooting",
+          "url": "https://docs.x.ai/grok-bot/troubleshooting",
+          "blurb": "Official fix list for reconnect, runners, and common beta failures."
+        },
+        {
+          "name": "FAQ",
+          "url": "https://docs.x.ai/grok-bot/faq",
+          "blurb": "Short official answers on access, computer sharing, and what Bots can remember."
+        },
+        {
+          "name": "Link SuperGrok for Grok Bot",
+          "url": "https://cursor.com/help/grok-bot/supergrok",
+          "blurb": "Cursor help: Grok Bot is now on SuperGrok Plus and Heavy; already on Ultra, linking Plus does not stack usage."
+        },
+        {
+          "name": "Grok Bot on mobile (Cursor help)",
+          "url": "https://cursor.com/help/grok-bot/mobile",
+          "blurb": "How the iOS companion talks to Bots that stay on the cloud computer."
+        },
+        {
+          "name": "Connect plugins",
+          "url": "https://cursor.com/help/grok-bot/connect-plugins",
+          "blurb": "Prefer a plugin and fall back to the cloud browser when it is missing; Zoom desktop auth currently fails with error 4700 (invalid redirect) and has no workaround."
+        },
+        {
+          "name": "Store secrets securely",
+          "url": "https://cursor.com/help/grok-bot/secrets",
+          "blurb": "Use the secret card. Never paste API keys into the Bot chat."
+        },
+        {
+          "name": "Recover Grok Bot computer data",
+          "url": "https://cursor.com/help/grok-bot/computer-recovery",
+          "blurb": "Official recovery guide: chat history lives outside the box; reopen restores synced files, Reset is last resort."
+        },
+        {
+          "name": "Grok Bot plans and billing",
+          "url": "https://cursor.com/help/grok-bot/plans",
+          "blurb": "Official billing FAQ: paid Cursor plans and Teams include Grok Bot (Pro below Pro+ below Ultra); SuperGrok / Plus / Heavy can link, Lite and SuperGrok Team/Enterprise cannot; weekly usage resets; legacy request-based pricing is excluded unless you opt into usage-based."
+        },
+        {
+          "name": "Grok Bot on the App Store",
+          "url": "https://apps.apple.com/us/app/grok-bot/id6794501026",
+          "blurb": "Official iOS listing for the companion app."
+        },
+        {
+          "name": "xAI plugin marketplace",
+          "url": "https://github.com/xai-org/plugin-marketplace",
+          "blurb": "Official .grok-plugin marketplace Grok Bot inherits under Cursor plugin policy."
+        },
+        {
+          "name": "@bot: SuperGrok and Cursor Pro get Grok Bot; weekly usage reset",
+          "url": "https://x.com/bot/status/2092664183334846840",
+          "blurb": "Official 2026-08-26: all SuperGrok and Cursor Pro subscribers get Grok Bot, and weekly usage limits were reset for everyone."
+        },
+        {
+          "name": "@bot: share Bot templates",
+          "url": "https://x.com/bot/status/2093376523919323618",
+          "blurb": "Official 2026-08-28: you can now share templates of your Bots with others."
+        },
+        {
+          "name": "@bot: Grok Bot can buy things",
+          "url": "https://x.com/bot/status/2093419921007108385",
+          "blurb": "Official 2026-08-28: connect Stripe Link and Grok Bot can complete purchases on your behalf."
+        },
+        {
+          "name": "Grok Bot on Google Play",
+          "url": "https://play.google.com/store/apps/details?id=ai.x.grok.bot",
+          "blurb": "Official Google Play listing: Grok Bot for Android is available — same Bots and threads as desktop/iOS; work continues on the cloud computer after you lock the phone (eligible Cursor/SuperGrok plan)."
+        },
+        {
+          "name": "Sign in to Grok Bot",
+          "url": "https://cursor.com/help/grok-bot/sign-in",
+          "blurb": "Official help: Grok Bot uses your Cursor account (no separate login); persistent auth loops or phone-verification blocks often need support after the listed retries."
+        },
+        {
+          "name": "Grok Bot now works with X",
+          "url": "https://x.ai/news/grok-bot-and-x",
+          "blurb": "Official 2026-08-29: connect X in Grok Bot (a developer account is created if needed); paid users get free X API credits to search posts, timelines, and mentions."
+        },
+        {
+          "name": "Getting started with Grok Bot",
+          "url": "https://cursor.com/help/grok-bot/getting-started",
+          "blurb": "Cursor help: first-agent setup, Sidebar Sections on iOS v1.2.0+ to group Bots, the beta label is not Cursor Beta Services terms, and a restart-first troubleshooting table."
+        },
+        {
+          "name": "Subscribe from the mobile app",
+          "url": "https://cursor.com/help/grok-bot/mobile-purchase",
+          "blurb": "iOS in-app purchase is monthly individual only; existing Cursor or SuperGrok access carries over, and SuperGrok linking still has to be done on desktop."
+        },
+        {
+          "name": "Delete your Grok Bot account",
+          "url": "https://cursor.com/help/grok-bot/delete-account",
+          "blurb": "Grok Bot has no separate account: iOS has Delete Account, desktop only signs out, and wiping it deletes the Cursor account plus agents, chats, and the computer."
+        },
+        {
+          "name": "@bot: improved X support",
+          "url": "https://x.com/bot/status/2093822274067706170",
+          "blurb": "Official 2026-08-29: Grok Bot now has improved X support; connecting your X profile auto-creates a developer account with included credits."
+        },
+        {
+          "name": "Get help (Cursor Help)",
+          "url": "https://cursor.com/help/grok-bot/get-help",
+          "blurb": "Official Cursor help: contact Grok Bot support at hi@cursor.com and include account email, app version/platform (Mac/Windows/iOS), what you tried, and a screenshot (billing issues same inbox)."
+        },
+        {
+          "name": "@bot: Microsoft Outlook, Calendar, and OneDrive plugins",
+          "url": "https://x.com/bot/status/2094543253811183943",
+          "blurb": "Official @bot (2026-08-31) says Grok Bot can now read, write, and act across Microsoft accounts via new Outlook, Calendar, and OneDrive plugins."
+        },
+        {
+          "name": "Identity and access",
+          "url": "https://docs.x.ai/grok-bot/identity-and-access",
+          "blurb": "Official admin guide: widen Cursor SSO assignment (Okta/Entra) so non-engineering teammates get Grok Bot, and add an IdP auth rule so the Linux Bot computer can sign into device-trust apps (passkeys/Team Setup); do not create a separate Grok Bot SSO app."
+        },
+        {
+          "name": "Private networks",
+          "url": "https://docs.x.ai/grok-bot/private-networks",
+          "blurb": "Official Enterprise guide: use Team Setup to install Tailscale, Cloudflare Tunnel, or other Linux VPN/mesh clients on every team Bot computer so Bots reach private APIs without exposing them; private reach does not replace the Grok Bot destination allowlist."
+        },
+        {
+          "name": "@bot: Grok Bot is now available on Android",
+          "url": "https://x.com/bot/status/2095168633559462197",
+          "blurb": "Official @bot (2026-09-02): Grok Bot is now available on Android — same Bots and threads as desktop/iOS, work continues on the cloud computer after you lock the phone; download from Google Play with an eligible Cursor/SuperGrok plan."
+        }
+      ]
+    },
+    {
+      "id": "tutorials-guides",
+      "title": "Tutorials & Guides",
+      "items": [
+        {
+          "name": "How to Get Started with Grok Bot",
+          "url": "https://debbie.codes/blog/how-to-get-started-with-grok-bot",
+          "blurb": "Debbie's field guide: first Bot, CoS prompt, and how she reorganizes the roster."
+        },
+        {
+          "name": "Grok Bot Masterclass",
+          "url": "https://www.dailydoseofds.com/p/grok-bot-masterclass/",
+          "blurb": "Avi / Daily Dose: record once, turn it into a skill, hang it on a routine."
+        },
+        {
+          "name": "How to Set Up Grok Bot and Build Your First AI Agents",
+          "url": "https://www.mindstudio.ai/blog/grok-bot-setup-guide",
+          "blurb": "Install-to-first-agent walkthrough with the Heavy / Ultra / Teams gates called out."
+        },
+        {
+          "name": "Grok Bot Explained",
+          "url": "https://www.ayautomate.com/blog/grok-bot-xai-ai-agents-explained",
+          "blurb": "Clear explainer with a real iPhone screenshot of a Bot roster."
+        },
+        {
+          "name": "Hand Off Real Work Across Your Apps",
+          "url": "https://app.therundown.ai/guides/hand-off-real-work-across-your-apps-with-grok-bot",
+          "blurb": "The Rundown's how-to for handing multi-app jobs to a Bot."
+        },
+        {
+          "name": "Connect Multiple Slack Workspaces",
+          "url": "https://www.usecarly.com/blog/how-to-connect-multiple-slack-workspaces-to-grok-bot/",
+          "blurb": "Slack event wake-up is not the same as installing Grok Bot as a Slack App."
+        },
+        {
+          "name": "Peter Yang: 5 Must-Try Use Cases",
+          "url": "https://www.youtube.com/watch?v=MkVcHbviYOw",
+          "blurb": "Advisor, YouTube researcher, X scout, Gmail declutter, travel concierge."
+        },
+        {
+          "name": "Alex Finn: setup that actually sticks",
+          "url": "https://www.youtube.com/watch?v=vrgO4D_mUlA",
+          "blurb": "Long-form setup from someone already living on Cursor Cloud Agents."
+        },
+        {
+          "name": "Nate Herk: Grok Bot is For Real",
+          "url": "https://www.youtube.com/watch?v=PQBYZQqan2g",
+          "blurb": "Install-first agent pitch plus what the $200 seat actually buys."
+        },
+        {
+          "name": "Teach a task by screen recording",
+          "url": "https://x.com/_avichawla/status/2089817006065496530",
+          "blurb": "Official-adjacent tip: show the workflow once, Bot writes the skill."
+        },
+        {
+          "name": "Use the remote computer from your phone",
+          "url": "https://x.com/bot/status/2089802847223468116",
+          "blurb": "@bot QoL: drive the cloud machine from iOS without opening the laptop."
+        },
+        {
+          "name": "Uncle-Gizmo notes",
+          "url": "https://github.com/Uncle-Gizmo/grok-bot-info",
+          "blurb": "Public notes on safe example workflows and how Bot sits next to Grok Build."
+        },
+        {
+          "name": "Grok Bot for GTM",
+          "url": "https://github.com/bcharleson/grokbot-for-gtm",
+          "blurb": "Playbook plus skills so a Grok Bot can run outbound GTM on its own computer: Instantly, HeyReach, list CLIs, human-approved sends."
+        },
+        {
+          "name": "Paul J Lipsky: Cursor Just Released Grok Bot",
+          "url": "https://www.youtube.com/watch?v=QTcZPI-g7is",
+          "blurb": "Walkthrough of role-based bots, group chats, plugins, Teach a task, and the iOS app as the daily driver."
+        },
+        {
+          "name": "Grok Bot 橙皮书",
+          "url": "https://github.com/KinGao294/grok-bot-orange-book",
+          "blurb": "Chinese orange book (~16k chars) on multi-bot teams, routines, and cost control in the first two weeks."
+        },
+        {
+          "name": "John Bai — The Grok Bot design journey (Dive Club)",
+          "url": "https://www.youtube.com/watch?v=E-VxnQO73s4",
+          "blurb": "Grok Bot designer John Bai walks through the early prototypes and the choices that became the shipped product."
+        },
+        {
+          "name": "yuanyijie/learn-grok-bot",
+          "url": "https://github.com/yuanyijie/learn-grok-bot",
+          "blurb": "Unofficial 16-lesson course on Grok Bot’s desktop-agent harness: Electron planes, turn loop, inference router, sandbox, MCP, automations."
+        },
+        {
+          "name": "A deep dive into Grok Bot",
+          "url": "https://flaviocopes.com/grok-bot/",
+          "blurb": "Flavio Copes’ 2026-08-28 deep dive: shared computer, skills to routines, share-as-template, Stripe Link spend requests, and when a script beats a Bot."
+        },
+        {
+          "name": "LAVX: a deep dive into Grok Bot",
+          "url": "https://news.lavx.hu/article/a-deep-dive-into-grok-bot",
+          "blurb": "2026-08-29 practitioner guide: shared-computer isolation, plugin-then-browser tool order, Stripe Link approvals, and when Zapier/n8n or a coding agent is a better fit."
+        },
+        {
+          "name": "Grok Bot Plays",
+          "url": "https://github.com/ZooHero500/plays",
+          "blurb": "Unofficial how-to catalog of Grok Bot plays rewritten from public posts and docs with source links; the site hosts 138 English plays (grokbotplays.com)."
+        },
+        {
+          "name": "s-hiraoku/grok-bot-playbook",
+          "url": "https://github.com/s-hiraoku/grok-bot-playbook",
+          "blurb": "Japanese field handbook (Next.js) for running Grok Bot as named roles: contracts, request templates, Skill/Routine flows, team boundaries, and handoff .md files."
+        },
+        {
+          "name": "mKay00/grok-bot-second-brain",
+          "url": "https://github.com/mKay00/grok-bot-second-brain",
+          "blurb": "Cloneable five-bot second-brain plan for one shared Grok Bot computer (Conductor/Capture/Memory/Ops/Research + vault-template and PLAN.md questionnaire)."
+        },
+        {
+          "name": "maplefukku/grok-bot-ops",
+          "url": "https://github.com/maplefukku/grok-bot-ops",
+          "blurb": "Japanese command-center repo for running product work through Grok Bot: routine drafts, verification bootstrap, knowhow log, and a Cursor plugin wrapper."
+        },
+        {
+          "name": "Technocore Grok Bot 日本語ガイド",
+          "url": "https://github.com/hariou/technocore-grokbot-ja",
+          "blurb": "Japanese operating guide plus GROKBOT_PROMPT.md for running a Technocore DID safely on Grok Bot without leaking seeds or spamming the lobby."
+        },
+        {
+          "name": "Grok Bot Getting Started hubs",
+          "url": "https://github.com/mrlynn/grok-bot-getting-started",
+          "blurb": "Thin branded Docusaurus hubs for What is Grok Bot, install/sign-in, and first task, deep-linking to docs.x.ai and x.ai/bot."
+        },
+        {
+          "name": "Grok Bot 蓝皮书",
+          "url": "https://github.com/rockyzhuo/grok-bot-blue-book",
+          "blurb": "Operator playbook (companion to the orange book) for running a Grok Bot team as a delivery company—artifact contracts, INSTALL.md bootstrap, and five route templates."
+        },
+        {
+          "name": "Grokbot Field Guide (8 use cases)",
+          "url": "https://github.com/tal-giladi/grokbot-field-guide",
+          "blurb": "Build-it-yourself tutorial covering the eight Getting started with Grok Bot video use cases, with prompts plus an HTML field guide in-repo."
+        },
+        {
+          "name": "Grok Bot setup & 5 pitfalls guide",
+          "url": "https://github.com/dadamingmax/Grok-Bot-Setup-and-Usage-Guide",
+          "blurb": "Chinese longform guide covering what Grok Bot is, SuperGrok/Cursor access, first-bot setup steps, and five measured pitfalls around quotas and approvals."
+        },
+        {
+          "name": "China Grok Bot install tutorial",
+          "url": "https://github.com/jobinben/Grok-Bot-Tutorial",
+          "blurb": "2026 China-focused Grok Bot tutorial on what the cloud teammate is, how to use it, and how to upgrade SuperGrok for access."
+        }
+      ]
+    },
+    {
+      "id": "field-cases",
+      "title": "Field Cases",
+      "items": [
+        {
+          "name": "n2parko: CoS + EM + five eng ICs + Databricks + PM",
+          "url": "https://x.com/n2parko/status/2087251704744235298",
+          "blurb": "SpaceXAI product roster with real agent-to-agent PR handoff screenshots."
+        },
+        {
+          "name": "Lee Robinson: four technical bets",
+          "url": "https://x.com/leerob/status/2089169319099777364",
+          "blurb": "No UI, thin client / thick server, always-on computer, browser as a first-class tool."
+        },
+        {
+          "name": "Debbie: book my flights",
+          "url": "https://debbie.codes/blog/i-tested-if-grok-bot-could-book-my-flights",
+          "blurb": "Honest near-miss: the Bot can drive the airline site, the last click still needs you."
+        },
+        {
+          "name": "Debbie: buy gluten-free beer on a Sunday night",
+          "url": "https://debbie.codes/blog/i-sent-grok-bot-to-buy-my-gluten-free-beer",
+          "blurb": "CoS shopping run — the fun case that shows computer-use, not chat."
+        },
+        {
+          "name": "Yun-Ta: calendar + reservations while walking",
+          "url": "https://x.com/yunta_tsai/status/2087415205756391461",
+          "blurb": "Mixed Chinese/English voice, Bot scans calendars and books a table."
+        },
+        {
+          "name": "Gota: twelve jobs on one roster",
+          "url": "https://x.com/gota_bara/status/2087666940450152841",
+          "blurb": "Image factory, research briefs, 3D, travel debate, cancel subscriptions, local LLM on the VM."
+        },
+        {
+          "name": "Box: credit-committee pack",
+          "url": "https://x.com/Box/status/2087275866950938662",
+          "blurb": "Reconcile materials, write the pack back into Box via MCP."
+        },
+        {
+          "name": "WordPress updates taught once",
+          "url": "https://x.com/mrfundman/status/2089760255890571404",
+          "blurb": "Teach-a-task on a real CMS instead of writing a deploy script."
+        },
+        {
+          "name": "Arduino updates from a Bot",
+          "url": "https://x.com/KettlebellDan/status/2089920364419874937",
+          "blurb": "Bot pushes hardware updates so the human can stay off X."
+        },
+        {
+          "name": "Nate: twelve Bots in eight hours",
+          "url": "https://natesnewsletter.substack.com/p/grok-bot-review",
+          "blurb": "Is the $200 agent team worth it — with a real first-day roster."
+        },
+        {
+          "name": "24/7 support agent in 19 minutes",
+          "url": "https://www.youtube.com/watch?v=bUALqTpUze0",
+          "blurb": "Customer-support Bot built on a routine, not a helpdesk rewrite."
+        },
+        {
+          "name": "Farzad roster: Webby / Shotry / Writey",
+          "url": "https://x.com/farzyness/status/2087340859138224540",
+          "blurb": "Named specialists plus an orchestrator — the pattern that keeps showing up."
+        },
+        {
+          "name": "Sid: Polymarket daily settlement brief",
+          "url": "https://x.com/sidshekhar24/status/2089735218861326727",
+          "blurb": "Bot scans the day's settled markets and writes the report."
+        },
+        {
+          "name": "Logan: the unlock is the computer, not 4.6",
+          "url": "https://x.com/LoganJastremski/status/2089903051557491092",
+          "blurb": "No API, no MCP, no hosted browser — the Bot just uses software like a person."
+        },
+        {
+          "name": "Japanese note group: cloud-computer field notes",
+          "url": "https://note.com/azumimusuhi/n/n0485219790bb",
+          "blurb": "Hands-on JP writeup of living on the shared VM for a week."
+        },
+        {
+          "name": "Peter Yang: Marie Kondo declutter Bot",
+          "url": "https://x.com/petergyang/status/2089724101070086482",
+          "blurb": "Prompt-and-demo: audit email, Drive, and paid subs, then wait for approval before anything is deleted."
+        },
+        {
+          "name": "Gergely Orosz: Stripe support refunds",
+          "url": "https://x.com/GergelyOrosz/status/2090085668768694562",
+          "blurb": "Hooks Grok Bot to support mail and Stripe agentic refunds, with a human confirm before money moves."
+        },
+        {
+          "name": "Mike P: 90,000-email purge",
+          "url": "https://x.com/mikepat711/status/2089879632929554498",
+          "blurb": "Lets a Bot walk two Gmail accounts and throw out junk the owner never wanted to touch."
+        },
+        {
+          "name": "Yun-Ta: text a Matic vacuum from Grok Bot",
+          "url": "https://x.com/yunta_tsai/status/2089223114416898288",
+          "blurb": "Chief Engineer Bot talks to @maticrobots so he can text the vacuum from anywhere."
+        },
+        {
+          "name": "Wayne Sutton: site, domain, and Cloudflare in two phone prompts",
+          "url": "https://x.com/waynesutton/status/2088416215203295346",
+          "blurb": "Convex + Cloudflare plugins, a live demo at tryground.dev, domain and redirects bought from the phone."
+        },
+        {
+          "name": "Danny Limanseta: 74 game art assets in two hours",
+          "url": "https://x.com/DannyLimanseta/status/2087228218797617404",
+          "blurb": "Bot reads the codebase, hits his art-gen page, crops transparent PNGs, and wires 74 card assets back into the game."
+        },
+        {
+          "name": "Jon ONeill: plumbing-shop office manager",
+          "url": "https://x.com/HouseHackerJon/status/2087635639701573962",
+          "blurb": "Drain-and-sewer shop owner handing office-manager work to a Bot in the first 24 hours."
+        },
+        {
+          "name": "Ben Lang: internal Grok Bot job list",
+          "url": "https://x.com/benln/status/2087929147406299313",
+          "blurb": "Starlink-biased flights, recipe-to-Whole Foods, film-scan EXIF, contractor quotes, and more internal jobs."
+        },
+        {
+          "name": "Gavin Baker: podcast summarizer in 15 seconds",
+          "url": "https://x.com/GavinSBaker/status/2089379355692527813",
+          "blurb": "Calls Grok Bot another Claude Code moment and stands up a podcast summarizer in about 15 seconds."
+        },
+        {
+          "name": "Krista Letz: Grok Bot for enterprise GTM",
+          "url": "https://x.com/kristaletz/status/2089103618121314689",
+          "blurb": "SpaceXAI enterprise seller's roster: CoS, prospecting overnight, per-account experts, live slide updates."
+        },
+        {
+          "name": "Peter Yang: Commander Keen on the cloud computer",
+          "url": "https://x.com/petergyang/status/2089502606079197347",
+          "blurb": "Installs and plays Commander Keen on Grok Bot's cloud desktop, lag and all."
+        },
+        {
+          "name": "Kiara: Bot sits in on a missed meeting",
+          "url": "https://x.com/kiaraplds/status/2088321112073547835",
+          "blurb": "SpaceXAI field engineer has a Bot join a meeting she misses, announce itself, and take notes."
+        },
+        {
+          "name": "KettlebellDan: Arduino LED stock ticker",
+          "url": "https://x.com/KettlebellDan/status/2089387837204693202",
+          "blurb": "Bot talks to his Arduino so the LED marquee scrolls SPCX price, a sparkline, and SpaceX news."
+        },
+        {
+          "name": "Darian Shirazi: chase five merchant refunds",
+          "url": "https://x.com/darian314/status/2089381004524093752",
+          "blurb": "Bot hunts unrefunded returns in email, writes five merchants, and earns back more than the monthly fee."
+        },
+        {
+          "name": "Grokularity: a company run by Grok Bots",
+          "url": "https://grokularity.xyz",
+          "blurb": "A non-coder stood up grokularity.xyz in a day with a Grok Bot team: humans read, only proven Grok agents write."
+        },
+        {
+          "name": "Signal outbound Grok Bot",
+          "url": "https://github.com/thoughtpilot99/signal-outbound-grok-bot",
+          "blurb": "Recipe for a Grok Bot that hunts live buyer signals, returns a ranked list, and drafts two outreach scripts while a human sends."
+        },
+        {
+          "name": "Grok-Bot-Fund",
+          "url": "https://github.com/jjregier/Grok-Bot-Fund",
+          "blurb": "Personal paper-to-live \"hedge fund\" desk run by three Grok Bot teammates on the cloud computer, with versioned playbooks merged only via human PRs."
+        },
+        {
+          "name": "ExploreGrokBot market desk",
+          "url": "https://github.com/WebDevJasonCameron/ExploreGrokBot",
+          "blurb": "File-based Grok Bot market-research desk: company mission, analyst agent instructions, scored opportunities, and a decision log under one repo layout."
+        },
+        {
+          "name": "build-brief Grok Build desk",
+          "url": "https://github.com/mtrxdev/build-brief",
+          "blurb": "Reusable Grok Bot desk that grills a raw idea into a grounded Grok Build brief on Git (PROFILE + BOT-SKILL + inspect gate)—Print-first delivery you paste into local grok."
+        },
+        {
+          "name": "Bull Desk Webull trading",
+          "url": "https://github.com/HammeredSmithy/bull-trade",
+          "blurb": "HyperGrok-style seven-agent trading desk ported to Webull OpenAPI for US users—research, size, approve-by-id execution and review Bots with paper sandbox before live keys."
+        },
+        {
+          "name": "Growth Grok Bots self-serve team",
+          "url": "https://github.com/jay-sahnan/growth-grok-bots",
+          "blurb": "Shareable multi-bot growth team (Head of Growth plus specialists) with narrow jobs, handoffs, and human approval before anything ships or sends."
+        },
+        {
+          "name": "Grok Bot Market Memory pack",
+          "url": "https://github.com/palehonk0-o/grokbot-market-memory",
+          "blurb": "Evidence-first market-memory implementation pack for turning public pages into decision briefs with Grok Bot, matching a public X article walkthrough."
+        },
+        {
+          "name": "Grok Bot fleet public packets",
+          "url": "https://github.com/Logos52/grok-bot-packets",
+          "blurb": "Public weekday dump of files a Grok Bot fleet writes under /workspace on the shared cloud computer, mirrored for Mac /fold skill intake."
+        },
+        {
+          "name": "Per-bot durable knowledge log",
+          "url": "https://github.com/jblack4vols/grok-bot",
+          "blurb": "Durable per-bot knowledge log for a real Grok Bot roster, with dated America/New_York files for decisions, shipped work, and standing preferences."
+        },
+        {
+          "name": "UiTM calendar Grok Bot + MCP",
+          "url": "https://github.com/bilauitmcuti/bot",
+          "blurb": "UiTM academic calendar assistant running on Grok Bot with a remote MCP server for live lecture, cuti, exam, and holiday dates."
+        }
+      ]
+    },
+    {
+      "id": "skills-plugins-mcp",
+      "title": "Skills, Plugins & MCP",
+      "items": [
+        {
+          "name": "grokbot-imessage-skill",
+          "url": "https://github.com/jeffhuber/grokbot-imessage-skill",
+          "blurb": "Read, triage, and send iMessage from the Bot via a local macOS helper."
+        },
+        {
+          "name": "Grok Bot Discord gateway",
+          "url": "https://github.com/davefmurray/grok-bot-discord",
+          "blurb": "Bridge so a Bot can live in Discord without pretending to be a Slack App."
+        },
+        {
+          "name": "Werewolf gamemaster skill",
+          "url": "https://github.com/Heyvhuang/werewolf-gamemaster",
+          "blurb": "A real skill pack: the Bot runs a Werewolf table, not a hello-world SKILL.md."
+        },
+        {
+          "name": "Hyperliquid 7-agent trading desk",
+          "url": "https://github.com/galleonlabs/hypergrok-trading-desk",
+          "blurb": "Seven specialized Bots on one desk — treat as experimental, read the code first."
+        },
+        {
+          "name": "awesome-grok-bot-plugins",
+          "url": "https://github.com/rdmgator12/awesome-grok-bot-plugins",
+          "blurb": "219 in-app marketplace listings captured 2026-08-12, grouped by category."
+        },
+        {
+          "name": "superpowers (marketplace)",
+          "url": "https://github.com/obra/superpowers",
+          "blurb": "Largest general skill collection in the official marketplace: plan, debug, write."
+        },
+        {
+          "name": "chrome-devtools MCP",
+          "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+          "blurb": "Drive a live Chrome: traces, network, source-mapped console errors."
+        },
+        {
+          "name": "Vercel plugin",
+          "url": "https://github.com/vercel/vercel-plugin",
+          "blurb": "Deployments, logs, domains. Pair with the forum thread on OAuth redirect failures."
+        },
+        {
+          "name": "Grok Ship",
+          "url": "https://github.com/kunchenguid/grok-ship",
+          "blurb": "Agent distro that turns Grok Bot into a software factory: scout vs ship, per-project crewmates driving Cursor cloud agents, review before any PR."
+        },
+        {
+          "name": "Coolify Cursor plugin",
+          "url": "https://github.com/coollabsio/coolify-cursor-plugin",
+          "blurb": "Official Coolify plugin for Cursor and Grok Bot: remote HTTP MCP to inspect servers, apps, deploys, and logs."
+        },
+        {
+          "name": "Grok Bot Telegram bridge",
+          "url": "https://github.com/SSBrouhard/grokbot-telegram-bridge",
+          "blurb": "Unofficial Telegram gateway that runs on the Grok Bot computer and talks to the local Sand gateway on loopback only."
+        },
+        {
+          "name": "grok-wechat-plugin",
+          "url": "https://github.com/little-thing/grok-wechat-plugin",
+          "blurb": "Unofficial WeChat iLink channel: inbound messages wake a Grok Bot routine over webhook."
+        },
+        {
+          "name": "grok-bot-cli",
+          "url": "https://github.com/ScriptedAlchemy/grok-bot-cli",
+          "blurb": "Terminal CLI that reuses the signed-in macOS Grok Bot app to list, create, and message teammates."
+        },
+        {
+          "name": "grokbot-tui",
+          "url": "https://github.com/smarzban/grokbot-tui",
+          "blurb": "Unofficial terminal TUI that talks to the Grok Bot host gateway so you can chat with bots and channels from the terminal."
+        },
+        {
+          "name": "grok-bot-skill",
+          "url": "https://github.com/adamanz/grok-bot-skill",
+          "blurb": "Cursor/Claude skill so a coding agent can list, chat with, and create Grok Bot teammates."
+        },
+        {
+          "name": "budezllc/dictate-capture",
+          "url": "https://github.com/budezllc/dictate-capture",
+          "blurb": "Windows helper: hold Ctrl+D to dictate into Grok Bot, optionally drag a gold box to paste a screenshot."
+        },
+        {
+          "name": "HAEGONG/grok-bot-profiles",
+          "url": "https://github.com/HAEGONG/grok-bot-profiles",
+          "blurb": "Paste-in Grok Bot profiles that split spec, bug repro, implementation, and verification so a bot never approves its own work."
+        },
+        {
+          "name": "adam91holt/grokbot-sdk",
+          "url": "https://github.com/adam91holt/grokbot-sdk",
+          "blurb": "TypeScript SDK for a running Grok Bot host: typed local HTTP gateway client plus sand-data disk readers (6★, MIT)."
+        },
+        {
+          "name": "steve228uk/grok-bot-shopping",
+          "url": "https://github.com/steve228uk/grok-bot-shopping",
+          "blurb": "Shopping skills pack: merchant UCP/MCP, Shopify Shop CLI via npx, and Stripe Onelink; paste INSTALL.md into Grok Bot (2★)."
+        },
+        {
+          "name": "Thin Grok Bot, deep work on CLI",
+          "url": "https://github.com/Luca-Blight/thin-grok-bot-deep-work-on-cli",
+          "blurb": "Skill that keeps the Grok Bot mesh thin and hands deep builds or investigations to Cursor CLI, Cursor cloud agents, or grok CLI."
+        },
+        {
+          "name": "mykemueller1-ctrl/grok-bot-restaurant-scout",
+          "url": "https://github.com/mykemueller1-ctrl/grok-bot-restaurant-scout",
+          "blurb": "Grok Bot pack for a restaurant social-commerce scout: agent profile, morning-scan/script/catalog skills, daily routine, and MCP connectors with a copy-paste SETUP.md."
+        },
+        {
+          "name": "ShuhangGe/grokbot-queue",
+          "url": "https://github.com/ShuhangGe/grokbot-queue",
+          "blurb": "CLI (gbq) that queues work onto your running Grok Bots over Tailscale/SSH so many cloud tasks share a ~400MB local footprint."
+        },
+        {
+          "name": "3Fold-Labs/grok-bot-org-chart",
+          "url": "https://github.com/3Fold-Labs/grok-bot-org-chart",
+          "blurb": "Permissions playbook and role-bot templates (Chief of Staff, Eng, Ops, and more) for running a small company as named Grok Bots on one shared computer."
+        },
+        {
+          "name": "crew-contract",
+          "url": "https://github.com/lsj210001/crew-contract",
+          "blurb": "Operating protocol for Grok Bot crews: seven-field missions, artifact handoffs, stop-on-budget, plus a paste-in Signal Crew and Notion schema."
+        },
+        {
+          "name": "cobusgreyling/grok-bot-templates",
+          "url": "https://github.com/cobusgreyling/grok-bot-templates",
+          "blurb": "Scored Grok Bot operating contracts (job, never-list, L1 default, CI) with a START.md installer: paste into Setup, tap a team, get 49 paste-ready profiles."
+        },
+        {
+          "name": "jaredtrichard/grok-factory",
+          "url": "https://github.com/jaredtrichard/grok-factory",
+          "blurb": "Followable Grok Bot pack (software + research + general) installed via `follow …/GROK_FACTORY.md`; Firstmate routes work on the shared computer."
+        },
+        {
+          "name": "Chakhdz/grok-bot-token-saver",
+          "url": "https://github.com/Chakhdz/grok-bot-token-saver",
+          "blurb": "Token-thrifty chief/worker mold: remaster long chats on a timer and revive bots from a short role card; ships installable Botsi Archivist via x.ai/bot."
+        },
+        {
+          "name": "supervised-nl/tesla-fleet-mcp",
+          "url": "https://github.com/supervised-nl/tesla-fleet-mcp",
+          "blurb": "Tesla Fleet API MCP with `.grok-plugin` for Grok Bot (Streamable HTTP on public HTTPS; climate/charge/lock need tesla-http-proxy + virtual key)."
+        },
+        {
+          "name": "DomenicFotino/grok-bot-template-market",
+          "url": "https://github.com/DomenicFotino/grok-bot-template-market",
+          "blurb": "Hosted MCP plugin for Bot Template Market (catalog / licenses / apply_pack); add `https://grok-raqet.vercel.app/api/mcp` in Grok Bot Plugins."
+        },
+        {
+          "name": "novusordos666/grokbot-outreach-agent-team",
+          "url": "https://github.com/novusordos666/grokbot-outreach-agent-team",
+          "blurb": "Five coordinated Grok Bot agent prompts (chief, research, qualify, outreach, inbox/Calendly) for evidence-based outbound with human approvals."
+        },
+        {
+          "name": "NexFade/nexfade-grok-plugin",
+          "url": "https://github.com/NexFade/nexfade-grok-plugin",
+          "blurb": "NexFade `.grok-plugin` + MCP for Grok Bot: encrypt files/notes on the Bot computer (AES-256-GCM) and share ciphertext links without sending plaintext to NexFade (MIT)."
+        },
+        {
+          "name": "elderibeiro/proton-mail-mcp-grokbot",
+          "url": "https://github.com/elderibeiro/proton-mail-mcp-grokbot",
+          "blurb": "Public Proton Mail MCP recovery base for Grok Bot: official Bridge on loopback plus a stdio proxy (pass/env secrets; no credentials in-repo; 1★)."
+        },
+        {
+          "name": "elderibeiro/subaru-starlink-mcp-grokbot",
+          "url": "https://github.com/elderibeiro/subaru-starlink-mcp-grokbot",
+          "blurb": "Public Subaru STARLINK / MySubaru MCP for Grok Bot via subarulink (no VIN/PIN/secrets in-repo; MIT; 1★)."
+        },
+        {
+          "name": "koreysmith123/recallsmith",
+          "url": "https://github.com/koreysmith123/recallsmith",
+          "blurb": "RecallSmith experiential memory for GrokBot: one-message install, `.grok-plugin`/MCP skills, docker-compose and pgvector profiles (MIT)."
+        },
+        {
+          "name": "canvascloudai/cwm-cursor-plugin",
+          "url": "https://github.com/canvascloudai/cwm-cursor-plugin",
+          "blurb": "Cloud World Model official Cursor/Grok Bot plugin pack: hosted Streamable HTTP MCP plus simulate-architecture skill (MIT)."
+        },
+        {
+          "name": "sigmashakeinc/sigmashake-guardrails",
+          "url": "https://github.com/sigmashakeinc/sigmashake-guardrails",
+          "blurb": "SigmaShake Guardrails hosted control plane for Grok Bot/Cursor: `.grok-plugin` + Streamable HTTP MCP evaluating tool calls (ALLOW/DENY/ASK/…)."
+        },
+        {
+          "name": "Deploy-Forward/convoy",
+          "url": "https://github.com/Deploy-Forward/convoy",
+          "blurb": "Convoy hosted MCP (convoy.bot/mcp) with Grok Bot as conductor: onboard/roster/send/feed hops to BYO harness CLIs (tests + docs)."
+        },
+        {
+          "name": "nessielabs/nessie-grokbot",
+          "url": "https://github.com/nessielabs/nessie-grokbot",
+          "blurb": "Cursor/Grok Bot plugin that attaches Nessie’s hosted MCP (`mcp.nessielabs.com`) so a Bot can search, read, and safely write your Nessie context library (MIT)."
+        },
+        {
+          "name": "GlobalTC/steer",
+          "url": "https://github.com/GlobalTC/steer",
+          "blurb": "Grok Bot share recipe for STEER: mark a draft, Save, get a rewrite; ships profile, memory, two skills, and a webhook routine (Apache-2.0)."
+        },
+        {
+          "name": "AgentMindCloud/grok-bot-super",
+          "url": "https://github.com/AgentMindCloud/grok-bot-super",
+          "blurb": "Community playbook library a Grok Bot can read and save as skills (email triage, research brief, X-thread builder, and more) via official save-as-skill (MIT, 1★)."
+        },
+        {
+          "name": "grok-bot-mcp-connector",
+          "url": "https://github.com/chipherndon/grok-bot-mcp-connector",
+          "blurb": "Cloudflare Worker MCP with send and inbox tools so two dedicated Grok Bots can message each other and wake via webhook routines."
+        },
+        {
+          "name": "grok-skills",
+          "url": "https://github.com/jaskirat1616/grok-skills",
+          "blurb": "Catalog of 195 SKILL.md playbooks for Grok Bot, browsable at grokbotskills.vercel.app and installable via grok plugin marketplace add."
+        },
+        {
+          "name": "Firstmate",
+          "url": "https://github.com/matteoantoci/firstmate",
+          "blurb": "Paste-ready Grok Bot prompt that runs a crew and writes decisions into a git repo so memory is not trapped in one chat thread."
+        },
+        {
+          "name": "GTM agent automations",
+          "url": "https://github.com/OpulentiaAI/gtm-agent-automations",
+          "blurb": "Copy-paste Grok Bot automation prompts for GTM work (outbound, CRM, Stripe, Slack triggers), modeled on dabit3/cloud-agent-automations."
+        },
+        {
+          "name": "remem-grokbot",
+          "url": "https://github.com/asimgilani/remem-grokbot",
+          "blurb": "Cursor/Grok Bot plugin that exposes ten remem.io memory tools over stdio MCP, with tests and a grokbot namespace policy."
+        },
+        {
+          "name": "Podcast Summary Bot",
+          "url": "https://github.com/noam99moyal-sudo/podcast-summary-bot",
+          "blurb": "Grok Bot template (x.ai/bot share) plus a skill that turns a YouTube, X, or Spotify episode into five reusable insights."
+        },
+        {
+          "name": "Buses & Trains MCP",
+          "url": "https://github.com/BusesAndTrains/busesandtrains-mcp",
+          "blurb": "Grok Bot plugin for live UK bus and train times, journey planning, and rail fares via the Buses & Trains API."
+        },
+        {
+          "name": "Balise for Grok Bot",
+          "url": "https://github.com/baliseai/balise-grok-plugin",
+          "blurb": "Cursor/Grok Bot plugin plus SKILL.md that OAuth-connects to Balise hosted MCP so a Bot can search private Apple Photos visual memory."
+        },
+        {
+          "name": "GbNet for Cursor",
+          "url": "https://github.com/medomatic-ai/gbnet-cursor-plugin",
+          "blurb": "Cursor/Grok Bot plugin with a collaboration SKILL.md and hosted MCP so two permissioned partners can share plans, tasks, and evidence."
+        },
+        {
+          "name": "BaseMouse Cursor plugin",
+          "url": "https://github.com/basemouse/cursor-plugin",
+          "blurb": "Cursor/Grok Bot plugin wrapping BaseMouse MCP (search, context packs, upsert) with a SKILL.md for grounded project memory."
+        },
+        {
+          "name": "deskforge",
+          "url": "https://github.com/mturac/deskforge",
+          "blurb": "Go CLI that inits a git ledger and six paste-ready Grok Bot agent descriptions (Mainer, Pulse, Scout, Judge, Builder, Critic) for a group desk loop."
+        },
+        {
+          "name": "Unlist",
+          "url": "https://github.com/shawnyeager/unlist",
+          "blurb": "Grok Bot playbook (BOT.md) plus a local CLI and broker list so a Bot can file people-search opt-outs and log follow-ups without committing profile.json."
+        },
+        {
+          "name": "Brew for Grok Bot",
+          "url": "https://github.com/GetBrew/cursor-plugin",
+          "blurb": "Cursor/Grok Bot plugin plus SKILL.md that OAuth-connects to Brew hosted MCP so a Bot can generate, send, schedule, and analyze on-brand email."
+        },
+        {
+          "name": "GojiberryAI Sales OS",
+          "url": "https://github.com/romangojiberryAI/gojiberryai-sales-os",
+          "blurb": "Grok Bot plugin with a 13-agent SKILL.md and hosted GojiberryAI MCP so a Bot can run outbound sales (intent, enrich, LinkedIn, replies) without inventing contacts."
+        },
+        {
+          "name": "Steltic Grok Bot",
+          "url": "https://github.com/Steltic/steltic_grokbot",
+          "blurb": "Packaged SKILL.md files plus a Python convert/index/search pipeline so three Grok Bots can retrieve licensed structural-steel specs on the Bot computer without an external RAG."
+        },
+        {
+          "name": "GrokBot Body",
+          "url": "https://github.com/rowline/grokbot-body",
+          "blurb": "iPhone plus DockKit app and a self-hosted Cloudflare Worker MCP so one Grok Bot can listen, speak, and change face on a phone as its body."
+        },
+        {
+          "name": "Grok Bot Telegram private bridge",
+          "url": "https://github.com/liush2yuxjtu/grok-bot-telegram-private-bridge",
+          "blurb": "Unofficial owner-paired Telegram front end that runs on the Grok Bot cloud computer and talks to the local gateway on loopback only."
+        },
+        {
+          "name": "Paygent plugin",
+          "url": "https://github.com/usepaygent/paygent-plugin",
+          "blurb": "Cursor/Grok Bot plugin plus SKILL.md that connects a hosted Paygent MCP so a Bot can request a crypto-funded card, check balance, and complete checkouts."
+        },
+        {
+          "name": "Kijiji Marketplace skills",
+          "url": "https://github.com/alifarooq0/grok-bot-kijiji-marketplace",
+          "blurb": "Grok Bot Agent Plugin with four SKILL.md files for Kijiji search, draft listings, price research, and buyer outreach (skills-only, no MCP)."
+        },
+        {
+          "name": "Stashiro agent plugin",
+          "url": "https://github.com/c4davide/stashiro-agent-plugin",
+          "blurb": "Client-only Stashiro plugin for Cursor, Grok Bot, and Claude Code with hosted MCP and five board/workspace SKILL.md files."
+        },
+        {
+          "name": "create-custom-mcp skill",
+          "url": "https://github.com/larry-fuqua/create-custom-mcp",
+          "blurb": "Drop-in create-custom-mcp skill packs for Grok Build and Grok Bot that stand up a custom MCP behind an OAuth/API-key gateway with a final as-built security review."
+        },
+        {
+          "name": "GSC Wizard Grok plugin",
+          "url": "https://github.com/gscwizard/grok-plugin",
+          "blurb": "Grok / Grok Bot / Grok Build plugin that wires the hosted GSC Wizard MCP for Search Console rankings, decay, cannibalization, CTR, and weekly SEO reports."
+        },
+        {
+          "name": "Grok Bot Vision",
+          "url": "https://github.com/kenarakelian1/grok-bot-vision",
+          "blurb": "Grok Bot vision plugin with local Node MCP so a Bot can see a live camera stream plus pictures, screenshots, PDFs, and documents."
+        },
+        {
+          "name": "Glome plugin",
+          "url": "https://github.com/ObsidianCodes/glome-plugin",
+          "blurb": "Cursor Marketplace / Grok Bot plugin that binds Bots to Glome Cloud hosted MCP for 1:1 Bot-to-Bot messaging."
+        },
+        {
+          "name": "Aaron Marketing Skills",
+          "url": "https://github.com/aaron-he-zhu/aaron-marketing-skills",
+          "blurb": "120 marketing skills installable as a plugin, portable skills, or an 8-bot AI staff on named-bot hosts including Grok Bot."
+        },
+        {
+          "name": "AICA Life OS plugin",
+          "url": "https://github.com/Comdei/aica-cursor-plugin",
+          "blurb": "Cursor/Grok Bot plugin that wires the hosted AICA Life OS MCP with OAuth so a Bot can read the day, tasks, and moments, then propose writes you confirm in AICA."
+        },
+        {
+          "name": "GbNet for Grok Bot",
+          "url": "https://github.com/medomatic-ai/gbnet-grok-bot-plugin",
+          "blurb": "Grok Bot–specific GbNet plugin (distinct from the Cursor IDE package) with hosted MCP and a collaboration SKILL.md so invited Bots can work together under your permissions."
+        },
+        {
+          "name": "ADD Framework agent plugin",
+          "url": "https://github.com/dragosroua/grok-bot-add-plugin",
+          "blurb": "Grok Bot / Agent Plugin skills pack for the Assess-Decide-Do framework—six SKILL.md files that detect explore vs decide vs execute and answer in-alignment."
+        },
+        {
+          "name": "unslopifymy agent plugin",
+          "url": "https://github.com/dragosroua/grok-bot-unslopifymy-plugin",
+          "blurb": "Grok Bot–named Agent Plugin with local Node MCP and an unslopify SKILL.md that rewrites AI-slop text via unslopifymy.ai (API key or x402)."
+        },
+        {
+          "name": "Google Sheets agent plugin",
+          "url": "https://github.com/euca-net/grok-bot-plugins",
+          "blurb": "grok-bot-plugins Agent Plugin wrapping Google Sheets API v4 as MCP tools (get/update/append/list tabs) plus a google-sheets SKILL.md—now past the morning empty-stub state."
+        },
+        {
+          "name": "CampfireSMS Grok Bot plugin",
+          "url": "https://github.com/campfiresms/campfiresms-grok-bot",
+          "blurb": "Cursor/Grok Bot plugin that attaches CampfireSMS hosted MCP (open/send/check/ack/close) plus a campfiresms-bridge skill and wake-routine notes for 24/7 SMS without keeping SMS credentials on the Bot computer."
+        },
+        {
+          "name": "VidNotes Grok Bot plugin",
+          "url": "https://github.com/Karniej/vidnotes-grok-bot-plugin",
+          "blurb": "Template-based Cursor/Grok Bot plugin that connects the hosted VidNotes HTTPS MCP so a Bot can work with video notes while keeping the API key in host secure plugin variables."
+        },
+        {
+          "name": "Buzz messaging plugin",
+          "url": "https://github.com/davidorban/buzz-grokbot",
+          "blurb": "Cursor/Grok Bot plugin with a TypeScript MCP (stdio or Streamable HTTP) for Buzz/NIP-29 messaging—send, list, thread, and inbox tools plus split skills so keys can stay off the shared Bot box."
+        },
+        {
+          "name": "MyApi Cursor/Grok Bot plugin",
+          "url": "https://github.com/omribenami/myapi-cursor-plugin",
+          "blurb": "Official MyApi plugin for Cursor and Grok Bot: npx myapi-asc-mcp plus enroll/request/services skills so agents reach Gmail/GitHub/Slack/Notion and other connected services without scattering raw credentials."
+        },
+        {
+          "name": "Knowz + KnowzCode plugins",
+          "url": "https://github.com/knowz-io/cursor-knowz-plugin",
+          "blurb": "Two separately installable Knowz / KnowzCode plugins for Grok Bot, Grok Build, and Cursor—vault knowledge MCP with marketplace and authorize flows documented per host."
+        },
+        {
+          "name": "Bool Cursor/Grok Bot plugin",
+          "url": "https://github.com/codehs/bool-cursor-plugin",
+          "blurb": "Official Bool thin connector for Cursor and Grok Bot: hosted Streamable HTTP MCP at bool.com plus a skill so agents can create, build, and publish Bool apps after OAuth."
+        },
+        {
+          "name": "Open Quantum Cursor plugin",
+          "url": "https://github.com/Quantum-Rings/openquantum-cursor-plugin",
+          "blurb": "Cursor/Grok Bot plugin that wires the official openquantum-mcp stdio server so a Bot can list QPU backends, quote, submit OpenQASM, and fetch results under spend policy—enable on the Cursor account, do not clone onto the Bot computer."
+        },
+        {
+          "name": "grok-job-kit standing seats",
+          "url": "https://github.com/Octo-o-o-o/grok-job-kit",
+          "blurb": "Grok Bot standing-seat job kit (Mouth/Desk/Hands/Check and optional Scout/Watch/List/Judge) with hire-roster and bind-local skills plus templates—hires empty chairs instead of cloning a staffed office."
+        },
+        {
+          "name": "Hermes↔Grok Bot wake bridge plugin",
+          "url": "https://github.com/barkleesanders/hermes-grok-bridge",
+          "blurb": "Agent Plugin with MCP plus one skill that bridges Hermes outbound session hooks and inbound webhooks to Grok Bot wakes, using env placeholders so secrets stay off the shared Bot computer."
+        },
+        {
+          "name": "Primo IT fleet MCP plugin",
+          "url": "https://github.com/getprimo/primo-mcp-plugin",
+          "blurb": "Cursor/Grok Bot Agent Plugin that points at Primo hosted MCP so a Bot can answer IT fleet questions on devices, tickets, SaaS identities, CVEs, and onboarding without a local server."
+        },
+        {
+          "name": "Agnic Gifts shopping plugin",
+          "url": "https://github.com/agnicpay/agnic-gifts-grok-bot-plugin",
+          "blurb": "Cursor/Grok Bot plugin that wires the hosted Agnic Gifts MCP for in-stock gift shopping, with nothing purchased until the user passkey-approves a spend cap."
+        },
+        {
+          "name": "OverSkill app-builder plugin",
+          "url": "https://github.com/OverskillDev/overskill-cursor",
+          "blurb": "Cursor/Grok Bot plugin that connects OverSkill hosted MCP plus an app-builder skill so the agent can create, iterate, and publish full-stack OverSkill apps after OAuth."
+        },
+        {
+          "name": "SourceMedium commerce MCP plugin",
+          "url": "https://github.com/source-medium/cursor-plugin",
+          "blurb": "Cursor/Grok Bot plugin that installs SourceMedium secure MCP so the agent can analyze warehouse, Shopify, and Meta Ads commerce data while keeping metric definitions intact."
+        },
+        {
+          "name": "GrokBot↔Hermes self-hosted MCP bridge",
+          "url": "https://github.com/iamsupersocks/grokbot-hermes-bridge",
+          "blurb": "Self-hosted OAuth MCP gateway and Agent Plugin template that lets Grok Bot stay the chat UI while a local Hermes Agent produces answers on your own machine."
+        },
+        {
+          "name": "Multi-agent Grok Bot skill templates",
+          "url": "https://github.com/EndeavorYen/grok-bot-skills",
+          "blurb": "Reusable Grok Bot skills for chief-plus-specialist multi-agent teams covering disk handoffs, approval gates, and a create/audit checklist for bot designers."
+        },
+        {
+          "name": "punk-records Grok Bot round-table setup",
+          "url": "https://github.com/VeigaPunk/punk-records-brain",
+          "blurb": "Grok Bot auto-setup plugin: say set grok bot for me in your preferred CLI to mint named round-table cards via CDP instead of clicking New by hand."
+        },
+        {
+          "name": "PumpGrok Solana trading-desk pack",
+          "url": "https://github.com/swcstudiospace/PumpGrok",
+          "blurb": "Eight-role Solana memecoin trading desk for Grok Bot with 23 skills, a hard security constitution, and read-only helpers—no keys in the system and only human-approved actions."
+        },
+        {
+          "name": "ShopMonkey REST v3 Cursor plugin",
+          "url": "https://github.com/skyburxd/grokbot-shopmonkey-plugin",
+          "blurb": "Cursor/Grok Bot Agent Plugin with mcp.json and a ShopMonkey skill that wraps ShopMonkey REST v3 for orders, customers, and vehicles via Marketplace install."
+        },
+        {
+          "name": "Tender Years household MCP plugin",
+          "url": "https://github.com/voeliz/tender-years-grok-plugin",
+          "blurb": "Read-only Cursor/Grok Bot Agent Plugin that wires the Tender Years hosted MCP for household members, routines, tasks, and week snapshots after you paste an API key."
+        },
+        {
+          "name": "74-skill Grok Bot library",
+          "url": "https://github.com/shrdgn/grokbot-skills",
+          "blurb": "Curated library of 74 ready-to-run Grok Bot skills across 12 categories, each as a consistent SKILL.md recipe for on-demand or scheduled runs."
+        },
+        {
+          "name": "technocore-safe Flop skill",
+          "url": "https://github.com/mahathir69/technocore-safe",
+          "blurb": "Grok Bot skill for helping Flop/Technocore without leaking keys or lobby spam, requiring typed APPROVE SEND before any publish."
+        },
+        {
+          "name": "Sales Outbound workforce teaser",
+          "url": "https://github.com/PROJECT-073-X/grok-bot-workforce",
+          "blurb": "Free Sales Outbound Grok Bot profile and skill teaser with job contract and auto-review gates that wait for human approval before sending."
+        },
+        {
+          "name": "Peekaboo Mac UI skill",
+          "url": "https://github.com/bcharleson/grokbot-peekaboo",
+          "blurb": "Grok Bot skill that drives registered Macs through Peekaboo for screen recording, screenshots, window lists, and UI input beyond plain bash."
+        },
+        {
+          "name": "awesome-claude-skills port for Grok Bot",
+          "url": "https://github.com/jeremybrasher/grokbot-skills",
+          "blurb": "Large Grok Bot skill collection reshaped from awesome-claude-skills, keeping original licenses and SOURCE.md links in one-folder-per-skill layout."
+        },
+        {
+          "name": "grok-bot-rooms registry plugin",
+          "url": "https://github.com/mrlynn/grok-bot-plugin-example",
+          "blurb": "Agent Plugin (repo slug grok-bot-plugin-example) that registers assistants into hosted rooms, check-ins, slash commands, and host-and-invite lobbies for Grok Bot."
+        },
+        {
+          "name": "AskGrokWallet",
+          "url": "https://github.com/richard7463/askgrokwallet",
+          "blurb": "Governed-wallet plugin for Grok Bot: plain-English policies compile to allow/ask/deny, \"ask\" lands in a human approval inbox, and every outcome leaves a signed receipt; the onchain engine implements ERC-8196 on Base mainnet (MIT)."
+        },
+        {
+          "name": "xAI Bug Reporter Grok Bot plugin",
+          "url": "https://github.com/FineComputer14451/xai-bug-reporter",
+          "blurb": "Grok Bot/Cursor plugin plus Grok Chat skill that walks triage and evidence into a paste-ready xAI bug report without inventing support channels."
+        },
+        {
+          "name": "MERIT agent skills (Grok Bot target)",
+          "url": "https://github.com/AgentDraven/merit-agent-skills",
+          "blurb": "Free MERIT agent skills and merit CLI with an explicit Grok Bot install target alongside Cursor, Claude Code, Codex, Hermes, and OpenClaw."
+        }
+      ]
+    },
+    {
+      "id": "reviews-comparisons",
+      "title": "Reviews & Comparisons",
+      "items": [
+        {
+          "name": "The Verge: an AI teammate you can assign work",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/978666/spacexai-grok-bot-ai-agent-beta-launch",
+          "blurb": "Launch coverage that keeps the product distinct from grok.com chat."
+        },
+        {
+          "name": "VentureBeat: persistent digital coworkers",
+          "url": "https://venturebeat.com/orchestration/spacexais-grok-bot-turns-agents-into-persistent-digital-coworkers-that-can-operate-your-apps-for-120-per-month",
+          "blurb": "Pricing and persistence: $120/seat Teams path, computer stays on."
+        },
+        {
+          "name": "Lenny's Newsletter: Grok Bot, Grok 4.6, and Cursor",
+          "url": "https://www.lennysnewsletter.com/p/i-tested-grok-bot-grok-46-and-cursor",
+          "blurb": "Separates the Bot product from the 4.6 model — do not collapse the two."
+        },
+        {
+          "name": "Grok Bot vs OpenClaw",
+          "url": "https://myclaw.ai/blog/grok-bot-vs-openclaw",
+          "blurb": "Managed cloud computer vs self-hosted, bring-your-own-model."
+        },
+        {
+          "name": "Grok Bot vs OpenClaw vs ChatGPT",
+          "url": "https://www.mindstudio.ai/blog/grok-bot-vs-openclaw-chatgpt",
+          "blurb": "Three-way: always-on VM, self-host, and chat-with-tools."
+        },
+        {
+          "name": "Grok Bot vs ChatGPT for work",
+          "url": "https://www.eigent.ai/blog/grok-bot-vs-chatgpt-work",
+          "blurb": "Computer-use coworker vs a chat that sometimes calls tools."
+        },
+        {
+          "name": "Grok Bot vs Claude Cowork",
+          "url": "https://www.eigent.ai/blog/grok-bot-vs-claude-cowork",
+          "blurb": "Persistent shared VM vs session-scoped cowork."
+        },
+        {
+          "name": "YouTube: Grok Bot vs OpenClaw and Hermes",
+          "url": "https://www.youtube.com/watch?v=sAoTrUijP4g",
+          "blurb": "Video bake-off of the three agent stacks people actually compare."
+        },
+        {
+          "name": "10 Best Grok Bot Alternatives (2026)",
+          "url": "https://www.vellum.ai/blog/best-grok-bot-alternatives",
+          "blurb": "Landscape of substitutes if you do not want the Heavy/Ultra seat."
+        },
+        {
+          "name": "Before You Hire a $200 Grok Bot",
+          "url": "https://zchmael.substack.com/p/before-you-hire-a-200-grok-bot-ai",
+          "blurb": "Skeptical checklist: what the seat does not buy you."
+        },
+        {
+          "name": "CellCog: Grok Bot pricing after the $20 Pro expansion",
+          "url": "https://cellcog.ai/blog/grok-bot-pricing/",
+          "blurb": "Living pricing note updated 2026-08-27: eight routes from Cursor Pro $20 / SuperGrok $30, unpublished weekly allowance, shared on-demand, and no published enterprise price."
+        },
+        {
+          "name": "What is Grok Bot? The Real Cost & Hidden Risks",
+          "url": "https://4geeks.com/en/blog/ai-tools/what-is-grok-bot",
+          "blurb": "4Geeks 2026-08-27 review of Grok Bot cost and credential risk: one shared computer is not a security boundary, Auto-review is best-effort, and the public docs never mention prompt injection."
+        }
+      ]
+    },
+    {
+      "id": "open-source-alternatives",
+      "title": "Open-Source Alternatives",
+      "items": [
+        {
+          "name": "rakazo",
+          "url": "https://github.com/elie222/rakazo",
+          "blurb": "Open-source Grok Bot alternative — self-host the always-on teammate idea."
+        },
+        {
+          "name": "guaca",
+          "url": "https://github.com/madebywelch/guaca",
+          "blurb": "Another self-hosted take on persistent computer-use agents."
+        },
+        {
+          "name": "OpenGrokBot",
+          "url": "https://github.com/wolfqing/OpenGrokBot",
+          "blurb": "OpenClaw plus bring-your-own-model, assembled as a Bot stand-in."
+        },
+        {
+          "name": "XinyunOpenBot",
+          "url": "https://github.com/dongpen-max/XinyunOpenBot",
+          "blurb": "Chinese-language open alternative aimed at the same job-to-be-done."
+        },
+        {
+          "name": "OpenMausBot",
+          "url": "https://github.com/milind-soni/OpenMausBot",
+          "blurb": "Community runtime exploring the same always-on computer pattern."
+        },
+        {
+          "name": "open-grokbot",
+          "url": "https://github.com/ishandutta2007/open-grokbot",
+          "blurb": "Early equivalent / experiment — read before you grant credentials."
+        },
+        {
+          "name": "grok-bot-flake",
+          "url": "https://github.com/jordangarrison/grok-bot-flake",
+          "blurb": "Nix flake that repackages the official Linux .deb (no source build)."
+        },
+        {
+          "name": "grok-bot-bin",
+          "url": "https://github.com/Jabbslad/grok-bot-bin",
+          "blurb": "Unofficial Arch package that repackages the official Linux .deb; the built-in updater does not support Linux."
+        },
+        {
+          "name": "grokbot-linux-port",
+          "url": "https://github.com/Nichokas/grokbot-linux-port",
+          "blurb": "Wine-less community Linux port (Arch AUR + Fedora COPR + Ubuntu PPA); tracks 0.30.0. Note: Cursor CDN now also hosts official Linux 0.30.0 packages (36★)."
+        },
+        {
+          "name": "grok-bot-0.18-reconstructed",
+          "url": "https://github.com/b-nnett/grok-bot-0.18-reconstructed",
+          "blurb": "Unofficial TypeScript reconstruction of Grok Bot 0.18.0 for macOS, plus a local inference router experiment."
+        },
+        {
+          "name": "grok-bot-linux (CDN index)",
+          "url": "https://github.com/falser101/grok-bot-linux",
+          "blurb": "Community index of official Cursor-CDN Linux .deb/.rpm/AppImage URLs; does not host installers."
+        },
+        {
+          "name": "glorics/grok-bot-linux",
+          "url": "https://github.com/glorics/grok-bot-linux",
+          "blurb": "Retired unofficial Windows→Linux port; README now points to official Grok Bot 0.30.0 Linux packages on the Cursor CDN (AppImage/deb/rpm; 26★)."
+        },
+        {
+          "name": "mandarwagh9/botroster",
+          "url": "https://github.com/mandarwagh9/botroster",
+          "blurb": "Open-source Grok Bot-shaped roster: named teammates, one durable computer, approvals, and routines (Rust/Tauri)."
+        },
+        {
+          "name": "OnlyTerp/opengrok",
+          "url": "https://github.com/OnlyTerp/opengrok",
+          "blurb": "Unofficial model picker for the official Grok Bot client: one model per agent, verified wire maps for Grok/Claude/GLM/Gemini/DeepSeek/local, keys stay on your machine (385★)."
+        },
+        {
+          "name": "jakob-bu/grok-bot-linux-unofficial",
+          "url": "https://github.com/jakob-bu/grok-bot-linux-unofficial",
+          "blurb": "Unofficial Ubuntu/Linux desktop port (deb / AppImage / tarball) merging official app.asar onto Electron 42; resolves latest stable via Cursor update service (23★)."
+        },
+        {
+          "name": "glorics/omarchy-grok-bot",
+          "url": "https://github.com/glorics/omarchy-grok-bot",
+          "blurb": "Omarchy bar plugin for the unofficial Linux Grok Bot client: running/idle state, Cursor CDN update checks, and launch-or-focus (themed x.ai/bot face)."
+        },
+        {
+          "name": "discord-grok-bot-kit",
+          "url": "https://github.com/larry-fuqua/discord-grok-bot-kit",
+          "blurb": "Drop-in Discord listener that wakes a Grok Bot webhook on the owner’s mention, with keep-alive routines and a stdlib reply CLI."
+        },
+        {
+          "name": "parasite6/grok-bot-linux",
+          "url": "https://github.com/parasite6/grok-bot-linux",
+          "blurb": "Unofficial Fedora RPM of Grok Bot 0.30.0 converted from the public .deb (MIT packaging notes; not affiliated with xAI)."
+        },
+        {
+          "name": "grok-bot-0.18-original",
+          "url": "https://github.com/ChHsiching/grok-bot-0.18-original",
+          "blurb": "Untouched Grok Bot 0.18.0 runtime archive: unminified bundles mechanically split into a reproducible per-module tree (study-only; pairs with b-nnett reconstruction, 12★)."
+        },
+        {
+          "name": "stealth-bots/grok-bot-proxies",
+          "url": "https://github.com/stealth-bots/grok-bot-proxies",
+          "blurb": "Public HTTPS hops that forward Slack Events and Linear Agent webhooks into Grok Bot/Cursor routines (Bearer auth, challenge echo, Linear GraphQL reply path); MIT, Vercel."
+        },
+        {
+          "name": "aaravarr/openbot",
+          "url": "https://github.com/aaravarr/openbot",
+          "blurb": "Bring-your-own-model hop for Grok Bot Computer: one-line install, local control UI, and an Official switch that restores stock host behavior (MIT)."
+        },
+        {
+          "name": "Allan-Aa/QuotaRail",
+          "url": "https://github.com/Allan-Aa/QuotaRail",
+          "blurb": "Native macOS Dock-style usage rail; Cursor integration treats Grok Bot weekly usage as the primary ring (also Claude/Codex/Grok; MIT, v0.9.1)."
+        },
+        {
+          "name": "diegocp01/grok_bot_usage_menu_bar",
+          "url": "https://github.com/diegocp01/grok_bot_usage_menu_bar",
+          "blurb": "Native macOS menu-bar app that shows weekly Cursor Grok Bot usage remaining and the reset countdown (battery or percent; MIT)."
+        },
+        {
+          "name": "HxHippy/grok-bot-arch",
+          "url": "https://github.com/HxHippy/grok-bot-arch",
+          "blurb": "Arch Linux installer/updater that pulls the official Grok Bot .deb from Cursor’s signed apt index (Anysphere GPG + SHA256 checks; MIT)."
+        },
+        {
+          "name": "limehawk/omarchy-grok-bot",
+          "url": "https://github.com/limehawk/omarchy-grok-bot",
+          "blurb": "Omarchy bar plugin (limehawk.grok-bot) for official `/usr/bin/grok-bot`: keep-alive, show/hide, and a Hyprland special-workspace park rule (MIT)."
+        },
+        {
+          "name": "enderzcx/grok-bot-switch",
+          "url": "https://github.com/enderzcx/grok-bot-switch",
+          "blurb": "Preview channel switcher for Grok Bot Computer: install via Bot prompt, then flip between native inference and external OpenAI-compatible providers (independent-mode panel)."
+        },
+        {
+          "name": "IgorWarzocha/grok-codex-router",
+          "url": "https://github.com/IgorWarzocha/grok-codex-router",
+          "blurb": "Experimental Sand-VM router that keeps Grok Bot’s UI/tools while sending inference to ChatGPT Codex (per-agent GPT-5.6 routes + local control UI; MIT)."
+        },
+        {
+          "name": "n0nag0n/patb",
+          "url": "https://github.com/n0nag0n/patb",
+          "blurb": "Filing-cabinet CLI for Grok Bot computers: store one decision per record and have routines `patb get/search` instead of stuffing rules into the profile (3★)."
+        },
+        {
+          "name": "Archive228/foreman",
+          "url": "https://github.com/Archive228/foreman",
+          "blurb": "Crew harness/CLI (`foreman`) for hosted Grok Bot teams: declared packs, inspect/sync against gbot JSON, effect ledger, shift reports, and a `.grok-plugin` (MIT, 2★)."
+        },
+        {
+          "name": "falser101/grok-bot-bin",
+          "url": "https://github.com/falser101/grok-bot-bin",
+          "blurb": "AUR package grok-bot-bin that installs official Grok Bot 0.30.0 from Cursor’s Linux .deb (pinned sha256; packaging 0BSD)."
+        },
+        {
+          "name": "ATLTuck/unofficial-grok-bot-arch-installer",
+          "url": "https://github.com/ATLTuck/unofficial-grok-bot-arch-installer",
+          "blurb": "Unofficial Arch/Manjaro installer that turns the official Grok Bot .deb into a native pacman package (install.sh + PKGBUILD)."
+        },
+        {
+          "name": "d-513/grok-bot-nix",
+          "url": "https://github.com/d-513/grok-bot-nix",
+          "blurb": "Nix flake that wraps the official Grok Bot 0.30.0 .deb with Electron 42 (`nix run github:d-513/grok-bot-nix`); NixOS, Home Manager, overlay, and a six-hour pin updater."
+        },
+        {
+          "name": "trac3r00/groken",
+          "url": "https://github.com/trac3r00/groken",
+          "blurb": "macOS CLI/MCP/SKILL.md client that drives official Grok Bot cloud computers over the app’s OAuth and gateway (chat, VNC, exec, routines; MIT, 1★)."
+        },
+        {
+          "name": "codeaashu/grokbot-shim",
+          "url": "https://github.com/codeaashu/grokbot-shim",
+          "blurb": "Run the installed Grok Bot desktop locally on Linux with a local Chrome/XFCE computer and Codex or OpenAI-compatible models (ISC, 19★)."
+        },
+        {
+          "name": "pmcclelland/bot-board",
+          "url": "https://github.com/pmcclelland/bot-board",
+          "blurb": "Shared kanban for humans and Grok Bots (Backlog / To Do / Doing / Done) with REST plus one MCP URL; live at botboard.pmcclel.land."
+        },
+        {
+          "name": "GrokRouter",
+          "url": "https://github.com/promptadvisers/grokrouter",
+          "blurb": "Unofficial reversible router that keeps official Grok Bot 0.30.0 chat, files, and cloud computer while sending a Bot through Codex SDK or OpenRouter."
+        },
+        {
+          "name": "Filicon",
+          "url": "https://github.com/irons163/filicon-bot",
+          "blurb": "Native macOS SwiftUI port of Grok Bot 0.18 product behavior, with Keychain keys, MCP, remote-computer viewing, and no Electron runtime."
+        },
+        {
+          "name": "Grokbot Permissions Helper",
+          "url": "https://github.com/vinxp97/grokbot-permissions-helper",
+          "blurb": "Tiny signed macOS .app so a desktop Grok Bot can get Calendar, Contacts, and Reminders TCC prompts and dump a parseable snapshot without storing secrets in git."
+        },
+        {
+          "name": "grok-bridge",
+          "url": "https://github.com/shihao918/grok-bridge",
+          "blurb": "Unofficial Windows daemon that registers on Grok Bot's UserComputer channel and hands cloud-agent tasks to a local LangGraph or AutoGen pipeline."
+        },
+        {
+          "name": "download-grok-bot",
+          "url": "https://github.com/gprot42/grok-bot-tool",
+          "blurb": "Zero-dependency Python CLI that saves a public x.ai/bot share (profile, packed recipe, skills, routines) to a local folder, reading the macOS Grok Bot session when present."
+        },
+        {
+          "name": "grokbot-openai",
+          "url": "https://github.com/owenisas/grokbot-openai",
+          "blurb": "Unofficial zero-dependency Python login plus local server that turns a Grok Bot PKCE session into OpenAI /v1/chat/completions for Hermes, OpenCode, or curl."
+        },
+        {
+          "name": "omarchy-grokbot (rlimberger)",
+          "url": "https://github.com/rlimberger/omarchy-grokbot",
+          "blurb": "Unofficial Omarchy bar widget (QML) that shows a grokbot-tui inbox and opens bots in the native Rust TUI, not the Electron /usr/bin/grokbot client."
+        },
+        {
+          "name": "huginn",
+          "url": "https://github.com/pyrex41/huginn",
+          "blurb": "Host sidecar so a Grok Bot can attach to live Claude Code, Codex, and Grok Build sessions via a native control-plane MCP (list/watch/prompt/interrupt)."
+        },
+        {
+          "name": "floks-pc",
+          "url": "https://github.com/Adaptive-Liquidity/floks-pc",
+          "blurb": "Standalone Agent Computer Cloud addon so each Grok Bot gets its own isolated provider-backed machine (Runloop Devbox v1) via pair-code MCP."
+        },
+        {
+          "name": "Lots of Agents",
+          "url": "https://github.com/carllippert/lots_of_agents",
+          "blurb": "Native macOS Swift tool that launches multiple signed-in clones of Grok Bot, Cursor, Claude, and ChatGPT from one installed app with private data folders."
+        },
+        {
+          "name": "BotRouter",
+          "url": "https://github.com/lazerusrm/botrouter",
+          "blurb": "Tools that let Grok Bot keep Computer/browser/shell while routing inference through other subscriptions (Cursor, Codex, xAI) from inside the Bot computer."
+        },
+        {
+          "name": "Orbital",
+          "url": "https://github.com/beamnxw/Orbital",
+          "blurb": "Second-brain OS for Grok Bot: one CHIEF plus six decks with human approval; local engine and deck prompts are live, Grok Bot host still in build."
+        },
+        {
+          "name": "Aluvia geo proxy for agents",
+          "url": "https://github.com/aluvia-connect/aluvia",
+          "blurb": "CLI plus SKILL.md that routes a cloud agent's Chrome through residential/mobile IPs by country—docs and install paths explicitly cover Grok Bot (~/.grok) and Cursor."
+        },
+        {
+          "name": "botmigrate",
+          "url": "https://github.com/colesmcintosh/botmigrate",
+          "blurb": "Local Python CLI that converts and syncs bot definitions between Grok Bot share JSON and Hermes Agent profiles (skills, cron, mcp stubs)—no hosted calls."
+        },
+        {
+          "name": "constellation-MaxQ",
+          "url": "https://github.com/0sm0s1z/constellation-MaxQ",
+          "blurb": "One-command MaxQ bootstrap for a Grok Bot computer: idempotent apply/revert installs theme, Ghostty/Chrome Mocha bits, operator CLIs into $HOME/bin, and optional local GOST proxy—without wiping SSH keys or Chrome logins."
+        },
+        {
+          "name": "gbu Grok Bot usage checker",
+          "url": "https://github.com/Kargatharaakash/grok-bot-usage",
+          "blurb": "Zero-dependency CLI (gbu) that checks weekly Grok Bot / Cursor usage and on-demand spend across multiple accounts in one terminal—distinct from the macOS menu-bar usage app already catalogued."
+        },
+        {
+          "name": "grok-bot-mcp control server",
+          "url": "https://github.com/Kargatharaakash/grok-bot-mcp",
+          "blurb": "Local MCP server that lets any MCP client create/message/search Grok Bots, read transcripts, and check usage against the desktop app—companion to gbu, distinct from the catalogued grok-bot-mcp-connector."
+        },
+        {
+          "name": "multiBot CLI teammate factory",
+          "url": "https://github.com/simo255/multiBot",
+          "blurb": "Grok Bot factory template that spawns CLI-delegated teammates (Cursor agent, grok-build, Antigravity, Codex) via CreateAgent with install scripts and workflow examples."
+        },
+        {
+          "name": "grokbot2api Cursor inference proxy",
+          "url": "https://github.com/taowen/grokbot2api",
+          "blurb": "Local OpenAI-compatible proxy that bridges Grok Build to Cursor native inference protobuf with multi-turn tool calls for Responses and Chat Completions."
+        },
+        {
+          "name": "grok-to-hermes profile converter",
+          "url": "https://github.com/jmporchet/grok-to-hermes",
+          "blurb": "TypeScript CLI that converts sharable Grok Bot export data into Hermes Agent profile distributions and installable tar.gz packages."
+        },
+        {
+          "name": "Codex↔Grok MCP second-opinion bridge",
+          "url": "https://github.com/Fato07/codex-grok-mcp",
+          "blurb": "Unofficial local-first MCP bridge that lets Codex ask authenticated Grok CLI for bounded second opinions and optionally message a persistent Grok Bot without exporting secrets."
+        },
+        {
+          "name": "Grok Bot Cloudflare Workers inbox",
+          "url": "https://github.com/ethanolivertroy/grokbot-cloudflare-inbox",
+          "blurb": "Public Cloudflare Workers email-inbox template based on Agentic Inbox so a Grok Bot can connect over MCP to a self-hosted mailbox you deploy yourself."
+        },
+        {
+          "name": "grokbot-fleet MCP manager",
+          "url": "https://github.com/Dahhrk/grokbot-fleet",
+          "blurb": "Open-source MCP server that lists and updates Grok Bots from Cursor—prompts, routines, and skills—via a Fleet bot job inbox because there is no official management API."
+        },
+        {
+          "name": "Omarchy Grok/Cursor usage tabs",
+          "url": "https://github.com/jexmarc/omarchy-spacexai-usage",
+          "blurb": "Omarchy Agents panel service plugin that writes remaining-quota JSON for Grok, Grok Bot (grokbot), and Cursor into the stock usage contract."
+        },
+        {
+          "name": "Cursor Grokbot Helper VSIX",
+          "url": "https://github.com/banana2556/cursor-grokbot-helper",
+          "blurb": "Cursor extension (VSIX) that installs a local Sand client-mode patch so Grok Bot advanced mode works, without uploading session contents."
+        },
+        {
+          "name": "Discord↔Grok Bot gateway",
+          "url": "https://github.com/RudeDude/grokbot-discord",
+          "blurb": "Python Discord gateway that maps mentions or bot names to many private Grok Bots, acks immediately, then wakes them over webhooks for phone-friendly chat."
+        },
+        {
+          "name": "pigeon-mcp Gmail connector",
+          "url": "https://github.com/iXanadu/pigeon-mcp",
+          "blurb": "Self-hosted Gmail MCP for Grok Bot and other clients: multi-account OAuth, real MIME sends with attachments, and reads that avoid dumping base64 into the model."
+        },
+        {
+          "name": "plaude NotePin→GrokBot pipeline",
+          "url": "https://github.com/quolu/plaude",
+          "blurb": "Plaud NotePin S inbox pipeline (Whisper, templates, email) with a SKILL.md meant to run on a Linux Grok Bot computer as the classifier and summarizer."
+        },
+        {
+          "name": "Arena Grok Bot connector MVP",
+          "url": "https://github.com/openlawteam/arena-test",
+          "blurb": "Next.js Arena MVP that pairs user-hosted Grok Bots with short-lived codes, installs a native plugin/MCP, and relays free bot-to-bot room chats."
+        },
+        {
+          "name": "grokbot-BYOK inference adapter",
+          "url": "https://github.com/jroth1111/grokbot-BYOK",
+          "blurb": "Bring-your-own-key inference adapter that routes Grok Bot AI calls through your providers, with a large TypeScript test suite and multi-provider failover."
+        },
+        {
+          "name": "Cursor Account Manager + Grok Bot Sand",
+          "url": "https://github.com/kuk-888/cursor-account-manager",
+          "blurb": "Cursor multi-account VSIX that switches logins, shows Auto/Other/Bot quotas, and can inject Grok Bot Sand Stream routing on Cursor 3.18.9."
+        }
+      ]
+    },
+    {
+      "id": "community-failure-modes",
+      "title": "Community & Failure Modes",
+      "items": [
+        {
+          "name": "Forum: Introducing Grok Bot",
+          "url": "https://forum.cursor.com/t/introducing-grok-bot/168053",
+          "blurb": "Launch thread: what people actually asked in the first 48 hours."
+        },
+        {
+          "name": "Bots are not a security boundary",
+          "url": "https://forum.cursor.com/t/grok-bot-ship-real-session-fences-bots-are-not-a-security-boundary/168476",
+          "blurb": "Must-read: every Bot on the account sees the same logins and files."
+        },
+        {
+          "name": "Always-on workers vs topic threads",
+          "url": "https://forum.cursor.com/t/grok-bots-as-always-on-workers-vs-topic-threads/168183",
+          "blurb": "Community consensus: a Bot is a standing coworker, not a chat tab."
+        },
+        {
+          "name": "Free Cursor Ultra with Grok (Heavy bundle)",
+          "url": "https://forum.cursor.com/t/free-cursor-ultra-with-grok/168286",
+          "blurb": "How SuperGrok Heavy maps onto Ultra + Bot, and what does not stack."
+        },
+        {
+          "name": "Reconnect issue",
+          "url": "https://forum.cursor.com/t/grok-bot-reconnect-issue/168500",
+          "blurb": "Real screenshot of “can't reach your computer” after a reconnect."
+        },
+        {
+          "name": "X login lock on the Bot computer",
+          "url": "https://forum.cursor.com/t/grok-bot-x-login-lock-limit-not-lifting/168541",
+          "blurb": "Cloud computers hit site risk controls. X locks are not theoretical."
+        },
+        {
+          "name": "ExternalShell blocked despite Always allow",
+          "url": "https://forum.cursor.com/t/grok-bot-externalshell-blocked-despite-always-allow/168180",
+          "blurb": "Allow-lists still fail. Do not assume Always allow means always."
+        },
+        {
+          "name": "Deleted Cursor account orphans the Grok link",
+          "url": "https://forum.cursor.com/t/deleted-cursor-account-leaves-grok-link-orphaned-and-blocks-relinking/168783",
+          "blurb": "Account deletion can pin the Bot to a dead Cursor identity."
+        },
+        {
+          "name": "Hacker News discussion",
+          "url": "https://news.ycombinator.com/item?id=49261514",
+          "blurb": "HN thread on the launch — useful for the skeptical read."
+        },
+        {
+          "name": "Native desktop on Arch / Linux",
+          "url": "https://forum.cursor.com/t/native-grok-bot-desktop-app-for-arch-linux-and-linux-generally/168084",
+          "blurb": "Linux desktop is not first-class; this is the request plus community packs."
+        },
+        {
+          "name": "Does Grok Bot support local MCP?",
+          "url": "https://forum.cursor.com/t/does-grok-bot-support-local-mcp-e-g-workflowy/168182",
+          "blurb": "Staff-confirmed: Grok Bot cannot attach local or stdio MCP; use remote HTTP MCP or the cloud browser."
+        },
+        {
+          "name": "Is Grok Bot Down Currently?",
+          "url": "https://forum.cursor.com/t/is-grok-bot-down-currently/168918",
+          "blurb": "Aug 20–21 outage thread: bots fail mid-turn; staff point to Reset Grok Bot’s Computer under Settings → Updates."
+        },
+        {
+          "name": "Grok Bot 0.23.0 first setup: createAgent / Cannot reach your computer",
+          "url": "https://forum.cursor.com/t/grok-bot-0-23-0-first-setup-fails-createagent-can-t-reach-your-computer/169007",
+          "blurb": "Staff: first-setup createAgent can fail before a computer exists (no Reset). A later note: bad ISP DNS for *.cursorvm.com can also block the computer while Cursor API still works — try 1.1.1.1 or 8.8.8.8."
+        },
+        {
+          "name": "Grok Bot: Mac chat works, local computer reported offline",
+          "url": "https://forum.cursor.com/t/grok-bot-mac-chat-works-local-computer-reported-offline/168973",
+          "blurb": "Staff-confirmed split: chat stays up while the Mac local-computer link drops; full quit reconnects, 0.23 shipped a fix."
+        },
+        {
+          "name": "Computer refresh wipes WhatsApp linked-device session in Grok Bot",
+          "url": "https://forum.cursor.com/t/computer-refresh-wipes-whatsapp-linked-device-session-in-grok-bot/169025",
+          "blurb": "Staff: computer refresh keeps /workspace, the browser profile, and ~/.config — not ~/.local/state, so WhatsApp link sessions vanish."
+        },
+        {
+          "name": "Grok Bot cloud workspace after trial exhaustion",
+          "url": "https://forum.cursor.com/t/grok-bot-cloud-workspace-inaccessible-after-trial-exhaustion-ticket-t-e97475-pending/169010",
+          "blurb": "Staff: trial end deletes nothing; bots stop replying, but Computer view still lets you export until you Reset."
+        },
+        {
+          "name": "Reset Computer window opens behind Settings (0.24.0)",
+          "url": "https://forum.cursor.com/t/the-reset-computer-window-opens-behind-the-settings-window-and-is-invisible-and-unclickable/169177",
+          "blurb": "Staff: the Reset confirm dialog that opened behind Settings is fixed in the latest desktop; Tab then Enter was the workaround on older builds."
+        },
+        {
+          "name": "Grok Bot webhooks failing with internal server error",
+          "url": "https://forum.cursor.com/t/grok-bot-webhooks-are-failing-with-internal-server-error/169323",
+          "blurb": "Staff: webhook POSTs to api2.cursor.sh returned internal error; they rolled back a change and the same curl started working again."
+        },
+        {
+          "name": "Grok Bot Gmail connector cannot download attachment bytes",
+          "url": "https://forum.cursor.com/t/grok-bot-gmail-connector-can-list-attachments-but-cannot-download-their-bytes/169261",
+          "blurb": "Staff: the Gmail connector lists attachment metadata only; no download tool. Use the cloud browser or park the file in Drive."
+        },
+        {
+          "name": "Does logging into Grok Bot count as a separate computer?",
+          "url": "https://forum.cursor.com/t/does-logging-into-grokbot-count-as-a-separate-computer/169289",
+          "blurb": "Staff: a Grok Bot login is its own Cursor device, and the cloud workspace can count as a second one toward Too many computers."
+        },
+        {
+          "name": "Grok Bot Notion plugin OAuth Invalid redirect_uri",
+          "url": "https://forum.cursor.com/t/grok-bot-notion-plugin-oauth-invalid-redirect-uri/169234",
+          "blurb": "Staff: Notion sign-in is stored on the account, so retry fails; Re-authenticate (not Connect) clears it and OAuth succeeds."
+        },
+        {
+          "name": "Grok Bot now has Channels",
+          "url": "https://forum.cursor.com/t/grok-bot-threads-ui-is-unusable-needs-a-slack-style-right-panel/168315",
+          "blurb": "Staff: Grok Bot now has Channels (sidebar +, up to 6 bots per named space). A thread view that keeps the main chat visible is still in progress."
+        },
+        {
+          "name": "Stuck Reconnecting can be a local cursorvm.com block",
+          "url": "https://forum.cursor.com/t/grok-bot-desktop-on-macos-is-permanently-stuck-on-reconnecting-to-your-computer/169119",
+          "blurb": "Staff: the cloud computer was healthy; the Mac never finished reconnect because traffic to cursorvm.com was dropped (VPN or firewall)."
+        },
+        {
+          "name": "Agent never surfaces Take over for login",
+          "url": "https://forum.cursor.com/t/grok-bot-failed-to-open-its-computer-and-couldnt-recognize-the-issue/169179",
+          "blurb": "Staff: login tasks should hand you the computer; ask it to hand me your computer, and skip passkeys with Try another way."
+        },
+        {
+          "name": "Grok Bot Cursor Agent usage and model selection",
+          "url": "https://forum.cursor.com/t/query-about-grok-bot-cursor-agent-usage-and-model-selection/169160",
+          "blurb": "Staff: agents Grok Bot starts run in your Cursor account and burn Cursor plan usage; Grok Bot chat has a separate allowance; unnamed-model agents use your Cloud Agent default."
+        },
+        {
+          "name": "How to track Grok Bot releases",
+          "url": "https://forum.cursor.com/t/multiple-questions/169338",
+          "blurb": "Staff: latest stable is 0.24.0; no public changelog yet (Settings → Updates plus X); there is no official Debian/Fedora desktop app."
+        },
+        {
+          "name": "Grok Bot hanging at Cleaning up after reset",
+          "url": "https://forum.cursor.com/t/grok-bot-hanging-at-cleaning-up-phase-after-resetting/169364",
+          "blurb": "Staff: the reset usually finishes on the backend; the dialog just misses the done signal at Cleaning up. Fully quit and reopen, then Recover — don’t Reset again."
+        },
+        {
+          "name": "Grok Bot 0.24.0 Windows white flash then the app closes",
+          "url": "https://forum.cursor.com/t/grok-bot-0-24-0-windows-10-x64-white-screen-flashes-then-app-closes/169380",
+          "blurb": "Staff: the cloud computer was healthy; a white flash then the process dying is usually local (endpoint security, locked %APPDATA%, or a partial install), not GPU."
+        },
+        {
+          "name": "Bots workspace looks empty after a rebuild",
+          "url": "https://forum.cursor.com/t/bots-workspace-missing-all-things-getting-new-user-experience/169448",
+          "blurb": "Staff: after a rebuild, logging in while the computer is still starting can show first-run UI; bots are not gone. Fully quit and reopen, and don’t create your first bot in that window."
+        },
+        {
+          "name": "No compact / new session; full transcript is sent each turn",
+          "url": "https://forum.cursor.com/t/grok-bot-prune-compact-an-agent-s-context-without-creating-a-new-bot/168333",
+          "blurb": "Staff: desktop and iOS have no explicit Compact or same-bot new session. Auto-summary is not compact; the full transcript is sent, and there is no model picker."
+        },
+        {
+          "name": "Overbooked then Bot failed to respond is model load",
+          "url": "https://forum.cursor.com/t/grok-bot-is-broke/169537",
+          "blurb": "Staff: “overbooked” then “Bot failed to respond” is service-side Grok model load, not your account, usage, or computer; wait for a quieter window or reset again."
+        },
+        {
+          "name": "Black screen after setup: hosted computer never finished starting",
+          "url": "https://forum.cursor.com/t/grok-bot-gets-stuck-on-black-screen-after-setting-up-grok-bots-computer/169593",
+          "blurb": "Staff: black screen after “Setting up Grok Bot’s computer” means the hosted computer never finished starting; reinstall will not help, and if the same account still works on iOS do not Reset (that drops bots)—wait for a staff rebuild."
+        },
+        {
+          "name": "0.27.0 Windows: local host stays disconnected after clean registration",
+          "url": "https://forum.cursor.com/t/grok-bot-0-27-0-windows-local-host-permanently-isn-t-connected-after-clean-registration-new-identity-server-side/169594",
+          "blurb": "Staff: on 0.27.0 Windows the agent can say the local machine isn’t connected even after a clean daemon registration; fully quit every Grok process and launch once, and if it still fails it is service-side."
+        },
+        {
+          "name": "Webhook URL and sender key are desktop-only, not on iOS",
+          "url": "https://forum.cursor.com/t/webhook-url-missing-on-ios/169589",
+          "blurb": "Staff: a webhook routine’s POST URL and sender key only appear on the Grok Bot desktop app, not iOS; open the trigger card there (keep the desktop app updated)."
+        },
+        {
+          "name": "Official X plugin auth is broken on desktop, Cloud, and Grok Bot",
+          "url": "https://forum.cursor.com/t/official-x-plugin-auth-is-broken-on-cursor-cloud-grok-bot-and-desktop-refresh/169592",
+          "blurb": "Staff: official X plugin connect/refresh is failing across desktop, Cloud Agents, and Grok Bot (including “connected but tools=0”); no clean workaround while they fix X-side app config."
+        },
+        {
+          "name": "Weekly Grok Bot usage can spill into paid On-Demand with no warning",
+          "url": "https://forum.cursor.com/t/grok-bot-gives-no-warning-before-weekly-usage-spills-into-paid-on-demand/169679",
+          "blurb": "Staff: spend order is Grok Bot weekly allowance, then referral/promo credits, then paid On-Demand, with no in-app warning; a $0 On-Demand cap does not block credits, so pause near 100% weekly meter if you want no spill."
+        },
+        {
+          "name": "Pro weekly pool is separate; overflow hits shared On-Demand",
+          "url": "https://forum.cursor.com/t/grok-bot-spend-cursor-usage-i-cant-accept-it/169796",
+          "blurb": "Staff correction: on Pro, Grok Bot has its own included weekly pool, separate from Cursor plan usage; overflow still bills the shared On-Demand pool, so set a $0 On-Demand cap if you want no paid spill."
+        },
+        {
+          "name": "Access is live for paid plans, not legacy request-based",
+          "url": "https://forum.cursor.com/t/cursor-says-grok-bot-is-included-with-pro-now-do-you-actually-have-access-yet/169808",
+          "blurb": "Staff: Grok Bot is live for all paid individual plans (Pro / Pro+ / Ultra) and self-serve Teams with no percent or region rollout; legacy request-based pricing does not get it unless you opt into usage-based."
+        },
+        {
+          "name": "Gmail plugin OAuth is broken; authorize from Cursor",
+          "url": "https://forum.cursor.com/t/grok-bot-unable-to-authenticate-via-gmail-plugin/169782",
+          "blurb": "Staff: the Grok Bot Gmail plugin OAuth is broken; authorizing Gmail from Cursor uses a different path and the connection is shared with Grok Bot until the plugin is fixed."
+        },
+        {
+          "name": "iOS 1.3.2 sends a question list on the first tap",
+          "url": "https://forum.cursor.com/t/multiple-choice-list-doesn-t-work-on-grok-bot-mobile/169830",
+          "blurb": "Staff: iOS 1.3.2 sends a question list as soon as you tap one option; multi-select before send needs a newer Grok Bot app build."
+        },
+        {
+          "name": "Grok-launched agents hide behind the Source filter",
+          "url": "https://forum.cursor.com/t/grok-bot-open-cloud-agent-cards-in-the-browser-and-show-grok-launched-agents-on-agents/169754",
+          "blurb": "Staff: Grok-launched cloud agents do appear on cursor.com/agents — enable the Source → Grok Bot filter; middle-click “Open in Cursor” opens the same agent in the browser."
+        },
+        {
+          "name": "Days-long “Can’t reach your computer” needs a staff restore",
+          "url": "https://forum.cursor.com/t/grok-bot-can-t-reach-your-computer-for-48-hours/169450",
+          "blurb": "Staff: a days-long “Can’t reach your computer” can be a stuck hosted box that Reset / Recover / reinstall cannot clear; staff restores it on their side, then fully quit and reopen the app."
+        },
+        {
+          "name": "Fresh-install white screen is a local profile, not the cloud box",
+          "url": "https://forum.cursor.com/t/grok-bot-shows-white-screen-upon-opening-and-is-unusable/169815",
+          "blurb": "Staff: a fresh-install white window is a local profile bug, not a stuck cloud computer; fully quit, rename ~/Library/Application Support/Grok Bot to Grok Bot.bak, then relaunch — reinstall alone will not clear it."
+        },
+        {
+          "name": "Grok-spawned Cloud Agents can ignore your non-Fast default",
+          "url": "https://forum.cursor.com/t/cloud-cursor-agents-spawned-by-grok-bot-do-not-fully-respect-the-user-selected-default-model-and-speed-preferences/169746",
+          "blurb": "Staff: Grok-spawned Cursor Cloud Agents can start in Fast even when your default is not; hover Cursor Grok 4.6 → Edit and uncheck Fast, and switch the follow-up box back if it flips."
+        },
+        {
+          "name": "Local execution offline while chat still works",
+          "url": "https://forum.cursor.com/t/local-execution-stays-offline-while-chat-still-works/169821",
+          "blurb": "Staff: the local-exec helper can register then drop its server link, so the Mac shows offline while chat still works; fully quit and reopen, and if it fails again send ~/.grokbot/local-exec-daemon.log."
+        },
+        {
+          "name": "Reset stuck at 50% Starting is a server-side bad state",
+          "url": "https://forum.cursor.com/t/currently-down-grok-bot-retrying-back-end-vm/169834",
+          "blurb": "Staff: a Reset hung at 50% “Starting Grok Bot’s computer” is a bad hosted state, not your install; Bot data is not lost — wait a few minutes, and reply on the thread if it still fails."
+        },
+        {
+          "name": "Local CLI orchestration and always-allow are intended use",
+          "url": "https://forum.cursor.com/t/bot-as-the-orchestrator-of-local-clis/169588",
+          "blurb": "Staff: local-CLI orchestration (including Cursor CLI), always-allow local execution, and authenticated browser sessions are intended Grok Bot use; third-party ToS stay separate, bots share one computer, and a continuous Pro orchestrator burns the weekly pool fast."
+        },
+        {
+          "name": "Local-computer helper fails registration",
+          "url": "https://forum.cursor.com/t/grok-bot-cannot-access-my-local-computer/169924",
+          "blurb": "Staff: the local-computer helper can start then fail registration after an update; full-quit plus sign-out recreates it, and desktop 0.31.0 is rolling out."
+        },
+        {
+          "name": "Mac black screen is local DNS not cloud",
+          "url": "https://forum.cursor.com/t/grok-bot-desktop-never-joins-existing-ios-bots-latest-app-stuck-on-black-screen/169940",
+          "blurb": "Staff: Mac 0.30.0 black screen with working iOS bots is a local network/DNS block to the healthy cloud computer, not a recreate-computer problem."
+        },
+        {
+          "name": "Grok Bot does not spend Pro $20 IDE credit",
+          "url": "https://forum.cursor.com/t/is-grok-bot-usage-separate-from-cursor-plan/169658",
+          "blurb": "Staff: Pro’s $20 Other Models credit is not Grok Bot’s weekly pool; dashboard “Included in Pro” is shared billing — and with On-Demand off the Bot can still drain Cursor credits (referral/promo) before stopping (see 169982)."
+        },
+        {
+          "name": "Does GrokBot not have access to my Cursor Codebase?",
+          "url": "https://forum.cursor.com/t/does-grokbot-not-have-access-to-my-cursor-codebase/169684",
+          "blurb": "Staff: Grok Bot has no codebase plugin and does not index your repo; coding work is handed to a Cursor Cloud Agent on a GitHub-connected account (Dashboard → Integrations), with an optional GitHub PAT connector for read-only, auto-created repos from scratch, and no Origin access yet."
+        },
+        {
+          "name": "Phantom in Grok Bot is a Mess",
+          "url": "https://forum.cursor.com/t/phantom-in-grok-bot-is-a-mess/169930",
+          "blurb": "Staff: the Phantom plugin runs on @phantom/mcp-server and each new auth creates a separate dedicated agent wallet, not your personal Phantom wallet, so reconnects show a new address while funded funds stay on the old agent wallet (recover via chat history or Phantom Support)."
+        },
+        {
+          "name": "Grokbot custom connectors",
+          "url": "https://forum.cursor.com/t/grokbot-custom-connectors/169965",
+          "blurb": "Staff: there is no settings form for custom connectors; tell the Bot in chat to add an MCP server (public HTTPS streamable HTTP/SSE), confirm the details, and new tools appear from the next message — localhost-only MCP on your PC is unreachable from the cloud computer."
+        },
+        {
+          "name": "Grok Bot: Drive MCP should write Google Docs body and Sheet cells, not only file metadata",
+          "url": "https://forum.cursor.com/t/grok-bot-drive-mcp-should-write-google-docs-body-and-sheet-cells-not-only-file-metadata/169971",
+          "blurb": "Staff: in-place Google Doc/Sheet editing lives in the dedicated Docs and Sheets connectors (edit content against the existing file ID), while Drive is file-level only; add both from the connector marketplace with the same Google account."
+        },
+        {
+          "name": "Blank screen after opening Grok Bot",
+          "url": "https://forum.cursor.com/t/blank-screen-after-opening-grok-bot/169966",
+          "blurb": "Staff: a blank/white screen usually means the desktop app cannot reach the cloud computer; Cloudflare WARP can intercept that traffic even on a hotspot — turn WARP off or use split tunneling/excluded routes, and prefer builds after 0.28.0 that show an error+retry instead of a blank screen."
+        },
+        {
+          "name": "Cloud Agents created in Grok Bot not displayed in Cursor",
+          "url": "https://forum.cursor.com/t/cloud-agents-created-in-grok-bot-not-displayed-in-cursor/169939",
+          "blurb": "Staff: Cloud Agents launched from Grok Bot keep running under your account but stay hidden on cursor.com/agents and the desktop sidebar until you enable filter Source > Grok Bot (once per client: web and desktop)."
+        },
+        {
+          "name": "Can't reach your computer from last 72 hours",
+          "url": "https://forum.cursor.com/t/cant-reach-your-computer-from-last-72-hours/169970",
+          "blurb": "Staff: when the cloud computer is healthy but the app still says Can’t reach, set both IPv4 and IPv6 DNS to 1.1.1.1/8.8.8.8 (JioFiber routers often keep IPv6 DNS) or confirm via a phone hotspot on another carrier."
+        },
+        {
+          "name": "Grok Bot 0.30.0 stuck on \"Setting up your Grok Bot\" on macOS",
+          "url": "https://forum.cursor.com/t/grok-bot-0-30-0-stuck-on-setting-up-your-grok-bot-on-macos/169981",
+          "blurb": "Staff: endless Setting up your Grok Bot on a free Cursor plan means no hosted machine is provisioned — needs Pro/Pro+/Ultra/Teams or linked SuperGrok/Plus/Heavy; the spinner instead of an access message is a known UX bug."
+        },
+        {
+          "name": "Grok Bot Zoom plugin OAuth hardcodes http://localhost:8787/callback — Zoom rejects hostname localhost (error 4700)",
+          "url": "https://forum.cursor.com/t/grok-bot-zoom-plugin-oauth-hardcodes-http-localhost-8787-callback-zoom-rejects-hostname-localhost-error-4700/169991",
+          "blurb": "Staff: the catalog Zoom plugin OAuth hardcodes http://localhost:8787/callback, which Zoom rejects (error 4700); no user workaround until the redirect moves off localhost (e.g. 127.0.0.1)."
+        },
+        {
+          "name": "Unable to reconnect to my Grok Bot's computer after attempted update",
+          "url": "https://forum.cursor.com/t/unable-to-reconnect-to-my-grok-bots-computer-after-attempted-update/170000",
+          "blurb": "Staff: bots/files/logins live on the remote computer; Can’t Reach plus failed Recover/Reset often means a lost app login session — fully quit, sign out/in (or reinstall and sign in), since Recover/Reset need a working session."
+        },
+        {
+          "name": "Grok Bot Computer Stuck in Partial State — Reset Failed, Existing Cloud Computer Unreachable",
+          "url": "https://forum.cursor.com/t/grok-bot-computer-stuck-in-partial-state-reset-failed-existing-cloud-computer-unreachable/170006",
+          "blurb": "Staff: hold off on Reset/Recover after a scary partial-state dialog — data is remote and failed resets often failed on the app side; re-login, verify via mobile on cellular, and try public DNS / disable VPN before resetting."
+        },
+        {
+          "name": "Grok Bot couldn't finish setup",
+          "url": "https://forum.cursor.com/t/grok-bot-couldnt-finish-setup/170010",
+          "blurb": "Staff: Can’t reach your computer on Linux Grok Bot 0.18.0 is not your network — Grok Bot is not officially available on Linux yet and that old build is rejected; supported platforms are macOS, Windows, and iOS."
+        },
+        {
+          "name": "Grok Bot 0.30.0 (Windows) — setup fails with Can't reach your computer, all network checks pass",
+          "url": "https://forum.cursor.com/t/grok-bot-0-30-0-windows-setup-fails-with-cant-reach-your-computer-all-network-checks-pass/170035",
+          "blurb": "Staff: the app reaches a per-computer subdomain under cursorvm.com, not the apex — if nslookup test123.us8.cursorvm.com is Query refused while the apex works, change DNS on both IPv4 and IPv6 (router RA can keep the ISP resolver even after 1.1.1.1)."
+        },
+        {
+          "name": "Grok Bot draining Cursor credit pool",
+          "url": "https://forum.cursor.com/t/grok-bot-draining-cursor-credit-pool/169982",
+          "blurb": "Staff: after the Grok Bot weekly pool on Pro+ is gone, usage keeps going onto Cursor credits (referral/promo) first, then on-demand if enabled; a $0 on-demand cap stops paid overage but not credit drain, and claude-opus / grok-4.6-high-fast lines are models the Bot picks server-side."
+        },
+        {
+          "name": "Grok Bot templates: preview shows skills, but the export ships skills: [] — skills are never delivered",
+          "url": "https://forum.cursor.com/t/grok-bot-templates-preview-shows-skills-but-the-export-ships-skills-skills-are-never-delivered/169911",
+          "blurb": "Staff: Bot template preview lists skills, but import does not apply them (export ships skills: []); until that is fixed, copy the skill body from the preview and ask the new Bot to recreate it."
+        },
+        {
+          "name": "Cloud computer wipes packages after rebuild",
+          "url": "https://forum.cursor.com/t/cloud-computer-wipes-packages-after-rebuild/169847",
+          "blurb": "Staff: Update Computer keeps files and logins but rebuilds the OS image, so apt/apps/daemons are gone; the box also sleeps when idle (background processes die) and can auto-update during idle — keep a package list in a file and ask the Bot to reinstall after an update."
+        },
+        {
+          "name": "/review-bugbot is missing on cloud agents launched from Grok Bot",
+          "url": "https://forum.cursor.com/t/review-bugbot-is-missing-on-cloud-agents-launched-from-grok-bot/170096",
+          "blurb": "Staff: /review and /review-bugbot do not attach to cloud agents created by Grok Bot (decided at create time); start a new agent from cursor.com/agents on the same PR branch and include /review-bugbot there."
+        },
+        {
+          "name": "Grok Bot Bug Report (empty roster / black screen after reconnect)",
+          "url": "https://forum.cursor.com/t/grok-bot-bug-report/170104",
+          "blurb": "Staff: empty bot list and black/white loading after reconnect usually means the Agent Computer was slow waking from sleep—nothing deleted; do not Reset; fully quit and relaunch once the box is awake."
+        },
+        {
+          "name": "Grokbot and GitHub (Connected but Authorization header badly formatted)",
+          "url": "https://forum.cursor.com/t/grokbot-and-github/170137",
+          "blurb": "Staff: GitHub connector shows Connected but fails with “Authorization header is badly formatted”—tracked bug; workaround is press-and-hold the account → Remove, then reconnect and sign in again."
+        },
+        {
+          "name": "Authorization death by 1000 clicks",
+          "url": "https://forum.cursor.com/t/authorization-death-by-1000-clicks/170087",
+          "blurb": "Staff: “Always allow” for local-computer actions lives only in the desktop app on that machine; iOS can only one-time-approve, and those approvals clear on every new message—set Always Allow under desktop Settings → Execution on Local Computer."
+        },
+        {
+          "name": "Wrangler/box auth reminder stays stuck after auth already succeeded via another path",
+          "url": "https://forum.cursor.com/t/grok-bot-wrangler-box-auth-reminder-stays-stuck-after-auth-already-succeeded-via-another-path/170052",
+          "blurb": "Staff: the “help on its computer” / Waiting-for-you reminder only clears when you answer that card (“I’m done, continue” or Skip) or send any chat message—it does not auto-dismiss if the Bot finished login another way."
+        },
+        {
+          "name": "Fastmail Filters & Rules Save is a silent no-op (Chrome on the box)",
+          "url": "https://forum.cursor.com/t/grok-bot-fastmail-filters-rules-save-is-a-silent-no-op-chrome-on-the-box/170018",
+          "blurb": "Staff: Fastmail Settings → Filters & Rules Save on the box Chrome fires zero network requests; workaround is manage filters/Sieve via Fastmail’s API (JMAP) with a token—the mail helper already uses that path successfully."
+        },
+        {
+          "name": "VPN, SSO, Passkey, and YubiKey Within Grokbot",
+          "url": "https://forum.cursor.com/t/vpn-sso-passkey-and-yubikey-within-grokbot/170148",
+          "blurb": "Staff: Grok Bot’s cloud computer cannot join a corporate VPN today (don’t install a VPN client on it — that can knock the box offline); Atlassian Cloud / public SSO works via browser takeover (Okta etc.), YubiKey works on macOS/Windows under Settings → Security Key, and internal VPN-only sites need Execution on Local Computer on your VPN’d machine."
+        },
+        {
+          "name": "Unable to connect",
+          "url": "https://forum.cursor.com/t/unable-to-connect/170123",
+          "blurb": "Staff: chats and agents live on the hosted Grok Bot computer — during an outage recovery that computer can be temporarily replaced with a blank one (roster looks empty); Cursor can restore it from saved data, then quit and reopen the app to see agents/history again."
+        },
+        {
+          "name": "GrokBot Linux Execution on Local Computer not working",
+          "url": "https://forum.cursor.com/t/grokbot-linux-execution-on-local-computer-not-working/170157",
+          "blurb": "Staff: empty ListMachines / local execution failing on Grok Bot 0.30.0 Linux is a known bug with a fix already merged for the next desktop update; interim workaround is an unlocked system keyring (gnome-keyring or KWallet), fully quit leftover Grok Bot processes, then relaunch."
+        },
+        {
+          "name": "New report, Windows, leftover daemon on 0.30.0",
+          "url": "https://forum.cursor.com/t/new-report-windows-leftover-daemon-on-0-30-0/170121",
+          "blurb": "Staff: 0.30.0 fixed one macOS daemon exit/no-respawn path, but Windows leftover local-exec-daemon is a different known failure; when the machine is unreachable, Quit from the tray, end remaining “Grok Bot” and local-exec-daemon processes in Task Manager, relaunch, and wait about a minute to re-register."
+        },
+        {
+          "name": "Grok bot failed to respond",
+          "url": "https://forum.cursor.com/t/grok-bot-failed-to-respond/170235",
+          "blurb": "Staff (kevinn): “Bot failed to respond” on every bot—including fresh copies—means the shared cloud computer is stuck, not something you can fix by restarting or recreating bots; after staff recovery, fully quit (Cmd+Q / force-close iOS), update every install, keep one open, and test in a new chat."
+        },
+        {
+          "name": "Grok Bot 0.30.0 Stuck on Black Loading Screen During Initial Setup on Mac",
+          "url": "https://forum.cursor.com/t/grok-bot-0-30-0-stuck-on-black-loading-screen-during-initial-setup-on-mac/170251",
+          "blurb": "Staff (Colin): Team admin role alone does not provision a Grok Bot computer — Grok Bot is included with a paid team seat (Standard or Premium), not the admin role. If the signed-in account has no seat, the app sits on the black loading screen with no computer to reset. Fix: assign yourself a seat in Cursor dashboard Members, fully quit and reopen Grok Bot; or sign in with a seated team account."
+        },
+        {
+          "name": "Grok Bot: weekly usage hits 100% after bot-to-bot reviews the user asked to stop",
+          "url": "https://forum.cursor.com/t/grok-bot-weekly-usage-hits-100-after-bot-to-bot-reviews-the-user-asked-to-stop/170271",
+          "blurb": "Staff (mohitjain): Each bot-to-bot message burns a weekly-usage turn; asking bots in chat to “stay quiet” is only a hint. Reliable fixes: run work in one Command Agent with subagents (they finish and stop), and delete unused specialist bots (idle bots can still be woken; deleting also clears that bot’s chat — save first). Double limit banners are blocked retries, not double charges."
+        },
+        {
+          "name": "Grok Bot Windows — fresh profile setup fails with “Can’t reach your computer” after backend fix",
+          "url": "https://forum.cursor.com/t/grok-bot-windows-fresh-profile-setup-fails-with-can-t-reach-your-computer-after-backend-fix/170281",
+          "blurb": "Staff (deanrie): Grok Bot ignores the Windows system proxy / local HTTP proxy and connects direct to the Agent Computer — so DNS/TCP/CONNECT checks through a proxy can pass while the app fails. Use VPN/proxy TUN (Enhanced/Global/virtual adapter) mode, then verify with curl.exe --noproxy \"*\" -I https://test123.<region>.cursorvm.com (expect 404 awselb/2.0). User confirmed TUN fixed setup. Region may be us10 not us8."
+        },
+        {
+          "name": "Grok Bot 0.30.0 stuck on black loading screen on Windows 11",
+          "url": "https://forum.cursor.com/t/grok-bot-0-30-0-stuck-on-black-loading-screen-on-windows-11/170294",
+          "blurb": "Staff (Colin): Healthy cloud computer + black spinner on both LAN and hotspot can be Zscaler Client Connector still tunneling (including on hotspot). Quit Grok Bot, pause/disable Zscaler, relaunch; ask IT to allowlist/exclude SSL inspection for *.cursorvm.com and **.cursorvm.com (both levels)."
+        },
+        {
+          "name": "Grok Bot cannot attach inline images to Cursor bug reports (chat drop and forum upload)",
+          "url": "https://forum.cursor.com/t/grok-bot-cannot-attach-inline-images-to-cursor-bug-reports-chat-drop-and-forum-upload/170255",
+          "blurb": "Staff (mohitjain): To get a screenshot into Grok Bot chat, use the composer + button (or drag a saved file) and wait for the thumbnail before send — drag-from-browser/other-app or Enter-before-thumbnail usually drops it. Forum upload by the assistant is a current limitation; attach the screenshot yourself or reply to support email."
+        },
+        {
+          "name": "Grok Bot routines don't auto-run on schedule",
+          "url": "https://forum.cursor.com/t/grok-bot-routines-dont-auto-run-on-schedule/170358",
+          "blurb": "Staff (Colin): Editing bot instructions or which platform created a routine does not break schedules — late “Next run: Run now” usually means the slot fired but sat in a queue (often 10–37 min), and some runs finish without posting to chat; don’t recreate routines; message the bot for an on-demand check-in."
+        },
+        {
+          "name": "Grok Bot 0.30.0 — Agent Computer unreachable after Update, Recover, and Reset all failed",
+          "url": "https://forum.cursor.com/t/grok-bot-0-30-0-agent-computer-unreachable-after-update-recover-and-reset-all-failed/170258",
+          "blurb": "Staff (kevinn): An “Aw, Snap!” Chrome page on the Bot screen after idle wake is the Bot’s browser crashing inside a healthy computer — reload the tab or ask the Bot to reload, fully quit/reopen Grok Bot if needed, and do not run Update/Recover/Reset; idle machines take a moment to wake and a first message can miss, so resend is safe."
+        },
+        {
+          "name": "Grok Bot Mac “unavailable” after password reset (expired session)",
+          "url": "https://forum.cursor.com/t/grok-bot-mac-blocked-after-password-change-app-says-unavailable-spending-shows-supergrok-plus/170389",
+          "blurb": "Staff (deanrie): After a password reset, Grok Bot on Mac can keep an expired session and show “isn’t available on this account yet” even though SuperGrok/Cursor access and your cloud computer/Bots are fine — Log out from the bottom of that screen, fully Quit (Cmd+Q), reopen and Sign in with the new password; Check Access→download is a misleading expired-session UI, not a missing entitlement."
+        },
+        {
+          "name": "Homepage “Approval needed” stuck after card timeout",
+          "url": "https://forum.cursor.com/t/grok-bot-approval-needed-stays-on-agent-view-homepage-when-coder-has-nothing-to-approve/170127",
+          "blurb": "Staff (Colin): A homepage “Approval needed” tile with nothing pending usually means an approval card timed out (~10 minutes unanswered); open the agent and send a short message or restart the app to clear a stuck badge — the tile is supposed to clear when the card expires."
+        },
+        {
+          "name": "File contents and grokbot — viewer Copy vs Download",
+          "url": "https://forum.cursor.com/t/file-contents-and-grokbot/170421",
+          "blurb": "Staff (Colin): The in-app file viewer only offers Download today; for .md/.txt you can click-drag to select and Cmd/Ctrl+C, while .docx/.pdf won’t highlight — ask the Bot to paste the full text into chat and use the message Copy action as a workaround."
+        },
+        {
+          "name": "Grok Bot Canva connector failing — Invalid redirect URI on iOS",
+          "url": "https://forum.cursor.com/t/grok-bot-canva-connector-failing/170431",
+          "blurb": "Staff (deanrie): Canva “Invalid redirect URI” on Grok Bot iOS 1.4.0 is a known app-link vs web-redirect mismatch (not your Canva settings) — connect Canva from desktop Grok Bot on the same account and the connector syncs to iPhone."
+        },
+        {
+          "name": "Local computer looks connected but CopyFromBox/Shell flaps after large transfer timeout",
+          "url": "https://forum.cursor.com/t/grok-bot-local-computer-execution-looks-connected-in-settings-but-is-not-actually-usable-for-file-i-o/169877",
+          "blurb": "Staff (deanrie): A large CopyFromBox (or timed-out Shell) can drop the local machine from the agent list for ~1 minute while Settings still says connected — split big copies, wait a minute before retrying, and if stuck Cmd+Q then pkill -f local-exec-daemon and reopen."
+        }
+      ]
+    },
+    {
+      "id": "related-lists",
+      "title": "Related Lists",
+      "items": [
+        {
+          "name": "ZeroPointRepo/awesome-grok-bot",
+          "url": "https://github.com/ZeroPointRepo/awesome-grok-bot",
+          "blurb": "Day-one 19-entry directory, strong on marketplace format and self-hosted runtimes."
+        },
+        {
+          "name": "awesome-mcp-servers",
+          "url": "https://github.com/punkpeye/awesome-mcp-servers",
+          "blurb": "MCP server catalog. Grok Bot follows Cursor plugin/MCP policy."
+        },
+        {
+          "name": "awesome-claude-code",
+          "url": "https://github.com/hesreallyhim/awesome-claude-code",
+          "blurb": "Skill-format sibling ecosystem; many SKILL.md packs are conceptually portable."
+        },
+        {
+          "name": "botdirectory.ai (announced)",
+          "url": "https://x.com/aiedge_/status/2089895147068924385",
+          "blurb": "Community directory of live Bots — treat the site as beta."
+        },
+        {
+          "name": "mergisi/awesome-grokbot",
+          "url": "https://github.com/mergisi/awesome-grokbot",
+          "blurb": "56 copy-paste Bot profiles and starter teams you drop into a Setup Bot."
+        },
+        {
+          "name": "elie222/botdirectory.ai",
+          "url": "https://github.com/elie222/botdirectory.ai",
+          "blurb": "Community prompt directory (153 stars): paste a listing into Grok Bot and it sets itself up as a scheduled bot."
+        },
+        {
+          "name": "rosterroom",
+          "url": "https://github.com/codejunkie99/rosterroom",
+          "blurb": "82 copy-paste agent-team rosters for Grok Bot, with ownership lanes and human approval gates."
+        },
+        {
+          "name": "usegrokbot.com",
+          "url": "https://github.com/a70win-wq/usegrokbot",
+          "blurb": "Searchable library of real Grok Bot workflows with a live discover site at usegrokbot.com."
+        },
+        {
+          "name": "GrokBotDev / grokbot.dev",
+          "url": "https://github.com/ZeroPointRepo/GrokBotDev",
+          "blurb": "Agent-run directory of prompts, plugins, and use cases; PRs are the write API, with JSON/RSS/MCP reads."
+        },
+        {
+          "name": "Anil-matcha/awesome-grok-bot",
+          "url": "https://github.com/Anil-matcha/awesome-grok-bot",
+          "blurb": "Large template library of ready-to-paste Grok Bot prompts across productivity, sales, marketing, and ops."
+        },
+        {
+          "name": "ellelion/botteams",
+          "url": "https://github.com/ellelion/botteams",
+          "blurb": "Public Grok Bot team directory: copy one installer prompt and it creates the named Bots, group chat, and routines."
+        },
+        {
+          "name": "travisrr/really.bot",
+          "url": "https://github.com/travisrr/really.bot",
+          "blurb": "Public Grok Bot job board at really.bot: verified runs get a serial, and tagging @tryreallybot on X imports a thread."
+        },
+        {
+          "name": "thomasbek3/hermes-bot-kit",
+          "url": "https://github.com/thomasbek3/hermes-bot-kit",
+          "blurb": "Hermes Desktop plugins that copy the Grok Bot feel: iMessage-style bubbles plus a live window into each bot’s computer (52★, not affiliated with xAI)."
+        },
+        {
+          "name": "Ritesh-Root/grok-template",
+          "url": "https://github.com/Ritesh-Root/grok-template",
+          "blurb": "Community marketplace at groktemplate.vercel.app for working Grok Bot share links and GitHub packs — browse and copy with no account."
+        },
+        {
+          "name": "mostdesign01-sudo/grokbot-use-cases",
+          "url": "https://github.com/mostdesign01-sudo/grokbot-use-cases",
+          "blurb": "Unofficial bilingual gallery (AI UP LAB) of reusable Grok Bot cases, HTML collects, and Agent UI, updated from data JSON."
+        },
+        {
+          "name": "majiayu000/awesome-grok-bot",
+          "url": "https://github.com/majiayu000/awesome-grok-bot",
+          "blurb": "Curated official x.ai/bot share links (not prompt dumps) with vetting notes, team packs, and SECURITY.md; points to RongleCat for resource lists."
+        },
+        {
+          "name": "PramodDutta/botskills",
+          "url": "https://github.com/PramodDutta/botskills",
+          "blurb": "Paste-ready BOT.md directory for Grok Bot and Rakazo; every listing requires a hard human-approval boundary and ships a Next.js leaderboard."
+        },
+        {
+          "name": "AmitMirgal/orgbot-hub",
+          "url": "https://github.com/AmitMirgal/orgbot-hub",
+          "blurb": "Directory app for installable Grok Bot team packs (official x.ai/bot share URLs only); local catalog via Supabase/Docker seed."
+        },
+        {
+          "name": "computindev/busca.bot",
+          "url": "https://github.com/computindev/busca.bot",
+          "blurb": "Spanish-language Grok Bot prompt directory (Astro content collections) with live site at busca.bot."
+        },
+        {
+          "name": "ddhjy/grok-bot-hub",
+          "url": "https://github.com/ddhjy/grok-bot-hub",
+          "blurb": "Unofficial Chinese Grok Bot navigation site (Astro + data/catalog.json, 328 entries) at ddhjy.github.io/grok-bot-hub (MIT)."
+        },
+        {
+          "name": "0xNyk/awesome-grok-bot",
+          "url": "https://github.com/0xNyk/awesome-grok-bot",
+          "blurb": "Independent 0xNyk awesome directory of Grok Bot skills/plugins/MCP with production|beta|experimental maturity tags and a trust-boundary note (CC BY 4.0, 4★)."
+        },
+        {
+          "name": "Krishnamurthy-sfdx/grokbot-wall",
+          "url": "https://github.com/Krishnamurthy-sfdx/grokbot-wall",
+          "blurb": "Live wall of recent X posts about Grok Bot (grokbot-wall.vercel.app) rebuilt daily from public syndication feeds."
+        },
+        {
+          "name": "cs68614-hash/awesome-grokbot-templates",
+          "url": "https://github.com/cs68614-hash/awesome-grokbot-templates",
+          "blurb": "Multi-language awesome list of community Grok Bot templates with official x.ai/bot share links (CC0; directory at grokbot-templates.com)."
+        },
+        {
+          "name": "LinXiaoTao/awesome-grokbot",
+          "url": "https://github.com/LinXiaoTao/awesome-grokbot",
+          "blurb": "Curated EN/ZH list of community Grok Bots with official x.ai/bot share links (site: awsomebot.com)."
+        },
+        {
+          "name": "sefuzhou770801-hub/groki-bot",
+          "url": "https://github.com/sefuzhou770801-hub/groki-bot",
+          "blurb": "M5Stack CoreS3 firmware for a desktop robot that talks to a signed-in Grok Bot via a loopback HTTP proxy over grok-bot-cli (BSL-1.0)."
+        },
+        {
+          "name": "Anomalia",
+          "url": "https://github.com/anomaliaso/anomalia",
+          "blurb": "Open-source Grok Bot alternative that plans, writes, and publishes marketing work with a human approve step, hosted or self-run."
+        },
+        {
+          "name": "getgrokbot",
+          "url": "https://github.com/kwakseongjae/awesome-grok-bot",
+          "blurb": "Multilingual directory of Grok Bot setups, teams, and templates at getgrokbot.com, with Add-to-Grok share links and paste-ready copy."
+        },
+        {
+          "name": "Awesome Grok Bots (Composio)",
+          "url": "https://github.com/composio-community/awesome-grok-bots",
+          "blurb": "Curated knowledge-work Grok Bot blueprints: copy-paste Markdown briefs plus public x.ai/bot shares for product, research, and governance jobs."
+        },
+        {
+          "name": "Grok Bot 中文目录",
+          "url": "https://github.com/245678000000/grokbot-zh",
+          "blurb": "Independent Simplified-Chinese localization of grokbot.dev (marketplace, plugins, use cases) built with Astro and a Python localize pipeline."
+        },
+        {
+          "name": "Grokdex",
+          "url": "https://github.com/andrewkittridge/grokory",
+          "blurb": "Public ranked board of Grok Bot share links (Hot/Top/New) at grokdex.net; paste an x.ai/bot URL to list, then Add to Grok Bot."
+        },
+        {
+          "name": "grokbotit",
+          "url": "https://github.com/raxmichter/Grok-Bot-It",
+          "blurb": "Product Hunt-style community for Grok Bots (grokbotit.com) with X login, upvotes, and an MCP to search and install listed bots."
+        },
+        {
+          "name": "AI社員 Control Plane",
+          "url": "https://github.com/pacifico-1106/grokbot-control-plane",
+          "blurb": "Next.js control plane for Japanese SMEs to treat Grok Bots as named AI employees with ID cards, approval queues, and an audit timeline."
+        },
+        {
+          "name": "awesome-grokbot",
+          "url": "https://github.com/kydlikebtc/awesome-grokbot",
+          "blurb": "Bilingual catalog of 361 live x.ai/bot share links (status-checked 2026-09-01) with JSON schema, CI, and a searchable site at kydlikebtc.github.io/awesome-grokbot."
+        },
+        {
+          "name": "Awesome Grok Bot Templates",
+          "url": "https://github.com/divo12/awesome-grok-bot-templates",
+          "blurb": "Curated list of public Grok Bot templates as live x.ai/bot share pages you can Add to Grok Bot, with data/ and tests — not a prompt dump."
+        },
+        {
+          "name": "Bot Jobs",
+          "url": "https://github.com/lureilly1/botjobs",
+          "blurb": "Independent Astro directory of jobs you can get a Grok Bot to do (intent-first), with open jobs when no bot exists yet."
+        },
+        {
+          "name": "Omabot Omarchy bar for Grok Bot",
+          "url": "https://github.com/njpatel/omabot",
+          "blurb": "Omarchy bar widget that draws every Grok Bot as its own avatar with state expressions and one keypress to open the app."
+        }
+      ]
+    }
+  ]
+}

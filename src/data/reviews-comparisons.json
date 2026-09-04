@@ -1,0 +1,62 @@
+[
+  {
+    "name": "The Verge: an AI teammate you can assign work",
+    "url": "https://www.theverge.com/ai-artificial-intelligence/978666/spacexai-grok-bot-ai-agent-beta-launch",
+    "blurb": "Launch coverage that keeps the product distinct from grok.com chat."
+  },
+  {
+    "name": "VentureBeat: persistent digital coworkers",
+    "url": "https://venturebeat.com/orchestration/spacexais-grok-bot-turns-agents-into-persistent-digital-coworkers-that-can-operate-your-apps-for-120-per-month",
+    "blurb": "Pricing and persistence: $120/seat Teams path, computer stays on."
+  },
+  {
+    "name": "Lenny's Newsletter: Grok Bot, Grok 4.6, and Cursor",
+    "url": "https://www.lennysnewsletter.com/p/i-tested-grok-bot-grok-46-and-cursor",
+    "blurb": "Separates the Bot product from the 4.6 model — do not collapse the two."
+  },
+  {
+    "name": "Grok Bot vs OpenClaw",
+    "url": "https://myclaw.ai/blog/grok-bot-vs-openclaw",
+    "blurb": "Managed cloud computer vs self-hosted, bring-your-own-model."
+  },
+  {
+    "name": "Grok Bot vs OpenClaw vs ChatGPT",
+    "url": "https://www.mindstudio.ai/blog/grok-bot-vs-openclaw-chatgpt",
+    "blurb": "Three-way: always-on VM, self-host, and chat-with-tools."
+  },
+  {
+    "name": "Grok Bot vs ChatGPT for work",
+    "url": "https://www.eigent.ai/blog/grok-bot-vs-chatgpt-work",
+    "blurb": "Computer-use coworker vs a chat that sometimes calls tools."
+  },
+  {
+    "name": "Grok Bot vs Claude Cowork",
+    "url": "https://www.eigent.ai/blog/grok-bot-vs-claude-cowork",
+    "blurb": "Persistent shared VM vs session-scoped cowork."
+  },
+  {
+    "name": "YouTube: Grok Bot vs OpenClaw and Hermes",
+    "url": "https://www.youtube.com/watch?v=sAoTrUijP4g",
+    "blurb": "Video bake-off of the three agent stacks people actually compare."
+  },
+  {
+    "name": "10 Best Grok Bot Alternatives (2026)",
+    "url": "https://www.vellum.ai/blog/best-grok-bot-alternatives",
+    "blurb": "Landscape of substitutes if you do not want the Heavy/Ultra seat."
+  },
+  {
+    "name": "Before You Hire a $200 Grok Bot",
+    "url": "https://zchmael.substack.com/p/before-you-hire-a-200-grok-bot-ai",
+    "blurb": "Skeptical checklist: what the seat does not buy you."
+  },
+  {
+    "name": "CellCog: Grok Bot pricing after the $20 Pro expansion",
+    "url": "https://cellcog.ai/blog/grok-bot-pricing/",
+    "blurb": "Living pricing note updated 2026-08-27: eight routes from Cursor Pro $20 / SuperGrok $30, unpublished weekly allowance, shared on-demand, and no published enterprise price."
+  },
+  {
+    "name": "What is Grok Bot? The Real Cost & Hidden Risks",
+    "url": "https://4geeks.com/en/blog/ai-tools/what-is-grok-bot",
+    "blurb": "4Geeks 2026-08-27 review of Grok Bot cost and credential risk: one shared computer is not a security boundary, Auto-review is best-effort, and the public docs never mention prompt injection."
+  }
+]

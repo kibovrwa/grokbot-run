@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grok Bot sources and fetch notes</title>
+<meta name="description" content="Bibliography for this Grok Bot guide: 42 official materials, 89 failure threads, catalog and cases, plus URLs that timed out on fetch day 2026-09-04.">
+<link rel="canonical" href="https://grokbot.run/sources/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Grok Bot sources and fetch notes">
+<meta property="og:description" content="Bibliography for this Grok Bot guide: 42 official materials, 89 failure threads, catalog and cases, plus URLs that timed out on fetch day 2026-09-04.">
+<meta property="og:url" content="https://grokbot.run/sources/">
+<meta property="og:image" content="https://grokbot.run/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://grokbot.run/og.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/brand/grok-bot-face.svg" type="image/svg+xml">
+<style>/* Grok Bot Playbook — warm paper, black mark, quiet chrome */
+:root {
+  --bg: #F6F4EF;
+  --bg-elev: #FFFFFF;
+  --surface: #EFEDE6;
+  --overlay: rgba(16, 16, 0, 0.045);
+  --btn-sec: #E7E4DC;
+  --text: #111111;
+  --muted: #5E636B;
+  --nav-muted: rgba(17, 17, 17, 0.52);
+  --hairline: rgba(17, 17, 17, 0.08);
+  --hairline-strong: rgba(17, 17, 17, 0.14);
+  --radius: 22px;
+  --radius-n: 16px;
+  --radius-s: 12px;
+  --shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset, 0 10px 28px rgba(16, 16, 0, 0.045);
+  --shadow-hover: 0 1px 0 rgba(255, 255, 255, 0.8) inset, 0 16px 40px rgba(16, 16, 0, 0.08);
+  --max: 1120px;
+  --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Inter, Geist, "Helvetica Neue", Arial, sans-serif;
+  --ink: #0A0A0A;
+  --accent: #F26B2A;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; color-scheme: light; scroll-padding-top: 88px; }
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: #111; color: #fff; }
+img { max-width: 100%; height: auto; }
+a { color: var(--text); text-underline-offset: 3px; }
+a:hover { opacity: .7; }
+:focus-visible { outline: 2px solid #111; outline-offset: 3px; }
+.wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+
+header.site {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(246, 244, 239, 0.82);
+  backdrop-filter: saturate(1.3) blur(16px);
+  -webkit-backdrop-filter: saturate(1.3) blur(16px);
+  border-bottom: 1px solid var(--hairline);
+}
+.nav { display: flex; align-items: center; gap: 18px; min-height: 72px; position: relative; }
+.brand { display: flex; align-items: center; gap: 11px; text-decoration: none; flex: none; }
+.brand:hover { opacity: 1; }
+.brand img.logo,
+.brand img.mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 11px;
+  display: block;
+  flex: none;
+  box-shadow: 0 0 0 1px rgba(17, 17, 17, 0.08), 0 2px 8px rgba(10, 10, 10, 0.08);
+}
+.brand img.word { display: none; }
+.brand .name,
+.brand .tag {
+  font-size: 16px;
+  font-weight: 640;
+  letter-spacing: -0.028em;
+  color: var(--text);
+  white-space: nowrap;
+}
+.brand .tag {
+  font-weight: 530;
+  color: var(--muted);
+}
+.nav-rule {
+  width: 1px;
+  height: 18px;
+  background: var(--hairline-strong);
+  flex: none;
+}
+nav.links { display: flex; gap: 2px; margin-left: auto; flex-wrap: nowrap; align-items: center; }
+nav.links a {
+  color: var(--nav-muted);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 530;
+  padding: 8px 12px;
+  border-radius: 9999px;
+}
+nav.links a:hover { color: var(--text); opacity: 1; background: rgba(17, 17, 17, 0.04); }
+nav.links a[aria-current="page"] { color: var(--text); background: var(--bg-elev); box-shadow: 0 0 0 1px var(--hairline); }
+.menu-btn {
+  display: none;
+  border: 0;
+  background: var(--btn-sec);
+  border-radius: 9999px;
+  padding: 8px 14px;
+  font: inherit;
+  font-size: 14px;
+}
+
+.hero {
+  padding: 84px 0 36px;
+  position: relative;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -40px;
+  width: min(920px, 100%);
+  height: 380px;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse at 50% 0%, rgba(17, 17, 17, 0.055), transparent 68%);
+  pointer-events: none;
+}
+.hero .wrap { position: relative; }
+.hero-logo {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: block;
+  margin: 0 0 22px;
+  box-shadow: 0 8px 22px rgba(10, 10, 10, 0.12);
+}
+.hero-product {
+  background: var(--ink);
+  color: #F6F4EF;
+  padding: 72px 0 0;
+  margin: 0 0 8px;
+}
+.hero-product::before { display: none; }
+.hero-product .wrap { text-align: center; }
+.hero-product .kicker { color: rgba(246, 244, 239, 0.5); }
+.hero-product h1 {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.22em;
+}
+.hero-product .lede {
+  color: rgba(246, 244, 239, 0.58);
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero-next { margin: 14px 0 0; font-size: 14px; }
+.hero-next a { color: rgba(246, 244, 239, 0.72); }
+.hero-product .cta-row { justify-content: center; }
+.hero-product .btn-primary { background: #F6F4EF; color: #0A0A0A; }
+.hero-product .btn-primary:hover { box-shadow: 0 10px 24px rgba(246, 244, 239, 0.16); }
+.hero-product .btn-secondary { background: rgba(246, 244, 239, 0.08); color: #F6F4EF; }
+.hero-product .btn-ghost { color: #F6F4EF; border-color: rgba(246, 244, 239, 0.22); }
+.wordmark-face {
+  display: inline-flex;
+  width: 0.86em;
+  height: 0.86em;
+  vertical-align: -0.08em;
+}
+.wordmark-face svg { width: 100%; height: 100%; display: block; }
+.product-stage {
+  margin: 16px auto 0;
+  max-width: 880px;
+  background: #141414;
+  border: 1px solid rgba(246, 244, 239, 0.08);
+  border-bottom: 0;
+  border-radius: 18px 18px 0 0;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 248px 1fr;
+  text-align: left;
+  min-height: 340px;
+}
+.roster { padding: 14px 10px; border-right: 1px solid rgba(246, 244, 239, 0.06); }
+.roster-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 10px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: rgba(246, 244, 239, 0.78);
+  font-size: 14px;
+}
+.roster-row:hover { opacity: 1; background: rgba(246, 244, 239, 0.05); color: #fff; }
+.roster-row strong { display: block; font-weight: 580; color: #fff; }
+.roster-row span { display: block; font-size: 12px; color: rgba(246, 244, 239, 0.42); }
+.face {
+  width: 28px;
+  height: 28px;
+  border-radius: 9px;
+  flex: none;
+  display: block;
+}
+.stage-main { padding: 22px 22px 18px; }
+.stage-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(246, 244, 239, 0.5);
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+.stage-bar b { color: #F6F4EF; font-weight: 560; }
+.bubble {
+  max-width: 92%;
+  border-radius: 16px;
+  padding: 12px 14px;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0 0 10px;
+}
+.bubble.me { background: #F6F4EF; color: #111; margin-left: auto; }
+.bubble.bot { background: #1E1E1E; color: #EDEBE4; }
+.thinking {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent);
+  font-size: 13px;
+  margin-top: 8px;
+}
+.proof {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 22px;
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.proof li { color: rgba(246, 244, 239, 0.55); font-size: 13px; }
+.proof b { color: #F6F4EF; font-weight: 620; }
+.stage-caption {
+  margin: 28px 0 0;
+  color: rgba(246, 244, 239, 0.48);
+  font-size: 13px;
+}
+.steal {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 16px;
+  align-items: stretch;
+}
+.steal .job-card { margin: 0; }
+.mistakes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.mistake {
+  background: var(--bg-elev);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  padding: 22px 22px 18px;
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+a.mistake:hover { opacity: 1; border-color: var(--hairline-strong); }
+.mistake .tag {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: #9A4A12;
+  font-weight: 650;
+  margin: 0 0 8px;
+}
+.mistake h3 { margin: 0 0 8px; }
+.mistake p { margin: 0; color: var(--muted); font-size: 15px; }
+.quotes { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+.quote {
+  background: var(--bg-elev);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  padding: 22px 22px 18px;
+  box-shadow: var(--shadow);
+}
+.quote p { margin: 0 0 12px; font-size: 16px; }
+.quote .who { margin: 0; color: var(--muted); font-size: 13px; }
+.featured {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin: 0 0 28px;
+}
+.diagram {
+  background: #141414;
+  color: #EDEBE4;
+  border-radius: var(--radius-n);
+  padding: 18px 18px 14px;
+  margin: 22px 0;
+}
+.diagram svg { display: block; width: 100%; height: auto; max-width: 520px; }
+.diagram figcaption { margin: 12px 0 0; font-size: 13px; color: rgba(237, 235, 228, 0.62); }
+.compare-cards { display: none; gap: 14px; }
+@media (max-width: 860px) {
+  .compare-desktop { display: none; }
+  .compare-cards { display: grid; grid-template-columns: 1fr; }
+}
+.beta {
+  display: none;
+}
+h1 {
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 520;
+  letter-spacing: -0.042em;
+  line-height: 1.08;
+  margin: 0 0 16px;
+}
+.lede {
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--muted);
+  max-width: 40rem;
+  margin: 0 0 28px;
+}
+h1 + .en-sub, p.en-sub { display: none; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 28px 0 4px; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 9999px;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 560;
+  border: 0;
+  transition: transform .16s ease, box-shadow .16s ease, background .16s ease, opacity .16s ease;
+}
+.btn:hover { opacity: 1; transform: translateY(-1px); }
+.btn-primary { background: #111; color: #fff; }
+.btn-primary:hover { box-shadow: 0 10px 24px rgba(17, 17, 17, 0.2); }
+.btn-secondary { background: var(--btn-sec); color: #111; }
+.btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--hairline-strong); }
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.card {
+  background: var(--bg-elev);
+  border-radius: var(--radius);
+  padding: 26px 26px 22px;
+  border: 1px solid var(--hairline);
+  box-shadow: var(--shadow);
+}
+.card.nested {
+  border-radius: var(--radius-n);
+  background: var(--bg-elev);
+  border: 1px solid var(--hairline);
+  box-shadow: none;
+  padding: 18px 18px 16px;
+}
+.card h2, .card h3 { margin-top: 0; }
+.card p:last-child { margin-bottom: 0; }
+a.card { text-decoration: none; color: inherit; display: block; }
+a.card:hover { opacity: 1; border-color: var(--hairline-strong); }
+h2 {
+  font-size: clamp(26px, 3.2vw, 36px);
+  font-weight: 520;
+  letter-spacing: -0.032em;
+  line-height: 1.18;
+  margin: 0 0 12px;
+}
+h3 { font-size: 18px; font-weight: 600; letter-spacing: -0.02em; margin: 28px 0 8px; }
+p { margin: 0 0 1em; color: var(--text); }
+.muted, .note { color: var(--muted); }
+section.band { padding: 64px 0; }
+section.band + section.band { padding-top: 8px; }
+
+.roadmap { display: flex; flex-direction: column; gap: 10px; }
+.step {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 16px;
+  align-items: start;
+  background: var(--bg-elev);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid var(--hairline);
+  box-shadow: var(--shadow);
+  transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+}
+.step:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+  border-color: var(--hairline-strong);
+  box-shadow: var(--shadow-hover);
+}
+.num {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  background: #111;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 620;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+.step h3 { margin: 4px 0 4px; font-size: 17px; }
+.step p { margin: 0; color: var(--muted); font-size: 15px; }
+
+.faq { padding: 8px 26px 12px; }
+.faq details { border-top: 1px solid var(--hairline); padding: 16px 0; }
+.faq details:first-child { border-top: 0; }
+.faq summary {
+  cursor: pointer;
+  font-weight: 560;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; color: var(--muted); font-weight: 400; font-size: 20px; line-height: 1; }
+.faq details[open] summary::after { content: "–"; }
+.faq details p { margin: 10px 0 0; color: var(--muted); font-size: 16px; }
+
+.prose { max-width: 44rem; }
+.prose p { margin-bottom: 1.05em; }
+.prose ul, .prose ol { padding-left: 1.2em; margin: 0 0 1.1em; }
+.prose li { margin: 0 0 .5em; }
+.prose a { text-underline-offset: 3px; }
+.prose h2 { margin-top: 2.1em; }
+.prose > .kicker + h1 { margin-top: 6px; }
+.callout {
+  background: var(--bg-elev);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-n);
+  padding: 16px 18px;
+  margin: 22px 0;
+  box-shadow: var(--shadow);
+}
+.callout.warn {
+  background: #FFF8EC;
+  border-color: rgba(176, 112, 20, 0.16);
+  box-shadow: none;
+}
+.meta { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
+.pager { display: flex; justify-content: space-between; gap: 12px; margin: 48px 0 8px; flex-wrap: wrap; }
+.pager a {
+  background: var(--bg-elev);
+  border: 1px solid var(--hairline);
+  border-radius: 9999px;
+  padding: 10px 16px;
+  text-decoration: none;
+  font-size: 14px;
+  box-shadow: var(--shadow);
+}
+.pager a:hover { opacity: 1; }
+
+footer.site {
+  border-top: 1px solid var(--hairline);
+  padding: 48px 0 64px;
+  margin-top: 40px;
+  color: var(--muted);
+  font-size: 14px;
+  background: transparent;
+}
+footer.site a { color: var(--muted); }
+footer.site a:hover { color: var(--text); opacity: 1; }
+.foot-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 32px; margin-bottom: 28px; }
+.foot-grid h4 {
+  margin: 0 0 12px;
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.foot-grid a { display: block; text-decoration: none; margin: 0 0 8px; }
+.foot-grid p { color: var(--muted); font-size: 14px; line-height: 1.55; }
+
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 16px; }
+.filters button {
+  border: 1px solid var(--hairline);
+  background: var(--bg-elev);
+  border-radius: 9999px;
+  padding: 7px 12px;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  color: var(--text);
+}
+.filters button[aria-pressed="true"] { background: #111; color: #fff; border-color: #111; }
+.tool-row, .case-card {
+  background: var(--bg-elev);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-n);
+  padding: 16px 18px;
+  margin: 0 0 10px;
+  box-shadow: var(--shadow);
+}
+.tool-row h3, .case-card h3 { margin: 0 0 4px; font-size: 16px; }
+.tool-row p, .case-card p { margin: 0; font-size: 15px; color: var(--muted); }
+.job-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.job-card {
+  background: var(--bg-elev);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  padding: 22px 22px 18px;
+  box-shadow: var(--shadow);
+}
+.job-card h3 { margin: 0 0 8px; }
+.job-card p { margin: 0 0 12px; color: var(--muted); font-size: 15px; }
+.job-card pre {
+  margin: 0 0 12px;
+  padding: 14px 16px;
+  background: var(--surface);
+  border-radius: var(--radius-s);
+  font-size: 13.5px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.job-card code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+.copy-btn {
+  border: 0;
+  background: #111;
+  color: #fff;
+  border-radius: 9999px;
+  padding: 8px 14px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 560;
+  cursor: pointer;
+}
+.copy-btn:hover { opacity: .86; }
+.prose .job-card { margin: 18px 0 22px; max-width: none; }
+.kicker {
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 650;
+  margin: 0 0 10px;
+}
+.crumbs { font-size: 13px; color: var(--muted); }
+.crumbs .wrap { padding-top: 18px; padding-bottom: 0; }
+.crumbs a { color: var(--muted); text-decoration: none; }
+.crumbs a:hover { color: var(--text); }
+.crumbs .sep { margin: 0 8px; opacity: .45; }
+.crumbs span:last-child { color: var(--text); }
+.terms { margin: 0 0 1.4em; }
+.terms dt { font-weight: 650; margin: 1.1em 0 4px; }
+.terms dd { margin: 0; color: var(--muted); }
+.table-wrap { overflow-x: auto; margin: 0 0 1.4em; }
+table { width: 100%; border-collapse: collapse; font-size: 15px; background: var(--bg-elev); border-radius: var(--radius-n); overflow: hidden; }
+th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--hairline); vertical-align: top; }
+th { color: var(--muted); font-weight: 560; font-size: 12px; letter-spacing: .04em; text-transform: uppercase; background: var(--surface); }
+tr:last-child td { border-bottom: 0; }
+.search {
+  width: 100%;
+  border: 1px solid var(--hairline);
+  border-radius: 9999px;
+  padding: 13px 18px;
+  font: inherit;
+  font-size: 15px;
+  background: var(--bg-elev);
+  margin: 0 0 16px;
+  box-shadow: var(--shadow);
+}
+.search:focus { outline: 2px solid #111; outline-offset: 2px; }
+.hidden { display: none !important; }
+
+.source-section { padding: 48px 0 0; }
+.source-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.source-list li, .source-item {
+  background: var(--bg-elev);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-n);
+  padding: 14px 16px;
+  font-size: 15px;
+  box-shadow: var(--shadow);
+}
+.source-list a { font-weight: 560; text-underline-offset: 3px; }
+.source-note { display: block; margin-top: 4px; color: var(--muted); font-size: 13px; line-height: 1.45; }
+
+@media (max-width: 860px) {
+  .grid-2, .grid-3, .foot-grid, .job-grid, .steal, .mistakes, .quotes { grid-template-columns: 1fr; }
+  .nav-rule { display: none; }
+  nav.links { display: none; }
+  nav.links.open {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: absolute;
+    top: 68px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    background: var(--bg);
+    padding: 12px 20px 20px;
+    border-bottom: 1px solid var(--hairline);
+    gap: 4px;
+  }
+  .menu-btn { display: inline-flex; margin-left: auto; }
+  .hero { padding-top: 48px; }
+  .hero-product { padding-top: 40px; }
+  .hero-product h1 { font-size: clamp(32px, 10vw, 44px); }
+  .product-stage { grid-template-columns: 1fr; min-height: 0; }
+  .roster { display: grid; grid-template-columns: 1fr 1fr; border-right: 0; border-bottom: 1px solid rgba(246, 244, 239, 0.06); }
+  .step { grid-template-columns: 40px 1fr; padding: 16px; }
+  h1 { font-size: clamp(32px, 10vw, 44px); }
+}
+@media (max-width: 720px) { .source-list { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto; transition: none !important; }
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Grok Bot Playbook", "alternateName": "Grok Bot", "url": "https://grokbot.run/", "description": "Grok Bot playbook: install, first Bot, shared computer, tools, and troubleshooting.", "inLanguage": "en"}</script>
+</head><body>
+<header class="site"><div class="wrap nav"><a class="brand" href="/"><img class="logo" src="/brand/grok-bot-face.svg" alt="Grok Bot Guide"><span class="name">Grok Bot</span><span class="tag">Guide</span></a><span class="nav-rule" aria-hidden="true"></span><button class="menu-btn" type="button" data-menu>Menu</button><nav class="links" data-links><a href="/">Guide</a><a href="/learn/install/">Install</a><a href="/pricing/">Pricing</a><a href="/tools/">Tools</a><a href="/use-cases/">Cases</a><a href="/troubleshooting/">Help</a></nav></div></header>
+<main>
+<section class="band"><div class="wrap">
+<p class="kicker">Bibliography</p>
+<h1>Sources and fetch notes</h1>
+<p class="lede">Fetch window 2026-09-04. Facts sit in three layers: official materials, community failure threads, and third-party catalogs plus field cases. When official docs conflict on eligibility, this site shows both links and does not adjudicate.</p>
+<div class="grid-3">
+<article class="card"><h3>Official materials · 42</h3><p>xAI / Cursor Help / official repos and app entry points that back hard facts on install, computer, plugins, and usage.</p></article>
+<article class="card"><h3>Failure sources · 89</h3><p>Forum field reports and staff replies used for symptom grouping; one thread is not a guarantee it reproduces on every device.</p></article>
+<article class="card"><h3>Catalog and cases</h3><p>199 tools, plus Field Cases. This site writes original short summaries only — no third-party body text copied.</p></article>
+</div>
+
+<section class="source-section">
+<h2>Related community guides</h2>
+<p class="lede">Linked only. This site does not reprint them.</p>
+<ul class="source-list">
+<li class="source-item"><a href="https://github.com/KinGao294/grok-bot-orange-book">Orange Book</a><span class="muted">Community ops notes on multi-Bot teams, routines, and cost control. Cross-check pricing here — mid-August plan lists went stale fast.</span></li>
+<li class="source-item"><a href="https://github.com/rockyzhuo/grok-bot-blue-book">Blue Book</a><span class="muted">Companion ops manual: artifact contracts and route templates. Isolation is still per user, not per Bot.</span></li>
+<li class="source-item"><a href="https://github.com/RongleCat/awesome-grok-bot">awesome-grok-bot</a><span class="muted">Upstream CC0 list this catalog and the field-case table are built from.</span></li>
+</ul>
+</section>
+<section class="source-section">
+<h2>Official materials (42)</h2>
+<ul class="source-list"><li class="source-item"><a href="https://x.ai/news/introducing-grok-bot">Introducing Grok Bot</a><span class="source-note">Launch note: always-on agents with their own computer, working inside your tools 24/7.</span></li><li class="source-item"><a href="https://x.ai/news/grok-bot-more-plans">Grok Bot is now included with more plans</a><span class="source-note">Official access expansion post (updated): Grok Bot is available for SuperGrok, Cursor Pro, and all Cursor Teams plans.</span></li><li class="source-item"><a href="https://x.com/bot/status/2090852881373311369">@bot: free trial and wider plan access</a><span class="source-note">Official 2026-08-21: SuperGrok Plus, Cursor Pro+, and all Cursor Teams get Grok Bot, plus a limited free trial for everyone else.</span></li><li class="source-item"><a href="https://x.com/bot/status/2089802845239587150">@bot: mobile notifications grouped by Bot</a><span class="source-note">Official 2026-08-18 QoL: mobile notifications group by Bot and use that Bot&#x27;s icon.</span></li><li class="source-item"><a href="https://x.com/bot/status/2090168861912170972">@bot: Some ways people used Grok Bot this week</a><span class="source-note">Official 2026-08-19 thread quoting 14 field jobs, from a Matic vacuum to Stripe refunds and a meeting stand-in.</span></li><li class="source-item"><a href="https://docs.x.ai/grok-bot/overview">Grok Bot overview</a><span class="source-note">Canonical product page: one named Bot, one shared cloud computer, isolation is per user not per Bot.</span></li><li class="source-item"><a href="https://docs.x.ai/grok-bot/get-started">Get started</a><span class="source-note">Install desktop, sign in with Cursor, create the first Bot. No official Linux desktop.</span></li><li class="source-item"><a href="https://docs.x.ai/grok-bot/use-cases">Use cases</a><span class="source-note">Official roster ideas: sales CRM nights, ops invoices, engineering bug squash.</span></li><li class="source-item"><a href="https://docs.x.ai/grok-bot/mobile">Grok Bot for mobile (iOS + Android)</a><span class="source-note">Official docs for Grok Bot on iPhone and Android (Android 9+ / iOS 18+), with App Store and Google Play install links.</span></li><li class="source-item"><a href="https://docs.x.ai/grok-bot/bots">Create and manage Bots</a><span class="source-note">How a Bot is named and scoped, plus the public share link that copies identity, skills, and routines (not your computer or logins).</span></li><li class="source-item"><a href="https://docs.x.ai/grok-bot/chat-and-collaboration">Message and collaborate</a><span class="source-note">Bots message each other, join group chats, and assign ownership of work.</span></li><li class="source-item"><a href="https://docs.x.ai/grok-bot/files-and-results">Files and results</a><span class="source-note">Where artifacts live on the shared computer and how you pull results back.</span></li><li class="source-item"><a href="https://docs.x.ai/grok-bot/computer-and-apps">Use the computer and apps</a><span class="source-note">Browser, filesystem, terminal. No clean API? Click the site like a person.</span></li><li class="source-item"><a href="https://docs.x.ai/grok-bot/skills-routines-and-automations">Skills and routines</a><span class="source-note">Teach a task (up to 10 minutes of screen, no mic), save as a reusable routine.</span></li><li class="source-item"><a href="https://docs.x.ai/grok-bot/settings-and-notifications">Settings and notifications</a><span class="source-note">Notification grouping, mobile alerts, and how Bots follow up stalled work.</span></li><li class="source-item"><a href="https://docs.x.ai/grok-bot/approvals-security-and-privacy">Approvals, security, and privacy</a><span class="source-note">Bots do not see passwords; draw the approval line on irreversible actions and 2FA takeover.</span></li><li class="source-item"><a href="https://docs.x.ai/grok-bot/teams-and-enterprises">Teams and enterprises</a><span class="source-note">Team marketplace, SSO, shared analytics. Plugins follow existing Cursor policy.</span></li><li class="source-item"><a href="https://docs.x.ai/grok-bot/troubleshooting">Troubleshooting</a><span class="source-note">Official fix list for reconnect, runners, and common beta failures.</span></li><li class="source-item"><a href="https://docs.x.ai/grok-bot/faq">FAQ</a><span class="source-note">Short official answers on access, computer sharing, and what Bots can remember.</span></li><li class="source-item"><a href="https://cursor.com/help/grok-bot/supergrok">Link SuperGrok for Grok Bot</a><span class="source-note">Cursor help: Grok Bot is now on SuperGrok Plus and Heavy; already on Ultra, linking Plus does not stack usage.</span></li><li class="source-item"><a href="https://cursor.com/help/grok-bot/mobile">Grok Bot on mobile (Cursor help)</a><span class="source-note">How the iOS companion talks to Bots that stay on the cloud computer.</span></li><li class="source-item"><a href="https://cursor.com/help/grok-bot/connect-plugins">Connect plugins</a><span class="source-note">Prefer a plugin and fall back to the cloud browser when it is missing; Zoom desktop auth currently fails with error 4700 (invalid redirect) and has no workaround.</span></li><li class="source-item"><a href="https://cursor.com/help/grok-bot/secrets">Store secrets securely</a><span class="source-note">Use the secret card. Never paste API keys into the Bot chat.</span></li><li class="source-item"><a href="https://cursor.com/help/grok-bot/computer-recovery">Recover Grok Bot computer data</a><span class="source-note">Official recovery guide: chat history lives outside the box; reopen restores synced files, Reset is last resort.</span></li><li class="source-item"><a href="https://cursor.com/help/grok-bot/plans">Grok Bot plans and billing</a><span class="source-note">Official billing FAQ: paid Cursor plans and Teams include Grok Bot (Pro below Pro+ below Ultra); SuperGrok / Plus / Heavy can link, Lite and SuperGrok Team/Enterprise cannot; weekly usage resets; legacy request-based pricing is excluded unless you opt into usage-based.</span></li><li class="source-item"><a href="https://apps.apple.com/us/app/grok-bot/id6794501026">Grok Bot on the App Store</a><span class="source-note">Official iOS listing for the companion app.</span></li><li class="source-item"><a href="https://github.com/xai-org/plugin-marketplace">xAI plugin marketplace</a><span class="source-note">Official .grok-plugin marketplace Grok Bot inherits under Cursor plugin policy.</span></li><li class="source-item"><a href="https://x.com/bot/status/2092664183334846840">@bot: SuperGrok and Cursor Pro get Grok Bot; weekly usage reset</a><span class="source-note">Official 2026-08-26: all SuperGrok and Cursor Pro subscribers get Grok Bot, and weekly usage limits were reset for everyone.</span></li><li class="source-item"><a href="https://x.com/bot/status/2093376523919323618">@bot: share Bot templates</a><span class="source-note">Official 2026-08-28: you can now share templates of your Bots with others.</span></li><li class="source-item"><a href="https://x.com/bot/status/2093419921007108385">@bot: Grok Bot can buy things</a><span class="source-note">Official 2026-08-28: connect Stripe Link and Grok Bot can complete purchases on your behalf.</span></li><li class="source-item"><a href="https://play.google.com/store/apps/details?id=ai.x.grok.bot">Grok Bot on Google Play</a><span class="source-note">Official Google Play listing: Grok Bot for Android is available — same Bots and threads as desktop/iOS; work continues on the cloud computer after you lock the phone (eligible Cursor/SuperGrok plan).</span></li><li class="source-item"><a href="https://cursor.com/help/grok-bot/sign-in">Sign in to Grok Bot</a><span class="source-note">Official help: Grok Bot uses your Cursor account (no separate login); persistent auth loops or phone-verification blocks often need support after the listed retries.</span></li><li class="source-item"><a href="https://x.ai/news/grok-bot-and-x">Grok Bot now works with X</a><span class="source-note">Official 2026-08-29: connect X in Grok Bot (a developer account is created if needed); paid users get free X API credits to search posts, timelines, and mentions.</span></li><li class="source-item"><a href="https://cursor.com/help/grok-bot/getting-started">Getting started with Grok Bot</a><span class="source-note">Cursor help: first-agent setup, Sidebar Sections on iOS v1.2.0+ to group Bots, the beta label is not Cursor Beta Services terms, and a restart-first troubleshooting table.</span></li><li class="source-item"><a href="https://cursor.com/help/grok-bot/mobile-purchase">Subscribe from the mobile app</a><span class="source-note">iOS in-app purchase is monthly individual only; existing Cursor or SuperGrok access carries over, and SuperGrok linking still has to be done on desktop.</span></li><li class="source-item"><a href="https://cursor.com/help/grok-bot/delete-account">Delete your Grok Bot account</a><span class="source-note">Grok Bot has no separate account: iOS has Delete Account, desktop only signs out, and wiping it deletes the Cursor account plus agents, chats, and the computer.</span></li><li class="source-item"><a href="https://x.com/bot/status/2093822274067706170">@bot: improved X support</a><span class="source-note">Official 2026-08-29: Grok Bot now has improved X support; connecting your X profile auto-creates a developer account with included credits.</span></li><li class="source-item"><a href="https://cursor.com/help/grok-bot/get-help">Get help (Cursor Help)</a><span class="source-note">Official Cursor help: contact Grok Bot support at hi@cursor.com and include account email, app version/platform (Mac/Windows/iOS), what you tried, and a screenshot (billing issues same inbox).</span></li><li class="source-item"><a href="https://x.com/bot/status/2094543253811183943">@bot: Microsoft Outlook, Calendar, and OneDrive plugins</a><span class="source-note">Official @bot (2026-08-31) says Grok Bot can now read, write, and act across Microsoft accounts via new Outlook, Calendar, and OneDrive plugins.</span></li><li class="source-item"><a href="https://docs.x.ai/grok-bot/identity-and-access">Identity and access</a><span class="source-note">Official admin guide: widen Cursor SSO assignment (Okta/Entra) so non-engineering teammates get Grok Bot, and add an IdP auth rule so the Linux Bot computer can sign into device-trust apps (passkeys/Team Setup); do not create a separate Grok Bot SSO app.</span></li><li class="source-item"><a href="https://docs.x.ai/grok-bot/private-networks">Private networks</a><span class="source-note">Official Enterprise guide: use Team Setup to install Tailscale, Cloudflare Tunnel, or other Linux VPN/mesh clients on every team Bot computer so Bots reach private APIs without exposing them; private reach does not replace the Grok Bot destination allowlist.</span></li><li class="source-item"><a href="https://x.com/bot/status/2095168633559462197">@bot: Grok Bot is now available on Android</a><span class="source-note">Official @bot (2026-09-02): Grok Bot is now available on Android — same Bots and threads as desktop/iOS, work continues on the cloud computer after you lock the phone; download from Google Play with an eligible Cursor/SuperGrok plan.</span></li></ul>
+</section>
+<section class="source-section">
+<h2>Community failure sources (89)</h2>
+<ul class="source-list"><li class="source-item"><a href="https://forum.cursor.com/t/introducing-grok-bot/168053">Forum: Introducing Grok Bot</a><span class="source-note">Launch thread: what people actually asked in the first 48 hours.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-ship-real-session-fences-bots-are-not-a-security-boundary/168476">Bots are not a security boundary</a><span class="source-note">Must-read: every Bot on the account sees the same logins and files.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bots-as-always-on-workers-vs-topic-threads/168183">Always-on workers vs topic threads</a><span class="source-note">Community consensus: a Bot is a standing coworker, not a chat tab.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/free-cursor-ultra-with-grok/168286">Free Cursor Ultra with Grok (Heavy bundle)</a><span class="source-note">How SuperGrok Heavy maps onto Ultra + Bot, and what does not stack.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-reconnect-issue/168500">Reconnect issue</a><span class="source-note">Real screenshot of “can&#x27;t reach your computer” after a reconnect.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-x-login-lock-limit-not-lifting/168541">X login lock on the Bot computer</a><span class="source-note">Cloud computers hit site risk controls. X locks are not theoretical.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-externalshell-blocked-despite-always-allow/168180">ExternalShell blocked despite Always allow</a><span class="source-note">Allow-lists still fail. Do not assume Always allow means always.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/deleted-cursor-account-leaves-grok-link-orphaned-and-blocks-relinking/168783">Deleted Cursor account orphans the Grok link</a><span class="source-note">Account deletion can pin the Bot to a dead Cursor identity.</span></li><li class="source-item"><a href="https://news.ycombinator.com/item?id=49261514">Hacker News discussion</a><span class="source-note">HN thread on the launch — useful for the skeptical read.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/native-grok-bot-desktop-app-for-arch-linux-and-linux-generally/168084">Native desktop on Arch / Linux</a><span class="source-note">Linux desktop is not first-class; this is the request plus community packs.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/does-grok-bot-support-local-mcp-e-g-workflowy/168182">Does Grok Bot support local MCP?</a><span class="source-note">Staff-confirmed: Grok Bot cannot attach local or stdio MCP; use remote HTTP MCP or the cloud browser.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/is-grok-bot-down-currently/168918">Is Grok Bot Down Currently?</a><span class="source-note">Aug 20–21 outage thread: bots fail mid-turn; staff point to Reset Grok Bot’s Computer under Settings → Updates.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-0-23-0-first-setup-fails-createagent-can-t-reach-your-computer/169007">Grok Bot 0.23.0 first setup: createAgent / Cannot reach your computer</a><span class="source-note">Staff: first-setup createAgent can fail before a computer exists (no Reset). A later note: bad ISP DNS for *.cursorvm.com can also block the computer while Cursor API still works — try 1.1.1.1 or 8.8.8.8.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-mac-chat-works-local-computer-reported-offline/168973">Grok Bot: Mac chat works, local computer reported offline</a><span class="source-note">Staff-confirmed split: chat stays up while the Mac local-computer link drops; full quit reconnects, 0.23 shipped a fix.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/computer-refresh-wipes-whatsapp-linked-device-session-in-grok-bot/169025">Computer refresh wipes WhatsApp linked-device session in Grok Bot</a><span class="source-note">Staff: computer refresh keeps /workspace, the browser profile, and ~/.config — not ~/.local/state, so WhatsApp link sessions vanish.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-cloud-workspace-inaccessible-after-trial-exhaustion-ticket-t-e97475-pending/169010">Grok Bot cloud workspace after trial exhaustion</a><span class="source-note">Staff: trial end deletes nothing; bots stop replying, but Computer view still lets you export until you Reset.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/the-reset-computer-window-opens-behind-the-settings-window-and-is-invisible-and-unclickable/169177">Reset Computer window opens behind Settings (0.24.0)</a><span class="source-note">Staff: the Reset confirm dialog that opened behind Settings is fixed in the latest desktop; Tab then Enter was the workaround on older builds.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-webhooks-are-failing-with-internal-server-error/169323">Grok Bot webhooks failing with internal server error</a><span class="source-note">Staff: webhook POSTs to api2.cursor.sh returned internal error; they rolled back a change and the same curl started working again.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-gmail-connector-can-list-attachments-but-cannot-download-their-bytes/169261">Grok Bot Gmail connector cannot download attachment bytes</a><span class="source-note">Staff: the Gmail connector lists attachment metadata only; no download tool. Use the cloud browser or park the file in Drive.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/does-logging-into-grokbot-count-as-a-separate-computer/169289">Does logging into Grok Bot count as a separate computer?</a><span class="source-note">Staff: a Grok Bot login is its own Cursor device, and the cloud workspace can count as a second one toward Too many computers.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-notion-plugin-oauth-invalid-redirect-uri/169234">Grok Bot Notion plugin OAuth Invalid redirect_uri</a><span class="source-note">Staff: Notion sign-in is stored on the account, so retry fails; Re-authenticate (not Connect) clears it and OAuth succeeds.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-threads-ui-is-unusable-needs-a-slack-style-right-panel/168315">Grok Bot now has Channels</a><span class="source-note">Staff: Grok Bot now has Channels (sidebar +, up to 6 bots per named space). A thread view that keeps the main chat visible is still in progress.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-desktop-on-macos-is-permanently-stuck-on-reconnecting-to-your-computer/169119">Stuck Reconnecting can be a local cursorvm.com block</a><span class="source-note">Staff: the cloud computer was healthy; the Mac never finished reconnect because traffic to cursorvm.com was dropped (VPN or firewall).</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-failed-to-open-its-computer-and-couldnt-recognize-the-issue/169179">Agent never surfaces Take over for login</a><span class="source-note">Staff: login tasks should hand you the computer; ask it to hand me your computer, and skip passkeys with Try another way.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/query-about-grok-bot-cursor-agent-usage-and-model-selection/169160">Grok Bot Cursor Agent usage and model selection</a><span class="source-note">Staff: agents Grok Bot starts run in your Cursor account and burn Cursor plan usage; Grok Bot chat has a separate allowance; unnamed-model agents use your Cloud Agent default.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/multiple-questions/169338">How to track Grok Bot releases</a><span class="source-note">Staff: latest stable is 0.24.0; no public changelog yet (Settings → Updates plus X); there is no official Debian/Fedora desktop app.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-hanging-at-cleaning-up-phase-after-resetting/169364">Grok Bot hanging at Cleaning up after reset</a><span class="source-note">Staff: the reset usually finishes on the backend; the dialog just misses the done signal at Cleaning up. Fully quit and reopen, then Recover — don’t Reset again.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-0-24-0-windows-10-x64-white-screen-flashes-then-app-closes/169380">Grok Bot 0.24.0 Windows white flash then the app closes</a><span class="source-note">Staff: the cloud computer was healthy; a white flash then the process dying is usually local (endpoint security, locked %APPDATA%, or a partial install), not GPU.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/bots-workspace-missing-all-things-getting-new-user-experience/169448">Bots workspace looks empty after a rebuild</a><span class="source-note">Staff: after a rebuild, logging in while the computer is still starting can show first-run UI; bots are not gone. Fully quit and reopen, and don’t create your first bot in that window.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-prune-compact-an-agent-s-context-without-creating-a-new-bot/168333">No compact / new session; full transcript is sent each turn</a><span class="source-note">Staff: desktop and iOS have no explicit Compact or same-bot new session. Auto-summary is not compact; the full transcript is sent, and there is no model picker.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-is-broke/169537">Overbooked then Bot failed to respond is model load</a><span class="source-note">Staff: “overbooked” then “Bot failed to respond” is service-side Grok model load, not your account, usage, or computer; wait for a quieter window or reset again.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-gets-stuck-on-black-screen-after-setting-up-grok-bots-computer/169593">Black screen after setup: hosted computer never finished starting</a><span class="source-note">Staff: black screen after “Setting up Grok Bot’s computer” means the hosted computer never finished starting; reinstall will not help, and if the same account still works on iOS do not Reset (that drops bots)—wait for a staff rebuild.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-0-27-0-windows-local-host-permanently-isn-t-connected-after-clean-registration-new-identity-server-side/169594">0.27.0 Windows: local host stays disconnected after clean registration</a><span class="source-note">Staff: on 0.27.0 Windows the agent can say the local machine isn’t connected even after a clean daemon registration; fully quit every Grok process and launch once, and if it still fails it is service-side.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/webhook-url-missing-on-ios/169589">Webhook URL and sender key are desktop-only, not on iOS</a><span class="source-note">Staff: a webhook routine’s POST URL and sender key only appear on the Grok Bot desktop app, not iOS; open the trigger card there (keep the desktop app updated).</span></li><li class="source-item"><a href="https://forum.cursor.com/t/official-x-plugin-auth-is-broken-on-cursor-cloud-grok-bot-and-desktop-refresh/169592">Official X plugin auth is broken on desktop, Cloud, and Grok Bot</a><span class="source-note">Staff: official X plugin connect/refresh is failing across desktop, Cloud Agents, and Grok Bot (including “connected but tools=0”); no clean workaround while they fix X-side app config.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-gives-no-warning-before-weekly-usage-spills-into-paid-on-demand/169679">Weekly Grok Bot usage can spill into paid On-Demand with no warning</a><span class="source-note">Staff: spend order is Grok Bot weekly allowance, then referral/promo credits, then paid On-Demand, with no in-app warning; a $0 On-Demand cap does not block credits, so pause near 100% weekly meter if you want no spill.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-spend-cursor-usage-i-cant-accept-it/169796">Pro weekly pool is separate; overflow hits shared On-Demand</a><span class="source-note">Staff correction: on Pro, Grok Bot has its own included weekly pool, separate from Cursor plan usage; overflow still bills the shared On-Demand pool, so set a $0 On-Demand cap if you want no paid spill.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/cursor-says-grok-bot-is-included-with-pro-now-do-you-actually-have-access-yet/169808">Access is live for paid plans, not legacy request-based</a><span class="source-note">Staff: Grok Bot is live for all paid individual plans (Pro / Pro+ / Ultra) and self-serve Teams with no percent or region rollout; legacy request-based pricing does not get it unless you opt into usage-based.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-unable-to-authenticate-via-gmail-plugin/169782">Gmail plugin OAuth is broken; authorize from Cursor</a><span class="source-note">Staff: the Grok Bot Gmail plugin OAuth is broken; authorizing Gmail from Cursor uses a different path and the connection is shared with Grok Bot until the plugin is fixed.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/multiple-choice-list-doesn-t-work-on-grok-bot-mobile/169830">iOS 1.3.2 sends a question list on the first tap</a><span class="source-note">Staff: iOS 1.3.2 sends a question list as soon as you tap one option; multi-select before send needs a newer Grok Bot app build.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-open-cloud-agent-cards-in-the-browser-and-show-grok-launched-agents-on-agents/169754">Grok-launched agents hide behind the Source filter</a><span class="source-note">Staff: Grok-launched cloud agents do appear on cursor.com/agents — enable the Source → Grok Bot filter; middle-click “Open in Cursor” opens the same agent in the browser.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-can-t-reach-your-computer-for-48-hours/169450">Days-long “Can’t reach your computer” needs a staff restore</a><span class="source-note">Staff: a days-long “Can’t reach your computer” can be a stuck hosted box that Reset / Recover / reinstall cannot clear; staff restores it on their side, then fully quit and reopen the app.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-shows-white-screen-upon-opening-and-is-unusable/169815">Fresh-install white screen is a local profile, not the cloud box</a><span class="source-note">Staff: a fresh-install white window is a local profile bug, not a stuck cloud computer; fully quit, rename ~/Library/Application Support/Grok Bot to Grok Bot.bak, then relaunch — reinstall alone will not clear it.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/cloud-cursor-agents-spawned-by-grok-bot-do-not-fully-respect-the-user-selected-default-model-and-speed-preferences/169746">Grok-spawned Cloud Agents can ignore your non-Fast default</a><span class="source-note">Staff: Grok-spawned Cursor Cloud Agents can start in Fast even when your default is not; hover Cursor Grok 4.6 → Edit and uncheck Fast, and switch the follow-up box back if it flips.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/local-execution-stays-offline-while-chat-still-works/169821">Local execution offline while chat still works</a><span class="source-note">Staff: the local-exec helper can register then drop its server link, so the Mac shows offline while chat still works; fully quit and reopen, and if it fails again send ~/.grokbot/local-exec-daemon.log.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/currently-down-grok-bot-retrying-back-end-vm/169834">Reset stuck at 50% Starting is a server-side bad state</a><span class="source-note">Staff: a Reset hung at 50% “Starting Grok Bot’s computer” is a bad hosted state, not your install; Bot data is not lost — wait a few minutes, and reply on the thread if it still fails.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/bot-as-the-orchestrator-of-local-clis/169588">Local CLI orchestration and always-allow are intended use</a><span class="source-note">Staff: local-CLI orchestration (including Cursor CLI), always-allow local execution, and authenticated browser sessions are intended Grok Bot use; third-party ToS stay separate, bots share one computer, and a continuous Pro orchestrator burns the weekly pool fast.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-cannot-access-my-local-computer/169924">Local-computer helper fails registration</a><span class="source-note">Staff: the local-computer helper can start then fail registration after an update; full-quit plus sign-out recreates it, and desktop 0.31.0 is rolling out.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-desktop-never-joins-existing-ios-bots-latest-app-stuck-on-black-screen/169940">Mac black screen is local DNS not cloud</a><span class="source-note">Staff: Mac 0.30.0 black screen with working iOS bots is a local network/DNS block to the healthy cloud computer, not a recreate-computer problem.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/is-grok-bot-usage-separate-from-cursor-plan/169658">Grok Bot does not spend Pro $20 IDE credit</a><span class="source-note">Staff: Pro’s $20 Other Models credit is not Grok Bot’s weekly pool; dashboard “Included in Pro” is shared billing — and with On-Demand off the Bot can still drain Cursor credits (referral/promo) before stopping (see 169982).</span></li><li class="source-item"><a href="https://forum.cursor.com/t/does-grokbot-not-have-access-to-my-cursor-codebase/169684">Does GrokBot not have access to my Cursor Codebase?</a><span class="source-note">Staff: Grok Bot has no codebase plugin and does not index your repo; coding work is handed to a Cursor Cloud Agent on a GitHub-connected account (Dashboard → Integrations), with an optional GitHub PAT connector for read-only, auto-created repos from scratch, and no Origin access yet.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/phantom-in-grok-bot-is-a-mess/169930">Phantom in Grok Bot is a Mess</a><span class="source-note">Staff: the Phantom plugin runs on @phantom/mcp-server and each new auth creates a separate dedicated agent wallet, not your personal Phantom wallet, so reconnects show a new address while funded funds stay on the old agent wallet (recover via chat history or Phantom Support).</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grokbot-custom-connectors/169965">Grokbot custom connectors</a><span class="source-note">Staff: there is no settings form for custom connectors; tell the Bot in chat to add an MCP server (public HTTPS streamable HTTP/SSE), confirm the details, and new tools appear from the next message — localhost-only MCP on your PC is unreachable from the cloud computer.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-drive-mcp-should-write-google-docs-body-and-sheet-cells-not-only-file-metadata/169971">Grok Bot: Drive MCP should write Google Docs body and Sheet cells, not only file metadata</a><span class="source-note">Staff: in-place Google Doc/Sheet editing lives in the dedicated Docs and Sheets connectors (edit content against the existing file ID), while Drive is file-level only; add both from the connector marketplace with the same Google account.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/blank-screen-after-opening-grok-bot/169966">Blank screen after opening Grok Bot</a><span class="source-note">Staff: a blank/white screen usually means the desktop app cannot reach the cloud computer; Cloudflare WARP can intercept that traffic even on a hotspot — turn WARP off or use split tunneling/excluded routes, and prefer builds after 0.28.0 that show an error+retry instead of a blank screen.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/cloud-agents-created-in-grok-bot-not-displayed-in-cursor/169939">Cloud Agents created in Grok Bot not displayed in Cursor</a><span class="source-note">Staff: Cloud Agents launched from Grok Bot keep running under your account but stay hidden on cursor.com/agents and the desktop sidebar until you enable filter Source &gt; Grok Bot (once per client: web and desktop).</span></li><li class="source-item"><a href="https://forum.cursor.com/t/cant-reach-your-computer-from-last-72-hours/169970">Can&#x27;t reach your computer from last 72 hours</a><span class="source-note">Staff: when the cloud computer is healthy but the app still says Can’t reach, set both IPv4 and IPv6 DNS to 1.1.1.1/8.8.8.8 (JioFiber routers often keep IPv6 DNS) or confirm via a phone hotspot on another carrier.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-0-30-0-stuck-on-setting-up-your-grok-bot-on-macos/169981">Grok Bot 0.30.0 stuck on &quot;Setting up your Grok Bot&quot; on macOS</a><span class="source-note">Staff: endless Setting up your Grok Bot on a free Cursor plan means no hosted machine is provisioned — needs Pro/Pro+/Ultra/Teams or linked SuperGrok/Plus/Heavy; the spinner instead of an access message is a known UX bug.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-zoom-plugin-oauth-hardcodes-http-localhost-8787-callback-zoom-rejects-hostname-localhost-error-4700/169991">Grok Bot Zoom plugin OAuth hardcodes http://localhost:8787/callback — Zoom rejects hostname localhost (error 4700)</a><span class="source-note">Staff: the catalog Zoom plugin OAuth hardcodes http://localhost:8787/callback, which Zoom rejects (error 4700); no user workaround until the redirect moves off localhost (e.g. 127.0.0.1).</span></li><li class="source-item"><a href="https://forum.cursor.com/t/unable-to-reconnect-to-my-grok-bots-computer-after-attempted-update/170000">Unable to reconnect to my Grok Bot&#x27;s computer after attempted update</a><span class="source-note">Staff: bots/files/logins live on the remote computer; Can’t Reach plus failed Recover/Reset often means a lost app login session — fully quit, sign out/in (or reinstall and sign in), since Recover/Reset need a working session.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-computer-stuck-in-partial-state-reset-failed-existing-cloud-computer-unreachable/170006">Grok Bot Computer Stuck in Partial State — Reset Failed, Existing Cloud Computer Unreachable</a><span class="source-note">Staff: hold off on Reset/Recover after a scary partial-state dialog — data is remote and failed resets often failed on the app side; re-login, verify via mobile on cellular, and try public DNS / disable VPN before resetting.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-couldnt-finish-setup/170010">Grok Bot couldn&#x27;t finish setup</a><span class="source-note">Staff: Can’t reach your computer on Linux Grok Bot 0.18.0 is not your network — Grok Bot is not officially available on Linux yet and that old build is rejected; supported platforms are macOS, Windows, and iOS.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-0-30-0-windows-setup-fails-with-cant-reach-your-computer-all-network-checks-pass/170035">Grok Bot 0.30.0 (Windows) — setup fails with Can&#x27;t reach your computer, all network checks pass</a><span class="source-note">Staff: the app reaches a per-computer subdomain under cursorvm.com, not the apex — if nslookup test123.us8.cursorvm.com is Query refused while the apex works, change DNS on both IPv4 and IPv6 (router RA can keep the ISP resolver even after 1.1.1.1).</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-draining-cursor-credit-pool/169982">Grok Bot draining Cursor credit pool</a><span class="source-note">Staff: after the Grok Bot weekly pool on Pro+ is gone, usage keeps going onto Cursor credits (referral/promo) first, then on-demand if enabled; a $0 on-demand cap stops paid overage but not credit drain, and claude-opus / grok-4.6-high-fast lines are models the Bot picks server-side.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-templates-preview-shows-skills-but-the-export-ships-skills-skills-are-never-delivered/169911">Grok Bot templates: preview shows skills, but the export ships skills: [] — skills are never delivered</a><span class="source-note">Staff: Bot template preview lists skills, but import does not apply them (export ships skills: []); until that is fixed, copy the skill body from the preview and ask the new Bot to recreate it.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/cloud-computer-wipes-packages-after-rebuild/169847">Cloud computer wipes packages after rebuild</a><span class="source-note">Staff: Update Computer keeps files and logins but rebuilds the OS image, so apt/apps/daemons are gone; the box also sleeps when idle (background processes die) and can auto-update during idle — keep a package list in a file and ask the Bot to reinstall after an update.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/review-bugbot-is-missing-on-cloud-agents-launched-from-grok-bot/170096">/review-bugbot is missing on cloud agents launched from Grok Bot</a><span class="source-note">Staff: /review and /review-bugbot do not attach to cloud agents created by Grok Bot (decided at create time); start a new agent from cursor.com/agents on the same PR branch and include /review-bugbot there.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-bug-report/170104">Grok Bot Bug Report (empty roster / black screen after reconnect)</a><span class="source-note">Staff: empty bot list and black/white loading after reconnect usually means the Agent Computer was slow waking from sleep—nothing deleted; do not Reset; fully quit and relaunch once the box is awake.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grokbot-and-github/170137">Grokbot and GitHub (Connected but Authorization header badly formatted)</a><span class="source-note">Staff: GitHub connector shows Connected but fails with “Authorization header is badly formatted”—tracked bug; workaround is press-and-hold the account → Remove, then reconnect and sign in again.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/authorization-death-by-1000-clicks/170087">Authorization death by 1000 clicks</a><span class="source-note">Staff: “Always allow” for local-computer actions lives only in the desktop app on that machine; iOS can only one-time-approve, and those approvals clear on every new message—set Always Allow under desktop Settings → Execution on Local Computer.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-wrangler-box-auth-reminder-stays-stuck-after-auth-already-succeeded-via-another-path/170052">Wrangler/box auth reminder stays stuck after auth already succeeded via another path</a><span class="source-note">Staff: the “help on its computer” / Waiting-for-you reminder only clears when you answer that card (“I’m done, continue” or Skip) or send any chat message—it does not auto-dismiss if the Bot finished login another way.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-fastmail-filters-rules-save-is-a-silent-no-op-chrome-on-the-box/170018">Fastmail Filters &amp; Rules Save is a silent no-op (Chrome on the box)</a><span class="source-note">Staff: Fastmail Settings → Filters &amp; Rules Save on the box Chrome fires zero network requests; workaround is manage filters/Sieve via Fastmail’s API (JMAP) with a token—the mail helper already uses that path successfully.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/vpn-sso-passkey-and-yubikey-within-grokbot/170148">VPN, SSO, Passkey, and YubiKey Within Grokbot</a><span class="source-note">Staff: Grok Bot’s cloud computer cannot join a corporate VPN today (don’t install a VPN client on it — that can knock the box offline); Atlassian Cloud / public SSO works via browser takeover (Okta etc.), YubiKey works on macOS/Windows under Settings → Security Key, and internal VPN-only sites need Execution on Local Computer on your VPN’d machine.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/unable-to-connect/170123">Unable to connect</a><span class="source-note">Staff: chats and agents live on the hosted Grok Bot computer — during an outage recovery that computer can be temporarily replaced with a blank one (roster looks empty); Cursor can restore it from saved data, then quit and reopen the app to see agents/history again.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grokbot-linux-execution-on-local-computer-not-working/170157">GrokBot Linux Execution on Local Computer not working</a><span class="source-note">Staff: empty ListMachines / local execution failing on Grok Bot 0.30.0 Linux is a known bug with a fix already merged for the next desktop update; interim workaround is an unlocked system keyring (gnome-keyring or KWallet), fully quit leftover Grok Bot processes, then relaunch.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/new-report-windows-leftover-daemon-on-0-30-0/170121">New report, Windows, leftover daemon on 0.30.0</a><span class="source-note">Staff: 0.30.0 fixed one macOS daemon exit/no-respawn path, but Windows leftover local-exec-daemon is a different known failure; when the machine is unreachable, Quit from the tray, end remaining “Grok Bot” and local-exec-daemon processes in Task Manager, relaunch, and wait about a minute to re-register.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-failed-to-respond/170235">Grok bot failed to respond</a><span class="source-note">Staff (kevinn): “Bot failed to respond” on every bot—including fresh copies—means the shared cloud computer is stuck, not something you can fix by restarting or recreating bots; after staff recovery, fully quit (Cmd+Q / force-close iOS), update every install, keep one open, and test in a new chat.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-0-30-0-stuck-on-black-loading-screen-during-initial-setup-on-mac/170251">Grok Bot 0.30.0 Stuck on Black Loading Screen During Initial Setup on Mac</a><span class="source-note">Staff (Colin): Team admin role alone does not provision a Grok Bot computer — Grok Bot is included with a paid team seat (Standard or Premium), not the admin role. If the signed-in account has no seat, the app sits on the black loading screen with no computer to reset. Fix: assign yourself a seat in Cursor dashboard Members, fully quit and reopen Grok Bot; or sign in with a seated team account.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-weekly-usage-hits-100-after-bot-to-bot-reviews-the-user-asked-to-stop/170271">Grok Bot: weekly usage hits 100% after bot-to-bot reviews the user asked to stop</a><span class="source-note">Staff (mohitjain): Each bot-to-bot message burns a weekly-usage turn; asking bots in chat to “stay quiet” is only a hint. Reliable fixes: run work in one Command Agent with subagents (they finish and stop), and delete unused specialist bots (idle bots can still be woken; deleting also clears that bot’s chat — save first). Double limit banners are blocked retries, not double charges.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-windows-fresh-profile-setup-fails-with-can-t-reach-your-computer-after-backend-fix/170281">Grok Bot Windows — fresh profile setup fails with “Can’t reach your computer” after backend fix</a><span class="source-note">Staff (deanrie): Grok Bot ignores the Windows system proxy / local HTTP proxy and connects direct to the Agent Computer — so DNS/TCP/CONNECT checks through a proxy can pass while the app fails. Use VPN/proxy TUN (Enhanced/Global/virtual adapter) mode, then verify with curl.exe --noproxy &quot;*&quot; -I https://test123.&lt;region&gt;.cursorvm.com (expect 404 awselb/2.0). User confirmed TUN fixed setup. Region may be us10 not us8.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-0-30-0-stuck-on-black-loading-screen-on-windows-11/170294">Grok Bot 0.30.0 stuck on black loading screen on Windows 11</a><span class="source-note">Staff (Colin): Healthy cloud computer + black spinner on both LAN and hotspot can be Zscaler Client Connector still tunneling (including on hotspot). Quit Grok Bot, pause/disable Zscaler, relaunch; ask IT to allowlist/exclude SSL inspection for *.cursorvm.com and **.cursorvm.com (both levels).</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-cannot-attach-inline-images-to-cursor-bug-reports-chat-drop-and-forum-upload/170255">Grok Bot cannot attach inline images to Cursor bug reports (chat drop and forum upload)</a><span class="source-note">Staff (mohitjain): To get a screenshot into Grok Bot chat, use the composer + button (or drag a saved file) and wait for the thumbnail before send — drag-from-browser/other-app or Enter-before-thumbnail usually drops it. Forum upload by the assistant is a current limitation; attach the screenshot yourself or reply to support email.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-routines-dont-auto-run-on-schedule/170358">Grok Bot routines don&#x27;t auto-run on schedule</a><span class="source-note">Staff (Colin): Editing bot instructions or which platform created a routine does not break schedules — late “Next run: Run now” usually means the slot fired but sat in a queue (often 10–37 min), and some runs finish without posting to chat; don’t recreate routines; message the bot for an on-demand check-in.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-0-30-0-agent-computer-unreachable-after-update-recover-and-reset-all-failed/170258">Grok Bot 0.30.0 — Agent Computer unreachable after Update, Recover, and Reset all failed</a><span class="source-note">Staff (kevinn): An “Aw, Snap!” Chrome page on the Bot screen after idle wake is the Bot’s browser crashing inside a healthy computer — reload the tab or ask the Bot to reload, fully quit/reopen Grok Bot if needed, and do not run Update/Recover/Reset; idle machines take a moment to wake and a first message can miss, so resend is safe.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-mac-blocked-after-password-change-app-says-unavailable-spending-shows-supergrok-plus/170389">Grok Bot Mac “unavailable” after password reset (expired session)</a><span class="source-note">Staff (deanrie): After a password reset, Grok Bot on Mac can keep an expired session and show “isn’t available on this account yet” even though SuperGrok/Cursor access and your cloud computer/Bots are fine — Log out from the bottom of that screen, fully Quit (Cmd+Q), reopen and Sign in with the new password; Check Access→download is a misleading expired-session UI, not a missing entitlement.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-approval-needed-stays-on-agent-view-homepage-when-coder-has-nothing-to-approve/170127">Homepage “Approval needed” stuck after card timeout</a><span class="source-note">Staff (Colin): A homepage “Approval needed” tile with nothing pending usually means an approval card timed out (~10 minutes unanswered); open the agent and send a short message or restart the app to clear a stuck badge — the tile is supposed to clear when the card expires.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/file-contents-and-grokbot/170421">File contents and grokbot — viewer Copy vs Download</a><span class="source-note">Staff (Colin): The in-app file viewer only offers Download today; for .md/.txt you can click-drag to select and Cmd/Ctrl+C, while .docx/.pdf won’t highlight — ask the Bot to paste the full text into chat and use the message Copy action as a workaround.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-canva-connector-failing/170431">Grok Bot Canva connector failing — Invalid redirect URI on iOS</a><span class="source-note">Staff (deanrie): Canva “Invalid redirect URI” on Grok Bot iOS 1.4.0 is a known app-link vs web-redirect mismatch (not your Canva settings) — connect Canva from desktop Grok Bot on the same account and the connector syncs to iPhone.</span></li><li class="source-item"><a href="https://forum.cursor.com/t/grok-bot-local-computer-execution-looks-connected-in-settings-but-is-not-actually-usable-for-file-i-o/169877">Local computer looks connected but CopyFromBox/Shell flaps after large transfer timeout</a><span class="source-note">Staff (deanrie): A large CopyFromBox (or timed-out Shell) can drop the local machine from the agent list for ~1 minute while Settings still says connected — split big copies, wait a minute before retrying, and if stuck Cmd+Q then pkill -f local-exec-daemon and reopen.</span></li></ul>
+</section>
+<section class="source-section prose">
+<h2>Fetch failures or full text not opened</h2>
+<ul>
+<li><a href="https://www.datacamp.com/tutorial/grok-bot-tutorial">DataCamp tutorial</a> timed out on full text. Used search summary + awesome one-liner and linked back.</li>
+<li><a href="https://x.ai/news/introducing-grok-bot">Introducing Grok Bot</a> timed out once; launch date 2026-08-11 comes from awesome plus opened secondary accounts; the entry remains in the official list for cross-check.</li>
+<li><a href="https://docs.x.ai/grok-bot/use-cases">Official use-cases</a> opened on 2026-09-04. Starter jobs on this site follow that page’s read-and-prepare pattern; they are not a reprint.</li>
+<li>Some raw READMEs timed out; used GitHub repo-page summaries instead.</li>
+</ul>
+<p>Per-URL Field Cases and failure modes also appear on <a href="/use-cases/">Cases</a> and <a href="/troubleshooting/">Fixes</a>. Upstream list: <a href="https://github.com/RongleCat/awesome-grok-bot">awesome-grok-bot</a> (CC0).</p>
+</section>
+</div></section>
+</main>
+<footer class="site"><div class="wrap"><div class="foot-grid"><div><h4>Learn</h4><a href="/learn/">Handbook</a><a href="/learn/what-is-grok-bot/">What Grok Bot is</a><a href="/learn/install/">Install and sign in</a><a href="/learn/first-bot/">First Bot</a><a href="/learn/computer/">Shared computer</a><a href="/learn/skills-routines/">Skills and routines</a><a href="/learn/plugins/">Plugins and MCP</a><a href="/learn/cost-and-pitfalls/">Cost and pitfalls</a><a href="/learn/operator/">After week one</a><a href="/learn/ops/">X, Cursor, MCP</a><a href="/learn/glossary/">Glossary</a><a href="/learn/cursor/">Cursor and Grok Bot</a></div><div><h4>Look up</h4><a href="/pricing/">Pricing</a><a href="/compare/">Alternatives</a><a href="/tools/">Tools catalog</a><a href="/use-cases/">Field cases</a><a href="/troubleshooting/">Help</a><a href="/sources/">Sources</a></div><div><h4>Official</h4><a href="https://x.ai/bot">x.ai/bot</a><a href="https://docs.x.ai/grok-bot/overview">xAI docs</a><a href="https://cursor.com/help/grok-bot/getting-started">Cursor Help</a><a href="https://github.com/RongleCat/awesome-grok-bot">awesome-grok-bot</a></div></div><p>Community guide for starting, running, and recovering Grok Bot. Product names belong to their owners. Official packages stay on x.ai/bot. Updated 2026-09-04. Sources are dated by fetch day.</p></div></footer>
+<script>const btn=document.querySelector('[data-menu]');const links=document.querySelector('[data-links]');if(btn) btn.addEventListener('click',()=>links.classList.toggle('open'));</script>
+</body></html>
