@@ -9,6 +9,7 @@ This site: https://grokbot.run/
 ## Start
 
 - [Guide](https://grokbot.run/): how to start, login, plans, fixes
+- Header Find on every page: type a page, symptom, or tool name. Results jump to an existing URL. `/?q=` opens the same lookup. There is no separate /search/ page.
 - [Handbook](https://grokbot.run/learn/): lessons in order
 - [What is Grok Bot](https://grokbot.run/learn/what-is-grok-bot/): not grok.com
 - [Install and login](https://grokbot.run/learn/install/)

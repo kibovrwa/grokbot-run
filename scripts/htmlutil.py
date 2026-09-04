@@ -71,14 +71,74 @@ def nav_html(path):
     return "".join(bits)
 
 
+FIND_JS = r"""
+(function(){
+  const box=document.querySelector('[data-find]');
+  const input=document.querySelector('[data-find-input]');
+  const list=document.querySelector('[data-find-list]');
+  if(!box||!input||!list) return;
+  let rows=[], hits=[], active=-1, loaded=false;
+  const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  function hide(){ list.hidden=true; list.innerHTML=''; hits=[]; active=-1; }
+  function score(row,q){
+    const t=row.t.toLowerCase(), hay=row.q||'';
+    if(t===q) return 100;
+    if(t.startsWith(q)) return 80;
+    if(t.includes(q)) return 60;
+    if(hay.includes(q)) return 40;
+    return 0;
+  }
+  function render(){
+    if(!hits.length){ hide(); return; }
+    list.innerHTML=hits.map((r,i)=>'<a role="option" class="'+(i===active?'is-active':'')+'" href="'+esc(r.h)+'"><span>'+esc(r.t)+'</span><em>'+esc(r.k)+'</em></a>').join('');
+    list.hidden=false;
+  }
+  function run(){
+    const q=(input.value||'').trim().toLowerCase();
+    if(q.length<2){ hide(); return; }
+    hits=rows.map(r=>({r,s:score(r,q)})).filter(x=>x.s).sort((a,b)=>b.s-a.s).slice(0,8).map(x=>x.r);
+    active=hits.length?0:-1;
+    render();
+  }
+  function load(){
+    if(loaded) return Promise.resolve();
+    return fetch('/search.json').then(r=>r.json()).then(data=>{ rows=data; loaded=true; });
+  }
+  input.addEventListener('focus', ()=>load().then(run));
+  input.addEventListener('input', ()=>load().then(run));
+  input.addEventListener('keydown', e=>{
+    if(e.key==='Escape'){ hide(); input.blur(); return; }
+    if(!hits.length) return;
+    if(e.key==='ArrowDown'){ e.preventDefault(); active=Math.min(hits.length-1,active+1); render(); }
+    if(e.key==='ArrowUp'){ e.preventDefault(); active=Math.max(0,active-1); render(); }
+    if(e.key==='Enter' && active>=0 && hits[active]){ e.preventDefault(); location.href=hits[active].h; }
+  });
+  document.addEventListener('click', e=>{ if(!box.contains(e.target)) hide(); });
+  const pre=new URLSearchParams(location.search).get('q');
+  if(pre){ input.value=pre; load().then(run); }
+})();
+"""
+
+
+def find_html():
+    return (
+        '<div class="find" data-find>'
+        '<label class="visually-hidden" for="site-find">Find a page or symptom</label>'
+        '<input id="site-find" class="find-input" type="search" placeholder="Find a page or symptom" autocomplete="off" data-find-input>'
+        '<div class="find-list" hidden data-find-list role="listbox"></div>'
+        "</div>"
+    )
+
+
 def header_html(path):
     return (
         '<header class="site"><div class="wrap nav">'
         '<a class="brand" href="/"><img class="logo" src="%s" alt="Grok Bot Guide"><span class="name">Grok Bot</span><span class="tag">Guide</span></a>'
         '<span class="nav-rule" aria-hidden="true"></span>'
+        '%s'
         '<button class="menu-btn" type="button" data-menu>Menu</button>'
         '<nav class="links" data-links>%s</nav></div></header>'
-        % (LOGO, nav_html(path))
+        % (LOGO, find_html(), nav_html(path))
     )
 
 
@@ -246,6 +306,11 @@ def page(path, title, description, body, jsonld=None, lang="en"):
             "name": site_name,
             "logo": {"@type": "ImageObject", "url": LOGO_ABS},
         },
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": SITE + "/?q={search_term_string}",
+            "query-input": "required name=search_term_string",
+        },
     })
     blobs.append({
         "@context": "https://schema.org",
@@ -300,6 +365,7 @@ def _page_join(path, title, description, body, canon, site_name, jsonld_html):
         "<main>%s%s</main>" % (crumbs_html(path, title), body),
         footer_html(),
         "<script>const btn=document.querySelector('[data-menu]');const links=document.querySelector('[data-links]');if(btn) btn.addEventListener('click',()=>links.classList.toggle('open'));</script>",
+        '<script data-find-js>%s</script>' % FIND_JS,
         "</body></html>",
     ]
     return "\n".join(html)

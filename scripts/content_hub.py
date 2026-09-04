@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import re
 from html import escape
 from htmlutil import LESSONS
 
@@ -160,7 +161,8 @@ def learn_index():
 def glossary():
     rows = []
     for term, blurb in GLOSSARY:
-        rows.append("<dt>%s</dt><dd>%s</dd>" % (escape(term), escape(blurb)))
+        sid = re.sub(r"[^a-z0-9]+", "-", term.lower()).strip("-")[:48] or "term"
+        rows.append('<dt id="%s">%s</dt><dd>%s</dd>' % (escape(sid), escape(term), escape(blurb)))
     faqs = []
     for q, a in GLOSS_FAQS:
         faqs.append("<details><summary>%s</summary><p>%s</p></details>" % (escape(q), escape(a)))

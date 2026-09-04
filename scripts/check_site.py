@@ -86,6 +86,8 @@ for f in files:
             errors.append(f'{f}: WebSite json-ld missing inLanguage en')
     if not p.og_image or 'https://grokbot.run/og.png' not in text:
         errors.append(f'{f}: missing og:image https://grokbot.run/og.png')
+    if 'data-find-input' not in text:
+        errors.append(f'{f.relative_to(dist)}: missing Find box')
     # H1 must be English-only; Chinese subtitle lives in sibling <p class="en-sub">
     h1_primary = re.sub(r'<[^>]+>', '', ''.join(
         re.findall(r'<h1[^>]*>(.*?)</h1>', text, re.S)
@@ -111,9 +113,16 @@ for f in files:
         if not target.exists():
             errors.append(f'{f.relative_to(dist)} -> {href}')
 
-for asset in ('robots.txt', 'sitemap.xml', 'og.png', '_redirects', '_headers', 'brand/grok-bot-face.svg', 'llms.txt', '7c4e9a2f18b0d6e35a91c8f4b2d07e16.txt'):
+for asset in ('robots.txt', 'sitemap.xml', 'og.png', '_redirects', '_headers', 'brand/grok-bot-face.svg', 'llms.txt', 'search.json', '7c4e9a2f18b0d6e35a91c8f4b2d07e16.txt'):
     if not (dist / asset).exists():
         errors.append('missing ' + asset)
+
+if (dist / 'search.json').exists():
+    idx_text = (dist / 'search.json').read_text(encoding='utf-8')
+    if idx_text.count('"h":') < 80:
+        errors.append('search.json too small: %d hrefs' % idx_text.count('"h":'))
+if (dist / 'index.html').exists() and 'SearchAction' not in (dist / 'index.html').read_text(encoding='utf-8'):
+    errors.append('homepage missing SearchAction')
 
 redirects = (dist / '_redirects').read_text(encoding='utf-8') if (dist / '_redirects').exists() else ''
 for needle in (

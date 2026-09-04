@@ -7,7 +7,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from htmlutil import ROOT, SITE, page, write, header_html, footer_html, canonical, faq_jsonld, howto_jsonld, itemlist_jsonld
+from htmlutil import ROOT, SITE, page, write, header_html, footer_html, canonical, faq_jsonld, howto_jsonld, itemlist_jsonld, FIND_JS
 from seo_pages import PAGES
 from content_home import home
 from content_pricing import pricing, PRICING_FAQS
@@ -73,6 +73,11 @@ def rewrite_chrome(html, path):
         '<li><a href="https://docs.x.ai/grok-bot/use-cases">Official use-cases</a> timed out. Official job examples instead use sentences already fetched from overview / x.ai/bot.</li>',
         '<li><a href="https://docs.x.ai/grok-bot/use-cases">Official use-cases</a> opened on 2026-09-04. Starter jobs on this site follow that page’s read-and-prepare pattern; they are not a reprint.</li>',
     )
+    find_tag = '<script data-find-js>%s</script>' % FIND_JS
+    if "data-find-js" in html:
+        html = re.sub(r"<script data-find-js>.*?</script>", find_tag, html, count=1, flags=re.S)
+    else:
+        html = html.replace("</body>", find_tag + "</body>", 1)
     return html
 
 
@@ -264,8 +269,10 @@ def main():
     if headers.exists():
         shutil.copy2(headers, DIST / "_headers")
     from indexnow import KEY, write_key_files
+    from search_index import write_index
     write_key_files()
-    print("refreshed", n, "pages; indexnow", KEY)
+    rows = write_index()
+    print("refreshed", n, "pages; search", rows, "rows; indexnow", KEY)
 
 
 if __name__ == "__main__":

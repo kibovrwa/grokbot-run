@@ -474,6 +474,9 @@ filters.addEventListener('click', e=>{
   cat=b.getAttribute('data-filter'); apply();
 });
 search.addEventListener('input', apply);
+const pre=new URLSearchParams(location.search).get('q');
+if(pre){ search.value=pre; }
+apply();
 </script>
 ''' % ("".join(_job_html(j) for j in JOBS), "".join(x_week), "".join(x_threads), "".join(skills), "".join(oss), "".join(guides), len(CASES), "".join(btns), "".join(cards))
     return body

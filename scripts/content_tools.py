@@ -102,6 +102,9 @@ function apply(){
 }
 filters.addEventListener('click', e=>{ const b=e.target.closest('button'); if(!b) return; tag=b.getAttribute('data-filter'); apply(); });
 search.addEventListener('input', apply);
+const pre=new URLSearchParams(location.search).get('q');
+if(pre){ search.value=pre; }
+apply();
 </script>"""
     featured = [
         ("Compound Engineering", "https://github.com/EveryInc/compound-engineering-plugin", "Install in the Cursor marketplace. Grok Bot inherits it. Do not clone onto the Bot computer."),

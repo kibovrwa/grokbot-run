@@ -125,6 +125,70 @@ nav.links a[aria-current="page"] { color: var(--text); background: var(--bg-elev
   font: inherit;
   font-size: 14px;
 }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.find {
+  position: relative;
+  flex: 1 1 200px;
+  min-width: 132px;
+  max-width: 320px;
+}
+.find-input {
+  width: 100%;
+  border: 1px solid var(--hairline);
+  border-radius: 9999px;
+  padding: 8px 14px;
+  font: inherit;
+  font-size: 14px;
+  background: var(--bg-elev);
+  color: var(--text);
+}
+.find-input::placeholder { color: var(--nav-muted); }
+.find-input:focus { outline: 2px solid #111; outline-offset: 2px; }
+.find-list {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: auto;
+  width: max(100%, 320px);
+  max-width: min(420px, 92vw);
+  background: var(--bg-elev);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-s);
+  box-shadow: var(--shadow-hover);
+  z-index: 50;
+  overflow: hidden;
+  padding: 6px;
+}
+.find-list a {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1.35;
+}
+.find-list a:hover,
+.find-list a.is-active { background: var(--surface); opacity: 1; }
+.find-list span { min-width: 0; }
+.find-list em {
+  font-style: normal;
+  color: var(--muted);
+  font-size: 12px;
+  flex: none;
+}
 
 .hero {
   padding: 84px 0 36px;
@@ -611,6 +675,7 @@ tr:last-child td { border-bottom: 0; }
 
 @media (max-width: 860px) {
   .grid-2, .grid-3, .foot-grid, .job-grid, .steal, .mistakes, .quotes { grid-template-columns: 1fr; }
+  .brand .tag { display: none; }
   .nav-rule { display: none; }
   nav.links { display: none; }
   nav.links.open {
@@ -627,7 +692,9 @@ tr:last-child td { border-bottom: 0; }
     border-bottom: 1px solid var(--hairline);
     gap: 4px;
   }
-  .menu-btn { display: inline-flex; margin-left: auto; }
+  .find { max-width: none; }
+  .find-list { left: auto; right: 0; width: min(360px, 92vw); }
+  .menu-btn { display: inline-flex; }
   .hero { padding-top: 48px; }
   .hero-product { padding-top: 40px; }
   .hero-product h1 { font-size: clamp(32px, 10vw, 44px); }
@@ -641,19 +708,19 @@ tr:last-child td { border-bottom: 0; }
   *, *::before, *::after { scroll-behavior: auto; transition: none !important; }
 }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Grok Bot Guide", "url": "https://grokbot.run/", "inLanguage": "en", "description": "Grok Bot guide: how to start, Cursor login, first job, shared computer, plan conflicts, and Recover before Reset.", "publisher": {"@type": "Organization", "name": "Grok Bot Guide", "logo": {"@type": "ImageObject", "url": "https://grokbot.run/brand/grok-bot-face.svg"}}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Grok Bot Guide", "url": "https://grokbot.run/", "inLanguage": "en", "description": "Grok Bot guide: how to start, Cursor login, first job, shared computer, plan conflicts, and Recover before Reset.", "publisher": {"@type": "Organization", "name": "Grok Bot Guide", "logo": {"@type": "ImageObject", "url": "https://grokbot.run/brand/grok-bot-face.svg"}}, "potentialAction": {"@type": "SearchAction", "target": "https://grokbot.run/?q={search_term_string}", "query-input": "required name=search_term_string"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is a skill the same as a plugin?", "acceptedAnswer": {"@type": "Answer", "text": "No. A skill is written instructions. A plugin or connector is an account-level integration that gives the computer real tools. You usually need both."}}, {"@type": "Question", "name": "If I create a second Bot, are my logins isolated?", "acceptedAnswer": {"@type": "Answer", "text": "No. Isolation is per user, not per Bot. Files, cookies, and sessions on the shared computer are visible to the whole roster."}}, {"@type": "Question", "name": "Does a share link copy my computer?", "acceptedAnswer": {"@type": "Answer", "text": "No. Official share copies identity, skills, and routines. It does not copy the cloud computer or the logins stored there."}}, {"@type": "Question", "name": "Is Grok Build a Grok Bot client?", "acceptedAnswer": {"@type": "Answer", "text": "No. Grok Build is a local coding CLI. grok-app is a desktop GUI for that CLI. Install Grok Bot from x.ai/bot."}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Grok Bot glossary: Bot, computer, skill, routine, plugin", "description": "Grok Bot glossary for Bot, shared computer, skill, routine, plugin, MCP, Teach a task, and share templates. Short definitions, not a reprint of the docs.", "url": "https://grokbot.run/learn/glossary/", "inLanguage": "en", "datePublished": "2026-09-04", "dateModified": "2026-09-04", "isPartOf": {"@type": "WebSite", "name": "Grok Bot Guide", "url": "https://grokbot.run/"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Guide", "item": "https://grokbot.run/"}, {"@type": "ListItem", "position": 2, "name": "Handbook", "item": "https://grokbot.run/learn/"}, {"@type": "ListItem", "position": 3, "name": "Glossary", "item": "https://grokbot.run/learn/glossary/"}]}</script>
 </head><body>
-<header class="site"><div class="wrap nav"><a class="brand" href="/"><img class="logo" src="/brand/grok-bot-face.svg" alt="Grok Bot Guide"><span class="name">Grok Bot</span><span class="tag">Guide</span></a><span class="nav-rule" aria-hidden="true"></span><button class="menu-btn" type="button" data-menu>Menu</button><nav class="links" data-links><a href="/">Guide</a><a href="/learn/install/">Install</a><a href="/pricing/">Pricing</a><a href="/tools/">Tools</a><a href="/use-cases/">Cases</a><a href="/troubleshooting/">Help</a></nav></div></header>
+<header class="site"><div class="wrap nav"><a class="brand" href="/"><img class="logo" src="/brand/grok-bot-face.svg" alt="Grok Bot Guide"><span class="name">Grok Bot</span><span class="tag">Guide</span></a><span class="nav-rule" aria-hidden="true"></span><div class="find" data-find><label class="visually-hidden" for="site-find">Find a page or symptom</label><input id="site-find" class="find-input" type="search" placeholder="Find a page or symptom" autocomplete="off" data-find-input><div class="find-list" hidden data-find-list role="listbox"></div></div><button class="menu-btn" type="button" data-menu>Menu</button><nav class="links" data-links><a href="/">Guide</a><a href="/learn/install/">Install</a><a href="/pricing/">Pricing</a><a href="/tools/">Tools</a><a href="/use-cases/">Cases</a><a href="/troubleshooting/">Help</a></nav></div></header>
 <main><nav class="crumbs" aria-label="Breadcrumb"><div class="wrap"><a href="/">Guide</a><span class="sep" aria-hidden="true">/</span><a href="/learn/">Handbook</a><span class="sep" aria-hidden="true">/</span><span>Glossary</span></div></nav>
 <section class="band"><div class="wrap prose">
 <p class="kicker">Reference</p>
 <h1>Grok Bot glossary</h1>
 <p class="meta">Original short definitions for this handbook. Official wording lives on <a href="https://docs.x.ai/grok-bot/overview">xAI docs</a>. Longer lessons: <a href="/learn/">handbook</a>.</p>
 <p>People bounce between five words — Bot, computer, skill, routine, plugin — and treat them as one. They are not. Use this page when a tutorial collapses them, then return to the lesson that owns the job.</p>
-<dl class="terms"><dt>Grok Bot</dt><dd>The official app from xAI / SpaceXAI with Cursor: a roster of named teammates plus one shared cloud computer. Not grok.com chat.</dd><dt>Bot</dt><dd>One named teammate on your roster. It has a screen on the shared computer. Creating another Bot is not a security boundary.</dd><dt>Computer</dt><dd>The persistent cloud machine assigned to your account. Browser, files, and terminal live here. Every Bot can see the same logins and cookies.</dd><dt>Screen</dt><dd>The work surface one Bot uses on that computer. Parallel screens are not isolation. One computer-use task runs per screen.</dd><dt>Skill</dt><dd>A reusable how: when to use it, inputs, steps, how to verify, what to return, and what needs approval. Save after a good run.</dd><dt>Routine</dt><dd>A when: schedule or event on one Bot. Tests do real things. Put sends, deletes, and payments behind approval.</dd><dt>Teach a task</dt><dd>Desktop recording of about ten minutes of screen actions (no microphone). The Bot drafts a skill. You still add stop rules.</dd><dt>Plugin / connector</dt><dd>Account-level integration. Prefer a connector over clicking the web. Installed for the account, not locked to one Bot.</dd><dt>MCP</dt><dd>Remote HTTP tools the computer can call. Localhost / stdio MCP on your laptop is unreachable from the cloud machine.</dd><dt>Share / template</dt><dd>A public x.ai/bot link that copies identity, skills, and routines — not your computer or logins. Strip secrets before sharing.</dd><dt>Chief of Staff</dt><dd>Community convention: one pinned Bot you talk to. It proposes specialists. Official docs only require name, job, and how it works.</dd><dt>Require Approval</dt><dd>The human gate for sends, spend, and other writes. Description beats shouting stop later in chat.</dd><dt>Weekly usage</dt><dd>Meter on the Cursor account. macOS and iOS share one bucket. Exhaustion can spill into On-Demand if that is enabled.</dd><dt>On-Demand</dt><dd>Shared paid overflow after the weekly pool. The app may not warn you in-product. Watch the Cursor usage screen.</dd><dt>Cursor account</dt><dd>The only login. There is no separate Grok Bot account. The same account holds the plan and the usage meter. Grok Bot is not a Cursor IDE panel.</dd><dt>Hermes</dt><dd>A different named-bot host. Some skill packs port a roster there. A Hermes profile is not a Cursor Grok Bot.</dd><dt>grok.com / Grok</dt><dd>Chat, Imagine, and Voice. Google often ranks it for “grok bot.” Wrong product for this handbook.</dd><dt>Grok Build</dt><dd>Local coding CLI. Not Grok Bot. The community app grok-app is a GUI for Grok Build, not a Bot client.</dd><dt>Legacy Privacy Mode</dt><dd>A Cursor setting that can block Grok Bot computer provisioning. Turn it off on the account you sign in with.</dd></dl>
+<dl class="terms"><dt id="grok-bot">Grok Bot</dt><dd>The official app from xAI / SpaceXAI with Cursor: a roster of named teammates plus one shared cloud computer. Not grok.com chat.</dd><dt id="bot">Bot</dt><dd>One named teammate on your roster. It has a screen on the shared computer. Creating another Bot is not a security boundary.</dd><dt id="computer">Computer</dt><dd>The persistent cloud machine assigned to your account. Browser, files, and terminal live here. Every Bot can see the same logins and cookies.</dd><dt id="screen">Screen</dt><dd>The work surface one Bot uses on that computer. Parallel screens are not isolation. One computer-use task runs per screen.</dd><dt id="skill">Skill</dt><dd>A reusable how: when to use it, inputs, steps, how to verify, what to return, and what needs approval. Save after a good run.</dd><dt id="routine">Routine</dt><dd>A when: schedule or event on one Bot. Tests do real things. Put sends, deletes, and payments behind approval.</dd><dt id="teach-a-task">Teach a task</dt><dd>Desktop recording of about ten minutes of screen actions (no microphone). The Bot drafts a skill. You still add stop rules.</dd><dt id="plugin-connector">Plugin / connector</dt><dd>Account-level integration. Prefer a connector over clicking the web. Installed for the account, not locked to one Bot.</dd><dt id="mcp">MCP</dt><dd>Remote HTTP tools the computer can call. Localhost / stdio MCP on your laptop is unreachable from the cloud machine.</dd><dt id="share-template">Share / template</dt><dd>A public x.ai/bot link that copies identity, skills, and routines — not your computer or logins. Strip secrets before sharing.</dd><dt id="chief-of-staff">Chief of Staff</dt><dd>Community convention: one pinned Bot you talk to. It proposes specialists. Official docs only require name, job, and how it works.</dd><dt id="require-approval">Require Approval</dt><dd>The human gate for sends, spend, and other writes. Description beats shouting stop later in chat.</dd><dt id="weekly-usage">Weekly usage</dt><dd>Meter on the Cursor account. macOS and iOS share one bucket. Exhaustion can spill into On-Demand if that is enabled.</dd><dt id="on-demand">On-Demand</dt><dd>Shared paid overflow after the weekly pool. The app may not warn you in-product. Watch the Cursor usage screen.</dd><dt id="cursor-account">Cursor account</dt><dd>The only login. There is no separate Grok Bot account. The same account holds the plan and the usage meter. Grok Bot is not a Cursor IDE panel.</dd><dt id="hermes">Hermes</dt><dd>A different named-bot host. Some skill packs port a roster there. A Hermes profile is not a Cursor Grok Bot.</dd><dt id="grok-com-grok">grok.com / Grok</dt><dd>Chat, Imagine, and Voice. Google often ranks it for “grok bot.” Wrong product for this handbook.</dd><dt id="grok-build">Grok Build</dt><dd>Local coding CLI. Not Grok Bot. The community app grok-app is a GUI for Grok Build, not a Bot client.</dd><dt id="legacy-privacy-mode">Legacy Privacy Mode</dt><dd>A Cursor setting that can block Grok Bot computer provisioning. Turn it off on the account you sign in with.</dd></dl>
 <h2>Common collisions</h2>
 <div class="faq card"><details><summary>Is a skill the same as a plugin?</summary><p>No. A skill is written instructions. A plugin or connector is an account-level integration that gives the computer real tools. You usually need both.</p></details><details><summary>If I create a second Bot, are my logins isolated?</summary><p>No. Isolation is per user, not per Bot. Files, cookies, and sessions on the shared computer are visible to the whole roster.</p></details><details><summary>Does a share link copy my computer?</summary><p>No. Official share copies identity, skills, and routines. It does not copy the cloud computer or the logins stored there.</p></details><details><summary>Is Grok Build a Grok Bot client?</summary><p>No. Grok Build is a local coding CLI. grok-app is a desktop GUI for that CLI. Install Grok Bot from x.ai/bot.</p></details></div>
 <p>Next: <a href="/learn/what-is-grok-bot/">what Grok Bot is</a>, <a href="/learn/skills-routines/">skills and routines</a>, or <a href="/compare/">official vs alternatives</a>.</p>
@@ -661,4 +728,51 @@ tr:last-child td { border-bottom: 0; }
 </main>
 <footer class="site"><div class="wrap"><div class="foot-grid"><div><h4>Learn</h4><a href="/learn/">Handbook</a><a href="/learn/what-is-grok-bot/">What Grok Bot is</a><a href="/learn/install/">Install and sign in</a><a href="/learn/first-bot/">First Bot</a><a href="/learn/computer/">Shared computer</a><a href="/learn/skills-routines/">Skills and routines</a><a href="/learn/plugins/">Plugins and MCP</a><a href="/learn/cost-and-pitfalls/">Cost and pitfalls</a><a href="/learn/operator/">After week one</a><a href="/learn/ops/">X, Cursor, MCP</a><a href="/learn/glossary/">Glossary</a><a href="/learn/cursor/">Cursor and Grok Bot</a></div><div><h4>Look up</h4><a href="/pricing/">Pricing</a><a href="/compare/">Alternatives</a><a href="/tools/">Tools catalog</a><a href="/use-cases/">Field cases</a><a href="/troubleshooting/">Help</a><a href="/sources/">Sources</a></div><div><h4>Official</h4><a href="https://x.ai/bot">x.ai/bot</a><a href="https://docs.x.ai/grok-bot/overview">xAI docs</a><a href="https://cursor.com/help/grok-bot/getting-started">Cursor Help</a><a href="https://github.com/RongleCat/awesome-grok-bot">awesome-grok-bot</a></div></div><p>Community guide for starting, running, and recovering Grok Bot. Product names belong to their owners. Official packages stay on x.ai/bot. Updated 2026-09-04. Sources are dated by fetch day.</p></div></footer>
 <script>const btn=document.querySelector('[data-menu]');const links=document.querySelector('[data-links]');if(btn) btn.addEventListener('click',()=>links.classList.toggle('open'));</script>
+<script data-find-js>
+(function(){
+  const box=document.querySelector('[data-find]');
+  const input=document.querySelector('[data-find-input]');
+  const list=document.querySelector('[data-find-list]');
+  if(!box||!input||!list) return;
+  let rows=[], hits=[], active=-1, loaded=false;
+  const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  function hide(){ list.hidden=true; list.innerHTML=''; hits=[]; active=-1; }
+  function score(row,q){
+    const t=row.t.toLowerCase(), hay=row.q||'';
+    if(t===q) return 100;
+    if(t.startsWith(q)) return 80;
+    if(t.includes(q)) return 60;
+    if(hay.includes(q)) return 40;
+    return 0;
+  }
+  function render(){
+    if(!hits.length){ hide(); return; }
+    list.innerHTML=hits.map((r,i)=>'<a role="option" class="'+(i===active?'is-active':'')+'" href="'+esc(r.h)+'"><span>'+esc(r.t)+'</span><em>'+esc(r.k)+'</em></a>').join('');
+    list.hidden=false;
+  }
+  function run(){
+    const q=(input.value||'').trim().toLowerCase();
+    if(q.length<2){ hide(); return; }
+    hits=rows.map(r=>({r,s:score(r,q)})).filter(x=>x.s).sort((a,b)=>b.s-a.s).slice(0,8).map(x=>x.r);
+    active=hits.length?0:-1;
+    render();
+  }
+  function load(){
+    if(loaded) return Promise.resolve();
+    return fetch('/search.json').then(r=>r.json()).then(data=>{ rows=data; loaded=true; });
+  }
+  input.addEventListener('focus', ()=>load().then(run));
+  input.addEventListener('input', ()=>load().then(run));
+  input.addEventListener('keydown', e=>{
+    if(e.key==='Escape'){ hide(); input.blur(); return; }
+    if(!hits.length) return;
+    if(e.key==='ArrowDown'){ e.preventDefault(); active=Math.min(hits.length-1,active+1); render(); }
+    if(e.key==='ArrowUp'){ e.preventDefault(); active=Math.max(0,active-1); render(); }
+    if(e.key==='Enter' && active>=0 && hits[active]){ e.preventDefault(); location.href=hits[active].h; }
+  });
+  document.addEventListener('click', e=>{ if(!box.contains(e.target)) hide(); });
+  const pre=new URLSearchParams(location.search).get('q');
+  if(pre){ input.value=pre; load().then(run); }
+})();
+</script>
 </body></html>
