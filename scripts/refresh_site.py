@@ -12,6 +12,7 @@ from seo_pages import PAGES
 from content_home import home
 from content_pricing import pricing, PRICING_FAQS
 from content_learn import what_is, install, first_bot, computer, skills, plugins, cost, INSTALL_FAQS, COMPUTER_FAQS
+from content_trouble import troubleshooting
 from content_tools import tools_index, tool_detail
 from content_hub import learn_index, glossary, cursor_and_grok
 from content_compare import compare
@@ -86,7 +87,7 @@ def write_sitemap():
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
     ]
     for u in SITEMAP_URLS:
-        lines.append("<url><loc>%s</loc><lastmod>2026-09-04</lastmod></url>" % canonical(u))
+        lines.append("<url><loc>%s</loc><lastmod>2026-09-20</lastmod></url>" % canonical(u))
     lines.append("</urlset>")
     (DIST / "sitemap.xml").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
@@ -225,6 +226,9 @@ def main():
             extra.append(faq_jsonld(COMPUTER_FAQS))
         write(path, page(path, meta["title"], meta["description"], fn(), jsonld=extra or None))
 
+    tm_help = PAGES["/troubleshooting/"]
+    write("/troubleshooting/", page("/troubleshooting/", tm_help["title"], tm_help["description"], troubleshooting()))
+
     details = {
         "cli": "/tools/grok-bot-cli/",
         "skill": "/tools/grok-bot-skill/",
@@ -236,7 +240,7 @@ def main():
         meta = PAGES[path]
         write(path, page(path, meta["title"], meta["description"], tool_detail(key)))
 
-    written = {"/", "/pricing/", "/use-cases/", "/tools/", "/learn/", "/learn/glossary/", "/learn/cursor/", "/learn/operator/", "/learn/ops/", "/compare/"}
+    written = {"/", "/pricing/", "/use-cases/", "/tools/", "/learn/", "/learn/glossary/", "/learn/cursor/", "/learn/operator/", "/learn/ops/", "/compare/", "/troubleshooting/"}
     written.update(learn)
     written.update(details.values())
     n = len(written)

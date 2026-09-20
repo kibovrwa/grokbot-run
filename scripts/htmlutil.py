@@ -317,7 +317,7 @@ def page(path, title, description, body, jsonld=None, lang="en"):
         "url": canon,
         "inLanguage": "en",
         "datePublished": "2026-09-04",
-        "dateModified": "2026-09-04",
+        "dateModified": "2026-09-20",
         "isPartOf": {"@type": "WebSite", "name": site_name, "url": SITE + "/"},
     })
     blobs.append(_crumbs(path, title))

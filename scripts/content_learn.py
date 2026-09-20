@@ -67,11 +67,15 @@ INSTALL_FAQS = [
     ("Is there a separate Grok Bot account?",
      "No. Sign in with the Cursor account that holds the plan and usage. Linking SuperGrok or X Premium+ is a usage grant on that same Cursor account."),
     ("Which download should I use?",
-     "Only x.ai/bot for desktop, the App Store for iPhone, and Google Play for Android. Linux packages are under More downloads. Skip community ports unless official packages fail."),
+     "Only x.ai/bot for desktop, the App Store for iPhone and iPad, and Google Play for Android. Linux packages are under More downloads. This handbook is not the store. Skip community ports unless official packages fail."),
+    ("Why does macOS say the app is not supported?",
+     "You likely picked the Intel build on Apple silicon, or the reverse, or a non-official dmg. Official FAQ lists macOS Apple silicon and Intel. That message is not proof Grok Bot is unavailable on Mac."),
     ("Why does the app sit on Setting up?",
      "Free Cursor plans never get a computer. Team admin without a paid seat is the same. That is a copy bug, not your network."),
+    ("Why does Can't reach appear after my trial ended?",
+     "Staff: ended trial or lost plan access can wrongly show Can't reach while Retry/Recover fail. Pick a plan that includes Grok Bot or link SuperGrok on the same email, fully quit, and reopen — it is usually access, not DNS."),
     ("Can I run Grok Bot only from my phone?",
-     "Yes for chat, watching the computer, and most plugins. iPhone needs iOS 18+; Android 9+. iPad was not supported at launch. Routine webhook URL and sender key appear on desktop only. macOS and iOS share one weekly bucket. If the desktop is black but iOS still works, Recover — do not Reset."),
+     "Yes for chat, watching the computer, and most plugins. iPhone needs iOS 18+; the same iOS app runs on iPad with iPadOS 18+. Android 9+. Launch-day iPhone-only is history. Routine webhook URL and sender key appear on desktop only. macOS and iOS share one weekly bucket. If the desktop is black but iOS still works, Recover — do not Reset."),
 ]
 
 COMPUTER_FAQS = [
@@ -109,8 +113,8 @@ def what_is():
 <div class="callout warn">
 <p><strong>The isolation boundary is the user, not the Bot.</strong> Official wording: the computer is assigned to the account, not to a single Bot. Files, cookies, and logins are visible to every Bot on the roster. Do not treat “create another Bot” as security isolation. Forum pin: <a href="https://forum.cursor.com/t/grok-bot-ship-real-session-fences-bots-are-not-a-security-boundary/168476">Bots are not a security boundary</a>. The next lesson digs in: <a href="/learn/computer/">shared cloud computer</a>.</p>
 </div>
-<h2>Who can use it (official wording changes)</h2>
-<p>Eligibility follows the official pages on the fetch day, and two official docs are not identical — so this site lays both out on the <a href="/pricing/">pricing snapshot</a>. Cursor Help Center <a href="https://cursor.com/help/grok-bot/plans">Plans and billing</a> (fetched 2026-09-04) says: all paid personal Cursor plans and Cursor Teams include Grok Bot; you can also link personal SuperGrok / Plus / Heavy or X Premium+. The xAI FAQ lists a narrower set (Plus, Heavy, Pro+, Ultra, Teams Standard/Premium). The news post <a href="https://x.ai/news/grok-bot-more-plans">2026-08-26</a> names SuperGrok, Cursor Pro, and all Cursor Teams. When they conflict, open all three originals — do not trust a single blog post.</p>
+<h2>Who can use it (official wording on 2026-09-20)</h2>
+<p>Eligibility follows the official pages on the fetch day. Cursor Help <a href="https://cursor.com/help/grok-bot/plans">Plans and billing</a> and the xAI <a href="https://docs.x.ai/grok-bot/faq">FAQ</a> (both fetched 2026-09-20) now say Grok Bot is included with every paid individual Cursor plan — including Pro — and with Cursor Teams. You can also link personal SuperGrok, SuperGrok Plus, SuperGrok Heavy, or X Premium+ (X Premium+ is named on Cursor Help; the FAQ names SuperGrok / Plus / Heavy). The September 4 conflict, when the FAQ omitted Pro, is largely resolved. Remaining wording still differs on stacking versus “whichever has more usage,” so open the originals — this site does not invent USD prices. Dated contrast: <a href="/pricing/">pricing snapshot</a>.</p>
 <h2>Common misconceptions</h2>
 <ul>
 <li>Hearing “each Bot has its own screen” as “each Bot has its own computer.” Official text: one shared computer, one screen per Bot; screens are not a security boundary.</li>
@@ -128,20 +132,26 @@ def install():
     body = '''
 <section class="band"><div class="wrap prose">
 <p class="kicker">Lesson 2</p>
-<h1>Install the Grok Bot app and log in</h1>
-<p class="meta">Official steps from <a href="https://docs.x.ai/grok-bot/get-started">Get started</a> and <a href="https://cursor.com/help/grok-bot/getting-started">Cursor getting started</a>. Fetch day 2026-09-04.</p>
-<p>Confirm three things before you click download. First, you are on an <strong>eligible plan</strong>, or you are ready to link personal SuperGrok / X Premium+ on the plans screen (linking is a usage grant, not another Cursor subscription, and <strong>once linked you cannot unlink or move it to another Cursor account yourself</strong> — see <a href="https://cursor.com/help/grok-bot/supergrok">Link SuperGrok</a>). Second, Grok Bot needs cloud storage: if Cursor is still on Legacy Privacy Mode, switch to a supported data setting or the computer will not start. Third, have a real first task that needs a real login — empty demos burn trial usage fast.</p>
+<h1>Download and install Grok Bot on Mac, then log in</h1>
+<p class="meta">Official steps from <a href="https://docs.x.ai/grok-bot/get-started">Get started</a> and <a href="https://cursor.com/help/grok-bot/getting-started">Cursor getting started</a>. Fetch day 2026-09-20. Stuck after install? Jump to <a href="/troubleshooting/#reach">can’t reach / Reconnecting</a>.</p>
+<div class="callout">
+<p><strong>This handbook is not the official store.</strong> Download official packages only from <a href="https://x.ai/bot">x.ai/bot</a> (desktop: Mac, Windows, Linux — Linux under More downloads), the <a href="https://apps.apple.com/us/app/grok-bot/id6794501026">App Store</a> (iOS / iPad), or <a href="https://play.google.com/store/apps/details?id=ai.x.grok.bot">Google Play</a> (Android). Skip community ports, mirrors, and random dmg files.</p>
+</div>
+<p>Download path: open x.ai/bot for the Mac / Windows / Linux package, the App Store for iPhone or iPad, or Google Play for Android — then sign in with Cursor. There is <strong>no separate Grok Bot account</strong>. Confirm three things before you click download. First, you are on an <strong>eligible plan</strong>, or you are ready to link personal SuperGrok / X Premium+ on the plans screen (linking is a usage grant, not another Cursor subscription, and <strong>once linked you cannot unlink or move it to another Cursor account yourself</strong> — see <a href="https://cursor.com/help/grok-bot/supergrok">Link SuperGrok</a>). Second, Grok Bot needs cloud storage: if Cursor is still on Legacy Privacy Mode, switch to Privacy Mode and explicitly save it — new accounts that never save Privacy Mode can sit on Connecting forever, and Retry/Recover/Reset will not help until that choice is saved. Third, have a real first task that needs a real login — empty demos burn trial usage fast.</p>
 <h2>Officially supported platforms</h2>
-<p>Per the xAI FAQ (fetched 2026-09-04): macOS (Apple silicon and Intel), Windows (x64 and Arm64), Linux (x64 and Arm64; deb / rpm / AppImage), iPhone (iOS 18+), Android 9+. iPad was not supported at initial launch. Linux packages are under More downloads on <a href="https://x.ai/bot">x.ai/bot</a>. Community threads still discuss Linux as a second-class citizen and third-party repacks — those entries live in the <a href="/tools/">tools catalog</a>; do not confuse them with official packages.</p>
+<p>Per the xAI FAQ (fetched 2026-09-20): macOS (Apple silicon and Intel), Windows (x64 and Arm64), Linux (x64 and Arm64; deb / rpm / AppImage), iPhone (iOS 18+), Android 9+. The iOS app also runs on iPad with iPadOS 18+. Launch-day iPhone-only is history. Linux packages are under More downloads on <a href="https://x.ai/bot">x.ai/bot</a>. Community threads still discuss Linux as a second-class citizen and third-party repacks — those entries live in the <a href="/tools/">tools catalog</a>; do not confuse them with official packages.</p>
 <p>Download only from official entry points:</p>
 <ul>
 <li>Product and desktop packages: <a href="https://x.ai/bot">x.ai/bot</a></li>
-<li>iOS: <a href="https://apps.apple.com/us/app/grok-bot/id6794501026">App Store · Grok Bot</a></li>
+<li>iOS and iPad: <a href="https://apps.apple.com/us/app/grok-bot/id6794501026">App Store · Grok Bot</a></li>
 <li>Android: <a href="https://play.google.com/store/apps/details?id=ai.x.grok.bot">Google Play · ai.x.grok.bot</a> (announced by official @bot on 2026-09-02)</li>
 </ul>
+<h2>Mac download: Apple silicon vs Intel</h2>
+<p>The official FAQ lists macOS on <strong>Apple silicon and Intel</strong>. On x.ai/bot pick the package that matches  → About This Mac (Chip / Processor). Apple silicon Macs need the Apple silicon build; Intel Macs need the Intel build.</p>
+<p>If macOS says the app is not supported, you picked the <strong>wrong chip package</strong> or a <strong>non-official build</strong>. That is not proof Grok Bot is unavailable on Mac. Delete the wrong file, download the matching official package from x.ai/bot, then open the dmg → drag to Applications → open; choose Open if macOS asks.</p>
 <h2>Desktop install (official order)</h2>
 <ol>
-<li><strong>macOS:</strong> pick Apple silicon or Intel → open the dmg → drag to Applications → open; choose Open if macOS asks. Chip info:  → About This Mac.</li>
+<li><strong>macOS:</strong> pick Apple silicon or Intel as above → open the official dmg → drag to Applications → open; choose Open if macOS asks.</li>
 <li><strong>Windows:</strong> pick x64 or Arm64 → run the installer → open from the Start menu. Architecture: Settings → System → About → System type.</li>
 <li><strong>Linux:</strong> pick deb / rpm / AppImage for your distro; <code>uname -m</code> of x86_64 means x64, aarch64 means Arm64. The app checks for updates automatically; you can also Check for Updates under Settings → Beta.</li>
 </ol>
@@ -150,8 +160,8 @@ def install():
 ''' + INSTALL_DIAGRAM + '''
 <p>The official product page shows the same three beats: install, Cursor login, then a roster of named faces on one computer. This handbook keeps that order. Do not create twelve Bots on the first screen.</p>
 <p>Cursor Help also reminds you: sign in with the <strong>Cursor account that will bear the usage</strong>; macOS and iOS share one weekly usage bucket.</p>
-<h2>Phone: iOS, Android, and what stays on desktop</h2>
-<p>The same roster and the same computer sync after Cursor login. Official @bot (2026-09-02) pointed Android at Google Play; iPhone is the App Store build, iOS 18+. iPad was not supported at initial launch — do not expect the iPhone app to be a tablet layout. Close the phone app and cloud turns plus routines keep running, the same as closing the laptop.</p>
+<h2>Phone: iOS, iPad, Android, and what stays on desktop</h2>
+<p>The same roster and the same computer sync after Cursor login. Official @bot (2026-09-02) pointed Android at Google Play; iPhone is the App Store build, iOS 18+. The xAI FAQ (fetched 2026-09-20) says the same iOS app also runs on iPad with iPadOS 18+ — launch-day iPhone-only is history. Close the phone app and cloud turns plus routines keep running, the same as closing the laptop.</p>
 <p>On phone you can chat, watch the computer, take over for a stuck login, and open Plugins from the top-left avatar. Some connectors fail the iOS redirect (Canva is the documented case) — connect once on desktop and the connector syncs to iPhone. Staff note: the routine webhook URL and sender key appear on desktop only. Teach a task is a desktop screen recording. Do not treat the phone as a second computer or a private login.</p>
 <p>If the desktop preview is black or stuck Reconnecting but the same account still works on iOS, that is a clue the Bots are not gone. Prefer Recover / Update. Reset from panic can delete Bots. Details: <a href="/learn/computer/">shared computer</a> and <a href="/troubleshooting/#reach">can’t reach</a>.</p>
 <h2>Before you create the first Bot</h2>
@@ -161,6 +171,7 @@ def install():
 <li>Free Cursor plans spin forever on “Setting up.” Staff: without a paid seat the hosted computer is never provisioned — known copy bug, not your network.</li>
 <li>Team admin role ≠ seat. Assign yourself a Standard/Premium seat, or switch to an account that has one.</li>
 <li>After a password change, Mac still says the account is unavailable — usually a stale session. Log out from that screen, fully quit, sign in again; do not treat it as missing entitlement.</li>
+<li>Expired free trial or lost plan access can look like “Can’t reach your computer” with failed Retry/Recover. Staff: that is often access ending, not DNS — pick a plan that includes Grok Bot or link SuperGrok, then fully quit and reopen. More symptom playbooks: <a href="/troubleshooting/">troubleshooting</a>.</li>
 <li>Deleting Grok Bot has no separate account to delete: desktop only signs out; iOS Delete Account deletes the Cursor account plus agents, chats, and computer. See Cursor Help Delete account.</li>
 </ul>
 <p>Once the roster appears, do not create twelve Bots at once. Community convention: start with one Chief of Staff and let it propose the team — <a href="/learn/first-bot/">create your first Bot in Chief of Staff mode</a>.</p>
@@ -383,8 +394,8 @@ def cost():
 <li>Pro’s $20 Other Models allowance is not the Grok Bot weekly pool.</li>
 <li>Cursor Cloud Agents launched by Grok Bot consume Cursor plan usage; Grok Bot chat is a different allowance.</li>
 </ul>
-<h2>Eligibility conflicts across docs</h2>
-<p>Do not quote only one page. The xAI FAQ (fetched 2026-09-04) lists SuperGrok Plus / Heavy, Cursor Pro+ / Ultra, Teams Standard and Premium. Cursor Help lists all paid personal plans (including Pro) and Teams, plus linkable personal SuperGrok / Plus / Heavy / X Premium+; Lite and SuperGrok Team/Enterprise cannot link. The 2026-08-26 news post puts SuperGrok and Cursor Pro on the list. This playbook shows them side by side on the pricing page and does not adjudicate.</p>
+<h2>Eligibility (official pages on 2026-09-20)</h2>
+<p>Cursor Help and the xAI FAQ now both include every paid individual Cursor plan (including Pro) and Cursor Teams. You can also link personal SuperGrok / Plus / Heavy / X Premium+. Lite and SuperGrok Team/Enterprise still cannot link. Remaining wording still differs on whether Cursor and SuperGrok grants stack. Open the originals on the <a href="/pricing/">pricing snapshot</a>; this site does not invent USD figures.</p>
 <h2>Pitfalls already showing up repeatedly in the community</h2>
 <ul>
 <li><strong>Weekly usage can burn in a day.</strong> An xAI engineer has publicly acknowledged that complaint direction. Chatty Chief-of-Staff threads and sorting a decade of inbox are user hypotheses, not our measurements. Mitigations: keep routines in working hours; use connectors instead of pure browsing for heavy work; keep Chief-of-Staff chats short; do not bulk-sort history on day one. KC’s public note that many multi-bot setups go quiet after 10–14 days is a warning to put memory in <code>/workspace</code>, not a number we repeated — see <a href="/learn/operator/">after week one</a>.</li>

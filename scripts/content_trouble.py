@@ -3,17 +3,24 @@ from html import escape
 import json
 from pathlib import Path
 
+ROOT = Path(__file__).resolve().parents[1]
+
 GROUPS = [
     {
         "id": "reach",
         "title": "Can't reach your computer / stuck Reconnecting",
-        "symptom": "Chat still works, or you cannot get in at all; messages say Can't reach your computer, Reconnecting, black screen, or blank.",
+        "symptom": "Chat still works, or you cannot get in at all; messages say Can't reach your computer, Reconnecting, black screen, or blank. The same wording can also appear after a trial or plan ends.",
         "tries": [
             "Fully quit the app (on macOS use menu-bar Quit, not just close the window), then reopen. Official ops guidance starts here for most app issues.",
             "If Retry / Recover computer is offered, take that path first — do not Reset.",
-            "Check DNS for *.cursorvm.com. Staff repeatedly point at 1.1.1.1 / 8.8.8.8, and both IPv4 and IPv6 (router RA can keep using ISP DNS). Compare with a phone hotspot on another carrier.",
+            "Check DNS for *.cursorvm.com. Staff repeatedly point at 1.1.1.1 / 8.8.8.8, and both IPv4 and IPv6 (router RA can keep using ISP DNS). Compare with a phone hotspot on another carrier. Mid-session Reconnecting / Showing saved messages while the Agent Computer is healthy is the same DNS class — Retry, Recover, and Reset do not fix a resolver that cannot look up the computer address.",
+            "On Windows, open Settings → Apps → Installed apps. If Grok Bot is installed twice, uninstall the older copy and keep only the latest, then fully quit from the tray and reopen.",
+            "New account that never finishes Connecting: save Privacy Mode (not Legacy) on the Cursor dashboard, fully quit Grok Bot, reopen. Until that choice is saved, Retry / Recover / Reset can all fail.",
+            "Expired trial or lost plan access can masquerade as Can't reach your computer. Staff: Retry / Recover fail because the account no longer has Grok Bot access — pick a plan that includes it, or link SuperGrok on the same email, then fully quit and reopen. The app should say access ended; the network wording is a known display bug.",
+            "Antivirus HTTPS scanning (Kaspersky, ESET, Avast/AVG, Bitdefender, Norton, Trend Micro, Sophos, and similar) can break the app while the browser still works. Grok Bot trusts public CAs only; encrypted-connection scanning swaps the issuer. Turn off Encrypted connections / SSL scanning or exclude Grok Bot, fully quit from the tray, and reopen. A phone hotspot is a useful A/B test when the home network is inspected.",
+            "Never install a VPN/proxy or change DNS inside the Agent Computer. A Bot-installed VPN can cut the always-on path so every Bot on the account cannot reconnect until Recover restores routing.",
         ],
-        "dont": "A temporarily unreachable computer does not mean Bots are gone. If the desktop is black but the same account still works on iOS, do not Reset (that can delete Bots) — wait for an official rebuild. Days of Can't reach after Recover/Reset/reinstall usually mean a stuck hosted box that only staff can restore.",
+        "dont": "A temporarily unreachable computer does not mean Bots are gone. Recover before Reset. If the desktop is black but the same account still works on iOS, do not Reset (that can delete Bots) — wait for an official rebuild. If desktop AND iOS (even on cellular) are both stuck, staff say that is often server-side: hold off on Reset / Recover / Update and signing out. Days of Can't reach after Recover/Reset/reinstall usually mean a stuck hosted box that only staff can restore. When staff say the computer is healthy but your network cannot resolve its address, do not keep Reset / Recover either — a rebuilt computer lands in the same DNS zone your resolver already fails.",
         "sources": [
             ("Official Troubleshooting", "https://docs.x.ai/grok-bot/troubleshooting"),
             ("Reconnect screenshots", "https://forum.cursor.com/t/grok-bot-reconnect-issue/168500"),
@@ -35,7 +42,7 @@ GROUPS = [
             "Recover Agent Computer: replace the computer when unreachable, still trying to keep durable state.",
             "Reset Agent Computer: return to the latest durable snapshot; unsynced work may be lost. Official docs call this last resort.",
         ],
-        "dont": "Chat history lives outside the box. Exhausted trial does not delete data — Bots stop answering but Computer view can still export; do not Reset to “save” a trial. Stuck on Cleaning up: backend often already finished — fully quit then Recover, do not Reset again. 50% Starting is a server-side bad state; wait a few minutes; Bot data is usually still there. When a status dialog looks scary, do not click yet — try re-login and phone cellular verification first.",
+        "dont": "Recover before Reset. Chat history lives outside the box. Exhausted trial does not delete data — Bots stop answering but Computer view can still export; do not Reset to “save” a trial. Stuck on Cleaning up: backend often already finished — fully quit then Recover, do not Reset again. 50% Starting is a server-side bad state; wait a few minutes; Bot data is usually still there. When a status dialog looks scary, do not click yet — try re-login and phone cellular verification first. If every Bot says “Bot failed to respond” or “Couldn't send your message” for hours across devices while the computer screen is still visible, ask support before Reset — Reset rebuilds from the last snapshot and can drop the newest unsynced edits.",
         "sources": [
             ("Official order", "https://docs.x.ai/grok-bot/troubleshooting"),
             ("Recovery guide", "https://cursor.com/help/grok-bot/computer-recovery"),
@@ -47,14 +54,15 @@ GROUPS = [
     },
     {
         "id": "usage",
-        "title": "Weekly usage spills into On-Demand / trial burns instantly",
-        "symptom": "Meter at 100%, credits or on-demand charges start, Bot suddenly stops answering, dual limit banners.",
+        "title": "Weekly usage / silent bots (computer still visible)",
+        "symptom": "Not responding or stopped working while the Agent Computer still opens; meter at 100%; credits or on-demand charges start; dual limit banners; or no usage banner at all.",
         "tries": [
-            "Check Grok Bot weekly usage on the plans screen — not only the Cursor IDE allowance.",
-            "If you do not want paid spillover: set On-Demand cap to $0. Note this does not stop promo/referral credits from being drained.",
+            "Silent bots / not responding with the computer still visible is often weekly usage, not a dead box. Messages may still send as bubbles, but replies never run; iOS and desktop often omit the “usage limit reached” notice. Check Settings → Usage (or the Cursor dashboard) for the meter and weekly reset time before you touch Recover / Reset / Update.",
+            "To resume before the weekly reset: enable On-Demand on the same Cursor account and set a spend limit you accept — bots should reply within a couple of minutes. Queued messages sent during the block reply in a batch once usage is available; routines due during the block were skipped.",
+            "If you do not want paid spillover: set On-Demand cap to $0. Note this does not stop promo/referral credits from being drained first (charge order: weekly pool → credits → paid On-Demand).",
             "Shrink routine windows; delete idle specialist Bots that poke each other (every Bot↔Bot message counts against weekly usage). Dual banners are usually blocked retries, not double billing.",
         ],
-        "dont": "Do not assume “stay quiet” in chat stops the meter. Do not treat Pro’s Other Models $20 as the Bot weekly pool. Cloud Agents launched by Grok Bot bill Cursor plan usage separately.",
+        "dont": "Do not Reset / Recover / Update when every Bot is silent but the computer view still opens — the box is often fine and Reset can wipe data. Do not assume “stay quiet” in chat stops the meter. Do not treat Pro’s Other Models $20 as the Bot weekly pool. Cloud Agents launched by Grok Bot bill Cursor plan usage separately.",
         "sources": [
             ("Plans and billing", "https://cursor.com/help/grok-bot/plans"),
             ("No-warning spillover", "https://forum.cursor.com/t/grok-bot-gives-no-warning-before-weekly-usage-spills-into-paid-on-demand/169679"),
@@ -114,7 +122,7 @@ GROUPS = [
             "Empty roster + black/white loading: Agent Computer waking from sleep is slow — nothing was deleted. Do not Reset; wait for the box, fully quit, open again.",
             "Looks like a new user after rebuild: logging in while the computer is still starting shows first-run UI. Fully quit. Do not create a “first Bot” in that window.",
         ],
-        "dont": "Free-plan black spinner means no hosted computer was provisioned (no seat) — not your network. Team admin role alone does not grant a computer. Stale sessions after password change show “account unavailable.”",
+        "dont": "Free-plan black spinner means no hosted computer was provisioned (no seat) — not your network. Team admin role alone does not grant a computer. Stale sessions after password change show “account unavailable.” New accounts that never saved Privacy Mode (not Legacy) also never finish Connecting — fix that on the Cursor dashboard before Reset.",
         "sources": [
             ("Local config white screen", "https://forum.cursor.com/t/grok-bot-shows-white-screen-upon-opening-and-is-unusable/169815"),
             ("Empty roster sleep", "https://forum.cursor.com/t/grok-bot-bug-report/170104"),
@@ -138,18 +146,21 @@ def troubleshooting():
     intro = '''
 <section class="band"><div class="wrap prose">
 <p class="kicker">Playbooks</p>
-<h1>Grok Bot not working — fixes by symptom</h1>
-<p>Official guidance starts with the least destructive step. Cloud work can continue while the desktop is disconnected. Below groups <a href="https://docs.x.ai/grok-bot/troubleshooting">official troubleshooting</a>, the <a href="https://cursor.com/help/grok-bot/getting-started">Cursor getting-started table</a>, and staff posts from awesome “Community &amp; Failure Modes” by symptom — without restating all eighty-nine threads one by one.</p>
+<h1>Grok Bot not working — Recover vs Reset if stuck or not responding</h1>
+<p><strong>Recover before Reset.</strong> Silent bots / not responding with the computer still visible is often weekly usage, not a dead box. Official guidance starts with the least destructive step. Cloud work can continue while the desktop is disconnected. Below groups <a href="https://docs.x.ai/grok-bot/troubleshooting">official troubleshooting</a>, the <a href="https://cursor.com/help/grok-bot/getting-started">Cursor getting-started table</a>, and staff posts from awesome “Community &amp; Failure Modes” by symptom — without restating all eighty-nine threads one by one.</p>
 <p>Before contacting support, collect: Grok Bot version, OS, exact error, Bot or routine name, time and timezone, request/conversation ID, and what you already tried (Retry / restart / Update). Do not attach passwords, codes, or keys. Email <a href="mailto:hi@cursor.com">hi@cursor.com</a>.</p>
 </div></section>
 <section class="band"><div class="wrap" style="display:flex;flex-direction:column;gap:16px">
 '''
-    failures = json.loads(Path("/workspace/playbook-data/failures.json").read_text(encoding="utf-8"))
+    fail_path = ROOT / "src" / "data" / "community-failure-modes.json"
+    failures = json.loads(fail_path.read_text(encoding="utf-8"))
     items = []
     for f in failures:
+        title = f.get("title") or f.get("name") or f.get("url", "")
+        note = f.get("one_line") or f.get("blurb") or ""
         items.append(
             '<li class="source-item"><a href="%s">%s</a><span class="source-note">%s</span></li>'
-            % (escape(f["url"], quote=True), escape(f["title"]), escape(f.get("one_line", "")))
+            % (escape(f["url"], quote=True), escape(title), escape(note))
         )
     registry = (
         '</div></section><section class="band"><div class="wrap">'

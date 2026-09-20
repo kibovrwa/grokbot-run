@@ -7,13 +7,13 @@ FAQS = [
     ("Is this the official Grok Bot site?",
      "No. This is a community how-to: first job, login, shared computer, plan conflicts, Recover before Reset, and an operator path after week one. Official packages stay on x.ai/bot."),
     ("Where do I download the Grok Bot app?",
-     "Desktop packages are on x.ai/bot (macOS, Windows, Linux). iOS is on the App Store; Android is on Google Play. Step-by-step is on the install page."),
+     "Desktop packages are on x.ai/bot (macOS, Windows, Linux). iOS and iPad are on the App Store; Android is on Google Play. This site is not the store. Step-by-step is on the install page."),
     ("How do I log in to Grok Bot?",
      "There is no separate Grok Bot account. Open the app and sign in with the Cursor account that holds the plan and usage."),
     ("Is Grok Bot free? Which plan do I need?",
-     "There is no consumer free tier and no standalone SKU. Access is bundled with paid Cursor or a linkable SuperGrok / X plan, plus a limited usage trial on some accounts. Enterprise had a separate two-week org trial — see Pricing."),
+     "There is no consumer free tier and no standalone SKU. Access is bundled with paid Cursor or a linkable SuperGrok / X plan, plus a limited usage trial on some accounts. Enterprise had a dated two-week org trial in early September 2026 — that window is expired. See Pricing."),
     ("Is there a Grok Bot app for iOS and Android?",
-     "Yes. iPhone needs iOS 18+; Android 9+. iPad was not supported at launch. The same roster syncs with desktop after Cursor login."),
+     "Yes. iPhone needs iOS 18+; Android 9+. The iOS app also runs on iPad with iPadOS 18+ per the current xAI FAQ. Launch-day iPhone-only is history. The same roster syncs with desktop after Cursor login."),
     ("If the computer won't connect, should I Reset?",
      "No. The official order is Retry, restart, Recover, Update Agent Computer. Reset can lose unsynced work. See Help."),
     ("Is there an open-source Grok Bot?",
@@ -158,7 +158,7 @@ def home():
   <div class="quotes">
     <article class="quote"><p>“Bots are not a security boundary.”</p><p class="who">Cursor forum pin · shared computer lesson</p></article>
     <article class="quote"><p>Start with one Chief of Staff and let it propose the team — not a specialist for every sub-task.</p><p class="who">Debbie · getting started notes</p></article>
-    <article class="quote"><p>Official pages still disagree on Cursor Pro and base SuperGrok. Open all three originals.</p><p class="who">Pricing snapshot · fetch 2026-09-04</p></article>
+    <article class="quote"><p>Help and the FAQ now include every paid Cursor plan, including Pro. Open the originals — this site does not invent USD prices.</p><p class="who">Pricing snapshot · fetch 2026-09-20</p></article>
   </div>
   <p class="lede"><a href="/use-cases/">54 field cases</a> · <a href="/pricing/">Plan conflicts</a> · <a href="/compare/">GitHub alternatives</a></p>
 </div></section>
@@ -168,7 +168,7 @@ def home():
   <div class="grid-3">
     <a class="card" href="/learn/install/"><h3>How to start</h3><p>Mac, Windows, Linux, iOS, Android. Sign in with Cursor — no extra account.</p></a>
     <a class="card" href="/use-cases/#starter-jobs"><h3>More copyable jobs</h3><p>Inbox, outbound, travel. Stop at review until the output is checkable.</p></a>
-    <a class="card" href="/pricing/"><h3>Free, plans, trial</h3><p>No standalone SKU. Cursor or SuperGrok, plus the dated enterprise trial.</p></a>
+    <a class="card" href="/pricing/"><h3>Free, plans, trial</h3><p>No standalone SKU. Cursor or SuperGrok. The early-September enterprise two-week trial is a dated announcement.</p></a>
   </div>
 </div></section>
 

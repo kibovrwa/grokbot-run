@@ -53,7 +53,7 @@ CURSOR_FAQS = [
     ("Is Grok Bot inside the Cursor IDE?",
      "No. Grok Bot is its own desktop and phone app. It uses your Cursor account for login, plan, plugins, and weekly usage. You do not chat with Bots in the Cursor editor."),
     ("Do I need Cursor Ultra for Grok Bot?",
-     "Not on the 2026-09-04 official Help page: paid personal Cursor plans and Teams include it, and some SuperGrok / X plans can link. FAQ and Get started listed a narrower set. Open Pricing for the dated conflict."),
+     "No. On fetch day 2026-09-20, Cursor Help and the xAI FAQ include every paid individual Cursor plan (including Pro) and Cursor Teams. You can also link personal SuperGrok / Plus / Heavy / X Premium+. Open Pricing for the dated snapshot."),
     ("Does Grok Bot index my Cursor codebase?",
      "Staff on the Cursor forum: there is no codebase plugin. Coding work goes to a Cursor Cloud Agent already connected to GitHub. The Bot computer is not your laptop repo. Operator handoff: X, Cursor, MCP."),
     ("Is Hermes the same as Grok Bot?",
