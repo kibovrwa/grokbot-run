@@ -15,7 +15,7 @@ FAQS = [
     ("Is there a Grok Bot app for iOS and Android?",
      "Yes. iPhone needs iOS 18+; Android 9+. The iOS app also runs on iPad with iPadOS 18+ per the current xAI FAQ. Launch-day iPhone-only is history. The same roster syncs with desktop after Cursor login."),
     ("If the computer won't connect, should I Reset?",
-     "No. The official order is Retry, restart, Recover, Update Agent Computer. Reset can lose unsynced work. Help splits not responding, stuck, can't reach, and Recover versus Reset."),
+     "No. Quit, Retry, then Recover or Update from Settings, Updates. Reset can drop unsynced bots and files, and every computer button removes installed apps. Help splits the screens."),
     ("Is there an open-source Grok Bot?",
      "Not an official one. OpenMausBot, rakazo, and gawkbot copy the teammate-plus-computer idea on machines you run. They are not unofficial clients for your Cursor roster. See Alternatives."),
     ("What is a Grok Bot skill versus a routine?",

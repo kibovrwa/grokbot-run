@@ -54,8 +54,8 @@ def _page(kicker, h1, lede_html, body_html, faqs, related, sources):
 
 
 MAC_FAQS = [
-    ("Where do I download Grok Bot for Mac?",
-     "From x.ai/bot only. Pick the Apple silicon build or the Intel build to match About This Mac. This handbook is not the store, and a random dmg is not an official package."),
+    ("Where is the Intel Mac download? The top button gave me Apple silicon.",
+     "Cursor staff confirmed the primary Download for macOS button on x.ai/bot is the Apple silicon build. Scroll to Download Grok Bot, then More downloads, for Intel. About This Mac: Chip means Apple silicon, Processor means Intel."),
     ("How do I know if my Mac is Apple silicon or Intel?",
      "Open the Apple menu, then About This Mac. Chip means Apple silicon (M1 or later). Processor with an Intel name means the Intel build. Download the matching file."),
     ("macOS says the app is not supported. Is Grok Bot unavailable on Mac?",
@@ -98,8 +98,8 @@ LOGIN_FAQS = [
 ]
 
 NOT_RESPONDING_FAQS = [
-    ("Grok Bot is not responding, but I can still open the computer. What failed?",
-     "Often the weekly usage pool, not the computer. Messages can still appear as bubbles while replies never run. Check Settings, then Usage, before Recover or Reset."),
+    ("Grok Bot is not responding. What do I check first?",
+     "The computer status. A bot cannot finish a turn while the screen says Reconnecting or Couldn't reach Grok Bot's computer. If the computer is connected, then check Usage. Reset does not fix either case."),
     ("The app never said I hit a limit. Can that still be usage?",
      "Yes. iOS and desktop often omit the usage-limit notice. The Cursor usage screen is the source of truth. Spillover into On-Demand can also start with no in-app warning."),
     ("Will Reset make silent bots talk again?",
@@ -133,8 +133,8 @@ REACH_FAQS = [
 WHITE_FAQS = [
     ("Grok Bot opens to a white screen. Will reinstalling fix it?",
      "Not by itself. Fully quit, rename ~/Library/Application Support/Grok Bot to Grok Bot.bak, and relaunch. That local config survives a reinstall."),
-    ("The roster is empty after reconnect. Did Reset happen by itself?",
-     "An empty roster plus a black or white loader is often the Agent Computer waking from sleep. Nothing was deleted. Wait, fully quit, and open again. Do not Reset."),
+    ("The roster is empty. Were the bots deleted?",
+     "Often no. Open Hidden Bots, and check the same Cursor account on the phone. Hide from sidebar does not delete a bot. Sleep can also show an empty list while the computer wakes. Do not Reset to look for them."),
     ("It looks like a brand-new account after a rebuild. Should I create a first Bot?",
      "No. Logging in while the computer is still starting shows the first-run screen. Fully quit and come back when the computer is up. Do not create a bot in that window."),
     ("The spinner is black and I am on the free Cursor plan.",
@@ -143,7 +143,7 @@ WHITE_FAQS = [
 
 RECOVER_FAQS = [
     ("What is the difference between Update, Recover, and Reset?",
-     "Update installs a new image and keeps durable state. Recover replaces an unreachable computer and still tries to keep durable state. Reset returns to the latest snapshot and can drop unsynced work. Reset is the official last resort."),
+     "Update and Recover keep synced bots, files, and logins, and both remove installed apps on the computer. Reset keeps only the last snapshot, so recent unsynced bots and files can disappear. Reset is last."),
     ("Does Reset delete chat history?",
      "Chat history lives outside the computer. Reset can still drop files and logins that had not synced to the latest snapshot. Do not Reset to save a trial."),
     ("The Reset window is stuck behind Settings and I cannot click it.",
@@ -157,7 +157,7 @@ def mac_download():
     lede = '''
 <p class="meta">Official Mac path from <a href="%s">Get started</a> and the xAI FAQ (fetched 2026-09-20). This page is the Mac download. All platforms: <a href="/learn/install/">install</a>. This site does not host the file.</p>
 <div class="callout">
-<p><strong>Download Grok Bot for Mac from <a href="%s">x.ai/bot</a> only.</strong> Apple silicon and Intel are both official. Skip mirror sites and random dmg files. There is no separate Grok Bot account after the file is open.</p>
+<p><strong>Intel Mac: skip the top Download for macOS button.</strong> Cursor staff confirmed that button is Apple silicon (forum, 2026-08-19). Scroll to Download Grok Bot, then <strong>More downloads</strong>, and take Intel. Chip in About This Mac means Apple silicon; Processor means Intel. The file is only on <a href="%s">x.ai/bot</a>. This site does not host it.</p>
 </div>
 <div class="cta-row">
   <a class="btn btn-primary" href="%s">Download on x.ai/bot</a>
@@ -173,7 +173,8 @@ def mac_download():
 <li><strong>Processor</strong> names an Intel chip. Download the Intel build.</li>
 <li>Do not guess from the year on the laptop lid. Apple sold Intel and Apple silicon machines in overlapping years.</li>
 </ul>
-<p>The official FAQ lists macOS on Apple silicon and Intel. If macOS later says the app is not supported, that sentence means the package does not match this Mac, or the file did not come from x.ai/bot. It does not mean Grok Bot has no Mac version. Delete the wrong file, empty the download, and take the matching build from the official page.</p>
+<p>Both chips are official. The trap is which control downloads which file. People who follow a docs link and click the big macOS button on an Intel Mac get “app is not supported,” then download the same arm64 file again. Delete that dmg. Go back to x.ai/bot, scroll past the hero, open More downloads, and take Intel. Do not search for a patched build.</p>
+<p>The Homebrew cask <code>grok-bot</code> installs the same app and, when checked on 2026-09-22, was version 0.56.1 and required macOS 12 or later. xAI’s Get started page does not publish a minimum macOS version, so treat 12 as the cask’s requirement. The cask will not show you the chip choice. If you need to see Apple silicon versus Intel, use the product page. A mirror dmg is still the wrong file.</p>
 <h2>Install it the way the docs describe</h2>
 <ol>
 <li>Download the matching package from x.ai/bot. If the browser offers a third-party host, close it and start again from the product page.</li>
@@ -210,11 +211,11 @@ def mac_download():
     sources = [
         ("Get started", DOC_START),
         ("x.ai/bot", STORE),
-        ("Cursor getting started", CURSOR_START),
+        ("Intel build is under More downloads", "https://forum.cursor.com/t/grok-bot-w-cursor-ultra-on-intel-chip-mac/168752"),
+        ("Homebrew cask grok-bot", "https://formulae.brew.sh/cask/grok-bot"),
         ("White screen after open", "https://forum.cursor.com/t/grok-bot-shows-white-screen-upon-opening-and-is-unusable/169815"),
-        ("Stuck on Setting up on macOS", "https://forum.cursor.com/t/grok-bot-0-30-0-stuck-on-setting-up-your-grok-bot-on-macos/169981"),
     ]
-    return _page("Mac download", "Download Grok Bot for Mac: Apple silicon or Intel", lede, body, MAC_FAQS, related, sources)
+    return _page("Mac download", "Download Grok Bot for Mac: the top button is Apple silicon", lede, body, MAC_FAQS, related, sources)
 
 
 def windows_download():
@@ -237,11 +238,14 @@ def windows_download():
 <p>Settings, then Apps, then Installed apps. If Grok Bot appears twice, uninstall the older copy and keep the latest. Close the window after that is not enough. Quit from the system tray so the leftover process dies, then open the remaining copy once. People hit Can't reach your computer on a fresh Windows profile when an older install was still registered beside the new one. Fix the duplicate before you change DNS, and before you Reset a computer that may not be the problem.</p>
 <p>The same tray quit matters later. Staff tell Windows users who still have a local-exec daemon to quit from the tray, end Grok Bot and the daemon in Task Manager, wait about a minute, and re-register. That is a local-execution cleanup, not a reinstall of the cloud computer. Do not confuse it with Recover.</p>
 <h2>Proxy, TUN, and company tunnels</h2>
-<p>If the installer finished and the app stops at Can't reach your computer, treat the network as a separate problem from the download. Staff reports on Windows say the app ignores the system HTTP proxy. Setting a proxy inside Windows, or inside the browser, does not put Grok Bot on that proxy. People who had to reach the computer through a tunnel used TUN mode, where the tunnel owns the adapter rather than an HTTP proxy field.</p>
+<p>If the installer finished and the app stops at Can't reach your computer, the download is probably fine. Staff have said the computer on their side was up the whole time, and recreating it does not help, because the Windows app connects <strong>directly</strong>. It does not use the system proxy or a local HTTP proxy such as 127.0.0.1:7890. DNS and browser checks that go through the proxy can pass while the app still fails.</p>
+<p>Staff test, in PowerShell, after you fully quit Grok Bot and switch the tunnel from system-proxy mode to TUN (also called Enhanced, Global, or virtual network adapter):</p>
+<pre><code>curl.exe --noproxy "*" -I https://test123.us10.cursorvm.com</code></pre>
+<p>A working path returns quickly with <code>HTTP/1.1 404 Not Found</code> and <code>Server: awselb/2.0</code>. The 404 is success: that hostname is only a probe, and the load balancer answered. A hang, timeout, or connection reset means the app will fail the same way. Fix TUN, then open Grok Bot. Do not install that tunnel inside the Agent Computer.</p>
 <p>Do the opposite inside the product. Never install a VPN, proxy, or DNS changer on the Agent Computer. A bot-installed VPN can cut the always-on path so every bot on the account fails until Recover restores routing. A company Zscaler-style tunnel has also left Windows 11 on a black loading screen. A phone hotspot on another carrier is the clean A/B test: if the hotspot works and the office network does not, the installer is fine and the path is not. The can't-reach page has the DNS and antivirus order. Antivirus products that scan HTTPS replace the certificate issuer, and Grok Bot trusts public authorities only, so the browser can load while the app cannot.</p>
 <h2>What a finished install looks like</h2>
 <p>You should get a Cursor browser popup, then a roster starting in the background, then Meet a future teammate. Tool questions on that path do not connect Gmail, GitHub, or anything else. If the popup never completes, use the login page. If the screen says Connecting and never leaves, save Privacy Mode on the Cursor dashboard before another reinstall. If it says Setting up and you are on a free Cursor plan, the hosted computer was never created. Downloading the exe again will not provision a seat.</p>
-<p>The app checks for updates on its own. You can also use Settings, then Beta, then Check for Updates. You do not need a new download from a forum thread to get the current build. Linux packages, if you also have a Linux machine, are under More downloads on the same product page, not inside the Windows installer.</p>
+<p>The app checks for updates on its own. Settings → Updates → Check for Updates, then Restart to Update, replaces the desktop app. It does not reset the computer. The computer update is the other control in that same screen, Update under Grok Bot's Computer. You do not need a forum installer to get the current build. A white window that survives reinstall can be local config: fully quit, and rename <code>%APPDATA%\\Grok Bot</code> to <code>Grok Bot.bak</code>, the Windows twin of the Mac Application Support folder. Linux packages are under More downloads on the same product page.</p>
 <h2>After Windows is open</h2>
 <p>Use one bot and one cited job. The first-bot lesson is the short brief. If bots later go silent while the computer view still opens, that is weekly usage more often than a broken Windows install. Uninstalling Windows will not refill the meter. Pricing explains which plans include access, without invented dollar amounts.</p>
 '''
@@ -334,7 +338,16 @@ def login_page():
     body = '''
 <h2>There is nothing to register</h2>
 <p>People search for a Grok Bot login because the download finished and the next screen looks like a new product. It is the same Cursor user you already have, opened in a different app. Grok Bot is not a panel inside the Cursor IDE, and it is not grok.com. You do not create a Grok Bot email, and you do not paste an API key into the welcome screen to finish setup.</p>
-<p>On the welcome screen choose Get started, or Sign in with Cursor in settings. A browser popup opens. Finish that Cursor page. If your company requires SSO, complete the org flow in the popup. Do not open a personal Cursor account beside the work account to get around SSO. Those are two users, two meters, and two computers, and they do not share a roster.</p>
+<p>Official sign-in, from troubleshooting re-read 2026-09-22, when the popup seems to die:</p>
+<ol>
+<li>Keep Grok Bot open while authentication runs in the browser.</li>
+<li>Confirm the browser shows a successful Cursor sign-in.</li>
+<li>Return to the app yourself if it does not regain focus.</li>
+<li>Try Get started, or Sign In with Cursor from Settings, again.</li>
+<li>Confirm the account has Grok Bot access. An error about Legacy Privacy Mode means the data setting does not allow the storage Grok Bot needs. Change it on the Cursor account, or ask the org admin. Reset will not change that setting.</li>
+</ol>
+<p>If your company requires SSO, complete the org flow in that browser. Do not open a personal Cursor account beside the work account. Those are two users, two meters, and two computers, and they do not share a roster.</p>
+<p>If access is a SuperGrok subscription, link it when the app asks. On desktop, Settings → Usage &amp; Billing offers Link SuperGrok Heavy. The label names the tier that applies to your account. On iPhone and Android the access screen offers Link Grok Account, then Finished Linking? Refresh My Status. Linking is not a second Grok Bot account.</p>
 <p>When the popup closes, you should be back in the app. First-run introduces bots, the shared computer, and routines, and asks which tools you use often. Those answers only affect suggestions. They do not connect Gmail, Slack, or GitHub. Connecting a tool is a later plugin step. The computer initializes in the background. The last screen is Meet a future teammate.</p>
 <h2>Pick the account that will pay</h2>
 <p>Cursor Help is explicit: sign in with the Cursor account that will bear the usage. macOS and iOS share one weekly bucket on that account. If you sign the phone into a different Cursor user than the laptop, you will think sync is broken. It is not syncing because it is not the same user. Team admin on a company account is also not a seat. Assign yourself a Standard or Premium seat, or switch to an account that has one, before you blame the popup.</p>
@@ -372,7 +385,7 @@ def not_responding():
     lede = '''
 <p class="meta">Silent bots, from <a href="%s">plans and billing</a> and staff posts. The computer can be healthy while every bot looks dead. Short index: <a href="/troubleshooting/">Grok Bot not working</a>. Do not start with Reset.</p>
 <div class="callout warn">
-<p><strong>If the computer view still opens, do not Reset.</strong> Not responding, stopped working, and Bot failed to respond are often a full weekly pool. Reset can drop unsynced files and will not refill usage.</p>
+<p><strong>Read the computer line before the usage meter.</strong> Official help: a bot cannot finish a turn while the computer says Reconnecting or Couldn't reach Grok Bot's computer. Retry, do not Reset, then send again. If the computer is connected and the same prompt still fails, that is a support report, not a Reset. A full weekly meter is the other silence, and Reset will not refill it.</p>
 </div>
 <div class="cta-row">
   <a class="btn btn-primary" href="/learn/cost-and-pitfalls/">How weekly usage works</a>
@@ -382,7 +395,7 @@ def not_responding():
 ''' % CURSOR_PLANS
     body = '''
 <h2>Three different failures share this search</h2>
-<p>Grok Bot not responding is what people type when any of three things happen. The fixes are not interchangeable. Read the screen before you pick a button with Reset in the name.</p>
+<p>Grok Bot not responding is what people type for three different screens. Cursor Help’s own order is computer status first, then the prompt, then support. Usage is the field case that the banner often hides. Do them in this order.</p>
 <ol>
 <li><strong>The app is open, the computer view loads, and bots do not answer.</strong> Stay on this page. This is the usage case.</li>
 <li><strong>The app is stuck on Connecting, Setting up, Cleaning up, or a percent bar.</strong> That is the stuck page. Usage is not the first test.</li>
@@ -419,14 +432,14 @@ def not_responding():
         ("Trial still exportable", "https://forum.cursor.com/t/grok-bot-cloud-workspace-inaccessible-after-trial-exhaustion-ticket-t-e97475-pending/169010"),
         ("Official troubleshooting", DOC_TROUBLE),
     ]
-    return _page("Not responding", "Grok Bot not responding or stopped working", lede, body, NOT_RESPONDING_FAQS, related, sources)
+    return _page("Not responding", "Grok Bot not responding: computer first, then usage", lede, body, NOT_RESPONDING_FAQS, related, sources)
 
 
 def stuck():
     lede = '''
 <p class="meta">Progress labels that never finish, from official troubleshooting and staff posts. Fetch context 2026-09-20. If bots are merely silent, use <a href="/troubleshooting/not-responding/">not responding</a>. If the sentence is Can't reach, use <a href="/troubleshooting/cant-reach/">that test</a>.</p>
 <div class="callout">
-<p><strong>Match the words on the screen.</strong> Connecting, Setting up, Cleaning up, and 50 percent Starting are different bugs. One more Reset is the wrong move for all four.</p>
+<p><strong>If the label is still changing, wait.</strong> xAI says initial setup and an image update can take several minutes. Keep the app open until Starting your computer or Updating your computer finishes. Retry, restart, and Update are for when progress stops or fails. A moving bar is not a Reset.</p>
 </div>
 <div class="cta-row">
   <a class="btn btn-primary" href="/learn/login/">Login and Privacy Mode</a>
@@ -436,7 +449,7 @@ def stuck():
 '''
     body = '''
 <h2>Read the label, then do one thing</h2>
-<p>Grok Bot stuck is not a single defect. The label under the spinner is the diagnosis. Write it down before you click. Official troubleshooting starts with the least destructive step: Retry if it is offered, fully quit and reopen, Recover when the computer is unreachable, Update when you need a new image, and Reset only if you accept losing unsynced work.</p>
+<p>Grok Bot stuck is not a single defect. Write down the label. If it still changes, stop reading and leave the app open. Official order once it fails or freezes: Retry from the error, restart Grok Bot, check for an app update (Settings → Updates → Check for Updates; Restart to Update does not reset the computer), then Update under Grok Bot's Computer if the machine is still unreachable. Reset is only after those fail.</p>
 <div class="table-wrap"><table>
 <thead><tr><th>Label you see</th><th>What staff say it usually is</th><th>First move</th></tr></thead>
 <tbody>
@@ -476,14 +489,14 @@ def stuck():
         ("Reset window behind Settings", "https://forum.cursor.com/t/the-reset-computer-window-opens-behind-the-settings-window-and-is-invisible-and-unclickable/169177"),
         ("Privacy Mode and first setup", "https://forum.cursor.com/t/grok-bot-0-23-0-first-setup-fails-createagent-can-t-reach-your-computer/169007"),
     ]
-    return _page("Stuck", "Grok Bot stuck on Connecting, Setting up, or Reconnecting", lede, body, STUCK_FAQS, related, sources)
+    return _page("Stuck", "Grok Bot stuck on Setting up, Starting, or Connecting", lede, body, STUCK_FAQS, related, sources)
 
 
 def cant_reach():
     lede = '''
 <p class="meta">Network failures and the access-ended display bug, from <a href="%s">official troubleshooting</a> and staff posts. If the computer view opens and only replies are missing, go to <a href="/troubleshooting/not-responding/">not responding</a> instead.</p>
 <div class="callout warn">
-<p><strong>Recover before Reset. Often do neither.</strong> A resolver that cannot look up the computer will fail the same way after you rebuild it. A phone that still works means the bots are still there.</p>
+<p><strong>Retry, then quit, before any DNS change or Reset.</strong> xAI’s order is Retry, restart, Recover computer when offered, then Settings → Updates → Update under Grok Bot's Computer. Bots and chats are not automatically gone. A resolver that refuses <code>cursorvm.com</code> subdomains will fail the same way after you rebuild the computer.</p>
 </div>
 <div class="cta-row">
   <a class="btn btn-primary" href="/troubleshooting/recover-vs-reset/">When a button is actually next</a>
@@ -492,15 +505,16 @@ def cant_reach():
 </div>
 ''' % DOC_TROUBLE
     body = '''
-<h2>What the sentence is allowed to mean</h2>
-<p>Can't reach your computer, Reconnecting, a black screen, or a blank preview can be the same family. Chat sometimes still works. The hosted computer is a machine on a <code>cursorvm.com</code> name. If your resolver, VPN, or antivirus cannot complete that connection, the app says it cannot reach the computer. Cloud work can continue while the desktop is disconnected, which is why the phone test matters more than the desktop wording.</p>
+<h2>The button order, then the network</h2>
+<p>Can't reach your computer, Couldn't reach Grok Bot's computer, and Reconnecting are the same family. Do the product buttons before you touch DNS. Choose Retry or reopen the conversation. Restart the app (menu-bar Quit on Mac, not the window close). Choose Recover computer when the unreachable state offers it. The confirmation dialog calls it Recover Grok Bot's Computer. If Recover is not there, Settings → Updates → Update under Grok Bot's Computer. On iPhone and Android the same controls are Update Computer and Reset Computer under Settings → Bot → Bot Computer. Wait for the replacement. Reset only if recovery and update fail and you accept losing recent unsynced work.</p>
+<p>Chat sometimes still works. The hosted computer is a name under <code>cursorvm.com</code>, not the apex you can ping in a browser. Cloud work can continue while the desktop is disconnected, which is why the phone test matters more than the desktop wording.</p>
 <p>The same wording is a known display bug when a trial or plan has ended. Retry and Recover fail because the account no longer has Grok Bot access, not because DNS died tonight. The app should say access ended. If the account lost the plan, pick one that includes Grok Bot or link SuperGrok on the same email, fully quit, and reopen. Do not burn an evening on 1.1.1.1 for a billing problem. The pricing page is the plan snapshot.</p>
 <h2>Test in this order</h2>
 <ol>
 <li><strong>Fully quit and reopen.</strong> Menu-bar Quit on macOS. Tray quit on Windows. Closing the window leaves the process up, and Retry then does nothing visible.</li>
-<li><strong>If Retry or Recover is offered, take that path before Reset.</strong> Recover tries to replace an unreachable computer and keep durable state. Reset is last.</li>
+<li><strong>If Retry or Recover is offered, take that path before Reset.</strong> Recover keeps synced bots, files, and logins, and removes installed apps on the computer. Reset can also drop unsynced work.</li>
 <li><strong>Hotspot on another carrier.</strong> Join the phone hotspot from the computer and open Grok Bot. If the hotspot works, your home or office path is the fault. Stop resetting the computer. If the hotspot fails too, and the phone app on cellular also fails, treat it as server-side and slow down.</li>
-<li><strong>DNS for the computer name.</strong> Staff repeatedly point at 1.1.1.1 and 8.8.8.8, on IPv4 and on IPv6. A router can advertise the ISP resolver forever via router advertisements, so changing only the IPv4 field on the laptop changes nothing. Set both. An apex name can resolve while the computer's subdomain returns Query refused. That still counts as this bug.</li>
+<li><strong>DNS for a subdomain, not the apex.</strong> The app connects to a per-computer hostname under cursorvm.com. The apex can resolve while every subdomain returns Query refused. Test a wildcard name, and read the Server line in the lookup so you see which resolver actually answered. Staff point at 1.1.1.1 and 8.8.8.8. On IPv6, a router advertisement can keep the ISP resolver and silently ignore your IPv4 DNS change. Set IPv6 DNS as well (the thread that fixed this used 2606:4700:4700::1111) or the IPv4 change never runs. Then fully quit and reopen.</li>
 <li><strong>Antivirus HTTPS scanning.</strong> Kaspersky, ESET, Avast, AVG, Bitdefender, Norton, Trend Micro, Sophos, and similar products can break the app while the browser still loads. Grok Bot trusts public certificate authorities only. Encrypted-connection scanning swaps the issuer. Turn that scanning off, or exclude Grok Bot, fully quit from the tray or menu bar, and reopen.</li>
 <li><strong>VPN and company tunnels outside the app.</strong> WARP has left a blank screen. Zscaler-style tunnels have left Windows 11 on a black loader. Windows builds have ignored the system HTTP proxy; staff reports say a TUN-mode tunnel is what works when a proxy is mandatory. None of that belongs inside the Agent Computer.</li>
 </ol>
@@ -516,7 +530,9 @@ def cant_reach():
 <li><strong>Mid-session Reconnecting or Showing saved messages</strong> while the computer is otherwise healthy: same DNS class. A new computer from Reset lands in the DNS zone your resolver already cannot look up.</li>
 </ul>
 <h2>Windows-only traps that look like a bad download</h2>
-<p>Two installed copies: Settings, Apps, Installed apps. Remove the older Grok Bot, quit the tray, open one. A fresh Windows profile that still says Can't reach after a backend fix has been this, and it has been the proxy issue above. The Windows download page is the install half. This page is the path half. Re-downloading the installer does not change DNS.</p>
+<p>Two installed copies: Settings, Apps, Installed apps. Remove the older Grok Bot, quit the tray, open one. The other Windows failure is a proxy the app ignores. It connects directly, so browser checks through a system proxy can pass while Grok Bot fails. Staff’s probe, after TUN mode is on:</p>
+<pre><code>curl.exe --noproxy "*" -I https://test123.us10.cursorvm.com</code></pre>
+<p>A fast <code>404</code> with <code>Server: awselb/2.0</code> means the direct path works. The hostname is only a probe. A hang or reset means the app will fail too. Do not install the tunnel inside the Agent Computer. Full install notes: <a href="/learn/windows-download/">Windows download</a>. Re-downloading the installer does not change DNS.</p>
 <p>When the network test passes and the label is still wrong, go back to access. Expired trial, lost seat, Legacy Privacy Mode never saved. Those three masquerade as reachability. The stuck page sorts Connecting and Setting up. The recover page is where Update, Recover, and Reset are compared after the tests above have failed for a reason other than your resolver.</p>
 '''
     related = [
@@ -533,6 +549,7 @@ def cant_reach():
         ("VPN drops cursorvm", "https://forum.cursor.com/t/grok-bot-desktop-on-macos-is-permanently-stuck-on-reconnecting-to-your-computer/169119"),
         ("IPv6 DNS", "https://forum.cursor.com/t/cant-reach-your-computer-from-last-72-hours/169970"),
         ("Query refused on the subdomain", "https://forum.cursor.com/t/grok-bot-0-30-0-windows-setup-fails-with-cant-reach-your-computer-all-network-checks-pass/170035"),
+        ("Windows app ignores the system proxy", "https://forum.cursor.com/t/grok-bot-windows-fresh-profile-setup-fails-with-can-t-reach-your-computer-after-backend-fix/170281"),
         ("WARP blank screen", "https://forum.cursor.com/t/blank-screen-after-opening-grok-bot/169966"),
     ]
     return _page("Can't reach", "Can't reach your computer in Grok Bot", lede, body, REACH_FAQS, related, sources)
@@ -542,7 +559,7 @@ def white_screen():
     lede = '''
 <p class="meta">Blank windows and empty rosters, from staff posts. A white screen is usually local config or a waking computer, not a deleted account. Downloads: <a href="/learn/mac-download/">Mac</a> and <a href="/learn/windows-download/">Windows</a>.</p>
 <div class="callout warn">
-<p><strong>Do not Reset an empty roster.</strong> Sleep, a slow wake, and a first-run screen during boot all look like a wiped account. They are not.</p>
+<p><strong>Do not Reset to find a missing bot.</strong> Cursor Help: open the same account on the phone, then Hidden Bots in the sidebar. Hide from sidebar removes the row only. The bot stays active. Chats are stored outside the computer, so a blank window is not deleted history.</p>
 </div>
 <div class="cta-row">
   <a class="btn btn-primary" href="/learn/mac-download/">Mac install, if the file was wrong</a>
@@ -559,13 +576,14 @@ def white_screen():
 <li><strong>Empty roster</strong> after you already had bots. Often sleep. Sometimes you logged in while a rebuild was still starting, and the app showed the new-user flow.</li>
 </ul>
 <h2>White window on Mac</h2>
-<p>Fully quit with the menu-bar Quit item. In Finder, Go to Folder, open <code>~/Library/Application Support/</code>, and rename <code>Grok Bot</code> to <code>Grok Bot.bak</code>. Open the app from Applications, not from the dmg. Reinstall alone does not clear that folder, which is why a second download from x.ai/bot changes nothing. Keep the .bak folder until you see the roster. This is local app state on the Mac. It is not the cloud computer, and renaming it is not Reset.</p>
+<p>Fully quit with the menu-bar Quit item. In Finder, Go to Folder, open <code>~/Library/Application Support/</code>, and rename <code>Grok Bot</code> to <code>Grok Bot.bak</code>. On Windows the twin folder is <code>%APPDATA%\\Grok Bot</code>. Open the app from Applications or the Start menu, not from the installer. Reinstall alone does not clear that folder, which is why a second download from x.ai/bot changes nothing. Keep the .bak folder until you see the roster. This is local app state. It is not the cloud computer, and renaming it is not Reset. If the app hangs on every launch after a real quit, Cursor Help says contact support with the platform and version from About, rather than Reset.</p>
 <p>If macOS never got as far as a window because it said the app is not supported or damaged, stop treating it as a white screen. That is the wrong chip package or a bad file. The Mac download page is the Gatekeeper and Apple silicon path. Drag a fresh official build into Applications after you trash the bad one.</p>
 <h2>Black spinner</h2>
 <p>A black loading screen during initial setup has two common causes, and they ask for opposite fixes. On a free Cursor plan, or a team admin without a Standard or Premium seat, no hosted computer is provisioned. The spinner is the app waiting for a machine that will not be created. Network tweaks will not help. You need access, then a full quit and reopen. On a paid seat, a black screen can instead be the tunnel: WARP has produced a blank screen, and a Zscaler-style tunnel has stuck Windows 11 on a black loader. Use a phone hotspot before you conclude the install is corrupt. The can't-reach page lists that order.</p>
 <p>A black or white loader next to an empty roster, after you previously had bots, is the wake-from-sleep case below. Do not mix it up with the free-plan spinner. If you had a roster yesterday, you are not in the missing-seat case today unless the plan actually changed.</p>
 <h2>Empty roster after reconnect</h2>
-<p>The Agent Computer waking from sleep is slow. The app can show an empty roster and a loader while the machine comes back. Nothing was deleted. Wait. Fully quit. Open again. Do not Reset to force the list to repaint. Reset is how an empty-looking roster becomes an actually empty computer.</p>
+<p>Check Hidden Bots before you assume the roster was wiped. Cursor Help: Hide from sidebar only removes the row. Open Hidden Bots or Show Hidden Bots, then Unhide. Sections and hidden rows sync between iPhone and desktop. Deleting a sidebar section moves bots to Unassigned. It does not delete them. Also open the same Cursor account on the phone. A different login is an empty roster with your bots still on the other account.</p>
+<p>The Agent Computer waking from sleep is slow. The app can show an empty roster and a loader while the machine comes back. Nothing was deleted. Wait. Fully quit. Open again. Do not Reset to force the list to repaint. Reset is how an empty-looking roster becomes an actually empty computer. A low-disk warning is also not data loss: Disk Saver proposes cleanup and deletes nothing until you confirm.</p>
 <p>The crueler variant shows up after a rebuild. Logging in while the computer is still starting draws the first-run UI, as if you were a new user with no bots. Fully quit. Do not create a first bot in that window. A bot created there is a new teammate on a computer that was about to show the old ones, and you will not be able to tell which is which. Come back when the computer view is a desktop you recognize. Then open the roster before you type anything.</p>
 <h2>What still is not a white screen</h2>
 <p>Account unavailable after a password change is a stale session. Log out, fully quit, sign in. That screen is the login page. Not responding, with the computer visible, is usage. Can't reach, with those words on screen, is the network page. If you have tried the rename, the seat check, and a patient reopen, and both phone and desktop are blank for days, email hi@cursor.com rather than Reset. Include the version and whether iOS on cellular is blank too.</p>
@@ -585,14 +603,14 @@ def white_screen():
         ("Admin without a seat", "https://forum.cursor.com/t/grok-bot-0-30-0-stuck-on-black-loading-screen-during-initial-setup-on-mac/170251"),
         ("Official troubleshooting", DOC_TROUBLE),
     ]
-    return _page("Blank screen", "Grok Bot white screen, black screen, or empty roster", lede, body, WHITE_FAQS, related, sources)
+    return _page("Blank screen", "Grok Bot white screen, empty roster, or hidden bots", lede, body, WHITE_FAQS, related, sources)
 
 
 def recover_vs_reset():
     lede = '''
 <p class="meta">Official order from <a href="%s">troubleshooting</a> and <a href="%s">computer recovery</a>. Buttons are last, not first. Usage silence: <a href="/troubleshooting/not-responding/">not responding</a>. Network: <a href="/troubleshooting/cant-reach/">can't reach</a>.</p>
 <div class="callout warn">
-<p><strong>Recover before Reset.</strong> Update and Recover try to keep durable state. Reset returns to the latest snapshot and can drop unsynced work. Chat history is not a reason to Reset. It does not live on the box.</p>
+<p><strong>Update and Recover keep synced bots, files, and logins. All three buttons remove installed apps on the computer.</strong> Reset is the only one that can also drop recent bots and files that have not synced. Chats live outside the computer. Backup not ready means wait for a backup, not Reset.</p>
 </div>
 <div class="cta-row">
   <a class="btn btn-primary" href="/troubleshooting/">Start from the symptom</a>
@@ -602,18 +620,18 @@ def recover_vs_reset():
 ''' % (DOC_TROUBLE, CURSOR_RECOVER)
     body = '''
 <h2>The order, before the table</h2>
-<p>Official troubleshooting starts small. Retry if the app offers it. Fully quit and reopen. Recover the computer when it is unreachable and Recover is offered. Update the Agent Computer from Settings, then Beta, when you need a new image and the computer still answers. Reset only when you accept that unsynced work may be gone. Anything else you read on a forum that starts with Reset is skipping the page that Cursor and xAI already published.</p>
-<p>Do these checks before any of the three buttons. If every bot is silent and the computer view still opens, open Usage. That is not a computer failure. If the label is Connecting on a new account, save Privacy Mode first. If a phone on the same account still works, the bots are not gone. If both phone and desktop fail, including cellular, staff often say the failure is server-side and want you to wait instead of clicking.</p>
+<p>Cursor Help and xAI troubleshooting, re-read 2026-09-22, use the same order. Wait and Retry if the computer says Reconnecting or Couldn't reach Grok Bot's computer. Fully quit and reopen. Update from Settings → Updates if an update is offered. Recover if it still cannot reconnect, or if an update looks stuck and Recover computer is shown. On a slow update, Keep waiting is the safe default. Reset only after those steps. Do not start a second Update or Reset while one is already running. If Recover or Reset fails, use Retry Recovery or Retry Reset once, then stop.</p>
+<p>On iPhone and Android, Update Computer and Reset Computer are under Settings → Bot → Bot Computer. The desktop confirmation says Recover Grok Bot's Computer. Before any button: if the computer view is up and bots are silent, open Usage. If the phone on the same account still works, the bots are not gone. If both devices fail, including cellular, wait before you click.</p>
 <h2>What each control keeps</h2>
 <div class="table-wrap"><table>
-<thead><tr><th>Control</th><th>When it is the one to use</th><th>What it tries to keep</th></tr></thead>
+<thead><tr><th>Control</th><th>Keeps</th><th>Removes</th></tr></thead>
 <tbody>
-<tr><td>Update Agent Computer</td><td>You can still reach the computer and you need a new image</td><td>Durable state stays. This is not a wipe</td></tr>
-<tr><td>Recover Agent Computer</td><td>The computer is unreachable and Recover is offered</td><td>Replaces the machine and still tries to keep durable state</td></tr>
-<tr><td>Reset Agent Computer</td><td>Last resort, after you accept snapshot loss</td><td>Returns to the latest durable snapshot. Unsynced work may be lost</td></tr>
+<tr><td>Update</td><td>Synced bots, files, and logins. Now or scheduled.</td><td>Installed apps and packages. A turn that cannot pause is discarded.</td></tr>
+<tr><td>Recover</td><td>Bots, files, and logins. Recreates the computer.</td><td>Installed apps and packages.</td></tr>
+<tr><td>Reset</td><td>Only the last snapshot.</td><td>Recent unsynced bots and files, plus installed apps.</td></tr>
 </tbody>
 </table></div>
-<p>Chat history lives outside the computer. Reset is not how you protect chats, and it is not how you export them. An exhausted trial does not delete data either. Bots stop answering, the computer view can still export, and Reset will not extend the trial. If you wanted a copy of files, export while the view still opens. Then decide.</p>
+<p>Chat history lives outside the computer. Reset is not how you protect chats. Deleting files inside the computer does not delete chats. Synced computer files usually return when the computer reopens. If it is still empty after Recover, stop and contact support. Files that live only on your Mac or Windows machine are not in that copy. Backup not ready means the backup has not finished. Wait for the update to be offered again. Do not Reset to force it. Agent busy means a bot could not pause. Let it finish, then update again. An exhausted trial does not delete data either. Export while the view still opens, then decide. Reset will not extend a trial.</p>
 <h2>Hangs that look like you must click again</h2>
 <ul>
 <li><strong>Cleaning up never ends.</strong> The backend has often finished. Fully quit, reopen, and Recover if the computer is still down. A second Reset does not complete the first one.</li>
@@ -632,7 +650,7 @@ def recover_vs_reset():
         ("/troubleshooting/", "Not working index", "Pick the symptom if you have not yet."),
         ("/troubleshooting/not-responding/", "Not responding", "Usage, when the computer view still opens."),
         ("/troubleshooting/cant-reach/", "Can't reach", "DNS and antivirus before either button."),
-        ("/learn/computer/", "Shared computer", "What durable state means: one machine for every bot."),
+        ("/learn/computer/", "Shared computer", "One machine for every bot. Chats are stored outside it."),
     ]
     sources = [
         ("Official troubleshooting", DOC_TROUBLE),
@@ -642,7 +660,7 @@ def recover_vs_reset():
         ("Reset behind Settings", "https://forum.cursor.com/t/the-reset-computer-window-opens-behind-the-settings-window-and-is-invisible-and-unclickable/169177"),
         ("Trial exhaustion", "https://forum.cursor.com/t/grok-bot-cloud-workspace-inaccessible-after-trial-exhaustion-ticket-t-e97475-pending/169010"),
     ]
-    return _page("Recover or Reset", "Recover, Update, or Reset the Grok Bot computer", lede, body, RECOVER_FAQS, related, sources)
+    return _page("Recover or Reset", "Update, Recover, or Reset Grok Bot's computer", lede, body, RECOVER_FAQS, related, sources)
 
 
 SUPPORT = [
@@ -654,8 +672,8 @@ SUPPORT = [
             "Download Grok Bot for Mac",
             "Match Apple silicon or Intel, install from the official dmg into Applications, then sign in with Cursor.",
             [
-                ("Read About This Mac", "Chip means Apple silicon. An Intel processor means the Intel build."),
-                ("Download from x.ai/bot", "Ignore mirror sites. This handbook is not the store."),
+                ("Read About This Mac", "Chip means Apple silicon. Processor means Intel."),
+                ("Download the matching build", "Top macOS button is Apple silicon. Intel is under More downloads on x.ai/bot."),
                 ("Drag to Applications and open", "Choose Open if macOS asks. Do not keep launching from the disk image."),
                 ("Sign in with Cursor", "No separate Grok Bot account. Save Privacy Mode if Connecting never finishes."),
             ],
@@ -775,8 +793,8 @@ SUPPORT = [
             "Use the least destructive computer control after usage and network checks.",
             [
                 ("Rule out usage and DNS", "A full meter or a bad resolver will survive every button."),
-                ("Update if the computer still answers", "A new image keeps durable state."),
-                ("Recover if it is unreachable", "Recover replaces the machine and still tries to keep durable state."),
+                ("Update if the computer still answers", "Synced bots, files, and logins stay. Installed apps on the computer are removed."),
+                ("Recover if it is unreachable", "Recreates the computer. Same keep and remove split as Update."),
                 ("Reset last", "Reset returns to the latest snapshot and can drop unsynced work."),
             ],
         ),

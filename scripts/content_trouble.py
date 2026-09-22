@@ -39,9 +39,9 @@ GROUPS = [
         "title": "Reset vs Recover vs Update",
         "symptom": "You want to “rebuild the computer,” Reset stuck on Cleaning up / 50% Starting, or the Reset dialog opens behind Settings and cannot be clicked.",
         "tries": [
-            "Update Agent Computer: new image, durable state kept.",
-            "Recover Agent Computer: replace the computer when unreachable, still trying to keep durable state.",
-            "Reset Agent Computer: return to the latest durable snapshot; unsynced work may be lost. Official docs call this last resort.",
+            "Update, under Settings → Updates → Grok Bot's Computer: latest computer version. Synced bots, files, and logins stay. Installed apps and packages are removed. A turn that cannot pause is discarded.",
+            "Recover computer (the dialog says Recover Grok Bot's Computer): recreates the computer. Same keep/remove split as Update. On a slow update, Keep waiting is the safe default.",
+            "Reset: last saved snapshot only. Recent unsynced bots and files can go, and installed apps go too. Official last resort. Do not start a second Reset while one is running.",
         ],
         "dont": "Recover before Reset. Chat history lives outside the box. Exhausted trial does not delete data — Bots stop answering but Computer view can still export; do not Reset to “save” a trial. Stuck on Cleaning up: backend often already finished — fully quit then Recover, do not Reset again. 50% Starting is a server-side bad state; wait a few minutes; Bot data is usually still there. When a status dialog looks scary, do not click yet — try re-login and phone cellular verification first. If every Bot says “Bot failed to respond” or “Couldn't send your message” for hours across devices while the computer screen is still visible, ask support before Reset — Reset rebuilds from the last snapshot and can drop the newest unsynced edits.",
         "more": ("/troubleshooting/recover-vs-reset/", "Walkthrough: Recover, Update, or Reset"),
@@ -155,19 +155,26 @@ def troubleshooting():
     intro = '''
 <section class="band"><div class="wrap prose">
 <p class="kicker">Playbooks</p>
-<h1>Grok Bot not working — pick the symptom before you Reset</h1>
-<p><strong>Recover before Reset.</strong> Silent bots with the computer still visible are often weekly usage, not a dead box. Official guidance starts with the least destructive step. The cards under this note are the short index. Each long fix has its own page so a Mac download problem and a full usage meter are not the same article.</p>
-<p>Not installed yet? Start at <a href="/learn/install/">the official download</a>, then <a href="/learn/mac-download/">Mac</a> or <a href="/learn/windows-download/">Windows</a> if the package itself is the question. Before contacting support, collect: Grok Bot version, OS, exact error, Bot or routine name, time and timezone, request/conversation ID, and what you already tried (Retry / restart / Update). Do not attach passwords, codes, or keys. Email <a href="mailto:hi@cursor.com">hi@cursor.com</a>.</p>
+<h1>Grok Bot not working — quit and Retry before you Reset</h1>
+<p><strong>Fully quit, then Retry. Do not Reset while the screen says Reconnecting or Couldn't reach Grok Bot's computer.</strong> Cursor Help: bots, files, and logins are safe during reconnect. Cloud work can continue while the desktop app is disconnected. Updating the desktop app does not reset the computer. The two updates are different: Settings → Updates → Check for Updates is the app; Update under Grok Bot's Computer is the machine.</p>
+<ol>
+<li><strong>Quit for real.</strong> Mac: menu-bar Quit. Windows: tray, then end leftover Grok Bot processes. Closing the window is not quitting.</li>
+<li><strong>Reconnecting or Couldn't reach:</strong> wait, then Retry. Open <a href="/troubleshooting/cant-reach/">can't reach</a> only if that fails. Recover if the app offers it. On a slow update, Keep waiting.</li>
+<li><strong>Bots or chats look gone:</strong> same account on the phone, then sidebar <strong>Hidden Bots</strong>. Hide from sidebar does not delete a bot. Do not Reset to go looking. <a href="/troubleshooting/white-screen/">White screen and missing bots</a>.</li>
+<li><strong>Computer is up, replies are not:</strong> <a href="/troubleshooting/not-responding/">not responding</a>. Usage, or a bot waiting on a login. Reset will not refill the meter.</li>
+<li><strong>The bar is still moving</strong> (Starting your computer, Updating): leave it. Several minutes is normal. <a href="/troubleshooting/stuck/">Stuck</a> is for when progress stops.</li>
+</ol>
+<p>Not installed yet? <a href="/learn/install/">Official download</a>. Intel Macs miss the file if they take the top button: <a href="/learn/mac-download/">Mac download</a>. Version for support is account menu → About → Copy version info. Request ID is right-click the message → Copy request ID. Email <a href="mailto:hi@cursor.com">hi@cursor.com</a>. No passwords or keys.</p>
 </div></section>
 <section class="band"><div class="wrap">
 <h2>Open the page that matches the screen</h2>
 <p class="lede">These are the long walkthroughs. The notes below stay as the short index, with every source thread still listed.</p>
 <div class="grid-3">
-<a class="card" href="/troubleshooting/not-responding/"><h3>Not responding</h3><p>Bots are silent but the computer still opens. Check weekly usage before Reset.</p></a>
-<a class="card" href="/troubleshooting/stuck/"><h3>Stuck</h3><p>Connecting, Setting up, Cleaning up, or 50 percent Starting. One label, one move.</p></a>
-<a class="card" href="/troubleshooting/cant-reach/"><h3>Can’t reach</h3><p>DNS, a VPN, or antivirus HTTPS scanning. Hotspot test before Reset.</p></a>
-<a class="card" href="/troubleshooting/white-screen/"><h3>White or black screen</h3><p>Local Mac config, sleep, or a fake first-run. Reinstall does not clear config.</p></a>
-<a class="card" href="/troubleshooting/recover-vs-reset/"><h3>Recover vs Reset</h3><p>What Update, Recover, and Reset each keep. Reset is last.</p></a>
+<a class="card" href="/troubleshooting/not-responding/"><h3>Not responding</h3><p>Computer reconnecting, a bot waiting on you, or weekly usage. Reset does not answer.</p></a>
+<a class="card" href="/troubleshooting/stuck/"><h3>Stuck</h3><p>If the bar is still moving, wait. Privacy Mode, a missing seat, or a stopped percent.</p></a>
+<a class="card" href="/troubleshooting/cant-reach/"><h3>Can’t reach</h3><p>Retry first. Then hotspot, wildcard DNS, or the Windows direct-connection test.</p></a>
+<a class="card" href="/troubleshooting/white-screen/"><h3>White screen or missing bots</h3><p>Hidden Bots, the other device, or a local config folder. Do not Reset to find chats.</p></a>
+<a class="card" href="/troubleshooting/recover-vs-reset/"><h3>Update vs Recover vs Reset</h3><p>Synced bots stay on Update and Recover. Installed apps do not. Reset can drop unsynced work.</p></a>
 <a class="card" href="/learn/install/"><h3>Download and install</h3><p>Official Mac, Windows, Linux, and phone packages. This site is not the store.</p></a>
 </div>
 </div></section>
