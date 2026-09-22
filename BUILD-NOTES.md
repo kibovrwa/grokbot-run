@@ -10,9 +10,13 @@ From `/workspace/grok-bot-playbook`.
 
 Requires Python 3 and Node/npm. There are no npm package dependencies.
 
+### Analytics (optional)
+
+Set `PUBLIC_GA_MEASUREMENT_ID` to a GA4 ID (`G-XXXXXXXX`) before `npm run build`. Every page then includes the gtag snippet: a page view on load, plus `cta_click` on the main download buttons (`x.ai/bot`, App Store, Google Play). Unset or empty omits the snippet. `GA_MEASUREMENT_ID` is the fallback name. Invalid values are ignored. Copy `.env.example`. On Cloudflare Pages this is a build environment variable, not a runtime one.
+
 ## Cloudflare Pages
 
-Create a Pages project for this repository. Set the build command to `npm run build` and the output directory to `dist`. No runtime environment variables are required. `wrangler.toml` declares `pages_build_output_dir = "dist"`. After authenticating Wrangler, you can also upload the existing `dist/` directory to the Pages project.
+Create a Pages project for this repository. Set the build command to `npm run build` and the output directory to `dist`. No environment variables are required to build. Optional: `PUBLIC_GA_MEASUREMENT_ID` at build time (see Analytics above). `wrangler.toml` declares `pages_build_output_dir = "dist"`. After authenticating Wrangler, you can also upload the existing `dist/` directory to the Pages project.
 
 ## Spaceship DNS
 

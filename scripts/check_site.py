@@ -4,7 +4,11 @@ from urllib.parse import urlparse
 import re, sys
 
 root = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(root / "scripts"))
+from htmlutil import ga_measurement_id
+
 dist = root / 'dist'
+ga_id = ga_measurement_id()
 
 class Parser(HTMLParser):
     def __init__(self):
@@ -99,6 +103,16 @@ for f in files:
     if h1_primary in h1s:
         errors.append(f'{f.relative_to(dist)}: duplicate H1: {h1_primary!r}')
     h1s.add(h1_primary)
+    rel = f.relative_to(dist)
+    if ga_id:
+        snippet = "https://www.googletagmanager.com/gtag/js?id=%s" % ga_id
+        config = "gtag('config', '%s', { send_page_view: true })" % ga_id
+        if text.count("<!-- ga4 -->") != 1 or text.count(snippet) != 1 or config not in text:
+            errors.append(f'{rel}: missing GA4 tag for {ga_id}')
+        if "gtag('event', 'cta_click'" not in text:
+            errors.append(f'{rel}: missing cta_click handler')
+    elif "googletagmanager.com" in text or "<!-- ga4 -->" in text:
+        errors.append(f'{rel}: Google tag present but PUBLIC_GA_MEASUREMENT_ID is empty')
     for href in p.links:
         if 'www.grokbot.run' in href or href.startswith('http://grokbot.run'):
             errors.append(f'{f.relative_to(dist)} non-canonical internal href: {href}')

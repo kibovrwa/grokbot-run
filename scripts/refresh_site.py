@@ -7,7 +7,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from htmlutil import ROOT, SITE, page, write, header_html, footer_html, canonical, faq_jsonld, howto_jsonld, itemlist_jsonld, FIND_JS
+from htmlutil import ROOT, SITE, page, write, header_html, footer_html, canonical, faq_jsonld, howto_jsonld, itemlist_jsonld, FIND_JS, apply_ga
 from seo_pages import PAGES
 from content_home import home
 from content_pricing import pricing, PRICING_FAQS
@@ -88,7 +88,7 @@ def rewrite_chrome(html, path):
         html = re.sub(r"<script data-find-js>.*?</script>", find_tag, html, count=1, flags=re.S)
     else:
         html = html.replace("</body>", find_tag + "</body>", 1)
-    return html
+    return apply_ga(html)
 
 
 def write_sitemap():
