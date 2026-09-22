@@ -47,6 +47,12 @@ From the project root:
 
 Requires Python 3 and Node/npm. There are no npm package dependencies.
 
+### Analytics (optional)
+
+`PUBLIC_GA_MEASUREMENT_ID` is read when `npm run build` or `python3 scripts/refresh_site.py` runs. Set it to a GA4 measurement ID (`G-` plus letters and digits). The generator adds the gtag snippet to every page `<head>`. `gtag('config', …)` records a page view on each full page load. Clicks on the main download buttons — `x.ai/bot`, the App Store Grok Bot listing, and Google Play `ai.x.grok.bot` — also send a `cta_click` event.
+
+Unset or empty means no Google snippet. `GA_MEASUREMENT_ID` is used only when `PUBLIC_GA_MEASUREMENT_ID` is unset. A value that is not a GA4 ID is ignored. See `.env.example`. On Cloudflare Pages, set the variable for the build and rebuild. It is not read at request time.
+
 ### Deploy with or without rebuilding
 
 - **With Python:** use the build script above, then point Cloudflare Pages at the repo (or upload `dist/`).
@@ -60,7 +66,7 @@ Requires Python 3 and Node/npm. There are no npm package dependencies.
 | Output directory | `dist` |
 | Node | any recent LTS (no install step required) |
 
-Create a Pages project for this repository. Set the build command to `npm run build` and the output directory to `dist`. No runtime environment variables are required. `wrangler.toml` declares `pages_build_output_dir = "dist"`. After authenticating Wrangler, you can also upload the existing `dist/` directory to the Pages project.
+Create a Pages project for this repository. Set the build command to `npm run build` and the output directory to `dist`. No environment variables are required to build. Optional build-time analytics: `PUBLIC_GA_MEASUREMENT_ID` (see Analytics above). `wrangler.toml` declares `pages_build_output_dir = "dist"`. After authenticating Wrangler, you can also upload the existing `dist/` directory to the Pages project.
 
 ## Custom domain (Spaceship DNS)
 

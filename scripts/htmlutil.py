@@ -2,6 +2,9 @@
 from pathlib import Path
 from html import escape
 import json
+import os
+import re
+import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE = "https://grokbot.run"
@@ -306,6 +309,79 @@ def _crumbs(path, title):
     }
 
 
+# GA4 measurement IDs look like G-XXXXXXXX. Anything else is ignored so a
+# bad value cannot inject markup or a third-party script.
+_GA_ID_RE = re.compile(r"^G-[A-Za-z0-9]+$")
+_GA_BLOCK_RE = re.compile(r"\n?<!-- ga4 -->.*?<!-- /ga4 -->\n?", re.S)
+_GA_WARNED = False
+
+
+def ga_measurement_id():
+    """Build-time GA4 id. Empty, unset, or invalid means no Google tag.
+
+    PUBLIC_GA_MEASUREMENT_ID is the documented name. GA_MEASUREMENT_ID is
+    accepted only when the public name is unset.
+    """
+    global _GA_WARNED
+    raw = (os.environ.get("PUBLIC_GA_MEASUREMENT_ID") or "").strip()
+    source = "PUBLIC_GA_MEASUREMENT_ID"
+    if not raw:
+        raw = (os.environ.get("GA_MEASUREMENT_ID") or "").strip()
+        source = "GA_MEASUREMENT_ID"
+    if not raw:
+        return ""
+    if _GA_ID_RE.fullmatch(raw):
+        return raw
+    if not _GA_WARNED:
+        _GA_WARNED = True
+        print(
+            "warning: %s is set but is not a GA4 measurement id (G-XXXXXXXX); omitting Google tag"
+            % source,
+            file=sys.stderr,
+        )
+    return ""
+
+
+def ga_head_html():
+    mid = ga_measurement_id()
+    if not mid:
+        return ""
+    safe = escape(mid, quote=True)
+    return (
+        "<!-- ga4 -->\n"
+        '<script async src="https://www.googletagmanager.com/gtag/js?id=%s"></script>\n'
+        "<script>\n"
+        "window.dataLayer=window.dataLayer||[];\n"
+        "function gtag(){dataLayer.push(arguments);}\n"
+        "gtag('js', new Date());\n"
+        "gtag('config', '%s', { send_page_view: true });\n"
+        "document.addEventListener('click', function (e) {\n"
+        "  var el = e.target && e.target.closest ? e.target.closest('a') : null;\n"
+        "  if (!el || !el.classList || !el.classList.contains('btn')) return;\n"
+        "  var href = el.getAttribute('href') || '';\n"
+        "  var store = href === 'https://x.ai/bot' || href === 'https://x.ai/bot/';\n"
+        "  var ios = href.indexOf('https://apps.apple.com/') === 0 && href.indexOf('/grok-bot/') !== -1;\n"
+        "  var play = href.indexOf('https://play.google.com/store/apps/details?id=ai.x.grok.bot') === 0;\n"
+        "  if (!store && !ios && !play) return;\n"
+        "  gtag('event', 'cta_click', {\n"
+        "    link_url: href,\n"
+        "    link_text: (el.textContent || '').replace(/\\s+/g, ' ').trim().slice(0, 80)\n"
+        "  });\n"
+        "});\n"
+        "</script>\n"
+        "<!-- /ga4 -->"
+    ) % (safe, safe)
+
+
+def apply_ga(html):
+    """Insert or remove the GA4 block so a rebuild matches the current env."""
+    html = _GA_BLOCK_RE.sub("\n", html)
+    snippet = ga_head_html()
+    if not snippet or "</head>" not in html:
+        return html
+    return html.replace("</head>", snippet + "\n</head>", 1)
+
+
 def page(path, title, description, body, jsonld=None, lang="en"):
     canon = canonical(path)
     site_name = "Grok Bot Guide"
@@ -377,6 +453,11 @@ def _page_join(path, title, description, body, canon, site_name, jsonld_html):
         '<link rel="apple-touch-icon" href="%s">' % LOGO,
         "<style>%s</style>" % (ROOT / "src/css/site.css").read_text(encoding="utf-8"),
         jsonld_html,
+    ]
+    ga = ga_head_html()
+    if ga:
+        html.append(ga)
+    html.extend([
         "</head><body>",
         header_html(path),
         "<main>%s%s</main>" % (crumbs_html(path, title), body),
@@ -384,7 +465,7 @@ def _page_join(path, title, description, body, canon, site_name, jsonld_html):
         "<script>const btn=document.querySelector('[data-menu]');const links=document.querySelector('[data-links]');if(btn) btn.addEventListener('click',()=>links.classList.toggle('open'));</script>",
         '<script data-find-js>%s</script>' % FIND_JS,
         "</body></html>",
-    ]
+    ])
     return "\n".join(html)
 
 
