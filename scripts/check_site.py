@@ -148,6 +148,15 @@ for must in (
     'https://grokbot.run/learn/operator/',
     'https://grokbot.run/learn/ops/',
     'https://grokbot.run/compare/',
+    'https://grokbot.run/learn/mac-download/',
+    'https://grokbot.run/learn/windows-download/',
+    'https://grokbot.run/learn/phone-download/',
+    'https://grokbot.run/learn/login/',
+    'https://grokbot.run/troubleshooting/not-responding/',
+    'https://grokbot.run/troubleshooting/stuck/',
+    'https://grokbot.run/troubleshooting/cant-reach/',
+    'https://grokbot.run/troubleshooting/white-screen/',
+    'https://grokbot.run/troubleshooting/recover-vs-reset/',
 ):
     if '<loc>%s</loc>' % must not in sitemap:
         errors.append('sitemap missing %s' % must)

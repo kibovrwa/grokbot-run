@@ -69,7 +69,7 @@ def cursor_and_grok():
 <section class="band"><div class="wrap prose">
 <p class="kicker">Cursor and Grok Bot</p>
 <h1>Cursor Grok Bot: one account, two apps</h1>
-<p class="meta">People search “cursor grokbot” as if Grok Bot were a Cursor IDE panel. It is not. This page is the relationship. Plans: <a href="/pricing/">pricing</a>. Sign-in steps: <a href="/learn/install/">install</a>.</p>
+<p class="meta">People search “cursor grokbot” as if Grok Bot were a Cursor IDE panel. It is not. This page is the relationship. Plans: <a href="/pricing/">pricing</a>. Sign-in steps: <a href="/learn/login/">login</a>.</p>
 <p>Grok Bot and Cursor share an account, a plugin library, and a usage meter. They do not share a window. You download Grok Bot from <a href="https://x.ai/bot">x.ai/bot</a>, open that app, and choose Sign in with Cursor. The hosted computer is provisioned for that Cursor account. Close the laptop and cloud turns still run — that is the Bot product, not the editor.</p>
 <h2>What the Cursor account actually holds</h2>
 <ul>
@@ -140,6 +140,19 @@ def learn_index():
   <h2>Lessons</h2>
 <p class="lede">Finish one page before opening the next. Do not install twelve Bots on day one.</p>
 <div class="roadmap">%s</div>
+</div></section>
+
+<section class="band"><div class="wrap">
+<h2>Download and when it sticks</h2>
+<p class="lede">The install lesson is the overview. These pages go deep on one machine or one screen.</p>
+<div class="grid-3">
+  <a class="card" href="/learn/mac-download/"><h3>Mac download</h3><p>Apple silicon versus Intel, Gatekeeper, and the white window.</p></a>
+  <a class="card" href="/learn/windows-download/"><h3>Windows download</h3><p>x64 or Arm64, a duplicate install, and the tray.</p></a>
+  <a class="card" href="/learn/phone-download/"><h3>iPhone and Android</h3><p>Official stores, and what still requires the desktop app.</p></a>
+  <a class="card" href="/learn/login/"><h3>Cursor login</h3><p>No second account. Privacy Mode. Stale session after a password change.</p></a>
+  <a class="card" href="/troubleshooting/not-responding/"><h3>Not responding</h3><p>Silent bots while the computer still opens. Check usage.</p></a>
+  <a class="card" href="/troubleshooting/"><h3>All fixes</h3><p>Stuck, can’t reach, white screen, Recover versus Reset.</p></a>
+</div>
 </div></section>
 
 <section class="band"><div class="wrap">

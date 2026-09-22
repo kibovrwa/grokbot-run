@@ -21,6 +21,7 @@ GROUPS = [
             "Never install a VPN/proxy or change DNS inside the Agent Computer. A Bot-installed VPN can cut the always-on path so every Bot on the account cannot reconnect until Recover restores routing.",
         ],
         "dont": "A temporarily unreachable computer does not mean Bots are gone. Recover before Reset. If the desktop is black but the same account still works on iOS, do not Reset (that can delete Bots) — wait for an official rebuild. If desktop AND iOS (even on cellular) are both stuck, staff say that is often server-side: hold off on Reset / Recover / Update and signing out. Days of Can't reach after Recover/Reset/reinstall usually mean a stuck hosted box that only staff can restore. When staff say the computer is healthy but your network cannot resolve its address, do not keep Reset / Recover either — a rebuilt computer lands in the same DNS zone your resolver already fails.",
+        "more": ("/troubleshooting/cant-reach/", "Walkthrough: can't reach your computer"),
         "sources": [
             ("Official Troubleshooting", "https://docs.x.ai/grok-bot/troubleshooting"),
             ("Reconnect screenshots", "https://forum.cursor.com/t/grok-bot-reconnect-issue/168500"),
@@ -38,11 +39,12 @@ GROUPS = [
         "title": "Reset vs Recover vs Update",
         "symptom": "You want to “rebuild the computer,” Reset stuck on Cleaning up / 50% Starting, or the Reset dialog opens behind Settings and cannot be clicked.",
         "tries": [
-            "Update Agent Computer: new image, durable state kept.",
-            "Recover Agent Computer: replace the computer when unreachable, still trying to keep durable state.",
-            "Reset Agent Computer: return to the latest durable snapshot; unsynced work may be lost. Official docs call this last resort.",
+            "Update, under Settings → Updates → Grok Bot's Computer: latest computer version. Synced bots, files, and logins stay. Installed apps and packages are removed. A turn that cannot pause is discarded.",
+            "Recover computer (the dialog says Recover Grok Bot's Computer): recreates the computer. Same keep/remove split as Update. On a slow update, Keep waiting is the safe default.",
+            "Reset: last saved snapshot only. Recent unsynced bots and files can go, and installed apps go too. Official last resort. Do not start a second Reset while one is running.",
         ],
         "dont": "Recover before Reset. Chat history lives outside the box. Exhausted trial does not delete data — Bots stop answering but Computer view can still export; do not Reset to “save” a trial. Stuck on Cleaning up: backend often already finished — fully quit then Recover, do not Reset again. 50% Starting is a server-side bad state; wait a few minutes; Bot data is usually still there. When a status dialog looks scary, do not click yet — try re-login and phone cellular verification first. If every Bot says “Bot failed to respond” or “Couldn't send your message” for hours across devices while the computer screen is still visible, ask support before Reset — Reset rebuilds from the last snapshot and can drop the newest unsynced edits.",
+        "more": ("/troubleshooting/recover-vs-reset/", "Walkthrough: Recover, Update, or Reset"),
         "sources": [
             ("Official order", "https://docs.x.ai/grok-bot/troubleshooting"),
             ("Recovery guide", "https://cursor.com/help/grok-bot/computer-recovery"),
@@ -63,6 +65,7 @@ GROUPS = [
             "Shrink routine windows; delete idle specialist Bots that poke each other (every Bot↔Bot message counts against weekly usage). Dual banners are usually blocked retries, not double billing.",
         ],
         "dont": "Do not Reset / Recover / Update when every Bot is silent but the computer view still opens — the box is often fine and Reset can wipe data. Do not assume “stay quiet” in chat stops the meter. Do not treat Pro’s Other Models $20 as the Bot weekly pool. Cloud Agents launched by Grok Bot bill Cursor plan usage separately.",
+        "more": ("/troubleshooting/not-responding/", "Walkthrough: not responding or stopped working"),
         "sources": [
             ("Plans and billing", "https://cursor.com/help/grok-bot/plans"),
             ("No-warning spillover", "https://forum.cursor.com/t/grok-bot-gives-no-warning-before-weekly-usage-spills-into-paid-on-demand/169679"),
@@ -102,6 +105,7 @@ GROUPS = [
             "Local execution: Settings → Execution on Local Computer. Always Allow lives only on that desktop; iOS can only approve one-shot. Linux 0.30.0 empty ListMachines is a known defect; unlock gnome-keyring/KWallet, kill leftover processes, reopen.",
             "Mac chat works but local shows offline: fully quit. Windows leftover local-exec-daemon: quit from tray, end Grok Bot and daemon in Task Manager, wait about a minute, re-register.",
         ],
+        "more": ("/tools/linux-port/", "Linux packages: official versus community"),
         "dont": "Do not treat community AUR/COPR/Wine ports as official support. Local stdio MCP is unreachable from the cloud computer. Always allow is not forever-allow.",
         "sources": [
             ("Official Linux install", "https://docs.x.ai/grok-bot/get-started"),
@@ -123,6 +127,7 @@ GROUPS = [
             "Looks like a new user after rebuild: logging in while the computer is still starting shows first-run UI. Fully quit. Do not create a “first Bot” in that window.",
         ],
         "dont": "Free-plan black spinner means no hosted computer was provisioned (no seat) — not your network. Team admin role alone does not grant a computer. Stale sessions after password change show “account unavailable.” New accounts that never saved Privacy Mode (not Legacy) also never finish Connecting — fix that on the Cursor dashboard before Reset.",
+        "more": ("/troubleshooting/white-screen/", "Walkthrough: white screen, black screen, empty roster"),
         "sources": [
             ("Local config white screen", "https://forum.cursor.com/t/grok-bot-shows-white-screen-upon-opening-and-is-unusable/169815"),
             ("Empty roster sleep", "https://forum.cursor.com/t/grok-bot-bug-report/170104"),
@@ -139,16 +144,39 @@ def troubleshooting():
     for g in GROUPS:
         lis = "".join("<li>%s</li>" % escape(t) for t in g["tries"])
         src = "".join('<li><a href="%s">%s</a></li>' % (escape(u), escape(n)) for n, u in g["sources"])
+        more = ""
+        if g.get("more"):
+            href, label = g["more"]
+            more = '<p><a href="%s">%s</a></p>' % (escape(href, quote=True), escape(label))
         blocks.append(
-            '<article class="card" id="%s"><h2>%s</h2><p><strong>Symptom.</strong> %s</p><h3>Try first</h3><ol>%s</ol><div class="callout warn"><p><strong>When not to Reset.</strong> %s</p></div><h3>Sources</h3><ul>%s</ul></article>'
-            % (g["id"], escape(g["title"]), escape(g["symptom"]), lis, escape(g["dont"]), src)
+            '<article class="card" id="%s"><h2>%s</h2>%s<p><strong>Symptom.</strong> %s</p><h3>Try first</h3><ol>%s</ol><div class="callout warn"><p><strong>When not to Reset.</strong> %s</p></div><h3>Sources</h3><ul>%s</ul></article>'
+            % (g["id"], escape(g["title"]), more, escape(g["symptom"]), lis, escape(g["dont"]), src)
         )
     intro = '''
 <section class="band"><div class="wrap prose">
 <p class="kicker">Playbooks</p>
-<h1>Grok Bot not working — Recover vs Reset if stuck or not responding</h1>
-<p><strong>Recover before Reset.</strong> Silent bots / not responding with the computer still visible is often weekly usage, not a dead box. Official guidance starts with the least destructive step. Cloud work can continue while the desktop is disconnected. Below groups <a href="https://docs.x.ai/grok-bot/troubleshooting">official troubleshooting</a>, the <a href="https://cursor.com/help/grok-bot/getting-started">Cursor getting-started table</a>, and staff posts from awesome “Community &amp; Failure Modes” by symptom — without restating all eighty-nine threads one by one.</p>
-<p>Before contacting support, collect: Grok Bot version, OS, exact error, Bot or routine name, time and timezone, request/conversation ID, and what you already tried (Retry / restart / Update). Do not attach passwords, codes, or keys. Email <a href="mailto:hi@cursor.com">hi@cursor.com</a>.</p>
+<h1>Grok Bot not working — quit and Retry before you Reset</h1>
+<p><strong>Fully quit, then Retry. Do not Reset while the screen says Reconnecting or Couldn't reach Grok Bot's computer.</strong> Cursor Help: bots, files, and logins are safe during reconnect. Cloud work can continue while the desktop app is disconnected. Updating the desktop app does not reset the computer. The two updates are different: Settings → Updates → Check for Updates is the app; Update under Grok Bot's Computer is the machine.</p>
+<ol>
+<li><strong>Quit for real.</strong> Mac: menu-bar Quit. Windows: tray, then end leftover Grok Bot processes. Closing the window is not quitting.</li>
+<li><strong>Reconnecting or Couldn't reach:</strong> wait, then Retry. Open <a href="/troubleshooting/cant-reach/">can't reach</a> only if that fails. Recover if the app offers it. On a slow update, Keep waiting.</li>
+<li><strong>Bots or chats look gone:</strong> same account on the phone, then sidebar <strong>Hidden Bots</strong>. Hide from sidebar does not delete a bot. Do not Reset to go looking. <a href="/troubleshooting/white-screen/">White screen and missing bots</a>.</li>
+<li><strong>Computer is up, replies are not:</strong> <a href="/troubleshooting/not-responding/">not responding</a>. Usage, or a bot waiting on a login. Reset will not refill the meter.</li>
+<li><strong>The bar is still moving</strong> (Starting your computer, Updating): leave it. Several minutes is normal. <a href="/troubleshooting/stuck/">Stuck</a> is for when progress stops.</li>
+</ol>
+<p>Not installed yet? <a href="/learn/install/">Official download</a>. Intel Macs miss the file if they take the top button: <a href="/learn/mac-download/">Mac download</a>. Version for support is account menu → About → Copy version info. Request ID is right-click the message → Copy request ID. Email <a href="mailto:hi@cursor.com">hi@cursor.com</a>. No passwords or keys.</p>
+</div></section>
+<section class="band"><div class="wrap">
+<h2>Open the page that matches the screen</h2>
+<p class="lede">These are the long walkthroughs. The notes below stay as the short index, with every source thread still listed.</p>
+<div class="grid-3">
+<a class="card" href="/troubleshooting/not-responding/"><h3>Not responding</h3><p>Computer reconnecting, a bot waiting on you, or weekly usage. Reset does not answer.</p></a>
+<a class="card" href="/troubleshooting/stuck/"><h3>Stuck</h3><p>If the bar is still moving, wait. Privacy Mode, a missing seat, or a stopped percent.</p></a>
+<a class="card" href="/troubleshooting/cant-reach/"><h3>Can’t reach</h3><p>Retry first. Then hotspot, wildcard DNS, or the Windows direct-connection test.</p></a>
+<a class="card" href="/troubleshooting/white-screen/"><h3>White screen or missing bots</h3><p>Hidden Bots, the other device, or a local config folder. Do not Reset to find chats.</p></a>
+<a class="card" href="/troubleshooting/recover-vs-reset/"><h3>Update vs Recover vs Reset</h3><p>Synced bots stay on Update and Recover. Installed apps do not. Reset can drop unsynced work.</p></a>
+<a class="card" href="/learn/install/"><h3>Download and install</h3><p>Official Mac, Windows, Linux, and phone packages. This site is not the store.</p></a>
+</div>
 </div></section>
 <section class="band"><div class="wrap" style="display:flex;flex-direction:column;gap:16px">
 '''

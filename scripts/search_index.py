@@ -41,16 +41,20 @@ def build():
         _add(items, meta["title"], path, "Page", meta.get("description", ""), extra)
 
     aliases = (
-        ("Can't reach your computer", "/troubleshooting/#reach", "Help", "reconnecting black screen blank cursorvm dns"),
-        ("Reset vs Recover vs Update", "/troubleshooting/#reset", "Help", "cleaning up 50% starting last resort"),
-        ("Weekly usage and On-Demand", "/troubleshooting/#usage", "Help", "trial burns spillover bot to bot"),
+        ("Can't reach your computer", "/troubleshooting/cant-reach/", "Help", "reconnecting black screen blank cursorvm dns vpn"),
+        ("Reset vs Recover vs Update", "/troubleshooting/recover-vs-reset/", "Help", "cleaning up 50% starting last resort"),
+        ("Weekly usage and On-Demand", "/troubleshooting/not-responding/", "Help", "trial burns spillover bot to bot silent"),
         ("Plugin OAuth (Zoom Gmail Notion X GitHub)", "/troubleshooting/#oauth", "Help", "zoom 4700 tools=0 bearer token"),
         ("Linux and local execution", "/troubleshooting/#linux", "Help", "deb rpm appimage stdio mcp"),
-        ("White or black screen", "/troubleshooting/#white", "Help", "empty roster setting up free plan"),
+        ("White or black screen", "/troubleshooting/white-screen/", "Help", "empty roster setting up free plan"),
         ("After week one", "/learn/operator/", "Guide", "chief of staff roster mega-chat what's-left"),
         ("X, Cursor, MCP, cloud computer", "/learn/ops/", "Guide", "twitter x plugin cloud agent remote mcp"),
         ("Cloud Agent handoff", "/learn/ops/", "Guide", "cursor cloud agent pull request github"),
         ("Official X plugin", "/learn/ops/", "Guide", "twitter scout mentions research database"),
+        ("Grok Bot Mac download", "/learn/mac-download/", "Download", "grokbot mac download apple silicon intel"),
+        ("Grok Bot Windows download", "/learn/windows-download/", "Download", "grokbot windows install x64 arm64"),
+        ("Grok Bot not responding", "/troubleshooting/not-responding/", "Help", "stopped working silent bots failed to respond"),
+        ("Grok Bot stuck", "/troubleshooting/stuck/", "Help", "connecting setting up reconnecting cleaning up"),
     )
     for title, href, kind, keys in aliases:
         _add(items, title, href, kind, keys)
