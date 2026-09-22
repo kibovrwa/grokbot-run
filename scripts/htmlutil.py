@@ -149,6 +149,10 @@ def footer_html():
         '<a href="/learn/">Handbook</a>'
         '<a href="/learn/what-is-grok-bot/">What Grok Bot is</a>'
         '<a href="/learn/install/">Install and sign in</a>'
+        '<a href="/learn/mac-download/">Mac download</a>'
+        '<a href="/learn/windows-download/">Windows download</a>'
+        '<a href="/learn/phone-download/">iPhone and Android</a>'
+        '<a href="/learn/login/">Cursor login</a>'
         '<a href="/learn/first-bot/">First Bot</a>'
         '<a href="/learn/computer/">Shared computer</a>'
         '<a href="/learn/skills-routines/">Skills and routines</a>'
@@ -164,6 +168,11 @@ def footer_html():
         '<a href="/tools/">Tools catalog</a>'
         '<a href="/use-cases/">Field cases</a>'
         '<a href="/troubleshooting/">Help</a>'
+        '<a href="/troubleshooting/not-responding/">Not responding</a>'
+        '<a href="/troubleshooting/stuck/">Stuck</a>'
+        '<a href="/troubleshooting/cant-reach/">Can\'t reach</a>'
+        '<a href="/troubleshooting/white-screen/">White or black screen</a>'
+        '<a href="/troubleshooting/recover-vs-reset/">Recover vs Reset</a>'
         '<a href="/sources/">Sources</a></div>'
         "<div><h4>Official</h4>"
         '<a href="https://x.ai/bot">x.ai/bot</a>'
@@ -187,6 +196,10 @@ CRUMB_SHORT = {
     "/learn/": "Handbook",
     "/learn/what-is-grok-bot/": "What it is",
     "/learn/install/": "Install",
+    "/learn/mac-download/": "Mac",
+    "/learn/windows-download/": "Windows",
+    "/learn/phone-download/": "Phone",
+    "/learn/login/": "Login",
     "/learn/first-bot/": "First Bot",
     "/learn/computer/": "Computer",
     "/learn/skills-routines/": "Skills",
@@ -201,6 +214,11 @@ CRUMB_SHORT = {
     "/tools/": "Tools",
     "/pricing/": "Pricing",
     "/troubleshooting/": "Help",
+    "/troubleshooting/not-responding/": "Not responding",
+    "/troubleshooting/stuck/": "Stuck",
+    "/troubleshooting/cant-reach/": "Can't reach",
+    "/troubleshooting/white-screen/": "Blank screen",
+    "/troubleshooting/recover-vs-reset/": "Recover or Reset",
     "/sources/": "Sources",
 }
 
@@ -215,6 +233,8 @@ def _crumb_trail(path, title):
         trail.append(("/learn/", "Handbook"))
     elif path.startswith("/tools/") and path != "/tools/":
         trail.append(("/tools/", "Tools"))
+    elif path.startswith("/troubleshooting/") and path != "/troubleshooting/":
+        trail.append(("/troubleshooting/", "Help"))
     if path != "/":
         trail.append((path, _crumb_name(path, title)))
     return trail

@@ -132,14 +132,22 @@ def install():
     body = '''
 <section class="band"><div class="wrap prose">
 <p class="kicker">Lesson 2</p>
-<h1>Download and install Grok Bot on Mac, then log in</h1>
-<p class="meta">Official steps from <a href="https://docs.x.ai/grok-bot/get-started">Get started</a> and <a href="https://cursor.com/help/grok-bot/getting-started">Cursor getting started</a>. Fetch day 2026-09-20. Stuck after install? Jump to <a href="/troubleshooting/#reach">can’t reach / Reconnecting</a>.</p>
+<h1>Download and install Grok Bot, then sign in with Cursor</h1>
+<p class="meta">Official steps from <a href="https://docs.x.ai/grok-bot/get-started">Get started</a> and <a href="https://cursor.com/help/grok-bot/getting-started">Cursor getting started</a>. Fetch day 2026-09-20. Mac, Windows, and phone each have a longer page. Stuck after install? <a href="/troubleshooting/stuck/">Match the label</a> or open <a href="/troubleshooting/cant-reach/">can’t reach</a>.</p>
 <div class="callout">
 <p><strong>This handbook is not the official store.</strong> Download official packages only from <a href="https://x.ai/bot">x.ai/bot</a> (desktop: Mac, Windows, Linux — Linux under More downloads), the <a href="https://apps.apple.com/us/app/grok-bot/id6794501026">App Store</a> (iOS / iPad), or <a href="https://play.google.com/store/apps/details?id=ai.x.grok.bot">Google Play</a> (Android). Skip community ports, mirrors, and random dmg files.</p>
 </div>
 <p>Download path: open x.ai/bot for the Mac / Windows / Linux package, the App Store for iPhone or iPad, or Google Play for Android — then sign in with Cursor. There is <strong>no separate Grok Bot account</strong>. Confirm three things before you click download. First, you are on an <strong>eligible plan</strong>, or you are ready to link personal SuperGrok / X Premium+ on the plans screen (linking is a usage grant, not another Cursor subscription, and <strong>once linked you cannot unlink or move it to another Cursor account yourself</strong> — see <a href="https://cursor.com/help/grok-bot/supergrok">Link SuperGrok</a>). Second, Grok Bot needs cloud storage: if Cursor is still on Legacy Privacy Mode, switch to Privacy Mode and explicitly save it — new accounts that never save Privacy Mode can sit on Connecting forever, and Retry/Recover/Reset will not help until that choice is saved. Third, have a real first task that needs a real login — empty demos burn trial usage fast.</p>
 <h2>Officially supported platforms</h2>
 <p>Per the xAI FAQ (fetched 2026-09-20): macOS (Apple silicon and Intel), Windows (x64 and Arm64), Linux (x64 and Arm64; deb / rpm / AppImage), iPhone (iOS 18+), Android 9+. The iOS app also runs on iPad with iPadOS 18+. Launch-day iPhone-only is history. Linux packages are under More downloads on <a href="https://x.ai/bot">x.ai/bot</a>. Community threads still discuss Linux as a second-class citizen and third-party repacks — those entries live in the <a href="/tools/">tools catalog</a>; do not confuse them with official packages.</p>
+<h2>Pick the download that matches the machine</h2>
+<ul>
+<li><a href="/learn/mac-download/">Mac download</a> — Apple silicon or Intel, Gatekeeper, and a white window that reinstall does not clear.</li>
+<li><a href="/learn/windows-download/">Windows download</a> — x64 or Arm64, one installed copy, tray quit, proxy and Zscaler.</li>
+<li><a href="/learn/phone-download/">iPhone, iPad, and Android</a> — official stores, and the jobs that stay on desktop.</li>
+<li><a href="/learn/login/">Cursor login</a> — no second account, SSO, Privacy Mode, and a stale session after a password change.</li>
+<li><a href="/tools/linux-port/">Linux packages</a> — official deb, rpm, and AppImage versus community ports.</li>
+</ul>
 <p>Download only from official entry points:</p>
 <ul>
 <li>Product and desktop packages: <a href="https://x.ai/bot">x.ai/bot</a></li>
@@ -147,23 +155,23 @@ def install():
 <li>Android: <a href="https://play.google.com/store/apps/details?id=ai.x.grok.bot">Google Play · ai.x.grok.bot</a> (announced by official @bot on 2026-09-02)</li>
 </ul>
 <h2>Mac download: Apple silicon vs Intel</h2>
-<p>The official FAQ lists macOS on <strong>Apple silicon and Intel</strong>. On x.ai/bot pick the package that matches  → About This Mac (Chip / Processor). Apple silicon Macs need the Apple silicon build; Intel Macs need the Intel build.</p>
+<p>The longer Mac path is <a href="/learn/mac-download/">Download Grok Bot for Mac</a>. Short version: the official FAQ lists macOS on <strong>Apple silicon and Intel</strong>. On x.ai/bot pick the package that matches  → About This Mac (Chip / Processor). Apple silicon Macs need the Apple silicon build; Intel Macs need the Intel build.</p>
 <p>If macOS says the app is not supported, you picked the <strong>wrong chip package</strong> or a <strong>non-official build</strong>. That is not proof Grok Bot is unavailable on Mac. Delete the wrong file, download the matching official package from x.ai/bot, then open the dmg → drag to Applications → open; choose Open if macOS asks.</p>
 <h2>Desktop install (official order)</h2>
 <ol>
 <li><strong>macOS:</strong> pick Apple silicon or Intel as above → open the official dmg → drag to Applications → open; choose Open if macOS asks.</li>
-<li><strong>Windows:</strong> pick x64 or Arm64 → run the installer → open from the Start menu. Architecture: Settings → System → About → System type.</li>
+<li><strong>Windows:</strong> pick x64 or Arm64 → run the installer → open from the Start menu. Architecture: Settings → System → About → System type. Two copies and the tray quit are on <a href="/learn/windows-download/">Windows download</a>.</li>
 <li><strong>Linux:</strong> pick deb / rpm / AppImage for your distro; <code>uname -m</code> of x86_64 means x64, aarch64 means Arm64. The app checks for updates automatically; you can also Check for Updates under Settings → Beta.</li>
 </ol>
 <h2>Sign in</h2>
-<p>Grok Bot has <strong>no separate account</strong>. On the welcome screen choose Get started, or Sign In with Cursor in settings, finish Cursor auth in the browser popup, then return to the app. If your org requires SSO, follow the org flow — do not open a separate personal account. First-run introduces Bots, the shared computer, and routines, and asks which tools you use often — those answers only affect suggestions and <em>do not</em> connect the tools for you. The computer initializes in the background; the last screen is Meet a future teammate.</p>
+<p>Popup never returns, or the Mac says the account is unavailable after a password change? Use <a href="/learn/login/">Grok Bot login</a>. Short version: Grok Bot has <strong>no separate account</strong>. On the welcome screen choose Get started, or Sign In with Cursor in settings, finish Cursor auth in the browser popup, then return to the app. If your org requires SSO, follow the org flow — do not open a separate personal account. First-run introduces Bots, the shared computer, and routines, and asks which tools you use often — those answers only affect suggestions and <em>do not</em> connect the tools for you. The computer initializes in the background; the last screen is Meet a future teammate.</p>
 ''' + INSTALL_DIAGRAM + '''
 <p>The official product page shows the same three beats: install, Cursor login, then a roster of named faces on one computer. This handbook keeps that order. Do not create twelve Bots on the first screen.</p>
 <p>Cursor Help also reminds you: sign in with the <strong>Cursor account that will bear the usage</strong>; macOS and iOS share one weekly usage bucket.</p>
 <h2>Phone: iOS, iPad, Android, and what stays on desktop</h2>
-<p>The same roster and the same computer sync after Cursor login. Official @bot (2026-09-02) pointed Android at Google Play; iPhone is the App Store build, iOS 18+. The xAI FAQ (fetched 2026-09-20) says the same iOS app also runs on iPad with iPadOS 18+ — launch-day iPhone-only is history. Close the phone app and cloud turns plus routines keep running, the same as closing the laptop.</p>
+<p>Store links, OS versions, and the desktop-only jobs are on <a href="/learn/phone-download/">iPhone, iPad, and Android</a>. The same roster and the same computer sync after Cursor login. Official @bot (2026-09-02) pointed Android at Google Play; iPhone is the App Store build, iOS 18+. The xAI FAQ (fetched 2026-09-20) says the same iOS app also runs on iPad with iPadOS 18+ — launch-day iPhone-only is history. Close the phone app and cloud turns plus routines keep running, the same as closing the laptop.</p>
 <p>On phone you can chat, watch the computer, take over for a stuck login, and open Plugins from the top-left avatar. Some connectors fail the iOS redirect (Canva is the documented case) — connect once on desktop and the connector syncs to iPhone. Staff note: the routine webhook URL and sender key appear on desktop only. Teach a task is a desktop screen recording. Do not treat the phone as a second computer or a private login.</p>
-<p>If the desktop preview is black or stuck Reconnecting but the same account still works on iOS, that is a clue the Bots are not gone. Prefer Recover / Update. Reset from panic can delete Bots. Details: <a href="/learn/computer/">shared computer</a> and <a href="/troubleshooting/#reach">can’t reach</a>.</p>
+<p>If the desktop preview is black or stuck Reconnecting but the same account still works on iOS, that is a clue the Bots are not gone. Prefer Recover / Update. Reset from panic can delete Bots. Details: <a href="/learn/computer/">shared computer</a> and <a href="/troubleshooting/cant-reach/">can’t reach</a>.</p>
 <h2>Before you create the first Bot</h2>
 <p>Official advice: short name, one primary job, how it should work. Focused Bots accumulate useful context faster than an “everything assistant.” Later, use New → Create new agent to split by role. Docs put the account-wide Bot + group-chat cap at 50.</p>
 <h2>Common misconceptions</h2>
@@ -246,7 +254,7 @@ def computer():
 <p>Sessions usually persist, so you need not re-login for every task. Because the browser is shared, logging one Bot in opens the door for everyone on the roster. Some sites expire, time out quickly, or re-verify — have the Bot stop and notify you instead of bypassing checks.</p>
 <h2>The workspace survives updates; packages may not</h2>
 <p>The shared workspace is <code>/workspace</code>. Have Bots keep project files there and organize by project folder. Files, browser state, and supported logins are designed to survive ordinary computer updates and recovery. Temp directories, manually installed packages, and uncommitted app state should be treated as disposable. Staff also note: Update Computer keeps files and logins but rebuilds the OS image, so apt/apps/daemons disappear; idle machines sleep and background processes die. Keep a software list in a file and have the Bot reinstall after updates.</p>
-<p>Recovery order (official troubleshooting, least destructive first): Retry → restart the app → Recover computer (when offered) → Settings → Beta → Update Agent Computer → Reset only if you accept losing unsynced work. Recover / Update keep durable files and logins; Reset returns to the latest snapshot. Chat history lives outside the box; Reset is last resort. Details: <a href="/troubleshooting/">troubleshooting</a>.</p>
+<p>Recovery order (official troubleshooting, least destructive first): Retry → restart the app → Recover computer (when offered) → Settings → Beta → Update Agent Computer → Reset only if you accept losing unsynced work. Recover / Update keep durable files and logins; Reset returns to the latest snapshot. Chat history lives outside the box; Reset is last resort. Which button keeps what: <a href="/troubleshooting/recover-vs-reset/">Recover versus Reset</a>.</p>
 <h2>Local computer is a different permission surface</h2>
 <p>The cloud computer is not the Mac/Windows in front of you. Only when Settings → General → Agent → Execution on Local Computer is on and you approve does a Bot run commands locally. Default is ask every time. Keep Never allowed unless you have a clear reason. Staff also note: a Grok Bot login counts as a Cursor device, and the cloud workspace may count as another — that can hit Too many computers.</p>
 <h2>Common misconceptions</h2>
@@ -417,7 +425,7 @@ def cost():
 <li>Auto-review: Require Approval outranks Always Allow. Re-check after you switch desktops.</li>
 <li>Cloud Agents launched by a Bot spend the Cursor plan pool, not the Bot weekly pool.</li>
 </ul>
-<p>Next: <a href="/learn/operator/">the operator path</a>, then what others shipped — <a href="/use-cases/">use cases</a> — or <a href="/troubleshooting/">help by symptom</a>.</p>
+<p>Next: <a href="/learn/operator/">the operator path</a>, then what others shipped — <a href="/use-cases/">use cases</a> — or <a href="/troubleshooting/not-responding/">not responding</a> if bots go silent while the computer still opens.</p>
 %s
 </div></section>
 ''' % pager("/learn/cost-and-pitfalls/")

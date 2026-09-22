@@ -7,7 +7,7 @@ FAQS = [
     ("Is this the official Grok Bot site?",
      "No. This is a community how-to: first job, login, shared computer, plan conflicts, Recover before Reset, and an operator path after week one. Official packages stay on x.ai/bot."),
     ("Where do I download the Grok Bot app?",
-     "Desktop packages are on x.ai/bot (macOS, Windows, Linux). iOS and iPad are on the App Store; Android is on Google Play. This site is not the store. Step-by-step is on the install page."),
+     "Desktop packages are on x.ai/bot (macOS, Windows, Linux). iOS and iPad are on the App Store; Android is on Google Play. This site is not the store. The install page is the overview; Mac, Windows, and phone each have their own steps."),
     ("How do I log in to Grok Bot?",
      "There is no separate Grok Bot account. Open the app and sign in with the Cursor account that holds the plan and usage."),
     ("Is Grok Bot free? Which plan do I need?",
@@ -15,7 +15,7 @@ FAQS = [
     ("Is there a Grok Bot app for iOS and Android?",
      "Yes. iPhone needs iOS 18+; Android 9+. The iOS app also runs on iPad with iPadOS 18+ per the current xAI FAQ. Launch-day iPhone-only is history. The same roster syncs with desktop after Cursor login."),
     ("If the computer won't connect, should I Reset?",
-     "No. The official order is Retry, restart, Recover, Update Agent Computer. Reset can lose unsynced work. See Help."),
+     "No. The official order is Retry, restart, Recover, Update Agent Computer. Reset can lose unsynced work. Help splits not responding, stuck, can't reach, and Recover versus Reset."),
     ("Is there an open-source Grok Bot?",
      "Not an official one. OpenMausBot, rakazo, and gawkbot copy the teammate-plus-computer idea on machines you run. They are not unofficial clients for your Cursor roster. See Alternatives."),
     ("What is a Grok Bot skill versus a routine?",
@@ -62,11 +62,11 @@ def home():
         faq_html.append("<details><summary>%s</summary><p>%s</p></details>" % (escape(q), escape(a)))
     steps = [
         ("01", "/learn/what-is-grok-bot/", "What Grok Bot is", "Separate it from grok.com, Grok Build, and grok-app."),
-        ("02", "/learn/install/", "Install and sign in", "Official desktop, iOS, and Android. Login is Cursor."),
+        ("02", "/learn/install/", "Install and sign in", "Official desktop, iOS, and Android. Mac and Windows notes are separate."),
         ("03", "/learn/first-bot/", "First Bot", "Short name, one job, Chief of Staff. Stop at drafts."),
         ("04", "/learn/computer/", "Shared computer", "One machine for every Bot. Screens are not isolation."),
         ("05", "/learn/plugins/", "Skills, plugins, cost", "Connectors first. Weekly usage can spill into On-Demand."),
-        ("06", "/troubleshooting/", "When it breaks", "Can't reach the computer? Recover before Reset."),
+        ("06", "/troubleshooting/", "When it breaks", "Not responding, stuck, or can't reach. Recover before Reset."),
     ]
     step_html = []
     for n, href, en, blurb in steps:
@@ -169,6 +169,19 @@ def home():
     <a class="card" href="/learn/install/"><h3>How to start</h3><p>Mac, Windows, Linux, iOS, Android. Sign in with Cursor — no extra account.</p></a>
     <a class="card" href="/use-cases/#starter-jobs"><h3>More copyable jobs</h3><p>Inbox, outbound, travel. Stop at review until the output is checkable.</p></a>
     <a class="card" href="/pricing/"><h3>Free, plans, trial</h3><p>No standalone SKU. Cursor or SuperGrok. The early-September enterprise two-week trial is a dated announcement.</p></a>
+  </div>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <h2>Download, and the screens people search</h2>
+  <p class="lede">Official packages stay on x.ai/bot. These pages are the Mac, Windows, and phone steps, plus the fixes for not responding, stuck, and can’t reach.</p>
+  <div class="grid-3">
+    <a class="card" href="/learn/mac-download/"><h3>Mac download</h3><p>Apple silicon or Intel, Gatekeeper, then Cursor login.</p></a>
+    <a class="card" href="/learn/windows-download/"><h3>Windows download</h3><p>x64 or Arm64, one copy, quit the tray.</p></a>
+    <a class="card" href="/learn/phone-download/"><h3>iPhone and Android</h3><p>Official stores. Same roster. Some jobs stay on desktop.</p></a>
+    <a class="card" href="/troubleshooting/not-responding/"><h3>Not responding</h3><p>Computer still opens? Check weekly usage before Reset.</p></a>
+    <a class="card" href="/troubleshooting/stuck/"><h3>Stuck</h3><p>Connecting, Setting up, or Reconnecting. Match the label.</p></a>
+    <a class="card" href="/troubleshooting/cant-reach/"><h3>Can’t reach</h3><p>DNS, VPN, or antivirus. Hotspot test before Reset.</p></a>
   </div>
 </div></section>
 

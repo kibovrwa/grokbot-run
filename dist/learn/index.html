@@ -556,7 +556,7 @@ footer.site {
 }
 footer.site a { color: var(--muted); }
 footer.site a:hover { color: var(--text); opacity: 1; }
-.foot-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 32px; margin-bottom: 28px; }
+.foot-grid { display: grid; grid-template-columns: 1.15fr 1fr 1.05fr; gap: 28px; margin-bottom: 28px; }
 .foot-grid h4 {
   margin: 0 0 12px;
   color: var(--text);
@@ -743,6 +743,19 @@ tr:last-child td { border-bottom: 0; }
 </div></section>
 
 <section class="band"><div class="wrap">
+<h2>Download and when it sticks</h2>
+<p class="lede">The install lesson is the overview. These pages go deep on one machine or one screen.</p>
+<div class="grid-3">
+  <a class="card" href="/learn/mac-download/"><h3>Mac download</h3><p>Apple silicon versus Intel, Gatekeeper, and the white window.</p></a>
+  <a class="card" href="/learn/windows-download/"><h3>Windows download</h3><p>x64 or Arm64, a duplicate install, and the tray.</p></a>
+  <a class="card" href="/learn/phone-download/"><h3>iPhone and Android</h3><p>Official stores, and what still requires the desktop app.</p></a>
+  <a class="card" href="/learn/login/"><h3>Cursor login</h3><p>No second account. Privacy Mode. Stale session after a password change.</p></a>
+  <a class="card" href="/troubleshooting/not-responding/"><h3>Not responding</h3><p>Silent bots while the computer still opens. Check usage.</p></a>
+  <a class="card" href="/troubleshooting/"><h3>All fixes</h3><p>Stuck, can’t reach, white screen, Recover versus Reset.</p></a>
+</div>
+</div></section>
+
+<section class="band"><div class="wrap">
 <h2>After the lessons</h2>
 <div class="grid-3">
   <a class="card" href="/learn/cursor/"><h3>Cursor and Grok Bot</h3><p>One account, two apps. Not a Cursor IDE panel. Login, usage, and plugins.</p></a>
@@ -756,7 +769,7 @@ tr:last-child td { border-bottom: 0; }
 <div class="faq card"><details><summary>Where should I start if I have never opened Grok Bot?</summary><p>Read What Grok Bot is, then Install, then First Bot. Skip tools and alternatives until one job has returned a checkable draft.</p></details><details><summary>Do I need this handbook if I already have the official docs?</summary><p>Official docs are the source of truth. This handbook is the reading order, the product split (not grok.com), and the failure modes the docs do not group by symptom.</p></details><details><summary>How long is the path?</summary><p>Seven short lessons. One evening is enough to install, name one Bot, and run a read-only job. Skills and routines wait until two good runs.</p></details><details><summary>I already have a roster. Do I start at lesson one?</summary><p>No. Open After week one: kill the mega-chat, pin a Chief of Staff, keep a what’s-left page, then save a skill. The seven lessons stay the first-week order.</p></details><details><summary>I want to run X, Cursor, and MCP together. Where?</summary><p>Open X, Cursor, MCP after the roster works. That page is the stack: official X plugin as research, Cloud Agent for the repo, remote MCP only. After week one is how you manage Bots.</p></details></div>
 </div></section>
 </main>
-<footer class="site"><div class="wrap"><div class="foot-grid"><div><h4>Learn</h4><a href="/learn/">Handbook</a><a href="/learn/what-is-grok-bot/">What Grok Bot is</a><a href="/learn/install/">Install and sign in</a><a href="/learn/first-bot/">First Bot</a><a href="/learn/computer/">Shared computer</a><a href="/learn/skills-routines/">Skills and routines</a><a href="/learn/plugins/">Plugins and MCP</a><a href="/learn/cost-and-pitfalls/">Cost and pitfalls</a><a href="/learn/operator/">After week one</a><a href="/learn/ops/">X, Cursor, MCP</a><a href="/learn/glossary/">Glossary</a><a href="/learn/cursor/">Cursor and Grok Bot</a></div><div><h4>Look up</h4><a href="/pricing/">Pricing</a><a href="/compare/">Alternatives</a><a href="/tools/">Tools catalog</a><a href="/use-cases/">Field cases</a><a href="/troubleshooting/">Help</a><a href="/sources/">Sources</a></div><div><h4>Official</h4><a href="https://x.ai/bot">x.ai/bot</a><a href="https://docs.x.ai/grok-bot/overview">xAI docs</a><a href="https://cursor.com/help/grok-bot/getting-started">Cursor Help</a><a href="https://github.com/RongleCat/awesome-grok-bot">awesome-grok-bot</a></div></div></div></footer>
+<footer class="site"><div class="wrap"><div class="foot-grid"><div><h4>Learn</h4><a href="/learn/">Handbook</a><a href="/learn/what-is-grok-bot/">What Grok Bot is</a><a href="/learn/install/">Install and sign in</a><a href="/learn/mac-download/">Mac download</a><a href="/learn/windows-download/">Windows download</a><a href="/learn/phone-download/">iPhone and Android</a><a href="/learn/login/">Cursor login</a><a href="/learn/first-bot/">First Bot</a><a href="/learn/computer/">Shared computer</a><a href="/learn/skills-routines/">Skills and routines</a><a href="/learn/plugins/">Plugins and MCP</a><a href="/learn/cost-and-pitfalls/">Cost and pitfalls</a><a href="/learn/operator/">After week one</a><a href="/learn/ops/">X, Cursor, MCP</a><a href="/learn/glossary/">Glossary</a><a href="/learn/cursor/">Cursor and Grok Bot</a></div><div><h4>Look up</h4><a href="/pricing/">Pricing</a><a href="/compare/">Alternatives</a><a href="/tools/">Tools catalog</a><a href="/use-cases/">Field cases</a><a href="/troubleshooting/">Help</a><a href="/troubleshooting/not-responding/">Not responding</a><a href="/troubleshooting/stuck/">Stuck</a><a href="/troubleshooting/cant-reach/">Can't reach</a><a href="/troubleshooting/white-screen/">White or black screen</a><a href="/troubleshooting/recover-vs-reset/">Recover vs Reset</a><a href="/sources/">Sources</a></div><div><h4>Official</h4><a href="https://x.ai/bot">x.ai/bot</a><a href="https://docs.x.ai/grok-bot/overview">xAI docs</a><a href="https://cursor.com/help/grok-bot/getting-started">Cursor Help</a><a href="https://github.com/RongleCat/awesome-grok-bot">awesome-grok-bot</a></div></div></div></footer>
 <script>const btn=document.querySelector('[data-menu]');const links=document.querySelector('[data-links]');if(btn) btn.addEventListener('click',()=>links.classList.toggle('open'));</script>
 <script data-find-js>
 (function(){

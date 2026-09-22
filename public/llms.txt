@@ -13,6 +13,10 @@ This site: https://grokbot.run/
 - [Handbook](https://grokbot.run/learn/): lessons in order
 - [What is Grok Bot](https://grokbot.run/learn/what-is-grok-bot/): not grok.com
 - [Install and login](https://grokbot.run/learn/install/)
+- [Mac download](https://grokbot.run/learn/mac-download/): Apple silicon or Intel
+- [Windows download](https://grokbot.run/learn/windows-download/): x64 or Arm64
+- [iPhone, iPad, and Android](https://grokbot.run/learn/phone-download/)
+- [Cursor login](https://grokbot.run/learn/login/): no separate Grok Bot account
 - [Cursor and Grok Bot](https://grokbot.run/learn/cursor/): one account, two apps
 - [First Bot](https://grokbot.run/learn/first-bot/)
 - [After week one](https://grokbot.run/learn/operator/): manage a roster from named field posts
@@ -34,7 +38,12 @@ This site: https://grokbot.run/
 - [grokbot-tui](https://grokbot.run/tools/grokbot-tui/)
 - [Usage menu bar](https://grokbot.run/tools/usage-menu-bar/)
 - [Linux packages](https://grokbot.run/tools/linux-port/)
-- [Help](https://grokbot.run/troubleshooting/)
+- [Help](https://grokbot.run/troubleshooting/): symptom index
+- [Not responding](https://grokbot.run/troubleshooting/not-responding/)
+- [Stuck](https://grokbot.run/troubleshooting/stuck/)
+- [Can't reach your computer](https://grokbot.run/troubleshooting/cant-reach/)
+- [White or black screen](https://grokbot.run/troubleshooting/white-screen/)
+- [Recover vs Reset](https://grokbot.run/troubleshooting/recover-vs-reset/)
 - [Sources](https://grokbot.run/sources/)
 
 ## Facts this site will not invent
