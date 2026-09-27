@@ -182,7 +182,17 @@ def footer_html():
         '<a href="https://docs.x.ai/grok-bot/overview">xAI docs</a>'
         '<a href="https://cursor.com/help/grok-bot/getting-started">Cursor Help</a>'
         '<a href="https://github.com/RongleCat/awesome-grok-bot">awesome-grok-bot</a></div>'
-        "</div></div></footer>"
+        "</div>"
+        '<div class="foot-legal">'
+        "<p>Unofficial community handbook. Not affiliated with, endorsed by, or operated by xAI or Cursor. "
+        "Product packages stay on x.ai/bot. Product support is hi@cursor.com. Site mail is "
+        '<a href="mailto:hello@grokbot.run">hello@grokbot.run</a>.</p>'
+        '<p class="foot-legal-links">'
+        '<a href="/about/">About</a>'
+        '<a href="/privacy/">Privacy</a>'
+        '<a href="/terms/">Terms</a>'
+        '<a href="/contact/">Contact</a>'
+        "</p></div></div></footer>"
     )
 
 
@@ -222,6 +232,25 @@ CRUMB_SHORT = {
     "/troubleshooting/cant-reach/": "Can't reach",
     "/troubleshooting/white-screen/": "Blank screen",
     "/troubleshooting/recover-vs-reset/": "Recover or Reset",
+    "/troubleshooting/plugin-oauth/": "Plugin OAuth",
+    "/troubleshooting/usage-limit/": "Usage limit",
+    "/troubleshooting/dns-error/": "DNS error",
+    "/troubleshooting/install-failed/": "Install failed",
+    "/troubleshooting/update-failed/": "Update failed",
+    "/troubleshooting/phone-not-connecting/": "Phone",
+    "/troubleshooting/uninstall/": "Uninstall",
+    "/troubleshooting/linux-setup/": "Linux setup",
+    "/troubleshooting/local-computer/": "Local computer",
+    "/troubleshooting/routine-did-not-run/": "Routine",
+    "/troubleshooting/approval-stuck/": "Approval",
+    "/troubleshooting/attachment/": "Attachment",
+    "/troubleshooting/sign-in/": "Sign-in",
+    "/troubleshooting/waiting-for-login/": "Waiting",
+    "/learn/is-grok-bot-free/": "Is it free",
+    "/about/": "About",
+    "/privacy/": "Privacy",
+    "/terms/": "Terms",
+    "/contact/": "Contact",
     "/sources/": "Sources",
 }
 
@@ -277,6 +306,29 @@ def howto_jsonld(name, description, steps):
             {"@type": "HowToStep", "position": i, "name": n, "text": t}
             for i, (n, t) in enumerate(steps, 1)
         ],
+    }
+
+
+def article_jsonld(path, headline, description, date_modified="2026-09-27"):
+    return {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": headline,
+        "description": description,
+        "datePublished": "2026-09-27",
+        "dateModified": date_modified,
+        "inLanguage": "en",
+        "mainEntityOfPage": {"@type": "WebPage", "@id": canonical(path)},
+        "author": {
+            "@type": "Organization",
+            "name": "Grok Bot Guide",
+            "url": SITE + "/about/",
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Grok Bot Guide",
+            "logo": {"@type": "ImageObject", "url": LOGO_ABS},
+        },
     }
 
 
@@ -413,7 +465,7 @@ def page(path, title, description, body, jsonld=None, lang="en"):
         "url": canon,
         "inLanguage": "en",
         "datePublished": "2026-09-04",
-        "dateModified": "2026-09-20",
+        "dateModified": "2026-09-27",
         "isPartOf": {"@type": "WebSite", "name": site_name, "url": SITE + "/"},
     })
     blobs.append(_crumbs(path, title))

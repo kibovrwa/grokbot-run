@@ -139,46 +139,65 @@ GROUPS = [
     },
 ]
 
-def troubleshooting():
-    blocks = []
-    for g in GROUPS:
-        lis = "".join("<li>%s</li>" % escape(t) for t in g["tries"])
-        src = "".join('<li><a href="%s">%s</a></li>' % (escape(u), escape(n)) for n, u in g["sources"])
-        more = ""
-        if g.get("more"):
-            href, label = g["more"]
-            more = '<p><a href="%s">%s</a></p>' % (escape(href, quote=True), escape(label))
-        blocks.append(
-            '<article class="card" id="%s"><h2>%s</h2>%s<p><strong>Symptom.</strong> %s</p><h3>Try first</h3><ol>%s</ol><div class="callout warn"><p><strong>When not to Reset.</strong> %s</p></div><h3>Sources</h3><ul>%s</ul></article>'
-            % (g["id"], escape(g["title"]), more, escape(g["symptom"]), lis, escape(g["dont"]), src)
+def _cards(rows):
+    bits = []
+    for href, title, note in rows:
+        bits.append(
+            '<a class="card" href="%s"><h3>%s</h3><p>%s</p></a>'
+            % (escape(href, quote=True), escape(title), escape(note))
         )
+    return '<div class="grid-3">%s</div>' % "".join(bits)
+
+
+def troubleshooting():
     intro = '''
 <section class="band"><div class="wrap prose">
 <p class="kicker">Playbooks</p>
 <h1>Grok Bot not working — quit and Retry before you Reset</h1>
-<p><strong>Fully quit, then Retry. Do not Reset while the screen says Reconnecting or Couldn't reach Grok Bot's computer.</strong> Cursor Help: bots, files, and logins are safe during reconnect. Cloud work can continue while the desktop app is disconnected. Updating the desktop app does not reset the computer. The two updates are different: Settings → Updates → Check for Updates is the app; Update under Grok Bot's Computer is the machine.</p>
-<ol>
-<li><strong>Quit for real.</strong> Mac: menu-bar Quit. Windows: tray, then end leftover Grok Bot processes. Closing the window is not quitting.</li>
-<li><strong>Reconnecting or Couldn't reach:</strong> wait, then Retry. Open <a href="/troubleshooting/cant-reach/">can't reach</a> only if that fails. Recover if the app offers it. On a slow update, Keep waiting.</li>
-<li><strong>Bots or chats look gone:</strong> same account on the phone, then sidebar <strong>Hidden Bots</strong>. Hide from sidebar does not delete a bot. Do not Reset to go looking. <a href="/troubleshooting/white-screen/">White screen and missing bots</a>.</li>
-<li><strong>Computer is up, replies are not:</strong> <a href="/troubleshooting/not-responding/">not responding</a>. Usage, or a bot waiting on a login. Reset will not refill the meter.</li>
-<li><strong>The bar is still moving</strong> (Starting your computer, Updating): leave it. Several minutes is normal. <a href="/troubleshooting/stuck/">Stuck</a> is for when progress stops.</li>
-</ol>
-<p>Not installed yet? <a href="/learn/install/">Official download</a>. Intel Macs miss the file if they take the top button: <a href="/learn/mac-download/">Mac download</a>. Version for support is account menu → About → Copy version info. Request ID is right-click the message → Copy request ID. Email <a href="mailto:hi@cursor.com">hi@cursor.com</a>. No passwords or keys.</p>
+<p><strong>Fully quit, then Retry. Do not Reset while the screen says Reconnecting or Could not reach Grok Bot computer.</strong> Cursor Help: bots, files, and logins are safe during reconnect. Cloud work can continue while the desktop app is disconnected.</p>
+<p>The two updates are different. Settings, Updates, Check for Updates replaces the app. Update under Grok Bot computer rebuilds the machine. Match the sentence on the screen to one page below. The long steps live on that page, not here.</p>
 </div></section>
 <section class="band"><div class="wrap">
-<h2>Open the page that matches the screen</h2>
-<p class="lede">These are the long walkthroughs. The notes below stay as the short index, with every source thread still listed.</p>
-<div class="grid-3">
-<a class="card" href="/troubleshooting/not-responding/"><h3>Not responding</h3><p>Computer reconnecting, a bot waiting on you, or weekly usage. Reset does not answer.</p></a>
-<a class="card" href="/troubleshooting/stuck/"><h3>Stuck</h3><p>If the bar is still moving, wait. Privacy Mode, a missing seat, or a stopped percent.</p></a>
-<a class="card" href="/troubleshooting/cant-reach/"><h3>Can’t reach</h3><p>Retry first. Then hotspot, wildcard DNS, or the Windows direct-connection test.</p></a>
-<a class="card" href="/troubleshooting/white-screen/"><h3>White screen or missing bots</h3><p>Hidden Bots, the other device, or a local config folder. Do not Reset to find chats.</p></a>
-<a class="card" href="/troubleshooting/recover-vs-reset/"><h3>Update vs Recover vs Reset</h3><p>Synced bots stay on Update and Recover. Installed apps do not. Reset can drop unsynced work.</p></a>
-<a class="card" href="/learn/install/"><h3>Download and install</h3><p>Official Mac, Windows, Linux, and phone packages. This site is not the store.</p></a>
-</div>
+<h2 id="reach">Can’t reach, DNS, and a phone that will not join</h2><span id="linux"></span>
+<p class="lede">Retry first. A resolver that cannot look up cursorvm.com will fail the same way after Reset.</p>
+''' + _cards([
+        ("/troubleshooting/cant-reach/", "Can’t reach your computer", "Hotspot, antivirus scanning, and the button order before DNS."),
+        ("/troubleshooting/dns-error/", "DNS error", "Subdomain lookup refused. Set IPv4 and IPv6, or use another carrier."),
+        ("/troubleshooting/stuck/", "Stuck on a label", "Connecting, Setting up, Cleaning up, or 50 percent. If the bar still moves, wait."),
+        ("/troubleshooting/phone-not-connecting/", "Phone not connecting", "The phone shares the cloud computer. It does not attach to the laptop."),
+        ("/troubleshooting/linux-setup/", "Linux setup failed", "Official deb, rpm, or AppImage. Old 0.18 builds were rejected."),
+        ("/troubleshooting/sign-in/", "Sign-in does not complete", "Lost browser popup, Privacy Mode, or an expired Mac session."),
+    ]) + '''
+<h2 id="white">White screen, install, and uninstall</h2>
+<p class="lede">A blank window is not proof the bots were deleted. Hidden Bots and the other device come first.</p>
+''' + _cards([
+        ("/troubleshooting/white-screen/", "White screen or missing bots", "Local config, sleep, or a fake first-run window. Do not Reset to find chats."),
+        ("/troubleshooting/install-failed/", "Install failed on Mac or Windows", "Wrong chip, a second Windows copy, or a free plan with no computer."),
+        ("/troubleshooting/uninstall/", "How to uninstall", "Removing the app leaves the Cursor account. Delete Account does not."),
+        ("/learn/install/", "Download and install", "Official Mac, Windows, Linux, and phone packages. This site is not the store."),
+    ]) + '''
+<h2 id="reset">Update, Recover, Reset, and silence</h2><span id="usage"></span>
+<p class="lede">Update and Recover keep synced bots and files. Reset can drop unsynced work. None of them refill usage.</p>
+''' + _cards([
+        ("/troubleshooting/recover-vs-reset/", "Update vs Recover vs Reset", "What each button keeps. Backup not ready means wait."),
+        ("/troubleshooting/update-failed/", "Update failed", "App update and computer update are different buttons."),
+        ("/troubleshooting/not-responding/", "Not responding", "Computer status first, then a bot waiting on you, then usage."),
+        ("/troubleshooting/usage-limit/", "Usage limit", "Weekly pool and On-Demand. No prices on that page."),
+        ("/troubleshooting/waiting-for-login/", "Waiting for login", "Take over the computer. Do not paste a password into chat."),
+        ("/learn/is-grok-bot-free/", "Is Grok Bot free", "No consumer free tier. The price table stays on Pricing."),
+    ]) + '''
+<h2 id="oauth">Plugins, routines, files, and the local machine</h2>
+<p class="lede">These are not a dead cloud computer. Reset does not repair OAuth, a queue, or the local helper.</p>
+''' + _cards([
+        ("/troubleshooting/plugin-oauth/", "Plugin OAuth failed", "Gmail, Notion, GitHub, Zoom 4700, Canva, and X."),
+        ("/troubleshooting/routine-did-not-run/", "Routine did not run", "Schedule, a paused meter, or a run sitting in the queue."),
+        ("/troubleshooting/approval-stuck/", "Approval needed stuck", "A card that timed out, or an Ask first rule."),
+        ("/troubleshooting/attachment/", "Attachment cannot be read", "Size, encryption, and waiting for the thumbnail."),
+        ("/troubleshooting/local-computer/", "Local computer not connected", "The helper on your machine. Chat can still work."),
+        ("/tools/linux-port/", "Linux packages", "Official packages versus the community port."),
+    ]) + '''
+<p class="lede">Version for support is the account menu, About, Copy version info. Request ID is right-click the message, Copy request ID. Email <a href="mailto:hi@cursor.com">hi@cursor.com</a>. No passwords or keys. One-line staff notes for threads that do not have their own page stay in the list under this index.</p>
 </div></section>
-<section class="band"><div class="wrap" style="display:flex;flex-direction:column;gap:16px">
 '''
     fail_path = ROOT / "src" / "data" / "community-failure-modes.json"
     failures = json.loads(fail_path.read_text(encoding="utf-8"))
@@ -191,9 +210,9 @@ def troubleshooting():
             % (escape(f["url"], quote=True), escape(title), escape(note))
         )
     registry = (
-        '</div></section><section class="band"><div class="wrap">'
+        '<section class="band"><div class="wrap">'
         '<h2>All failure sources (%d)</h2>'
-        '<p class="lede">The playbooks above group common symptoms; below keeps all %d input sources for edge cases not expanded separately. Threads are field evidence, not official promises.</p>'
+        '<p class="lede">The cards above are the long pages. This list keeps all %d input sources for edge cases that do not have their own page. Threads are field evidence, not official promises.</p>'
         '<ul class="source-list">%s</ul></div></section>'
     ) % (len(failures), len(failures), "".join(items))
-    return intro + "".join(blocks) + registry
+    return intro + registry

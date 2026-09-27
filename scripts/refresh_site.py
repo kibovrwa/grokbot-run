@@ -7,7 +7,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from htmlutil import ROOT, SITE, page, write, header_html, footer_html, canonical, faq_jsonld, howto_jsonld, itemlist_jsonld, FIND_JS, apply_ga
+from htmlutil import ROOT, SITE, page, write, header_html, footer_html, canonical, faq_jsonld, howto_jsonld, itemlist_jsonld, article_jsonld, FIND_JS, apply_ga
 from seo_pages import PAGES
 from content_home import home
 from content_pricing import pricing, PRICING_FAQS
@@ -20,6 +20,8 @@ from content_compare import compare
 from content_operator import operator, OPERATOR_FAQS
 from content_ops import ops, OPS_FAQS
 from content_cases import use_cases, JOBS
+from content_fixes import FIXES
+from content_legal import LEGAL
 
 DIST = ROOT / "dist"
 SITEMAP_URLS = [
@@ -48,6 +50,25 @@ SITEMAP_URLS = [
     "/troubleshooting/cant-reach/",
     "/troubleshooting/white-screen/",
     "/troubleshooting/recover-vs-reset/",
+    "/troubleshooting/plugin-oauth/",
+    "/troubleshooting/usage-limit/",
+    "/troubleshooting/dns-error/",
+    "/troubleshooting/install-failed/",
+    "/troubleshooting/update-failed/",
+    "/troubleshooting/phone-not-connecting/",
+    "/troubleshooting/uninstall/",
+    "/troubleshooting/linux-setup/",
+    "/troubleshooting/local-computer/",
+    "/troubleshooting/routine-did-not-run/",
+    "/troubleshooting/approval-stuck/",
+    "/troubleshooting/attachment/",
+    "/troubleshooting/sign-in/",
+    "/troubleshooting/waiting-for-login/",
+    "/learn/is-grok-bot-free/",
+    "/about/",
+    "/privacy/",
+    "/terms/",
+    "/contact/",
     "/tools/",
     "/tools/grok-bot-cli/",
     "/tools/grok-bot-skill/",
@@ -97,7 +118,7 @@ def write_sitemap():
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
     ]
     for u in SITEMAP_URLS:
-        lines.append("<url><loc>%s</loc><lastmod>2026-09-22</lastmod></url>" % canonical(u))
+        lines.append("<url><loc>%s</loc><lastmod>2026-09-27</lastmod></url>" % canonical(u))
     lines.append("</urlset>")
     (DIST / "sitemap.xml").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
@@ -250,6 +271,21 @@ def main():
             extra.append(howto_jsonld(howto[0], howto[1], howto[2]))
         write(path, page(path, meta["title"], meta["description"], spec["body"](), jsonld=extra or None))
 
+    for path, fn in FIXES:
+        meta = PAGES[path]
+        html, faqs = fn()
+        write(path, page(path, meta["title"], meta["description"], html, jsonld=[
+            faq_jsonld(faqs),
+            article_jsonld(path, meta["h1"], meta["description"]),
+        ]))
+
+    for path, _title, _desc, fn, faqs in LEGAL:
+        meta = PAGES[path]
+        write(path, page(path, meta["title"], meta["description"], fn(), jsonld=[
+            faq_jsonld(faqs),
+            article_jsonld(path, meta["h1"], meta["description"]),
+        ]))
+
     details = {
         "cli": "/tools/grok-bot-cli/",
         "skill": "/tools/grok-bot-skill/",
@@ -263,6 +299,8 @@ def main():
 
     written = {"/", "/pricing/", "/use-cases/", "/tools/", "/learn/", "/learn/glossary/", "/learn/cursor/", "/learn/operator/", "/learn/ops/", "/compare/", "/troubleshooting/"}
     written.update(spec["path"] for spec in SUPPORT)
+    written.update(path for path, _fn in FIXES)
+    written.update(path for path, _t, _d, _fn, _faqs in LEGAL)
     written.update(learn)
     written.update(details.values())
     n = len(written)

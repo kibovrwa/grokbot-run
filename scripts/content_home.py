@@ -85,7 +85,7 @@ def home():
   <div class="wrap">
     <p class="kicker">Community guide · start, run, recover</p>
     <h1>How to start Grok Bot without burning a week</h1>
-    <p class="lede">Paste a first job. Keep one shared computer from wiping the week. Read plan pages side by side. Fix “can’t reach the computer” without Reset.</p>
+    <p class="lede">Grok Bot is its own app, not grok.com. Install from x.ai/bot, sign in with Cursor, and do not Reset while the screen says Reconnecting.</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="#first-job">Copy a first job</a>
       <a class="btn btn-secondary" href="/learn/install/">How to start</a>

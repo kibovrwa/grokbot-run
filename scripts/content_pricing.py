@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+from guide_blocks import PRICING_GUIDES
+
 def pricing():
     return """
 <section class="band"><div class="wrap prose">
@@ -34,6 +36,7 @@ def pricing():
 <p>AI Builder Club (updated 2026-08-30) narrates the timeline from launch-day high tiers to the August 21 expansion and August 26 expansion again; its USD figures likewise belong in the original.</p>
 <p>If you do not want a managed seat, read <a href="/compare/">Grok Bot alternatives</a>. Those repos are not unofficial clients, and this site does not invent their prices either.</p>
 <p>Next: put weekly usage where it matters — <a href="/learn/cost-and-pitfalls/">cost and pitfalls</a>; connectivity or billing oddities — <a href="/troubleshooting/">troubleshooting</a>.</p>
+""" + PRICING_GUIDES + """
 <h2>FAQ</h2>
 <div class="faq card">
 <details><summary>Is Grok Bot free?</summary><p>There is no consumer free tier and no standalone SKU. Access is bundled with paid Cursor or a linkable SuperGrok / X plan. Enterprise had a separate two-week org trial announced in early September 2026 — that window is expired; treat the news post as dated.</p></details>

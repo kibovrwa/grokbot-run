@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from html import escape
 from htmlutil import pager
+from guide_blocks import INSTALL_GUIDES, COMPUTER_GUIDES, SKILLS_GUIDES, PLUGINS_GUIDES, COST_GUIDES
 
 def _p(path):
     return pager(path, "en")
@@ -190,8 +191,9 @@ def install():
 <p>Once the roster appears, do not create twelve Bots at once. Community convention: start with one Chief of Staff and let it propose the team — <a href="/learn/first-bot/">create your first Bot in Chief of Staff mode</a>.</p>
 ''' + _faq_html(INSTALL_FAQS) + '''
 %s
+%s
 </div></section>
-''' % pager("/learn/install/")
+''' % (INSTALL_GUIDES, pager("/learn/install/"))
     return body
 
 def first_bot():
@@ -199,6 +201,7 @@ def first_bot():
 <section class="band"><div class="wrap prose">
 <p class="kicker">Lesson 3</p>
 <h1>How to use Grok Bot: first Bot and Chief of Staff</h1>
+<p>Name one Bot, give it one job, and stop at a draft. You do not need twelve teammates, and a Chief of Staff is optional on day one.</p>
 <p class="meta">This is a community convention, not a mandated official architecture. Officially you only need: name, primary job, how it works.</p>
 <p>Official Get started uses an example named Piper whose job is product-performance investigation: keep links and screenshots, separate evidence from hypotheses, report highest-impact issues first, never change production settings. Cursor Help makes step one even shorter: name, shape, color, title, then describe the outcome in a new chat. That is enough. Community tutorials additionally converge on a pattern that shows up again and again: <strong>you mainly talk to one pinned Chief of Staff, who creates specialist Bots, hands off work, and reports blockers</strong>.</p>
 <p>Debbie’s getting-started notes (<a href="https://debbie.codes/blog/how-to-get-started-with-grok-bot">How to Get Started with Grok Bot</a>, 2026-08-14) roughly: add a Chief of Staff from day zero and let it build the team around what you do; you manage one person while the others report to each other. She added a Chief of Staff later herself — coding, LinkedIn, X, email first, then video editing and travel — and regrets not starting that way. She also warns: do not open a Bot for every sub-task; she almost created a thumbnail specialist and was stopped because that was just another handoff.</p>
@@ -250,7 +253,8 @@ def computer():
 <section class="band"><div class="wrap prose">
 <p class="kicker">Lesson 4</p>
 <h1>The Grok Bot computer is shared — not a security boundary</h1>
-<p>This is the page you must not skip. Official computer docs: every Bot under the account uses the <strong>same</strong> persistent cloud computer; browser cookies and login state are shared, files are visible to each other, shell credentials are shared, and progress written by one Bot can be continued by another. The computer is assigned to the <strong>user</strong>, not to a single Bot. If you do not want another Bot to touch a credential or file, do not put it on this computer.</p>
+<p>Every Bot on the account uses one cloud computer. Screens, cookies, and files are shared. Chats are stored outside that machine. If you do not want another Bot to touch a credential, do not put it on this computer.</p>
+<p>Official computer docs: browser cookies and login state are shared, files are visible to each other, shell credentials are shared, and progress written by one Bot can be continued by another. The computer is assigned to the <strong>user</strong>, not to a single Bot.</p>
 ''' + COMPUTER_DIAGRAM + '''
 <p>The official product page shows many named faces working at once. That is one account, one machine, several screens — the same construction as the roster on this site’s homepage. A second Bot does not get a private VM.</p>
 <p>Each Bot has its own screen on that computer, so they can use the browser and desktop tools in parallel — but one screen runs one computer-use task at a time. Screens are a work surface, <strong>not a security boundary</strong>. The Cursor forum thread <a href="https://forum.cursor.com/t/grok-bot-ship-real-session-fences-bots-are-not-a-security-boundary/168476">Bots are not a security boundary</a> put that consensus in the title. Some internal writers said “own computer” when they meant “own screen”; xAI docs correct the loose wording.</p>
@@ -272,8 +276,9 @@ def computer():
 <p>Once computer use is stable, save “done right once” — <a href="/learn/skills-routines/">skills first, then routines</a>. Stack with X and Cloud Agents: <a href="/learn/ops/">ops</a>.</p>
 ''' + _faq_html(COMPUTER_FAQS) + '''
 %s
+%s
 </div></section>
-''' % pager("/learn/computer/")
+''' % (COMPUTER_GUIDES, pager("/learn/computer/"))
     return body
 
 def skills():
@@ -347,8 +352,9 @@ document.querySelectorAll('[data-copy]').forEach(btn=>{
 });
 </script>
 %s
+%s
 </div></section>
-''' % pager("/learn/skills-routines/")
+''' % (SKILLS_GUIDES, pager("/learn/skills-routines/"))
     return body
 
 def plugins():
@@ -386,8 +392,9 @@ def plugins():
 </ul>
 <p>More plugins make weekly usage and approval rules the main topic — <a href="/learn/cost-and-pitfalls/">cost, spillover, and approval pitfalls</a>. Operator order: <a href="/learn/operator/">after week one</a>. Stack (X, Cloud Agent, MCP): <a href="/learn/ops/">ops</a>.</p>
 %s
+%s
 </div></section>
-''' % pager("/learn/plugins/")
+''' % (PLUGINS_GUIDES, pager("/learn/plugins/"))
     return body
 
 def cost():
@@ -432,6 +439,7 @@ def cost():
 </ul>
 <p>Next: <a href="/learn/operator/">the operator path</a>, then what others shipped — <a href="/use-cases/">use cases</a> — or <a href="/troubleshooting/not-responding/">not responding</a> if bots go silent while the computer still opens.</p>
 %s
+%s
 </div></section>
-''' % pager("/learn/cost-and-pitfalls/")
+''' % (COST_GUIDES, pager("/learn/cost-and-pitfalls/"))
     return body
