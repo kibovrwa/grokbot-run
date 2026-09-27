@@ -7,13 +7,14 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from htmlutil import ROOT, SITE, page, write, header_html, footer_html, canonical, faq_jsonld, howto_jsonld, itemlist_jsonld, FIND_JS, apply_ga
+from htmlutil import ROOT, SITE, page, write, header_html, footer_html, canonical, faq_jsonld, howto_jsonld, itemlist_jsonld, article_jsonld, FIND_JS, apply_ga
 from seo_pages import PAGES
 from content_home import home
 from content_pricing import pricing, PRICING_FAQS
 from content_learn import what_is, install, first_bot, computer, skills, plugins, cost, INSTALL_FAQS, COMPUTER_FAQS
 from content_trouble import troubleshooting
 from content_support import SUPPORT
+from content_errors import ERRORS
 from content_tools import tools_index, tool_detail
 from content_hub import learn_index, glossary, cursor_and_grok
 from content_compare import compare
@@ -48,6 +49,24 @@ SITEMAP_URLS = [
     "/troubleshooting/cant-reach/",
     "/troubleshooting/white-screen/",
     "/troubleshooting/recover-vs-reset/",
+    "/troubleshooting/dns-error/",
+    "/troubleshooting/plugin-oauth/",
+    "/troubleshooting/usage-limit/",
+    "/troubleshooting/install-failed/",
+    "/troubleshooting/update-failed/",
+    "/troubleshooting/phone-not-connecting/",
+    "/troubleshooting/local-execution/",
+    "/troubleshooting/linux/",
+    "/troubleshooting/trial-ended/",
+    "/troubleshooting/privacy-mode/",
+    "/troubleshooting/no-seat/",
+    "/troubleshooting/antivirus/",
+    "/troubleshooting/windows-proxy/",
+    "/troubleshooting/cloud-agent/",
+    "/troubleshooting/routines/",
+    "/troubleshooting/x-login/",
+    "/troubleshooting/account-unavailable/",
+    "/troubleshooting/codebase/",
     "/tools/",
     "/tools/grok-bot-cli/",
     "/tools/grok-bot-skill/",
@@ -97,7 +116,7 @@ def write_sitemap():
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
     ]
     for u in SITEMAP_URLS:
-        lines.append("<url><loc>%s</loc><lastmod>2026-09-22</lastmod></url>" % canonical(u))
+        lines.append("<url><loc>%s</loc><lastmod>2026-09-27</lastmod></url>" % canonical(u))
     lines.append("</urlset>")
     (DIST / "sitemap.xml").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
@@ -156,7 +175,7 @@ def main():
 
     body, faqs = home()
     m = PAGES["/"]
-    write("/", page("/", m["title"], m["description"], body, jsonld=[faq_jsonld(faqs)]))
+    write("/", page("/", m["title"], m["description"], body, jsonld=[faq_jsonld(faqs)], modified="2026-09-27"))
     pm = PAGES["/pricing/"]
     write("/pricing/", page("/pricing/", pm["title"], pm["description"], pricing(), jsonld=[faq_jsonld(PRICING_FAQS)]))
     um = PAGES["/use-cases/"]
@@ -234,12 +253,13 @@ def main():
             extra.append(faq_jsonld(INSTALL_FAQS))
         if path == "/learn/computer/":
             extra.append(faq_jsonld(COMPUTER_FAQS))
-        write(path, page(path, meta["title"], meta["description"], fn(), jsonld=extra or None))
+        modified = "2026-09-27" if path in ("/learn/computer/", "/learn/first-bot/") else "2026-09-20"
+        write(path, page(path, meta["title"], meta["description"], fn(), jsonld=extra or None, modified=modified))
 
     tm_help = PAGES["/troubleshooting/"]
-    write("/troubleshooting/", page("/troubleshooting/", tm_help["title"], tm_help["description"], troubleshooting()))
+    write("/troubleshooting/", page("/troubleshooting/", tm_help["title"], tm_help["description"], troubleshooting(), modified="2026-09-27"))
 
-    for spec in SUPPORT:
+    for spec in list(SUPPORT) + list(ERRORS):
         path = spec["path"]
         meta = PAGES[path]
         extra = []
@@ -248,7 +268,11 @@ def main():
         howto = spec.get("howto")
         if howto:
             extra.append(howto_jsonld(howto[0], howto[1], howto[2]))
-        write(path, page(path, meta["title"], meta["description"], spec["body"](), jsonld=extra or None))
+        modified = "2026-09-20"
+        if spec.get("article"):
+            extra.append(article_jsonld(meta.get("h1") or meta["title"], meta["description"], path))
+            modified = "2026-09-27"
+        write(path, page(path, meta["title"], meta["description"], spec["body"](), jsonld=extra or None, modified=modified))
 
     details = {
         "cli": "/tools/grok-bot-cli/",
@@ -263,6 +287,7 @@ def main():
 
     written = {"/", "/pricing/", "/use-cases/", "/tools/", "/learn/", "/learn/glossary/", "/learn/cursor/", "/learn/operator/", "/learn/ops/", "/compare/", "/troubleshooting/"}
     written.update(spec["path"] for spec in SUPPORT)
+    written.update(spec["path"] for spec in ERRORS)
     written.update(learn)
     written.update(details.values())
     n = len(written)

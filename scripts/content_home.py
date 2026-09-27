@@ -84,8 +84,8 @@ def home():
 <section class="hero hero-product">
   <div class="wrap">
     <p class="kicker">Community guide · start, run, recover</p>
-    <h1>How to start Grok Bot without burning a week</h1>
-    <p class="lede">Paste a first job. Keep one shared computer from wiping the week. Read plan pages side by side. Fix “can’t reach the computer” without Reset.</p>
+    <h1>How to start Grok Bot</h1>
+    <p class="lede">Sign in with the Cursor account that holds the plan. Paste one cited job. Every bot shares one cloud computer. This is an unofficial handbook, not an xAI or Cursor site.</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="#first-job">Copy a first job</a>
       <a class="btn btn-secondary" href="/learn/install/">How to start</a>

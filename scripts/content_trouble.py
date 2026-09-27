@@ -139,47 +139,77 @@ GROUPS = [
     },
 ]
 
-def troubleshooting():
-    blocks = []
-    for g in GROUPS:
-        lis = "".join("<li>%s</li>" % escape(t) for t in g["tries"])
-        src = "".join('<li><a href="%s">%s</a></li>' % (escape(u), escape(n)) for n, u in g["sources"])
-        more = ""
-        if g.get("more"):
-            href, label = g["more"]
-            more = '<p><a href="%s">%s</a></p>' % (escape(href, quote=True), escape(label))
-        blocks.append(
-            '<article class="card" id="%s"><h2>%s</h2>%s<p><strong>Symptom.</strong> %s</p><h3>Try first</h3><ol>%s</ol><div class="callout warn"><p><strong>When not to Reset.</strong> %s</p></div><h3>Sources</h3><ul>%s</ul></article>'
-            % (g["id"], escape(g["title"]), more, escape(g["symptom"]), lis, escape(g["dont"]), src)
+def _symptom_list(rows):
+    bits = []
+    for href, label, symptom in rows:
+        bits.append(
+            '<li><a href="%s">%s</a> — %s</li>'
+            % (escape(href, quote=True), escape(label), escape(symptom))
         )
+    return "<ul>%s</ul>" % "".join(bits)
+
+
+def troubleshooting():
     intro = '''
 <section class="band"><div class="wrap prose">
-<p class="kicker">Playbooks</p>
+<p class="kicker">Unofficial help</p>
 <h1>Grok Bot not working — quit and Retry before you Reset</h1>
-<p><strong>Fully quit, then Retry. Do not Reset while the screen says Reconnecting or Couldn't reach Grok Bot's computer.</strong> Cursor Help: bots, files, and logins are safe during reconnect. Cloud work can continue while the desktop app is disconnected. Updating the desktop app does not reset the computer. The two updates are different: Settings → Updates → Check for Updates is the app; Update under Grok Bot's Computer is the machine.</p>
+<p><strong>Fully quit, then Retry. Do not Reset while the screen says Reconnecting or Couldn&#x27;t reach Grok Bot&#x27;s computer.</strong> This is an unofficial community handbook, not xAI or Cursor support. Bots, files, and logins are safe during reconnect. Updating the desktop app does not reset the computer.</p>
 <ol>
 <li><strong>Quit for real.</strong> Mac: menu-bar Quit. Windows: tray, then end leftover Grok Bot processes. Closing the window is not quitting.</li>
-<li><strong>Reconnecting or Couldn't reach:</strong> wait, then Retry. Open <a href="/troubleshooting/cant-reach/">can't reach</a> only if that fails. Recover if the app offers it. On a slow update, Keep waiting.</li>
-<li><strong>Bots or chats look gone:</strong> same account on the phone, then sidebar <strong>Hidden Bots</strong>. Hide from sidebar does not delete a bot. Do not Reset to go looking. <a href="/troubleshooting/white-screen/">White screen and missing bots</a>.</li>
-<li><strong>Computer is up, replies are not:</strong> <a href="/troubleshooting/not-responding/">not responding</a>. Usage, or a bot waiting on a login. Reset will not refill the meter.</li>
-<li><strong>The bar is still moving</strong> (Starting your computer, Updating): leave it. Several minutes is normal. <a href="/troubleshooting/stuck/">Stuck</a> is for when progress stops.</li>
+<li><strong>Match the sentence</strong> in the lists below. Each link is one screen. The steps live on that page, not here.</li>
+<li><strong>Version for support:</strong> account menu, About, Copy version info. Request ID: right-click the message, Copy request ID. Email <a href="mailto:hi@cursor.com">hi@cursor.com</a>. No passwords or keys.</li>
 </ol>
-<p>Not installed yet? <a href="/learn/install/">Official download</a>. Intel Macs miss the file if they take the top button: <a href="/learn/mac-download/">Mac download</a>. Version for support is account menu → About → Copy version info. Request ID is right-click the message → Copy request ID. Email <a href="mailto:hi@cursor.com">hi@cursor.com</a>. No passwords or keys.</p>
+<p>Not installed yet? <a href="/learn/install/">Official download</a>. Plan questions, with no prices repeated here: <a href="/pricing/">pricing</a>.</p>
 </div></section>
-<section class="band"><div class="wrap">
-<h2>Open the page that matches the screen</h2>
-<p class="lede">These are the long walkthroughs. The notes below stay as the short index, with every source thread still listed.</p>
-<div class="grid-3">
-<a class="card" href="/troubleshooting/not-responding/"><h3>Not responding</h3><p>Computer reconnecting, a bot waiting on you, or weekly usage. Reset does not answer.</p></a>
-<a class="card" href="/troubleshooting/stuck/"><h3>Stuck</h3><p>If the bar is still moving, wait. Privacy Mode, a missing seat, or a stopped percent.</p></a>
-<a class="card" href="/troubleshooting/cant-reach/"><h3>Can’t reach</h3><p>Retry first. Then hotspot, wildcard DNS, or the Windows direct-connection test.</p></a>
-<a class="card" href="/troubleshooting/white-screen/"><h3>White screen or missing bots</h3><p>Hidden Bots, the other device, or a local config folder. Do not Reset to find chats.</p></a>
-<a class="card" href="/troubleshooting/recover-vs-reset/"><h3>Update vs Recover vs Reset</h3><p>Synced bots stay on Update and Recover. Installed apps do not. Reset can drop unsynced work.</p></a>
-<a class="card" href="/learn/install/"><h3>Download and install</h3><p>Official Mac, Windows, Linux, and phone packages. This site is not the store.</p></a>
-</div>
-</div></section>
-<section class="band"><div class="wrap" style="display:flex;flex-direction:column;gap:16px">
 '''
+    groups = [
+        ("reach", "Computer will not open", "Retry first. Reset is last, and it is the wrong button when the phone still works.", [
+            ("/troubleshooting/cant-reach/", "Can't reach your computer", "Retry, hotspot, then the longer tests."),
+            ("/troubleshooting/dns-error/", "DNS error", "Subdomain under cursorvm.com is refused. The apex can still resolve."),
+            ("/troubleshooting/antivirus/", "Blocked by antivirus", "Browser loads. The app trusts public certificate authorities only."),
+            ("/troubleshooting/windows-proxy/", "Windows system proxy", "The app connects directly. TUN, then the noproxy probe."),
+            ("/troubleshooting/phone-not-connecting/", "Phone not connecting", "Same cloud computer. A working iPhone means do not Reset."),
+            ("/troubleshooting/trial-ended/", "Trial ended", "Can't reach can be a display bug when access is gone."),
+        ]),
+        ("white", "Screen, setup, and the roster", "A moving bar is a wait. A blank window is not proof the bots were deleted.", [
+            ("/troubleshooting/stuck/", "Stuck on a label", "Setting up, Cleaning up, or 50 percent Starting."),
+            ("/troubleshooting/privacy-mode/", "Stuck on Connecting", "Save Privacy Mode. Reset cannot save it."),
+            ("/troubleshooting/no-seat/", "Free plan or no seat", "No computer was provisioned. Admin is not a seat."),
+            ("/troubleshooting/white-screen/", "White screen, black screen, empty roster", "Hidden Bots, sleep, or a local config folder."),
+            ("/troubleshooting/install-failed/", "Install failed on Mac or Windows", "Wrong chip, a second Windows copy, or a missing seat."),
+            ("/troubleshooting/update-failed/", "Update failed", "App update and computer update are different controls."),
+            ("/troubleshooting/recover-vs-reset/", "Update vs Recover vs Reset", "Synced bots stay on Update and Recover. Reset can drop unsynced work."),
+        ]),
+        ("usage", "Bots are quiet", "If the computer view opens, check usage before any computer button.", [
+            ("/troubleshooting/not-responding/", "Not responding", "Computer status first. Reset does not answer."),
+            ("/troubleshooting/usage-limit/", "Usage limit and On-Demand", "Weekly pool, then credits, then paid spillover. No in-app warning."),
+            ("/troubleshooting/routines/", "Routines not running", "A late slot is often queued. Do not recreate it."),
+        ]),
+        ("oauth", "Plugins, X, and the Cursor account", "One connector failing is not a dead computer. Do not paste a token into chat.", [
+            ("/troubleshooting/plugin-oauth/", "Plugin OAuth failed", "Gmail, Notion, GitHub, Zoom 4700, Canva, X tools=0."),
+            ("/troubleshooting/x-login/", "X login locked", "Risk controls on the cloud computer. Do not install a VPN there."),
+            ("/troubleshooting/account-unavailable/", "Account unavailable", "Stale session after a password change. Log out and quit."),
+            ("/troubleshooting/cloud-agent/", "Cloud agent not showing", "Enable Source, then Grok Bot, once per Cursor client."),
+            ("/troubleshooting/codebase/", "Can't access the codebase", "No codebase plugin. Hand the repo to a Cloud Agent."),
+        ]),
+        ("linux", "This laptop versus the cloud computer", "Chat can be healthy while the local helper is offline.", [
+            ("/troubleshooting/local-execution/", "Local computer offline", "Quit the helper. Always Allow is desktop-only."),
+            ("/troubleshooting/linux/", "Linux not connecting", "Official deb, rpm, or AppImage. Empty ListMachines needs the keyring."),
+            ("/tools/linux-port/", "Linux packages", "Official files versus community ports."),
+        ]),
+        ("reset", "Buttons, only after the label matches", "Update and Recover remove installed apps. Reset can also drop unsynced work.", [
+            ("/troubleshooting/recover-vs-reset/", "Which button keeps what", "Keep waiting on a slow update. Do not stack a second Reset."),
+            ("/learn/install/", "Download and install", "Official Mac, Windows, Linux, and phone packages. This site is not the store."),
+            ("/pricing/", "Is Grok Bot free?", "No consumer free tier on the dated snapshot. Prices stay on that page."),
+        ]),
+    ]
+    sections = []
+    for gid, title, lede, rows in groups:
+        sections.append(
+            '<section class="band" id="%s"><div class="wrap prose"><h2>%s</h2><p>%s</p>%s</div></section>'
+            % (escape(gid), escape(title), escape(lede), _symptom_list(rows))
+        )
     fail_path = ROOT / "src" / "data" / "community-failure-modes.json"
     failures = json.loads(fail_path.read_text(encoding="utf-8"))
     items = []
@@ -191,9 +221,9 @@ def troubleshooting():
             % (escape(f["url"], quote=True), escape(title), escape(note))
         )
     registry = (
-        '</div></section><section class="band"><div class="wrap">'
+        '<section class="band"><div class="wrap">'
         '<h2>All failure sources (%d)</h2>'
-        '<p class="lede">The playbooks above group common symptoms; below keeps all %d input sources for edge cases not expanded separately. Threads are field evidence, not official promises.</p>'
+        '<p class="lede">The lists above are the screens. Below keeps all %d input threads, including ones too narrow for their own page. Threads are field evidence, not official promises.</p>'
         '<ul class="source-list">%s</ul></div></section>'
     ) % (len(failures), len(failures), "".join(items))
-    return intro + "".join(blocks) + registry
+    return intro + "".join(sections) + registry

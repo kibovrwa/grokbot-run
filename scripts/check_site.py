@@ -171,6 +171,24 @@ for must in (
     'https://grokbot.run/troubleshooting/cant-reach/',
     'https://grokbot.run/troubleshooting/white-screen/',
     'https://grokbot.run/troubleshooting/recover-vs-reset/',
+    'https://grokbot.run/troubleshooting/dns-error/',
+    'https://grokbot.run/troubleshooting/plugin-oauth/',
+    'https://grokbot.run/troubleshooting/usage-limit/',
+    'https://grokbot.run/troubleshooting/install-failed/',
+    'https://grokbot.run/troubleshooting/update-failed/',
+    'https://grokbot.run/troubleshooting/phone-not-connecting/',
+    'https://grokbot.run/troubleshooting/local-execution/',
+    'https://grokbot.run/troubleshooting/linux/',
+    'https://grokbot.run/troubleshooting/trial-ended/',
+    'https://grokbot.run/troubleshooting/privacy-mode/',
+    'https://grokbot.run/troubleshooting/no-seat/',
+    'https://grokbot.run/troubleshooting/antivirus/',
+    'https://grokbot.run/troubleshooting/windows-proxy/',
+    'https://grokbot.run/troubleshooting/cloud-agent/',
+    'https://grokbot.run/troubleshooting/routines/',
+    'https://grokbot.run/troubleshooting/x-login/',
+    'https://grokbot.run/troubleshooting/account-unavailable/',
+    'https://grokbot.run/troubleshooting/codebase/',
 ):
     if '<loc>%s</loc>' % must not in sitemap:
         errors.append('sitemap missing %s' % must)
@@ -193,6 +211,37 @@ counts = {
 expected = {'tools': 199, 'cases': 54, 'failures': 89, 'official': 42}
 if counts != expected:
     errors.append(f'counts {counts} != {expected}')
+
+error_pages = [
+    'troubleshooting/dns-error/index.html',
+    'troubleshooting/plugin-oauth/index.html',
+    'troubleshooting/usage-limit/index.html',
+    'troubleshooting/install-failed/index.html',
+    'troubleshooting/update-failed/index.html',
+    'troubleshooting/phone-not-connecting/index.html',
+    'troubleshooting/local-execution/index.html',
+    'troubleshooting/linux/index.html',
+    'troubleshooting/trial-ended/index.html',
+    'troubleshooting/privacy-mode/index.html',
+    'troubleshooting/no-seat/index.html',
+    'troubleshooting/antivirus/index.html',
+    'troubleshooting/windows-proxy/index.html',
+    'troubleshooting/cloud-agent/index.html',
+    'troubleshooting/routines/index.html',
+    'troubleshooting/x-login/index.html',
+    'troubleshooting/account-unavailable/index.html',
+    'troubleshooting/codebase/index.html',
+]
+for rel_page in error_pages:
+    html_page = (dist / rel_page).read_text(encoding='utf-8') if (dist / rel_page).exists() else ''
+    if '"@type": "FAQPage"' not in html_page and '"@type":"FAQPage"' not in html_page:
+        errors.append('%s missing FAQPage JSON-LD' % rel_page)
+    if '"@type": "Article"' not in html_page and '"@type":"Article"' not in html_page:
+        errors.append('%s missing Article JSON-LD' % rel_page)
+    if '"dateModified": "2026-09-27"' not in html_page:
+        errors.append('%s missing dateModified 2026-09-27' % rel_page)
+    if 'href="/troubleshooting/"' not in html_page:
+        errors.append('%s missing link back to troubleshooting hub' % rel_page)
 
 print(f'Checked {len(files)} HTML pages; rendered={counts}; errors={len(errors)}')
 if errors:

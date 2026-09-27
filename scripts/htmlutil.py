@@ -176,6 +176,12 @@ def footer_html():
         '<a href="/troubleshooting/cant-reach/">Can\'t reach</a>'
         '<a href="/troubleshooting/white-screen/">White or black screen</a>'
         '<a href="/troubleshooting/recover-vs-reset/">Recover vs Reset</a>'
+        '<a href="/troubleshooting/dns-error/">DNS error</a>'
+        '<a href="/troubleshooting/plugin-oauth/">Plugin OAuth</a>'
+        '<a href="/troubleshooting/usage-limit/">Usage limit</a>'
+        '<a href="/troubleshooting/install-failed/">Install failed</a>'
+        '<a href="/troubleshooting/update-failed/">Update failed</a>'
+        '<a href="/troubleshooting/phone-not-connecting/">Phone not connecting</a>'
         '<a href="/sources/">Sources</a></div>'
         "<div><h4>Official</h4>"
         '<a href="https://x.ai/bot">x.ai/bot</a>'
@@ -222,6 +228,24 @@ CRUMB_SHORT = {
     "/troubleshooting/cant-reach/": "Can't reach",
     "/troubleshooting/white-screen/": "Blank screen",
     "/troubleshooting/recover-vs-reset/": "Recover or Reset",
+    "/troubleshooting/dns-error/": "DNS error",
+    "/troubleshooting/plugin-oauth/": "Plugin OAuth",
+    "/troubleshooting/usage-limit/": "Usage limit",
+    "/troubleshooting/install-failed/": "Install failed",
+    "/troubleshooting/update-failed/": "Update failed",
+    "/troubleshooting/phone-not-connecting/": "Phone",
+    "/troubleshooting/local-execution/": "Local computer",
+    "/troubleshooting/linux/": "Linux",
+    "/troubleshooting/trial-ended/": "Trial ended",
+    "/troubleshooting/privacy-mode/": "Privacy Mode",
+    "/troubleshooting/no-seat/": "No seat",
+    "/troubleshooting/antivirus/": "Antivirus",
+    "/troubleshooting/windows-proxy/": "Windows proxy",
+    "/troubleshooting/cloud-agent/": "Cloud agent",
+    "/troubleshooting/routines/": "Routines",
+    "/troubleshooting/x-login/": "X login",
+    "/troubleshooting/account-unavailable/": "Account",
+    "/troubleshooting/codebase/": "Codebase",
     "/sources/": "Sources",
 }
 
@@ -382,7 +406,32 @@ def apply_ga(html):
     return html.replace("</head>", snippet + "\n</head>", 1)
 
 
-def page(path, title, description, body, jsonld=None, lang="en"):
+def article_jsonld(headline, description, path, modified="2026-09-27"):
+    """Article schema for a fix page. Publisher is this handbook, not xAI or Cursor."""
+    return {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": headline,
+        "description": description,
+        "datePublished": "2026-09-27",
+        "dateModified": modified,
+        "inLanguage": "en",
+        "mainEntityOfPage": {"@type": "WebPage", "@id": canonical(path)},
+        "author": {
+            "@type": "Organization",
+            "name": "Grok Bot Guide",
+            "url": SITE + "/",
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Grok Bot Guide",
+            "url": SITE + "/",
+            "logo": {"@type": "ImageObject", "url": LOGO_ABS},
+        },
+    }
+
+
+def page(path, title, description, body, jsonld=None, lang="en", modified="2026-09-20"):
     canon = canonical(path)
     site_name = "Grok Bot Guide"
     site_desc = "Grok Bot guide: how to start, Cursor login, first job, shared computer, plan conflicts, and Recover before Reset."
@@ -413,7 +462,7 @@ def page(path, title, description, body, jsonld=None, lang="en"):
         "url": canon,
         "inLanguage": "en",
         "datePublished": "2026-09-04",
-        "dateModified": "2026-09-20",
+        "dateModified": modified,
         "isPartOf": {"@type": "WebSite", "name": site_name, "url": SITE + "/"},
     })
     blobs.append(_crumbs(path, title))

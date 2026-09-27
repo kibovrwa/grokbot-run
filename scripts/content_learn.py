@@ -198,9 +198,10 @@ def first_bot():
     body = '''
 <section class="band"><div class="wrap prose">
 <p class="kicker">Lesson 3</p>
-<h1>How to use Grok Bot: first Bot and Chief of Staff</h1>
-<p class="meta">This is a community convention, not a mandated official architecture. Officially you only need: name, primary job, how it works.</p>
-<p>Official Get started uses an example named Piper whose job is product-performance investigation: keep links and screenshots, separate evidence from hypotheses, report highest-impact issues first, never change production settings. Cursor Help makes step one even shorter: name, shape, color, title, then describe the outcome in a new chat. That is enough. Community tutorials additionally converge on a pattern that shows up again and again: <strong>you mainly talk to one pinned Chief of Staff, who creates specialist Bots, hands off work, and reports blockers</strong>.</p>
+<h1>How to use Grok Bot: one bot, one job</h1>
+<p><strong>Name one bot, describe one job, and stop at a draft.</strong> Official setup is a name, a primary job, and how it works. A Chief of Staff is a community pattern, not a required architecture.</p>
+<p class="meta">Unofficial handbook, not xAI or Cursor support. The steps below are the community pattern plus the official minimum.</p>
+<p>Official Get started uses an example named Piper whose job is product-performance investigation: keep links and screenshots, separate evidence from hypotheses, report highest-impact issues first, never change production settings. Cursor Help makes the first chat even shorter: name, shape, color, title, then describe the outcome. Community tutorials additionally converge on one pinned Chief of Staff who creates specialist bots, hands off work, and reports blockers.</p>
 <p>Debbie’s getting-started notes (<a href="https://debbie.codes/blog/how-to-get-started-with-grok-bot">How to Get Started with Grok Bot</a>, 2026-08-14) roughly: add a Chief of Staff from day zero and let it build the team around what you do; you manage one person while the others report to each other. She added a Chief of Staff later herself — coding, LinkedIn, X, email first, then video editing and travel — and regrets not starting that way. She also warns: do not open a Bot for every sub-task; she almost created a thumbnail specialist and was stopped because that was just another handoff.</p>
 <p>AI Builder Club’s survey (<a href="https://www.aibuilderclub.com/blog/grok-bot-guide">How to Use Grok Bot</a>, updated 2026-08-30) checked tutorials available then: three of Finn, Berman, and Herk’s four long videos independently taught the same pattern. Their opener is not pasting a giant system prompt — it is dumping “who you are and how you work” to the first Bot, asking how it would set up Grok Bot for you, then approving its plan. This page does not copy those long prompts; open the originals for exact wording.</p>
 <p>MindStudio’s setup piece (<a href="https://www.mindstudio.ai/blog/grok-bot-setup-guide">setup guide</a>, 2026-08-12) clarifies the description field: Grok Bot uses the description as a routing signal, so a general assistant can hand coding work to a developer Bot. That article’s eligibility claim still says “needs Cursor Ultra” — against the official pages we fetched on 2026-09-04 that is stale; prefer the <a href="/pricing/">pricing snapshot</a>.</p>
@@ -249,8 +250,9 @@ def computer():
     body = '''
 <section class="band"><div class="wrap prose">
 <p class="kicker">Lesson 4</p>
-<h1>The Grok Bot computer is shared — not a security boundary</h1>
-<p>This is the page you must not skip. Official computer docs: every Bot under the account uses the <strong>same</strong> persistent cloud computer; browser cookies and login state are shared, files are visible to each other, shell credentials are shared, and progress written by one Bot can be continued by another. The computer is assigned to the <strong>user</strong>, not to a single Bot. If you do not want another Bot to touch a credential or file, do not put it on this computer.</p>
+<h1>What is the Grok Bot computer?</h1>
+<p><strong>Every bot on the account uses one cloud computer.</strong> Files, browser cookies, and logins are shared. A second bot does not get a private machine, and a screen is not a security fence.</p>
+<p>Official computer docs: browser cookies and login state are shared, files are visible to each other, shell credentials are shared, and progress written by one bot can be continued by another. The computer is assigned to the <strong>user</strong>, not to a single bot. If you do not want another bot to touch a credential or file, do not put it on this computer.</p>
 ''' + COMPUTER_DIAGRAM + '''
 <p>The official product page shows many named faces working at once. That is one account, one machine, several screens — the same construction as the roster on this site’s homepage. A second Bot does not get a private VM.</p>
 <p>Each Bot has its own screen on that computer, so they can use the browser and desktop tools in parallel — but one screen runs one computer-use task at a time. Screens are a work surface, <strong>not a security boundary</strong>. The Cursor forum thread <a href="https://forum.cursor.com/t/grok-bot-ship-real-session-fences-bots-are-not-a-security-boundary/168476">Bots are not a security boundary</a> put that consensus in the title. Some internal writers said “own computer” when they meant “own screen”; xAI docs correct the loose wording.</p>
@@ -377,6 +379,7 @@ def plugins():
 <li><strong>Official X plugin:</strong> connect/refresh failures across desktop / Cloud / Grok Bot (including connected with tools=0) — waiting on X-side app config fixes.</li>
 <li><strong>GitHub “connected” but Authorization header badly formatted:</strong> long-press the account → Remove → sign in again.</li>
 </ul>
+<p>Per-connector steps, and what still has no user fix: <a href="/troubleshooting/plugin-oauth/">plugin OAuth failed</a>.</p>
 <p>Drive MCP is file-level only; to edit Google Doc body or Sheet cells, use the separate Docs / Sheets connectors added from the marketplace under the same Google account.</p>
 <h2>Common misconceptions</h2>
 <ul>

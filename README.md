@@ -16,7 +16,7 @@ Official packages stay on [x.ai/bot](https://x.ai/bot). Sign in with the Cursor 
 | After week one (manage a roster) | https://grokbot.run/learn/operator/ |
 | X, Cursor Cloud Agents, MCP | https://grokbot.run/learn/ops/ |
 | Dated plan conflicts (no invented USD) | https://grokbot.run/pricing/ |
-| Can’t reach / Recover before Reset | https://grokbot.run/troubleshooting/ |
+| Symptom hub (per-error fixes, Recover before Reset) | https://grokbot.run/troubleshooting/ |
 | Cursor login is not an IDE panel | https://grokbot.run/learn/cursor/ |
 
 ## What this is not
