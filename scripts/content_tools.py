@@ -171,6 +171,11 @@ def tool_detail(key):
     parts.extend([
         '<h2>Risks</h2>',
         '<div class="callout warn"><p>%s</p></div>' % escape(d["risk"]),
+    ])
+    if key == "linux":
+        from guide_blocks import LINUX_GUIDES
+        parts.append(LINUX_GUIDES)
+    parts.extend([
         '<h2>License and source</h2>',
         '<p><strong>License.</strong> %s</p>' % escape(d["license"]),
         '<p><a class="btn btn-primary" href="%s">Open GitHub source</a> <a class="btn btn-secondary" href="/learn/install/">Prefer official install</a> <a class="btn btn-ghost" href="/troubleshooting/">Symptom-based fixes</a></p>' % escape(d["source"]),

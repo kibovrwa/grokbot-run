@@ -6,6 +6,7 @@ notes already reviewed for this handbook (fetch day 2026-09-20). No new
 product behavior is invented here.
 """
 from html import escape
+from guide_blocks import PHONE_GUIDES, LOGIN_GUIDES, REACH_GUIDES, RECOVER_GUIDES
 
 DOC_START = "https://docs.x.ai/grok-bot/get-started"
 DOC_TROUBLE = "https://docs.x.ai/grok-bot/troubleshooting"
@@ -320,6 +321,7 @@ def phone_download():
         ("Canva on iOS", "https://forum.cursor.com/t/grok-bot-canva-connector-failing/170431"),
         ("iOS cannot Always allow", "https://forum.cursor.com/t/authorization-death-by-1000-clicks/170087"),
     ]
+    body += PHONE_GUIDES
     return _page("Phone download", "Download Grok Bot for iPhone, iPad, and Android", lede, body, PHONE_FAQS, related, sources)
 
 
@@ -378,6 +380,7 @@ def login_page():
         ("Stale session after password change", "https://forum.cursor.com/t/grok-bot-mac-blocked-after-password-change-app-says-unavailable-spending-shows-supergrok-plus/170389"),
         ("Free plan stuck on Setting up", "https://forum.cursor.com/t/grok-bot-0-30-0-stuck-on-setting-up-your-grok-bot-on-macos/169981"),
     ]
+    body += LOGIN_GUIDES
     return _page("Login", "Sign in to Grok Bot with your Cursor account", lede, body, LOGIN_FAQS, related, sources)
 
 
@@ -552,6 +555,7 @@ def cant_reach():
         ("Windows app ignores the system proxy", "https://forum.cursor.com/t/grok-bot-windows-fresh-profile-setup-fails-with-can-t-reach-your-computer-after-backend-fix/170281"),
         ("WARP blank screen", "https://forum.cursor.com/t/blank-screen-after-opening-grok-bot/169966"),
     ]
+    body += REACH_GUIDES
     return _page("Can't reach", "Can't reach your computer in Grok Bot", lede, body, REACH_FAQS, related, sources)
 
 
@@ -660,6 +664,7 @@ def recover_vs_reset():
         ("Reset behind Settings", "https://forum.cursor.com/t/the-reset-computer-window-opens-behind-the-settings-window-and-is-invisible-and-unclickable/169177"),
         ("Trial exhaustion", "https://forum.cursor.com/t/grok-bot-cloud-workspace-inaccessible-after-trial-exhaustion-ticket-t-e97475-pending/169010"),
     ]
+    body += RECOVER_GUIDES
     return _page("Recover or Reset", "Update, Recover, or Reset Grok Bot's computer", lede, body, RECOVER_FAQS, related, sources)
 
 
