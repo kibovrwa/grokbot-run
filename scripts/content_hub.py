@@ -175,7 +175,14 @@ def glossary():
     rows = []
     for term, blurb in GLOSSARY:
         sid = re.sub(r"[^a-z0-9]+", "-", term.lower()).strip("-")[:48] or "term"
-        rows.append('<dt id="%s">%s</dt><dd>%s</dd>' % (escape(sid), escape(term), escape(blurb)))
+        extra = ""
+        if term == "grok.com / Grok":
+            extra = (
+                ' Images from Imagine can still carry EXIF, C2PA, and AI generator tags, which '
+                '<a href="https://removeaimeta.com/">Remove AI Meta</a> strips from a JPEG, PNG, or WebP '
+                "in the browser without recompressing the picture."
+            )
+        rows.append('<dt id="%s">%s</dt><dd>%s%s</dd>' % (escape(sid), escape(term), escape(blurb), extra))
     faqs = []
     for q, a in GLOSS_FAQS:
         faqs.append("<details><summary>%s</summary><p>%s</p></details>" % (escape(q), escape(a)))
