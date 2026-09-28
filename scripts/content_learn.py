@@ -103,6 +103,7 @@ def what_is():
 <li><strong>Not Grok 4.x model evals.</strong> Models can change generations; the Bot product sells “teammate + computer + approval,” not a benchmark score.</li>
 <li><strong>Not Grok Build, and not grok-app.</strong> Grok Build is a local coding CLI. The community project <a href="https://github.com/RongleCat/grok-app">RongleCat/grok-app</a> is a desktop GUI (Tauri) for the <strong>local Grok Build CLI</strong> — <em>not</em> a Grok Bot client. This site only mentions it under “related / easy to confuse” in the <a href="/tools/">tools catalog</a>.</li>
 </ul>
+<p>Grok Imagine, the image tool on that grok.com line, can embed Content Credentials in the file it saves. <a href="https://removeaimeta.com/what-are-content-credentials">What Content Credentials are</a> separates that signed note in the file from a cloud copy and from a platform AI label.</p>
 <h2>Five official differences (check the originals)</h2>
 <ol>
 <li><strong>It has its own computer.</strong> A persistent cloud VM with browser, filesystem, and terminal; sites without a clean API get clicked the way a human would. <a href="https://docs.x.ai/grok-bot/overview">Overview</a> · <a href="https://docs.x.ai/grok-bot/computer-and-apps">Computer and apps</a></li>
@@ -217,6 +218,7 @@ def first_bot():
 <pre><code>I attached one document. Give me (1) five bullets on what it says, and (2) every date, decision, and open question with a page or section cite. Leave the file unchanged.</code></pre>
 <button type="button" class="copy-btn" data-copy>Copy</button>
 </div>
+<p>The warm-up comes back as a chat message. To keep that brief as an editable Word file, copy the answer and use <a href="https://chatgpt2word.com/">ChatGPT2Word</a>, which turns Grok or ChatGPT Markdown into a .docx in the browser.</p>
 <div class="job-card">
 <p class="kicker">Chief of Staff</p>
 <h3>Then one real door</h3>
