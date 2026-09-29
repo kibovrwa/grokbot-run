@@ -69,6 +69,17 @@ def build():
         ("Grok Bot not responding", "/troubleshooting/not-responding/", "Help", "stopped working silent bots failed to respond"),
         ("Grok Bot stuck", "/troubleshooting/stuck/", "Help", "connecting setting up reconnecting cleaning up"),
         ("What is Dots", "/dots/", "Page", "openai dots dots ai dots agent personal agent what is dots how to use dots"),
+        ("Dots pricing", "/dots-pricing/", "Page", "dots pricing dots price chatgpt pro"),
+        ("Dots release date", "/dots-release-date/", "Page", "dots release date when did dots launch devday"),
+        ("Dots download", "/dots-download/", "Page", "dots download dots app"),
+        ("Dots waitlist", "/dots-waitlist/", "Page", "dots waitlist imessage rcs"),
+        ("Dots vs Grok Bot", "/dots-vs-grokbot/", "Page", "dots vs grok bot dots vs grokbot"),
+        ("Dots vs Muse", "/dots-vs-muse/", "Page", "dots vs muse"),
+        ("Dots alternatives", "/dots-alternatives/", "Page", "dots alternatives"),
+        ("Dots FAQ", "/dots-faq/", "Page", "dots faq alfred agent"),
+        ("What is Muse", "/muse/", "Page", "muse ai muse agent muse app meta muse"),
+        ("Muse vs", "/muse-vs/", "Page", "muse vs dots muse vs grok bot"),
+        ("Muse alternatives", "/muse-alternatives/", "Page", "muse alternatives"),
     )
     for title, href, kind, keys in aliases:
         _add(items, title, href, kind, keys)

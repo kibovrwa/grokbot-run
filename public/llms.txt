@@ -9,6 +9,17 @@ This site: https://grokbot.run/
 ## Dots (unofficial)
 
 - [What is Dots](https://grokbot.run/dots/): OpenAI's always-on agent, announced 29 September 2026. Not an OpenAI page.
+- [Dots pricing](https://grokbot.run/dots-pricing/): no separate price sheet in the sources.
+- [Dots release date](https://grokbot.run/dots-release-date/): 29 September 2026.
+- [Dots download](https://grokbot.run/dots-download/): no separate installer in the reports.
+- [Dots waitlist](https://grokbot.run/dots-waitlist/): texting waitlist only.
+- [Dots vs Grok Bot](https://grokbot.run/dots-vs-grokbot/)
+- [Dots vs Muse](https://grokbot.run/dots-vs-muse/)
+- [Dots alternatives](https://grokbot.run/dots-alternatives/)
+- [Dots FAQ](https://grokbot.run/dots-faq/)
+- [What is Muse](https://grokbot.run/muse/): Meta's personal agent, 8 September 2026. Not a Meta page.
+- [Muse vs](https://grokbot.run/muse-vs/)
+- [Muse alternatives](https://grokbot.run/muse-alternatives/)
 
 ## Start
 

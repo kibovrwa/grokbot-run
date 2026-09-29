@@ -23,6 +23,7 @@ from content_cases import use_cases, JOBS
 from content_fixes import FIXES
 from content_legal import LEGAL
 from content_dots import dots, DOTS_FAQS
+from content_agent_cluster import CLUSTER
 
 DIST = ROOT / "dist"
 SITEMAP_URLS = [
@@ -79,11 +80,33 @@ SITEMAP_URLS = [
     "/pricing/",
     "/sources/",
     "/dots/",
+    "/dots-pricing/",
+    "/dots-release-date/",
+    "/dots-download/",
+    "/dots-waitlist/",
+    "/dots-vs-grokbot/",
+    "/dots-vs-muse/",
+    "/dots-alternatives/",
+    "/dots-faq/",
+    "/muse/",
+    "/muse-vs/",
+    "/muse-alternatives/",
 ]
 
-SITEMAP_LASTMOD = {
-    "/dots/": "2026-09-30",
-}
+SITEMAP_LASTMOD = {path: "2026-09-30" for path in (
+    "/dots/",
+    "/dots-pricing/",
+    "/dots-release-date/",
+    "/dots-download/",
+    "/dots-waitlist/",
+    "/dots-vs-grokbot/",
+    "/dots-vs-muse/",
+    "/dots-alternatives/",
+    "/dots-faq/",
+    "/muse/",
+    "/muse-vs/",
+    "/muse-alternatives/",
+)}
 
 
 def path_from_file(f):
@@ -205,6 +228,21 @@ def main():
         published="2026-09-30",
         modified="2026-09-30",
     ))
+    cluster_written = set()
+    for path, _h1, fn in CLUSTER:
+        meta = PAGES[path]
+        html, faqs = fn()
+        plain = [(q, re.sub(r"<[^>]+>", "", a)) for q, a in faqs]
+        write(path, page(
+            path, meta["title"], meta["description"], html,
+            jsonld=[
+                faq_jsonld(plain),
+                article_jsonld(path, meta["h1"], meta["description"], "2026-09-30", "2026-09-30"),
+            ],
+            published="2026-09-30",
+            modified="2026-09-30",
+        ))
+        cluster_written.add(path)
     pm = PAGES["/pricing/"]
     write("/pricing/", page("/pricing/", pm["title"], pm["description"], pricing(), jsonld=[faq_jsonld(PRICING_FAQS)]))
     um = PAGES["/use-cases/"]
@@ -325,6 +363,7 @@ def main():
         write(path, page(path, meta["title"], meta["description"], tool_detail(key)))
 
     written = {"/", "/dots/", "/pricing/", "/use-cases/", "/tools/", "/learn/", "/learn/glossary/", "/learn/cursor/", "/learn/operator/", "/learn/ops/", "/compare/", "/troubleshooting/"}
+    written.update(cluster_written)
     written.update(spec["path"] for spec in SUPPORT)
     written.update(path for path, _fn in FIXES)
     written.update(path for path, _t, _d, _fn, _faqs in LEGAL)

@@ -15,6 +15,7 @@ LOGO_ABS = SITE + LOGO
 NAV = [
     ("/", "Guide"),
     ("/dots/", "Dots"),
+    ("/muse/", "Muse"),
     ("/learn/install/", "Install"),
     ("/pricing/", "Pricing"),
     ("/tools/", "Tools"),
@@ -168,6 +169,12 @@ def footer_html():
         '<a href="/learn/cursor/">Cursor and Grok Bot</a></div>'
         "<div><h4>Look up</h4>"
         '<a href="/dots/">What Dots is</a>'
+        '<a href="/dots-vs-grokbot/">Dots vs Grok Bot</a>'
+        '<a href="/dots-vs-muse/">Dots vs Muse</a>'
+        '<a href="/dots-alternatives/">Dots alternatives</a>'
+        '<a href="/muse/">What Muse is</a>'
+        '<a href="/muse-vs/">Muse vs</a>'
+        '<a href="/muse-alternatives/">Muse alternatives</a>'
         '<a href="/pricing/">Pricing</a>'
         '<a href="/compare/">Alternatives</a>'
         '<a href="/tools/">Tools catalog</a>'
@@ -255,6 +262,17 @@ CRUMB_SHORT = {
     "/contact/": "Contact",
     "/sources/": "Sources",
     "/dots/": "Dots",
+    "/dots-pricing/": "Dots pricing",
+    "/dots-release-date/": "Dots release date",
+    "/dots-download/": "Dots download",
+    "/dots-waitlist/": "Dots waitlist",
+    "/dots-vs-grokbot/": "Dots vs Grok Bot",
+    "/dots-vs-muse/": "Dots vs Muse",
+    "/dots-alternatives/": "Dots alternatives",
+    "/dots-faq/": "Dots FAQ",
+    "/muse/": "Muse",
+    "/muse-vs/": "Muse vs",
+    "/muse-alternatives/": "Muse alternatives",
 }
 
 
