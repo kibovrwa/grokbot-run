@@ -67,7 +67,7 @@ PRICING_FAQS = [
     ("What does a Dot cost in dollars?",
      "Not officially announced. Launch reports do not agree on a ChatGPT Pro dollar amount, and this page does not repeat those figures. A separate Dots price is also not officially announced."),
     ("Do Dot chats count toward ChatGPT limits?",
-     "<a href=\"%s\">The Verge</a>, citing OpenAI, says conversations with a Dot do not count toward ChatGPT usage limits. <a href=\"%s\">The Next Web</a> adds that tasks a Dot starts in Codex or ChatGPT Work do count." % (VERGE, TNW)),
+     "See Field setup on this page. The Verge and The Next Web sentences live there once."),
 ]
 
 
@@ -78,10 +78,14 @@ def dots_pricing():
 <p><a href="%s">The Next Web</a> says OpenAI told the press that the first Dot is included in Pro and Business Premium at no extra cost. <a href="%s">CNBC</a> and <a href="%s">TechCrunch</a> say the rollout is those two plans, in eligible markets, plus Enterprise, Edu, and Healthcare after a workspace admin enables it.</p>
 <p><a href="%s">The Next Web</a>, citing OpenAI, says Business Premium includes Dots in all supported ChatGPT regions, and that Pro does not currently include the European Economic Area, Switzerland, or the UK.</p>
 <p><a href="%s">The Verge</a> quotes OpenAI that, later, people will be able to add more dots and scale a dot’s speed or how much work it takes on per month. No price for that extra capacity is in the quote.</p>
-<p>Not published: a standalone Dots subscription, a public price for a second Dot, and a Business Premium dollar amount.</p>
-<p>How you reach a Dot after you have access is on <a href="/openai-dots/">what Dots is</a>.</p>
+<p>Not officially announced: a standalone Dots subscription, a price for a second Dot, and a Business Premium dollar amount.</p>
+<h2>Field setup</h2>
+<p>Budget choice from the sentences above: use the first dot included in Pro or Business Premium. Do not plan spend for a second dot until a price exists. Region limits are the paragraph above, not repeated here.</p>
+<p>Chats with a dot do not count toward ChatGPT usage limits, <a href="%s">The Verge</a> says, citing OpenAI. Tasks the dot starts in Codex or ChatGPT Work do count, <a href="%s">The Next Web</a> says. A local-runtime discount is not officially announced.</p>
+<p>Running beside Grok Bot does not change this bill. No source describes a shared meter. The bridge itself is not officially announced; see <a href="/dots-vs-grokbot/">Dots vs Grok Bot</a>.</p>
+<p>Copyable config: not officially announced. The only brief on this site is the constraint block on <a href="/openai-dots/#field-setup">OpenAI dots</a>.</p>
 </div></section>
-''' % (TNW, CNBC, TC_DOTS, TNW, VERGE)
+''' % (TNW, CNBC, TC_DOTS, TNW, VERGE, VERGE, TNW)
     sources = [
         ("The Next Web, 29 September 2026", TNW),
         ("CNBC DevDay live blog, 29 September 2026", CNBC),
@@ -113,7 +117,9 @@ def dots_release():
 <h2>The date the sources use</h2>
 <p>OpenAI’s <a href="%s">deployment safety appendix</a> says, on 29 September 2026, that it is launching dots. <a href="%s">CNBC</a> places the keynote that day in San Francisco. The Verge, TechCrunch, WIRED, and 9to5Google use the same day.</p>
 <p><a href="%s">The Next Web</a> also says OpenAI released the GPT-6 Astra model on 3 September 2026. That is the model date in that report, not a second Dots launch date. The appendix says Dots are powered by GPT-6 Astra.</p>
-<p>Not published in these sources: a minute-by-minute keynote clock, and a date when every ChatGPT plan receives a Dot.</p>
+<p>Not officially announced in these sources: a minute-by-minute keynote clock, and a date when every ChatGPT plan receives a Dot.</p>
+<h2>Field setup</h2>
+<p>If you are checking “has it shipped,” use the 29 September 2026 date above. A later date for every plan is not officially announced. Who can open it that day is on <a href="/dots-pricing/">pricing</a>, not restated here.</p>
 </div></section>
 ''' % (OPENAI, CNBC, TNW)
     sources = [
@@ -147,8 +153,10 @@ def dots_download():
 <h2>Where the reports put the product</h2>
 <p>The linked launch reports do not give a Dots installer, an App Store page, or a Play Store page. They put the product inside ChatGPT.</p>
 <p><a href="%s">9to5Google</a> says creation happens in the ChatGPT desktop app, and that mobile works after that. <a href="%s">TechCrunch</a> says launch is from Codex or ChatGPT. <a href="%s">The Verge</a> says you can talk to a Dot from ChatGPT on the web, desktop, or mobile, and also from Slack and Teams.</p>
-<p>Not published: a direct download URL for a Dots application.</p>
-<p>Steps after it is open are on <a href="/openai-dots/">what Dots is</a>.</p>
+<p>Not officially announced: a direct download URL for a Dots application.</p>
+<h2>Field setup</h2>
+<p>If you are hunting an App Store or Play listing, stop. That installer is not officially announced. Create it inside ChatGPT, desktop first, as the paragraph above says.</p>
+<p>A local package you run yourself is not officially announced. Other products that use the word dots are named on <a href="/openai-dots/">OpenAI dots</a>. The brief, once it exists, is <a href="/openai-dots/#field-setup">there</a>.</p>
 </div></section>
 ''' % (NINE, TC_DOTS, VERGE)
     sources = [
@@ -181,7 +189,10 @@ def dots_waitlist():
 <h2>Rollout and the texting waitlist are different sentences</h2>
 <p><a href="%s">CNBC</a> does not describe a public queue for the product. It describes access inside ChatGPT for Pro and Business Premium, and for Enterprise, Edu, and Healthcare when an admin turns it on.</p>
 <p><a href="%s">WIRED</a> is the report that uses the word waitlist, and it uses it for texting: Pro users can join a waitlist for iMessage or RCS. <a href="%s">CNBC</a> separately says texting is coming soon. The <a href="%s">safety appendix</a> says a dot follows up across ChatGPT, text message, email, and Slack.</p>
-<p>Not published: a waitlist form URL, and a date when iMessage or RCS leaves that waitlist.</p>
+<p>Not officially announced: a waitlist form URL, and a date when iMessage or RCS leaves that waitlist.</p>
+<h2>Field setup</h2>
+<p>Do not block setup on a form. Confirm the plan on <a href="/dots-pricing/">pricing</a>, then create the dot. The only waitlist these reports name is the texting one above.</p>
+<p>A queue for the product itself, and a config file for that queue, are not officially announced.</p>
 </div></section>
 ''' % (CNBC, WIRED, CNBC, OPENAI)
     sources = [
@@ -221,10 +232,15 @@ def dots_vs_grokbot():
 <tr><td>Where you talk</td><td>ChatGPT, Slack, Teams, and a voice call from ChatGPT, per <a href="%s">CNBC</a> and <a href="%s">The Verge</a>.</td><td>Desktop and iOS, on x.ai/bot.</td></tr>
 <tr><td>How many</td><td>One primary dot now; teams of dots are a later plan, per <a href="%s">CNBC</a>.</td><td>x.ai/bot says you can work with many Bots at once.</td></tr>
 <tr><td>Price</td><td>No separate price published. <a href="/dots-pricing/">Pricing note</a>.</td><td>Not published here. Plan names are on x.ai/bot. This site’s <a href="/pricing/">Grok Bot pricing</a> page does not invent dollars either.</td></tr>
-<tr><td>OpenAI names Grok Bot</td><td colspan="2">Not published in the Dots sources checked for this page.</td></tr>
+<tr><td>OpenAI names Grok Bot</td><td colspan="2">Not officially announced in the Dots sources checked for this page.</td></tr>
 </tbody>
 </table>
 </div>
+<h2>Field setup</h2>
+<p>Choose with the table. Budget is the price row. A dot on hardware you own is not officially announced; the computer row is the published setup.</p>
+<p>Using both means two accounts. A shared login, a shared computer, or a way to move chats is not officially announced. Start Grok Bot from <a href="https://x.ai/bot">x.ai/bot</a> and <a href="/learn/first-bot/">the first-bot lesson</a>. Start a dot from <a href="/openai-dots/#field-setup">OpenAI dots</a>. Do not expect one roster.</p>
+<p>Pitfall: treating the two “own computer” sentences as one architecture. The FAQ below keeps both xAI wordings. This section does not merge them.</p>
+<p>The copyable dot brief is on <a href="/openai-dots/#field-setup">OpenAI dots</a>. An official migration config is not officially announced.</p>
 </div></section>
 ''' % (OPENAI, XAI, CNBC, VERGE, CNBC)
     sources = [
@@ -272,6 +288,10 @@ def dots_vs_muse():
 </table>
 </div>
 <p><a href="/muse/">What Muse is</a> keeps Meta’s own description. This table does not repeat it.</p>
+<h2>Field setup</h2>
+<p>Choose the “Where you talk” row: stay in the app you already open. Dollar amounts are not officially announced on either side, so price cannot break the tie.</p>
+<p>A move from Muse to a dot, or the other way, is not officially announced. There is no shared computer in these posts. Grok Bot is a third account: <a href="/dots-vs-grokbot/">Dots vs Grok Bot</a>.</p>
+<p>Meta’s own prompt to try is on <a href="/muse/#field-setup">What Muse is</a>. The dot brief is on <a href="/openai-dots/#field-setup">OpenAI dots</a>.</p>
 </div></section>
 ''' % (MUSE, MUSE_BIZ, WIRED, TC_MUSE)
     sources = [
@@ -307,7 +327,9 @@ def dots_alternatives():
 <a class="card" href="/dots-vs-grokbot/"><h3>Grok Bot</h3><p>xAI’s teammate app on <a href="%s">x.ai/bot</a>. OpenAI’s Dots sources do not name it. The table is <a href="/dots-vs-grokbot/">Dots vs Grok Bot</a>.</p></a>
 <a class="card" href="/compare/"><h3>OpenClaw</h3><p><a href="%s">WIRED</a> names OpenClaw as an earlier personal-agent tool, before Muse. This site’s <a href="/compare/">Grok Bot alternatives</a> page treats OpenClaw as a framework you host, not as a Dots client.</p></a>
 </div>
-<p>Not published: a download count, a star rating, or a “best alternative” order.</p>
+<p>Not officially announced: a download count, a star rating, or a “best alternative” order.</p>
+<h2>Field setup</h2>
+<p>Pick from the cards by where the work already lives. Budget and local runtime are not on this page: <a href="/dots-pricing/">pricing</a> and <a href="/openai-dots/#field-setup">OpenAI dots</a>. A scored shortlist is not officially announced.</p>
 </div></section>
 ''' % (VERGE, XAI, WIRED)
     sources = [
@@ -344,6 +366,9 @@ def dots_faq():
     inner = '''
 <section class="band"><div class="wrap">
 <p>The definition and the how-to stay on <a href="/openai-dots/">what Dots is</a>. The questions here are the ones that do not have their own page, plus pointers.</p>
+<h2>Field setup</h2>
+<p>When it is missing, check in this order, each on its own page: <a href="/dots-pricing/">plan and region</a>, <a href="/dots-download/">no separate installer</a>, <a href="/dots-waitlist/">no general queue</a>, then the brief on <a href="/openai-dots/#field-setup">OpenAI dots</a>. This list does not restate those pages.</p>
+<p>An official troubleshooting tree is not officially announced.</p>
 </div></section>
 '''
     sources = [
@@ -380,8 +405,14 @@ def muse_page():
 <p>The <a href="%s">29 September 2026 post</a> adds Muse for Small Business: connectors it names include Asana, Box, Canva, Dropbox, Figma, Granola, HighLevel, Intuit QuickBooks, Klaviyo, Lovable, Notion, Shopify, Slack, Stripe, Zoom, plus Facebook and Instagram business accounts. It says nothing publishes, sends, or spends without approval. Partners are pointed to muse.ai/platform.</p>
 <p><a href="%s">TechCrunch</a>, 25 September 2026, reports that Muse reached the top of the U.S. App Store on 18 September 2026 and still held that place in the article. This page does not state the rank on 30 September.</p>
 <p>How it differs from Dots is <a href="/dots-vs-muse/">Dots vs Muse</a>. Grok Bot is a different company’s app: <a href="/learn/what-is-grok-bot/">what Grok Bot is</a>.</p>
+<h2 id="field-setup">Field setup</h2>
+<p>Meta’s 8 September post says you tell Muse what needs to get done. The published computer is Muse Secure VM. Running Muse on hardware you own is not in that post.</p>
+<p>A shared login with OpenAI dots or Grok Bot is not officially announced. Keep Muse’s own app. Approval before send, spend, or publish is the paragraph above.</p>
+<p>This block is Meta’s own “prompt to try” from the <a href="%s">29 September post</a>, not a rewrite.</p>
+<pre><code id="muse-brief">I'm underwater. What do I need to pay attention to from my email, calendar, news, etc? Can you take any of it off my plate?</code></pre>
+<button type="button" class="copy-btn" data-copy-target="muse-brief">Copy</button>
 </div></section>
-''' % (MUSE, MUSE_BIZ, TC_MUSE)
+''' % (MUSE, MUSE_BIZ, TC_MUSE, MUSE_BIZ)
     sources = [
         ("Meta, Introducing Muse, 8 September 2026", MUSE),
         ("Meta, Muse for Small Business, 29 September 2026", MUSE_BIZ),
@@ -419,6 +450,8 @@ def muse_vs():
 </table>
 </div>
 <p>Meta’s posts do not name Dots or Grok Bot. <a href="%s">The Verge</a> is the piece that sets Dots beside Muse.</p>
+<h2>Field setup</h2>
+<p>Use the table to choose the company, then leave this page. Muse’s prompt is on <a href="/muse/#field-setup">What Muse is</a>. The dot brief is on <a href="/openai-dots/#field-setup">OpenAI dots</a>. Grok Bot’s first job is <a href="/learn/first-bot/">its lesson</a>. A three-way migration config is not officially announced.</p>
 </div></section>
 ''' % (XAI, VERGE)
     sources = [
@@ -452,7 +485,9 @@ def muse_alternatives():
 <a class="card" href="/learn/what-is-grok-bot/"><h3>Grok Bot</h3><p>xAI’s teammate app. Meta’s Muse posts do not name it. <a href="/muse-vs/">Muse vs</a> has the short row.</p></a>
 <a class="card" href="/compare/"><h3>OpenClaw</h3><p><a href="%s">WIRED</a> mentions OpenClaw as an earlier personal-agent tool. It is not a Muse download.</p></a>
 </div>
-<p>The Dots list is <a href="/dots-alternatives/">Dots alternatives</a>. Not published: a ranked “best Muse alternative” order.</p>
+<p>The Dots list is <a href="/dots-alternatives/">Dots alternatives</a>. Not officially announced: a ranked “best Muse alternative” order.</p>
+<h2>Field setup</h2>
+<p>Open the card for the product you already have an account on. Local runtime and a dollar price are not restated here. A switchover file is not officially announced.</p>
 </div></section>
 ''' % (VERGE, WIRED)
     sources = [

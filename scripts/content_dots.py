@@ -117,6 +117,21 @@ def dots():
 </div>
 </div></section>
 
+<section class="band" id="field-setup"><div class="wrap">
+<h2>Field setup</h2>
+<p>The tables above are the choice. If the work already sits in ChatGPT, Slack, or Teams, the published door is OpenAI dots. If it already sits in the xAI app, the published door is Grok Bot. If it already sits in the Muse app or WhatsApp, the published door is Muse. A ranking is not officially announced. Dollars stay on <a href="/dots-pricing/">pricing</a>.</p>
+<p>OpenAI’s appendix puts each dot on its own cloud computer. Running that dot on hardware you own is not officially announced. <a href="https://9to5google.com/2026/09/29/openai-dots-agent/">9to5Google</a> says you can still grant it access to your computer. Grok Bot’s helper on your machine is a different product: <a href="/troubleshooting/local-computer/">local computer not connected</a>.</p>
+<p>No launch source describes a shared login, a shared computer, or an import from Grok Bot or Muse. That bridge is not officially announced. A Grok Bot first job stays on <a href="/learn/first-bot/">its own lesson</a>.</p>
+<p>If mobile shows nothing, <a href="https://9to5google.com/2026/09/29/openai-dots-agent/">9to5Google</a>’s order is desktop create first. An installer is not officially announced.</p>
+<p>Official starter prompt: not officially announced. The block below only restates two published constraints. It is not an OpenAI template.</p>
+<pre><code id="dot-brief">One primary dot.
+Name:
+Job:
+Ask before you install software or change a password.</code></pre>
+<button type="button" class="copy-btn" data-copy-target="dot-brief">Copy</button>
+<p class="muted">Name and “one primary dot” are from <a href="https://www.cnbc.com/2026/09/29/openai-devday-2026-live-updates.html">CNBC</a>. The ask-first line is from <a href="https://www.wired.com/story/openai-dots-always-on-ai-agents-that-proactively-help/">WIRED</a> (install software, change a password).</p>
+</div></section>
+
 <section class="band"><div class="wrap">
 <h2>Questions people ask first</h2>
 <div class="faq card">

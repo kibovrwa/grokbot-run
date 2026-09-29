@@ -535,7 +535,7 @@ def _page_join(path, title, description, body, canon, site_name, jsonld_html):
         header_html(path),
         "<main>%s%s</main>" % (crumbs_html(path, title), body),
         footer_html(),
-        "<script>const btn=document.querySelector('[data-menu]');const links=document.querySelector('[data-links]');if(btn) btn.addEventListener('click',()=>links.classList.toggle('open'));</script>",
+        "<script>const btn=document.querySelector('[data-menu]');const links=document.querySelector('[data-links]');if(btn) btn.addEventListener('click',()=>links.classList.toggle('open'));document.querySelectorAll('[data-copy-target]').forEach(function(b){b.addEventListener('click',function(){var el=document.getElementById(b.getAttribute('data-copy-target'));if(el&&navigator.clipboard)navigator.clipboard.writeText(el.innerText.trim());});});</script>",
         '<script data-find-js>%s</script>' % FIND_JS,
         "</body></html>",
     ])
