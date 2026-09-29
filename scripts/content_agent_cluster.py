@@ -49,7 +49,7 @@ def _page(kicker, h1, lede, body, faqs, sources):
 <section class="band"><div class="wrap">
 <h2>Sources</h2>
 %s
-<p class="muted"><a href="/dots/">What Dots is</a> · <a href="/muse/">What Muse is</a> · <a href="/learn/what-is-grok-bot/">What Grok Bot is</a></p>
+<p class="muted"><a href="/openai-dots/">What Dots is</a> · <a href="/muse/">What Muse is</a> · <a href="/learn/what-is-grok-bot/">What Grok Bot is</a></p>
 </div></section>
 ''' % (kicker, escape(h1) if False else h1, lede, DISCLAIMER, body + faq_html, _links(sources))
 
@@ -64,8 +64,8 @@ def _shell(kicker, h1, lede, inner, faqs, sources):
 PRICING_FAQS = [
     ("Is there a separate Dots price?",
      "Not published. <a href=\"%s\">The Next Web</a>, citing OpenAI, says the first Dot is included in ChatGPT Pro and Business Premium at no extra cost. No OpenAI price sheet for a Dots add-on appears in the sources linked here." % TNW),
-    ("What dollar figure is in the press?",
-     "<a href=\"%s\">WIRED</a> says the rollout starts on ChatGPT Pro and states that tier as $100 a month. That sentence is WIRED’s description of the Pro plan, not a Dots price list. Business Premium’s dollar price is not published on this page." % WIRED),
+    ("What does a Dot cost in dollars?",
+     "Not officially announced. Launch reports do not agree on a ChatGPT Pro dollar amount, and this page does not repeat those figures. A separate Dots price is also not officially announced."),
     ("Do Dot chats count toward ChatGPT limits?",
      "<a href=\"%s\">The Verge</a>, citing OpenAI, says conversations with a Dot do not count toward ChatGPT usage limits. <a href=\"%s\">The Next Web</a> adds that tasks a Dot starts in Codex or ChatGPT Work do count." % (VERGE, TNW)),
 ]
@@ -79,7 +79,7 @@ def dots_pricing():
 <p><a href="%s">The Next Web</a>, citing OpenAI, says Business Premium includes Dots in all supported ChatGPT regions, and that Pro does not currently include the European Economic Area, Switzerland, or the UK.</p>
 <p><a href="%s">The Verge</a> quotes OpenAI that, later, people will be able to add more dots and scale a dot’s speed or how much work it takes on per month. No price for that extra capacity is in the quote.</p>
 <p>Not published: a standalone Dots subscription, a public price for a second Dot, and a Business Premium dollar amount.</p>
-<p>How you reach a Dot after you have access is on <a href="/dots/">what Dots is</a>.</p>
+<p>How you reach a Dot after you have access is on <a href="/openai-dots/">what Dots is</a>.</p>
 </div></section>
 ''' % (TNW, CNBC, TC_DOTS, TNW, VERGE)
     sources = [
@@ -148,7 +148,7 @@ def dots_download():
 <p>The linked launch reports do not give a Dots installer, an App Store page, or a Play Store page. They put the product inside ChatGPT.</p>
 <p><a href="%s">9to5Google</a> says creation happens in the ChatGPT desktop app, and that mobile works after that. <a href="%s">TechCrunch</a> says launch is from Codex or ChatGPT. <a href="%s">The Verge</a> says you can talk to a Dot from ChatGPT on the web, desktop, or mobile, and also from Slack and Teams.</p>
 <p>Not published: a direct download URL for a Dots application.</p>
-<p>Steps after it is open are on <a href="/dots/">what Dots is</a>.</p>
+<p>Steps after it is open are on <a href="/openai-dots/">what Dots is</a>.</p>
 </div></section>
 ''' % (NINE, TC_DOTS, VERGE)
     sources = [
@@ -216,7 +216,7 @@ def dots_vs_grokbot():
 <thead><tr><th></th><th>Dots</th><th>Grok Bot</th></tr></thead>
 <tbody>
 <tr><td>Company</td><td>OpenAI, in the <a href="%s">safety appendix</a></td><td>xAI, on <a href="%s">x.ai/bot</a></td></tr>
-<tr><td>What it is</td><td>Always-on agents on GPT-6 Astra. See <a href="/dots/">what Dots is</a>.</td><td>AI teammates you message on desktop or iOS, on x.ai/bot.</td></tr>
+<tr><td>What it is</td><td>Always-on agents on GPT-6 Astra. See <a href="/openai-dots/">what Dots is</a>.</td><td>AI teammates you message on desktop or iOS, on x.ai/bot.</td></tr>
 <tr><td>Computer</td><td>Each dot has its own cloud computer and browser.</td><td>x.ai/bot says Bots have their own computer. The <a href="/learn/computer/">computer lesson</a> is the earlier shared-machine note.</td></tr>
 <tr><td>Where you talk</td><td>ChatGPT, Slack, Teams, and a voice call from ChatGPT, per <a href="%s">CNBC</a> and <a href="%s">The Verge</a>.</td><td>Desktop and iOS, on x.ai/bot.</td></tr>
 <tr><td>How many</td><td>One primary dot now; teams of dots are a later plan, per <a href="%s">CNBC</a>.</td><td>x.ai/bot says you can work with many Bots at once.</td></tr>
@@ -263,7 +263,7 @@ def dots_vs_muse():
 <tr><td>Public date</td><td>29 September 2026. <a href="/dots-release-date/">Release note</a>.</td><td>8 September 2026 introduction. <a href="%s">Meta’s post</a>.</td></tr>
 <tr><td>Model name in the post</td><td>GPT-6 Astra, in OpenAI’s appendix.</td><td>Muse Spark, in Meta’s introduction.</td></tr>
 <tr><td>Computer</td><td>Each dot has its own cloud computer and browser.</td><td>Muse Secure VM, a dedicated computer with its own browser.</td></tr>
-<tr><td>Where you talk</td><td>ChatGPT, Slack, Teams. <a href="/dots/">How to use a Dot</a>.</td><td>Muse app or WhatsApp. Also muse.ai in the same post.</td></tr>
+<tr><td>Where you talk</td><td>ChatGPT, Slack, Teams. <a href="/openai-dots/">How to use a Dot</a>.</td><td>Muse app or WhatsApp. Also muse.ai in the same post.</td></tr>
 <tr><td>Who can use it</td><td><a href="/dots-pricing/">Pricing note</a>.</td><td>Meta’s 8 September post says the US, on iOS, Android, and muse.ai. The <a href="%s">29 September post</a> says the US and Canada.</td></tr>
 <tr><td>Price</td><td>No separate Dots price published.</td><td>Free for most of what people need, plus subscription plans. Dollar amounts: not published.</td></tr>
 <tr><td>Approval</td><td>WIRED says Dots ask before actions such as installing software or changing a password. <a href="%s">WIRED</a>.</td><td>Meta says it checks with the person before sending an email or making a purchase. The 29 September post says nothing publishes, sends, or spends without approval.</td></tr>
@@ -343,7 +343,7 @@ FAQ_FAQS = [
 def dots_faq():
     inner = '''
 <section class="band"><div class="wrap">
-<p>The definition and the how-to stay on <a href="/dots/">what Dots is</a>. The questions here are the ones that do not have their own page, plus pointers.</p>
+<p>The definition and the how-to stay on <a href="/openai-dots/">what Dots is</a>. The questions here are the ones that do not have their own page, plus pointers.</p>
 </div></section>
 '''
     sources = [
@@ -413,7 +413,7 @@ def muse_vs():
 <tbody>
 <tr><td>Company</td><td>Meta</td><td>OpenAI</td><td>xAI</td></tr>
 <tr><td>Own computer, in the company’s words</td><td>Muse Secure VM</td><td>Each dot has its own cloud computer and browser. Full table: <a href="/dots-vs-muse/">Dots vs Muse</a>.</td><td><a href="%s">x.ai/bot</a> says Bots have their own computer.</td></tr>
-<tr><td>Talk to it</td><td>Muse app, WhatsApp, muse.ai</td><td>See <a href="/dots/">what Dots is</a>.</td><td>Desktop and iOS</td></tr>
+<tr><td>Talk to it</td><td>Muse app, WhatsApp, muse.ai</td><td>See <a href="/openai-dots/">what Dots is</a>.</td><td>Desktop and iOS</td></tr>
 <tr><td>Price on the company page</td><td>Free for most needs; subscriptions exist; dollars not published.</td><td><a href="/dots-pricing/">Not a separate published price</a>.</td><td>Not copied here. See x.ai/bot and <a href="/pricing/">Grok Bot pricing</a>.</td></tr>
 </tbody>
 </table>
@@ -448,7 +448,7 @@ def muse_alternatives():
 <section class="band"><div class="wrap">
 <h2>Other personal-agent names in the same reports</h2>
 <div class="grid-3">
-<a class="card" href="/dots/"><h3>Dots</h3><p>OpenAI’s always-on agent, 29 September 2026. <a href="%s">The Verge</a> frames it as Muse’s competitor. Read <a href="/dots-vs-muse/">Dots vs Muse</a>.</p></a>
+<a class="card" href="/openai-dots/"><h3>Dots</h3><p>OpenAI’s always-on agent, 29 September 2026. <a href="%s">The Verge</a> frames it as Muse’s competitor. Read <a href="/dots-vs-muse/">Dots vs Muse</a>.</p></a>
 <a class="card" href="/learn/what-is-grok-bot/"><h3>Grok Bot</h3><p>xAI’s teammate app. Meta’s Muse posts do not name it. <a href="/muse-vs/">Muse vs</a> has the short row.</p></a>
 <a class="card" href="/compare/"><h3>OpenClaw</h3><p><a href="%s">WIRED</a> mentions OpenClaw as an earlier personal-agent tool. It is not a Muse download.</p></a>
 </div>

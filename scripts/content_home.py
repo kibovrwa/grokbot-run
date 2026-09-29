@@ -115,7 +115,7 @@ def home():
 <section class="band"><div class="wrap">
   <h2>OpenAI Dots, noted here</h2>
   <p class="lede">Dots is an OpenAI agent announced on 29 September 2026. Muse is Meta’s personal agent. These notes are not company sites.</p>
-  <p><a class="btn btn-secondary" href="/dots/">What Dots is</a> <a class="btn btn-ghost" href="/muse/">What Muse is</a></p>
+  <p><a class="btn btn-secondary" href="/openai-dots/">OpenAI dots</a> <a class="btn btn-ghost" href="/muse/">What Muse is</a></p>
 </div></section>
 
 <section class="band" id="first-job"><div class="wrap">

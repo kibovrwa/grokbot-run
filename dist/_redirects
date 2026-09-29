@@ -10,6 +10,9 @@ http://grokbot.run/* https://grokbot.run/:splat 301
 /learn/zh-guides/index.html /sources/ 301
 /learn/guides /sources/ 301
 /learn/guides/ /sources/ 301
+/dots /openai-dots/ 301
+/dots/ /openai-dots/ 301
+/dots/index.html /openai-dots/ 301
 # generated trailing-slash / index.html aliases
 /index.html / 301
 /learn /learn/ 301
@@ -114,8 +117,8 @@ http://grokbot.run/* https://grokbot.run/:splat 301
 /pricing/index.html /pricing/ 301
 /sources /sources/ 301
 /sources/index.html /sources/ 301
-/dots /dots/ 301
-/dots/index.html /dots/ 301
+/openai-dots /openai-dots/ 301
+/openai-dots/index.html /openai-dots/ 301
 /dots-pricing /dots-pricing/ 301
 /dots-pricing/index.html /dots-pricing/ 301
 /dots-release-date /dots-release-date/ 301

@@ -8,7 +8,7 @@ This site: https://grokbot.run/
 
 ## Dots (unofficial)
 
-- [What is Dots](https://grokbot.run/dots/): OpenAI's always-on agent, announced 29 September 2026. Not an OpenAI page.
+- [OpenAI dots](https://grokbot.run/openai-dots/): how to turn one on, eligibility, and how it differs from Grok Bot and Muse. Not an OpenAI page. /dots/ redirects here.
 - [Dots pricing](https://grokbot.run/dots-pricing/): no separate price sheet in the sources.
 - [Dots release date](https://grokbot.run/dots-release-date/): 29 September 2026.
 - [Dots download](https://grokbot.run/dots-download/): no separate installer in the reports.

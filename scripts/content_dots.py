@@ -24,12 +24,14 @@ SOURCES = [
 ]
 
 DOTS_FAQS = [
-    ("What is Dots?",
-     "OpenAI’s 29 September 2026 safety appendix calls dots always-on agents powered by GPT-6 Astra. Each dot has its own cloud computer and browser, uses connected tools, and follows up across ChatGPT, text message, email, and Slack."),
-    ("How do you use a Dot?",
-     "9to5Google says you create the Dot in the ChatGPT desktop app and can then use mobile. TechCrunch says it can be launched from Codex or ChatGPT. CNBC says you name one primary dot and message it in ChatGPT, Slack, or Teams. Plan, region, and price are on the pricing note."),
-    ("Where are the other notes?",
-     "Pricing, release date, download, waitlist, Dots versus Grok Bot, Dots versus Muse, alternatives, and a shorter FAQ each have their own page, linked under More notes."),
+    ("What are OpenAI dots?",
+     "OpenAI’s 29 September 2026 safety appendix calls them always-on agents powered by GPT-6 Astra. Each dot has its own cloud computer and browser. CNBC, The Verge, and 9to5Google report that OpenAI said they can connect to more than 4,000 apps, and that eligible ChatGPT Pro and Business Premium users get them first."),
+    ("How do I turn on ChatGPT dots?",
+     "9to5Google says you create the dot in the ChatGPT desktop app and can then use mobile. TechCrunch says you can also launch it from Codex or ChatGPT. CNBC says you name one primary dot and message it in ChatGPT, Slack, or Teams. A click-by-click setup is not officially announced."),
+    ("Is there a separate OpenAI dots price?",
+     "Not officially announced. The Next Web, citing OpenAI, says the first dot is included in Pro and Business Premium at no extra cost. This page does not repeat conflicting dollar figures from the press."),
+    ("Are OpenAI dots the same as Grok Bot or Muse?",
+     "No. Grok Bot is xAI’s teammate app. Muse is Meta’s personal agent. The short comparisons are on this page; the longer tables are linked."),
 ]
 
 
@@ -50,32 +52,69 @@ def _faqs(pairs):
 def dots():
     return '''
 <section class="hero"><div class="wrap">
-<p class="kicker">Unofficial notes · 29 September 2026</p>
-<h1>What is Dots, OpenAI's always-on agent</h1>
-<p class="lede">Dots is the always-on agent OpenAI launched at DevDay on 29 September 2026. It runs on GPT-6 Astra and has its own cloud computer. This page is not an OpenAI site and does not use OpenAI marks.</p>
+<p class="kicker">Unofficial notes · not an OpenAI page</p>
+<h1>OpenAI dots: how to turn one on, and how it differs</h1>
+<p class="lede">OpenAI dots are the always-on agents announced at DevDay on 29 September 2026. Same-day news already covers the launch. This page is the part those stories skip: who can turn one on, what is not officially announced, and how it differs from Grok Bot and Muse.</p>
 <div class="callout warn">
-<p><strong>Unofficial information page.</strong> Not affiliated with, endorsed by, or operated by OpenAI. Sentences below follow the linked sources. A detail those sources do not state is left out.</p>
+<p><strong>Unofficial information page.</strong> Not affiliated with, endorsed by, or operated by OpenAI. No OpenAI mark is used. Where a company has not stated a fact, this page says not officially announced.</p>
 </div>
 </div></section>
 
 <section class="band"><div class="wrap">
-<h2>What OpenAI says it is</h2>
-<p>OpenAI’s <a href="https://deploymentsafety.openai.com/gpt-6-astra/alignment-for-dots">GPT-6 Astra deployment safety appendix</a>, updated 29 September 2026, says it is launching dots as always-on agents built on existing model and agent capabilities and powered by GPT-6 Astra. The same section says each dot has its own cloud computer and browser, uses connected tools, handles recurring work, and follows up across ChatGPT, text message, email, and Slack, often by delegating work to subagents. It also describes a time-budget setting for how long a dot works, and extra checks aimed at proactive, long-running work.</p>
-<p><a href="https://www.cnbc.com/2026/09/29/openai-devday-2026-live-updates.html">CNBC’s DevDay live blog</a> reports that Sam Altman, in the San Francisco keynote, described Dots as remarkably capable always-on agents and as a new form factor for work. CNBC also reports that people start with one primary dot, give it a name, and customize it, and that OpenAI expects teams of dots later. <a href="https://www.theverge.com/ai-artificial-intelligence/1002033/openai-dots-launch-muse-competitor">The Verge</a> describes the launch as OpenAI’s response to Meta’s Muse.</p>
-<p>CNBC, The Verge, and <a href="https://9to5google.com/2026/09/29/openai-dots-agent/">9to5Google</a> report that OpenAI said Dots can connect to more than 4,000 apps through plugins, learn from feedback, and keep working toward goals. 9to5Google, quoting OpenAI, adds that a dot can do read-only “proactive research” on connected tools when it is not on an assigned task, and that you can open its cloud computer while it works.</p>
-<p>If you meant the xAI app on this site, that is a different product: <a href="/learn/what-is-grok-bot/">what Grok Bot is</a>.</p>
+<h2>Which dots this is</h2>
+<p>OpenAI’s <a href="https://deploymentsafety.openai.com/gpt-6-astra/alignment-for-dots">safety appendix</a> that day calls them always-on agents powered by GPT-6 Astra, each with its own cloud computer and browser. <a href="https://www.cnbc.com/2026/09/29/openai-devday-2026-live-updates.html">CNBC</a>, <a href="https://www.theverge.com/ai-artificial-intelligence/1002033/openai-dots-launch-muse-competitor">The Verge</a>, and <a href="https://9to5google.com/2026/09/29/openai-dots-agent/">9to5Google</a> report that OpenAI said they connect to more than 4,000 apps and roll out first to ChatGPT Pro and Business Premium in eligible markets.</p>
+<p>This is not <a href="https://studio.dots.ai/">Xiaohongshu’s dots studio</a>, not the <a href="https://en.wikipedia.org/wiki/Dots_(video_game)">Playdots mobile game</a> that shut down on 25 March 2023, and not <a href="https://the-dots.com/legal/terms">The Dots</a> professional network.</p>
 </div></section>
 
 <section class="band"><div class="wrap">
-<h2>How to use a Dot</h2>
-<p>The sources do not publish a click-by-click setup. They do agree on the doors that exist on launch day.</p>
+<h2>How to turn on ChatGPT dots</h2>
+<p>A button-by-button setup is not officially announced. The launch reports agree on these doors.</p>
 <ol>
-<li><strong>Plan and market.</strong> Who can open a Dot, and whether that is an extra charge, is on the <a href="/dots-pricing/">pricing note</a>. The calendar date is on the <a href="/dots-release-date/">release note</a>.</li>
-<li><strong>Where you create it.</strong> <a href="https://9to5google.com/2026/09/29/openai-dots-agent/">9to5Google</a> says a Dot is created in the ChatGPT desktop app and can then be used on mobile. <a href="https://techcrunch.com/2026/09/29/openai-launches-dots-its-bubbly-agentic-avatar/">TechCrunch</a> says people can launch Dots from Codex or ChatGPT. <a href="https://www.cnbc.com/2026/09/29/openai-devday-2026-live-updates.html">CNBC</a> says you name one primary dot. There is no separate installer in those reports; see <a href="/dots-download/">download</a>.</li>
-<li><strong>Where you talk to it.</strong> CNBC says you can message it in ChatGPT, Slack, and Microsoft Teams. 9to5Google and <a href="https://www.theverge.com/ai-artificial-intelligence/1002033/openai-dots-launch-muse-competitor">The Verge</a> also describe a voice call from ChatGPT. Texting is a different sentence in each report; the <a href="/dots-waitlist/">waitlist note</a> keeps those sentences together.</li>
-<li><strong>Watching it work.</strong> 9to5Google says you can view the dot’s cloud computer during a task and can grant access to your own computer. The Verge says you and colleagues can also work with a dot in ChatGPT Space. <a href="https://www.wired.com/story/openai-dots-always-on-ai-agents-that-proactively-help/">WIRED</a> says Dots are designed to ask before sensitive actions such as installing software or changing a password, and that Custom Rules can require permission. The Next Web says changing a password stays with the user, and that saved-password sign-in is not shown to the model.</li>
+<li><strong>Check the plan.</strong> Eligibility is in the next section. If the plan is not on that list, a way in is not officially announced.</li>
+<li><strong>Create it in ChatGPT.</strong> <a href="https://9to5google.com/2026/09/29/openai-dots-agent/">9to5Google</a> says the first create is in the ChatGPT desktop app, then mobile works. <a href="https://techcrunch.com/2026/09/29/openai-launches-dots-its-bubbly-agentic-avatar/">TechCrunch</a> says people launch it from Codex or ChatGPT. <a href="https://www.cnbc.com/2026/09/29/openai-devday-2026-live-updates.html">CNBC</a> says you name one primary dot. A separate app download is not officially announced; see <a href="/dots-download/">download</a>.</li>
+<li><strong>Talk to it where it already lives.</strong> CNBC says ChatGPT, Slack, and Microsoft Teams. 9to5Google and The Verge also describe a voice call from ChatGPT. Texting is not the same sentence in every report; see <a href="/dots-waitlist/">waitlist</a>.</li>
+<li><strong>Watch the cloud computer.</strong> 9to5Google says you can open it during a task. <a href="https://www.wired.com/story/openai-dots-always-on-ai-agents-that-proactively-help/">WIRED</a> says it asks before sensitive actions such as installing software or changing a password.</li>
 </ol>
-<p>OpenAI’s safety appendix is the long public note on prompt-injection testing, confirmation policy, and monitors for this setup. This page does not restate those tables.</p>
+</div></section>
+
+<section class="band"><div class="wrap">
+<h2>Price and who qualifies</h2>
+<p><a href="https://www.cnbc.com/2026/09/29/openai-devday-2026-live-updates.html">CNBC</a> and <a href="https://techcrunch.com/2026/09/29/openai-launches-dots-its-bubbly-agentic-avatar/">TechCrunch</a> say the rollout is ChatGPT Pro and Business Premium in eligible markets. Enterprise, including Edu and Healthcare, can try it when a workspace admin enables it. <a href="https://thenextweb.com/news/openai-dots-always-on-ai-agents-cloud-computers-devday">The Next Web</a>, citing OpenAI, says Business Premium includes it in all supported ChatGPT regions, and that Pro does not currently include the European Economic Area, Switzerland, or the UK.</p>
+<p>The same Next Web report says the first dot is included in those plans at no extra cost. A separate OpenAI dots price is not officially announced. Press accounts of the Pro plan’s dollar amount do not agree, so no dollar figure is repeated here. The longer note is <a href="/dots-pricing/">Dots pricing</a>. The date is <a href="/dots-release-date/">29 September 2026</a>.</p>
+</div></section>
+
+<section class="band"><div class="wrap">
+<h2>OpenAI dots vs Grok Bot</h2>
+<p>OpenAI’s Dots sources do not name Grok Bot. <a href="https://x.ai/bot">x.ai/bot</a> is a different company’s app. The longer table is <a href="/dots-vs-grokbot/">Dots vs Grok Bot</a>.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th></th><th>OpenAI dots</th><th>Grok Bot</th></tr></thead>
+<tbody>
+<tr><td>Company</td><td>OpenAI</td><td>xAI</td></tr>
+<tr><td>Computer</td><td>Each dot has its own cloud computer and browser, in OpenAI’s appendix.</td><td>x.ai/bot says Bots have their own computer and keep working with the laptop closed.</td></tr>
+<tr><td>Where you talk</td><td>ChatGPT, Slack, Teams.</td><td>Desktop and iOS, on x.ai/bot.</td></tr>
+<tr><td>How many</td><td>One primary dot now. Teams of dots are a later plan, per CNBC.</td><td>x.ai/bot says many Bots at once.</td></tr>
+<tr><td>Price</td><td>Separate price: not officially announced.</td><td>Not copied here. See <a href="/pricing/">Grok Bot pricing</a>.</td></tr>
+</tbody>
+</table>
+</div>
+</div></section>
+
+<section class="band"><div class="wrap">
+<h2>OpenAI dots vs Muse</h2>
+<p><a href="https://www.theverge.com/ai-artificial-intelligence/1002033/openai-dots-launch-muse-competitor">The Verge</a> describes the launch as OpenAI’s answer to Muse. Meta’s own posts do not name dots. The longer table is <a href="/dots-vs-muse/">Dots vs Muse</a>.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th></th><th>OpenAI dots</th><th>Muse</th></tr></thead>
+<tbody>
+<tr><td>Company</td><td>OpenAI, 29 September 2026</td><td>Meta, <a href="https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/">8 September 2026</a></td></tr>
+<tr><td>Computer</td><td>Each dot’s cloud computer and browser</td><td>Muse Secure VM, its own browser</td></tr>
+<tr><td>Where you talk</td><td>ChatGPT, Slack, Teams</td><td>Muse app, WhatsApp, muse.ai</td></tr>
+<tr><td>Who gets it</td><td>Pro and Business Premium in eligible markets</td><td>Meta’s later post says the US and Canada</td></tr>
+<tr><td>Price</td><td>Separate price: not officially announced</td><td>Free for most needs, plus subscriptions. Dollars: not officially announced</td></tr>
+</tbody>
+</table>
+</div>
 </div></section>
 
 <section class="band"><div class="wrap">

@@ -14,7 +14,7 @@ LOGO_ABS = SITE + LOGO
 # Top nav is jobs, not every lesson. Lessons live in the footer.
 NAV = [
     ("/", "Guide"),
-    ("/dots/", "Dots"),
+    ("/openai-dots/", "OpenAI dots"),
     ("/muse/", "Muse"),
     ("/learn/install/", "Install"),
     ("/pricing/", "Pricing"),
@@ -168,7 +168,7 @@ def footer_html():
         '<a href="/learn/glossary/">Glossary</a>'
         '<a href="/learn/cursor/">Cursor and Grok Bot</a></div>'
         "<div><h4>Look up</h4>"
-        '<a href="/dots/">What Dots is</a>'
+        '<a href="/openai-dots/">OpenAI dots</a>'
         '<a href="/dots-vs-grokbot/">Dots vs Grok Bot</a>'
         '<a href="/dots-vs-muse/">Dots vs Muse</a>'
         '<a href="/dots-alternatives/">Dots alternatives</a>'
@@ -261,7 +261,7 @@ CRUMB_SHORT = {
     "/terms/": "Terms",
     "/contact/": "Contact",
     "/sources/": "Sources",
-    "/dots/": "Dots",
+    "/openai-dots/": "OpenAI dots",
     "/dots-pricing/": "Dots pricing",
     "/dots-release-date/": "Dots release date",
     "/dots-download/": "Dots download",

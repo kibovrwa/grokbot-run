@@ -68,7 +68,7 @@ def build():
         ("Grok Bot Windows download", "/learn/windows-download/", "Download", "grokbot windows install x64 arm64"),
         ("Grok Bot not responding", "/troubleshooting/not-responding/", "Help", "stopped working silent bots failed to respond"),
         ("Grok Bot stuck", "/troubleshooting/stuck/", "Help", "connecting setting up reconnecting cleaning up"),
-        ("What is Dots", "/dots/", "Page", "openai dots dots ai dots agent personal agent what is dots how to use dots"),
+        ("OpenAI dots", "/openai-dots/", "Page", "openai dots dots gpt dots ai chatgpt dots how to turn on"),
         ("Dots pricing", "/dots-pricing/", "Page", "dots pricing dots price chatgpt pro"),
         ("Dots release date", "/dots-release-date/", "Page", "dots release date when did dots launch devday"),
         ("Dots download", "/dots-download/", "Page", "dots download dots app"),

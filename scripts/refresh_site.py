@@ -79,7 +79,7 @@ SITEMAP_URLS = [
     "/tools/linux-port/",
     "/pricing/",
     "/sources/",
-    "/dots/",
+    "/openai-dots/",
     "/dots-pricing/",
     "/dots-release-date/",
     "/dots-download/",
@@ -94,7 +94,7 @@ SITEMAP_URLS = [
 ]
 
 SITEMAP_LASTMOD = {path: "2026-09-30" for path in (
-    "/dots/",
+    "/openai-dots/",
     "/dots-pricing/",
     "/dots-release-date/",
     "/dots-download/",
@@ -155,6 +155,9 @@ def write_sitemap():
 
 def write_redirects():
     extra = [
+        "/dots /openai-dots/ 301",
+        "/dots/ /openai-dots/ 301",
+        "/dots/index.html /openai-dots/ 301",
         "/learn/zh-guides /sources/ 301",
         "/learn/zh-guides/ /sources/ 301",
         "/learn/zh-guides/index.html /sources/ 301",
@@ -208,9 +211,9 @@ def main():
     body, faqs = home()
     m = PAGES["/"]
     write("/", page("/", m["title"], m["description"], body, jsonld=[faq_jsonld(faqs)]))
-    dm = PAGES["/dots/"]
-    write("/dots/", page(
-        "/dots/", dm["title"], dm["description"], dots(),
+    dm = PAGES["/openai-dots/"]
+    write("/openai-dots/", page(
+        "/openai-dots/", dm["title"], dm["description"], dots(),
         jsonld=[
             faq_jsonld(DOTS_FAQS),
             howto_jsonld(
@@ -223,7 +226,7 @@ def main():
                     ("Watch the cloud computer", "Open its computer while it works. Sensitive actions such as a password change stay behind approval."),
                 ],
             ),
-            article_jsonld("/dots/", dm["h1"], dm["description"], "2026-09-30", "2026-09-30"),
+            article_jsonld("/openai-dots/", dm["h1"], dm["description"], "2026-09-30", "2026-09-30"),
         ],
         published="2026-09-30",
         modified="2026-09-30",
@@ -362,7 +365,7 @@ def main():
         meta = PAGES[path]
         write(path, page(path, meta["title"], meta["description"], tool_detail(key)))
 
-    written = {"/", "/dots/", "/pricing/", "/use-cases/", "/tools/", "/learn/", "/learn/glossary/", "/learn/cursor/", "/learn/operator/", "/learn/ops/", "/compare/", "/troubleshooting/"}
+    written = {"/", "/openai-dots/", "/pricing/", "/use-cases/", "/tools/", "/learn/", "/learn/glossary/", "/learn/cursor/", "/learn/operator/", "/learn/ops/", "/compare/", "/troubleshooting/"}
     written.update(cluster_written)
     written.update(spec["path"] for spec in SUPPORT)
     written.update(path for path, _fn in FIXES)
@@ -384,6 +387,9 @@ def main():
     zh = DIST / "learn" / "zh-guides"
     if zh.exists():
         shutil.rmtree(zh)
+    old_dots = DIST / "dots"
+    if old_dots.exists():
+        shutil.rmtree(old_dots)
 
     write_sitemap()
     write_redirects()
