@@ -92,11 +92,11 @@ PAGES = {
     },
     "/muse/": {
         "title": "What is Muse? Meta's personal agent, with sources",
-        "description": "What Muse is: Meta's personal AI agent on Muse Secure VM, in the Muse app, WhatsApp, and muse.ai. Introduced 8 September 2026. Unofficial notes.",
+        "description": "What Muse is, how to start it, and the reported 20 and 100 dollar tiers. Meta personal agent on Muse Secure VM. Unofficial notes.",
         "h1": "What is Muse, Meta's personal agent",
         "primary": "what is muse; muse ai; muse agent; muse app",
-        "also": "meta muse personal agent",
-        "do_not": "OpenAI logo; invented muse price; claim today's chart rank",
+        "also": "meta muse personal agent; muse price; how to use muse",
+        "do_not": "OpenAI logo; unattributed muse price; claim today's chart rank",
     },
     "/muse-vs/": {
         "title": "Muse vs Dots and Muse vs Grok Bot",

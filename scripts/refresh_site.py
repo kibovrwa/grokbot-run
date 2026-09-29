@@ -236,12 +236,23 @@ def main():
         meta = PAGES[path]
         html, faqs = fn()
         plain = [(q, re.sub(r"<[^>]+>", "", a)) for q, a in faqs]
+        ld = [
+            faq_jsonld(plain),
+            article_jsonld(path, meta["h1"], meta["description"], "2026-09-30", "2026-09-30"),
+        ]
+        if path == "/muse/":
+            ld.append(howto_jsonld(
+                "Use Muse from the published steps",
+                "Open a surface Meta named, paste one of Meta's published prompts, connect only chosen apps, and keep approval on for publish, send, and spend.",
+                [
+                    ("Open a named surface", "Muse app, WhatsApp, or muse.ai. The 29 September post adds Canada. Yahoo reports a Mac version announced 17 September. Button-level install steps are not published."),
+                    ("Paste a published prompt", "Four prompt-to-try lines are copied from the 29 September post."),
+                    ("Connect chosen apps and keep approval", "The 29 September post names the business connectors and says nothing publishes, sends, or spends without approval."),
+                ],
+            ))
         write(path, page(
             path, meta["title"], meta["description"], html,
-            jsonld=[
-                faq_jsonld(plain),
-                article_jsonld(path, meta["h1"], meta["description"], "2026-09-30", "2026-09-30"),
-            ],
+            jsonld=ld,
             published="2026-09-30",
             modified="2026-09-30",
         ))

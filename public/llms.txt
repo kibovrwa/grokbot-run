@@ -17,7 +17,7 @@ This site: https://grokbot.run/
 - [Dots vs Muse](https://grokbot.run/dots-vs-muse/)
 - [Dots alternatives](https://grokbot.run/dots-alternatives/)
 - [Dots FAQ](https://grokbot.run/dots-faq/)
-- [What is Muse](https://grokbot.run/muse/): Meta's personal agent, 8 September 2026. Not a Meta page.
+- [What is Muse](https://grokbot.run/muse/): Meta's personal agent, how to start it, and reported price. Not a Meta page.
 - [Muse vs](https://grokbot.run/muse-vs/)
 - [Muse alternatives](https://grokbot.run/muse-alternatives/)
 
