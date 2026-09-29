@@ -114,3 +114,5 @@ http://grokbot.run/* https://grokbot.run/:splat 301
 /pricing/index.html /pricing/ 301
 /sources /sources/ 301
 /sources/index.html /sources/ 301
+/dots /dots/ 301
+/dots/index.html /dots/ 301

@@ -18,6 +18,14 @@ Each URL owns one cluster. Do not repeat the same primary on two pages.
 
 # path -> title, description (110–160), primary, also, do_not
 PAGES = {
+    "/dots/": {
+        "title": "What is Dots? OpenAI's always-on agent, explained",
+        "description": "What Dots is: OpenAI's always-on agent on GPT-6 Astra, with its own cloud computer. Announced at DevDay on 29 September 2026. Unofficial, sourced.",
+        "h1": "What is Dots, OpenAI's always-on agent",
+        "primary": "what is dots; openai dots; dots ai; dots agent; dots personal agent",
+        "also": "how to use dots; openai personal agent",
+        "do_not": "invented price; OpenAI logo; Alfred demo; Chinese pages",
+    },
     "/": {
         "title": "Grok Bot guide: install, Cursor login, and do not Reset first",
         "description": "Unofficial Grok Bot guide. Install from x.ai/bot, sign in with Cursor, use one shared computer, and Retry before you Reset.",

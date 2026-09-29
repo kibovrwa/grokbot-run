@@ -6,6 +6,10 @@ Official product: https://x.ai/bot
 Official docs: https://docs.x.ai/grok-bot/overview
 This site: https://grokbot.run/
 
+## Dots (unofficial)
+
+- [What is Dots](https://grokbot.run/dots/): OpenAI's always-on agent, announced 29 September 2026. Not an OpenAI page.
+
 ## Start
 
 - [Guide](https://grokbot.run/): how to start, login, plans, fixes

@@ -14,6 +14,7 @@ LOGO_ABS = SITE + LOGO
 # Top nav is jobs, not every lesson. Lessons live in the footer.
 NAV = [
     ("/", "Guide"),
+    ("/dots/", "Dots"),
     ("/learn/install/", "Install"),
     ("/pricing/", "Pricing"),
     ("/tools/", "Tools"),
@@ -166,6 +167,7 @@ def footer_html():
         '<a href="/learn/glossary/">Glossary</a>'
         '<a href="/learn/cursor/">Cursor and Grok Bot</a></div>'
         "<div><h4>Look up</h4>"
+        '<a href="/dots/">What Dots is</a>'
         '<a href="/pricing/">Pricing</a>'
         '<a href="/compare/">Alternatives</a>'
         '<a href="/tools/">Tools catalog</a>'
@@ -252,6 +254,7 @@ CRUMB_SHORT = {
     "/terms/": "Terms",
     "/contact/": "Contact",
     "/sources/": "Sources",
+    "/dots/": "Dots",
 }
 
 
@@ -309,13 +312,13 @@ def howto_jsonld(name, description, steps):
     }
 
 
-def article_jsonld(path, headline, description, date_modified="2026-09-27"):
+def article_jsonld(path, headline, description, date_modified="2026-09-27", date_published=None):
     return {
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": headline,
         "description": description,
-        "datePublished": "2026-09-27",
+        "datePublished": date_published or "2026-09-27",
         "dateModified": date_modified,
         "inLanguage": "en",
         "mainEntityOfPage": {"@type": "WebPage", "@id": canonical(path)},
@@ -434,7 +437,7 @@ def apply_ga(html):
     return html.replace("</head>", snippet + "\n</head>", 1)
 
 
-def page(path, title, description, body, jsonld=None, lang="en"):
+def page(path, title, description, body, jsonld=None, lang="en", published="2026-09-04", modified="2026-09-27"):
     canon = canonical(path)
     site_name = "Grok Bot Guide"
     site_desc = "Grok Bot guide: how to start, Cursor login, first job, shared computer, plan conflicts, and Recover before Reset."
@@ -464,8 +467,8 @@ def page(path, title, description, body, jsonld=None, lang="en"):
         "description": description,
         "url": canon,
         "inLanguage": "en",
-        "datePublished": "2026-09-04",
-        "dateModified": "2026-09-27",
+        "datePublished": published,
+        "dateModified": modified,
         "isPartOf": {"@type": "WebSite", "name": site_name, "url": SITE + "/"},
     })
     blobs.append(_crumbs(path, title))

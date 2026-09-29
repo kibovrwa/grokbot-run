@@ -112,6 +112,12 @@ def home():
   </div>
 </section>
 
+<section class="band"><div class="wrap">
+  <h2>OpenAI Dots, noted here</h2>
+  <p class="lede">Dots is a separate OpenAI product announced on 29 September 2026. This site is not an OpenAI page. The sourced notes are one URL.</p>
+  <p><a class="btn btn-secondary" href="/dots/">What Dots is</a></p>
+</div></section>
+
 <section class="band" id="first-job"><div class="wrap">
   <h2>Steal this first job</h2>
   <p class="lede">Five minutes. No connector. If this works, you have a Bot. If it does not, fix login before you invent a twelve-Bot company.</p>

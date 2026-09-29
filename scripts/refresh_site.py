@@ -22,6 +22,7 @@ from content_ops import ops, OPS_FAQS
 from content_cases import use_cases, JOBS
 from content_fixes import FIXES
 from content_legal import LEGAL
+from content_dots import dots, DOTS_FAQS
 
 DIST = ROOT / "dist"
 SITEMAP_URLS = [
@@ -77,7 +78,12 @@ SITEMAP_URLS = [
     "/tools/linux-port/",
     "/pricing/",
     "/sources/",
+    "/dots/",
 ]
+
+SITEMAP_LASTMOD = {
+    "/dots/": "2026-09-30",
+}
 
 
 def path_from_file(f):
@@ -118,7 +124,8 @@ def write_sitemap():
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
     ]
     for u in SITEMAP_URLS:
-        lines.append("<url><loc>%s</loc><lastmod>2026-09-27</lastmod></url>" % canonical(u))
+        last = SITEMAP_LASTMOD.get(u, "2026-09-27")
+        lines.append("<url><loc>%s</loc><lastmod>%s</lastmod></url>" % (canonical(u), last))
     lines.append("</urlset>")
     (DIST / "sitemap.xml").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
@@ -178,6 +185,26 @@ def main():
     body, faqs = home()
     m = PAGES["/"]
     write("/", page("/", m["title"], m["description"], body, jsonld=[faq_jsonld(faqs)]))
+    dm = PAGES["/dots/"]
+    write("/dots/", page(
+        "/dots/", dm["title"], dm["description"], dots(),
+        jsonld=[
+            faq_jsonld(DOTS_FAQS),
+            howto_jsonld(
+                "Use an OpenAI Dot",
+                "Check plan and region, create the Dot in ChatGPT, name it, then reach it in ChatGPT, Slack, or Teams.",
+                [
+                    ("Check plan and region", "Pro or Business Premium in an eligible market, or Enterprise, Edu, and Healthcare after an admin enables it."),
+                    ("Create it in ChatGPT", "9to5Google says the desktop app, then mobile. TechCrunch says Codex or ChatGPT. Name one primary dot."),
+                    ("Message it where it already lives", "ChatGPT, Slack, or Microsoft Teams. Voice is described from ChatGPT. Texting is described as coming soon, with a Pro iMessage or RCS waitlist in WIRED."),
+                    ("Watch the cloud computer", "Open its computer while it works. Sensitive actions such as a password change stay behind approval."),
+                ],
+            ),
+            article_jsonld("/dots/", dm["h1"], dm["description"], "2026-09-30", "2026-09-30"),
+        ],
+        published="2026-09-30",
+        modified="2026-09-30",
+    ))
     pm = PAGES["/pricing/"]
     write("/pricing/", page("/pricing/", pm["title"], pm["description"], pricing(), jsonld=[faq_jsonld(PRICING_FAQS)]))
     um = PAGES["/use-cases/"]
@@ -297,7 +324,7 @@ def main():
         meta = PAGES[path]
         write(path, page(path, meta["title"], meta["description"], tool_detail(key)))
 
-    written = {"/", "/pricing/", "/use-cases/", "/tools/", "/learn/", "/learn/glossary/", "/learn/cursor/", "/learn/operator/", "/learn/ops/", "/compare/", "/troubleshooting/"}
+    written = {"/", "/dots/", "/pricing/", "/use-cases/", "/tools/", "/learn/", "/learn/glossary/", "/learn/cursor/", "/learn/operator/", "/learn/ops/", "/compare/", "/troubleshooting/"}
     written.update(spec["path"] for spec in SUPPORT)
     written.update(path for path, _fn in FIXES)
     written.update(path for path, _t, _d, _fn, _faqs in LEGAL)

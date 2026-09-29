@@ -68,6 +68,7 @@ def build():
         ("Grok Bot Windows download", "/learn/windows-download/", "Download", "grokbot windows install x64 arm64"),
         ("Grok Bot not responding", "/troubleshooting/not-responding/", "Help", "stopped working silent bots failed to respond"),
         ("Grok Bot stuck", "/troubleshooting/stuck/", "Help", "connecting setting up reconnecting cleaning up"),
+        ("What is Dots", "/dots/", "Page", "openai dots dots ai dots agent personal agent what is dots how to use dots"),
     )
     for title, href, kind, keys in aliases:
         _add(items, title, href, kind, keys)
