@@ -143,3 +143,5 @@ http://grokbot.run/* https://grokbot.run/:splat 301
 /muse-alternatives/index.html /muse-alternatives/ 301
 /muse-vs-grok-bot /muse-vs-grok-bot/ 301
 /muse-vs-grok-bot/index.html /muse-vs-grok-bot/ 301
+/dots-security-privacy /dots-security-privacy/ 301
+/dots-security-privacy/index.html /dots-security-privacy/ 301
