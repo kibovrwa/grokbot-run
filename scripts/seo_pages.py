@@ -138,6 +138,14 @@ PAGES = {
         "also": "difference between dots and chatgpt; openai dots vs claude cowork",
         "do_not": "invent Claude equivalence; benchmark claims; claim Plus gets dots",
     },
+    "/how-to-get-openai-dots/": {
+        "title": "How to get OpenAI dots: plan, region, and setup",
+        "description": "How to get OpenAI dots: which plans and regions are listed, the desktop-only setup order, and what is not available yet. Unofficial notes.",
+        "h1": "How to get OpenAI dots: plan, region, and setup",
+        "primary": "how to get openai dots; dots eligibility",
+        "also": "dots availability; who can use dots; how to create a dot; dots region",
+        "do_not": "claim Plus access; invent EU date; invent app links",
+    },
     "/": {
         "title": "Grok Bot guide: install, Cursor login, and do not Reset first",
         "description": "Unofficial Grok Bot guide. Install from x.ai/bot, sign in with Cursor, use one shared computer, and Retry before you Reset.",

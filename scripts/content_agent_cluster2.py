@@ -26,7 +26,7 @@ CLAUDE_MA = "https://claude.com/blog/claude-managed-agents"
 import re as _re
 
 # Pages not shipped yet: links to them render as plain text until they are live.
-PENDING = {"/how-to-get-openai-dots/", "/openai-devday-2026-dots-recap/", "/dots-not-officially-announced/",
+PENDING = {"/openai-devday-2026-dots-recap/", "/dots-not-officially-announced/",
            "/muse-charm/", "/meta-muse-marketplace-issue/"}
 
 
@@ -300,8 +300,77 @@ def dots_vs_chatgpt():
     ), VSC_FAQS
 
 
+# ---------------------------------------------------------------- how to get openai dots
+
+HOW_FAQS = [
+    ("Can I create a dot on my phone?",
+     "No. The <a href=\"%s\">Help Center</a> says you cannot currently create a dot on mobile and that dots are not supported on mobile web. Once created, you can talk to it in the mobile app when mobile access is available." % O_HELP),
+    ("I am on Plus. Can I get one?",
+     "Not officially announced. OpenAI’s pages list Pro, Business Premium, and an Enterprise beta."),
+    ("Why do I not see it yet if I am on Pro?",
+     "The Help Center says dots roll out gradually and access may take several days to reach an account. Pro excludes the European Economic Area, Switzerland, and the UK."),
+    ("Is there a waitlist?",
+     "Only for texting. See <a href=\"/dots-waitlist/\">Dots waitlist</a>. The Help Center calls texting a limited beta for Pro users in the US."),
+]
+
+
+def how_to_get_openai_dots():
+    inner = '''
+<section class="band"><div class="wrap">
+<h2>Check the gates in this order</h2>
+<ol>
+<li><strong>Plan.</strong> Pro, Business Premium, or Enterprise (including Edu and Healthcare) as a beta that a workspace admin must turn on; it is off by default (<a href="%(O_RECAP)s">DevDay recap</a>). Free, Go, and Plus: not officially announced.</li>
+<li><strong>Region.</strong> Pro: not the European Economic Area, Switzerland, or the UK. Business Premium: all supported ChatGPT regions (<a href="%(O_HELP)s">Help Center</a>).</li>
+<li><strong>Rollout.</strong> Gradual, and it may take several days to reach your account. The Help Center asks you to check back.</li>
+<li><strong>Surface.</strong> Create the dot in the ChatGPT desktop app (also available on Windows) or in ChatGPT on desktop web, then follow the onboarding prompts.</li>
+</ol>
+<h2>After you have access</h2>
+<ol>
+<li>Name it during setup. The default handle is @yourname-dot, and naming it changes the handle to @yourname-agentname.</li>
+<li>Pick a character or a pet, or let the dot generate a pet.</li>
+<li>Connect apps in the Plugins settings, and Slack or texting from desktop.</li>
+<li>Decide on your own computer. Access is optional and starts off. You turn it on from the desktop app with Allow access and undo it with Revoke access.</li>
+<li>Give it a first task and read its Custom Rules before you rely on it. What those rules protect is on <a href="/dots-security-privacy/">Dots security and privacy</a>.</li>
+</ol>
+<p>Not available at launch, per the Help Center: creating a dot on mobile, a standalone email address for the dot, and calls started by the dot. It can use your personal email account if you connect it.</p>
+<h2>What it costs to get one</h2>
+<p>OpenAI says the first dot is included at no extra cost, and that for the next month dots usage does not count toward eligible Pro, Business, and Enterprise plan allowances. Terms after that are not officially announced. More on <a href="/dots-pricing/">Dots pricing</a>.</p>
+<h2>Solutions for advanced users</h2>
+<h3>Choose by scenario</h3>
+<ul>
+<li><strong>Eligible and in a supported region:</strong> create it on desktop, name it, connect one app, and run one small task before widening access.</li>
+<li><strong>On Pro in the EEA, Switzerland, or the UK:</strong> not covered at launch. No date for those markets is officially announced.</li>
+<li><strong>Enterprise:</strong> ask a workspace admin to enable the beta. What an admin can configure beyond that switch is not officially announced in the sources checked.</li>
+<li><strong>Not eligible yet:</strong> <a href="/dots-alternatives/">Dots alternatives</a> lists the products named in the launch coverage, including Grok Bot.</li>
+</ul>
+<h3>Use with Grok Bot, or move</h3>
+<p>A dot and a Grok Bot are separate accounts on separate computers. If you already run Grok Bot, do not disconnect anything to try a dot. Add one connection at a time and keep the tasks apart until you know which product handles which. There is no official import from either side.</p>
+<h3>Common pitfalls</h3>
+<ul>
+<li>Trying to create the dot on a phone. Creation is desktop only.</li>
+<li>Turning on local computer access for the first task. It is optional and can wait.</li>
+<li>Enabling texting expecting it everywhere. It is a limited beta for Pro users in the US, and Business and Enterprise workspaces do not have it. Reply STOP to stop outgoing texts.</li>
+<li>Assuming resetting only clears chat. Reset deletes the dot with its conversations, memories, and scheduled tasks.</li>
+</ul>
+</div></section>
+''' % dict(O_HELP=O_HELP, O_RECAP=O_RECAP)
+    sources = [
+        ("OpenAI Help Center, Getting started with your dot", O_HELP),
+        ("OpenAI, Introducing dots, 29 September 2026", O_INTRO),
+        ("OpenAI, DevDay 2026 recap", O_RECAP),
+        ("The Next Web, 29 September 2026", TNW),
+    ]
+    return _shell(
+        "Unofficial notes · access",
+        "How to get OpenAI dots: plan, region, and setup",
+        "Who can create a dot, where it is not available, and the setup order from OpenAI’s Help Center. This is not OpenAI’s page.",
+        inner, HOW_FAQS, sources,
+    ), HOW_FAQS
+
+
 CLUSTER2 = [
     ("/muse-vs-grok-bot/", "Muse vs Grok Bot: where they differ, by their own pages", muse_vs_grok_bot),
     ("/dots-security-privacy/", "Dots security and privacy: what OpenAI says and tested", dots_security_privacy),
     ("/dots-vs-chatgpt/", "Dots vs ChatGPT, and how Claude differs", dots_vs_chatgpt),
+    ("/how-to-get-openai-dots/", "How to get OpenAI dots: plan, region, and setup", how_to_get_openai_dots),
 ]

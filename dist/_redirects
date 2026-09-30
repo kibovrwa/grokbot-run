@@ -147,3 +147,5 @@ http://grokbot.run/* https://grokbot.run/:splat 301
 /dots-security-privacy/index.html /dots-security-privacy/ 301
 /dots-vs-chatgpt /dots-vs-chatgpt/ 301
 /dots-vs-chatgpt/index.html /dots-vs-chatgpt/ 301
+/how-to-get-openai-dots /how-to-get-openai-dots/ 301
+/how-to-get-openai-dots/index.html /how-to-get-openai-dots/ 301

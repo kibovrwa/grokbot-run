@@ -95,6 +95,7 @@ SITEMAP_URLS = [
     "/muse-vs-grok-bot/",
     "/dots-security-privacy/",
     "/dots-vs-chatgpt/",
+    "/how-to-get-openai-dots/",
 ]
 
 SITEMAP_LASTMOD = {path: "2026-09-30" for path in (
@@ -113,6 +114,7 @@ SITEMAP_LASTMOD = {path: "2026-09-30" for path in (
     "/muse-vs-grok-bot/",
     "/dots-security-privacy/",
     "/dots-vs-chatgpt/",
+    "/how-to-get-openai-dots/",
 )}
 
 
