@@ -2,7 +2,7 @@
 """Second batch of Dots/Muse sibling notes. Each fact is stated once and linked from sibling pages."""
 from html import escape
 from content_agent_cluster import (
-    _shell, OPENAI, CNBC, VERGE, TNW, TC_DOTS, WIRED, XAI, MUSE, MUSE_BIZ, TC_MUSE, YAHOO_MUSE, MUSE_CONNECTORS,
+    OPENAI, CNBC, VERGE, TNW, TC_DOTS, WIRED, XAI, MUSE, MUSE_BIZ, TC_MUSE, YAHOO_MUSE, MUSE_CONNECTORS,
 )
 
 CONNECT = "https://www.meta.com/blog/meta-connect-2026-everything-we-announced/"
@@ -23,8 +23,22 @@ CLAUDE_COWORK = "https://support.claude.com/en/articles/13345190-get-started-wit
 CLAUDE_MA = "https://claude.com/blog/claude-managed-agents"
 
 
-def _faqs(pairs):
-    return pairs
+import re as _re
+
+# Pages not shipped yet: links to them render as plain text until they are live.
+PENDING = {"/how-to-get-openai-dots/", "/openai-devday-2026-dots-recap/", "/dots-not-officially-announced/",
+           "/muse-charm/", "/meta-muse-marketplace-issue/"}
+
+
+def _strip(text):
+    def r(m):
+        return m.group(2) if m.group(1) in PENDING else m.group(0)
+    return _re.sub(r'<a href="(/[^"#]*/)(?:#[^"]*)?">(.*?)</a>', r, text)
+
+
+def _shell(kicker, h1, lede, inner, faqs, sources):
+    from content_agent_cluster import _shell as _s
+    return _s(kicker, h1, lede, _strip(inner), [(q, _strip(a)) for q, a in faqs], sources)
 
 
 def _copy(id_, text):
@@ -201,7 +215,93 @@ def dots_security_privacy():
     ), SEC_FAQS
 
 
+# ---------------------------------------------------------------- dots vs chatgpt (and Claude)
+
+VSC_FAQS = [
+    ("Are dots a separate product from ChatGPT?",
+     "They are created and used inside ChatGPT. The <a href=\"%s\">Help Center</a> calls a dot an always-on agent in ChatGPT, with its own cloud computer." % O_HELP),
+    ("Can I get a dot on Free, Go, or Plus?",
+     "Not officially announced. OpenAI’s pages name Pro, Business Premium, and an Enterprise beta. <a href=\"/how-to-get-openai-dots/\">How to get OpenAI dots</a> has the eligibility list."),
+    ("Is there a Claude version of dots?",
+     "Anthropic has not published a comparison and has not named a product as a Dots equivalent. Its help center describes Claude Cowork running tasks in the cloud on paid plans. OpenAI’s pages do not name a Claude equivalent either."),
+    ("Which model do dots use?",
+     "GPT-6 Astra, per OpenAI. GPT-6.1 Sol was announced the same day; the sources checked do not say dots run on it. See <a href=\"/openai-devday-2026-dots-recap/\">the DevDay recap</a>."),
+]
+
+
+def dots_vs_chatgpt():
+    inner = '''
+<section class="band"><div class="wrap">
+<h2>Dots and a normal ChatGPT chat</h2>
+<p>OpenAI’s <a href="%(O_HELP)s">Help Center</a> answers this directly: a dot is an always-on agent in ChatGPT that can take on ongoing responsibility and keep making progress between conversations. It has its own cloud computer, works across the apps you connect, and remembers context.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th></th><th>Dots</th><th>ChatGPT conversations</th></tr></thead>
+<tbody>
+<tr><td>Works when you are away</td><td>Yes: background research, reminders, and recurring tasks you schedule (<a href="%(O_HELP)s">Help Center</a>).</td><td>Not described on the pages checked for this note.</td></tr>
+<tr><td>Own computer</td><td>Each dot has its own cloud computer and browser, and you can open it from its profile.</td><td>Not published as a per-conversation computer.</td></tr>
+<tr><td>Memory</td><td>Gets memories from ChatGPT and makes its own. Deleting a dot’s own memories means resetting the dot.</td><td>Shared ChatGPT memory settings.</td></tr>
+<tr><td>Where you reach it</td><td>ChatGPT on desktop, web, and mobile after creation; Slack; Microsoft Teams. Texting is a limited US Pro beta.</td><td>ChatGPT apps.</td></tr>
+<tr><td>Who can use it</td><td>Pro outside the EEA, Switzerland, and the UK; Business Premium in supported regions; Enterprise beta if an admin enables it.</td><td>Per plan.</td></tr>
+<tr><td>Usage meter</td><td>For the first month, dots usage does not count toward eligible Pro, Business, and Enterprise allowances; terms after that are not officially announced (<a href="%(O_HELP)s">Help Center</a>).</td><td>Normal plan limits.</td></tr>
+<tr><td>Acting on its own</td><td>Built-in confirmations plus Custom Rules. Details on <a href="/dots-security-privacy/">Dots security and privacy</a>.</td><td>Not restated here.</td></tr>
+</tbody>
+</table>
+</div>
+<p>Dots and ChatGPT share connected apps and memory settings. OpenAI’s <a href="%(O_SAFE)s">safety post</a> says the Plugins settings are shared across ChatGPT, ChatGPT Work, and Codex. <a href="%(TNW)s">The Next Web</a> reports that tasks a dot starts in Codex or ChatGPT Work count toward usage limits, while conversations with the dot do not.</p>
+<h2>Dots and Claude</h2>
+<p>There is no official Anthropic or OpenAI page that compares the two. Not officially announced. What each company publishes about its own product:</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th></th><th>Dots (OpenAI)</th><th>Claude Cowork (Anthropic)</th></tr></thead>
+<tbody>
+<tr><td>What it is</td><td>An always-on agent inside ChatGPT with its own cloud computer.</td><td>Claude’s agentic mode for multi-step tasks, using the same architecture as Claude Code without a terminal (<a href="%(CLAUDE_COWORK)s">help center</a>).</td></tr>
+<tr><td>Where it runs</td><td>Cloud computer per dot.</td><td>Sessions run remotely in the cloud, marked beta. On 6 October 2026 new Cowork tasks on Pro and Max are described as running in the cloud.</td></tr>
+<tr><td>Plans</td><td>Pro, Business Premium, Enterprise beta.</td><td>Pro, Max, Team, Enterprise; availability differs by surface.</td></tr>
+<tr><td>Scheduled work</td><td>Reminders and recurring checks.</td><td>Scheduled tasks.</td></tr>
+<tr><td>For developers</td><td>Agents API with computer use and Bedrock Managed Agents are separate announcements in the <a href="/openai-devday-2026-dots-recap/">DevDay recap</a>.</td><td>Claude Managed Agents is an API suite for building cloud-hosted agents, in public beta (<a href="%(CLAUDE_MA)s">Anthropic</a>).</td></tr>
+</tbody>
+</table>
+</div>
+<p>These rows line up by category, not by verified equivalence. Speed, quality, and price comparisons between the two are not officially announced, and none is invented here.</p>
+<h2>Solutions for advanced users</h2>
+<h3>Choose by scenario</h3>
+<ul>
+<li><strong>You already pay for ChatGPT Pro or Business Premium and want a long-running helper:</strong> try a dot first. The first is included at no extra cost, per <a href="%(O_INTRO)s">OpenAI</a>.</li>
+<li><strong>You are on Free, Go, or Plus:</strong> not officially announced for dots. Plain ChatGPT is what these plans describe.</li>
+<li><strong>You live in the EEA, Switzerland, or the UK on a personal plan:</strong> Pro dots exclude those markets at launch. Business Premium is listed for all supported regions.</li>
+<li><strong>You want a cloud agent on a Claude plan:</strong> read Anthropic’s Cowork article for your plan and surface, since availability differs.</li>
+<li><strong>You want named agents in parallel on a Cursor plan:</strong> Grok Bot. Compare on <a href="/dots-vs-grokbot/">Dots vs Grok Bot</a>.</li>
+</ul>
+<h3>Use with Grok Bot, or move</h3>
+<p>None of the three companies publishes an import path for another’s agents. Treat each as its own account and rebuild standing instructions by hand. Keep the same rule in each place, for example “never send email without asking,” and check that each product actually enforces it.</p>
+<h3>Common pitfalls</h3>
+<ul>
+<li>Expecting a dot to appear in a plan that OpenAI has not listed.</li>
+<li>Planning around free dots usage. Terms after the first month are not officially announced.</li>
+<li>Reading a benchmark for one model as a claim about the product. GPT-6.1 Sol has its own page and its own numbers.</li>
+<li>Treating Cowork and dots as interchangeable. Their plan gates and surfaces differ.</li>
+</ul>
+</div></section>
+''' % dict(O_HELP=O_HELP, O_SAFE=O_SAFE, TNW=TNW, O_INTRO=O_INTRO, CLAUDE_COWORK=CLAUDE_COWORK, CLAUDE_MA=CLAUDE_MA)
+    sources = [
+        ("OpenAI Help Center, Getting started with your dot", O_HELP),
+        ("OpenAI, Introducing dots, 29 September 2026", O_INTRO),
+        ("OpenAI, dots safety post", O_SAFE),
+        ("The Next Web, 29 September 2026", TNW),
+        ("Anthropic Help Center, Get started with Claude Cowork", CLAUDE_COWORK),
+        ("Anthropic, Claude Managed Agents", CLAUDE_MA),
+    ]
+    return _shell(
+        "Unofficial notes · comparison",
+        "Dots vs ChatGPT, and how Claude differs",
+        "What separates an OpenAI dot from a regular ChatGPT chat, and what Anthropic publishes about Claude Cowork, without a made-up head-to-head.",
+        inner, VSC_FAQS, sources,
+    ), VSC_FAQS
+
+
 CLUSTER2 = [
     ("/muse-vs-grok-bot/", "Muse vs Grok Bot: where they differ, by their own pages", muse_vs_grok_bot),
     ("/dots-security-privacy/", "Dots security and privacy: what OpenAI says and tested", dots_security_privacy),
+    ("/dots-vs-chatgpt/", "Dots vs ChatGPT, and how Claude differs", dots_vs_chatgpt),
 ]

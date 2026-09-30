@@ -273,6 +273,7 @@ CRUMB_SHORT = {
     "/muse/": "Muse",
     "/muse-vs/": "Muse vs",
     "/muse-alternatives/": "Muse alternatives",
+    "/dots-vs-chatgpt/": "Dots vs ChatGPT",
     "/dots-security-privacy/": "Dots security",
     "/muse-vs-grok-bot/": "Muse vs Grok Bot",
 }

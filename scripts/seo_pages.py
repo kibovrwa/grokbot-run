@@ -130,6 +130,14 @@ PAGES = {
         "also": "dots permissions; dots prompt injection; dots training data; dots custom rules",
         "do_not": "claim independent audit; invent incident details; describe secrets as safe in chat",
     },
+    "/dots-vs-chatgpt/": {
+        "title": "Dots vs ChatGPT, and how Claude differs",
+        "description": "Dots vs ChatGPT from OpenAI's Help Center, plus what Anthropic publishes about Claude Cowork. No invented head-to-head. Unofficial notes.",
+        "h1": "Dots vs ChatGPT, and how Claude differs",
+        "primary": "dots vs chatgpt; dots vs claude",
+        "also": "difference between dots and chatgpt; openai dots vs claude cowork",
+        "do_not": "invent Claude equivalence; benchmark claims; claim Plus gets dots",
+    },
     "/": {
         "title": "Grok Bot guide: install, Cursor login, and do not Reset first",
         "description": "Unofficial Grok Bot guide. Install from x.ai/bot, sign in with Cursor, use one shared computer, and Retry before you Reset.",

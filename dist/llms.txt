@@ -20,6 +20,7 @@ This site: https://grokbot.run/
 - [What is Muse](https://grokbot.run/muse/): Meta's personal agent, how to start it, and reported price. Not a Meta page.
 - [Muse vs](https://grokbot.run/muse-vs/)
 - [Muse alternatives](https://grokbot.run/muse-alternatives/)
+- [Dots vs ChatGPT](https://grokbot.run/dots-vs-chatgpt/): how a dot differs from a ChatGPT chat, and what Anthropic publishes about Claude Cowork.
 - [Dots security and privacy](https://grokbot.run/dots-security-privacy/): sandboxing, secure sign-in, Auto-review, training settings, and OpenAI's own tests.
 - [Muse vs Grok Bot](https://grokbot.run/muse-vs-grok-bot/): row-by-row from each company's own pages, plus how to choose.
 

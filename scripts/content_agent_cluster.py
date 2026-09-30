@@ -240,7 +240,7 @@ def dots_vs_grokbot():
 </div>
 <h2>Field setup</h2>
 <p>Choose with the table. Budget is the price row. A dot on hardware you own is not officially announced; the computer row is the published setup.</p>
-<p>Using both means two accounts. A shared login, a shared computer, or a way to move chats is not officially announced. Start Grok Bot from <a href="https://x.ai/bot">x.ai/bot</a> and <a href="/learn/first-bot/">the first-bot lesson</a>. Start a dot from <a href="/openai-dots/#field-setup">OpenAI dots</a>. Do not expect one roster.</p>
+<p>Using both means two accounts. A shared login, a shared computer, or a way to move chats is not officially announced. For ChatGPT and Claude, see <a href="/dots-vs-chatgpt/">Dots vs ChatGPT</a>. Start Grok Bot from <a href="https://x.ai/bot">x.ai/bot</a> and <a href="/learn/first-bot/">the first-bot lesson</a>. Start a dot from <a href="/openai-dots/#field-setup">OpenAI dots</a>. Do not expect one roster.</p>
 <p>Pitfall: treating the two “own computer” sentences as one architecture. The FAQ below keeps both xAI wordings. This section does not merge them.</p>
 <p>The copyable dot brief is on <a href="/openai-dots/#field-setup">OpenAI dots</a>. An official migration config is not officially announced.</p>
 </div></section>
