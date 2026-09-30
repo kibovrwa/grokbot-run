@@ -122,6 +122,14 @@ PAGES = {
         "also": "muse or grok bot; meta muse vs xai grok bot",
         "do_not": "repeat the /muse-vs/ short row; invented prices; claim Meta targets Grok Bot",
     },
+    "/dots-security-privacy/": {
+        "title": "Dots security and privacy: what OpenAI says and tested",
+        "description": "Dots security and privacy from OpenAI's own pages: sandboxing, secure sign-in, Auto-review, training settings, test numbers, and known limits. Unofficial.",
+        "h1": "Dots security and privacy: what OpenAI says and tested",
+        "primary": "dots security; dots privacy; is dots safe",
+        "also": "dots permissions; dots prompt injection; dots training data; dots custom rules",
+        "do_not": "claim independent audit; invent incident details; describe secrets as safe in chat",
+    },
     "/": {
         "title": "Grok Bot guide: install, Cursor login, and do not Reset first",
         "description": "Unofficial Grok Bot guide. Install from x.ai/bot, sign in with Cursor, use one shared computer, and Retry before you Reset.",

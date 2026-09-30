@@ -369,7 +369,7 @@ def dots_faq():
 <section class="band"><div class="wrap">
 <p>The definition and the how-to stay on <a href="/openai-dots/">what Dots is</a>. The questions here are the ones that do not have their own page, plus pointers.</p>
 <h2>Field setup</h2>
-<p>When it is missing, check in this order, each on its own page: <a href="/dots-pricing/">plan and region</a>, <a href="/dots-download/">no separate installer</a>, <a href="/dots-waitlist/">no general queue</a>, then the brief on <a href="/openai-dots/#field-setup">OpenAI dots</a>. This list does not restate those pages.</p>
+<p>When it is missing, check in this order, each on its own page: <a href="/dots-pricing/">plan and region</a>, <a href="/dots-download/">no separate installer</a>, <a href="/dots-waitlist/">no general queue</a>, then the brief on <a href="/openai-dots/#field-setup">OpenAI dots</a>. For what protects a dot and what it can do without asking, read <a href="/dots-security-privacy/">Dots security and privacy</a>. This list does not restate those pages.</p>
 <p>An official troubleshooting tree is not officially announced.</p>
 </div></section>
 '''

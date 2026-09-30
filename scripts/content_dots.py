@@ -153,6 +153,7 @@ Ask before you install software or change a password.</code></pre>
 <li><a href="/dots-vs-muse/">Dots vs Muse</a></li>
 <li><a href="/dots-alternatives/">Dots alternatives</a></li>
 <li><a href="/dots-faq/">Dots FAQ</a></li>
+<li><a href="/dots-security-privacy/">Dots security and privacy</a></li>
 <li><a href="/muse/">What Muse is</a></li>
 </ul>
 <p class="muted">Related on this site: <a href="/learn/what-is-grok-bot/">What Grok Bot is</a> · <a href="/compare/">Grok Bot alternatives</a> · <a href="/">Grok Bot guide</a></p>
