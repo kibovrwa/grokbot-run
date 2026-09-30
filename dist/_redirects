@@ -141,3 +141,5 @@ http://grokbot.run/* https://grokbot.run/:splat 301
 /muse-vs/index.html /muse-vs/ 301
 /muse-alternatives /muse-alternatives/ 301
 /muse-alternatives/index.html /muse-alternatives/ 301
+/muse-vs-grok-bot /muse-vs-grok-bot/ 301
+/muse-vs-grok-bot/index.html /muse-vs-grok-bot/ 301

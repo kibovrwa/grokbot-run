@@ -80,6 +80,7 @@ def build():
         ("What is Muse", "/muse/", "Page", "muse ai muse agent muse app meta muse"),
         ("Muse vs", "/muse-vs/", "Page", "muse vs dots muse vs grok bot"),
         ("Muse alternatives", "/muse-alternatives/", "Page", "muse alternatives"),
+        ("Muse vs Grok Bot", "/muse-vs-grok-bot/", "Page", "muse vs grok bot muse vs grokbot muse or grok bot"),
     )
     for title, href, kind, keys in aliases:
         _add(items, title, href, kind, keys)

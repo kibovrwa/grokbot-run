@@ -470,7 +470,7 @@ def muse_vs():
 <thead><tr><th></th><th>Muse</th><th>Dots</th><th>Grok Bot</th></tr></thead>
 <tbody>
 <tr><td>Company</td><td>Meta</td><td>OpenAI</td><td>xAI</td></tr>
-<tr><td>Own computer, in the company’s words</td><td>Muse Secure VM</td><td>Each dot has its own cloud computer and browser. Full table: <a href="/dots-vs-muse/">Dots vs Muse</a>.</td><td><a href="%s">x.ai/bot</a> says Bots have their own computer.</td></tr>
+<tr><td>Own computer, in the company’s words</td><td>Muse Secure VM</td><td>Each dot has its own cloud computer and browser. Full table: <a href="/dots-vs-muse/">Dots vs Muse</a>.</td><td><a href="%s">x.ai/bot</a> says Bots have their own computer. Full table: <a href="/muse-vs-grok-bot/">Muse vs Grok Bot</a>.</td></tr>
 <tr><td>Talk to it</td><td>Muse app, WhatsApp, muse.ai</td><td>See <a href="/openai-dots/">what Dots is</a>.</td><td>Desktop and iOS</td></tr>
 <tr><td>Price on the company page</td><td>Free for most needs; subscriptions exist; dollars not published.</td><td><a href="/dots-pricing/">Not a separate published price</a>.</td><td>Not copied here. See x.ai/bot and <a href="/pricing/">Grok Bot pricing</a>.</td></tr>
 </tbody>
@@ -509,7 +509,7 @@ def muse_alternatives():
 <h2>Other personal-agent names in the same reports</h2>
 <div class="grid-3">
 <a class="card" href="/openai-dots/"><h3>Dots</h3><p>OpenAI’s always-on agent, 29 September 2026. <a href="%s">The Verge</a> frames it as Muse’s competitor. Read <a href="/dots-vs-muse/">Dots vs Muse</a>.</p></a>
-<a class="card" href="/learn/what-is-grok-bot/"><h3>Grok Bot</h3><p>xAI’s teammate app. Meta’s Muse posts do not name it. <a href="/muse-vs/">Muse vs</a> has the short row.</p></a>
+<a class="card" href="/learn/what-is-grok-bot/"><h3>Grok Bot</h3><p>xAI’s teammate app. Meta’s Muse posts do not name it. <a href="/muse-vs-grok-bot/">Muse vs Grok Bot</a> has the full table.</p></a>
 <a class="card" href="/compare/"><h3>OpenClaw</h3><p><a href="%s">WIRED</a> mentions OpenClaw as an earlier personal-agent tool. It is not a Muse download.</p></a>
 </div>
 <p>The Dots list is <a href="/dots-alternatives/">Dots alternatives</a>. Not officially announced: a ranked “best Muse alternative” order.</p>

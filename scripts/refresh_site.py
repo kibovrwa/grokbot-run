@@ -24,6 +24,7 @@ from content_fixes import FIXES
 from content_legal import LEGAL
 from content_dots import dots, DOTS_FAQS
 from content_agent_cluster import CLUSTER
+from content_agent_cluster2 import CLUSTER2
 
 DIST = ROOT / "dist"
 SITEMAP_URLS = [
@@ -91,6 +92,7 @@ SITEMAP_URLS = [
     "/muse/",
     "/muse-vs/",
     "/muse-alternatives/",
+    "/muse-vs-grok-bot/",
 ]
 
 SITEMAP_LASTMOD = {path: "2026-09-30" for path in (
@@ -106,6 +108,7 @@ SITEMAP_LASTMOD = {path: "2026-09-30" for path in (
     "/muse/",
     "/muse-vs/",
     "/muse-alternatives/",
+    "/muse-vs-grok-bot/",
 )}
 
 
@@ -232,7 +235,7 @@ def main():
         modified="2026-09-30",
     ))
     cluster_written = set()
-    for path, _h1, fn in CLUSTER:
+    for path, _h1, fn in CLUSTER + CLUSTER2:
         meta = PAGES[path]
         html, faqs = fn()
         plain = [(q, re.sub(r"<[^>]+>", "", a)) for q, a in faqs]

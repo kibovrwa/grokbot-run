@@ -114,6 +114,14 @@ PAGES = {
         "also": "muse vs other agents",
         "do_not": "ranked list; fake store links",
     },
+    "/muse-vs-grok-bot/": {
+        "title": "Muse vs Grok Bot: where they differ, by their own pages",
+        "description": "Muse vs Grok Bot row by row from Meta's and xAI's own pages: shared computer, approvals, passwords, access, and how to choose. Unofficial notes.",
+        "h1": "Muse vs Grok Bot: where they differ, by their own pages",
+        "primary": "muse vs grok bot; muse vs grokbot",
+        "also": "muse or grok bot; meta muse vs xai grok bot",
+        "do_not": "repeat the /muse-vs/ short row; invented prices; claim Meta targets Grok Bot",
+    },
     "/": {
         "title": "Grok Bot guide: install, Cursor login, and do not Reset first",
         "description": "Unofficial Grok Bot guide. Install from x.ai/bot, sign in with Cursor, use one shared computer, and Retry before you Reset.",
