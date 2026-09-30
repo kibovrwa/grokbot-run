@@ -80,6 +80,7 @@ def build():
         ("What is Muse", "/muse/", "Page", "muse ai muse agent muse app meta muse"),
         ("Muse vs", "/muse-vs/", "Page", "muse vs dots muse vs grok bot"),
         ("Muse alternatives", "/muse-alternatives/", "Page", "muse alternatives"),
+        ("Muse Charm", "/muse-charm/", "Page", "muse charm muse charm price meta muse charm tamagotchi meta vr glasses meta connect 2026"),
         ("Dots not officially announced", "/dots-not-officially-announced/", "Page", "dots not officially announced dots coming soon dots unannounced features dots rumors dots limitations"),
         ("How to get OpenAI dots", "/how-to-get-openai-dots/", "Page", "how to get openai dots dots eligibility dots access dots availability dots region who can use dots how to create a dot"),
         ("Dots vs ChatGPT and Claude", "/dots-vs-chatgpt/", "Page", "dots vs chatgpt dots vs claude difference between dots and chatgpt openai dots vs claude cowork"),

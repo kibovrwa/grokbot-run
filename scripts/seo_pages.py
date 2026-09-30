@@ -154,6 +154,14 @@ PAGES = {
         "also": "dots limitations; dots rumors; dots unannounced features",
         "do_not": "present rumor as fact; invent dates; cite forum comments as sources",
     },
+    "/muse-charm/": {
+        "title": "Muse Charm: what Meta said, what is only reported",
+        "description": "Muse Charm from Meta's Connect 2026 post and press reports: what it is, the Tamagotchi comparison, and why price and date are not officially announced.",
+        "h1": "Muse Charm: what Meta said, what is only reported",
+        "primary": "muse charm; meta muse charm; muse charm price",
+        "also": "muse charm tamagotchi; meta vr glasses; muse charm release date",
+        "do_not": "invent price; state Bloomberg specs as Meta's; put VR Glasses price on Charm",
+    },
     "/": {
         "title": "Grok Bot guide: install, Cursor login, and do not Reset first",
         "description": "Unofficial Grok Bot guide. Install from x.ai/bot, sign in with Cursor, use one shared computer, and Retry before you Reset.",

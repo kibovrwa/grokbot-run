@@ -414,7 +414,7 @@ def muse_page():
 <li>Connect apps yourself. That post names Asana, Box, Canva, Dropbox, Figma, Granola, HighLevel, Intuit QuickBooks, Klaviyo, Lovable, Notion, Shopify, Slack, Stripe, Zoom, plus Facebook and Instagram business accounts. It says the full list is in the Muse app settings, and partners apply at muse.ai/platform. Custom connectors are the link in that post: <a href="%s">Meta’s connector help</a>.</li>
 <li>Leave approval on for publish, send, and spend. That post says nothing publishes, sends, or spends without approval.</li>
 </ol>
-<p>Running Muse on hardware you own is not in the 8 September post. The published computer is Muse Secure VM.</p>
+<p>Running Muse on hardware you own is not in the 8 September post. The published computer is Muse Secure VM. Meta’s pocket device for Muse is on <a href="/muse-charm/">Muse Charm</a>.</p>
 <h3>Prompts Meta published</h3>
 <pre><code id="muse-prompt-1">Analyze this year’s sales, campaigns, and social and make me a growth plan to meet my business goals for next year.</code></pre>
 <button type="button" class="copy-btn" data-copy-target="muse-prompt-1">Copy</button>

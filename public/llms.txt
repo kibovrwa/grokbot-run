@@ -20,6 +20,7 @@ This site: https://grokbot.run/
 - [What is Muse](https://grokbot.run/muse/): Meta's personal agent, how to start it, and reported price. Not a Meta page.
 - [Muse vs](https://grokbot.run/muse-vs/)
 - [Muse alternatives](https://grokbot.run/muse-alternatives/)
+- [Muse Charm](https://grokbot.run/muse-charm/): Meta's pocket device for Muse; what Meta said versus what is reported. Price not officially announced.
 - [Dots: what is not officially announced](https://grokbot.run/dots-not-officially-announced/): the gaps, coming-soon items, and limited betas in one table.
 - [How to get OpenAI dots](https://grokbot.run/how-to-get-openai-dots/): plan, region, rollout, and setup order from OpenAI's Help Center.
 - [Dots vs ChatGPT](https://grokbot.run/dots-vs-chatgpt/): how a dot differs from a ChatGPT chat, and what Anthropic publishes about Claude Cowork.

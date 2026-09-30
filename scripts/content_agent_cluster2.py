@@ -26,8 +26,7 @@ CLAUDE_MA = "https://claude.com/blog/claude-managed-agents"
 import re as _re
 
 # Pages not shipped yet: links to them render as plain text until they are live.
-PENDING = {"/openai-devday-2026-dots-recap/",
-           "/muse-charm/", "/meta-muse-marketplace-issue/"}
+PENDING = {"/openai-devday-2026-dots-recap/", "/meta-muse-marketplace-issue/"}
 
 
 def _strip(text):
@@ -441,10 +440,84 @@ def dots_not_officially_announced():
     ), NOA_FAQS
 
 
+# ---------------------------------------------------------------- muse charm
+
+CHARM_FAQS = [
+    ("How much does Muse Charm cost?",
+     "Not officially announced. Meta’s Connect post gives no price. <a href=\"%s\">The Verge</a>, relaying Bloomberg, says the price was undecided and that people familiar expect roughly smartwatch range, with carrier fees not settled. That is a report, not a Meta statement." % V_CHARM),
+    ("When does Muse Charm come out?",
+     "Meta’s written post says only that it will share more later this year. <a href=\"%s\">TechCrunch</a> quotes Mark Zuckerberg on stage saying the devices would be ready to ship in time for the holidays in December. An exact date is not officially announced." % TC_CHARM),
+    ("Is it a Tamagotchi?",
+     "No. TechCrunch calls it Tamagotchi-like, and Bloomberg’s report says the look resembles one. Meta describes it as a device to talk and interact with your Muse."),
+    ("Is Muse Charm the same as Meta VR Glasses?",
+     "No. They are separate products announced at Connect 2026. The VR Glasses section below has Meta’s numbers."),
+]
+
+
+def muse_charm():
+    inner = '''
+<section class="band"><div class="wrap">
+<h2>What Meta says</h2>
+<p>Meta’s <a href="%(CONNECT)s">Connect 2026 recap</a> gives Muse Charm one paragraph: “a delightful and fun device built for you to talk and interact with your Muse. It brings the power of Muse with a state of the art real-time voice model into a device that fits in your pocket. We’ll have more to share later this year.” Meta also has a product page titled “Muse Charm - Personal AI Agent” at <a href="https://www.meta.com/muse-charm/">meta.com/muse-charm</a>. Its text did not load in the check used for this note, so nothing on this page is taken from it.</p>
+<h2>What Zuckerberg and the press add</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Detail</th><th>Source</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td>Shows the Muse avatar on a small screen; you tap a fingerprint sensor to start talking without unlocking a phone or opening an app; fits on a keychain</td><td><a href="%(TC_CHARM)s">TechCrunch</a>, quoting the keynote</td><td>Said on stage</td></tr>
+<tr><td>Ships “in time for the holidays in December”; components still being finalized</td><td>TechCrunch, quoting Zuckerberg</td><td>Said on stage; no exact date</td></tr>
+<tr><td>About 2-inch OLED touchscreen, its own operating system, a 5G modem so it works without Wi-Fi, cameras, speakers, microphones, USB-C, music and video playback</td><td><a href="%(V_CHARM)s">The Verge</a>, relaying Bloomberg</td><td>Reported, not in Meta’s post</td></tr>
+<tr><td>Set up through the Muse app on iOS or Android; can recognize other nearby Charms</td><td>The Verge, relaying Bloomberg</td><td>Reported, not in Meta’s post</td></tr>
+<tr><td>Price roughly like a smartwatch; carrier fees for 5G undecided</td><td>The Verge, relaying Bloomberg</td><td>Reported. Price not officially announced</td></tr>
+<tr><td>Avatar known internally as “Jolly”</td><td>TechCrunch</td><td>Reported</td></tr>
+</tbody>
+</table>
+</div>
+<p>Not officially announced by Meta: price, exact release date, countries, colors and materials, battery life, storage, whether it needs a paid Muse plan, and whether it works without a phone. TechCrunch adds that Zuckerberg described the design as still being finalized.</p>
+<h2>Why people call it a Tamagotchi</h2>
+<p>TechCrunch’s 23 September report calls it a “Tamagotchi-like wearable,” and its 24 September analysis says many people have pointed out the resemblance to the pocket virtual pet. Meta’s own wording does not use the comparison. The avatar is customizable, per TechCrunch.</p>
+<h2>Meta VR Glasses, which are not the Charm</h2>
+<p>The same Connect recap says Meta VR Glasses weigh about 100 grams, use a 5K micro-OLED display, keep the battery and processors in a clip-on puck, and will be available in Spring 2027 for $1,299.99 USD. That price is for the VR Glasses only. The recap prints no such number for Muse Charm.</p>
+<p>Also announced there: Muse on Meta’s AI glasses “in the coming months,” a Muse email address, and Muse for Mac. What Muse itself does is on <a href="/muse/">What is Muse</a>.</p>
+<h2>Solutions for advanced users</h2>
+<h3>Choose by scenario</h3>
+<ul>
+<li><strong>You want Muse today:</strong> use the app, WhatsApp, the web, or Mac, per Meta’s Connect recap. The Charm is not on sale.</li>
+<li><strong>You want a hands-free voice device:</strong> Meta’s glasses are the other announced route to Muse, and both are “coming” items. Timing for Muse on glasses is “coming months,” not a date.</li>
+<li><strong>You are budgeting:</strong> do not put a number on the Charm. Reserve for it only after Meta publishes a price. A reservation or waitlist is not described in Meta’s post.</li>
+</ul>
+<h3>Use with Grok Bot, or move</h3>
+<p>Grok Bot has no Charm-like device in the pages this site checked. A Charm would be a new way to reach Muse, not to reach Grok Bot. If you rely on Grok Bot for parallel work, keep it and treat the Charm as a possible extra. Comparison of the software is on <a href="/muse-vs-grok-bot/">Muse vs Grok Bot</a>.</p>
+<h3>Common pitfalls</h3>
+<ul>
+<li>Quoting the Bloomberg-based specs as Meta’s. They are reports, and final hardware can differ.</li>
+<li>Mixing the $1,299.99 VR Glasses price into Charm searches.</li>
+<li>Assuming it works with an agent other than Muse.</li>
+<li>Assuming a December date applies outside the US. Countries are not officially announced.</li>
+</ul>
+<p>Privacy behavior of Muse itself, including the permission prompt that a user blamed after a Marketplace incident, is on <a href="/meta-muse-marketplace-issue/">Meta Muse and the Marketplace incident</a>.</p>
+</div></section>
+''' % dict(CONNECT=CONNECT, TC_CHARM=TC_CHARM, V_CHARM=V_CHARM)
+    sources = [
+        ("Meta, Everything we announced at Connect 2026", CONNECT),
+        ("Meta, Muse Charm product page (text not verified)", "https://www.meta.com/muse-charm/"),
+        ("TechCrunch, 23 September 2026", TC_CHARM),
+        ("TechCrunch, 24 September 2026", "https://techcrunch.com/2026/09/24/metas-muse-charm-looks-like-a-tamagotchi-but-its-tapping-into-a-much-newer-trend/"),
+        ("The Verge, relaying Bloomberg", V_CHARM),
+    ]
+    return _shell(
+        "Unofficial notes · Muse Charm",
+        "Muse Charm: what Meta said, what is only reported",
+        "Meta’s pocket device for Muse. Meta has not announced a price or exact release date, and this page separates its words from press reports.",
+        inner, CHARM_FAQS, sources,
+    ), CHARM_FAQS
+
+
 CLUSTER2 = [
     ("/muse-vs-grok-bot/", "Muse vs Grok Bot: where they differ, by their own pages", muse_vs_grok_bot),
     ("/dots-security-privacy/", "Dots security and privacy: what OpenAI says and tested", dots_security_privacy),
     ("/dots-vs-chatgpt/", "Dots vs ChatGPT, and how Claude differs", dots_vs_chatgpt),
     ("/how-to-get-openai-dots/", "How to get OpenAI dots: plan, region, and setup", how_to_get_openai_dots),
     ("/dots-not-officially-announced/", "Dots: what is not officially announced", dots_not_officially_announced),
+    ("/muse-charm/", "Muse Charm: what Meta said, what is only reported", muse_charm),
 ]
