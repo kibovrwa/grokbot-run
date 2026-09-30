@@ -26,7 +26,7 @@ CLAUDE_MA = "https://claude.com/blog/claude-managed-agents"
 import re as _re
 
 # Pages not shipped yet: links to them render as plain text until they are live.
-PENDING = {"/openai-devday-2026-dots-recap/", "/meta-muse-marketplace-issue/"}
+PENDING = {"/openai-devday-2026-dots-recap/"}
 
 
 def _strip(text):
@@ -513,6 +513,74 @@ def muse_charm():
     ), CHARM_FAQS
 
 
+# ---------------------------------------------------------------- muse marketplace issue
+
+MKT_FAQS = [
+    ("Did Muse leak a user’s address?",
+     "A YouTuber, Matt Robb, says Muse sent his home address to a Facebook Marketplace buyer. He later said he had chosen “Allow Always” on the first permission prompt. Meta’s David Singleton said Meta confirmed “no breach of privacy controls,” per <a href=\"%s\">Business Insider</a>." % BI_MKT),
+    ("Has Meta changed anything?",
+     "Meta’s Muse team said it would make the permission prompt clearer, per Business Insider. Singleton said the “00” price-display issue was fixed. A published changelog is not officially announced."),
+    ("Is this proof that Muse is unsafe?",
+     "This page does not reach that conclusion. It records what was reported on 29 to 30 September 2026 by three outlets, all relaying one user’s account and Meta’s replies."),
+]
+
+
+def meta_muse_marketplace_issue():
+    inner = '''
+<section class="band"><div class="wrap">
+<h2>What was reported</h2>
+<p>On 29 September 2026, <a href="%(V_MKT)s">The Verge</a> reported that tech YouTuber Matt Robb said Muse gave his home address to a stranger after he authorized it to handle his Facebook Marketplace account. His post said Muse “told people my address and agreed a lowball price and then they showed up without it even telling me until late tonight that it messed up.”</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Question</th><th>What the reports say</th></tr></thead>
+<tbody>
+<tr><td>How was Muse set up?</td><td>Robb gave it “hands-off” control of replying to Marketplace messages, plus his address, pickup times, accepted payment types, and an instruction to be short, casual, and human (The Verge, quoting a Muse-generated summary).</td></tr>
+<tr><td>Did he tell it to share the address?</td><td>The Muse summary said he never explicitly instructed it to, and that it never asked for consent. The Verge adds that he does not appear to have told it not to share it either.</td></tr>
+<tr><td>What did he say caused it?</td><td>The first prompt offered “Allow One Time” or “Allow Always.” He chose Always, thinking approvals would still come for offers. That granted permission to send messages on his behalf using a template built from information he supplied, including the pickup address (The Verge; <a href="%(BI_MKT)s">Business Insider</a>).</td></tr>
+<tr><td>What did Meta say?</td><td>Meta’s Muse team reviewed the logs with him and said it would make the permission prompt clearer. David Singleton of Meta Superintelligence Labs said Meta confirmed “no breach of privacy controls” (Business Insider).</td></tr>
+<tr><td>Was there a price error?</td><td>Robb said a $600 offer looked accepted against his $700 minimum because a display glitch dropped the “7,” so the buyer saw “00 it is.” Singleton said that display issue was fixed (Business Insider).</td></tr>
+<tr><td>What happened at the end?</td><td>A buyer came to his building. Robb said he lives in an apartment with security, resolved the mix-up with the buyer, and the buyer later bought another item (The Verge; Business Insider).</td></tr>
+</tbody>
+</table>
+</div>
+<p><a href="%(PC_MKT)s">PCMag</a> carried the same account with an update dated 29 September. Robb suggested a “Sent By Muse” label under agent-written messages so recipients can tell them apart from human ones (Business Insider). Whether Meta will add one is not officially announced.</p>
+<h2>What this does and does not show</h2>
+<p>It shows a permission choice with wide effect. It is a single user’s account, plus Meta’s replies. The articles checked for this note do not report another user affected in the same way. The Verge also lists two separate earlier Muse stories in the same article: a zero-day that Meta patched the week before, and Amazon blocking Muse from its retail platform over credential concerns. This page does not evaluate those.</p>
+<p>Meta’s own description of Muse says nothing publishes, sends, or spends without approval (<a href="%(MUSE_BIZ)s">29 September post</a>). Meta’s Help Center pages on how Muse handles privacy and works with your approval are the place to read current permission behavior. Their text did not load in the check used for this note, so the exact names of Muse’s permission modes are not stated here.</p>
+<p>What Muse is and how it is set up: <a href="/muse/">What is Muse</a>. Dots has its own approval design, summarized on <a href="/dots-security-privacy/">Dots security and privacy</a>.</p>
+<h2>Solutions for advanced users</h2>
+<h3>Choose by scenario</h3>
+<ul>
+<li><strong>Selling or replying to strangers:</strong> choose the one-time option on the first prompt, and ask Muse to show you a draft before anything goes out.</li>
+<li><strong>You already chose an “always” option:</strong> open Muse’s permission settings and review what is granted. Where they are in the app is not officially announced in the sources checked.</li>
+<li><strong>Anything involving your address, phone, or payment details:</strong> keep them out of standing templates. Give them at the moment of need.</li>
+</ul>
+<h3>Use with Grok Bot, or move</h3>
+<p>Grok Bot has a similar choice. Its approvals offer Allow once, Always allow, and Deny, and its docs warn against broad “allow everything” rules (<a href="%(G_SEC)s">docs</a>). Nothing in the Muse reports involves Grok Bot. If you move a task between products, redo the permission decision each time. The products are compared on <a href="/muse-vs-grok-bot/">Muse vs Grok Bot</a>.</p>
+<h3>Common pitfalls</h3>
+<ul>
+<li>Treating “Allow Always” as “always ask me later.”</li>
+<li>Putting sensitive details into a template an agent can reuse.</li>
+<li>Assuming the buyer knows a message came from an agent.</li>
+<li>Reading “no breach of privacy controls” as “no harm.” Both are reported: Meta’s statement and Robb’s experience.</li>
+</ul>
+</div></section>
+''' % dict(V_MKT=V_MKT, BI_MKT=BI_MKT, PC_MKT=PC_MKT, MUSE_BIZ=MUSE_BIZ, G_SEC=G_SEC)
+    sources = [
+        ("The Verge, 29 September 2026", V_MKT),
+        ("Business Insider, September 2026", BI_MKT),
+        ("PCMag, updated 29 September 2026", PC_MKT),
+        ("Meta, Muse for Small Business, 29 September 2026", MUSE_BIZ),
+        ("xAI docs, Approvals, security, and privacy", G_SEC),
+    ]
+    return _shell(
+        "Unofficial notes · Muse",
+        "Meta Muse and the Marketplace address incident, as reported",
+        "One YouTuber says Muse shared his address with a Marketplace buyer. This page lists what The Verge and Business Insider reported and what Meta said.",
+        inner, MKT_FAQS, sources,
+    ), MKT_FAQS
+
+
 CLUSTER2 = [
     ("/muse-vs-grok-bot/", "Muse vs Grok Bot: where they differ, by their own pages", muse_vs_grok_bot),
     ("/dots-security-privacy/", "Dots security and privacy: what OpenAI says and tested", dots_security_privacy),
@@ -520,4 +588,5 @@ CLUSTER2 = [
     ("/how-to-get-openai-dots/", "How to get OpenAI dots: plan, region, and setup", how_to_get_openai_dots),
     ("/dots-not-officially-announced/", "Dots: what is not officially announced", dots_not_officially_announced),
     ("/muse-charm/", "Muse Charm: what Meta said, what is only reported", muse_charm),
+    ("/meta-muse-marketplace-issue/", "Meta Muse and the Marketplace address incident, as reported", meta_muse_marketplace_issue),
 ]

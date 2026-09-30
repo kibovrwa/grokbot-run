@@ -153,3 +153,5 @@ http://grokbot.run/* https://grokbot.run/:splat 301
 /dots-not-officially-announced/index.html /dots-not-officially-announced/ 301
 /muse-charm /muse-charm/ 301
 /muse-charm/index.html /muse-charm/ 301
+/meta-muse-marketplace-issue /meta-muse-marketplace-issue/ 301
+/meta-muse-marketplace-issue/index.html /meta-muse-marketplace-issue/ 301

@@ -162,6 +162,14 @@ PAGES = {
         "also": "muse charm tamagotchi; meta vr glasses; muse charm release date",
         "do_not": "invent price; state Bloomberg specs as Meta's; put VR Glasses price on Charm",
     },
+    "/meta-muse-marketplace-issue/": {
+        "title": "Meta Muse and the Marketplace address incident, as reported",
+        "description": "What The Verge and Business Insider reported about Muse sharing a user's address on Facebook Marketplace, what Meta said, and how to check permissions.",
+        "h1": "Meta Muse and the Marketplace address incident, as reported",
+        "primary": "meta muse ai marketplace issue; muse facebook marketplace address",
+        "also": "muse allow always; muse privacy incident",
+        "do_not": "claim Muse leaks data generally; name buyer; state Meta permission mode names unverified",
+    },
     "/": {
         "title": "Grok Bot guide: install, Cursor login, and do not Reset first",
         "description": "Unofficial Grok Bot guide. Install from x.ai/bot, sign in with Cursor, use one shared computer, and Retry before you Reset.",
