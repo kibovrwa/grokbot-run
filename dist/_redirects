@@ -155,3 +155,5 @@ http://grokbot.run/* https://grokbot.run/:splat 301
 /muse-charm/index.html /muse-charm/ 301
 /meta-muse-marketplace-issue /meta-muse-marketplace-issue/ 301
 /meta-muse-marketplace-issue/index.html /meta-muse-marketplace-issue/ 301
+/openai-devday-2026-dots-recap /openai-devday-2026-dots-recap/ 301
+/openai-devday-2026-dots-recap/index.html /openai-devday-2026-dots-recap/ 301

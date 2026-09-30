@@ -157,6 +157,7 @@ Ask before you install software or change a password.</code></pre>
 <li><a href="/dots-vs-chatgpt/">Dots vs ChatGPT and Claude</a></li>
 <li><a href="/how-to-get-openai-dots/">How to get OpenAI dots</a></li>
 <li><a href="/dots-not-officially-announced/">What is not officially announced</a></li>
+<li><a href="/openai-devday-2026-dots-recap/">DevDay 2026 recap</a></li>
 <li><a href="/muse/">What Muse is</a></li>
 </ul>
 <p class="muted">Related on this site: <a href="/learn/what-is-grok-bot/">What Grok Bot is</a> · <a href="/compare/">Grok Bot alternatives</a> · <a href="/">Grok Bot guide</a></p>

@@ -26,7 +26,7 @@ CLAUDE_MA = "https://claude.com/blog/claude-managed-agents"
 import re as _re
 
 # Pages not shipped yet: links to them render as plain text until they are live.
-PENDING = {"/openai-devday-2026-dots-recap/"}
+PENDING = set()
 
 
 def _strip(text):
@@ -581,6 +581,84 @@ def meta_muse_marketplace_issue():
     ), MKT_FAQS
 
 
+# ---------------------------------------------------------------- devday recap
+
+DD_FAQS = [
+    ("What is GPT-6.1 Sol?",
+     "OpenAI’s 29 September 2026 upgrade to GPT-6 Sol. <a href=\"%s\">OpenAI</a> says it nearly matches GPT-6 Astra on agentic coding, computer use, and professional work at one-fifth of Astra’s standard input and output token prices." % O_SOL),
+    ("Do dots run on GPT-6.1 Sol?",
+     "OpenAI says dots are powered by GPT-6 Astra. The sources checked do not say dots have moved to Sol. Not officially announced."),
+    ("Is 6.1 Sol in the free ChatGPT?",
+     "OpenAI’s Sol page lists Plus, Pro, Business, Enterprise, and Edu in ChatGPT Work and Codex, and says it is not yet available in Chat. Free and Go are not listed."),
+    ("When was DevDay 2026?",
+     "29 September 2026, in San Francisco, per <a href=\"%s\">CNBC</a>." % CNBC),
+]
+
+
+def openai_devday_2026_dots_recap():
+    inner = '''
+<section class="band"><div class="wrap">
+<h2>Dots at DevDay 2026</h2>
+<p>OpenAI opened the dots rollout at <a href="%(CNBC)s">DevDay on 29 September 2026</a>. Its <a href="%(O_RECAP)s">recap post</a> counts more than 20 announcements and lists dots first: “remarkably capable, always-on agents,” available on Pro and Business Premium in eligible markets, with an Enterprise, Edu, and Healthcare beta when a workspace admin enables it, off by default. Eligibility, regions, and setup are on <a href="/how-to-get-openai-dots/">How to get OpenAI dots</a>. Protections are on <a href="/dots-security-privacy/">Dots security and privacy</a>. What is still open is on <a href="/dots-not-officially-announced/">Dots: what is not officially announced</a>.</p>
+<h2>GPT-6.1 Sol, the “6.1 Sol” in search trends</h2>
+<p>“6.1 Sol” is GPT-6.1 Sol, a model, not a dots feature. <a href="%(O_SOL)s">OpenAI’s launch page</a>:</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Item</th><th>What OpenAI says</th></tr></thead>
+<tbody>
+<tr><td>What it is</td><td>An upgrade to GPT-6 Sol that nearly matches GPT-6 Astra on agentic coding, computer use, and professional work.</td></tr>
+<tr><td>Price</td><td>One-fifth of Astra’s standard input and output token prices. API: $2 per million input tokens, $0.10 cached input, $10 per million output tokens; model name gpt-6.1-sol.</td></tr>
+<tr><td>Where</td><td>All Plus, Pro, Business, Enterprise, and Edu users in ChatGPT Work and Codex. Not yet in Chat. Also the API.</td></tr>
+<tr><td>Speed</td><td>GPT-6.1 Sol Ultrafast is “coming soon.” No date is given.</td></tr>
+<tr><td>Own comparisons</td><td>On DeepSWE v1.1, OpenAI says it matches Astra at roughly one-fifth of the cost. These are OpenAI’s benchmarks, and OpenAI notes its evaluations of competitors come from public reports.</td></tr>
+</tbody>
+</table>
+</div>
+<p><a href="%(TNW)s">The Next Web</a> adds that OpenAI cancelled the October launch of GPT-6.1 Astra after failed safety tests. That is The Next Web’s report; the recap and Sol pages checked do not discuss it.</p>
+<h2>Other DevDay items that touch dots</h2>
+<ul>
+<li><strong>ChatGPT Space:</strong> a shared place where teammates, ChatGPT, and your dot build on shared knowledge. Available on Pro, Business, and Enterprise on desktop app and web; mobile creation and editing are coming soon.</li>
+<li><strong>Pages:</strong> documents built for human and agent collaboration, on Pro, Business, and Enterprise.</li>
+<li><strong>Pro 500:</strong> a new tier with 25 times the ChatGPT Plus allowance and access to Ultrafast, “available now.” The recap prints no dollar price.</li>
+<li><strong>Ultrafast:</strong> up to 8 times faster token generation in Codex and up to 6 times in the API. GPT-6 Astra Ultrafast is on Pro 500 and Enterprise. It is separate from dots.</li>
+<li><strong>Plugin extensions:</strong> a way for developers to give a plugin a sidebar home in ChatGPT. Dots reach apps through plugins, and the launch post says over 4,000 apps.</li>
+<li><strong>Sign in with ChatGPT:</strong> use plan allowance across 16 partners, including OpenClaw.</li>
+<li><strong>Agents API with computer use, and Bedrock Managed Agents:</strong> developer products for building your own agents. They are not dots.</li>
+</ul>
+<p>Specialist dots for organizations, with their own identity and access, are in pilots, and OpenAI says it is working with Microsoft to bring them to Agent 365 (<a href="%(O_INTRO)s">launch post</a>).</p>
+<h2>Solutions for advanced users</h2>
+<h3>Choose by scenario</h3>
+<ul>
+<li><strong>Developer building agents:</strong> the Agents API and Sol are the announced routes, not dots. Read the recap entries for your plan.</li>
+<li><strong>Coding cost:</strong> Sol is the lower-priced model in OpenAI’s own comparison. Verify on your workload; benchmarks are OpenAI’s.</li>
+<li><strong>Someone who wants an assistant that works while away:</strong> dots, if eligible. See <a href="/dots-vs-chatgpt/">Dots vs ChatGPT</a>.</li>
+</ul>
+<h3>Use with Grok Bot, or move</h3>
+<p>The DevDay announcements do not describe interoperability with Grok Bot. If you use Grok Bot for parallel roles, DevDay does not change that. Compare the agent products on <a href="/dots-vs-grokbot/">Dots vs Grok Bot</a>.</p>
+<h3>Common pitfalls</h3>
+<ul>
+<li>Reading “Available today” for a model as availability for dots, or the reverse.</li>
+<li>Assuming Sol is in the main Chat view. OpenAI says it is not yet.</li>
+<li>Treating a benchmark as your result.</li>
+<li>Mixing Pro and Pro 500 in budgeting.</li>
+</ul>
+</div></section>
+''' % dict(CNBC=CNBC, O_RECAP=O_RECAP, O_SOL=O_SOL, TNW=TNW, O_INTRO=O_INTRO)
+    sources = [
+        ("OpenAI, DevDay 2026 recap, 29 September 2026", O_RECAP),
+        ("OpenAI, Introducing GPT-6.1 Sol", O_SOL),
+        ("OpenAI, Introducing dots", O_INTRO),
+        ("CNBC DevDay live blog, 29 September 2026", CNBC),
+        ("The Next Web, 29 September 2026", TNW),
+    ]
+    return _shell(
+        "Unofficial notes · DevDay",
+        "OpenAI DevDay 2026: dots and GPT-6.1 Sol recap",
+        "What OpenAI announced for dots at DevDay on 29 September 2026, plus what “6.1 Sol” means. Sourced from OpenAI’s own pages.",
+        inner, DD_FAQS, sources,
+    ), DD_FAQS
+
+
 CLUSTER2 = [
     ("/muse-vs-grok-bot/", "Muse vs Grok Bot: where they differ, by their own pages", muse_vs_grok_bot),
     ("/dots-security-privacy/", "Dots security and privacy: what OpenAI says and tested", dots_security_privacy),
@@ -589,4 +667,5 @@ CLUSTER2 = [
     ("/dots-not-officially-announced/", "Dots: what is not officially announced", dots_not_officially_announced),
     ("/muse-charm/", "Muse Charm: what Meta said, what is only reported", muse_charm),
     ("/meta-muse-marketplace-issue/", "Meta Muse and the Marketplace address incident, as reported", meta_muse_marketplace_issue),
+    ("/openai-devday-2026-dots-recap/", "OpenAI DevDay 2026: dots and GPT-6.1 Sol recap", openai_devday_2026_dots_recap),
 ]

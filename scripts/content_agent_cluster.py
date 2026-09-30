@@ -119,7 +119,7 @@ def dots_release():
 <h2>The date the sources use</h2>
 <p>OpenAI’s <a href="%s">deployment safety appendix</a> says, on 29 September 2026, that it is launching dots. <a href="%s">CNBC</a> places the keynote that day in San Francisco. The Verge, TechCrunch, WIRED, and 9to5Google use the same day.</p>
 <p><a href="%s">The Next Web</a> also says OpenAI released the GPT-6 Astra model on 3 September 2026. That is the model date in that report, not a second Dots launch date. The appendix says Dots are powered by GPT-6 Astra.</p>
-<p>Not officially announced in these sources: a minute-by-minute keynote clock, and a date when every ChatGPT plan receives a Dot.</p>
+<p>Everything else announced that day is on <a href="/openai-devday-2026-dots-recap/">the DevDay recap</a>. Not officially announced in these sources: a minute-by-minute keynote clock, and a date when every ChatGPT plan receives a Dot.</p>
 <h2>Field setup</h2>
 <p>If you are checking “has it shipped,” use the 29 September 2026 date above. A later date for every plan is not officially announced. Who can open it that day is on <a href="/dots-pricing/">pricing</a>, not restated here.</p>
 </div></section>

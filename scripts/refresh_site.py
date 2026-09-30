@@ -99,6 +99,7 @@ SITEMAP_URLS = [
     "/dots-not-officially-announced/",
     "/muse-charm/",
     "/meta-muse-marketplace-issue/",
+    "/openai-devday-2026-dots-recap/",
 ]
 
 SITEMAP_LASTMOD = {path: "2026-09-30" for path in (
@@ -121,6 +122,7 @@ SITEMAP_LASTMOD = {path: "2026-09-30" for path in (
     "/dots-not-officially-announced/",
     "/muse-charm/",
     "/meta-muse-marketplace-issue/",
+    "/openai-devday-2026-dots-recap/",
 )}
 
 

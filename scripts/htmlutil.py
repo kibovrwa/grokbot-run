@@ -273,6 +273,7 @@ CRUMB_SHORT = {
     "/muse/": "Muse",
     "/muse-vs/": "Muse vs",
     "/muse-alternatives/": "Muse alternatives",
+    "/openai-devday-2026-dots-recap/": "DevDay 2026 recap",
     "/meta-muse-marketplace-issue/": "Muse Marketplace incident",
     "/muse-charm/": "Muse Charm",
     "/dots-not-officially-announced/": "Dots not announced",

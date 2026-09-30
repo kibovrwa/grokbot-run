@@ -170,6 +170,14 @@ PAGES = {
         "also": "muse allow always; muse privacy incident",
         "do_not": "claim Muse leaks data generally; name buyer; state Meta permission mode names unverified",
     },
+    "/openai-devday-2026-dots-recap/": {
+        "title": "OpenAI DevDay 2026: dots and GPT-6.1 Sol recap",
+        "description": "OpenAI DevDay 2026 recap for dots: what was announced on 29 September, what GPT-6.1 Sol is, and which items are not dots. Sourced from OpenAI.",
+        "h1": "OpenAI DevDay 2026: dots and GPT-6.1 Sol recap",
+        "primary": "openai devday; devday 2026; 6.1 sol",
+        "also": "gpt-6.1 sol; openai devday 2026 recap; dots devday",
+        "do_not": "say dots run on Sol; invent Pro 500 price; livestream claims",
+    },
     "/": {
         "title": "Grok Bot guide: install, Cursor login, and do not Reset first",
         "description": "Unofficial Grok Bot guide. Install from x.ai/bot, sign in with Cursor, use one shared computer, and Retry before you Reset.",

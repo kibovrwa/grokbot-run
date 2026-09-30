@@ -20,6 +20,7 @@ This site: https://grokbot.run/
 - [What is Muse](https://grokbot.run/muse/): Meta's personal agent, how to start it, and reported price. Not a Meta page.
 - [Muse vs](https://grokbot.run/muse-vs/)
 - [Muse alternatives](https://grokbot.run/muse-alternatives/)
+- [OpenAI DevDay 2026 recap](https://grokbot.run/openai-devday-2026-dots-recap/): dots at DevDay and what GPT-6.1 Sol is.
 - [Meta Muse Marketplace incident](https://grokbot.run/meta-muse-marketplace-issue/): what The Verge and Business Insider reported and what Meta said.
 - [Muse Charm](https://grokbot.run/muse-charm/): Meta's pocket device for Muse; what Meta said versus what is reported. Price not officially announced.
 - [Dots: what is not officially announced](https://grokbot.run/dots-not-officially-announced/): the gaps, coming-soon items, and limited betas in one table.
