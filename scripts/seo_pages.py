@@ -146,6 +146,14 @@ PAGES = {
         "also": "dots availability; who can use dots; how to create a dot; dots region",
         "do_not": "claim Plus access; invent EU date; invent app links",
     },
+    "/dots-not-officially-announced/": {
+        "title": "Dots: what is not officially announced",
+        "description": "What OpenAI has not announced for dots, or marked coming soon, limited beta, or unavailable at launch, in one sourced table. Unofficial notes.",
+        "h1": "Dots: what is not officially announced",
+        "primary": "dots not officially announced; dots coming soon",
+        "also": "dots limitations; dots rumors; dots unannounced features",
+        "do_not": "present rumor as fact; invent dates; cite forum comments as sources",
+    },
     "/": {
         "title": "Grok Bot guide: install, Cursor login, and do not Reset first",
         "description": "Unofficial Grok Bot guide. Install from x.ai/bot, sign in with Cursor, use one shared computer, and Retry before you Reset.",

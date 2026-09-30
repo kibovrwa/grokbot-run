@@ -26,7 +26,7 @@ CLAUDE_MA = "https://claude.com/blog/claude-managed-agents"
 import re as _re
 
 # Pages not shipped yet: links to them render as plain text until they are live.
-PENDING = {"/openai-devday-2026-dots-recap/", "/dots-not-officially-announced/",
+PENDING = {"/openai-devday-2026-dots-recap/",
            "/muse-charm/", "/meta-muse-marketplace-issue/"}
 
 
@@ -368,9 +368,83 @@ def how_to_get_openai_dots():
     ), HOW_FAQS
 
 
+# ---------------------------------------------------------------- dots not officially announced
+
+NOA_FAQS = [
+    ("Why does this page exist?",
+     "Search results for dots mix confirmed facts with rumor. This page keeps the gaps in one place. Each row cites the OpenAI wording that shows the gap."),
+    ("Where do I check whether something has since been announced?",
+     "Start with OpenAI’s <a href=\"%s\">Help Center article</a>, then the <a href=\"%s\">launch post</a>. This site’s pages were checked on 30 September 2026 and may lag." % (O_HELP, O_INTRO)),
+]
+
+
+def dots_not_officially_announced():
+    inner = '''
+<section class="band"><div class="wrap">
+<h2>What OpenAI has said is coming, or not yet available</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Topic</th><th>What the sources say</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td>Free, Go, or Plus access</td><td>OpenAI names Pro, Business Premium, and an Enterprise beta. Plans below those are not named.</td><td>Not officially announced</td></tr>
+<tr><td>Usage terms after month one</td><td>The <a href="%(O_HELP)s">Help Center</a>: dots usage does not count toward allowances for the next month, and “after this period, we’ll share usage terms for each plan.”</td><td>Not officially announced</td></tr>
+<tr><td>Price of extra dots or more capacity</td><td>The <a href="%(O_INTRO)s">launch post</a> says that in the future you will be able to add more dots and scale speed or monthly work. No price is given.</td><td>Not officially announced</td></tr>
+<tr><td>Pro in the EEA, Switzerland, and the UK</td><td>Excluded at launch. No later date is given in the sources checked.</td><td>Not officially announced</td></tr>
+<tr><td>Texting for everyone</td><td>The launch post says “coming soon.” The Help Center describes a limited beta through a third-party provider for Pro users in the US, not in Business or Enterprise.</td><td>Limited beta only</td></tr>
+<tr><td>Teams of dots</td><td>“Over time, we envision teams of dots working together on your behalf.”</td><td>Not officially announced</td></tr>
+<tr><td>Creating a dot on mobile</td><td>The Help Center says you cannot currently create one on mobile.</td><td>Not available now</td></tr>
+<tr><td>A standalone email address for the dot</td><td>The Help Center: at launch you cannot give your dot its own standalone email address.</td><td>Not available at launch</td></tr>
+<tr><td>A dot calling you</td><td>The Help Center: your dot cannot initiate calls to you at launch.</td><td>Not available at launch</td></tr>
+<tr><td>Specialist dots for companies</td><td>Focused enterprise pilots, and an integration with Microsoft Agent 365 that OpenAI says it is working on.</td><td>Preview and pilots</td></tr>
+<tr><td>Which model version dots run on</td><td>GPT-6 Astra, per OpenAI. Whether dots move to GPT-6.1 Sol is not stated in the sources checked.</td><td>Not officially announced</td></tr>
+<tr><td>An independent security audit</td><td>The <a href="/dots-security-privacy/">test numbers</a> are OpenAI’s own.</td><td>Not officially announced</td></tr>
+<tr><td>A comparison with Claude or Grok Bot</td><td>OpenAI’s dots pages do not name either. See <a href="/dots-vs-chatgpt/">Dots vs ChatGPT</a> and <a href="/dots-vs-grokbot/">Dots vs Grok Bot</a>.</td><td>Not officially announced</td></tr>
+<tr><td>Import or shared login with another agent</td><td>None of the sources describe one.</td><td>Not officially announced</td></tr>
+</tbody>
+</table>
+</div>
+<h2>Claims to treat carefully</h2>
+<ul>
+<li><strong>“Dots is just hosted OpenClaw.”</strong> Nothing in OpenAI’s dots pages says this. The DevDay recap lists OpenClaw only among 16 partners for “Sign in with ChatGPT.”</li>
+<li><strong>Dollar prices in press coverage.</strong> Outlets differ, and OpenAI’s dots pages linked here print none. Use <a href="/dots-pricing/">Dots pricing</a> for how this site handles it.</li>
+<li><strong>Employee comparisons with Muse.</strong> A newsletter relayed a social post attributed to an OpenAI employee. It is anecdotal and not used here.</li>
+</ul>
+<h2>Solutions for advanced users</h2>
+<h3>Choose by scenario</h3>
+<ul>
+<li><strong>Budgeting:</strong> plan around the first dot being included and the first month being outside your allowance. Leave the period after it as a variable, because terms are not officially announced.</li>
+<li><strong>Rolling out to a team:</strong> assume the Enterprise beta has admin-only enablement and off by default. Ask your OpenAI contact about anything beyond that.</li>
+<li><strong>Needing texting or a dot-owned email today:</strong> neither is a general feature yet. Consider what else covers the channel.</li>
+</ul>
+<h3>Use with Grok Bot, or move</h3>
+<p>Nothing on this page changes what you can do with Grok Bot today. The two products are compared on <a href="/dots-vs-grokbot/">their own page</a>. If a missing feature blocks you, staying on the product that already has it is a valid choice.</p>
+<h3>Common pitfalls</h3>
+<ul>
+<li>Quoting a “coming soon” line as a date.</li>
+<li>Treating a limited beta as general availability.</li>
+<li>Counting a social post or forum comment as a source.</li>
+<li>Reading “not officially announced” as “will not happen.” It means the sources checked do not say.</li>
+</ul>
+</div></section>
+''' % dict(O_HELP=O_HELP, O_INTRO=O_INTRO)
+    sources = [
+        ("OpenAI, Introducing dots, 29 September 2026", O_INTRO),
+        ("OpenAI Help Center, Getting started with your dot", O_HELP),
+        ("OpenAI, DevDay 2026 recap", O_RECAP),
+        ("OpenAI, GPT-6 Astra system card, dots appendix", OPENAI),
+    ]
+    return _shell(
+        "Unofficial notes · gaps",
+        "Dots: what is not officially announced",
+        "One list of what OpenAI has not announced for dots, or has marked coming soon, limited beta, or unavailable at launch.",
+        inner, NOA_FAQS, sources,
+    ), NOA_FAQS
+
+
 CLUSTER2 = [
     ("/muse-vs-grok-bot/", "Muse vs Grok Bot: where they differ, by their own pages", muse_vs_grok_bot),
     ("/dots-security-privacy/", "Dots security and privacy: what OpenAI says and tested", dots_security_privacy),
     ("/dots-vs-chatgpt/", "Dots vs ChatGPT, and how Claude differs", dots_vs_chatgpt),
     ("/how-to-get-openai-dots/", "How to get OpenAI dots: plan, region, and setup", how_to_get_openai_dots),
+    ("/dots-not-officially-announced/", "Dots: what is not officially announced", dots_not_officially_announced),
 ]

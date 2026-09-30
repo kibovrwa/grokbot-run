@@ -149,3 +149,5 @@ http://grokbot.run/* https://grokbot.run/:splat 301
 /dots-vs-chatgpt/index.html /dots-vs-chatgpt/ 301
 /how-to-get-openai-dots /how-to-get-openai-dots/ 301
 /how-to-get-openai-dots/index.html /how-to-get-openai-dots/ 301
+/dots-not-officially-announced /dots-not-officially-announced/ 301
+/dots-not-officially-announced/index.html /dots-not-officially-announced/ 301
