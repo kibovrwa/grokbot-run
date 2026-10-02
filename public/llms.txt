@@ -64,6 +64,7 @@ This site: https://grokbot.run/
 - [Terms](https://grokbot.run/terms/)
 - [Contact](https://grokbot.run/contact/)
 - [Sources](https://grokbot.run/sources/)
+- [Hotel Lobby AI](https://grokbot.run/hotel-lobby-ai/): separate side page about the 2026 meme; generator not live, not about Grok Bot
 
 ## Facts this site will not invent
 

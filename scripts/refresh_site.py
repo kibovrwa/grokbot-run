@@ -22,6 +22,7 @@ from content_ops import ops, OPS_FAQS
 from content_cases import use_cases, JOBS
 from content_fixes import FIXES
 from content_legal import LEGAL
+from content_hotel_lobby import hotel_lobby, FAQS as HOTEL_LOBBY_FAQS, HOWTO as HOTEL_LOBBY_HOWTO
 
 DIST = ROOT / "dist"
 SITEMAP_URLS = [
@@ -77,7 +78,11 @@ SITEMAP_URLS = [
     "/tools/linux-port/",
     "/pricing/",
     "/sources/",
+    "/hotel-lobby-ai/",
 ]
+
+# Pages with their own date; every other URL keeps the site-wide lastmod.
+LASTMOD = {"/hotel-lobby-ai/": "2026-10-02"}
 
 
 def path_from_file(f):
@@ -118,7 +123,7 @@ def write_sitemap():
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
     ]
     for u in SITEMAP_URLS:
-        lines.append("<url><loc>%s</loc><lastmod>2026-09-27</lastmod></url>" % canonical(u))
+        lines.append("<url><loc>%s</loc><lastmod>%s</lastmod></url>" % (canonical(u), LASTMOD.get(u, "2026-09-27")))
     lines.append("</urlset>")
     (DIST / "sitemap.xml").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
@@ -286,6 +291,17 @@ def main():
             article_jsonld(path, meta["h1"], meta["description"]),
         ]))
 
+    hm = PAGES["/hotel-lobby-ai/"]
+    write("/hotel-lobby-ai/", page("/hotel-lobby-ai/", hm["title"], hm["description"], hotel_lobby(), jsonld=[
+        faq_jsonld(HOTEL_LOBBY_FAQS),
+        howto_jsonld(
+            "Make a Hotel Lobby AI video from two photos",
+            "The planned flow for the Hotel Lobby AI generator. The generator is not live yet.",
+            HOTEL_LOBBY_HOWTO,
+        ),
+        article_jsonld("/hotel-lobby-ai/", hm["h1"], hm["description"], date_modified="2026-10-02", date_published="2026-10-02"),
+    ], dates=("2026-10-02", "2026-10-02")))
+
     details = {
         "cli": "/tools/grok-bot-cli/",
         "skill": "/tools/grok-bot-skill/",
@@ -297,7 +313,7 @@ def main():
         meta = PAGES[path]
         write(path, page(path, meta["title"], meta["description"], tool_detail(key)))
 
-    written = {"/", "/pricing/", "/use-cases/", "/tools/", "/learn/", "/learn/glossary/", "/learn/cursor/", "/learn/operator/", "/learn/ops/", "/compare/", "/troubleshooting/"}
+    written = {"/", "/hotel-lobby-ai/", "/pricing/", "/use-cases/", "/tools/", "/learn/", "/learn/glossary/", "/learn/cursor/", "/learn/operator/", "/learn/ops/", "/compare/", "/troubleshooting/"}
     written.update(spec["path"] for spec in SUPPORT)
     written.update(path for path, _fn in FIXES)
     written.update(path for path, _t, _d, _fn, _faqs in LEGAL)

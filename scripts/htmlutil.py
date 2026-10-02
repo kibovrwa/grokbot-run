@@ -252,6 +252,7 @@ CRUMB_SHORT = {
     "/terms/": "Terms",
     "/contact/": "Contact",
     "/sources/": "Sources",
+    "/hotel-lobby-ai/": "Hotel Lobby AI",
 }
 
 
@@ -309,13 +310,13 @@ def howto_jsonld(name, description, steps):
     }
 
 
-def article_jsonld(path, headline, description, date_modified="2026-09-27"):
+def article_jsonld(path, headline, description, date_modified="2026-09-27", date_published="2026-09-27"):
     return {
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": headline,
         "description": description,
-        "datePublished": "2026-09-27",
+        "datePublished": date_published,
         "dateModified": date_modified,
         "inLanguage": "en",
         "mainEntityOfPage": {"@type": "WebPage", "@id": canonical(path)},
@@ -434,7 +435,7 @@ def apply_ga(html):
     return html.replace("</head>", snippet + "\n</head>", 1)
 
 
-def page(path, title, description, body, jsonld=None, lang="en"):
+def page(path, title, description, body, jsonld=None, lang="en", dates=("2026-09-04", "2026-09-27")):
     canon = canonical(path)
     site_name = "Grok Bot Guide"
     site_desc = "Grok Bot guide: how to start, Cursor login, first job, shared computer, plan conflicts, and Recover before Reset."
@@ -464,8 +465,8 @@ def page(path, title, description, body, jsonld=None, lang="en"):
         "description": description,
         "url": canon,
         "inLanguage": "en",
-        "datePublished": "2026-09-04",
-        "dateModified": "2026-09-27",
+        "datePublished": dates[0],
+        "dateModified": dates[1],
         "isPartOf": {"@type": "WebSite", "name": site_name, "url": SITE + "/"},
     })
     blobs.append(_crumbs(path, title))

@@ -426,6 +426,14 @@ PAGES = {
         "also": "deb rpm appimage",
         "do_not": "ios/android",
     },
+    "/hotel-lobby-ai/": {
+        "title": "Hotel Lobby AI: orange booth duet meme, photo tips, FAQ",
+        "description": "Hotel Lobby AI explained: the 2026 orange-booth duet meme, 4 steps, photo tips and an honest FAQ. The generator is not live yet; get a launch note.",
+        "h1": "Hotel Lobby AI",
+        "primary": "hotel lobby ai",
+        "also": "hotel lobby ai generator; hotel lobby meme; orange booth duet",
+        "do_not": "grok bot topics; claims of a working generator",
+    },
     "/sources/": {
         "title": "Grok Bot sources and fetch notes",
         "description": "Bibliography for this Grok Bot guide: 42 official materials, 89 failure threads, catalog and cases, plus URLs that timed out on fetch day 2026-09-04.",
