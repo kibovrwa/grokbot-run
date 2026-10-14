@@ -156,7 +156,7 @@ RECOVER_FAQS = [
 
 def mac_download():
     lede = '''
-<p class="meta">Official Mac path from <a href="%s">Get started</a> and the xAI FAQ (fetched 2026-09-20). This page is the Mac download. All platforms: <a href="/learn/install/">install</a>. This site does not host the file.</p>
+<p class="meta">Official Mac path from <a href="%s">Get started</a> and the xAI FAQ (fetched 2026-09-20). This page is the Mac download. Every platform: <a href="/download/">Download</a>. Sign-in order: <a href="/learn/install/">install</a>. This site does not host the file.</p>
 <div class="callout">
 <p><strong>Intel Mac: skip the top Download for macOS button.</strong> Cursor staff confirmed that button is Apple silicon (forum, 2026-08-19). Scroll to Download Grok Bot, then <strong>More downloads</strong>, and take Intel. Chip in About This Mac means Apple silicon; Processor means Intel. The file is only on <a href="%s">x.ai/bot</a>. This site does not host it.</p>
 </div>
@@ -221,7 +221,7 @@ def mac_download():
 
 def windows_download():
     lede = '''
-<p class="meta">Windows steps from <a href="%s">Get started</a> and staff notes on double installs, proxies, and tunnels. Fetched 2026-09-20. Mac steps: <a href="/learn/mac-download/">Mac download</a>. The installer itself is only on <a href="%s">x.ai/bot</a>.</p>
+<p class="meta">Windows steps from <a href="%s">Get started</a> and staff notes on double installs, proxies, and tunnels. Fetched 2026-09-20. Mac steps: <a href="/learn/mac-download/">Mac download</a>. The installer itself is only on <a href="%s">x.ai/bot</a>. Every platform: <a href="/download/">Download</a>.</p>
 <div class="callout">
 <p><strong>One official installer, one installed copy.</strong> Pick x64 or Arm64 from x.ai/bot. If Windows already lists Grok Bot twice, remove the older one before you debug the network.</p>
 </div>
@@ -269,7 +269,7 @@ def windows_download():
 
 def phone_download():
     lede = '''
-<p class="meta">Store links and limits from the xAI FAQ and Cursor Help, fetched 2026-09-20. Desktop packages stay on <a href="%s">x.ai/bot</a>. Phone does not replace the Mac or Windows install when you need Teach a task or Always allow.</p>
+<p class="meta">Store links and limits from the xAI FAQ and Cursor Help, fetched 2026-09-20. Desktop packages stay on <a href="%s">x.ai/bot</a>. Every platform: <a href="/download/">Download</a>. Phone does not replace the Mac or Windows install when you need Teach a task or Always allow.</p>
 <div class="callout">
 <p><strong>iPhone, iPad, and Android are official.</strong> Same Cursor login, same roster, same cloud computer. The phone is not a second machine and not a private login.</p>
 </div>
@@ -666,6 +666,89 @@ def recover_vs_reset():
     ]
     body += RECOVER_GUIDES
     return _page("Recover or Reset", "Update, Recover, or Reset Grok Bot's computer", lede, body, RECOVER_FAQS, related, sources)
+
+
+DOWNLOAD_FAQS = [
+    ("Is Grok Bot free, and which plan includes it?",
+     "There is no consumer free tier and no standalone SKU. Access is bundled with a paid Cursor plan or a linkable SuperGrok or X plan. A free Cursor plan does not get a hosted computer. Plan wording that still conflicts is on the <a href=\"/pricing/\">pricing</a> page."),
+    ("macOS says Grok Bot is not supported on this Mac. What now?",
+     "Usually that is the wrong chip package, or a file that did not come from x.ai/bot. The top Download for macOS button is Apple silicon. Intel is under More downloads. Chip in About This Mac means Apple silicon; Processor means Intel. Delete the mismatched file and take the matching official package. Steps are on <a href=\"/learn/mac-download/\">Mac download</a>."),
+    ("Is grokbot.run the official Grok Bot site?",
+     "No. This is an unofficial community handbook, not an xAI or Cursor site. Official packages come from x.ai/bot, the App Store, and Google Play. This site hosts no files."),
+    ("Where is the Windows build?",
+     "On <a href=\"%s\">x.ai/bot</a>. Choose x64 or Arm64 to match Settings, System, About, System type. This site does not host the installer. The longer note is <a href=\"/learn/windows-download/\">Windows download</a>." % STORE),
+    ("Login fails after the download. What do I do?",
+     "Sign in with the Cursor account that holds the plan. There is no separate Grok Bot account. If the browser popup never returns, or the Mac says the account is unavailable after a password change, log out, fully quit, and sign in again. The walkthrough is <a href=\"/learn/login/\">Grok Bot login</a>."),
+]
+
+
+def _faq_html_rich(faqs):
+    bits = ['<h2>FAQ</h2><div class="faq card">']
+    for q, a in faqs:
+        bits.append("<details><summary>%s</summary><p>%s</p></details>" % (escape(q), a))
+    bits.append("</div>")
+    return "".join(bits)
+
+
+def download_hub():
+    lede = '''
+<p>Official packages come only from <a href="%s">x.ai/bot</a>. Sign in with your Cursor account. This site hosts no files.</p>
+<div class="cta-row">
+  <a class="btn btn-primary" href="%s">Download on x.ai/bot</a>
+</div>
+''' % (STORE, STORE)
+    body = '''
+<h2>macOS</h2>
+<p>Apple silicon is the default button on <a href="%s">x.ai/bot</a>. Intel is under More downloads. Cursor staff confirmed the top Download for macOS button is the Apple silicon build (forum, 2026-08-19). About This Mac: Chip means Apple silicon; Processor means Intel.</p>
+<p>Homebrew installs the same app and does not show the chip choice. If you need Apple silicon versus Intel, use the product page.</p>
+<p><code class="cmd">brew install --cask grok-bot</code></p>
+<p>The formula is <a href="https://formulae.brew.sh/cask/grok-bot">formulae.brew.sh/cask/grok-bot</a>.</p>
+<p>Gatekeeper, Applications, and a white window: <a href="/learn/mac-download/">Mac download</a>.</p>
+<h2>Windows</h2>
+<p>The Windows installer is on <a href="%s">x.ai/bot</a>. Pick x64 or Arm64 to match Settings, System, About, System type. This site does not host the file.</p>
+<p>One copy, the tray quit, and the proxy note: <a href="/learn/windows-download/">Windows download</a>.</p>
+<h2>iPhone and iPad</h2>
+<p>The App Store listing is named Grok Bot. The xAI FAQ says iPhone needs iOS 18 or later, and the same iOS app runs on iPad with iPadOS 18 or later.</p>
+<div class="cta-row">
+  <a class="btn btn-secondary" href="%s">App Store</a>
+</div>
+<p>What syncs, and what stays on the desktop app: <a href="/learn/phone-download/">iPhone, iPad, and Android</a>.</p>
+<h2>Android</h2>
+<p>Google Play, package <code>ai.x.grok.bot</code>. The FAQ lists Android 9 or later. Official @bot pointed at that listing on 2026-09-02. A different package name is the wrong app.</p>
+<div class="cta-row">
+  <a class="btn btn-secondary" href="%s">Google Play</a>
+</div>
+<p>Same roster and the same computer as desktop: <a href="/learn/phone-download/">iPhone, iPad, and Android</a>.</p>
+<h2>Docs</h2>
+<p>The install order on xAI's site is <a href="%s">Get started</a>. Linux deb, rpm, and AppImage are under More downloads on x.ai/bot. Package notes stay on <a href="/tools/linux-port/">Linux packages</a>.</p>
+<h2>After install</h2>
+<ol>
+<li>Open the app. On a Mac, open it from Applications, not from the disk image. On Windows, open it from the Start menu.</li>
+<li>Sign in with your Cursor account. There is no separate Grok Bot account.</li>
+<li>The sign-in order is <a href="/learn/install/">install and sign in</a>. One cited job is <a href="/learn/first-bot/">first Bot</a>.</li>
+</ol>
+''' % (STORE, STORE, APP_STORE, PLAY, DOC_START)
+    related = [
+        ("/learn/mac-download/", "Mac download", "Apple silicon versus Intel, Gatekeeper, and the white window."),
+        ("/learn/windows-download/", "Windows download", "x64 or Arm64, one copy, and the tray quit."),
+        ("/learn/phone-download/", "iPhone, iPad, and Android", "Official stores, and the jobs that stay on desktop."),
+        ("/learn/install/", "Install and sign in", "The order after you have the official package."),
+        ("/learn/first-bot/", "First Bot", "One job. Stop at a draft."),
+    ]
+    sources = [
+        ("x.ai/bot", STORE),
+        ("Get started", DOC_START),
+        ("App Store", APP_STORE),
+        ("Google Play", PLAY),
+        ("Homebrew cask grok-bot", "https://formulae.brew.sh/cask/grok-bot"),
+        ("Intel build is under More downloads", "https://forum.cursor.com/t/grok-bot-w-cursor-ultra-on-intel-chip-mac/168752"),
+    ]
+    return (
+        '<section class="band"><div class="wrap prose">'
+        '<p class="kicker">Download</p><h1>Download Grok Bot</h1>%s%s%s%s%s'
+        "</div></section>"
+        % (lede, body, _faq_html_rich(DOWNLOAD_FAQS), _related(related), _sources(sources))
+    )
 
 
 SUPPORT = [

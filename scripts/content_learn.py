@@ -136,6 +136,7 @@ def install():
 <p class="kicker">Lesson 2</p>
 <h1>Download and install Grok Bot, then sign in with Cursor</h1>
 <p class="meta">Official steps from <a href="https://docs.x.ai/grok-bot/get-started">Get started</a>, re-read 2026-09-22. Mac, Windows, and phone each have a longer page. Stuck after install? <a href="/troubleshooting/stuck/">Wait if the bar is still moving</a>.</p>
+<p>Official links for every platform are on <a href="/download/">Download Grok Bot</a>. This page is the install order and the Cursor sign-in. It does not host the files.</p>
 <div class="callout">
 <p><strong>Download from <a href="https://x.ai/bot">x.ai/bot</a>, then sign in with Cursor.</strong> The top macOS button is Apple silicon. Intel is under More downloads. This handbook is not the store. Access still depends on your plan: Get started (2026-09-22) lists every paid individual Cursor plan, Cursor Teams, or a linked SuperGrok, Plus, or Heavy subscription. Older pages that say Ultra only are stale. Conflicts stay on <a href="/pricing/">pricing</a>.</p>
 </div>

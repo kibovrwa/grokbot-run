@@ -156,6 +156,7 @@ if 'www.grokbot.run' in sitemap or 'http://grokbot.run' in sitemap:
 if 'pages.dev' in sitemap:
     errors.append('sitemap contains pages.dev host')
 for must in (
+    'https://grokbot.run/download/',
     'https://grokbot.run/learn/',
     'https://grokbot.run/learn/glossary/',
     'https://grokbot.run/learn/cursor/',

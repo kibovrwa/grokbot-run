@@ -7,7 +7,7 @@ FAQS = [
     ("Is this the official Grok Bot site?",
      "No. This is a community how-to: first job, login, shared computer, plan conflicts, Recover before Reset, and an operator path after week one. Official packages stay on x.ai/bot."),
     ("Where do I download the Grok Bot app?",
-     "Desktop packages are on x.ai/bot (macOS, Windows, Linux). iOS and iPad are on the App Store; Android is on Google Play. This site is not the store. The install page is the overview; Mac, Windows, and phone each have their own steps."),
+     "Desktop packages are on x.ai/bot (macOS, Windows, Linux). iOS and iPad are on the App Store; Android is on Google Play. This site is not the store. Official links are listed at grokbot.run/download. Mac, Windows, and phone each have their own steps."),
     ("How do I log in to Grok Bot?",
      "There is no separate Grok Bot account. Open the app and sign in with the Cursor account that holds the plan and usage."),
     ("Is Grok Bot free? Which plan do I need?",
@@ -85,10 +85,11 @@ def home():
   <div class="wrap">
     <p class="kicker">Community guide · start, run, recover</p>
     <h1>How to start Grok Bot without burning a week</h1>
-    <p class="lede">Grok Bot is its own app, not grok.com. Install from x.ai/bot, sign in with Cursor, and do not Reset while the screen says Reconnecting.</p>
+    <p class="lede">Grok Bot is its own app, not grok.com. <a href="/download/">Download</a> the official app, sign in with Cursor, and do not Reset while the screen says Reconnecting.</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="#first-job">Copy a first job</a>
-      <a class="btn btn-secondary" href="/learn/install/">How to start</a>
+      <a class="btn btn-secondary" href="/download/">Download</a>
+      <a class="btn btn-ghost" href="/learn/install/">How to start</a>
       <a class="btn btn-ghost" href="/troubleshooting/">When it breaks</a>
     </div>
     <p class="hero-next"><a href="#already-running">Already running? Six steps from named field posts.</a></p>
@@ -172,6 +173,7 @@ def home():
 <section class="band"><div class="wrap">
   <h2>Start here</h2>
   <div class="grid-3">
+    <a class="card" href="/download/"><h3>Download</h3><p>Mac, Windows, iPhone, and Android. Official links only. This site hosts no files.</p></a>
     <a class="card" href="/learn/install/"><h3>How to start</h3><p>Mac, Windows, Linux, iOS, Android. Sign in with Cursor — no extra account.</p></a>
     <a class="card" href="/use-cases/#starter-jobs"><h3>More copyable jobs</h3><p>Inbox, outbound, travel. Stop at review until the output is checkable.</p></a>
     <a class="card" href="/pricing/"><h3>Free, plans, trial</h3><p>No standalone SKU. Cursor or SuperGrok. The early-September enterprise two-week trial is a dated announcement.</p></a>
@@ -180,7 +182,7 @@ def home():
 
 <section class="band"><div class="wrap">
   <h2>Download, and the screens people search</h2>
-  <p class="lede">Official packages stay on x.ai/bot. These pages are the Mac, Windows, and phone steps, plus the fixes for not responding, stuck, and can’t reach.</p>
+  <p class="lede">Official packages stay on x.ai/bot. <a href="/download/">Download Grok Bot</a> lists Mac, Windows, iPhone, and Android. These cards are the longer steps, plus the fixes for not responding, stuck, and can’t reach.</p>
   <div class="grid-3">
     <a class="card" href="/learn/mac-download/"><h3>Mac download</h3><p>Apple silicon or Intel, Gatekeeper, then Cursor login.</p></a>
     <a class="card" href="/learn/windows-download/"><h3>Windows download</h3><p>x64 or Arm64, one copy, quit the tray.</p></a>

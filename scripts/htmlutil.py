@@ -16,6 +16,7 @@ NAV = [
     ("/", "Guide"),
     ("/openai-dots/", "OpenAI dots"),
     ("/muse/", "Muse"),
+    ("/download/", "Download"),
     ("/learn/install/", "Install"),
     ("/pricing/", "Pricing"),
     ("/tools/", "Tools"),
@@ -152,6 +153,7 @@ def footer_html():
         '<footer class="site"><div class="wrap"><div class="foot-grid">'
         "<div><h4>Learn</h4>"
         '<a href="/learn/">Handbook</a>'
+        '<a href="/download/">Download</a>'
         '<a href="/learn/what-is-grok-bot/">What Grok Bot is</a>'
         '<a href="/learn/install/">Install and sign in</a>'
         '<a href="/learn/mac-download/">Mac download</a>'
@@ -216,6 +218,7 @@ def _hreflang_tags(path):
 
 CRUMB_SHORT = {
     "/learn/": "Handbook",
+    "/download/": "Download",
     "/learn/what-is-grok-bot/": "What it is",
     "/learn/install/": "Install",
     "/learn/mac-download/": "Mac",

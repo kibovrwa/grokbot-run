@@ -64,6 +64,7 @@ def build():
         ("X, Cursor, MCP, cloud computer", "/learn/ops/", "Guide", "twitter x plugin cloud agent remote mcp"),
         ("Cloud Agent handoff", "/learn/ops/", "Guide", "cursor cloud agent pull request github"),
         ("Official X plugin", "/learn/ops/", "Guide", "twitter scout mentions research database"),
+        ("Grok Bot download", "/download/", "Download", "grok bot download grokbot download download grokbot download grok bot macos windows iphone android intel indir install"),
         ("Grok Bot Mac download", "/learn/mac-download/", "Download", "grokbot mac download apple silicon intel"),
         ("Grok Bot Windows download", "/learn/windows-download/", "Download", "grokbot windows install x64 arm64"),
         ("Grok Bot not responding", "/troubleshooting/not-responding/", "Help", "stopped working silent bots failed to respond"),

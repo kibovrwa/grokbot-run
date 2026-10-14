@@ -154,6 +154,7 @@ def troubleshooting():
 <section class="band"><div class="wrap prose">
 <p class="kicker">Playbooks</p>
 <h1>Grok Bot not working — quit and Retry before you Reset</h1>
+<p>If you need the installer, use <a href="/download/">Download Grok Bot</a>. Official packages are on x.ai/bot, the App Store, and Google Play. This site hosts no files.</p>
 <p><strong>Fully quit, then Retry. Do not Reset while the screen says Reconnecting or Could not reach Grok Bot computer.</strong> Cursor Help: bots, files, and logins are safe during reconnect. Cloud work can continue while the desktop app is disconnected.</p>
 <p>The two updates are different. Settings, Updates, Check for Updates replaces the app. Update under Grok Bot computer rebuilds the machine. Match the sentence on the screen to one page below. The long steps live on that page, not here.</p>
 </div></section>

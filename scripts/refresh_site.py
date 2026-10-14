@@ -13,7 +13,7 @@ from content_home import home
 from content_pricing import pricing, PRICING_FAQS
 from content_learn import what_is, install, first_bot, computer, skills, plugins, cost, INSTALL_FAQS, COMPUTER_FAQS
 from content_trouble import troubleshooting
-from content_support import SUPPORT
+from content_support import SUPPORT, download_hub, DOWNLOAD_FAQS
 from content_tools import tools_index, tool_detail
 from content_hub import learn_index, glossary, cursor_and_grok
 from content_compare import compare
@@ -29,6 +29,7 @@ from content_agent_cluster2 import CLUSTER2
 DIST = ROOT / "dist"
 SITEMAP_URLS = [
     "/",
+    "/download/",
     "/learn/",
     "/learn/what-is-grok-bot/",
     "/learn/install/",
@@ -124,6 +125,7 @@ SITEMAP_LASTMOD = {path: "2026-09-30" for path in (
     "/meta-muse-marketplace-issue/",
     "/openai-devday-2026-dots-recap/",
 )}
+SITEMAP_LASTMOD["/download/"] = "2026-10-14"
 
 
 def path_from_file(f):
@@ -274,6 +276,33 @@ def main():
             modified="2026-09-30",
         ))
         cluster_written.add(path)
+    dl = PAGES["/download/"]
+    dl_plain = [(q, re.sub(r"<[^>]+>", "", a)) for q, a in DOWNLOAD_FAQS]
+    write("/download/", page(
+        "/download/", dl["title"], dl["description"], download_hub(),
+        jsonld=[
+            faq_jsonld(dl_plain),
+            howto_jsonld(
+                "Open Grok Bot after you install it",
+                "Open the official app, sign in with your Cursor account, then use the install page and one first Bot.",
+                [
+                    ("Open the app", "On a Mac, open Grok Bot from Applications, not from the disk image. On Windows, open it from the Start menu."),
+                    ("Sign in with Cursor", "There is no separate Grok Bot account. Use the Cursor account that holds the plan."),
+                    ("Then one job", "The install page is the sign-in order. The first-Bot page is one cited brief."),
+                ],
+            ),
+            itemlist_jsonld("Official Grok Bot downloads", [
+                ("macOS and Windows on x.ai/bot", "https://x.ai/bot"),
+                ("iPhone and iPad on the App Store", "https://apps.apple.com/us/app/grok-bot/id6794501026"),
+                ("Android on Google Play", "https://play.google.com/store/apps/details?id=ai.x.grok.bot"),
+                ("Get started", "https://docs.x.ai/grok-bot/get-started"),
+                ("Homebrew cask grok-bot", "https://formulae.brew.sh/cask/grok-bot"),
+            ]),
+            article_jsonld("/download/", dl["h1"], dl["description"], "2026-10-14", "2026-10-14"),
+        ],
+        published="2026-10-14",
+        modified="2026-10-14",
+    ))
     pm = PAGES["/pricing/"]
     write("/pricing/", page("/pricing/", pm["title"], pm["description"], pricing(), jsonld=[faq_jsonld(PRICING_FAQS)]))
     um = PAGES["/use-cases/"]
@@ -393,7 +422,7 @@ def main():
         meta = PAGES[path]
         write(path, page(path, meta["title"], meta["description"], tool_detail(key)))
 
-    written = {"/", "/openai-dots/", "/pricing/", "/use-cases/", "/tools/", "/learn/", "/learn/glossary/", "/learn/cursor/", "/learn/operator/", "/learn/ops/", "/compare/", "/troubleshooting/"}
+    written = {"/", "/download/", "/openai-dots/", "/pricing/", "/use-cases/", "/tools/", "/learn/", "/learn/glossary/", "/learn/cursor/", "/learn/operator/", "/learn/ops/", "/compare/", "/troubleshooting/"}
     written.update(cluster_written)
     written.update(spec["path"] for spec in SUPPORT)
     written.update(path for path, _fn in FIXES)

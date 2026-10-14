@@ -10,6 +10,7 @@ Official packages stay on [x.ai/bot](https://x.ai/bot). Sign in with the Cursor 
 
 | Job | Page |
 | --- | --- |
+| Download (official links only) | https://grokbot.run/download/ |
 | Install and Cursor login | https://grokbot.run/learn/install/ |
 | First Bot, one cited brief | https://grokbot.run/learn/first-bot/ |
 | The computer is shared | https://grokbot.run/learn/computer/ |

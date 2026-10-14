@@ -15,6 +15,8 @@ http://grokbot.run/* https://grokbot.run/:splat 301
 /dots/index.html /openai-dots/ 301
 # generated trailing-slash / index.html aliases
 /index.html / 301
+/download /download/ 301
+/download/index.html /download/ 301
 /learn /learn/ 301
 /learn/index.html /learn/ 301
 /learn/what-is-grok-bot /learn/what-is-grok-bot/ 301
