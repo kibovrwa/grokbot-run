@@ -510,13 +510,13 @@ def _page_join(path, title, description, body, canon, site_name, jsonld_html):
     if ga:
         html.append(ga)
     html.extend([
-        "</head><body>",
+        "</head><body><!--email_off-->",
         header_html(path),
         "<main>%s%s</main>" % (crumbs_html(path, title), body),
         footer_html(),
         "<script>const btn=document.querySelector('[data-menu]');const links=document.querySelector('[data-links]');if(btn) btn.addEventListener('click',()=>links.classList.toggle('open'));</script>",
         '<script data-find-js>%s</script>' % FIND_JS,
-        "</body></html>",
+        "<!--/email_off--></body></html>",
     ])
     return "\n".join(html)
 
