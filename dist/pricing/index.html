@@ -444,7 +444,7 @@ h1 + .en-sub, p.en-sub { display: none; }
 }
 .card h2, .card h3 { margin-top: 0; }
 .card p:last-child { margin-bottom: 0; }
-a.card { text-decoration: none; color: inherit; display: block; }
+a.card, div.card { text-decoration: none; color: inherit; display: block; }
 a.card:hover { opacity: 1; border-color: var(--hairline-strong); }
 h2 {
   font-size: clamp(26px, 3.2vw, 36px);
@@ -554,7 +554,7 @@ footer.site {
   font-size: 14px;
   background: transparent;
 }
-footer.site a { color: var(--muted); }
+footer.site a, .foot-grid > div > span { color: var(--muted); }
 footer.site a:hover { color: var(--text); opacity: 1; }
 .foot-grid { display: grid; grid-template-columns: 1.15fr 1fr 1.05fr; gap: 28px; margin-bottom: 28px; }
 .foot-grid h4 {
@@ -565,7 +565,7 @@ footer.site a:hover { color: var(--text); opacity: 1; }
   letter-spacing: .06em;
   text-transform: uppercase;
 }
-.foot-grid a { display: block; text-decoration: none; margin: 0 0 8px; }
+.foot-grid a, .foot-grid > div > span { display: block; text-decoration: none; margin: 0 0 8px; }
 .foot-grid p { color: var(--muted); font-size: 14px; line-height: 1.55; }
 .foot-legal { border-top: 1px solid var(--hairline); padding-top: 18px; }
 .foot-legal p { margin: 0 0 10px; max-width: 46rem; }
@@ -746,17 +746,17 @@ document.addEventListener('click', function (e) {
 <h1>Grok Bot pricing: free, plans, and enterprise trial</h1>
 <p>There is no standalone Grok Bot price. Access is bundled with Cursor or a linkable personal SuperGrok / X subscription, with weekly-resetting usage. How that Cursor account relates to the Bot app — login, plugins, not an IDE panel — is on <a href="/learn/cursor/">Cursor and Grok Bot</a>. Below is an official-source contrast for <strong>fetch day 2026-09-20</strong>. If a page does not state a number, this site does not invent one.</p>
 <div class="callout warn">
-<p><strong>Enterprise two-week trial is a dated announcement, not a current offer.</strong> The early-September 2026 news post <a href="https://x.ai/news/grok-bot-for-enterprise">x.ai/news/grok-bot-for-enterprise</a> still says Grok and Cursor Enterprise customers get Grok Bot free for the “next two weeks” and can invite the whole organization, including people without an existing seat. That window from early September is expired as of this fetch. Treat the page as a historical announcement. It was never a consumer free tier. Open the news post and your account team for whatever Enterprise access exists now.</p>
+<p><strong>Enterprise two-week trial is a dated announcement, not a current offer.</strong> The early-September 2026 news post <span>x.ai/news/grok-bot-for-enterprise</span> still says Grok and Cursor Enterprise customers get Grok Bot free for the “next two weeks” and can invite the whole organization, including people without an existing seat. That window from early September is expired as of this fetch. Treat the page as a historical announcement. It was never a consumer free tier. Open the news post and your account team for whatever Enterprise access exists now.</p>
 </div>
 <h2>What official pages say (side by side)</h2>
 <table>
 <thead><tr><th>Source</th><th>Fetched</th><th>Eligibility wording</th></tr></thead>
 <tbody>
-<tr><td><a href="https://cursor.com/help/grok-bot/plans">cursor.com/help/grok-bot/plans</a></td><td>2026-09-20</td><td>Grok Bot is included on every paid individual Cursor plan (Pro / Pro+ / Ultra) and on Cursor Teams. You can also link personal SuperGrok, Plus, Heavy, or X Premium+. Lite and SuperGrok Team/Enterprise cannot link. Linking is a usage grant, not a Cursor plan, and cannot be unlinked by you. Cursor Help says a Cursor plan and a SuperGrok / X Premium+ link do not stack.</td></tr>
-<tr><td><a href="https://docs.x.ai/grok-bot/faq">docs.x.ai/grok-bot/faq</a></td><td>2026-09-20</td><td>Included with every paid individual Cursor plan and with Cursor Teams; you can link an individual SuperGrok, SuperGrok Plus, or SuperGrok Heavy subscription. The September 4 omission of Pro is gone. Also: if you have both Cursor and SuperGrok, Grok Bot uses the side with more usage. X Premium+ is not named in that FAQ paragraph.</td></tr>
-<tr><td><a href="https://docs.x.ai/grok-bot/get-started">Get started</a></td><td>2026-09-20</td><td>Access is included with every paid individual Cursor plan and with the Cursor Teams plan, or through an individual SuperGrok link. The older “Plus / Heavy / Pro+ only” gate is gone on this page.</td></tr>
-<tr><td><a href="https://x.ai/news/grok-bot-more-plans">x.ai/news/grok-bot-more-plans</a></td><td>In-article date 2026-08-26</td><td>Grok Bot is now included with SuperGrok, Cursor Pro, and all Cursor Teams plans. Body list includes SuperGrok / Plus / Heavy and Cursor Pro / Pro+ / Ultra plus Teams Standard and Premium.</td></tr>
-<tr><td><a href="https://cursor.com/help/grok-bot/supergrok">Link SuperGrok</a></td><td>2026-09-20</td><td>Individual SuperGrok, Plus, Heavy, and X Premium+ grant usage. Team/Enterprise/Lite are ineligible. Linking is permanent.</td></tr>
+<tr><td><span>cursor.com/help/grok-bot/plans</span></td><td>2026-09-20</td><td>Grok Bot is included on every paid individual Cursor plan (Pro / Pro+ / Ultra) and on Cursor Teams. You can also link personal SuperGrok, Plus, Heavy, or X Premium+. Lite and SuperGrok Team/Enterprise cannot link. Linking is a usage grant, not a Cursor plan, and cannot be unlinked by you. Cursor Help says a Cursor plan and a SuperGrok / X Premium+ link do not stack.</td></tr>
+<tr><td><span>docs.x.ai/grok-bot/faq</span></td><td>2026-09-20</td><td>Included with every paid individual Cursor plan and with Cursor Teams; you can link an individual SuperGrok, SuperGrok Plus, or SuperGrok Heavy subscription. The September 4 omission of Pro is gone. Also: if you have both Cursor and SuperGrok, Grok Bot uses the side with more usage. X Premium+ is not named in that FAQ paragraph.</td></tr>
+<tr><td><span>Get started</span></td><td>2026-09-20</td><td>Access is included with every paid individual Cursor plan and with the Cursor Teams plan, or through an individual SuperGrok link. The older “Plus / Heavy / Pro+ only” gate is gone on this page.</td></tr>
+<tr><td><span>x.ai/news/grok-bot-more-plans</span></td><td>In-article date 2026-08-26</td><td>Grok Bot is now included with SuperGrok, Cursor Pro, and all Cursor Teams plans. Body list includes SuperGrok / Plus / Heavy and Cursor Pro / Pro+ / Ultra plus Teams Standard and Premium.</td></tr>
+<tr><td><span>Link SuperGrok</span></td><td>2026-09-20</td><td>Individual SuperGrok, Plus, Heavy, and X Premium+ grant usage. Team/Enterprise/Lite are ineligible. Linking is permanent.</td></tr>
 </tbody>
 </table>
 <div class="callout"><p><strong>The September 4 Pro-omission conflict is largely resolved.</strong> Help and the FAQ now both include Pro and every other paid individual Cursor plan. Remaining differences: stacking (Help says no; FAQ still says “whichever has more usage”) and whether X Premium+ is named. Trust the page you open. This site does not invent USD list prices.</p></div>
@@ -766,10 +766,10 @@ document.addEventListener('click', function (e) {
 <li>When it runs out, if on-demand is enabled, spend can continue on shared on-demand.</li>
 <li>Trial is usage credits plus a 7-day window, debited by agent steps and tokens — not by message count. Spent credits are not restored.</li>
 <li>No separate Grok Bot subscription is required.</li>
-<li>Price cards on x.ai/bot had concrete numbers stripped by page structure at fetch time; this site <strong>does not fill blanks</strong>. Open <a href="https://x.ai/bot">x.ai/bot</a> for current list prices.</li>
+<li>Price cards on x.ai/bot had concrete numbers stripped by page structure at fetch time; this site <strong>does not fill blanks</strong>. Open <span>x.ai/bot</span> for current list prices.</li>
 </ul>
 <h2>Third-party surveys (dated contrast only — not a price list)</h2>
-<p><a href="https://cellcog.ai/blog/grok-bot-pricing/">CellCog</a> says updated 2026-09-03 and lists eight paths with USD figures. Those numbers were compiled by that author from pages they cite — <strong>this site does not republish them as fact</strong>. If you need USD figures, open that article and Cursor / xAI pricing side by side and check they still match.</p>
+<p><span>CellCog</span> says updated 2026-09-03 and lists eight paths with USD figures. Those numbers were compiled by that author from pages they cite — <strong>this site does not republish them as fact</strong>. If you need USD figures, open that article and Cursor / xAI pricing side by side and check they still match.</p>
 <p>MindStudio’s setup piece (2026-08-12) still says “needs Cursor Ultra” — stale relative to current Help and FAQ.</p>
 <p>AI Builder Club (updated 2026-08-30) narrates the timeline from launch-day high tiers to the August 21 expansion and August 26 expansion again; its USD figures likewise belong in the original.</p>
 <p>If you do not want a managed seat, read <a href="/compare/">Grok Bot alternatives</a>. Those repos are not unofficial clients, and this site does not invent their prices either.</p>
@@ -783,7 +783,7 @@ document.addEventListener('click', function (e) {
 </div>
 </div></section>
 </main>
-<footer class="site"><div class="wrap"><div class="foot-grid"><div><h4>Learn</h4><a href="/learn/">Handbook</a><a href="/learn/what-is-grok-bot/">What Grok Bot is</a><a href="/learn/install/">Install and sign in</a><a href="/learn/mac-download/">Mac download</a><a href="/learn/windows-download/">Windows download</a><a href="/learn/phone-download/">iPhone and Android</a><a href="/learn/login/">Cursor login</a><a href="/learn/first-bot/">First Bot</a><a href="/learn/computer/">Shared computer</a><a href="/learn/skills-routines/">Skills and routines</a><a href="/learn/plugins/">Plugins and MCP</a><a href="/learn/cost-and-pitfalls/">Cost and pitfalls</a><a href="/learn/operator/">After week one</a><a href="/learn/ops/">X, Cursor, MCP</a><a href="/learn/glossary/">Glossary</a><a href="/learn/cursor/">Cursor and Grok Bot</a></div><div><h4>Look up</h4><a href="/pricing/">Pricing</a><a href="/compare/">Alternatives</a><a href="/tools/">Tools catalog</a><a href="/use-cases/">Field cases</a><a href="/troubleshooting/">Help</a><a href="/troubleshooting/not-responding/">Not responding</a><a href="/troubleshooting/stuck/">Stuck</a><a href="/troubleshooting/cant-reach/">Can't reach</a><a href="/troubleshooting/white-screen/">White or black screen</a><a href="/troubleshooting/recover-vs-reset/">Recover vs Reset</a><a href="/sources/">Sources</a></div><div><h4>Official</h4><a href="https://x.ai/bot">x.ai/bot</a><a href="https://docs.x.ai/grok-bot/overview">xAI docs</a><a href="https://cursor.com/help/grok-bot/getting-started">Cursor Help</a><a href="https://github.com/RongleCat/awesome-grok-bot">awesome-grok-bot</a></div></div><div class="foot-legal"><p>Unofficial community handbook. Not affiliated with, endorsed by, or operated by xAI or Cursor. Product packages stay on x.ai/bot. Product support is hi@cursor.com. Site mail is <a href="mailto:hello@grokbot.run">hello@grokbot.run</a>.</p><p class="foot-legal-links"><a href="/about/">About</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/contact/">Contact</a></p></div></div></footer>
+<footer class="site"><div class="wrap"><div class="foot-grid"><div><h4>Learn</h4><a href="/learn/">Handbook</a><a href="/learn/what-is-grok-bot/">What Grok Bot is</a><a href="/learn/install/">Install and sign in</a><a href="/learn/mac-download/">Mac download</a><a href="/learn/windows-download/">Windows download</a><a href="/learn/phone-download/">iPhone and Android</a><a href="/learn/login/">Cursor login</a><a href="/learn/first-bot/">First Bot</a><a href="/learn/computer/">Shared computer</a><a href="/learn/skills-routines/">Skills and routines</a><a href="/learn/plugins/">Plugins and MCP</a><a href="/learn/cost-and-pitfalls/">Cost and pitfalls</a><a href="/learn/operator/">After week one</a><a href="/learn/ops/">X, Cursor, MCP</a><a href="/learn/glossary/">Glossary</a><a href="/learn/cursor/">Cursor and Grok Bot</a></div><div><h4>Look up</h4><a href="/pricing/">Pricing</a><a href="/compare/">Alternatives</a><a href="/tools/">Tools catalog</a><a href="/use-cases/">Field cases</a><a href="/troubleshooting/">Help</a><a href="/troubleshooting/not-responding/">Not responding</a><a href="/troubleshooting/stuck/">Stuck</a><a href="/troubleshooting/cant-reach/">Can't reach</a><a href="/troubleshooting/white-screen/">White or black screen</a><a href="/troubleshooting/recover-vs-reset/">Recover vs Reset</a><a href="/sources/">Sources</a></div><div><h4>Official</h4><span>x.ai/bot</span><span>xAI docs</span><span>Cursor Help</span><span>awesome-grok-bot</span></div></div><div class="foot-legal"><p>Unofficial community handbook. Not affiliated with, endorsed by, or operated by xAI or Cursor. Product packages stay on x.ai/bot. Product support is hi@cursor.com. Site mail is <a href="mailto:hello@grokbot.run">hello@grokbot.run</a>.</p><p class="foot-legal-links"><a href="/about/">About</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/contact/">Contact</a></p></div></div></footer>
 <script>const btn=document.querySelector('[data-menu]');const links=document.querySelector('[data-links]');if(btn) btn.addEventListener('click',()=>links.classList.toggle('open'));</script>
 <script data-find-js>
 (function(){

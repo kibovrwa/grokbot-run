@@ -444,7 +444,7 @@ h1 + .en-sub, p.en-sub { display: none; }
 }
 .card h2, .card h3 { margin-top: 0; }
 .card p:last-child { margin-bottom: 0; }
-a.card { text-decoration: none; color: inherit; display: block; }
+a.card, div.card { text-decoration: none; color: inherit; display: block; }
 a.card:hover { opacity: 1; border-color: var(--hairline-strong); }
 h2 {
   font-size: clamp(26px, 3.2vw, 36px);
@@ -554,7 +554,7 @@ footer.site {
   font-size: 14px;
   background: transparent;
 }
-footer.site a { color: var(--muted); }
+footer.site a, .foot-grid > div > span { color: var(--muted); }
 footer.site a:hover { color: var(--text); opacity: 1; }
 .foot-grid { display: grid; grid-template-columns: 1.15fr 1fr 1.05fr; gap: 28px; margin-bottom: 28px; }
 .foot-grid h4 {
@@ -565,7 +565,7 @@ footer.site a:hover { color: var(--text); opacity: 1; }
   letter-spacing: .06em;
   text-transform: uppercase;
 }
-.foot-grid a { display: block; text-decoration: none; margin: 0 0 8px; }
+.foot-grid a, .foot-grid > div > span { display: block; text-decoration: none; margin: 0 0 8px; }
 .foot-grid p { color: var(--muted); font-size: 14px; line-height: 1.55; }
 .foot-legal { border-top: 1px solid var(--hairline); padding-top: 18px; }
 .foot-legal p { margin: 0 0 10px; max-width: 46rem; }
@@ -744,29 +744,29 @@ document.addEventListener('click', function (e) {
 <p class="kicker">Lesson 1</p>
 <h1>What is Grok Bot — not grok.com or Grok Build</h1>
 <p class="meta">This page answers “which product is grokbot / grok bot?” Install steps: <a href="/learn/install/">Install and sign in</a>.</p>
-<p>Grok Bot is the always-on AI teammate shipped by xAI / SpaceXAI together with Cursor. Per the official overview: a Bot is a <strong>persistent, named agent</strong> you message like a colleague; it can sign into apps and websites, finish work in the background, and return only when it needs your decision. <a href="https://docs.x.ai/grok-bot/overview">docs.x.ai/grok-bot/overview</a> states this plainly: it has its own cloud computer (browser, filesystem, terminal); multiple Bots share that one computer and can pass context and hand off work.</p>
-<p>The product page <a href="https://x.ai/bot">x.ai/bot</a> says: dispatch Bots from desktop or phone; they work in parallel, keep context about how you work, and find you when approval is needed. The official FAQ also stresses: close the laptop or App and cloud turns and routines keep running. <a href="https://docs.x.ai/grok-bot/faq">FAQ</a></p>
+<p>Grok Bot is the always-on AI teammate shipped by xAI / SpaceXAI together with Cursor. Per the official overview: a Bot is a <strong>persistent, named agent</strong> you message like a colleague; it can sign into apps and websites, finish work in the background, and return only when it needs your decision. <span>docs.x.ai/grok-bot/overview</span> states this plainly: it has its own cloud computer (browser, filesystem, terminal); multiple Bots share that one computer and can pass context and hand off work.</p>
+<p>The product page <span>x.ai/bot</span> says: dispatch Bots from desktop or phone; they work in parallel, keep context about how you work, and find you when approval is needed. The official FAQ also stresses: close the laptop or App and cloud turns and routines keep running. <span>FAQ</span></p>
 <h2>It is not these three things</h2>
 <p>The most common community mix-up is collapsing three Grok-branded products into one. This playbook forces the split:</p>
 <ul>
 <li><strong>Not grok.com chat.</strong> grok.com / the Grok app is a conversational assistant (plus Imagine, Voice, Build, and so on). Grok Bot is a different line: roster, cloud computer, routines. Coverage such as The Verge also keeps them separate — see <a href="/sources/">Sources</a>.</li>
 <li><strong>Not Grok 4.x model evals.</strong> Models can change generations; the Bot product sells “teammate + computer + approval,” not a benchmark score.</li>
-<li><strong>Not Grok Build, and not grok-app.</strong> Grok Build is a local coding CLI. The community project <a href="https://github.com/RongleCat/grok-app">RongleCat/grok-app</a> is a desktop GUI (Tauri) for the <strong>local Grok Build CLI</strong> — <em>not</em> a Grok Bot client. This site only mentions it under “related / easy to confuse” in the <a href="/tools/">tools catalog</a>.</li>
+<li><strong>Not Grok Build, and not grok-app.</strong> Grok Build is a local coding CLI. The community project <span>RongleCat/grok-app</span> is a desktop GUI (Tauri) for the <strong>local Grok Build CLI</strong> — <em>not</em> a Grok Bot client. This site only mentions it under “related / easy to confuse” in the <a href="/tools/">tools catalog</a>.</li>
 </ul>
 <p>Grok Imagine, the image tool on that grok.com line, can embed Content Credentials in the file it saves. <a href="https://removeaimeta.com/what-are-content-credentials">What Content Credentials are</a> separates that signed note in the file from a cloud copy and from a platform AI label.</p>
 <h2>Five official differences (check the originals)</h2>
 <ol>
-<li><strong>It has its own computer.</strong> A persistent cloud VM with browser, filesystem, and terminal; sites without a clean API get clicked the way a human would. <a href="https://docs.x.ai/grok-bot/overview">Overview</a> · <a href="https://docs.x.ai/grok-bot/computer-and-apps">Computer and apps</a></li>
-<li><strong>No workflow canvas required to start.</strong> Create a Bot, send a message, authorize as needed. The same Bot is reachable from desktop and phone. <a href="https://docs.x.ai/grok-bot/get-started">Get started</a></li>
+<li><strong>It has its own computer.</strong> A persistent cloud VM with browser, filesystem, and terminal; sites without a clean API get clicked the way a human would. <span>Overview</span> · <span>Computer and apps</span></li>
+<li><strong>No workflow canvas required to start.</strong> Create a Bot, send a message, authorize as needed. The same Bot is reachable from desktop and phone. <span>Get started</span></li>
 <li><strong>Multiple Bots coordinate themselves.</strong> They share one <strong>user-isolated</strong> computer, can message each other, join group chats, and hand off — you are not the router.</li>
-<li><strong>It can watch you demonstrate once.</strong> Teach a task stores up to about ten minutes of screen actions as a skill draft (no microphone recording). <a href="https://docs.x.ai/grok-bot/skills-routines-and-automations">Skills and routines</a></li>
+<li><strong>It can watch you demonstrate once.</strong> Teach a task stores up to about ten minutes of screen actions as a skill draft (no microphone recording). <span>Skills and routines</span></li>
 <li><strong>State is durable.</strong> Name, memory, files, browser sessions, and preferences survive across turns instead of wiping the environment each time.</li>
 </ol>
 <div class="callout warn">
-<p><strong>The isolation boundary is the user, not the Bot.</strong> Official wording: the computer is assigned to the account, not to a single Bot. Files, cookies, and logins are visible to every Bot on the roster. Do not treat “create another Bot” as security isolation. Forum pin: <a href="https://forum.cursor.com/t/grok-bot-ship-real-session-fences-bots-are-not-a-security-boundary/168476">Bots are not a security boundary</a>. The next lesson digs in: <a href="/learn/computer/">shared cloud computer</a>.</p>
+<p><strong>The isolation boundary is the user, not the Bot.</strong> Official wording: the computer is assigned to the account, not to a single Bot. Files, cookies, and logins are visible to every Bot on the roster. Do not treat “create another Bot” as security isolation. Forum pin: <span>Bots are not a security boundary</span>. The next lesson digs in: <a href="/learn/computer/">shared cloud computer</a>.</p>
 </div>
 <h2>Who can use it (official wording on 2026-09-20)</h2>
-<p>Eligibility follows the official pages on the fetch day. Cursor Help <a href="https://cursor.com/help/grok-bot/plans">Plans and billing</a> and the xAI <a href="https://docs.x.ai/grok-bot/faq">FAQ</a> (both fetched 2026-09-20) now say Grok Bot is included with every paid individual Cursor plan — including Pro — and with Cursor Teams. You can also link personal SuperGrok, SuperGrok Plus, SuperGrok Heavy, or X Premium+ (X Premium+ is named on Cursor Help; the FAQ names SuperGrok / Plus / Heavy). The September 4 conflict, when the FAQ omitted Pro, is largely resolved. Remaining wording still differs on stacking versus “whichever has more usage,” so open the originals — this site does not invent USD prices. Dated contrast: <a href="/pricing/">pricing snapshot</a>.</p>
+<p>Eligibility follows the official pages on the fetch day. Cursor Help <span>Plans and billing</span> and the xAI <span>FAQ</span> (both fetched 2026-09-20) now say Grok Bot is included with every paid individual Cursor plan — including Pro — and with Cursor Teams. You can also link personal SuperGrok, SuperGrok Plus, SuperGrok Heavy, or X Premium+ (X Premium+ is named on Cursor Help; the FAQ names SuperGrok / Plus / Heavy). The September 4 conflict, when the FAQ omitted Pro, is largely resolved. Remaining wording still differs on stacking versus “whichever has more usage,” so open the originals — this site does not invent USD prices. Dated contrast: <a href="/pricing/">pricing snapshot</a>.</p>
 <h2>Common misconceptions</h2>
 <ul>
 <li>Hearing “each Bot has its own screen” as “each Bot has its own computer.” Official text: one shared computer, one screen per Bot; screens are not a security boundary.</li>
@@ -778,7 +778,7 @@ document.addEventListener('click', function (e) {
 <nav class="pager"><span></span><a href="/learn/install/">Next: Install and sign in</a></nav>
 </div></section>
 </main>
-<footer class="site"><div class="wrap"><div class="foot-grid"><div><h4>Learn</h4><a href="/learn/">Handbook</a><a href="/learn/what-is-grok-bot/">What Grok Bot is</a><a href="/learn/install/">Install and sign in</a><a href="/learn/mac-download/">Mac download</a><a href="/learn/windows-download/">Windows download</a><a href="/learn/phone-download/">iPhone and Android</a><a href="/learn/login/">Cursor login</a><a href="/learn/first-bot/">First Bot</a><a href="/learn/computer/">Shared computer</a><a href="/learn/skills-routines/">Skills and routines</a><a href="/learn/plugins/">Plugins and MCP</a><a href="/learn/cost-and-pitfalls/">Cost and pitfalls</a><a href="/learn/operator/">After week one</a><a href="/learn/ops/">X, Cursor, MCP</a><a href="/learn/glossary/">Glossary</a><a href="/learn/cursor/">Cursor and Grok Bot</a></div><div><h4>Look up</h4><a href="/pricing/">Pricing</a><a href="/compare/">Alternatives</a><a href="/tools/">Tools catalog</a><a href="/use-cases/">Field cases</a><a href="/troubleshooting/">Help</a><a href="/troubleshooting/not-responding/">Not responding</a><a href="/troubleshooting/stuck/">Stuck</a><a href="/troubleshooting/cant-reach/">Can't reach</a><a href="/troubleshooting/white-screen/">White or black screen</a><a href="/troubleshooting/recover-vs-reset/">Recover vs Reset</a><a href="/sources/">Sources</a></div><div><h4>Official</h4><a href="https://x.ai/bot">x.ai/bot</a><a href="https://docs.x.ai/grok-bot/overview">xAI docs</a><a href="https://cursor.com/help/grok-bot/getting-started">Cursor Help</a><a href="https://github.com/RongleCat/awesome-grok-bot">awesome-grok-bot</a></div></div><div class="foot-legal"><p>Unofficial community handbook. Not affiliated with, endorsed by, or operated by xAI or Cursor. Product packages stay on x.ai/bot. Product support is hi@cursor.com. Site mail is <a href="mailto:hello@grokbot.run">hello@grokbot.run</a>.</p><p class="foot-legal-links"><a href="/about/">About</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/contact/">Contact</a></p></div></div></footer>
+<footer class="site"><div class="wrap"><div class="foot-grid"><div><h4>Learn</h4><a href="/learn/">Handbook</a><a href="/learn/what-is-grok-bot/">What Grok Bot is</a><a href="/learn/install/">Install and sign in</a><a href="/learn/mac-download/">Mac download</a><a href="/learn/windows-download/">Windows download</a><a href="/learn/phone-download/">iPhone and Android</a><a href="/learn/login/">Cursor login</a><a href="/learn/first-bot/">First Bot</a><a href="/learn/computer/">Shared computer</a><a href="/learn/skills-routines/">Skills and routines</a><a href="/learn/plugins/">Plugins and MCP</a><a href="/learn/cost-and-pitfalls/">Cost and pitfalls</a><a href="/learn/operator/">After week one</a><a href="/learn/ops/">X, Cursor, MCP</a><a href="/learn/glossary/">Glossary</a><a href="/learn/cursor/">Cursor and Grok Bot</a></div><div><h4>Look up</h4><a href="/pricing/">Pricing</a><a href="/compare/">Alternatives</a><a href="/tools/">Tools catalog</a><a href="/use-cases/">Field cases</a><a href="/troubleshooting/">Help</a><a href="/troubleshooting/not-responding/">Not responding</a><a href="/troubleshooting/stuck/">Stuck</a><a href="/troubleshooting/cant-reach/">Can't reach</a><a href="/troubleshooting/white-screen/">White or black screen</a><a href="/troubleshooting/recover-vs-reset/">Recover vs Reset</a><a href="/sources/">Sources</a></div><div><h4>Official</h4><span>x.ai/bot</span><span>xAI docs</span><span>Cursor Help</span><span>awesome-grok-bot</span></div></div><div class="foot-legal"><p>Unofficial community handbook. Not affiliated with, endorsed by, or operated by xAI or Cursor. Product packages stay on x.ai/bot. Product support is hi@cursor.com. Site mail is <a href="mailto:hello@grokbot.run">hello@grokbot.run</a>.</p><p class="foot-legal-links"><a href="/about/">About</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/contact/">Contact</a></p></div></div></footer>
 <script>const btn=document.querySelector('[data-menu]');const links=document.querySelector('[data-links]');if(btn) btn.addEventListener('click',()=>links.classList.toggle('open'));</script>
 <script data-find-js>
 (function(){

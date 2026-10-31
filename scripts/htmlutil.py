@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from pathlib import Path
-from html import escape
+from html import escape, unescape
+from urllib.parse import urlparse
 import json
 import os
 import re
@@ -432,6 +433,124 @@ def apply_ga(html):
     if not snippet or "</head>" not in html:
         return html
     return html.replace("</head>", snippet + "\n</head>", 1)
+
+
+# Sister sites stay linked. Everything else that is an http(s) anchor becomes text.
+_OWN_HOSTS = (
+    "removeaimeta.com",
+    "reelsongfinder.com",
+    "minecraftschematicgenerator.com",
+    "chatgpt2word.com",
+    "srt2word.com",
+    "astralhoro.com",
+    "easyfaceai.com",
+    "gaivsiq.com",
+    "snapchatmemoriesdownload.com",
+    "mechangelion.com",
+    "webtoolslist.com",
+    "grokbot.run",
+    "monareel.com",
+    "100daysatsea.com",
+    "capybarasvsplants.com",
+    "animecardfarm.com",
+    "ttktesting.com",
+    "crunchybutterescape.com",
+    "shortsrank.com",
+    "pinktable.com",
+)
+_ANCHOR_RE = re.compile(r"<a\b([^>]*)>(.*?)</a>", re.I | re.S)
+_HREF_RE = re.compile(r"""\bhref\s*=\s*(['"])(.*?)\1""", re.I | re.S)
+_CLASS_RE = re.compile(r"""\bclass\s*=\s*(['"])(.*?)\1""", re.I | re.S)
+_SKIP_BLOCK_RE = re.compile(r"(?is)(<script\b[^>]*>.*?</script>|<style\b[^>]*>.*?</style>)")
+_BLOCK_INNER_RE = re.compile(
+    r"<(?:div|p|h[1-6]|ul|ol|li|section|article|table|blockquote|figure|pre|header|footer)\b",
+    re.I,
+)
+
+
+def _host_is_own(host):
+    host = (host or "").lower().rstrip(".")
+    if host.startswith("www."):
+        host = host[4:]
+    for own in _OWN_HOSTS:
+        if host == own or host.endswith("." + own):
+            return True
+    return False
+
+
+def _keep_external_href(url):
+    """True when this href must stay clickable."""
+    raw = unescape(url).strip()
+    low = raw.lower()
+    if low.startswith(("mailto:", "tel:", "javascript:")) or raw.startswith(("#", "/", "?")):
+        return True
+    if low.startswith("//"):
+        raw = "https:" + raw
+        low = raw.lower()
+    if not low.startswith(("http://", "https://")):
+        return True
+    parsed = urlparse(raw)
+    host = (parsed.hostname or "").lower().rstrip(".")
+    if _host_is_own(host):
+        return True
+    path = (parsed.path or "").lower()
+    query = (parsed.query or "").lower()
+    blob = path + "?" + query
+    # Checkout / payment jumps stay. Privacy, terms, and ad-settings pages do not.
+    if "waffo" in host:
+        if any(x in blob for x in ("privacy", "terms", "legal", "policy", "ads", "cookie")):
+            return False
+        return any(x in blob for x in ("checkout", "/pay", "payment", "cashier", "order")) or "checkout" in host or host.startswith("pay.")
+    if host == "accounts.google.com":
+        if any(x in blob for x in ("privacy", "terms", "policy", "adssettings")):
+            return False
+        return any(x in path for x in ("/o/oauth2", "/signin", "/servicelogin", "/v3/signin", "/accountchooser"))
+    return False
+
+
+def _plain_anchor(attrs, inner):
+    # A span is closed by the HTML parser before a block child, which drops the class.
+    class_match = _CLASS_RE.search(attrs)
+    classes = class_match.group(2) if class_match else ""
+    block = bool(_BLOCK_INNER_RE.search(inner)) or any(
+        token in classes.split() for token in ("card", "mistake", "step", "roster-row", "quote")
+    )
+    button = "btn" in classes.split()
+    tag = "span" if button or not block else "div"
+    if classes:
+        return '<%s class="%s">%s</%s>' % (tag, classes, inner, tag)
+    return "<%s>%s</%s>" % (tag, inner, tag)
+
+
+def _strip_region(region, removed):
+    prev = None
+    cur = region
+    while cur != prev:
+        prev = cur
+
+        def repl(match, _removed=removed):
+            attrs, inner = match.group(1), match.group(2)
+            href_match = _HREF_RE.search(attrs)
+            if not href_match or _keep_external_href(href_match.group(2)):
+                return match.group(0)
+            _removed.append(unescape(href_match.group(2)).strip())
+            return _plain_anchor(attrs, inner)
+
+        cur = _ANCHOR_RE.sub(repl, cur)
+    return cur
+
+
+def strip_external_anchors(html):
+    """Drop external <a href> targets. Visible text and classes stay. Script and style stay."""
+    removed = []
+    parts = []
+    pos = 0
+    for match in _SKIP_BLOCK_RE.finditer(html):
+        parts.append(_strip_region(html[pos:match.start()], removed))
+        parts.append(match.group(0))
+        pos = match.end()
+    parts.append(_strip_region(html[pos:], removed))
+    return "".join(parts), removed
 
 
 def page(path, title, description, body, jsonld=None, lang="en"):

@@ -7,7 +7,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from htmlutil import ROOT, SITE, page, write, header_html, footer_html, canonical, faq_jsonld, howto_jsonld, itemlist_jsonld, article_jsonld, FIND_JS, apply_ga
+from htmlutil import ROOT, SITE, page, write, header_html, footer_html, canonical, faq_jsonld, howto_jsonld, itemlist_jsonld, article_jsonld, FIND_JS, apply_ga, strip_external_anchors
 from seo_pages import PAGES
 from content_home import home
 from content_pricing import pricing, PRICING_FAQS
@@ -334,6 +334,14 @@ def main():
     from search_index import write_index
     write_key_files()
     rows = write_index()
+    removed = []
+    for html_file in sorted(DIST.rglob("*.html")):
+        text = html_file.read_text(encoding="utf-8")
+        stripped, gone = strip_external_anchors(text)
+        if stripped != text:
+            html_file.write_text(stripped, encoding="utf-8")
+        removed.extend(gone)
+    print("unlinked external anchors", len(removed), "unique", len(set(removed)))
     print("refreshed", n, "pages; search", rows, "rows; indexnow", KEY)
 
 

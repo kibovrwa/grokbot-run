@@ -444,7 +444,7 @@ h1 + .en-sub, p.en-sub { display: none; }
 }
 .card h2, .card h3 { margin-top: 0; }
 .card p:last-child { margin-bottom: 0; }
-a.card { text-decoration: none; color: inherit; display: block; }
+a.card, div.card { text-decoration: none; color: inherit; display: block; }
 a.card:hover { opacity: 1; border-color: var(--hairline-strong); }
 h2 {
   font-size: clamp(26px, 3.2vw, 36px);
@@ -554,7 +554,7 @@ footer.site {
   font-size: 14px;
   background: transparent;
 }
-footer.site a { color: var(--muted); }
+footer.site a, .foot-grid > div > span { color: var(--muted); }
 footer.site a:hover { color: var(--text); opacity: 1; }
 .foot-grid { display: grid; grid-template-columns: 1.15fr 1fr 1.05fr; gap: 28px; margin-bottom: 28px; }
 .foot-grid h4 {
@@ -565,7 +565,7 @@ footer.site a:hover { color: var(--text); opacity: 1; }
   letter-spacing: .06em;
   text-transform: uppercase;
 }
-.foot-grid a { display: block; text-decoration: none; margin: 0 0 8px; }
+.foot-grid a, .foot-grid > div > span { display: block; text-decoration: none; margin: 0 0 8px; }
 .foot-grid p { color: var(--muted); font-size: 14px; line-height: 1.55; }
 .foot-legal { border-top: 1px solid var(--hairline); padding-top: 18px; }
 .foot-legal p { margin: 0 0 10px; max-width: 46rem; }
@@ -762,7 +762,7 @@ document.addEventListener('click', function (e) {
 <h2>FAQ</h2><div class="faq card"><details><summary>Does this site require an account?</summary><p>No. There is no grokbot.run login. Reading the pages does not create a profile on this site.</p></details><details><summary>When does analytics run?</summary><p>Only if the build was given a GA4 measurement ID. With no ID, the generator inserts no Google tag. The tag, when present, records a page view and a click on the main official-store buttons.</p></details><details><summary>Do you show ads today?</summary><p>No advertising is placed on the site today. Ads may be shown in the future. If that starts, this page will be updated, and ad partners may set their own cookies.</p></details><details><summary>What should I not email?</summary><p>Do not send passwords, one-time codes, API keys, session files, or private customer data to hello@grokbot.run or in a support mail you copy from these pages.</p></details></div>
 </div></section>
 </main>
-<footer class="site"><div class="wrap"><div class="foot-grid"><div><h4>Learn</h4><a href="/learn/">Handbook</a><a href="/learn/what-is-grok-bot/">What Grok Bot is</a><a href="/learn/install/">Install and sign in</a><a href="/learn/mac-download/">Mac download</a><a href="/learn/windows-download/">Windows download</a><a href="/learn/phone-download/">iPhone and Android</a><a href="/learn/login/">Cursor login</a><a href="/learn/first-bot/">First Bot</a><a href="/learn/computer/">Shared computer</a><a href="/learn/skills-routines/">Skills and routines</a><a href="/learn/plugins/">Plugins and MCP</a><a href="/learn/cost-and-pitfalls/">Cost and pitfalls</a><a href="/learn/operator/">After week one</a><a href="/learn/ops/">X, Cursor, MCP</a><a href="/learn/glossary/">Glossary</a><a href="/learn/cursor/">Cursor and Grok Bot</a></div><div><h4>Look up</h4><a href="/pricing/">Pricing</a><a href="/compare/">Alternatives</a><a href="/tools/">Tools catalog</a><a href="/use-cases/">Field cases</a><a href="/troubleshooting/">Help</a><a href="/troubleshooting/not-responding/">Not responding</a><a href="/troubleshooting/stuck/">Stuck</a><a href="/troubleshooting/cant-reach/">Can't reach</a><a href="/troubleshooting/white-screen/">White or black screen</a><a href="/troubleshooting/recover-vs-reset/">Recover vs Reset</a><a href="/sources/">Sources</a></div><div><h4>Official</h4><a href="https://x.ai/bot">x.ai/bot</a><a href="https://docs.x.ai/grok-bot/overview">xAI docs</a><a href="https://cursor.com/help/grok-bot/getting-started">Cursor Help</a><a href="https://github.com/RongleCat/awesome-grok-bot">awesome-grok-bot</a></div></div><div class="foot-legal"><p>Unofficial community handbook. Not affiliated with, endorsed by, or operated by xAI or Cursor. Product packages stay on x.ai/bot. Product support is hi@cursor.com. Site mail is <a href="mailto:hello@grokbot.run">hello@grokbot.run</a>.</p><p class="foot-legal-links"><a href="/about/">About</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/contact/">Contact</a></p></div></div></footer>
+<footer class="site"><div class="wrap"><div class="foot-grid"><div><h4>Learn</h4><a href="/learn/">Handbook</a><a href="/learn/what-is-grok-bot/">What Grok Bot is</a><a href="/learn/install/">Install and sign in</a><a href="/learn/mac-download/">Mac download</a><a href="/learn/windows-download/">Windows download</a><a href="/learn/phone-download/">iPhone and Android</a><a href="/learn/login/">Cursor login</a><a href="/learn/first-bot/">First Bot</a><a href="/learn/computer/">Shared computer</a><a href="/learn/skills-routines/">Skills and routines</a><a href="/learn/plugins/">Plugins and MCP</a><a href="/learn/cost-and-pitfalls/">Cost and pitfalls</a><a href="/learn/operator/">After week one</a><a href="/learn/ops/">X, Cursor, MCP</a><a href="/learn/glossary/">Glossary</a><a href="/learn/cursor/">Cursor and Grok Bot</a></div><div><h4>Look up</h4><a href="/pricing/">Pricing</a><a href="/compare/">Alternatives</a><a href="/tools/">Tools catalog</a><a href="/use-cases/">Field cases</a><a href="/troubleshooting/">Help</a><a href="/troubleshooting/not-responding/">Not responding</a><a href="/troubleshooting/stuck/">Stuck</a><a href="/troubleshooting/cant-reach/">Can't reach</a><a href="/troubleshooting/white-screen/">White or black screen</a><a href="/troubleshooting/recover-vs-reset/">Recover vs Reset</a><a href="/sources/">Sources</a></div><div><h4>Official</h4><span>x.ai/bot</span><span>xAI docs</span><span>Cursor Help</span><span>awesome-grok-bot</span></div></div><div class="foot-legal"><p>Unofficial community handbook. Not affiliated with, endorsed by, or operated by xAI or Cursor. Product packages stay on x.ai/bot. Product support is hi@cursor.com. Site mail is <a href="mailto:hello@grokbot.run">hello@grokbot.run</a>.</p><p class="foot-legal-links"><a href="/about/">About</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/contact/">Contact</a></p></div></div></footer>
 <script>const btn=document.querySelector('[data-menu]');const links=document.querySelector('[data-links]');if(btn) btn.addEventListener('click',()=>links.classList.toggle('open'));</script>
 <script data-find-js>
 (function(){

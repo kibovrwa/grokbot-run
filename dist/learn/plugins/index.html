@@ -444,7 +444,7 @@ h1 + .en-sub, p.en-sub { display: none; }
 }
 .card h2, .card h3 { margin-top: 0; }
 .card p:last-child { margin-bottom: 0; }
-a.card { text-decoration: none; color: inherit; display: block; }
+a.card, div.card { text-decoration: none; color: inherit; display: block; }
 a.card:hover { opacity: 1; border-color: var(--hairline-strong); }
 h2 {
   font-size: clamp(26px, 3.2vw, 36px);
@@ -554,7 +554,7 @@ footer.site {
   font-size: 14px;
   background: transparent;
 }
-footer.site a { color: var(--muted); }
+footer.site a, .foot-grid > div > span { color: var(--muted); }
 footer.site a:hover { color: var(--text); opacity: 1; }
 .foot-grid { display: grid; grid-template-columns: 1.15fr 1fr 1.05fr; gap: 28px; margin-bottom: 28px; }
 .foot-grid h4 {
@@ -565,7 +565,7 @@ footer.site a:hover { color: var(--text); opacity: 1; }
   letter-spacing: .06em;
   text-transform: uppercase;
 }
-.foot-grid a { display: block; text-decoration: none; margin: 0 0 8px; }
+.foot-grid a, .foot-grid > div > span { display: block; text-decoration: none; margin: 0 0 8px; }
 .foot-grid p { color: var(--muted); font-size: 14px; line-height: 1.55; }
 .foot-legal { border-top: 1px solid var(--hairline); padding-top: 18px; }
 .foot-legal p { margin: 0 0 10px; max-width: 46rem; }
@@ -743,9 +743,9 @@ document.addEventListener('click', function (e) {
 <section class="band"><div class="wrap prose">
 <p class="kicker">Lesson 6</p>
 <h1>Grok Bot plugins first, browser as fallback</h1>
-<p>Grok Bot’s integration surface is called Plugins in the app and co-locates connectors, MCP, and packaged skills. Official computer docs are clear: <strong>prefer a connector when one exists</strong> — usually more stable than clicking the web; use the cloud browser when there is no connector or when a visual flow is not exposed. Cursor Help <a href="https://cursor.com/help/grok-bot/connect-plugins">Connect plugins</a>: sidebar Plugins, or a Connect card in chat; on phone tap the top-left avatar then Plugins. Authorization finishes in the browser; if you see Waiting for authorization, use Reopen to bring the tab back. The Cursor account relationship — login, usage, inherited marketplace — is on <a href="/learn/cursor/">Cursor and Grok Bot</a>.</p>
+<p>Grok Bot’s integration surface is called Plugins in the app and co-locates connectors, MCP, and packaged skills. Official computer docs are clear: <strong>prefer a connector when one exists</strong> — usually more stable than clicking the web; use the cloud browser when there is no connector or when a visual flow is not exposed. Cursor Help <span>Connect plugins</span>: sidebar Plugins, or a Connect card in chat; on phone tap the top-left avatar then Plugins. Authorization finishes in the browser; if you see Waiting for authorization, use Reopen to bring the tab back. The Cursor account relationship — login, usage, inherited marketplace — is on <a href="/learn/cursor/">Cursor and Grok Bot</a>.</p>
 <p>Installed connectors are <strong>account-level</strong>, not isolated to one Bot. MindStudio also observed: authorize GitHub for one Bot and later Bots can use it. Team admins can disable marketplace plugins in Cursor Teams; you then see Disabled by team admin.</p>
-<p>Do not put secrets in chat or ordinary files. Use the official secrets card. <a href="https://github.com/xai-org/plugin-marketplace">xai-org/plugin-marketplace</a> is the .grok-plugin marketplace Grok Bot inherits under Cursor’s plugin policy. High-star packs with a documented Grok Bot install path sit on <a href="/use-cases/#skills">use cases → Skills</a> — Compound Engineering installs in the Cursor marketplace; do not clone it onto the Bot computer. Skip 0–1★ “195 SKILL.md” dumps.</p>
+<p>Do not put secrets in chat or ordinary files. Use the official secrets card. <span>xai-org/plugin-marketplace</span> is the .grok-plugin marketplace Grok Bot inherits under Cursor’s plugin policy. High-star packs with a documented Grok Bot install path sit on <a href="/use-cases/#skills">use cases → Skills</a> — Compound Engineering installs in the Cursor marketplace; do not clone it onto the Bot computer. Skip 0–1★ “195 SKILL.md” dumps.</p>
 <h2>Pick the surface before you click</h2>
 <ol>
 <li><strong>Official connector exists</strong> — use it. Wayne Sutton’s site-from-the-phone post ran Convex and Cloudflare plugins, not a shopping crawl. Gergely Orosz put support mail and Stripe behind a human confirm. Box wrote back through MCP after reconciling a pack.</li>
@@ -757,7 +757,7 @@ document.addEventListener('click', function (e) {
 <p>Staff confirmed: Grok Bot <strong>cannot</strong> attach local or stdio MCP; use remote HTTP MCP or the cloud browser. There is no “custom connector” settings form — ask the Bot in chat to add an MCP server (public HTTPS streamable HTTP/SSE), confirm details, and new tools appear from the next message. An MCP that only listens on localhost on your PC is unreachable from the cloud computer.</p>
 <h2>Auth that was still broken at fetch time (still documented in Help)</h2>
 <ul>
-<li><strong>Zoom error 4700:</strong> the catalog Zoom plugin hard-codes the callback as http://localhost:8787/callback; Zoom rejects it. Official Help: no workaround — wait for them to remove localhost. <a href="https://cursor.com/help/grok-bot/connect-plugins">Connect plugins</a></li>
+<li><strong>Zoom error 4700:</strong> the catalog Zoom plugin hard-codes the callback as http://localhost:8787/callback; Zoom rejects it. Official Help: no workaround — wait for them to remove localhost. <span>Connect plugins</span></li>
 <li><strong>Gmail plugin OAuth:</strong> staff say the Grok Bot side is broken; authorizing Gmail from Cursor (a different path) shares the connection into Grok Bot. The Gmail connector can also list attachment metadata but not download bytes — use the cloud browser or put files on Drive.</li>
 <li><strong>Notion Invalid redirect_uri:</strong> login state lives on the account, so retry fails; use Re-authenticate instead of Connect.</li>
 <li><strong>Canva Invalid redirect URI on iOS:</strong> app link and web redirect mismatch; connect from desktop and the connector syncs to iPhone.</li>
@@ -776,7 +776,7 @@ document.addEventListener('click', function (e) {
 <nav class="pager"><a href="/learn/skills-routines/">Previous: Skills and routines</a><a href="/learn/cost-and-pitfalls/">Next: Cost and pitfalls</a></nav>
 </div></section>
 </main>
-<footer class="site"><div class="wrap"><div class="foot-grid"><div><h4>Learn</h4><a href="/learn/">Handbook</a><a href="/learn/what-is-grok-bot/">What Grok Bot is</a><a href="/learn/install/">Install and sign in</a><a href="/learn/mac-download/">Mac download</a><a href="/learn/windows-download/">Windows download</a><a href="/learn/phone-download/">iPhone and Android</a><a href="/learn/login/">Cursor login</a><a href="/learn/first-bot/">First Bot</a><a href="/learn/computer/">Shared computer</a><a href="/learn/skills-routines/">Skills and routines</a><a href="/learn/plugins/">Plugins and MCP</a><a href="/learn/cost-and-pitfalls/">Cost and pitfalls</a><a href="/learn/operator/">After week one</a><a href="/learn/ops/">X, Cursor, MCP</a><a href="/learn/glossary/">Glossary</a><a href="/learn/cursor/">Cursor and Grok Bot</a></div><div><h4>Look up</h4><a href="/pricing/">Pricing</a><a href="/compare/">Alternatives</a><a href="/tools/">Tools catalog</a><a href="/use-cases/">Field cases</a><a href="/troubleshooting/">Help</a><a href="/troubleshooting/not-responding/">Not responding</a><a href="/troubleshooting/stuck/">Stuck</a><a href="/troubleshooting/cant-reach/">Can't reach</a><a href="/troubleshooting/white-screen/">White or black screen</a><a href="/troubleshooting/recover-vs-reset/">Recover vs Reset</a><a href="/sources/">Sources</a></div><div><h4>Official</h4><a href="https://x.ai/bot">x.ai/bot</a><a href="https://docs.x.ai/grok-bot/overview">xAI docs</a><a href="https://cursor.com/help/grok-bot/getting-started">Cursor Help</a><a href="https://github.com/RongleCat/awesome-grok-bot">awesome-grok-bot</a></div></div><div class="foot-legal"><p>Unofficial community handbook. Not affiliated with, endorsed by, or operated by xAI or Cursor. Product packages stay on x.ai/bot. Product support is hi@cursor.com. Site mail is <a href="mailto:hello@grokbot.run">hello@grokbot.run</a>.</p><p class="foot-legal-links"><a href="/about/">About</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/contact/">Contact</a></p></div></div></footer>
+<footer class="site"><div class="wrap"><div class="foot-grid"><div><h4>Learn</h4><a href="/learn/">Handbook</a><a href="/learn/what-is-grok-bot/">What Grok Bot is</a><a href="/learn/install/">Install and sign in</a><a href="/learn/mac-download/">Mac download</a><a href="/learn/windows-download/">Windows download</a><a href="/learn/phone-download/">iPhone and Android</a><a href="/learn/login/">Cursor login</a><a href="/learn/first-bot/">First Bot</a><a href="/learn/computer/">Shared computer</a><a href="/learn/skills-routines/">Skills and routines</a><a href="/learn/plugins/">Plugins and MCP</a><a href="/learn/cost-and-pitfalls/">Cost and pitfalls</a><a href="/learn/operator/">After week one</a><a href="/learn/ops/">X, Cursor, MCP</a><a href="/learn/glossary/">Glossary</a><a href="/learn/cursor/">Cursor and Grok Bot</a></div><div><h4>Look up</h4><a href="/pricing/">Pricing</a><a href="/compare/">Alternatives</a><a href="/tools/">Tools catalog</a><a href="/use-cases/">Field cases</a><a href="/troubleshooting/">Help</a><a href="/troubleshooting/not-responding/">Not responding</a><a href="/troubleshooting/stuck/">Stuck</a><a href="/troubleshooting/cant-reach/">Can't reach</a><a href="/troubleshooting/white-screen/">White or black screen</a><a href="/troubleshooting/recover-vs-reset/">Recover vs Reset</a><a href="/sources/">Sources</a></div><div><h4>Official</h4><span>x.ai/bot</span><span>xAI docs</span><span>Cursor Help</span><span>awesome-grok-bot</span></div></div><div class="foot-legal"><p>Unofficial community handbook. Not affiliated with, endorsed by, or operated by xAI or Cursor. Product packages stay on x.ai/bot. Product support is hi@cursor.com. Site mail is <a href="mailto:hello@grokbot.run">hello@grokbot.run</a>.</p><p class="foot-legal-links"><a href="/about/">About</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/contact/">Contact</a></p></div></div></footer>
 <script>const btn=document.querySelector('[data-menu]');const links=document.querySelector('[data-links]');if(btn) btn.addEventListener('click',()=>links.classList.toggle('open'));</script>
 <script data-find-js>
 (function(){
